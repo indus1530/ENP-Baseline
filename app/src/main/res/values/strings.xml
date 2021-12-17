@@ -1516,10 +1516,8 @@ For example, some start talking earlier than others, or they might already say s
     <string name="ds3q03g">Overall, is the environment considered safe for child play?</string>
     <string name="ds3q03g01">Yes</string>
     <string name="ds3q03g02">No</string>
-    <string name="es1title">Respondents for Module E Sections 1-4: (1) One unmarried adolescent boy 15-19 years old present at the time of interview in the household selected using Kish grid
-(2) One unmarried adolescent girl 15-19 years old present at the time of interview in the household selected using Kish grid. [If neither an eligible adolescent boy nor an eligible adolescent girl is available, then end interview].
-For adolescents less than 18 years of age, an assent will be taken from the respondent and a consent will be taken from the parents or caregiver of the respondent present in the household at the time of the interview.</string>
-    <string name="es1resp">Name of the respondent (Given Name)</string>
+    <string name="es1title"> Respondents for Module E Sections 1–4: (1) One unmarried adolescent boy 15–19 years old present at the time of interview in the household selected using Kish grid (2) One unmarried adolescent girl 15–19 years old present at the time of interview in the household selected using Kish grid. [If neither an eligible adolescent boy nor an eligible adolescent girl is available, then end interview]. For adolescents less than 18 years of age, an assent will be taken from the respondent and a consent will be taken from the parents or caregiver of the respondent present in the household at the time of the interview. </string>
+    <string name="es1resp"> Name of the respondent (Given Name) </string>
     <string name="es1resp_info">All Male Female un-married Adolesent will appear in dropdown list from roster</string>
     <string name="es1respline">Respondent Line Number</string>
     <string name="es1cons"> Assent Provided By Respondent (if less than 18 years of age) </string>
@@ -2319,9 +2317,9 @@ For adolescents less than 18 years of age, an assent will be taken from the resp
     <string name="a211">Education (for 3 or 3 years above only)</string>
     <string name="a21101">None</string>
     <string name="a21102">Pre-Primary</string>
-    <string name="a21103">Primary (1-5)</string>
-    <string name="a21104">Middle (6-8)</string>
-    <string name="a21105">Secondary (9-10)</string>
+    <string name="a21103"> Primary ( 1 – 5 )</string>
+    <string name="a21104"> Middle ( 6 – 8 ) </string>
+    <string name="a21105"> Secondary ( 9 – 10 ) </string>
     <string name="a21106">Intermediate</string>
     <string name="a21107">Graduation</string>
     <string name="a21108">Masters</string>
@@ -2806,8 +2804,7 @@ For adolescents less than 18 years of age, an assent will be taken from the resp
     <string name="b205b">How many awareness sessions you have had?</string>
     <string name="b205c">How many Tetanus toxoid injections you have received?</string>
     <string name="b206ins">(Applicable if the beneficiary has a child)</string>
-    <string name="b206">What is the age of your child who is enrolled in ENP? (Maximum 23 months)
-Verify child’s age from roster </string>
+    <string name="b206">What is the age of your child who is enrolled in ENP? (Maximum 23 months) Verify child’s age from roster </string>
     <string name="b20601">Months</string>
     <string name="b207">On your last ENP visit, were you given awareness sessions on:</string>
     <string name="b207a">Maternal nutrition </string>

@@ -1,0 +1,1127 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="ladol"
+            type="edu.aku.hassannaqvi.enp_baseline.models.LateAdolescent" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/app_bg_gray"
+        android:orientation="vertical">
+
+
+        <!-- CUSTOM TOOLBAR -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/es4informationonsexualreproductivehealth_mainheading"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/es4title" />
+
+
+                <!-- es4q1  CheckBox   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVes4q1"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_es4q1" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/es4q1" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/es4q1check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/es4q101"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q101.equals(`1`)}"
+                                android:enabled="@{!ladol.es4q198.equals(`98`) &amp;&amp; !ladol.es4q197.equals(`97`)}"
+                                android:onClick="@{()->ladol.setEs4q101(ladol.es4q101.equals(`1`)?``:`1`)}"
+                                android:text="@string/es4q101" />
+
+                            <CheckBox
+                                android:id="@+id/es4q102"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q102.equals(`2`)}"
+                                android:enabled="@{!ladol.es4q198.equals(`98`) &amp;&amp; !ladol.es4q197.equals(`97`)}"
+                                android:onClick="@{()->ladol.setEs4q102(ladol.es4q102.equals(`2`)?``:`2`)}"
+                                android:text="@string/es4q102" />
+
+                            <CheckBox
+                                android:id="@+id/es4q103"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q103.equals(`3`)}"
+                                android:enabled="@{!ladol.es4q198.equals(`98`) &amp;&amp; !ladol.es4q197.equals(`97`)}"
+                                android:onClick="@{()->ladol.setEs4q103(ladol.es4q103.equals(`3`)?``:`3`)}"
+                                android:text="@string/es4q103" />
+
+                            <CheckBox
+                                android:id="@+id/es4q104"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q104.equals(`4`)}"
+                                android:enabled="@{!ladol.es4q198.equals(`98`) &amp;&amp; !ladol.es4q197.equals(`97`)}"
+                                android:onClick="@{()->ladol.setEs4q104(ladol.es4q104.equals(`4`)?``:`4`)}"
+                                android:text="@string/es4q104" />
+
+                            <CheckBox
+                                android:id="@+id/es4q105"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q105.equals(`5`)}"
+                                android:enabled="@{!ladol.es4q198.equals(`98`) &amp;&amp; !ladol.es4q197.equals(`97`)}"
+                                android:onClick="@{()->ladol.setEs4q105(ladol.es4q105.equals(`5`)?``:`5`)}"
+                                android:text="@string/es4q105" />
+
+                            <CheckBox
+                                android:id="@+id/es4q106"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q106.equals(`6`)}"
+                                android:enabled="@{!ladol.es4q198.equals(`98`) &amp;&amp; !ladol.es4q197.equals(`97`)}"
+                                android:onClick="@{()->ladol.setEs4q106(ladol.es4q106.equals(`6`)?``:`6`)}"
+                                android:text="@string/es4q106" />
+
+                            <CheckBox
+                                android:id="@+id/es4q107"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q107.equals(`7`)}"
+                                android:enabled="@{!ladol.es4q198.equals(`98`) &amp;&amp; !ladol.es4q197.equals(`97`)}"
+                                android:onClick="@{()->ladol.setEs4q107(ladol.es4q107.equals(`7`)?``:`7`)}"
+                                android:text="@string/es4q107" />
+
+                            <CheckBox
+                                android:id="@+id/es4q196"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q196.equals(`96`)}"
+                                android:enabled="@{!ladol.es4q198.equals(`98`) &amp;&amp; !ladol.es4q197.equals(`97`)}"
+                                android:onClick="@{()->ladol.setEs4q196(ladol.es4q196.equals(`96`)?``:`96`)}"
+                                android:text="@string/es4q196" />
+
+                            <EditText
+                                android:id="@+id/es4q196x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/es4q196"
+                                android:tag="es4q196"
+                                android:text="@={ladol.es4q196x}"
+                                android:visibility="@{ladol.es4q196.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
+                            <CheckBox
+                                android:id="@+id/es4q197"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q197.equals(`97`)}"
+                                android:enabled="@{!ladol.es4q198.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q197(ladol.es4q197.equals(`97`)?``:`97`)}"
+                                android:text="@string/es4q197" />
+
+                            <CheckBox
+                                android:id="@+id/es4q198"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q198.equals(`98`)}"
+                                android:enabled="@{!ladol.es4q197.equals(`97`)}"
+                                android:onClick="@{()->ladol.setEs4q198(ladol.es4q198.equals(`98`)?``:`98`)}"
+                                android:text="@string/es4q198" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- es4q2  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVes4q2"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_es4q2" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/es4q2" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/es4q2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/es4q201"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{ladol.es4q2.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs4q2(`1`)}"
+                                android:text="@string/es4q201" />
+
+                            <RadioButton
+                                android:id="@+id/es4q202"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{ladol.es4q2.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs4q2(`2`)}"
+                                android:text="@string/es4q202" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{ladol.es4q2.equals(`2`) ? View.GONE : View.VISIBLE}">
+
+
+                    <!-- es4q3  CheckBox   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVes4q3"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_es4q3" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/es4q3" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/es4q3check"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:tag="0">
+
+                                <CheckBox
+                                    android:id="@+id/es4q301"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q301.equals(`1`)}"
+                                    android:enabled="@{!ladol.es4q398.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q301(ladol.es4q301.equals(`1`)?``:`1`)}"
+                                    android:text="@string/es4q301" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q302"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q302.equals(`2`)}"
+                                    android:enabled="@{!ladol.es4q398.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q302(ladol.es4q302.equals(`2`)?``:`2`)}"
+                                    android:text="@string/es4q302" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q303"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q303.equals(`3`)}"
+                                    android:enabled="@{!ladol.es4q398.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q303(ladol.es4q303.equals(`3`)?``:`3`)}"
+                                    android:text="@string/es4q303" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q304"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q304.equals(`4`)}"
+                                    android:enabled="@{!ladol.es4q398.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q304(ladol.es4q304.equals(`4`)?``:`4`)}"
+                                    android:text="@string/es4q304" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q305"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q305.equals(`5`)}"
+                                    android:enabled="@{!ladol.es4q398.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q305(ladol.es4q305.equals(`5`)?``:`5`)}"
+                                    android:text="@string/es4q305" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q306"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q306.equals(`6`)}"
+                                    android:enabled="@{!ladol.es4q398.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q306(ladol.es4q306.equals(`6`)?``:`6`)}"
+                                    android:text="@string/es4q306" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q307"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q307.equals(`7`)}"
+                                    android:enabled="@{!ladol.es4q398.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q307(ladol.es4q307.equals(`7`)?``:`7`)}"
+                                    android:text="@string/es4q307" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q396"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q396.equals(`96`)}"
+                                    android:enabled="@{!ladol.es4q398.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q396(ladol.es4q396.equals(`96`)?``:`96`)}"
+                                    android:text="@string/es4q396" />
+
+                                <EditText
+                                    android:id="@+id/es4q396x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:hint="@string/es4q396"
+                                    android:tag="es4q396"
+                                    android:text="@={ladol.es4q396x}"
+                                    android:visibility="@{ladol.es4q396.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q398"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q398.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q398(ladol.es4q398.equals(`98`)?``:`98`)}"
+                                    android:text="@string/es4q398" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <!-- es4q4  CheckBox   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVes4q4"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_es4q4" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/es4q4" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/es4q4check"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:tag="0">
+
+                                <CheckBox
+                                    android:id="@+id/es4q401"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q401.equals(`1`)}"
+                                    android:enabled="@{!ladol.es4q498.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q401(ladol.es4q401.equals(`1`)?``:`1`)}"
+                                    android:text="@string/es4q401" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q402"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q402.equals(`2`)}"
+                                    android:enabled="@{!ladol.es4q498.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q402(ladol.es4q402.equals(`2`)?``:`2`)}"
+                                    android:text="@string/es4q402" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q403"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q403.equals(`3`)}"
+                                    android:enabled="@{!ladol.es4q498.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q403(ladol.es4q403.equals(`3`)?``:`3`)}"
+                                    android:text="@string/es4q403" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q404"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q404.equals(`4`)}"
+                                    android:enabled="@{!ladol.es4q498.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q404(ladol.es4q404.equals(`4`)?``:`4`)}"
+                                    android:text="@string/es4q404" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q496"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q496.equals(`96`)}"
+                                    android:enabled="@{!ladol.es4q498.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q496(ladol.es4q496.equals(`96`)?``:`96`)}"
+                                    android:text="@string/es4q496" />
+
+                                <EditText
+                                    android:id="@+id/es4q496x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:hint="@string/es4q496"
+                                    android:tag="es4q496"
+                                    android:text="@={ladol.es4q496x}"
+                                    android:visibility="@{ladol.es4q496.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
+                                <CheckBox
+                                    android:id="@+id/es4q498"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{ladol.es4q498.equals(`98`)}"
+                                    android:onClick="@{()->ladol.setEs4q498(ladol.es4q498.equals(`98`)?``:`98`)}"
+                                    android:text="@string/es4q498" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+                <!-- es4q5  CheckBox   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVes4q5"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_es4q5" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/es4q5" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/es4q5check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/es4q501"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q501.equals(`1`)}"
+                                android:enabled="@{!ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q501(ladol.es4q501.equals(`1`)?``:`1`)}"
+                                android:text="@string/es4q501" />
+
+                            <CheckBox
+                                android:id="@+id/es4q502"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q502.equals(`2`)}"
+                                android:enabled="@{!ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q502(ladol.es4q502.equals(`2`)?``:`2`)}"
+                                android:text="@string/es4q502" />
+
+                            <CheckBox
+                                android:id="@+id/es4q503"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q503.equals(`3`)}"
+                                android:enabled="@{!ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q503(ladol.es4q503.equals(`3`)?``:`3`)}"
+                                android:text="@string/es4q503" />
+
+                            <CheckBox
+                                android:id="@+id/es4q504"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q504.equals(`4`)}"
+                                android:enabled="@{!ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q504(ladol.es4q504.equals(`4`)?``:`4`)}"
+                                android:text="@string/es4q504" />
+
+                            <CheckBox
+                                android:id="@+id/es4q505"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q505.equals(`5`)}"
+                                android:enabled="@{!ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q505(ladol.es4q505.equals(`5`)?``:`5`)}"
+                                android:text="@string/es4q505" />
+
+                            <CheckBox
+                                android:id="@+id/es4q506"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q506.equals(`6`)}"
+                                android:enabled="@{!ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q506(ladol.es4q506.equals(`6`)?``:`6`)}"
+                                android:text="@string/es4q506" />
+
+                            <CheckBox
+                                android:id="@+id/es4q507"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q507.equals(`7`)}"
+                                android:enabled="@{!ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q507(ladol.es4q507.equals(`7`)?``:`7`)}"
+                                android:text="@string/es4q507" />
+
+                            <CheckBox
+                                android:id="@+id/es4q508"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q508.equals(`8`)}"
+                                android:enabled="@{!ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q508(ladol.es4q508.equals(`8`)?``:`8`)}"
+                                android:text="@string/es4q508" />
+
+                            <CheckBox
+                                android:id="@+id/es4q509"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q509.equals(`9`)}"
+                                android:enabled="@{!ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q509(ladol.es4q509.equals(`9`)?``:`9`)}"
+                                android:text="@string/es4q509" />
+
+                            <CheckBox
+                                android:id="@+id/es4q596"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q596.equals(`96`)}"
+                                android:enabled="@{!ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q596(ladol.es4q596.equals(`96`)?``:`96`)}"
+                                android:text="@string/es4q596" />
+
+                            <EditText
+                                android:id="@+id/es4q596x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/es4q596"
+                                android:tag="es4q596"
+                                android:text="@={ladol.es4q596x}"
+                                android:visibility="@{ladol.es4q596.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
+                            <CheckBox
+                                android:id="@+id/es4q598"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q598.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q598(ladol.es4q598.equals(`98`)?``:`98`)}"
+                                android:text="@string/es4q598" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- es4q6  CheckBox   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVes4q6"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_es4q6" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/es4q6" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/es4q6check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/es4q601"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q601.equals(`1`)}"
+                                android:enabled="@{!ladol.es4q698.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q601(ladol.es4q601.equals(`1`)?``:`1`)}"
+                                android:text="@string/es4q601" />
+
+                            <CheckBox
+                                android:id="@+id/es4q602"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q602.equals(`2`)}"
+                                android:enabled="@{!ladol.es4q698.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q602(ladol.es4q602.equals(`2`)?``:`2`)}"
+                                android:text="@string/es4q602" />
+
+                            <CheckBox
+                                android:id="@+id/es4q603"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q603.equals(`3`)}"
+                                android:enabled="@{!ladol.es4q698.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q603(ladol.es4q603.equals(`3`)?``:`3`)}"
+                                android:text="@string/es4q603" />
+
+                            <CheckBox
+                                android:id="@+id/es4q604"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q604.equals(`4`)}"
+                                android:enabled="@{!ladol.es4q698.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q604(ladol.es4q604.equals(`4`)?``:`4`)}"
+                                android:text="@string/es4q604" />
+
+                            <CheckBox
+                                android:id="@+id/es4q605"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q605.equals(`5`)}"
+                                android:enabled="@{!ladol.es4q698.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q605(ladol.es4q605.equals(`5`)?``:`5`)}"
+                                android:text="@string/es4q605" />
+
+                            <CheckBox
+                                android:id="@+id/es4q696"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q696.equals(`96`)}"
+                                android:enabled="@{!ladol.es4q698.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q696(ladol.es4q696.equals(`96`)?``:`96`)}"
+                                android:text="@string/es4q696" />
+
+                            <EditText
+                                android:id="@+id/es4q696x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/es4q696"
+                                android:tag="es4q696"
+                                android:text="@={ladol.es4q696x}"
+                                android:visibility="@{ladol.es4q696.equals(`96`)? View.VISIBLE : View.GONE}" />
+
+                            <CheckBox
+                                android:id="@+id/es4q698"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q698.equals(`98`)}"
+                                android:onClick="@{()->ladol.setEs4q698(ladol.es4q698.equals(`98`)?``:`98`)}"
+                                android:text="@string/es4q698" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- es4q7  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVes4q7"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_es4q7" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/es4q7" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/es4q7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/es4q701"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{ladol.es4q7.equals(`1`)}"
+                                android:onClick="@{()->ladol.setEs4q7(`1`)}"
+                                android:text="@string/es4q701" />
+
+                            <RadioButton
+                                android:id="@+id/es4q702"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{ladol.es4q7.equals(`2`)}"
+                                android:onClick="@{()->ladol.setEs4q7(`2`)}"
+                                android:text="@string/es4q702" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- es4q8  CheckBox   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVes4q8"
+                    style="@style/cardView"
+                    android:visibility="@{ladol.es4q7.equals(`2`) ? View.GONE : View.VISIBLE}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_es4q8" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/es4q8" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/es4q8check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="@string/es4q8t1" />
+
+                            <CheckBox
+                                android:id="@+id/es4q801"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q801.equals(`1`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q801(ladol.es4q801.equals(`1`)?``:`1`)}"
+                                android:text="@string/es4q801" />
+
+                            <CheckBox
+                                android:id="@+id/es4q802"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q802.equals(`2`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q802(ladol.es4q802.equals(`2`)?``:`2`)}"
+                                android:text="@string/es4q802" />
+
+                            <CheckBox
+                                android:id="@+id/es4q803"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q803.equals(`3`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q803(ladol.es4q803.equals(`3`)?``:`3`)}"
+                                android:text="@string/es4q803" />
+
+                            <CheckBox
+                                android:id="@+id/es4q804"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q804.equals(`4`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q804(ladol.es4q804.equals(`4`)?``:`4`)}"
+                                android:text="@string/es4q804" />
+
+                            <CheckBox
+                                android:id="@+id/es4q805"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q805.equals(`5`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q805(ladol.es4q805.equals(`5`)?``:`5`)}"
+                                android:text="@string/es4q805" />
+
+                            <CheckBox
+                                android:id="@+id/es4q806"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q806.equals(`6`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q806(ladol.es4q806.equals(`6`)?``:`6`)}"
+                                android:text="@string/es4q806" />
+
+                            <CheckBox
+                                android:id="@+id/es4q807"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q807.equals(`7`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q807(ladol.es4q807.equals(`7`)?``:`7`)}"
+                                android:text="@string/es4q807" />
+
+                            <CheckBox
+                                android:id="@+id/es4q808"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q808.equals(`8`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q808(ladol.es4q808.equals(`8`)?``:`8`)}"
+                                android:text="@string/es4q808" />
+
+                            <CheckBox
+                                android:id="@+id/es4q809"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q809.equals(`9`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q809(ladol.es4q809.equals(`9`)?``:`9`)}"
+                                android:text="@string/es4q809" />
+
+                            <CheckBox
+                                android:id="@+id/es4q8010"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q8010.equals(`10`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q8010(ladol.es4q8010.equals(`10`)?``:`10`)}"
+                                android:text="@string/es4q8010" />
+
+                            <CheckBox
+                                android:id="@+id/es4q8011"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q8011.equals(`11`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q8011(ladol.es4q8011.equals(`11`)?``:`11`)}"
+                                android:text="@string/es4q8011" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="@string/es4q8t2" />
+
+                            <CheckBox
+                                android:id="@+id/es4q8012"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q8012.equals(`12`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q8012(ladol.es4q8012.equals(`12`)?``:`12`)}"
+                                android:text="@string/es4q8012" />
+
+                            <CheckBox
+                                android:id="@+id/es4q8013"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q8013.equals(`13`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q8013(ladol.es4q8013.equals(`13`)?``:`13`)}"
+                                android:text="@string/es4q8013" />
+
+                            <CheckBox
+                                android:id="@+id/es4q8014"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q8014.equals(`14`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q8014(ladol.es4q8014.equals(`14`)?``:`14`)}"
+                                android:text="@string/es4q8014" />
+
+                            <CheckBox
+                                android:id="@+id/es4q8015"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q8015.equals(`15`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q8015(ladol.es4q8015.equals(`15`)?``:`15`)}"
+                                android:text="@string/es4q8015" />
+
+                            <CheckBox
+                                android:id="@+id/es4q8016"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q8016.equals(`16`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q8016(ladol.es4q8016.equals(`16`)?``:`16`)}"
+                                android:text="@string/es4q8016" />
+
+                            <CheckBox
+                                android:id="@+id/es4q8017"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q8017.equals(`17`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q8017(ladol.es4q8017.equals(`17`)?``:`17`)}"
+                                android:text="@string/es4q8017" />
+
+                            <CheckBox
+                                android:id="@+id/es4q8018"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q8018.equals(`18`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q8018(ladol.es4q8018.equals(`18`)?``:`18`)}"
+                                android:text="@string/es4q8018" />
+
+                            <CheckBox
+                                android:id="@+id/es4q866"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q866(ladol.es4q866.equals(`66`)?``:`66`)}"
+                                android:text="@string/es4q866" />
+
+                            <CheckBox
+                                android:id="@+id/es4q896"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{ladol.es4q896.equals(`96`)}"
+                                android:enabled="@{!ladol.es4q866.equals(`66`)}"
+                                android:onClick="@{()->ladol.setEs4q896(ladol.es4q896.equals(`96`)?``:`96`)}"
+                                android:text="@string/es4q896" />
+
+                            <EditText
+                                android:id="@+id/es4q896x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/es4q896"
+                                android:tag="es4q896"
+                                android:text="@={ladol.es4q896x}"
+                                android:visibility="@{ladol.es4q896.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!--EndButton LinearLayout-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    android:padding="24dp">
+
+                    <Button
+                        android:id="@+id/btn_End"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:onClick="btnEnd"
+                        android:text="Cancel"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_Continue"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/capsule"
+                        android:backgroundTint="@color/colorAccent"
+                        android:backgroundTintMode="src_atop"
+                        android:gravity="center"
+                        android:onClick="btnContinue"
+                        android:text="Save"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

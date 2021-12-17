@@ -32,7 +32,7 @@ import edu.aku.hassannaqvi.enp_baseline.models.Users;
 
 public class MainApp extends Application {
 
-    public static final String PROJECT_NAME = "f4he_baseline";
+    public static final String PROJECT_NAME = "enp_baseline";
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
     public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server

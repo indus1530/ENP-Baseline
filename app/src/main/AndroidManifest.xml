@@ -30,6 +30,12 @@
         android:usesCleartextTraffic="false"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".ui.sections.SectionF2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.sections.SectionF1Activity"
+            android:exported="true" />
+        <activity
             android:name=".ui.sections.SectionE2Activity"
             android:exported="true" />
         <activity

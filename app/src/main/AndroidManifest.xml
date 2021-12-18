@@ -29,69 +29,113 @@
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="false"
         tools:replace="android:allowBackup">
+
         <activity
             android:name=".ui.sections.SectionF2Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionF1Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionE2Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionE1Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionD4Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionD3Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionD2Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionD1Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionC6Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionC5Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionC4Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionC3Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionC2Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionC1Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionB2Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionB1Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionA5Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionA4Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionA3Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionA2Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
         <activity
             android:name=".ui.sections.SectionA1Activity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
         <activity
             android:name=".ui.sections.SectionCS1CActivity"
             android:exported="true"

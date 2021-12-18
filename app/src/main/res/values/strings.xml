@@ -2205,6 +2205,7 @@ For example, some start talking earlier than others, or they might already say s
     <string name="sectionc4informationoflhw_mainheading"> Section C4: Information of LHW: </string>
     <string name="sectionc5nutritionalinterventions_mainheading"> Section C5: Nutritional Interventions: </string>
     <string name="sectionc6minimumdietarydiversityforwomen1549years_mainheading"> Section C6: Minimum Dietary Diversity for Women (15–49 Years): </string>
+    <string name="sectiondsub_title"> Module D : Child under 0-59 months: </string>
     <string name="sectiond1under5childinformation_mainheading"> SECTION D1: UNDER 5 CHILD INFORMATION: </string>
     <string name="sectiond2iycfandfooddiversityfd_mainheading"> Section D2: IYCF and Food Diversity (FD) : </string>
     <string name="sectiond3immunizationstatus_mainheading"> SECTION D3: IMMUNIZATION STATUS: </string>

@@ -29,7 +29,7 @@
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitle="@string/sectionb2cctehsaasnashonumaprograminformation_mainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectionb2cctehsaasnashonumaprograminformation_mainheading"
+            app:title="@string/sectionbsub_title"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView

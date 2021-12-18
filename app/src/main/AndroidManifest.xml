@@ -30,6 +30,24 @@
         android:usesCleartextTraffic="false"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".ui.sections.SectionC6Activity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.sections.SectionC5Activity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.sections.SectionC4Activity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.sections.SectionC3Activity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.sections.SectionC2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.sections.SectionC1Activity"
+            android:exported="true" />
+        <activity
             android:name=".ui.sections.SectionB2Activity"
             android:exported="true" />
         <activity

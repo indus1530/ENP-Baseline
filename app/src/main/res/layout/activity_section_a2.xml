@@ -29,7 +29,7 @@
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitle="@string/sectiona2listofhouseholdmembers_mainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectiona2listofhouseholdmembers_mainheading"
+            app:title="@string/sectionasub_title"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView

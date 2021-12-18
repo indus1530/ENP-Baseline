@@ -2190,12 +2190,15 @@ For example, some start talking earlier than others, or they might already say s
     <!--EHSAS NASHUNUMA PROGRAMME-->
     <string name="sectione1anthropometryandexamination_mainheading"> SECTION E1: ANTHROPOMETRY AND EXAMINATION: </string>
     <string name="sectiona1householdinformationhh_mainheading"> Section A1: Household Information (HH): </string>
+    <string name="sectionasub_title"> Module A: Household And Member Information: </string>
     <string name="sectiona2listofhouseholdmembers_mainheading"> Section A2: List of Household members: </string>
     <string name="sectiona3socioeconomicstatusses_mainheading"> SECTION A3: SOCIO-ECONOMIC STATUS (SES): </string>
     <string name="sectiona4handwashing_mainheading"> Section A4: Hand Washing: </string>
     <string name="sectiona5foodinsecurityexperiencescalefieshouseholdreferenced_mainheading"> Section A5: Food Insecurity Experience Scale – FIES (Household Referenced): </string>
+    <string name="sectionbsub_title"> Module B: Social Safety Net (SN): </string>
     <string name="sectionb1bispehsaaskafalatprograminformation_mainheading"> Section B1: BISP/ Ehsaas Kafalat program information: </string>
     <string name="sectionb2cctehsaasnashonumaprograminformation_mainheading"> Section B2: CCT- Ehsaas Nashonuma Program Information: </string>
+    <string name="sectioncsub_title"> Module C: WOMEN OF REPRODUCTIVE AGE AND CHILD UNDER 0-59 MONTHS: </string>
     <string name="sectionc1reproductivehistory_mainheading"> Section C1: Reproductive History: </string>
     <string name="sectionc2antenatalcare_mainheading"> Section C2: Ante-Natal Car: </string>
     <string name="sectionc3deliverypostnatalcare_mainheading"> Section C3: Delivery &amp; Post-Natal Care: </string>

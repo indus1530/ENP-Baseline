@@ -3,34 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_a1.xml" value="0.3217665615141956" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_a2.xml" value="0.35" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_a3.xml" value="0.35" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_a4.xml" value="0.371875" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_a5.xml" value="0.34812286689419797" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_as1.xml" value="0.35" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_b1.xml" value="0.35" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_b2.xml" value="0.11290322580645161" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_c1.xml" value="0.35" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_c2.xml" value="0.11301044634377967" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_c3.xml" value="0.1" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_c4.xml" value="0.371875" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_c5.xml" value="0.33040259139287365" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_c6.xml" value="0.35" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_d1.xml" value="0.371875" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_d2.xml" value="0.1" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_d3.xml" value="0.1" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_d4.xml" value="0.34" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_e1.xml" value="0.35" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_e2.xml" value="0.2084063047285464" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_f1.xml" value="0.371875" />
-        <entry key="..\:/Android Office Work/ENP-Baseline/app/src/main/res/layout/activity_section_f2.xml" value="0.371875" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_forms_report.xml" value="0.45375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_a1.xml" value="0.55859375" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

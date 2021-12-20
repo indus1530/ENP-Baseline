@@ -25,7 +25,7 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 
 public class ModuleB extends BaseObservable implements Observable {
 
-    private final String TAG = "ModuleA";
+    private final String TAG = "ModuleB";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
     private String projectName = PROJECT_NAME;

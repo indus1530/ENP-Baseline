@@ -25,6 +25,8 @@ import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
 import edu.aku.hassannaqvi.enp_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
+import edu.aku.hassannaqvi.enp_baseline.models.ModuleA;
+import edu.aku.hassannaqvi.enp_baseline.models.ModuleB;
 import edu.aku.hassannaqvi.enp_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
@@ -54,6 +56,8 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
+    public static ModuleA moda;
+    public static ModuleB modb;
     public static MWRA mwra;
     public static Pregnancy pregnancy;
     public static Child child;

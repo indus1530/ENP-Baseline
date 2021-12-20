@@ -113,6 +113,86 @@ public class ModuleB extends BaseObservable implements Observable {
     private String b118 = _EMPTY_;
     private String b119 = _EMPTY_;
     private String b120 = _EMPTY_;
+    private String b201 = _EMPTY_;
+    private String b20196x = _EMPTY_;
+    private String b202 = _EMPTY_;
+    private String b202998 = _EMPTY_;
+    private String b202w = _EMPTY_;
+    private String b202m = _EMPTY_;
+    private String b202y = _EMPTY_;
+    private String b203 = _EMPTY_;
+    private String b204 = _EMPTY_;
+    private String b204998 = _EMPTY_;
+    private String b204w = _EMPTY_;
+    private String b204m = _EMPTY_;
+    private String b205a = _EMPTY_;
+    private String b205b = _EMPTY_;
+    private String b205c = _EMPTY_;
+    private String b20601 = _EMPTY_;
+    private String b207a = _EMPTY_;
+    private String b207b = _EMPTY_;
+    private String b207c = _EMPTY_;
+    private String b208a = _EMPTY_;
+    private String b208b = _EMPTY_;
+    private String b209 = _EMPTY_;
+    private String b209a = _EMPTY_;
+    private String b209b = _EMPTY_;
+    private String b209c = _EMPTY_;
+    private String b210 = _EMPTY_;
+    private String b211 = _EMPTY_;
+    private String b211998 = _EMPTY_;
+    private String b21101 = _EMPTY_;
+    private String b212 = _EMPTY_;
+    private String b212998 = _EMPTY_;
+    private String b21201 = _EMPTY_;
+    private String b21202 = _EMPTY_;
+    private String b213 = _EMPTY_;
+    private String b21396x = _EMPTY_;
+    private String b214 = _EMPTY_;
+    private String b215 = _EMPTY_;
+    private String b21501 = _EMPTY_;
+    private String b21502 = _EMPTY_;
+    private String b21503 = _EMPTY_;
+    private String b21504 = _EMPTY_;
+    private String b21596 = _EMPTY_;
+    private String b21596x = _EMPTY_;
+    private String b216 = _EMPTY_;
+    private String b21601 = _EMPTY_;
+    private String b21602 = _EMPTY_;
+    private String b21603 = _EMPTY_;
+    private String b21604 = _EMPTY_;
+    private String b21696 = _EMPTY_;
+    private String b21696x = _EMPTY_;
+    private String b217 = _EMPTY_;
+    private String b21701 = _EMPTY_;
+    private String b21702 = _EMPTY_;
+    private String b21703 = _EMPTY_;
+    private String b21704 = _EMPTY_;
+    private String b21796 = _EMPTY_;
+    private String b21796x = _EMPTY_;
+    private String b218 = _EMPTY_;
+    private String b21801 = _EMPTY_;
+    private String b21802 = _EMPTY_;
+    private String b21803 = _EMPTY_;
+    private String b21804 = _EMPTY_;
+    private String b21805 = _EMPTY_;
+    private String b21806 = _EMPTY_;
+    private String b21896 = _EMPTY_;
+    private String b21896x = _EMPTY_;
+    private String b218998 = _EMPTY_;
+    private String b219 = _EMPTY_;
+    private String b21996x = _EMPTY_;
+    private String b220 = _EMPTY_;
+    private String b22096x = _EMPTY_;
+    private String b221 = _EMPTY_;
+    private String b221998 = _EMPTY_;
+    private String b22101 = _EMPTY_;
+    private String b222 = _EMPTY_;
+    private String b222998 = _EMPTY_;
+    private String b222h = _EMPTY_;
+    private String b222m = _EMPTY_;
+    private String b223 = _EMPTY_;
+    private String b224 = _EMPTY_;
 
 
     public ModuleB() {
@@ -953,6 +1033,7 @@ public class ModuleB extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
 
         sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
+        sB2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
         return this;
     }
 
@@ -1029,6 +1110,94 @@ public class ModuleB extends BaseObservable implements Observable {
         }
     }
 
+    public void sB2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sB2Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.b201 = json.getString("b201");
+            this.b20196x = json.getString("b20196x");
+            this.b202 = json.getString("b202");
+            this.b202998 = json.getString("b202998");
+            this.b202w = json.getString("b202w");
+            this.b202m = json.getString("b202m");
+            this.b202y = json.getString("b202y");
+            this.b203 = json.getString("b203");
+            this.b204 = json.getString("b204");
+            this.b204998 = json.getString("b204998");
+            this.b204w = json.getString("b204w");
+            this.b204m = json.getString("b204m");
+            this.b205a = json.getString("b205a");
+            this.b205b = json.getString("b205b");
+            this.b205c = json.getString("b205c");
+            this.b20601 = json.getString("b20601");
+            this.b207a = json.getString("b207a");
+            this.b207b = json.getString("b207b");
+            this.b207c = json.getString("b207c");
+            this.b208a = json.getString("b208a");
+            this.b208b = json.getString("b208b");
+            this.b209 = json.getString("b209");
+            this.b209a = json.getString("b209a");
+            this.b209b = json.getString("b209b");
+            this.b209c = json.getString("b209c");
+            this.b210 = json.getString("b210");
+            this.b211 = json.getString("b211");
+            this.b211998 = json.getString("b211998");
+            this.b21101 = json.getString("b21101");
+            this.b212 = json.getString("b212");
+            this.b212998 = json.getString("b212998");
+            this.b21201 = json.getString("b21201");
+            this.b21202 = json.getString("b21202");
+            this.b213 = json.getString("b213");
+            this.b21396x = json.getString("b21396x");
+            this.b214 = json.getString("b214");
+            this.b215 = json.getString("b215");
+            this.b21501 = json.getString("b21501");
+            this.b21502 = json.getString("b21502");
+            this.b21503 = json.getString("b21503");
+            this.b21504 = json.getString("b21504");
+            this.b21596 = json.getString("b21596");
+            this.b21596x = json.getString("b21596x");
+            this.b216 = json.getString("b216");
+            this.b21601 = json.getString("b21601");
+            this.b21602 = json.getString("b21602");
+            this.b21603 = json.getString("b21603");
+            this.b21604 = json.getString("b21604");
+            this.b21696 = json.getString("b21696");
+            this.b21696x = json.getString("b21696x");
+            this.b217 = json.getString("b217");
+            this.b21701 = json.getString("b21701");
+            this.b21702 = json.getString("b21702");
+            this.b21703 = json.getString("b21703");
+            this.b21704 = json.getString("b21704");
+            this.b21796 = json.getString("b21796");
+            this.b21796x = json.getString("b21796x");
+            this.b218 = json.getString("b218");
+            this.b21801 = json.getString("b21801");
+            this.b21802 = json.getString("b21802");
+            this.b21803 = json.getString("b21803");
+            this.b21804 = json.getString("b21804");
+            this.b21805 = json.getString("b21805");
+            this.b21806 = json.getString("b21806");
+            this.b21896 = json.getString("b21896");
+            this.b21896x = json.getString("b21896x");
+            this.b218998 = json.getString("b218998");
+            this.b219 = json.getString("b219");
+            this.b21996x = json.getString("b21996x");
+            this.b220 = json.getString("b220");
+            this.b22096x = json.getString("b22096x");
+            this.b221 = json.getString("b221");
+            this.b221998 = json.getString("b221998");
+            this.b22101 = json.getString("b22101");
+            this.b222 = json.getString("b222");
+            this.b222998 = json.getString("b222998");
+            this.b222h = json.getString("b222h");
+            this.b222m = json.getString("b222m");
+            this.b223 = json.getString("b223");
+            this.b224 = json.getString("b224");
+        }
+    }
+
 
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
@@ -1049,6 +1218,7 @@ public class ModuleB extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
         json.put(FormsTable.COLUMN_SA1, new JSONObject(sB1toString()));
+        json.put(FormsTable.COLUMN_SA1, new JSONObject(sB2toString()));
         return json;
     }
 
@@ -1120,6 +1290,92 @@ public class ModuleB extends BaseObservable implements Observable {
                 .put("b118", b118)
                 .put("b119", b119)
                 .put("b120", b120);
+        return json.toString();
+    }
+
+    public String sB2toString() throws JSONException {
+        Log.d(TAG, "sB2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("b201", b201)
+                .put("b20196x", b20196x)
+                .put("b202", b202)
+                .put("b202998", b202998)
+                .put("b202w", b202w)
+                .put("b202m", b202m)
+                .put("b202y", b202y)
+                .put("b203", b203)
+                .put("b204", b204)
+                .put("b204998", b204998)
+                .put("b204w", b204w)
+                .put("b204m", b204m)
+                .put("b205a", b205a)
+                .put("b205b", b205b)
+                .put("b205c", b205c)
+                .put("b20601", b20601)
+                .put("b207a", b207a)
+                .put("b207b", b207b)
+                .put("b207c", b207c)
+                .put("b208a", b208a)
+                .put("b208b", b208b)
+                .put("b209", b209)
+                .put("b209a", b209a)
+                .put("b209b", b209b)
+                .put("b209c", b209c)
+                .put("b210", b210)
+                .put("b211", b211)
+                .put("b211998", b211998)
+                .put("b21101", b21101)
+                .put("b212", b212)
+                .put("b212998", b212998)
+                .put("b21201", b21201)
+                .put("b21202", b21202)
+                .put("b213", b213)
+                .put("b21396x", b21396x)
+                .put("b214", b214)
+                .put("b215", b215)
+                .put("b21501", b21501)
+                .put("b21502", b21502)
+                .put("b21503", b21503)
+                .put("b21504", b21504)
+                .put("b21596", b21596)
+                .put("b21596x", b21596x)
+                .put("b216", b216)
+                .put("b21601", b21601)
+                .put("b21602", b21602)
+                .put("b21603", b21603)
+                .put("b21604", b21604)
+                .put("b21696", b21696)
+                .put("b21696x", b21696x)
+                .put("b217", b217)
+                .put("b21701", b21701)
+                .put("b21702", b21702)
+                .put("b21703", b21703)
+                .put("b21704", b21704)
+                .put("b21796", b21796)
+                .put("b21796x", b21796x)
+                .put("b218", b218)
+                .put("b21801", b21801)
+                .put("b21802", b21802)
+                .put("b21803", b21803)
+                .put("b21804", b21804)
+                .put("b21805", b21805)
+                .put("b21806", b21806)
+                .put("b21896", b21896)
+                .put("b21896x", b21896x)
+                .put("b218998", b218998)
+                .put("b219", b219)
+                .put("b21996x", b21996x)
+                .put("b220", b220)
+                .put("b22096x", b22096x)
+                .put("b221", b221)
+                .put("b221998", b221998)
+                .put("b22101", b22101)
+                .put("b222", b222)
+                .put("b222998", b222998)
+                .put("b222h", b222h)
+                .put("b222m", b222m)
+                .put("b223", b223)
+                .put("b224", b224);
         return json.toString();
     }
 

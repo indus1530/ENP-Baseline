@@ -7,7 +7,7 @@
 
         <variable
             name="form"
-            type="edu.aku.hassannaqvi.enp_baseline.models.Form" />
+            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleA" />
     </data>
 
     <LinearLayout
@@ -27,9 +27,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectiona3socioeconomicstatusses_mainheading"
+            app:subtitle="@string/a3"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectionasub_title"
+            app:title="@string/moda"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView

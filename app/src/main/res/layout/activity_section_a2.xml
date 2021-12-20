@@ -6,9 +6,11 @@
         <import type="android.view.View" />
 
         <variable
-            name="moda"
-            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleA" />
+            name="familymember"
+            type="edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,14 +29,16 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/moda"
+            app:subtitle="@string/a2"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/a2"
+            app:title="@string/moda"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -42,11 +46,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/sa2inst" />
+
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sa2inst" />
+
 
                 <!-- sa2name  Input   -->
                 <androidx.cardview.widget.CardView
@@ -56,36 +62,33 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_sa2name" />
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_sa2name" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/sa2name" />
-
-                        </LinearLayout>
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/sa2name" />
 
                         <EditText
                             android:id="@+id/sa2name"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                            android:layout_height="match_parent"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/sa2name"
-                            android:text="@={moda.sa2name}" />
+                            android:maxLength="20"
+                            android:text="@={familymember.sa2name}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a201  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -95,53 +98,44 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_a201" />
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_a201" />
+                        <TextView
+                            android:layout_width="205dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a201" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/a201" />
-
-                        </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <TextView
                             android:id="@+id/a201"
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/a201"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={moda.a201}"
-                            app:maxValue="100"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:layout_height="match_parent"
+                            android:text="@={familymember.a201}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/a202t1" />
+
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a202t1" />
 
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/a202t2" />
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a202t2" />
 
 
                 <!-- a202  Input   -->
@@ -152,36 +146,33 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_a202" />
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_a202" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/a202" />
-
-                        </LinearLayout>
+                        <TextView
+                            android:layout_width="205dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a202" />
 
                         <EditText
                             android:id="@+id/a202"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                            android:layout_height="match_parent"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/a202"
-                            android:text="@={moda.a202}" />
+                            android:maxLength="20"
+                            android:text="@={familymember.a202}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a203  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -221,128 +212,128 @@
                                 android:id="@+id/a20301"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`1`)}"
-                                android:onClick="@{()->moda.setA203(`1`)}"
+                                android:checked="@{familymember.a203.equals(`1`)}"
+                                android:onClick="@{()->familymember.setA203(`1`)}"
                                 android:text="@string/a20301" />
 
                             <RadioButton
                                 android:id="@+id/a20302"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`2`)}"
-                                android:onClick="@{()->moda.setA203(`2`)}"
+                                android:checked="@{familymember.a203.equals(`2`)}"
+                                android:onClick="@{()->familymember.setA203(`2`)}"
                                 android:text="@string/a20302" />
 
                             <RadioButton
                                 android:id="@+id/a20303"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`3`)}"
-                                android:onClick="@{()->moda.setA203(`3`)}"
+                                android:checked="@{familymember.a203.equals(`3`)}"
+                                android:onClick="@{()->familymember.setA203(`3`)}"
                                 android:text="@string/a20303" />
 
                             <RadioButton
                                 android:id="@+id/a20304"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`4`)}"
-                                android:onClick="@{()->moda.setA203(`4`)}"
+                                android:checked="@{familymember.a203.equals(`4`)}"
+                                android:onClick="@{()->familymember.setA203(`4`)}"
                                 android:text="@string/a20304" />
 
                             <RadioButton
                                 android:id="@+id/a20305"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`5`)}"
-                                android:onClick="@{()->moda.setA203(`5`)}"
+                                android:checked="@{familymember.a203.equals(`5`)}"
+                                android:onClick="@{()->familymember.setA203(`5`)}"
                                 android:text="@string/a20305" />
 
                             <RadioButton
                                 android:id="@+id/a20306"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`6`)}"
-                                android:onClick="@{()->moda.setA203(`6`)}"
+                                android:checked="@{familymember.a203.equals(`6`)}"
+                                android:onClick="@{()->familymember.setA203(`6`)}"
                                 android:text="@string/a20306" />
 
                             <RadioButton
                                 android:id="@+id/a20307"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`7`)}"
-                                android:onClick="@{()->moda.setA203(`7`)}"
+                                android:checked="@{familymember.a203.equals(`7`)}"
+                                android:onClick="@{()->familymember.setA203(`7`)}"
                                 android:text="@string/a20307" />
 
                             <RadioButton
                                 android:id="@+id/a20308"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`8`)}"
-                                android:onClick="@{()->moda.setA203(`8`)}"
+                                android:checked="@{familymember.a203.equals(`8`)}"
+                                android:onClick="@{()->familymember.setA203(`8`)}"
                                 android:text="@string/a20308" />
 
                             <RadioButton
                                 android:id="@+id/a20309"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`9`)}"
-                                android:onClick="@{()->moda.setA203(`9`)}"
+                                android:checked="@{familymember.a203.equals(`9`)}"
+                                android:onClick="@{()->familymember.setA203(`9`)}"
                                 android:text="@string/a20309" />
 
                             <RadioButton
                                 android:id="@+id/a20310"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`10`)}"
-                                android:onClick="@{()->moda.setA203(`10`)}"
+                                android:checked="@{familymember.a203.equals(`10`)}"
+                                android:onClick="@{()->familymember.setA203(`10`)}"
                                 android:text="@string/a20310" />
 
                             <RadioButton
                                 android:id="@+id/a20311"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`11`)}"
-                                android:onClick="@{()->moda.setA203(`11`)}"
+                                android:checked="@{familymember.a203.equals(`11`)}"
+                                android:onClick="@{()->familymember.setA203(`11`)}"
                                 android:text="@string/a20311" />
 
                             <RadioButton
                                 android:id="@+id/a20312"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`12`)}"
-                                android:onClick="@{()->moda.setA203(`12`)}"
+                                android:checked="@{familymember.a203.equals(`12`)}"
+                                android:onClick="@{()->familymember.setA203(`12`)}"
                                 android:text="@string/a20312" />
 
                             <RadioButton
                                 android:id="@+id/a20313"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`13`)}"
-                                android:onClick="@{()->moda.setA203(`13`)}"
+                                android:checked="@{familymember.a203.equals(`13`)}"
+                                android:onClick="@{()->familymember.setA203(`13`)}"
                                 android:text="@string/a20313" />
 
                             <RadioButton
                                 android:id="@+id/a20314"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`14`)}"
-                                android:onClick="@{()->moda.setA203(`14`)}"
+                                android:checked="@{familymember.a203.equals(`14`)}"
+                                android:onClick="@{()->familymember.setA203(`14`)}"
                                 android:text="@string/a20314" />
 
                             <RadioButton
                                 android:id="@+id/a20315"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`15`)}"
-                                android:onClick="@{()->moda.setA203(`15`)}"
+                                android:checked="@{familymember.a203.equals(`15`)}"
+                                android:onClick="@{()->familymember.setA203(`15`)}"
                                 android:text="@string/a20315" />
 
                             <RadioButton
                                 android:id="@+id/a20396"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`96`)}"
-                                android:onClick="@{()->moda.setA203(`96`)}"
+                                android:checked="@{familymember.a203.equals(`96`)}"
+                                android:onClick="@{()->familymember.setA203(`96`)}"
                                 android:text="@string/a20396" />
 
                             <EditText
@@ -352,19 +343,23 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a20396"
                                 android:tag="a20396"
-                                android:text="@={moda.a20396x}"
-                                android:visibility="@{moda.a203.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={familymember.a20396x}"
+                                android:visibility="@{familymember.a203.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                             <RadioButton
                                 android:id="@+id/a203998"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a203.equals(`998`)}"
-                                android:onClick="@{()->moda.setA203(`998`)}"
+                                android:checked="@{familymember.a203.equals(`998`)}"
+                                android:onClick="@{()->familymember.setA203(`998`)}"
                                 android:text="@string/a203998" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a204  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -404,23 +399,27 @@
                             <RadioButton
                                 android:id="@+id/a20401"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a204.equals(`1`)}"
-                                android:onClick="@{()->moda.setA204(`1`)}"
+                                android:checked="@{familymember.a204.equals(`1`)}"
+                                android:onClick="@{()->familymember.setA204(`1`)}"
                                 android:text="@string/a20401" />
 
                             <RadioButton
                                 android:id="@+id/a20402"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a204.equals(`2`)}"
-                                android:onClick="@{()->moda.setA204(`2`)}"
+                                android:checked="@{familymember.a204.equals(`2`)}"
+                                android:onClick="@{()->familymember.setA204(`2`)}"
                                 android:text="@string/a20402" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a205  Title   -->
                 <androidx.cardview.widget.CardView
@@ -458,58 +457,90 @@
                             android:layout_marginTop="12dp"
                             android:text="@string/a205inst" />
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/a205d" />
+                            android:orientation="horizontal">
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/a205d"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/a205d"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={moda.a205d}"
-                            app:maxValue="31"
-                            app:minValue="1"
-                            app:type="range" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/a205d" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/a205m" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/a205d"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={familymember.a205d}"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/a205m"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/a205m"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={moda.a205m}"
-                            app:maxValue="12"
-                            app:minValue="1"
-                            app:type="range" />
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/a205y" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/a205m" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/a205y"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/a205y"
-                            android:inputType="number"
-                            android:maxLength="4"
-                            android:text="@={moda.a205y}"
-                            app:maxValue="2021"
-                            app:minValue="1945"
-                            app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/a205m"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={familymember.a205m}"
+                                app:defaultValue="98"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/a205y" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/a205y"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="####"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={familymember.a205y}"
+                                app:defaultValue="9998"
+                                app:maxValue="2021"
+                                app:minValue="1945"
+                                app:type="range" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a206  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -540,97 +571,109 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/a206inst" />
+
                         <LinearLayout
                             android:id="@+id/a206check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
+                            android:orientation="horizontal"
                             android:tag="0">
-
-                            <TextView
-                                style="@style/info"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/a206inst" />
 
                             <CheckBox
                                 android:id="@+id/a206y"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a206y.equals(``)}"
-                                android:onClick="@{()->moda.setA206y(moda.a206y.equals(``)?``:``)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a206y.equals(``)}"
+                                android:onClick="@{()->familymember.setA206y(familymember.a206y.equals(``)?``:``)}"
                                 android:text="@string/a206y" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/a206yx"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/a206y"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="3"
+                                android:maxLength="2"
                                 android:tag="a206y"
-                                android:text="@={moda.a206yx}"
-                                android:visibility="@{moda.a206y.equals(``) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="100"
+                                android:text="@={familymember.a206yx}"
+                                android:visibility="@{familymember.a206y.equals(``) ? View.VISIBLE : View.GONE}"
+                                app:maxValue="95"
                                 app:minValue="0"
                                 app:type="range" />
 
                             <CheckBox
                                 android:id="@+id/a206m"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a206m.equals(``)}"
-                                android:onClick="@{()->moda.setA206m(moda.a206m.equals(``)?``:``)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a206m.equals(``)}"
+                                android:onClick="@{()->familymember.setA206m(familymember.a206m.equals(``)?``:``)}"
                                 android:text="@string/a206m" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/a206mx"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/a206m"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="a206m"
-                                android:text="@={moda.a206mx}"
-                                android:visibility="@{moda.a206m.equals(``) ? View.VISIBLE : View.GONE}"
+                                android:text="@={familymember.a206mx}"
+                                android:visibility="@{familymember.a206m.equals(``) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />
 
                             <CheckBox
                                 android:id="@+id/a206d"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a206d.equals(``)}"
-                                android:onClick="@{()->moda.setA206d(moda.a206d.equals(``)?``:``)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a206d.equals(``)}"
+                                android:onClick="@{()->familymember.setA206d(familymember.a206d.equals(``)?``:``)}"
                                 android:text="@string/a206d" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/a206dx"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/a206d"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="a206d"
-                                android:text="@={moda.a206dx}"
-                                android:visibility="@{moda.a206d.equals(``) ? View.VISIBLE : View.GONE}"
+                                android:text="@={familymember.a206dx}"
+                                android:visibility="@{familymember.a206d.equals(``) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="31"
                                 app:minValue="0"
                                 app:type="range" />
 
                             <CheckBox
                                 android:id="@+id/a206998"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a206998.equals(`998`)}"
-                                android:onClick="@{()->moda.setA206998(moda.a206998.equals(`998`)?``:`998`)}"
-
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a206998.equals(`998`)}"
+                                android:onClick="@{()->familymember.setA206998(familymember.a206998.equals(`998`)?``:`998`)}"
                                 android:text="@string/a206998" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a207  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -672,53 +715,48 @@
                                 android:id="@+id/a20701"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a20701.equals(`1`)}"
-                                android:onClick="@{()->moda.setA20701(moda.a20701.equals(`1`)?``:`1`)}"
-
+                                android:checked="@{familymember.a20701.equals(`1`)}"
+                                android:onClick="@{()->familymember.setA20701(familymember.a20701.equals(`1`)?``:`1`)}"
                                 android:text="@string/a20701" />
 
                             <CheckBox
                                 android:id="@+id/a20702"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a20702.equals(`2`)}"
-                                android:onClick="@{()->moda.setA20702(moda.a20702.equals(`2`)?``:`2`)}"
-
+                                android:checked="@{familymember.a20702.equals(`2`)}"
+                                android:onClick="@{()->familymember.setA20702(familymember.a20702.equals(`2`)?``:`2`)}"
                                 android:text="@string/a20702" />
 
                             <CheckBox
                                 android:id="@+id/a20703"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a20703.equals(`3`)}"
-                                android:onClick="@{()->moda.setA20703(moda.a20703.equals(`3`)?``:`3`)}"
-
+                                android:checked="@{familymember.a20703.equals(`3`)}"
+                                android:onClick="@{()->familymember.setA20703(familymember.a20703.equals(`3`)?``:`3`)}"
                                 android:text="@string/a20703" />
 
                             <CheckBox
                                 android:id="@+id/a20704"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a20704.equals(`4`)}"
-                                android:onClick="@{()->moda.setA20704(moda.a20704.equals(`4`)?``:`4`)}"
-
+                                android:checked="@{familymember.a20704.equals(`4`)}"
+                                android:onClick="@{()->familymember.setA20704(familymember.a20704.equals(`4`)?``:`4`)}"
                                 android:text="@string/a20704" />
 
                             <CheckBox
                                 android:id="@+id/a20705"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a20705.equals(`5`)}"
-                                android:onClick="@{()->moda.setA20705(moda.a20705.equals(`5`)?``:`5`)}"
-
+                                android:checked="@{familymember.a20705.equals(`5`)}"
+                                android:onClick="@{()->familymember.setA20705(familymember.a20705.equals(`5`)?``:`5`)}"
                                 android:text="@string/a20705" />
 
                             <CheckBox
                                 android:id="@+id/a20796"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a20796.equals(`96`)}"
-                                android:onClick="@{()->moda.setA20796(moda.a20796.equals(`96`)?``:`96`)}"
+                                android:checked="@{familymember.a20796.equals(`96`)}"
+                                android:onClick="@{()->familymember.setA20796(familymember.a20796.equals(`96`)?``:`96`)}"
                                 android:text="@string/a20796" />
 
                             <EditText
@@ -728,11 +766,15 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a20796"
                                 android:tag="a20796"
-                                android:text="@={moda.a20796x}"
-                                android:visibility="@{moda.a20796.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={familymember.a20796x}"
+                                android:visibility="@{familymember.a20796.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a208  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -766,50 +808,60 @@
                         <RadioGroup
                             android:id="@+id/a208"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/a20801"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a208.equals(`1`)}"
-                                android:onClick="@{()->moda.setA208(`1`)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a208.equals(`1`)}"
+                                android:onClick="@{()->familymember.setA208(`1`)}"
                                 android:text="@string/a20801" />
 
                             <RadioButton
                                 android:id="@+id/a20802"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a208.equals(`2`)}"
-                                android:onClick="@{()->moda.setA208(`2`)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a208.equals(`2`)}"
+                                android:onClick="@{()->familymember.setA208(`2`)}"
                                 android:text="@string/a20802" />
 
                             <RadioButton
                                 android:id="@+id/a20803"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a208.equals(`3`)}"
-                                android:onClick="@{()->moda.setA208(`3`)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a208.equals(`3`)}"
+                                android:onClick="@{()->familymember.setA208(`3`)}"
                                 android:text="@string/a20803" />
 
                             <RadioButton
                                 android:id="@+id/a20804"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a208.equals(`4`)}"
-                                android:onClick="@{()->moda.setA208(`4`)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a208.equals(`4`)}"
+                                android:onClick="@{()->familymember.setA208(`4`)}"
                                 android:text="@string/a20804" />
 
                             <RadioButton
                                 android:id="@+id/a20805"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{moda.a208.equals(`5`)}"
-                                android:onClick="@{()->moda.setA208(`5`)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a208.equals(`5`)}"
+                                android:onClick="@{()->familymember.setA208(`5`)}"
                                 android:text="@string/a20805" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a209  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -849,28 +901,28 @@
                             <RadioButton
                                 android:id="@+id/a20901"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a209.equals(`1`)}"
-                                android:onClick="@{()->moda.setA209(`1`)}"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a209.equals(`1`)}"
+                                android:onClick="@{()->familymember.setA209(`1`)}"
                                 android:text="@string/a20901" />
 
                             <RadioButton
                                 android:id="@+id/a20902"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a209.equals(`2`)}"
-                                android:onClick="@{()->moda.setA209(`2`)}"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a209.equals(`2`)}"
+                                android:onClick="@{()->familymember.setA209(`2`)}"
                                 android:text="@string/a20902" />
 
                             <RadioButton
                                 android:id="@+id/a20903"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a209.equals(`3`)}"
-                                android:onClick="@{()->moda.setA209(`3`)}"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a209.equals(`3`)}"
+                                android:onClick="@{()->familymember.setA209(`3`)}"
                                 android:text="@string/a20903" />
                         </RadioGroup>
                     </LinearLayout>
@@ -914,19 +966,19 @@
                             <RadioButton
                                 android:id="@+id/a21001"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a210.equals(`1`)}"
-                                android:onClick="@{()->moda.setA210(`1`)}"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a210.equals(`1`)}"
+                                android:onClick="@{()->familymember.setA210(`1`)}"
                                 android:text="@string/a21001" />
 
                             <RadioButton
                                 android:id="@+id/a21002"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a210.equals(`2`)}"
-                                android:onClick="@{()->moda.setA210(`2`)}"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a210.equals(`2`)}"
+                                android:onClick="@{()->familymember.setA210(`2`)}"
                                 android:text="@string/a21002" />
                         </RadioGroup>
                     </LinearLayout>
@@ -970,80 +1022,80 @@
                                 android:id="@+id/a21101"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a211.equals(`1`)}"
-                                android:onClick="@{()->moda.setA211(`1`)}"
+                                android:checked="@{familymember.a211.equals(`1`)}"
+                                android:onClick="@{()->familymember.setA211(`1`)}"
                                 android:text="@string/a21101" />
 
                             <RadioButton
                                 android:id="@+id/a21102"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a211.equals(`2`)}"
-                                android:onClick="@{()->moda.setA211(`2`)}"
+                                android:checked="@{familymember.a211.equals(`2`)}"
+                                android:onClick="@{()->familymember.setA211(`2`)}"
                                 android:text="@string/a21102" />
 
                             <RadioButton
                                 android:id="@+id/a21103"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a211.equals(`3`)}"
-                                android:onClick="@{()->moda.setA211(`3`)}"
+                                android:checked="@{familymember.a211.equals(`3`)}"
+                                android:onClick="@{()->familymember.setA211(`3`)}"
                                 android:text="@string/a21103" />
 
                             <RadioButton
                                 android:id="@+id/a21104"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a211.equals(`4`)}"
-                                android:onClick="@{()->moda.setA211(`4`)}"
+                                android:checked="@{familymember.a211.equals(`4`)}"
+                                android:onClick="@{()->familymember.setA211(`4`)}"
                                 android:text="@string/a21104" />
 
                             <RadioButton
                                 android:id="@+id/a21105"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a211.equals(`5`)}"
-                                android:onClick="@{()->moda.setA211(`5`)}"
+                                android:checked="@{familymember.a211.equals(`5`)}"
+                                android:onClick="@{()->familymember.setA211(`5`)}"
                                 android:text="@string/a21105" />
 
                             <RadioButton
                                 android:id="@+id/a21106"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a211.equals(`6`)}"
-                                android:onClick="@{()->moda.setA211(`6`)}"
+                                android:checked="@{familymember.a211.equals(`6`)}"
+                                android:onClick="@{()->familymember.setA211(`6`)}"
                                 android:text="@string/a21106" />
 
                             <RadioButton
                                 android:id="@+id/a21107"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a211.equals(`7`)}"
-                                android:onClick="@{()->moda.setA211(`7`)}"
+                                android:checked="@{familymember.a211.equals(`7`)}"
+                                android:onClick="@{()->familymember.setA211(`7`)}"
                                 android:text="@string/a21107" />
 
                             <RadioButton
                                 android:id="@+id/a21108"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a211.equals(`8`)}"
-                                android:onClick="@{()->moda.setA211(`8`)}"
+                                android:checked="@{familymember.a211.equals(`8`)}"
+                                android:onClick="@{()->familymember.setA211(`8`)}"
                                 android:text="@string/a21108" />
 
                             <RadioButton
                                 android:id="@+id/a21109"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a211.equals(`9`)}"
-                                android:onClick="@{()->moda.setA211(`9`)}"
+                                android:checked="@{familymember.a211.equals(`9`)}"
+                                android:onClick="@{()->familymember.setA211(`9`)}"
                                 android:text="@string/a21109" />
 
                             <RadioButton
                                 android:id="@+id/a211998"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a211.equals(`998`)}"
-                                android:onClick="@{()->moda.setA211(`998`)}"
+                                android:checked="@{familymember.a211.equals(`998`)}"
+                                android:onClick="@{()->familymember.setA211(`998`)}"
                                 android:text="@string/a211998" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1087,88 +1139,88 @@
                                 android:id="@+id/a21201"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`1`)}"
-                                android:onClick="@{()->moda.setA212(`1`)}"
+                                android:checked="@{familymember.a212.equals(`1`)}"
+                                android:onClick="@{()->familymember.setA212(`1`)}"
                                 android:text="@string/a21201" />
 
                             <RadioButton
                                 android:id="@+id/a21202"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`2`)}"
-                                android:onClick="@{()->moda.setA212(`2`)}"
+                                android:checked="@{familymember.a212.equals(`2`)}"
+                                android:onClick="@{()->familymember.setA212(`2`)}"
                                 android:text="@string/a21202" />
 
                             <RadioButton
                                 android:id="@+id/a21203"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`3`)}"
-                                android:onClick="@{()->moda.setA212(`3`)}"
+                                android:checked="@{familymember.a212.equals(`3`)}"
+                                android:onClick="@{()->familymember.setA212(`3`)}"
                                 android:text="@string/a21203" />
 
                             <RadioButton
                                 android:id="@+id/a21204"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`4`)}"
-                                android:onClick="@{()->moda.setA212(`4`)}"
+                                android:checked="@{familymember.a212.equals(`4`)}"
+                                android:onClick="@{()->familymember.setA212(`4`)}"
                                 android:text="@string/a21204" />
 
                             <RadioButton
                                 android:id="@+id/a21205"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`5`)}"
-                                android:onClick="@{()->moda.setA212(`5`)}"
+                                android:checked="@{familymember.a212.equals(`5`)}"
+                                android:onClick="@{()->familymember.setA212(`5`)}"
                                 android:text="@string/a21205" />
 
                             <RadioButton
                                 android:id="@+id/a21206"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`6`)}"
-                                android:onClick="@{()->moda.setA212(`6`)}"
+                                android:checked="@{familymember.a212.equals(`6`)}"
+                                android:onClick="@{()->familymember.setA212(`6`)}"
                                 android:text="@string/a21206" />
 
                             <RadioButton
                                 android:id="@+id/a21207"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`7`)}"
-                                android:onClick="@{()->moda.setA212(`7`)}"
+                                android:checked="@{familymember.a212.equals(`7`)}"
+                                android:onClick="@{()->familymember.setA212(`7`)}"
                                 android:text="@string/a21207" />
 
                             <RadioButton
                                 android:id="@+id/a21208"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`8`)}"
-                                android:onClick="@{()->moda.setA212(`8`)}"
+                                android:checked="@{familymember.a212.equals(`8`)}"
+                                android:onClick="@{()->familymember.setA212(`8`)}"
                                 android:text="@string/a21208" />
 
                             <RadioButton
                                 android:id="@+id/a21209"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`9`)}"
-                                android:onClick="@{()->moda.setA212(`9`)}"
+                                android:checked="@{familymember.a212.equals(`9`)}"
+                                android:onClick="@{()->familymember.setA212(`9`)}"
                                 android:text="@string/a21209" />
 
                             <RadioButton
                                 android:id="@+id/a21210"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`10`)}"
-                                android:onClick="@{()->moda.setA212(`10`)}"
+                                android:checked="@{familymember.a212.equals(`10`)}"
+                                android:onClick="@{()->familymember.setA212(`10`)}"
                                 android:text="@string/a21210" />
 
                             <RadioButton
                                 android:id="@+id/a21296"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{moda.a212.equals(`96`)}"
-                                android:onClick="@{()->moda.setA212(`96`)}"
+                                android:checked="@{familymember.a212.equals(`96`)}"
+                                android:onClick="@{()->familymember.setA212(`96`)}"
                                 android:text="@string/a21296" />
 
                             <EditText
@@ -1178,8 +1230,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a21296"
                                 android:tag="a21296"
-                                android:text="@={moda.a21296x}"
-                                android:visibility="@{moda.a212.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={familymember.a21296x}"
+                                android:visibility="@{familymember.a212.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 

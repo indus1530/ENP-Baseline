@@ -67,6 +67,7 @@
 
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- sb1inst2  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsb1inst2"
@@ -81,8 +82,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/sb1inst2" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- b101  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -124,8 +128,11 @@
                             app:maxValue="0"
                             app:minValue="0"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- b102  Input   -->
                 <androidx.cardview.widget.CardView
@@ -163,8 +170,11 @@
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/b102"
                             android:text="@={modb.b102}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- b103  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -195,17 +205,41 @@
 
                         </LinearLayout>
 
-                        <RadioButton
-                            android:id="@+id/b10398"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{modb.b103.equals(`998`)}"
-                            android:onClick="@{()->modb.setB103(`998`)}"
-                            android:text="@string/b10398" />
+                            android:orientation="horizontal">
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/b103"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!modb.b10398.equals(`998`)}"
+                                android:gravity="center"
+                                android:hint="#####-#######-#"
+                                android:inputType="number"
+                                android:maxLength="15"
+                                android:text="@={modb.b103}"
+                                app:mask="#####-#######-#" />
+
+                            <CheckBox
+                                android:id="@+id/b10398"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:checked="@{modb.b10398.equals(`998`)}"
+                                android:onClick="@{()->modb.setB10398(modb.b10398.equals(`998`)?``:`998`)}"
+                                android:tag="-1"
+                                android:text="@string/b10398" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!-- b104  CheckBox   -->
+
+                <!-- b104 -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVb104"
                     style="@style/cardView">
@@ -251,6 +285,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modb.b10498.equals(`998`)}"
                                 android:gravity="center"
                                 android:hint="#"
                                 android:inputType="number"
@@ -272,6 +307,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modb.b10498.equals(`998`)}"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
@@ -293,6 +329,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modb.b10498.equals(`998`)}"
                                 android:gravity="center"
                                 android:hint="#"
                                 android:inputType="number"
@@ -317,7 +354,6 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
 
 
                 <!-- b105  CheckBox   -->
@@ -350,152 +386,92 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/b105check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/b105d" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/b105d"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!modb.b10598.equals(`998`)}"
+                                android:gravity="center"
+                                android:hint="#"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:text="@={modb.b105d}"
+                                app:maxValue="5"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/b105w" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/b105w"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!modb.b10598.equals(`998`)}"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={modb.b105w}"
+                                app:maxValue="12"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/b105m" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/b105m"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!modb.b10598.equals(`998`)}"
+                                android:gravity="center"
+                                android:hint="#"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:text="@={modb.b105m}"
+                                app:maxValue="4"
+                                app:minValue="0"
+                                app:type="range" />
 
                             <CheckBox
                                 android:id="@+id/b10598"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modb.b10598.equals(`998`)}"
                                 android:onClick="@{()->modb.setB10598(modb.b10598.equals(`998`)?``:`998`)}"
-
+                                android:tag="-1"
                                 android:text="@string/b10598" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- b105d  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVb105d"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_b105d" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/b105d" />
 
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/b105d"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/b105d"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:text="@={modb.b105d}"
-                            app:maxValue="5"
-                            app:minValue="0"
-                            app:type="range" />
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!-- b105w  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVb105w"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_b105w" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/b105w" />
-
-                        </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/b105w"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/b105w"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={modb.b105w}"
-                            app:maxValue="12"
-                            app:minValue="0"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- b105m  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVb105m"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_b105m" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/b105m" />
-
-                        </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/b105m"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/b105m"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:text="@={modb.b105m}"
-                            app:maxValue="4"
-                            app:minValue="0"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- b106  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -527,66 +503,46 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/b106check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
-
-                            <CheckBox
-                                android:id="@+id/b10698"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{modb.b10698.equals(`998`)}"
-                                android:onClick="@{()->modb.setB10698(modb.b10698.equals(`998`)?``:`998`)}"
-
-                                android:text="@string/b10698" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- b10601  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVb10601"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
                             <TextView
-                                style="@style/quesNum"
+                                style="@style/textView"
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_b10601" />
-
-                            <TextView
-                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="@string/b10601" />
 
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/b106"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!modb.b10698.equals(`998`)}"
+                                android:gravity="center"
+                                android:hint="#####"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:text="@={modb.b106}"
+                                app:maxValue="99999"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <CheckBox
+                                android:id="@+id/b10698"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:checked="@{modb.b10698.equals(`998`)}"
+                                android:onClick="@{()->modb.setB10698(modb.b10698.equals(`998`)?``:`998`)}"
+                                android:tag="-1"
+                                android:text="@string/b10698" />
+
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/b10601"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/b10601"
-                            android:inputType="number"
-                            android:maxLength="5"
-                            android:text="@={modb.b10601}"
-                            app:maxValue="99999"
-                            app:minValue="1"
-                            app:type="range" />
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- b107  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -679,9 +635,13 @@
                                 android:tag="b10796"
                                 android:text="@={modb.b10796x}"
                                 android:visibility="@{modb.b107.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- b108  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -713,66 +673,46 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/b108check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
-
-                            <CheckBox
-                                android:id="@+id/b10898"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{modb.b10898.equals(`998`)}"
-                                android:onClick="@{()->modb.setB10898(modb.b10898.equals(`998`)?``:`998`)}"
-
-                                android:text="@string/b10898" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- b10801  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVb10801"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
                             <TextView
-                                style="@style/quesNum"
+                                style="@style/textView"
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_b10801" />
-
-                            <TextView
-                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="@string/b10801" />
 
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/b108"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!modb.b10898.equals(`998`)}"
+                                android:gravity="center"
+                                android:hint="#####"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:text="@={modb.b108}"
+                                app:maxValue="99999"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <CheckBox
+                                android:id="@+id/b10898"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:checked="@{modb.b10898.equals(`998`)}"
+                                android:onClick="@{()->modb.setB10898(modb.b10898.equals(`998`)?``:`998`)}"
+                                android:tag="-1"
+                                android:text="@string/b10898" />
+
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/b10801"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/b10801"
-                            android:inputType="number"
-                            android:maxLength="5"
-                            android:text="@={modb.b10801}"
-                            app:maxValue="99999"
-                            app:minValue="1"
-                            app:type="range" />
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- b109  CheckBox   -->
                 <androidx.cardview.widget.CardView

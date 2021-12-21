@@ -2675,11 +2675,11 @@ For example, some start talking earlier than others, or they might already say s
     <string name="b104m"> Month(s) </string>
     <string name="b104w"> Week(s) </string>
     <string name="b10498"> Don’t Know </string>
-    <string name="b105">When did you last receive the amount?</string>
-    <string name="b105d">years</string>
-    <string name="b105w">Months</string>
-    <string name="b105m">Weeks</string>
-    <string name="b10598">Don’t know </string>
+    <string name="b105"> When did you last receive the amount ? </string>
+    <string name="b105d"> Year(s) </string>
+    <string name="b105w"> Month(s) </string>
+    <string name="b105m"> Week(s) </string>
+    <string name="b10598"> Don’t Know </string>
     <string name="b106">Total amount received in last 12 months from BISP?</string>
     <string name="b10601">Amount</string>
     <string name="b10698">Don’t know </string>

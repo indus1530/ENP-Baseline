@@ -60,14 +60,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String a205d = _EMPTY_;
     private String a205m = _EMPTY_;
     private String a205y = _EMPTY_;
-    private String a206 = _EMPTY_;
     private String a206y = _EMPTY_;
-    private String a206yx = _EMPTY_;
     private String a206m = _EMPTY_;
-    private String a206mx = _EMPTY_;
     private String a206d = _EMPTY_;
-    private String a206dx = _EMPTY_;
-    private String a206998 = _EMPTY_;
     private String a207 = _EMPTY_;
     private String a20701 = _EMPTY_;
     private String a20702 = _EMPTY_;
@@ -303,6 +298,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA203(String a203) {
         this.a203 = a203;
+        setA20396x(a203.equals("96") ? this.a20396x : "");
         notifyPropertyChanged(BR.a203);
     }
 
@@ -368,15 +364,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.a205y);
     }
 
-    @Bindable
-    public String getA206() {
-        return a206;
-    }
 
-    public void setA206(String a206) {
-        this.a206 = a206;
-        notifyPropertyChanged(BR.a206);
-    }
 
     @Bindable
     public String getA206y() {
@@ -388,15 +376,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.a206y);
     }
 
-    @Bindable
-    public String getA206yx() {
-        return a206yx;
-    }
 
-    public void setA206yx(String a206yx) {
-        this.a206yx = a206yx;
-        notifyPropertyChanged(BR.a206yx);
-    }
 
     @Bindable
     public String getA206m() {
@@ -408,15 +388,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.a206m);
     }
 
-    @Bindable
-    public String getA206mx() {
-        return a206mx;
-    }
 
-    public void setA206mx(String a206mx) {
-        this.a206mx = a206mx;
-        notifyPropertyChanged(BR.a206mx);
-    }
 
     @Bindable
     public String getA206d() {
@@ -428,25 +400,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.a206d);
     }
 
-    @Bindable
-    public String getA206dx() {
-        return a206dx;
-    }
 
-    public void setA206dx(String a206dx) {
-        this.a206dx = a206dx;
-        notifyPropertyChanged(BR.a206dx);
-    }
-
-    @Bindable
-    public String getA206998() {
-        return a206998;
-    }
-
-    public void setA206998(String a206998) {
-        this.a206998 = a206998;
-        notifyPropertyChanged(BR.a206998);
-    }
 
     @Bindable
     public String getA207() {
@@ -464,6 +418,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     public void setA20701(String a20701) {
+        if (this.a20701.equals(a20701)) return;
         this.a20701 = a20701;
         notifyPropertyChanged(BR.a20701);
     }
@@ -474,6 +429,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     public void setA20702(String a20702) {
+        if (this.a20702.equals(a20702)) return;
         this.a20702 = a20702;
         notifyPropertyChanged(BR.a20702);
     }
@@ -484,6 +440,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     public void setA20703(String a20703) {
+        if (this.a20703.equals(a20703)) return;
         this.a20703 = a20703;
         notifyPropertyChanged(BR.a20703);
     }
@@ -494,6 +451,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     public void setA20704(String a20704) {
+        if (this.a20704.equals(a20704)) return;
         this.a20704 = a20704;
         notifyPropertyChanged(BR.a20704);
     }
@@ -504,6 +462,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     public void setA20705(String a20705) {
+        if (this.a20705.equals(a20705)) return;
         this.a20705 = a20705;
         notifyPropertyChanged(BR.a20705);
     }
@@ -514,7 +473,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     public void setA20796(String a20796) {
+        if (this.a20796.equals(a20796)) return;
         this.a20796 = a20796;
+        setA20796x(a20796.equals("96") ? this.a20796x : "");
         notifyPropertyChanged(BR.a20796);
     }
 
@@ -575,6 +536,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA212(String a212) {
         this.a212 = a212;
+        setA212(a212.equals("96") ? this.a21296x : "");
         notifyPropertyChanged(BR.a212);
     }
 
@@ -852,14 +814,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
             this.a205d = json.getString("a205d");
             this.a205m = json.getString("a205m");
             this.a205y = json.getString("a205y");
-            this.a206 = json.getString("a206");
             this.a206y = json.getString("a206y");
-            this.a206yx = json.getString("a206yx");
             this.a206m = json.getString("a206m");
-            this.a206mx = json.getString("a206mx");
             this.a206d = json.getString("a206d");
-            this.a206dx = json.getString("a206dx");
-            this.a206998 = json.getString("a206998");
             this.a207 = json.getString("a207");
             this.a20701 = json.getString("a20701");
             this.a20702 = json.getString("a20702");
@@ -914,14 +871,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 .put("a205d", a205d)
                 .put("a205m", a205m)
                 .put("a205y", a205y)
-                .put("a206", a206)
                 .put("a206y", a206y)
-                .put("a206yx", a206yx)
                 .put("a206m", a206m)
-                .put("a206mx", a206mx)
                 .put("a206d", a206d)
-                .put("a206dx", a206dx)
-                .put("a206998", a206998)
                 .put("a207", a207)
                 .put("a20701", a20701)
                 .put("a20702", a20702)

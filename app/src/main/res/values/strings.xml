@@ -2270,7 +2270,6 @@ For example, some start talking earlier than others, or they might already say s
     <string name="a206y">Year(s)</string>
     <string name="a206m">Month(s)</string>
     <string name="a206d">Day(s)</string>
-    <string name="a206998"> Don’t Know </string>
     <string name="a207">Can you please identify whether you have availed any of these programs? *[Multiple response]</string>
     <string name="a20701">Ehsaas Kafaalt Program (BISP)</string>
     <string name="a20702">Ehsaas Waseela-e-Taleem</string>

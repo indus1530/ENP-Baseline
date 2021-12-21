@@ -578,73 +578,69 @@
                             android:text="@string/a206inst" />
 
                         <LinearLayout
-                            android:id="@+id/a206check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:tag="0">
+                            android:orientation="horizontal">
 
-                            <CheckBox
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/a206y" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/a206y"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{familymember.a206y.equals(``)}"
-                                android:onClick="@{()->familymember.setA206y(familymember.a206y.equals(``)?``:``)}"
-                                android:text="@string/a206y" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/a206yx"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:tag="a206y"
-                                android:text="@={familymember.a206yx}"
-                                android:visibility="@{familymember.a206y.equals(``) ? View.VISIBLE : View.GONE}"
+                                android:text="@={familymember.a206y}"
                                 app:maxValue="95"
                                 app:minValue="0"
                                 app:type="range" />
 
-                            <CheckBox
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/a206m" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/a206m"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{familymember.a206m.equals(``)}"
-                                android:onClick="@{()->familymember.setA206m(familymember.a206m.equals(``)?``:``)}"
-                                android:text="@string/a206m" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/a206mx"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:tag="a206m"
                                 android:text="@={familymember.a206mx}"
-                                android:visibility="@{familymember.a206m.equals(``) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />
 
-                            <CheckBox
-                                android:id="@+id/a206d"
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{familymember.a206d.equals(``)}"
-                                android:onClick="@{()->familymember.setA206d(familymember.a206d.equals(``)?``:``)}"
                                 android:text="@string/a206d" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/a206dx"
+                                android:id="@+id/a206d"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -652,21 +648,10 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:tag="a206d"
                                 android:text="@={familymember.a206dx}"
-                                android:visibility="@{familymember.a206d.equals(``) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="31"
                                 app:minValue="0"
                                 app:type="range" />
-
-                            <CheckBox
-                                android:id="@+id/a206998"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{familymember.a206998.equals(`998`)}"
-                                android:onClick="@{()->familymember.setA206998(familymember.a206998.equals(`998`)?``:`998`)}"
-                                android:text="@string/a206998" />
 
                         </LinearLayout>
 

@@ -2570,14 +2570,14 @@ For example, some start talking earlier than others, or they might already say s
     <string name="a322">How many livestock, animals or poultry does your household own? </string>
     <string name="a322int">Ask for each listed animal one by one and observation by enumerator. Insert 000 if none</string>
     <string name="a322int2">Record 999 for greater than 999</string>
-    <string name="a32201">Cows, Bulls</string>
-    <string name="a32202">Horses/Donkeys/ Mules</string>
-    <string name="a32203">Goats</string>
-    <string name="a32204">Sheep </string>
-    <string name="a32205">Chickens /Poultry</string>
-    <string name="a32206">Buffalo</string>
-    <string name="a32207">Camels </string>
-    <string name="a322998">Don’t know</string>
+    <string name="a322a"> Cows, Bulls </string>
+    <string name="a322b"> Horses / Donkeys / Mules </string>
+    <string name="a322c"> Goats </string>
+    <string name="a322d"> Sheep </string>
+    <string name="a322e"> Chickens / Poultry </string>
+    <string name="a322f"> Buffalo </string>
+    <string name="a322g"> Camels </string>
+    <string name="a322998"> Don’t Know </string>
 
     <string name="a4"> A4: Hand Washing: </string>
     <string name="a401">Please show us where you and members of your household most often wash their hands.</string>

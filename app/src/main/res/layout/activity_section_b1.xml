@@ -343,7 +343,6 @@
                                 android:id="@+id/b10498"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{modb.b10498.equals(`998`)}"
                                 android:onClick="@{()->modb.setB10498(modb.b10498.equals(`998`)?``:`998`)}"
                                 android:tag="-1"
@@ -460,7 +459,6 @@
                                 android:id="@+id/b10598"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{modb.b10598.equals(`998`)}"
                                 android:onClick="@{()->modb.setB10598(modb.b10598.equals(`998`)?``:`998`)}"
                                 android:tag="-1"
@@ -756,7 +754,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modb.b10901.equals(`1`)}"
                                 android:onClick="@{()->modb.setB10901(modb.b10901.equals(`1`)?``:`1`)}"
-
                                 android:text="@string/b10901" />
 
                             <CheckBox
@@ -765,7 +762,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modb.b10902.equals(`2`)}"
                                 android:onClick="@{()->modb.setB10902(modb.b10902.equals(`2`)?``:`2`)}"
-
                                 android:text="@string/b10902" />
 
                             <CheckBox
@@ -774,7 +770,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modb.b10903.equals(`3`)}"
                                 android:onClick="@{()->modb.setB10903(modb.b10903.equals(`3`)?``:`3`)}"
-
                                 android:text="@string/b10903" />
 
                             <CheckBox
@@ -783,7 +778,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modb.b10904.equals(`4`)}"
                                 android:onClick="@{()->modb.setB10904(modb.b10904.equals(`4`)?``:`4`)}"
-
                                 android:text="@string/b10904" />
 
                             <CheckBox
@@ -803,9 +797,13 @@
                                 android:tag="b10996"
                                 android:text="@={modb.b10996x}"
                                 android:visibility="@{modb.b10996.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- b110  CheckBox   -->
                 <androidx.cardview.widget.CardView

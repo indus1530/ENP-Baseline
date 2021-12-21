@@ -47,6 +47,11 @@ public class ModuleA extends BaseObservable implements Observable {
     private String syncDate = _EMPTY_;
     private String entryType = _EMPTY_;
 
+    //ModuleStatusVariables
+    public String ista01;
+    public String ista02;
+    public String ista0296x;
+
     // FIELD VARIABLES
     private String a101 = _EMPTY_;
     private String a102 = _EMPTY_;
@@ -1811,6 +1816,39 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
 
+    @Bindable
+    public String getIsta01() {
+        return ista01;
+    }
+
+    public void setIsta01(String ista01) {
+        this.ista01 = ista01;
+        setIsta02(ista01.equals("2") ? "" : this.ista02);
+        notifyPropertyChanged(BR.ista01);
+    }
+
+    @Bindable
+    public String getIsta02() {
+        return ista02;
+    }
+
+    public void setIsta02(String ista02) {
+        this.ista02 = ista02;
+        setIsta0296x(ista02.equals("96") ? this.ista0296x : "");
+        notifyPropertyChanged(BR.ista02);
+    }
+
+    @Bindable
+    public String getIsta0296x() {
+        return ista0296x;
+    }
+
+    public void setIsta0296x(String ista0296x) {
+        this.ista0296x = ista0296x;
+        notifyPropertyChanged(BR.ista0296x);
+    }
+
+
     public ModuleA Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
@@ -2001,6 +2039,9 @@ public class ModuleA extends BaseObservable implements Observable {
             this.a506 = json.getString("a506");
             this.a507 = json.getString("a507");
             this.a508 = json.getString("a508");
+            this.ista01 = json.getString("ista01");
+            this.ista02 = json.getString("ista02");
+            this.ista0296x = json.getString("ista0296x");
         }
     }
 
@@ -2187,7 +2228,10 @@ public class ModuleA extends BaseObservable implements Observable {
                 .put("a505", a505)
                 .put("a506", a506)
                 .put("a507", a507)
-                .put("a508", a508);
+                .put("a508", a508)
+                .put("ista01", ista01)
+                .put("ista02", ista02)
+                .put("ista0296x", ista0296x);
         return json.toString();
     }
 

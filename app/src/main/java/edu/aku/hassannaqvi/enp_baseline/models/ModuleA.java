@@ -76,9 +76,8 @@ public class ModuleA extends BaseObservable implements Observable {
     private String a30296x = _EMPTY_;
     private String a303 = _EMPTY_;
     private String a30396x = _EMPTY_;
-    private String a304t3 = _EMPTY_;
+    private final String a322b = _EMPTY_;
     private String a305 = _EMPTY_;
-    private String a306 = _EMPTY_;
     private String a30601 = _EMPTY_;
     private String a30602 = _EMPTY_;
     private String a30603 = _EMPTY_;
@@ -137,14 +136,20 @@ public class ModuleA extends BaseObservable implements Observable {
     private String a32003x = _EMPTY_;
     private String a32096x = _EMPTY_;
     private String a321 = _EMPTY_;
-    private String a322 = _EMPTY_;
-    private String a32201x = _EMPTY_;
-    private String a32202x = _EMPTY_;
-    private String a32203x = _EMPTY_;
-    private String a32204x = _EMPTY_;
-    private String a32205x = _EMPTY_;
-    private String a32206x = _EMPTY_;
-    private String a32207x = _EMPTY_;
+    private String a304 = _EMPTY_;
+    private String a322a = _EMPTY_;
+    private String a322ax = _EMPTY_;
+    private String a322bx = _EMPTY_;
+    private String a322a = _EMPTY_;
+    private String a322cx = _EMPTY_;
+    private String a322a = _EMPTY_;
+    private String a322a = _EMPTY_;
+    private String a322a = _EMPTY_;
+    private String a322a = _EMPTY_;
+    private String a322dx = _EMPTY_;
+    private String a322ex = _EMPTY_;
+    private String a322fx = _EMPTY_;
+    private String a322gx = _EMPTY_;
     private String a401 = _EMPTY_;
     private String a402 = _EMPTY_;
     private String a403 = _EMPTY_;
@@ -578,6 +583,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA301(String a301) {
         this.a301 = a301;
+        setA30196x(a301.equals("96") ? this.a30196x : "");
         notifyPropertyChanged(BR.a301);
     }
 
@@ -598,6 +604,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA302(String a302) {
         this.a302 = a302;
+        setA30296x(a302.equals("96") ? this.a30296x : "");
         notifyPropertyChanged(BR.a302);
     }
 
@@ -618,6 +625,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA303(String a303) {
         this.a303 = a303;
+        setA30396x(a303.equals("96") ? this.a30396x : "");
         notifyPropertyChanged(BR.a303);
     }
 
@@ -632,13 +640,13 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getA304t3() {
-        return a304t3;
+    public String getA304() {
+        return a304;
     }
 
-    public void setA304t3(String a304t3) {
-        this.a304t3 = a304t3;
-        notifyPropertyChanged(BR.a304t3);
+    public void setA304(String a304) {
+        this.a304 = a304;
+        notifyPropertyChanged(BR.a304);
     }
 
     @Bindable
@@ -651,15 +659,6 @@ public class ModuleA extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.a305);
     }
 
-    @Bindable
-    public String getA306() {
-        return a306;
-    }
-
-    public void setA306(String a306) {
-        this.a306 = a306;
-        notifyPropertyChanged(BR.a306);
-    }
 
     @Bindable
     public String getA30601() {
@@ -667,6 +666,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA30601(String a30601) {
+        if (this.a30601.equals(a30601)) return;
         this.a30601 = a30601;
         notifyPropertyChanged(BR.a30601);
     }
@@ -677,6 +677,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA30602(String a30602) {
+        if (this.a30602.equals(a30602)) return;
         this.a30602 = a30602;
         notifyPropertyChanged(BR.a30602);
     }
@@ -687,6 +688,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA30603(String a30603) {
+        if (this.a30603.equals(a30603)) return;
         this.a30603 = a30603;
         notifyPropertyChanged(BR.a30603);
     }
@@ -697,6 +699,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA30604(String a30604) {
+        if (this.a30604.equals(a30604)) return;
         this.a30604 = a30604;
         notifyPropertyChanged(BR.a30604);
     }
@@ -707,6 +710,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA30605(String a30605) {
+        if (this.a30605.equals(a30605)) return;
         this.a30605 = a30605;
         notifyPropertyChanged(BR.a30605);
     }
@@ -717,6 +721,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA30606(String a30606) {
+        if (this.a30606.equals(a30606)) return;
         this.a30606 = a30606;
         notifyPropertyChanged(BR.a30606);
     }
@@ -727,7 +732,9 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA30696(String a30696) {
+        if (this.a30696.equals(a30696)) return;
         this.a30696 = a30696;
+        setA30696x(a30696.equals("96") ? this.a30696x : "");
         notifyPropertyChanged(BR.a30696);
     }
 
@@ -748,6 +755,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA307(String a307) {
         this.a307 = a307;
+        setA30796x(a307.equals("96") ? this.a30796x : "");
         notifyPropertyChanged(BR.a307);
     }
 
@@ -788,6 +796,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA310(String a310) {
         this.a310 = a310;
+        setA31096x(a310.equals("96") ? this.a31096x : "");
         notifyPropertyChanged(BR.a310);
     }
 
@@ -1242,82 +1251,82 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getA322() {
-        return a322;
+    public String getA322a() {
+        return a322a;
     }
 
-    public void setA322(String a322) {
-        this.a322 = a322;
+    public void setA322a(String a322a) {
+        this.a322a = a322a;
         notifyPropertyChanged(BR.a322);
     }
 
     @Bindable
-    public String getA32201x() {
-        return a32201x;
+    public String getA322ax() {
+        return a322ax;
     }
 
-    public void setA32201x(String a32201x) {
-        this.a32201x = a32201x;
+    public void setA322ax(String a322ax) {
+        this.a322ax = a322ax;
         notifyPropertyChanged(BR.a32201x);
     }
 
     @Bindable
-    public String getA32202x() {
-        return a32202x;
+    public String getA322bx() {
+        return a322bx;
     }
 
-    public void setA32202x(String a32202x) {
-        this.a32202x = a32202x;
+    public void setA322bx(String a322bx) {
+        this.a322bx = a322bx;
         notifyPropertyChanged(BR.a32202x);
     }
 
     @Bindable
-    public String getA32203x() {
-        return a32203x;
+    public String getA322cx() {
+        return a322cx;
     }
 
-    public void setA32203x(String a32203x) {
-        this.a32203x = a32203x;
+    public void setA322cx(String a322cx) {
+        this.a322cx = a322cx;
         notifyPropertyChanged(BR.a32203x);
     }
 
     @Bindable
-    public String getA32204x() {
-        return a32204x;
+    public String getA322dx() {
+        return a322dx;
     }
 
-    public void setA32204x(String a32204x) {
-        this.a32204x = a32204x;
+    public void setA322dx(String a322dx) {
+        this.a322dx = a322dx;
         notifyPropertyChanged(BR.a32204x);
     }
 
     @Bindable
-    public String getA32205x() {
-        return a32205x;
+    public String getA322ex() {
+        return a322ex;
     }
 
-    public void setA32205x(String a32205x) {
-        this.a32205x = a32205x;
+    public void setA322ex(String a322ex) {
+        this.a322ex = a322ex;
         notifyPropertyChanged(BR.a32205x);
     }
 
     @Bindable
-    public String getA32206x() {
-        return a32206x;
+    public String getA322fx() {
+        return a322fx;
     }
 
-    public void setA32206x(String a32206x) {
-        this.a32206x = a32206x;
+    public void setA322fx(String a322fx) {
+        this.a322fx = a322fx;
         notifyPropertyChanged(BR.a32206x);
     }
 
     @Bindable
-    public String getA32207x() {
-        return a32207x;
+    public String getA322gx() {
+        return a322gx;
     }
 
-    public void setA32207x(String a32207x) {
-        this.a32207x = a32207x;
+    public void setA322gx(String a322gx) {
+        this.a322gx = a322gx;
         notifyPropertyChanged(BR.a32207x);
     }
 
@@ -1737,7 +1746,7 @@ public class ModuleA extends BaseObservable implements Observable {
             this.a30296x = json.getString("a30296x");
             this.a303 = json.getString("a303");
             this.a30396x = json.getString("a30396x");
-            this.a304t3 = json.getString("a304t3");
+            this.a304 = json.getString("a304");
             this.a305 = json.getString("a305");
             this.a306 = json.getString("a306");
             this.a30601 = json.getString("a30601");
@@ -1798,14 +1807,14 @@ public class ModuleA extends BaseObservable implements Observable {
             this.a32003x = json.getString("a32003x");
             this.a32096x = json.getString("a32096x");
             this.a321 = json.getString("a321");
-            this.a322 = json.getString("a322");
-            this.a32201x = json.getString("a32201x");
-            this.a32202x = json.getString("a32202x");
-            this.a32203x = json.getString("a32203x");
-            this.a32204x = json.getString("a32204x");
-            this.a32205x = json.getString("a32205x");
-            this.a32206x = json.getString("a32206x");
-            this.a32207x = json.getString("a32207x");
+            this.a322a = json.getString("a322");
+            this.a322ax = json.getString("a32201x");
+            this.a322bx = json.getString("a32202x");
+            this.a322cx = json.getString("a32203x");
+            this.a322dx = json.getString("a32204x");
+            this.a322ex = json.getString("a32205x");
+            this.a322fx = json.getString("a32206x");
+            this.a322gx = json.getString("a32207x");
         }
     }
 
@@ -1923,7 +1932,7 @@ public class ModuleA extends BaseObservable implements Observable {
                 .put("a30296x", a30296x)
                 .put("a303", a303)
                 .put("a30396x", a30396x)
-                .put("a304t3", a304t3)
+                .put("a304", a304)
                 .put("a305", a305)
                 .put("a306", a306)
                 .put("a30601", a30601)
@@ -1984,14 +1993,14 @@ public class ModuleA extends BaseObservable implements Observable {
                 .put("a32003x", a32003x)
                 .put("a32096x", a32096x)
                 .put("a321", a321)
-                .put("a322", a322)
-                .put("a32201x", a32201x)
-                .put("a32202x", a32202x)
-                .put("a32203x", a32203x)
-                .put("a32204x", a32204x)
-                .put("a32205x", a32205x)
-                .put("a32206x", a32206x)
-                .put("a32207x", a32207x);
+                .put("a322", a322a)
+                .put("a32201x", a322ax)
+                .put("a32202x", a322bx)
+                .put("a32203x", a322cx)
+                .put("a32204x", a322dx)
+                .put("a32205x", a322ex)
+                .put("a32206x", a322fx)
+                .put("a32207x", a322gx);
         return json.toString();
     }
 

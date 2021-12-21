@@ -2554,7 +2554,7 @@ For example, some start talking earlier than others, or they might already say s
     <string name="a31735">Covered adobe</string>
     <string name="a31736">Wood planks/shingles</string>
     <string name="a31796">Others, (Specify)</string>
-    <string name="a318">How many rooms in your household are used for sleeping? </string>
+    <string name="a318"> How many rooms in your household are used for sleeping ? </string>
     <string name="a319">Does any member of this household own any agricultural land? </string>
     <string name="a31901">Yes</string>
     <string name="a31902">No</string>

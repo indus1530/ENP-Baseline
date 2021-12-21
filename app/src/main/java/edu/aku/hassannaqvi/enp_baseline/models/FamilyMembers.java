@@ -536,7 +536,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA212(String a212) {
         this.a212 = a212;
-        setA212(a212.equals("96") ? this.a21296x : "");
+        setA21296x(a212.equals("96") ? this.a21296x : "");
         notifyPropertyChanged(BR.a212);
     }
 

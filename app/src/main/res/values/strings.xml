@@ -2671,10 +2671,10 @@ For example, some start talking earlier than others, or they might already say s
     <string name="b103">CNIC number / BISP ID of index woman</string>
     <string name="b10398">Not available at the time of interview</string>
     <string name="b104">How long have this household been a BISP beneficiary?</string>
-    <string name="b104y">years</string>
-    <string name="b104m">Months</string>
-    <string name="b104w">Weeks</string>
-    <string name="b10498">Don’t know </string>
+    <string name="b104y"> Year(s) </string>
+    <string name="b104m"> Month(s) </string>
+    <string name="b104w"> Week(s) </string>
+    <string name="b10498"> Don’t Know </string>
     <string name="b105">When did you last receive the amount?</string>
     <string name="b105d">years</string>
     <string name="b105w">Months</string>

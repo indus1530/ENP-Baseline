@@ -1027,6 +1027,806 @@ public class ModuleB extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.b120);
     }
 
+    @Bindable
+    public String getB201() {
+        return b201;
+    }
+
+    public void setB201(String b201) {
+        this.b201 = b201;
+        notifyPropertyChanged(BR.b201);
+    }
+
+    @Bindable
+    public String getB20196x() {
+        return b20196x;
+    }
+
+    public void setB20196x(String b20196x) {
+        this.b20196x = b20196x;
+        notifyPropertyChanged(BR.b20196x);
+    }
+
+    @Bindable
+    public String getB202() {
+        return b202;
+    }
+
+    public void setB202(String b202) {
+        this.b202 = b202;
+        notifyPropertyChanged(BR.b202);
+    }
+
+    @Bindable
+    public String getB202998() {
+        return b202998;
+    }
+
+    public void setB202998(String b202998) {
+        this.b202998 = b202998;
+        notifyPropertyChanged(BR.b202998);
+    }
+
+    @Bindable
+    public String getB202w() {
+        return b202w;
+    }
+
+    public void setB202w(String b202w) {
+        this.b202w = b202w;
+        notifyPropertyChanged(BR.b202w);
+    }
+
+    @Bindable
+    public String getB202m() {
+        return b202m;
+    }
+
+    public void setB202m(String b202m) {
+        this.b202m = b202m;
+        notifyPropertyChanged(BR.b202m);
+    }
+
+    @Bindable
+    public String getB202y() {
+        return b202y;
+    }
+
+    public void setB202y(String b202y) {
+        this.b202y = b202y;
+        notifyPropertyChanged(BR.b202y);
+    }
+
+    @Bindable
+    public String getB203() {
+        return b203;
+    }
+
+    public void setB203(String b203) {
+        this.b203 = b203;
+        notifyPropertyChanged(BR.b203);
+    }
+
+    @Bindable
+    public String getB204() {
+        return b204;
+    }
+
+    public void setB204(String b204) {
+        this.b204 = b204;
+        notifyPropertyChanged(BR.b204);
+    }
+
+    @Bindable
+    public String getB204998() {
+        return b204998;
+    }
+
+    public void setB204998(String b204998) {
+        this.b204998 = b204998;
+        notifyPropertyChanged(BR.b204998);
+    }
+
+    @Bindable
+    public String getB204w() {
+        return b204w;
+    }
+
+    public void setB204w(String b204w) {
+        this.b204w = b204w;
+        notifyPropertyChanged(BR.b204w);
+    }
+
+    @Bindable
+    public String getB204m() {
+        return b204m;
+    }
+
+    public void setB204m(String b204m) {
+        this.b204m = b204m;
+        notifyPropertyChanged(BR.b204m);
+    }
+
+    @Bindable
+    public String getB205a() {
+        return b205a;
+    }
+
+    public void setB205a(String b205a) {
+        this.b205a = b205a;
+        notifyPropertyChanged(BR.b205a);
+    }
+
+    @Bindable
+    public String getB205b() {
+        return b205b;
+    }
+
+    public void setB205b(String b205b) {
+        this.b205b = b205b;
+        notifyPropertyChanged(BR.b205b);
+    }
+
+    @Bindable
+    public String getB205c() {
+        return b205c;
+    }
+
+    public void setB205c(String b205c) {
+        this.b205c = b205c;
+        notifyPropertyChanged(BR.b205c);
+    }
+
+    @Bindable
+    public String getB20601() {
+        return b20601;
+    }
+
+    public void setB20601(String b20601) {
+        this.b20601 = b20601;
+        notifyPropertyChanged(BR.b20601);
+    }
+
+    @Bindable
+    public String getB207a() {
+        return b207a;
+    }
+
+    public void setB207a(String b207a) {
+        this.b207a = b207a;
+        notifyPropertyChanged(BR.b207a);
+    }
+
+    @Bindable
+    public String getB207b() {
+        return b207b;
+    }
+
+    public void setB207b(String b207b) {
+        this.b207b = b207b;
+        notifyPropertyChanged(BR.b207b);
+    }
+
+    @Bindable
+    public String getB207c() {
+        return b207c;
+    }
+
+    public void setB207c(String b207c) {
+        this.b207c = b207c;
+        notifyPropertyChanged(BR.b207c);
+    }
+
+    @Bindable
+    public String getB208a() {
+        return b208a;
+    }
+
+    public void setB208a(String b208a) {
+        this.b208a = b208a;
+        notifyPropertyChanged(BR.b208a);
+    }
+
+    @Bindable
+    public String getB208b() {
+        return b208b;
+    }
+
+    public void setB208b(String b208b) {
+        this.b208b = b208b;
+        notifyPropertyChanged(BR.b208b);
+    }
+
+    @Bindable
+    public String getB209() {
+        return b209;
+    }
+
+    public void setB209(String b209) {
+        this.b209 = b209;
+        notifyPropertyChanged(BR.b209);
+    }
+
+    @Bindable
+    public String getB209a() {
+        return b209a;
+    }
+
+    public void setB209a(String b209a) {
+        this.b209a = b209a;
+        notifyPropertyChanged(BR.b209a);
+    }
+
+    @Bindable
+    public String getB209b() {
+        return b209b;
+    }
+
+    public void setB209b(String b209b) {
+        this.b209b = b209b;
+        notifyPropertyChanged(BR.b209b);
+    }
+
+    @Bindable
+    public String getB209c() {
+        return b209c;
+    }
+
+    public void setB209c(String b209c) {
+        this.b209c = b209c;
+        notifyPropertyChanged(BR.b209c);
+    }
+
+    @Bindable
+    public String getB210() {
+        return b210;
+    }
+
+    public void setB210(String b210) {
+        this.b210 = b210;
+        notifyPropertyChanged(BR.b210);
+    }
+
+    @Bindable
+    public String getB211() {
+        return b211;
+    }
+
+    public void setB211(String b211) {
+        this.b211 = b211;
+        notifyPropertyChanged(BR.b211);
+    }
+
+    @Bindable
+    public String getB211998() {
+        return b211998;
+    }
+
+    public void setB211998(String b211998) {
+        this.b211998 = b211998;
+        notifyPropertyChanged(BR.b211998);
+    }
+
+    @Bindable
+    public String getB21101() {
+        return b21101;
+    }
+
+    public void setB21101(String b21101) {
+        this.b21101 = b21101;
+        notifyPropertyChanged(BR.b21101);
+    }
+
+    @Bindable
+    public String getB212() {
+        return b212;
+    }
+
+    public void setB212(String b212) {
+        this.b212 = b212;
+        notifyPropertyChanged(BR.b212);
+    }
+
+    @Bindable
+    public String getB212998() {
+        return b212998;
+    }
+
+    public void setB212998(String b212998) {
+        this.b212998 = b212998;
+        notifyPropertyChanged(BR.b212998);
+    }
+
+    @Bindable
+    public String getB21201() {
+        return b21201;
+    }
+
+    public void setB21201(String b21201) {
+        this.b21201 = b21201;
+        notifyPropertyChanged(BR.b21201);
+    }
+
+    @Bindable
+    public String getB21202() {
+        return b21202;
+    }
+
+    public void setB21202(String b21202) {
+        this.b21202 = b21202;
+        notifyPropertyChanged(BR.b21202);
+    }
+
+    @Bindable
+    public String getB213() {
+        return b213;
+    }
+
+    public void setB213(String b213) {
+        this.b213 = b213;
+        notifyPropertyChanged(BR.b213);
+    }
+
+    @Bindable
+    public String getB21396x() {
+        return b21396x;
+    }
+
+    public void setB21396x(String b21396x) {
+        this.b21396x = b21396x;
+        notifyPropertyChanged(BR.b21396x);
+    }
+
+    @Bindable
+    public String getB214() {
+        return b214;
+    }
+
+    public void setB214(String b214) {
+        this.b214 = b214;
+        notifyPropertyChanged(BR.b214);
+    }
+
+    @Bindable
+    public String getB215() {
+        return b215;
+    }
+
+    public void setB215(String b215) {
+        this.b215 = b215;
+        notifyPropertyChanged(BR.b215);
+    }
+
+    @Bindable
+    public String getB21501() {
+        return b21501;
+    }
+
+    public void setB21501(String b21501) {
+        this.b21501 = b21501;
+        notifyPropertyChanged(BR.b21501);
+    }
+
+    @Bindable
+    public String getB21502() {
+        return b21502;
+    }
+
+    public void setB21502(String b21502) {
+        this.b21502 = b21502;
+        notifyPropertyChanged(BR.b21502);
+    }
+
+    @Bindable
+    public String getB21503() {
+        return b21503;
+    }
+
+    public void setB21503(String b21503) {
+        this.b21503 = b21503;
+        notifyPropertyChanged(BR.b21503);
+    }
+
+    @Bindable
+    public String getB21504() {
+        return b21504;
+    }
+
+    public void setB21504(String b21504) {
+        this.b21504 = b21504;
+        notifyPropertyChanged(BR.b21504);
+    }
+
+    @Bindable
+    public String getB21596() {
+        return b21596;
+    }
+
+    public void setB21596(String b21596) {
+        this.b21596 = b21596;
+        notifyPropertyChanged(BR.b21596);
+    }
+
+    @Bindable
+    public String getB21596x() {
+        return b21596x;
+    }
+
+    public void setB21596x(String b21596x) {
+        this.b21596x = b21596x;
+        notifyPropertyChanged(BR.b21596x);
+    }
+
+    @Bindable
+    public String getB216() {
+        return b216;
+    }
+
+    public void setB216(String b216) {
+        this.b216 = b216;
+        notifyPropertyChanged(BR.b216);
+    }
+
+    @Bindable
+    public String getB21601() {
+        return b21601;
+    }
+
+    public void setB21601(String b21601) {
+        this.b21601 = b21601;
+        notifyPropertyChanged(BR.b21601);
+    }
+
+    @Bindable
+    public String getB21602() {
+        return b21602;
+    }
+
+    public void setB21602(String b21602) {
+        this.b21602 = b21602;
+        notifyPropertyChanged(BR.b21602);
+    }
+
+    @Bindable
+    public String getB21603() {
+        return b21603;
+    }
+
+    public void setB21603(String b21603) {
+        this.b21603 = b21603;
+        notifyPropertyChanged(BR.b21603);
+    }
+
+    @Bindable
+    public String getB21604() {
+        return b21604;
+    }
+
+    public void setB21604(String b21604) {
+        this.b21604 = b21604;
+        notifyPropertyChanged(BR.b21604);
+    }
+
+    @Bindable
+    public String getB21696() {
+        return b21696;
+    }
+
+    public void setB21696(String b21696) {
+        this.b21696 = b21696;
+        notifyPropertyChanged(BR.b21696);
+    }
+
+    @Bindable
+    public String getB21696x() {
+        return b21696x;
+    }
+
+    public void setB21696x(String b21696x) {
+        this.b21696x = b21696x;
+        notifyPropertyChanged(BR.b21696x);
+    }
+
+    @Bindable
+    public String getB217() {
+        return b217;
+    }
+
+    public void setB217(String b217) {
+        this.b217 = b217;
+        notifyPropertyChanged(BR.b217);
+    }
+
+    @Bindable
+    public String getB21701() {
+        return b21701;
+    }
+
+    public void setB21701(String b21701) {
+        this.b21701 = b21701;
+        notifyPropertyChanged(BR.b21701);
+    }
+
+    @Bindable
+    public String getB21702() {
+        return b21702;
+    }
+
+    public void setB21702(String b21702) {
+        this.b21702 = b21702;
+        notifyPropertyChanged(BR.b21702);
+    }
+
+    @Bindable
+    public String getB21703() {
+        return b21703;
+    }
+
+    public void setB21703(String b21703) {
+        this.b21703 = b21703;
+        notifyPropertyChanged(BR.b21703);
+    }
+
+    @Bindable
+    public String getB21704() {
+        return b21704;
+    }
+
+    public void setB21704(String b21704) {
+        this.b21704 = b21704;
+        notifyPropertyChanged(BR.b21704);
+    }
+
+    @Bindable
+    public String getB21796() {
+        return b21796;
+    }
+
+    public void setB21796(String b21796) {
+        this.b21796 = b21796;
+        notifyPropertyChanged(BR.b21796);
+    }
+
+    @Bindable
+    public String getB21796x() {
+        return b21796x;
+    }
+
+    public void setB21796x(String b21796x) {
+        this.b21796x = b21796x;
+        notifyPropertyChanged(BR.b21796x);
+    }
+
+    @Bindable
+    public String getB218() {
+        return b218;
+    }
+
+    public void setB218(String b218) {
+        this.b218 = b218;
+        notifyPropertyChanged(BR.b218);
+    }
+
+    @Bindable
+    public String getB21801() {
+        return b21801;
+    }
+
+    public void setB21801(String b21801) {
+        this.b21801 = b21801;
+        notifyPropertyChanged(BR.b21801);
+    }
+
+    @Bindable
+    public String getB21802() {
+        return b21802;
+    }
+
+    public void setB21802(String b21802) {
+        this.b21802 = b21802;
+        notifyPropertyChanged(BR.b21802);
+    }
+
+    @Bindable
+    public String getB21803() {
+        return b21803;
+    }
+
+    public void setB21803(String b21803) {
+        this.b21803 = b21803;
+        notifyPropertyChanged(BR.b21803);
+    }
+
+    @Bindable
+    public String getB21804() {
+        return b21804;
+    }
+
+    public void setB21804(String b21804) {
+        this.b21804 = b21804;
+        notifyPropertyChanged(BR.b21804);
+    }
+
+    @Bindable
+    public String getB21805() {
+        return b21805;
+    }
+
+    public void setB21805(String b21805) {
+        this.b21805 = b21805;
+        notifyPropertyChanged(BR.b21805);
+    }
+
+    @Bindable
+    public String getB21806() {
+        return b21806;
+    }
+
+    public void setB21806(String b21806) {
+        this.b21806 = b21806;
+        notifyPropertyChanged(BR.b21806);
+    }
+
+    @Bindable
+    public String getB21896() {
+        return b21896;
+    }
+
+    public void setB21896(String b21896) {
+        this.b21896 = b21896;
+        notifyPropertyChanged(BR.b21896);
+    }
+
+    @Bindable
+    public String getB21896x() {
+        return b21896x;
+    }
+
+    public void setB21896x(String b21896x) {
+        this.b21896x = b21896x;
+        notifyPropertyChanged(BR.b21896x);
+    }
+
+    @Bindable
+    public String getB218998() {
+        return b218998;
+    }
+
+    public void setB218998(String b218998) {
+        this.b218998 = b218998;
+        notifyPropertyChanged(BR.b218998);
+    }
+
+    @Bindable
+    public String getB219() {
+        return b219;
+    }
+
+    public void setB219(String b219) {
+        this.b219 = b219;
+        notifyPropertyChanged(BR.b219);
+    }
+
+    @Bindable
+    public String getB21996x() {
+        return b21996x;
+    }
+
+    public void setB21996x(String b21996x) {
+        this.b21996x = b21996x;
+        notifyPropertyChanged(BR.b21996x);
+    }
+
+    @Bindable
+    public String getB220() {
+        return b220;
+    }
+
+    public void setB220(String b220) {
+        this.b220 = b220;
+        notifyPropertyChanged(BR.b220);
+    }
+
+    @Bindable
+    public String getB22096x() {
+        return b22096x;
+    }
+
+    public void setB22096x(String b22096x) {
+        this.b22096x = b22096x;
+        notifyPropertyChanged(BR.b22096x);
+    }
+
+    @Bindable
+    public String getB221() {
+        return b221;
+    }
+
+    public void setB221(String b221) {
+        this.b221 = b221;
+        notifyPropertyChanged(BR.b221);
+    }
+
+    @Bindable
+    public String getB221998() {
+        return b221998;
+    }
+
+    public void setB221998(String b221998) {
+        this.b221998 = b221998;
+        notifyPropertyChanged(BR.b221998);
+    }
+
+    @Bindable
+    public String getB22101() {
+        return b22101;
+    }
+
+    public void setB22101(String b22101) {
+        this.b22101 = b22101;
+        notifyPropertyChanged(BR.b22101);
+    }
+
+    @Bindable
+    public String getB222() {
+        return b222;
+    }
+
+    public void setB222(String b222) {
+        this.b222 = b222;
+        notifyPropertyChanged(BR.b222);
+    }
+
+    @Bindable
+    public String getB222998() {
+        return b222998;
+    }
+
+    public void setB222998(String b222998) {
+        this.b222998 = b222998;
+        notifyPropertyChanged(BR.b222998);
+    }
+
+    @Bindable
+    public String getB222h() {
+        return b222h;
+    }
+
+    public void setB222h(String b222h) {
+        this.b222h = b222h;
+        notifyPropertyChanged(BR.b222h);
+    }
+
+    @Bindable
+    public String getB222m() {
+        return b222m;
+    }
+
+    public void setB222m(String b222m) {
+        this.b222m = b222m;
+        notifyPropertyChanged(BR.b222m);
+    }
+
+    @Bindable
+    public String getB223() {
+        return b223;
+    }
+
+    public void setB223(String b223) {
+        this.b223 = b223;
+        notifyPropertyChanged(BR.b223);
+    }
+
+    @Bindable
+    public String getB224() {
+        return b224;
+    }
+
+    public void setB224(String b224) {
+        this.b224 = b224;
+        notifyPropertyChanged(BR.b224);
+    }
+
 
     public ModuleB Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
@@ -1058,6 +1858,7 @@ public class ModuleB extends BaseObservable implements Observable {
             this.b101 = json.getString("b101");
             this.b102 = json.getString("b102");
             this.b103 = json.getString("b103");
+            this.b10398 = json.getString("b10398");
             this.b104 = json.getString("b104");
             this.b10498 = json.getString("b10498");
             this.b104y = json.getString("b104y");
@@ -1240,6 +2041,7 @@ public class ModuleB extends BaseObservable implements Observable {
         json.put("b101", b101)
                 .put("b102", b102)
                 .put("b103", b103)
+                .put("b10398", b10398)
                 .put("b104", b104)
                 .put("b10498", b10498)
                 .put("b104y", b104y)

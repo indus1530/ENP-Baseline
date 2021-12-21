@@ -1088,6 +1088,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA313(String a313) {
         this.a313 = a313;
+        setA31396x(a313.equals("96") ? this.a31396x : "");
         notifyPropertyChanged(BR.a313);
     }
 
@@ -1118,6 +1119,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA315(String a315) {
         this.a315 = a315;
+        setA31596x(a315.equals("96") ? this.a31596x : "");
         notifyPropertyChanged(BR.a315);
     }
 
@@ -1138,6 +1140,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA316(String a316) {
         this.a316 = a316;
+        setA31696x(a316.equals("96") ? this.a31696x : "");
         notifyPropertyChanged(BR.a316);
     }
 
@@ -1158,6 +1161,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA317(String a317) {
         this.a317 = a317;
+        setA31796x(a317.equals("96") ? this.a31796x : "");
         notifyPropertyChanged(BR.a317);
     }
 
@@ -1463,6 +1467,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40301(String a40301) {
+        if (this.a40301.equals(a40301)) return;
         this.a40301 = a40301;
         notifyPropertyChanged(BR.a40301);
     }
@@ -1473,6 +1478,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40302(String a40302) {
+        if (this.a40302.equals(a40302)) return;
         this.a40302 = a40302;
         notifyPropertyChanged(BR.a40302);
     }
@@ -1483,6 +1489,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40303(String a40303) {
+        if (this.a40303.equals(a40303)) return;
         this.a40303 = a40303;
         notifyPropertyChanged(BR.a40303);
     }
@@ -1493,6 +1500,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40304(String a40304) {
+        if (this.a40304.equals(a40304)) return;
         this.a40304 = a40304;
         notifyPropertyChanged(BR.a40304);
     }
@@ -1503,7 +1511,12 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40305(String a40305) {
+        if (this.a40305.equals(a40305)) return;
         this.a40305 = a40305;
+        setA40301(a40305.equals("5") ? "" : this.a40301);
+        setA40302(a40305.equals("5") ? "" : this.a40302);
+        setA40303(a40305.equals("5") ? "" : this.a40303);
+        setA40304(a40305.equals("5") ? "" : this.a40304);
         notifyPropertyChanged(BR.a40305);
     }
 
@@ -1533,6 +1546,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40501(String a40501) {
+        if (this.a40501.equals(a40501)) return;
         this.a40501 = a40501;
         notifyPropertyChanged(BR.a40501);
     }
@@ -1543,6 +1557,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40502(String a40502) {
+        if (this.a40502.equals(a40502)) return;
         this.a40502 = a40502;
         notifyPropertyChanged(BR.a40502);
     }
@@ -1553,6 +1568,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40503(String a40503) {
+        if (this.a40503.equals(a40503)) return;
         this.a40503 = a40503;
         notifyPropertyChanged(BR.a40503);
     }
@@ -1563,6 +1579,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40504(String a40504) {
+        if (this.a40504.equals(a40504)) return;
         this.a40504 = a40504;
         notifyPropertyChanged(BR.a40504);
     }
@@ -1573,7 +1590,12 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40505(String a40505) {
+        if (this.a40505.equals(a40505)) return;
         this.a40505 = a40505;
+        setA40501(a40505.equals("5") ? "" : this.a40501);
+        setA40502(a40505.equals("5") ? "" : this.a40502);
+        setA40503(a40505.equals("5") ? "" : this.a40503);
+        setA40504(a40505.equals("5") ? "" : this.a40504);
         notifyPropertyChanged(BR.a40505);
     }
 
@@ -1593,6 +1615,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40601(String a40601) {
+        if (this.a40601.equals(a40601)) return;
         this.a40601 = a40601;
         notifyPropertyChanged(BR.a40601);
     }
@@ -1603,6 +1626,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40602(String a40602) {
+        if (this.a40602.equals(a40602)) return;
         this.a40602 = a40602;
         notifyPropertyChanged(BR.a40602);
     }
@@ -1613,6 +1637,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40603(String a40603) {
+        if (this.a40603.equals(a40603)) return;
         this.a40603 = a40603;
         notifyPropertyChanged(BR.a40603);
     }
@@ -1623,6 +1648,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40604(String a40604) {
+        if (this.a40604.equals(a40604)) return;
         this.a40604 = a40604;
         notifyPropertyChanged(BR.a40604);
     }
@@ -1633,6 +1659,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40605(String a40605) {
+        if (this.a40605.equals(a40605)) return;
         this.a40605 = a40605;
         notifyPropertyChanged(BR.a40605);
     }
@@ -1643,6 +1670,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40606(String a40606) {
+        if (this.a40606.equals(a40606)) return;
         this.a40606 = a40606;
         notifyPropertyChanged(BR.a40606);
     }
@@ -1653,6 +1681,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40607(String a40607) {
+        if (this.a40607.equals(a40607)) return;
         this.a40607 = a40607;
         notifyPropertyChanged(BR.a40607);
     }
@@ -1663,6 +1692,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40608(String a40608) {
+        if (this.a40608.equals(a40608)) return;
         this.a40608 = a40608;
         notifyPropertyChanged(BR.a40608);
     }
@@ -1673,6 +1703,7 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40609(String a40609) {
+        if (this.a40609.equals(a40609)) return;
         this.a40609 = a40609;
         notifyPropertyChanged(BR.a40609);
     }
@@ -1683,7 +1714,9 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
     public void setA40696(String a40696) {
+        if (this.a40696.equals(a40696)) return;
         this.a40696 = a40696;
+        setA40696x(a40696.equals("96") ? this.a40696x : "");
         notifyPropertyChanged(BR.a40696);
     }
 

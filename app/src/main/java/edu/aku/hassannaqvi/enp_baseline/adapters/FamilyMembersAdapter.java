@@ -61,7 +61,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
         MainApp.memberComplete = completeCount == MainApp.memberCount;
 
-        fName.setText(members.getHl2());
+        fName.setText(members.getSa2name());
         fAge.setText(members.getA206y() + "y ");
         motherName.setText(null);
         String motherRelation = "";

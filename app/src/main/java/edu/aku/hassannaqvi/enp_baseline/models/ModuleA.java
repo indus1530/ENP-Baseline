@@ -1823,7 +1823,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setIsta01(String ista01) {
         this.ista01 = ista01;
-        setIsta02(ista01.equals("2") ? "" : this.ista02);
+        setIsta02(ista01.equals("1") ? "" : this.ista02);
         notifyPropertyChanged(BR.ista01);
     }
 

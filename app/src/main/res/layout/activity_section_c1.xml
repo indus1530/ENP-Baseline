@@ -253,8 +253,11 @@
                             app:maxValue="49"
                             app:minValue="13"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c105  Radio   -->
                 <androidx.cardview.widget.CardView

@@ -62,7 +62,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         MainApp.memberComplete = completeCount == MainApp.memberCount;
 
         fName.setText(members.getHl2());
-        fAge.setText(members.getHl6y() + "y ");
+        fAge.setText(members.getA206y() + "y ");
         motherName.setText(null);
         String motherRelation = "";
 
@@ -71,7 +71,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
  */
         if (!members.getHl8().equals("") && !members.getHl8().equals("97")
         ) {
-            if (members.getHl4().equals("1")) {
+            if (members.getA204().equals("1")) {
                 motherRelation = " S/o ";
             } else {
                 motherRelation = " D/o ";
@@ -89,7 +89,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
             <string name="hl705"> Un-Married </string>
             <string name="hl7099"> Not Applicable (for Age less 13 years old) </string>*/
         String marStatus = "";
-        switch (members.getHl7()) {
+        switch (members.getA208()) {
             case "1":
                 marStatus = "Married";
                 break;
@@ -146,9 +146,9 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
 
         cloaked.setVisibility(!members.getMemCate().equals("") ? View.GONE : View.VISIBLE);
-        mainIcon.setImageResource(members.getHl10().equals("1") ? (members.getHl4().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl) : R.drawable.ic_not_available);
+        mainIcon.setImageResource(members.getHl10().equals("1") ? (members.getA204().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl) : R.drawable.ic_not_available);
         //MainApp.selectedMWRA = members.getIndexed().equals("1") || members.getIndexed().equals("2") ? "-" : "";
-        mainIcon.setBackgroundColor(members.getHl10().equals("1") ? (members.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("2") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getHl4().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink)) : mContext.getResources().getColor(R.color.gray));
+        mainIcon.setBackgroundColor(members.getHl10().equals("1") ? (members.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("2") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getA204().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink)) : mContext.getResources().getColor(R.color.gray));
         //  mainIcon.setBackgroundColor(  ((ColorDrawable) mainIcon.getBackground()).getColor());
         if (members.getMemCate().equals("2"))
             cloaked.setVisibility(motherPresent ? View.GONE : View.VISIBLE);

@@ -6,7 +6,6 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp._EMPTY_;
 import android.database.Cursor;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
@@ -78,25 +77,6 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String a212 = _EMPTY_;
     private String a21296x = _EMPTY_;
 
-    private String hl1 = _EMPTY_;
-    private String hl2 = _EMPTY_;
-    private String hl3 = _EMPTY_;
-    private String hl4 = _EMPTY_;
-    private String hl5d = _EMPTY_;
-    private String hl5m = _EMPTY_;
-    private String hl5y = _EMPTY_;
-    private String hl6y = _EMPTY_;
-    private String hl6m = _EMPTY_;
-    private String hl7 = _EMPTY_;
-    private String hl8 = _EMPTY_;
-    private String hl9 = _EMPTY_;
-    private String hl10 = _EMPTY_;
-    private String hl11 = _EMPTY_;
-    private String hl12 = _EMPTY_;
-    private String hl1296x = _EMPTY_;
-    private String hl13 = _EMPTY_;
-
-
     private boolean expanded;
     private boolean mwra;
     private long ageInMonths;
@@ -104,13 +84,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String memCate = _EMPTY_;
 
     public FamilyMembers() {
-
-
     }
 
 
     public void populateMeta() {
-
         setSysDate(MainApp.form.getSysDate());
         setUserName(MainApp.form.getUserName());
         setDeviceId(MainApp.form.getDeviceId());
@@ -365,7 +342,6 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
 
-
     @Bindable
     public String getA206y() {
         return a206y;
@@ -377,7 +353,6 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
 
-
     @Bindable
     public String getA206m() {
         return a206m;
@@ -387,7 +362,6 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.a206m = a206m;
         notifyPropertyChanged(BR.a206m);
     }
-
 
 
     @Bindable
@@ -551,200 +525,6 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
 
-    @Bindable
-    public String getHl1() {
-        return hl1;
-    }
-
-    public void setHl1(String hl1) {
-        this.hl1 = hl1;
-        this.sno = hl1;
-        notifyPropertyChanged(BR.hl1);
-    }
-
-    @Bindable
-    public String getHl2() {
-        return hl2;
-    }
-
-    public void setHl2(String hl2) {
-        this.hl2 = hl2;
-        notifyPropertyChanged(BR.hl2);
-    }
-
-    @Bindable
-    public String getHl3() {
-        return hl3;
-    }
-
-    public void setHl3(String hl3) {
-        this.hl3 = hl3;
-        notifyPropertyChanged(BR.hl3);
-    }
-
-    @Bindable
-    public String getHl4() {
-        return hl4;
-    }
-
-    public void setHl4(String hl4) {
-        this.hl4 = hl4;
-        updateMemCategory();
-        notifyPropertyChanged(BR.hl4);
-    }
-
-    @Bindable
-    public String getHl5d() {
-        return hl5d;
-    }
-
-    public void setHl5d(String hl5d) {
-        this.hl5d = hl5d;
-        CaluculateAge();
-        notifyPropertyChanged(BR.hl5d);
-    }
-
-    @Bindable
-    public String getHl5m() {
-        return hl5m;
-    }
-
-    public void setHl5m(String hl5m) {
-        this.hl5m = hl5m;
-        if (hl5m.equals("98")) {
-            setHl5d("98");
-        }
-        CaluculateAge();
-        notifyPropertyChanged(BR.hl5m);
-    }
-
-    @Bindable
-    public String getHl5y() {
-        return hl5y;
-    }
-
-    public void setHl5y(String hl5y) {
-        this.hl5y = hl5y;
-        if (hl5y.equals("9998")) {
-            setHl5m("98");
-            setHl6m("");
-            setHl6y("");
-        }
-        // Calculate age
-        CaluculateAge();
-        notifyPropertyChanged(BR.hl5y);
-    }
-
-    @Bindable
-    public String getHl6y() {
-        return hl6y;
-    }
-
-    public void setHl6y(@NonNull String hl6y) {
-        this.hl6y = hl6y;
-        setHl7(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 13 ? "" : this.hl7 : this.hl7);
-        setHl11(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 3 ? "" : this.hl11 : this.hl11);
-        setHl12(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 10 ? "" : this.hl12 : this.hl12);
-        updateMemCategory();
-
-        notifyPropertyChanged(BR.hl6y);
-    }
-
-    @Bindable
-    public String getHl6m() {
-        return hl6m;
-    }
-
-    public void setHl6m(String hl6m) {
-        this.hl6m = hl6m;
-        notifyPropertyChanged(BR.hl6m);
-    }
-
-    @Bindable
-    public String getHl7() {
-        return hl7;
-    }
-
-    public void setHl7(String hl7) {
-        this.hl7 = hl7;
-//        setHl7(hl7.equals("") ? "99" : this.hl7);
-        updateMemCategory();
-
-        notifyPropertyChanged(BR.hl7);
-    }
-
-    @Bindable
-    public String getHl8() {
-        return hl8;
-    }
-
-    public void setHl8(String hl8) {
-        this.hl8 = hl8;
-        updateMemCategory();
-        notifyPropertyChanged(BR.hl8);
-    }
-
-    @Bindable
-    public String getHl9() {
-        return hl9;
-    }
-
-    public void setHl9(String hl9) {
-        this.hl9 = hl9;
-        notifyPropertyChanged(BR.hl9);
-    }
-
-    @Bindable
-    public String getHl10() {
-        return hl10;
-    }
-
-    public void setHl10(String hl10) {
-        this.hl10 = hl10;
-        updateMemCategory();
-        notifyPropertyChanged(BR.hl10);
-    }
-
-    @Bindable
-    public String getHl11() {
-        return hl11;
-    }
-
-    public void setHl11(String hl11) {
-        this.hl11 = hl11;
-        notifyPropertyChanged(BR.hl11);
-    }
-
-    @Bindable
-    public String getHl12() {
-        return hl12;
-    }
-
-    public void setHl12(String hl12) {
-        this.hl12 = hl12;
-        setHl1296x(hl12.equals("96") ? this.hl1296x : "");
-        notifyPropertyChanged(BR.hl12);
-    }
-
-    @Bindable
-    public String getHl1296x() {
-        return hl1296x;
-    }
-
-    public void setHl1296x(String hl1296x) {
-        this.hl1296x = hl1296x;
-        notifyPropertyChanged(BR.hl1296x);
-    }
-
-    @Bindable
-    public String getHl13() {
-        return hl13;
-    }
-
-    public void setHl13(String hl13) {
-        this.hl13 = hl13;
-        notifyPropertyChanged(BR.hl13);
-    }
 
     @Bindable
     public boolean isMwra() {
@@ -897,8 +677,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
         if (!this.a205y.equals("") && !this.a205y.equals("9998") && !this.a205m.equals("") && !this.a205d.equals("")) {
 
             if ((Integer.parseInt(this.a205m) > 12 && !this.a205m.equals("98")) || (Integer.parseInt(this.a205d) > 31 && !this.a205d.equals("98")) || Integer.parseInt(this.a205y) < 1920) {
-                setHl6y("");
-                setHl6m("");
+                setA206y("");
+                setA206m("");
+                setA206d("");
                 this.ageInMonths = 0;
                 return;
             }
@@ -918,48 +699,26 @@ public class FamilyMembers extends BaseObservable implements Observable {
             Calendar cal = Calendar.getInstance();
 
             SimpleDateFormat df = new SimpleDateFormat("yyyy MM dd", Locale.ENGLISH);
-//             String todayDate = df.format(Calendar.getInstance().getTime());
-
 
             try {
                 cal.setTime(df.parse(year + " " + month + " " + day));
                 cur.setTime(df.parse(curYear + " " + curMonth + " " + curDay));
 
-/*                System.out.println(df.format("Current: " + cur.getTime()));
-                System.out.println(df.format("DOB: " + cal.getTime()));*/
-
-
-                //long millis = System.currentTimeMillis() - cal.getTimeInMillis();
                 long millis = cur.getTimeInMillis() - cal.getTimeInMillis();
                 cal.setTimeInMillis(millis);
 
-             /*   int mYear = cal.get(Calendar.YEAR)-1970;
-                int mMonth = cal.get(Calendar.MONTH);
-                int mDay = cal.get(Calendar.DAY_OF_MONTH)-1;
-
-                Log.d(TAG, "CaluculateAge: " + (mYear) + "-" + mMonth + "-" + mDay);
-*/
                 this.ageInMonths = MILLISECONDS.toDays(millis) / 30;
                 long tYear = MILLISECONDS.toDays(millis) / 365;
                 long tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
                 long tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
 
                 Log.d(TAG, "CaluculateAge: Y-" + tYear + " M-" + tMonth + " D-" + tDay);
-               /* setH231d(String.valueOf(tDay));
-                setH231m(String.valueOf(tMonth));*/
 
-                setHl6y(String.valueOf(tYear));
-                setHl6m(String.valueOf(tMonth));
+                setA206y(String.valueOf(tYear));
+                setA206m(String.valueOf(tMonth));
+                setA206d(String.valueOf(tDay));
                 if (tYear < 0)
-                    setHl6y("");
-                //setAge(String.valueOf(((tYear) * 12) + tMonth));
-
-
-        /*        String.format("%d min, %d sec",
-                        ,
-                        TimeUnit.MILLISECONDS.toSeconds(millis) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis))
-                );*/
+                    setA206y("");
 
             } catch (ParseException e) {
                 Log.d(TAG, "CaluculateAge: " + e.getMessage());
@@ -977,10 +736,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
      * 4 = Adol Female
      */
     private void updateMemCategory() {
-        if (hl4.equals("") || hl6y.equals("") || hl7.equals("") || !hl10.equals("1")) return;
-        String memGender = getHl4();
-        String memMaritalStatus = getHl7();
-        int memAge = Integer.parseInt(getHl6y());
+        if (a204.equals("") || a206y.equals("") || a208.equals("") /*|| !hl10.equals("1")*/) return;
+        String memGender = getA204();
+        String memMaritalStatus = getA208();
+        int memAge = Integer.parseInt(getA206y());
 
         // MWRA
         if (memGender.equals("2")                // Female
@@ -992,7 +751,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
         // Child
         if (memAge < 5
-                && !hl8.equals("") && !hl8.equals("97")
+            //TODO: Need to Check
+            //&& !hl8.equals("") && !hl8.equals("97")
         ) {
             setMemCate("2");
         }

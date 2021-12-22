@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,7 +9,9 @@
         <variable
             name="modc"
             type="edu.aku.hassannaqvi.enp_baseline.models.ModuleC" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,9 +35,11 @@
             app:title="@string/modc"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -54,11 +59,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cs1t2" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cs1t3  Title   -->
                 <androidx.cardview.widget.CardView
@@ -71,10 +80,13 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cs1t3" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -86,36 +98,34 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_c101" />
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_c101" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c101" />
-
-                        </LinearLayout>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/c101" />
 
                         <EditText
                             android:id="@+id/c101"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/c101"
                             android:text="@={modc.c101}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c102  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -149,26 +159,33 @@
                         <RadioGroup
                             android:id="@+id/c102"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c10201"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c102.equals(`1`)}"
                                 android:onClick="@{()->modc.setC102(`1`)}"
                                 android:text="@string/c10201" />
 
                             <RadioButton
                                 android:id="@+id/c10202"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c102.equals(`2`)}"
                                 android:onClick="@{()->modc.setC102(`2`)}"
                                 android:text="@string/c10202" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c103  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -178,40 +195,33 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_c103" />
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_c103" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/c103" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/c103" />
-
-                        </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <TextView
                             android:id="@+id/c103"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/c103"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={modc.c103}"
-                            app:maxValue="50"
-                            app:minValue="1"
-                            app:type="range" />
+                            style="@style/sub_labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@={modc.c103}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c104  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -246,7 +256,8 @@
                             android:id="@+id/c104"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/c104"
+                            android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={modc.c104}"
@@ -291,21 +302,25 @@
                         <RadioGroup
                             android:id="@+id/c105"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c10501"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c105.equals(`1`)}"
                                 android:onClick="@{()->modc.setC105(`1`)}"
                                 android:text="@string/c10501" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/c10501x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/c10501"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="c10501"
@@ -317,14 +332,19 @@
 
                             <RadioButton
                                 android:id="@+id/c105998"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c105.equals(`998`)}"
                                 android:onClick="@{()->modc.setC105(`998`)}"
                                 android:text="@string/c105998" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c106  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -359,15 +379,19 @@
                             android:id="@+id/c106"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/c106"
+                            android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={modc.c106}"
                             app:maxValue="15"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c107  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -402,15 +426,19 @@
                             android:id="@+id/c107"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/c107"
+                            android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={modc.c107}"
                             app:maxValue="15"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c108  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -445,15 +473,19 @@
                             android:id="@+id/c108"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/c108"
+                            android:gravity="center"
+                            android:hint="#"
                             android:inputType="number"
                             android:maxLength="1"
                             android:text="@={modc.c108}"
                             app:maxValue="6"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c109  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -487,26 +519,33 @@
                         <RadioGroup
                             android:id="@+id/c109"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c10901"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c109.equals(`1`)}"
                                 android:onClick="@{()->modc.setC109(`1`)}"
                                 android:text="@string/c10901" />
 
                             <RadioButton
                                 android:id="@+id/c10902"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c109.equals(`2`)}"
                                 android:onClick="@{()->modc.setC109(`2`)}"
                                 android:text="@string/c10902" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c110  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -541,15 +580,19 @@
                             android:id="@+id/c110"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/c110"
+                            android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={modc.c110}"
                             app:maxValue="49"
                             app:minValue="14"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c111  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -583,34 +626,42 @@
                         <RadioGroup
                             android:id="@+id/c111"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c11101"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c111.equals(`1`)}"
                                 android:onClick="@{()->modc.setC111(`1`)}"
                                 android:text="@string/c11101" />
 
                             <RadioButton
                                 android:id="@+id/c11102"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c111.equals(`2`)}"
                                 android:onClick="@{()->modc.setC111(`2`)}"
                                 android:text="@string/c11102" />
 
                             <RadioButton
                                 android:id="@+id/c111998"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c111.equals(`998`)}"
                                 android:onClick="@{()->modc.setC111(`998`)}"
                                 android:text="@string/c111998" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cs1t6  Title   -->
                 <androidx.cardview.widget.CardView
@@ -623,13 +674,17 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/cs1t6" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!-- c112  Title   -->
+
+                <!-- c112 MonthWeek -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc112"
                     style="@style/cardView">
@@ -639,48 +694,80 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/c112" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c112wk" />
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_c112" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/c112wk"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/c112wk"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:text="@={modc.c112wk}"
-                            app:maxValue="4"
-                            app:minValue="0"
-                            app:type="range" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/c112" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c112mm" />
+                        </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/c112mm"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/c112mm"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:text="@={modc.c112mm}"
-                            app:maxValue="9"
-                            app:minValue="1"
-                            app:type="range" />
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/c112wk" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/c112wk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="#"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:text="@={modc.c112wk}"
+                                app:maxValue="4"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/c112mm" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/c112mm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="#"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:text="@={modc.c112mm}"
+                                app:maxValue="9"
+                                app:minValue="1"
+                                app:type="range" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!-- c113  Title   -->
+
+                <!-- c113 DayMonthYear -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc113"
                     style="@style/cardView">
@@ -690,63 +777,99 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/c113" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c113dd" />
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_c113" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/c113dd"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/c113dd"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={modc.c113dd}"
-                            app:maxValue="31"
-                            app:minValue="1"
-                            app:type="range" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/c113" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c113mm" />
+                        </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/c113mm"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/c113mm"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={modc.c113mm}"
-                            app:maxValue="12"
-                            app:minValue="1"
-                            app:type="range" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c113yy" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/c113dd" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/c113yy"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/c113yy"
-                            android:inputType="number"
-                            android:maxLength="4"
-                            android:text="@={modc.c113yy}"
-                            app:maxValue="2022"
-                            app:minValue="2021"
-                            app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/c113dd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={modc.c113dd}"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/c113mm" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/c113mm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={modc.c113mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/c113yy" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/c113yy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="####"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={modc.c113yy}"
+                                app:maxValue="2022"
+                                app:minValue="2021"
+                                app:type="range" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c114  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -780,26 +903,33 @@
                         <RadioGroup
                             android:id="@+id/c114"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c11401"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c114.equals(`1`)}"
                                 android:onClick="@{()->modc.setC114(`1`)}"
                                 android:text="@string/c11401" />
 
                             <RadioButton
                                 android:id="@+id/c11402"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{modc.c114.equals(`2`)}"
                                 android:onClick="@{()->modc.setC114(`2`)}"
                                 android:text="@string/c11402" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c115  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -843,7 +973,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modc.c11501.equals(`1`)}"
                                 android:onClick="@{()->modc.setC11501(modc.c11501.equals(`1`)?``:`1`)}"
-
                                 android:text="@string/c11501" />
 
                             <CheckBox
@@ -852,7 +981,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modc.c11502.equals(`2`)}"
                                 android:onClick="@{()->modc.setC11502(modc.c11502.equals(`2`)?``:`2`)}"
-
                                 android:text="@string/c11502" />
 
                             <CheckBox
@@ -861,7 +989,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modc.c11503.equals(`3`)}"
                                 android:onClick="@{()->modc.setC11503(modc.c11503.equals(`3`)?``:`3`)}"
-
                                 android:text="@string/c11503" />
 
                             <CheckBox
@@ -870,7 +997,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modc.c11504.equals(`4`)}"
                                 android:onClick="@{()->modc.setC11504(modc.c11504.equals(`4`)?``:`4`)}"
-
                                 android:text="@string/c11504" />
 
                             <CheckBox
@@ -879,7 +1005,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modc.c11505.equals(`5`)}"
                                 android:onClick="@{()->modc.setC11505(modc.c11505.equals(`5`)?``:`5`)}"
-
                                 android:text="@string/c11505" />
 
                             <CheckBox
@@ -888,7 +1013,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modc.c11506.equals(`6`)}"
                                 android:onClick="@{()->modc.setC11506(modc.c11506.equals(`6`)?``:`6`)}"
-
                                 android:text="@string/c11506" />
 
                             <CheckBox
@@ -897,7 +1021,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modc.c11507.equals(`7`)}"
                                 android:onClick="@{()->modc.setC11507(modc.c11507.equals(`7`)?``:`7`)}"
-
                                 android:text="@string/c11507" />
 
                             <CheckBox
@@ -906,7 +1029,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modc.c11508.equals(`8`)}"
                                 android:onClick="@{()->modc.setC11508(modc.c11508.equals(`8`)?``:`8`)}"
-
                                 android:text="@string/c11508" />
 
                             <CheckBox
@@ -926,9 +1048,13 @@
                                 android:tag="c11596"
                                 android:text="@={modc.c11596x}"
                                 android:visibility="@{modc.c11596.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c116  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -963,55 +1089,65 @@
                             android:id="@+id/c116check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
+                            android:orientation="horizontal"
                             android:tag="0">
 
                             <CheckBox
                                 android:id="@+id/c116wk"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{modc.c116wk.equals(``)}"
-                                android:onClick="@{()->modc.setC116wk(modc.c116wk.equals(``)?``:``)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{modc.c116wk.equals(`1`)}"
+                                android:onClick="@{()->modc.setC116wk(modc.c116wk.equals(`1`)?``:`1`)}"
                                 android:text="@string/c116wk" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/c116wkx"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/c116wk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:tag="c116wk"
                                 android:text="@={modc.c116wkx}"
-                                android:visibility="@{modc.c116wk.equals(``) ? View.VISIBLE : View.GONE}"
+                                android:visibility="@{modc.c116wk.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="3"
                                 app:minValue="0"
                                 app:type="range" />
 
                             <CheckBox
                                 android:id="@+id/c116mm"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{modc.c116mm.equals(``)}"
-                                android:onClick="@{()->modc.setC116mm(modc.c116mm.equals(``)?``:``)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{modc.c116mm.equals(`2`)}"
+                                android:onClick="@{()->modc.setC116mm(modc.c116mm.equals(`2`)?``:`2`)}"
                                 android:text="@string/c116mm" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/c116mmx"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/c116mm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:tag="c116mm"
                                 android:text="@={modc.c116mmx}"
-                                android:visibility="@{modc.c116mm.equals(``) ? View.VISIBLE : View.GONE}"
+                                android:visibility="@{modc.c116mm.equals(`2`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="9"
                                 app:minValue="0"
                                 app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c117  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -1050,9 +1186,9 @@
                             android:tag="0">
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/c117t1" />
 
                             <CheckBox
@@ -1061,13 +1197,12 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{modc.c11701.equals(`1`)}"
                                 android:onClick="@{()->modc.setC11701(modc.c11701.equals(`1`)?``:`1`)}"
-
                                 android:text="@string/c11701" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/c117t2" />
 
                             <CheckBox
@@ -1089,9 +1224,9 @@
                                 android:visibility="@{modc.c11702.equals(`2`) ? View.VISIBLE : View.GONE}" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/c117t3" />
 
                             <CheckBox
@@ -1113,9 +1248,9 @@
                                 android:visibility="@{modc.c11703.equals(`3`) ? View.VISIBLE : View.GONE}" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/c117t4" />
 
                             <CheckBox
@@ -1135,9 +1270,13 @@
                                 android:tag="c11796"
                                 android:text="@={modc.c11796x}"
                                 android:visibility="@{modc.c11796.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c118  Input-Numeric   -->
                 <androidx.cardview.widget.CardView

@@ -1646,7 +1646,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{modc.c11998.equals(`1`)}"
-                                android:onClick="@{()->modc.setC11998(`1`) + c119h.clearCheck() + c119h.setEnabled(false)}"
+                                android:onClick="@{()->modc.setC11998(`1`) + c119.clearCheck() + c119.setEnabled(false) + c119h.clearCheck() + c119h.setEnabled(false)}"
                                 android:text="@string/c1199801" />
 
                             <RadioButton

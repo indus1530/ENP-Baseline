@@ -1086,6 +1086,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC119(String c119) {
         this.c119 = c119;
+        setC11996x(c119.equals("96") ? this.c11996x : "");
         notifyPropertyChanged(BR.c119);
     }
 
@@ -1186,6 +1187,15 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC11998(String c11998) {
         this.c11998 = c11998;
+        setC119(c11998.equals("1") ? "" : this.c119);
+        setC119a(c11998.equals("1") ? "" : this.c119a);
+        setC119b(c11998.equals("1") ? "" : this.c119b);
+        setC119c(c11998.equals("1") ? "" : this.c119c);
+        setC119d(c11998.equals("1") ? "" : this.c119d);
+        setC119e(c11998.equals("1") ? "" : this.c119e);
+        setC119f(c11998.equals("1") ? "" : this.c119f);
+        setC119g(c11998.equals("1") ? "" : this.c119g);
+        setC119h(c11998.equals("1") ? "" : this.c119h);
         notifyPropertyChanged(BR.c11998);
     }
 

@@ -188,10 +188,12 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b202998.equals(`998`)}"
                                 android:onClick="@{()->form.setB202998(form.b202998.equals(`998`)?``:`998`)}"
-
                                 android:text="@string/b202998" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- b202w  Input-Numeric   -->

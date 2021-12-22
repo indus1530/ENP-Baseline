@@ -2737,10 +2737,10 @@ For example, some start talking earlier than others, or they might already say s
     <string name="b11405">Motorcycle</string>
     <string name="b11406">Amount collected by someone else </string>
     <string name="b11496">Other (specify)</string>
-    <string name="b115">How long does it take to reach the payment facility?</string>
-    <string name="b11501a">Time (Hours )</string>
-    <string name="b11501b">Time ( Minutes) </string>
-    <string name="b11598">Don’t know </string>
+    <string name="b115"> How long does it take to reach the payment facility ? </string>
+    <string name="b11501a"> Hours </string>
+    <string name="b11501b"> Minutes </string>
+    <string name="b11598"> Don’t Know </string>
     <string name="b116">How much is usually spent on travelling to the beneficiary center or to the POS agent/shop (two way) to receive the amount?</string>
     <string name="b11601">Amount</string>
     <string name="b11698">Don’t know</string>

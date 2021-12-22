@@ -68,29 +68,24 @@ public class ModuleB extends BaseObservable implements Observable {
     private String b10796x = _EMPTY_;
     private String b108 = _EMPTY_;
     private String b10898 = _EMPTY_;
-    private String b10801 = _EMPTY_;
-    private String b109 = _EMPTY_;
     private String b10901 = _EMPTY_;
     private String b10902 = _EMPTY_;
     private String b10903 = _EMPTY_;
     private String b10904 = _EMPTY_;
     private String b10996 = _EMPTY_;
     private String b10996x = _EMPTY_;
-    private String b110 = _EMPTY_;
     private String b11001 = _EMPTY_;
     private String b11002 = _EMPTY_;
     private String b11003 = _EMPTY_;
     private String b11004 = _EMPTY_;
     private String b11096 = _EMPTY_;
     private String b11096x = _EMPTY_;
-    private String b111 = _EMPTY_;
     private String b11101 = _EMPTY_;
     private String b11102 = _EMPTY_;
     private String b11103 = _EMPTY_;
     private String b11104 = _EMPTY_;
     private String b11196 = _EMPTY_;
     private String b11196x = _EMPTY_;
-    private String b112 = _EMPTY_;
     private String b11201 = _EMPTY_;
     private String b11202 = _EMPTY_;
     private String b11203 = _EMPTY_;
@@ -544,6 +539,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB107(String b107) {
         this.b107 = b107;
+        setB10796x(b107.equals("96") ? this.b10796x : "");
         notifyPropertyChanged(BR.b107);
     }
 
@@ -573,29 +569,13 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB10898(String b10898) {
+        if (this.b10898.equals(b10898)) return;
         this.b10898 = b10898;
+        setB108(b10898.equals("998") ? "" : this.b108);
         notifyPropertyChanged(BR.b10898);
     }
 
-    @Bindable
-    public String getB10801() {
-        return b10801;
-    }
 
-    public void setB10801(String b10801) {
-        this.b10801 = b10801;
-        notifyPropertyChanged(BR.b10801);
-    }
-
-    @Bindable
-    public String getB109() {
-        return b109;
-    }
-
-    public void setB109(String b109) {
-        this.b109 = b109;
-        notifyPropertyChanged(BR.b109);
-    }
 
     @Bindable
     public String getB10901() {
@@ -603,6 +583,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB10901(String b10901) {
+        if (this.b10901.equals(b10901)) return;
         this.b10901 = b10901;
         notifyPropertyChanged(BR.b10901);
     }
@@ -613,6 +594,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB10902(String b10902) {
+        if (this.b10902.equals(b10902)) return;
         this.b10902 = b10902;
         notifyPropertyChanged(BR.b10902);
     }
@@ -623,6 +605,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB10903(String b10903) {
+        if (this.b10903.equals(b10903)) return;
         this.b10903 = b10903;
         notifyPropertyChanged(BR.b10903);
     }
@@ -633,6 +616,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB10904(String b10904) {
+        if (this.b10904.equals(b10904)) return;
         this.b10904 = b10904;
         notifyPropertyChanged(BR.b10904);
     }
@@ -643,7 +627,9 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB10996(String b10996) {
+        if (this.b10996.equals(b10996)) return;
         this.b10996 = b10996;
+        setB10996x(b10996.equals("96") ? this.b10996x : "");
         notifyPropertyChanged(BR.b10996);
     }
 
@@ -657,15 +643,6 @@ public class ModuleB extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.b10996x);
     }
 
-    @Bindable
-    public String getB110() {
-        return b110;
-    }
-
-    public void setB110(String b110) {
-        this.b110 = b110;
-        notifyPropertyChanged(BR.b110);
-    }
 
     @Bindable
     public String getB11001() {
@@ -673,6 +650,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11001(String b11001) {
+        if (this.b11001.equals(b11001)) return;
         this.b11001 = b11001;
         notifyPropertyChanged(BR.b11001);
     }
@@ -683,6 +661,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11002(String b11002) {
+        if (this.b11002.equals(b11002)) return;
         this.b11002 = b11002;
         notifyPropertyChanged(BR.b11002);
     }
@@ -693,6 +672,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11003(String b11003) {
+        if (this.b11003.equals(b11003)) return;
         this.b11003 = b11003;
         notifyPropertyChanged(BR.b11003);
     }
@@ -703,6 +683,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11004(String b11004) {
+        if (this.b11004.equals(b11004)) return;
         this.b11004 = b11004;
         notifyPropertyChanged(BR.b11004);
     }
@@ -713,7 +694,9 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11096(String b11096) {
+        if (this.b11096.equals(b11096)) return;
         this.b11096 = b11096;
+        setB11096x(b11096.equals("96") ? this.b11096x : "");
         notifyPropertyChanged(BR.b11096);
     }
 
@@ -727,15 +710,6 @@ public class ModuleB extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.b11096x);
     }
 
-    @Bindable
-    public String getB111() {
-        return b111;
-    }
-
-    public void setB111(String b111) {
-        this.b111 = b111;
-        notifyPropertyChanged(BR.b111);
-    }
 
     @Bindable
     public String getB11101() {
@@ -743,6 +717,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11101(String b11101) {
+        if (this.b11101.equals(b11101)) return;
         this.b11101 = b11101;
         notifyPropertyChanged(BR.b11101);
     }
@@ -753,6 +728,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11102(String b11102) {
+        if (this.b11102.equals(b11102)) return;
         this.b11102 = b11102;
         notifyPropertyChanged(BR.b11102);
     }
@@ -763,6 +739,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11103(String b11103) {
+        if (this.b11103.equals(b11103)) return;
         this.b11103 = b11103;
         notifyPropertyChanged(BR.b11103);
     }
@@ -773,6 +750,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11104(String b11104) {
+        if (this.b11104.equals(b11104)) return;
         this.b11104 = b11104;
         notifyPropertyChanged(BR.b11104);
     }
@@ -783,7 +761,9 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11196(String b11196) {
+        if (this.b11196.equals(b11196)) return;
         this.b11196 = b11196;
+        setB11196x(b11196.equals("96") ? this.b11196x : "");
         notifyPropertyChanged(BR.b11196);
     }
 
@@ -797,15 +777,6 @@ public class ModuleB extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.b11196x);
     }
 
-    @Bindable
-    public String getB112() {
-        return b112;
-    }
-
-    public void setB112(String b112) {
-        this.b112 = b112;
-        notifyPropertyChanged(BR.b112);
-    }
 
     @Bindable
     public String getB11201() {
@@ -813,6 +784,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11201(String b11201) {
+        if (this.b11201.equals(b11201)) return;
         this.b11201 = b11201;
         notifyPropertyChanged(BR.b11201);
     }
@@ -823,6 +795,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11202(String b11202) {
+        if (this.b11202.equals(b11202)) return;
         this.b11202 = b11202;
         notifyPropertyChanged(BR.b11202);
     }
@@ -833,6 +806,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11203(String b11203) {
+        if (this.b11203.equals(b11203)) return;
         this.b11203 = b11203;
         notifyPropertyChanged(BR.b11203);
     }
@@ -843,6 +817,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11204(String b11204) {
+        if (this.b11204.equals(b11204)) return;
         this.b11204 = b11204;
         notifyPropertyChanged(BR.b11204);
     }
@@ -853,6 +828,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11205(String b11205) {
+        if (this.b11205.equals(b11205)) return;
         this.b11205 = b11205;
         notifyPropertyChanged(BR.b11205);
     }
@@ -863,6 +839,7 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11206(String b11206) {
+        if (this.b11206.equals(b11206)) return;
         this.b11206 = b11206;
         notifyPropertyChanged(BR.b11206);
     }
@@ -873,7 +850,9 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11296(String b11296) {
+        if (this.b11296.equals(b11296)) return;
         this.b11296 = b11296;
+        setB11296x(b11296.equals("96") ? this.b11296x : "");
         notifyPropertyChanged(BR.b11296);
     }
 
@@ -893,7 +872,15 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB11298(String b11298) {
+        if (this.b11298.equals(b11298)) return;
         this.b11298 = b11298;
+        setB11201(b11298.equals("998") ? "" : this.b11201);
+        setB11202(b11298.equals("998") ? "" : this.b11202);
+        setB11203(b11298.equals("998") ? "" : this.b11203);
+        setB11204(b11298.equals("998") ? "" : this.b11204);
+        setB11205(b11298.equals("998") ? "" : this.b11205);
+        setB11206(b11298.equals("998") ? "" : this.b11206);
+        setB11296(b11298.equals("998") ? "" : this.b11296);
         notifyPropertyChanged(BR.b11298);
     }
 
@@ -904,6 +891,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB113(String b113) {
         this.b113 = b113;
+        setB11396x(b113.equals("96") ? this.b11396x : "");
         notifyPropertyChanged(BR.b113);
     }
 
@@ -924,6 +912,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB114(String b114) {
         this.b114 = b114;
+        setB11496x(b114.equals("96") ? this.b11496x : "");
         notifyPropertyChanged(BR.b114);
     }
 
@@ -1034,6 +1023,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB201(String b201) {
         this.b201 = b201;
+        setB20196x(b201.equals("96") ? this.b20196x : "");
         notifyPropertyChanged(BR.b201);
     }
 
@@ -1364,6 +1354,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB213(String b213) {
         this.b213 = b213;
+        setB21396x(b213.equals("96") ? this.b21396x : "");
         notifyPropertyChanged(BR.b213);
     }
 
@@ -1444,6 +1435,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB21596(String b21596) {
         this.b21596 = b21596;
+        setB21596x(b21596.equals("96") ? this.b21596x : "");
         notifyPropertyChanged(BR.b21596);
     }
 
@@ -1514,6 +1506,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB21696(String b21696) {
         this.b21696 = b21696;
+        setB21696x(b21696.equals("96") ? this.b21696x : "");
         notifyPropertyChanged(BR.b21696);
     }
 
@@ -1584,6 +1577,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB21796(String b21796) {
         this.b21796 = b21796;
+        setB21796x(b21796.equals("96") ? this.b21796x : "");
         notifyPropertyChanged(BR.b21796);
     }
 
@@ -1674,6 +1668,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB21896(String b21896) {
         this.b21896 = b21896;
+        setB21896x(b21896.equals("96") ? this.b21896x : "");
         notifyPropertyChanged(BR.b21896);
     }
 
@@ -1704,6 +1699,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB219(String b219) {
         this.b219 = b219;
+        setB21996x(b219.equals("96") ? this.b21996x : "");
         notifyPropertyChanged(BR.b219);
     }
 
@@ -1724,6 +1720,7 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB220(String b220) {
         this.b220 = b220;
+        setB22096x(b220.equals("96") ? this.b22096x : "");
         notifyPropertyChanged(BR.b220);
     }
 
@@ -1875,29 +1872,24 @@ public class ModuleB extends BaseObservable implements Observable {
             this.b10796x = json.getString("b10796x");
             this.b108 = json.getString("b108");
             this.b10898 = json.getString("b10898");
-            this.b10801 = json.getString("b10801");
-            this.b109 = json.getString("b109");
             this.b10901 = json.getString("b10901");
             this.b10902 = json.getString("b10902");
             this.b10903 = json.getString("b10903");
             this.b10904 = json.getString("b10904");
             this.b10996 = json.getString("b10996");
             this.b10996x = json.getString("b10996x");
-            this.b110 = json.getString("b110");
             this.b11001 = json.getString("b11001");
             this.b11002 = json.getString("b11002");
             this.b11003 = json.getString("b11003");
             this.b11004 = json.getString("b11004");
             this.b11096 = json.getString("b11096");
             this.b11096x = json.getString("b11096x");
-            this.b111 = json.getString("b111");
             this.b11101 = json.getString("b11101");
             this.b11102 = json.getString("b11102");
             this.b11103 = json.getString("b11103");
             this.b11104 = json.getString("b11104");
             this.b11196 = json.getString("b11196");
             this.b11196x = json.getString("b11196x");
-            this.b112 = json.getString("b112");
             this.b11201 = json.getString("b11201");
             this.b11202 = json.getString("b11202");
             this.b11203 = json.getString("b11203");
@@ -2058,29 +2050,24 @@ public class ModuleB extends BaseObservable implements Observable {
                 .put("b10796x", b10796x)
                 .put("b108", b108)
                 .put("b10898", b10898)
-                .put("b10801", b10801)
-                .put("b109", b109)
                 .put("b10901", b10901)
                 .put("b10902", b10902)
                 .put("b10903", b10903)
                 .put("b10904", b10904)
                 .put("b10996", b10996)
                 .put("b10996x", b10996x)
-                .put("b110", b110)
                 .put("b11001", b11001)
                 .put("b11002", b11002)
                 .put("b11003", b11003)
                 .put("b11004", b11004)
                 .put("b11096", b11096)
                 .put("b11096x", b11096x)
-                .put("b111", b111)
                 .put("b11101", b11101)
                 .put("b11102", b11102)
                 .put("b11103", b11103)
                 .put("b11104", b11104)
                 .put("b11196", b11196)
                 .put("b11196x", b11196x)
-                .put("b112", b112)
                 .put("b11201", b11201)
                 .put("b11202", b11202)
                 .put("b11203", b11203)

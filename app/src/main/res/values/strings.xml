@@ -3048,9 +3048,9 @@ For example, some start talking earlier than others, or they might already say s
     <string name="c13201">Yes</string>
     <string name="c13202">No</string>
     <string name="c132998">Don’t Know</string>
-    <string name="c133">How many times did you receive tetanus injection during the pregnancy?</string>
-    <string name="c133n">Number of Times</string>
-    <string name="c133998">Don’t Know</string>
+    <string name="c133"> How many times did you receive tetanus injection during the pregnancy ? </string>
+    <string name="c133a"> Number of Times </string>
+    <string name="c133998"> Don’t Know </string>
 
     <string name="c2"> C2: Ante-Natal Care: </string>
     <string name="c201">Did you see anyone for antenatal care during your last completed pregnancy with (name)?</string>

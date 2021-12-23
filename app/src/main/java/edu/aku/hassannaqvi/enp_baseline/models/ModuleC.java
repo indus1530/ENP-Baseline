@@ -3854,6 +3854,9 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC501(String c501) {
         this.c501 = c501;
+        setC5011(c501.equals("2") ? "" : this.c5011);
+        setC5012(c501.equals("2") ? "" : this.c5012);
+        setC5013(c501.equals("2") ? "" : this.c5013);
         notifyPropertyChanged(BR.c501);
     }
 
@@ -3894,6 +3897,9 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC502(String c502) {
         this.c502 = c502;
+        setC5021(c502.equals("2") ? "" : this.c5021);
+        setC5022(c502.equals("2") ? "" : this.c5022);
+        setC5023(c502.equals("2") ? "" : this.c5023);
         notifyPropertyChanged(BR.c502);
     }
 
@@ -3934,6 +3940,9 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC503(String c503) {
         this.c503 = c503;
+        setC5031(c503.equals("2") ? "" : this.c5031);
+        setC5032(c503.equals("2") ? "" : this.c5032);
+        setC5033(c503.equals("2") ? "" : this.c5033);
         notifyPropertyChanged(BR.c503);
     }
 
@@ -3974,6 +3983,10 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC504(String c504) {
         this.c504 = c504;
+        setC50496x(c504.equals("2") ? "" : this.c50496x);
+        setC5041(c504.equals("2") ? "" : this.c5041);
+        setC5042(c504.equals("2") ? "" : this.c5042);
+        setC5043(c504.equals("2") ? "" : this.c5043);
         notifyPropertyChanged(BR.c504);
     }
 
@@ -4024,6 +4037,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC505(String c505) {
         this.c505 = c505;
+        setC50596x(c505.equals("96") ? this.c50596x : "");
         notifyPropertyChanged(BR.c505);
     }
 

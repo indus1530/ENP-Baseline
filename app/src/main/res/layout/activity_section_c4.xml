@@ -7,7 +7,7 @@
 
         <variable
             name="form"
-            type="edu.aku.hassannaqvi.enp_baseline.models.Form" />
+            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleC" />
     </data>
 
     <LinearLayout
@@ -27,9 +27,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectioncsub_title"
+            app:subtitle="@string/c4"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectionc4informationoflhw_mainheading"
+            app:title="@string/modc"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView
@@ -74,7 +74,8 @@
                         <RadioGroup
                             android:id="@+id/c401"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c40101"
@@ -82,7 +83,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.c401.equals(`1`)}"
                                 android:onClick="@{()->form.setC401(`1`)}"
-                                android:text="@string/c40101" />
+                                android:text="@string/c40101"
+                                android:layout_weight="1"/>
 
                             <RadioButton
                                 android:id="@+id/c40102"
@@ -90,7 +92,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.c401.equals(`2`)}"
                                 android:onClick="@{()->form.setC401(`2`)}"
-                                android:text="@string/c40102" />
+                                android:text="@string/c40102"
+                                android:layout_weight="1"/>
 
                             <RadioButton
                                 android:id="@+id/c401998"
@@ -98,7 +101,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.c401.equals(`998`)}"
                                 android:onClick="@{()->form.setC401(`998`)}"
-                                android:text="@string/c401998" />
+                                android:text="@string/c401998"
+                                android:layout_weight="1"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -394,7 +398,8 @@
                         <RadioGroup
                             android:id="@+id/c404"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c40401"
@@ -402,13 +407,15 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.c404.equals(`1`)}"
                                 android:onClick="@{()->form.setC404(`1`)}"
-                                android:text="@string/c40401" />
+                                android:text="@string/c40401"
+                                android:layout_weight="1"/>
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/c40401x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/c40401"
+                                android:hint="##"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="c40401"
@@ -416,7 +423,8 @@
                                 android:visibility="@{form.c404.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="11"
                                 app:minValue="0"
-                                app:type="range" />
+                                app:type="range"
+                                android:layout_weight="1"/>
 
                             <RadioButton
                                 android:id="@+id/c404998"
@@ -424,7 +432,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.c404.equals(`998`)}"
                                 android:onClick="@{()->form.setC404(`998`)}"
-                                android:text="@string/c404998" />
+                                android:text="@string/c404998"
+                                android:layout_weight="1"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -461,7 +470,8 @@
                         <RadioGroup
                             android:id="@+id/c405"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c40501"
@@ -469,7 +479,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.c405.equals(`1`)}"
                                 android:onClick="@{()->form.setC405(`1`)}"
-                                android:text="@string/c40501" />
+                                android:text="@string/c40501"
+                                android:layout_weight="1"/>
 
                             <RadioButton
                                 android:id="@+id/c40502"
@@ -477,7 +488,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.c405.equals(`2`)}"
                                 android:onClick="@{()->form.setC405(`2`)}"
-                                android:text="@string/c40502" />
+                                android:text="@string/c40502"
+                                android:layout_weight="1"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

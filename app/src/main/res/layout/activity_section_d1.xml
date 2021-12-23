@@ -1,20 +1,24 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
 
         <variable
             name="form"
-            type="edu.aku.hassannaqvi.enp_baseline.models.Form" />
+            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleD" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
+
 
 
         <!-- CUSTOM TOOLBAR -->
@@ -27,20 +31,23 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectiond1under5childinformation_mainheading"
+            app:subtitle="@string/d1"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectiondsub_title"
+            app:title="@string/modd"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!-- dinstrc1  Title   -->
                 <androidx.cardview.widget.CardView
@@ -53,11 +60,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/dinstrc1" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- dinstrc2  Title   -->
                 <androidx.cardview.widget.CardView
@@ -70,11 +81,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/dinstrc2" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- dinstrc3  Title   -->
                 <androidx.cardview.widget.CardView
@@ -87,45 +102,16 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/dinstrc3" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!-- secdtitle  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVsecdtitle"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/secdtitle" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- d1  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVd1"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/d1" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- d101  Input   -->
                 <androidx.cardview.widget.CardView
@@ -163,8 +149,11 @@
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/d101"
                             android:text="@={form.d101}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d102  Input-Numeric   -->
                 <androidx.cardview.widget.CardView

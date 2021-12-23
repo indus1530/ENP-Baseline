@@ -3201,9 +3201,9 @@ For example, some start talking earlier than others, or they might already say s
     <string name="c22001">Yes</string>
     <string name="c22002">No</string>
     <string name="c220998">Don’t Know</string>
-    <string name="c221">How many times did you receive tetanus injection during the pregnancy?</string>
-    <string name="c221n">Number of times</string>
-    <string name="c221998">Don’t know</string>
+    <string name="c221"> How many times did you receive tetanus injection during the pregnancy ? </string>
+    <string name="c221a"> Number of Times </string>
+    <string name="c221998"> Don’t know </string>
 
     <string name="c3"> C3: Delivery &amp; Post-Natal Care: </string>
     <string name="c301">Who conducted the delivery of (name)?</string>

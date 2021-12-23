@@ -214,7 +214,8 @@ public class ModuleC extends BaseObservable implements Observable {
     private String c21896x = _EMPTY_;
     private String c219 = _EMPTY_;
     private String c220 = _EMPTY_;
-    private String c221n = _EMPTY_;
+    private String c221 = _EMPTY_;
+    private String c221ax = _EMPTY_;
     private String c301 = _EMPTY_;
     private String c30196x = _EMPTY_;
     private String c302 = _EMPTY_;
@@ -2243,7 +2244,9 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC21501(String c21501) {
+        if (this.c21501.equals(c21501)) return;
         this.c21501 = c21501;
+        setC21501x(c21501.equals("1") ? this.c21501x : "");
         notifyPropertyChanged(BR.c21501);
     }
 
@@ -2263,7 +2266,9 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC21502(String c21502) {
+        if (this.c21502.equals(c21502)) return;
         this.c21502 = c21502;
+        setC21502x(c21502.equals("2") ? this.c21502x : "");
         notifyPropertyChanged(BR.c21502);
     }
 
@@ -2283,7 +2288,9 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC21596(String c21596) {
+        if (this.c21596.equals(c21596)) return;
         this.c21596 = c21596;
+        setC21596x(c21596.equals("96") ? this.c21596x : "");
         notifyPropertyChanged(BR.c21596);
     }
 
@@ -2314,6 +2321,8 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC217(String c217) {
         this.c217 = c217;
+        setC21701x(c217.equals("1") ? this.c21701x : "");
+        setC21702x(c217.equals("2") ? this.c21702x : "");
         notifyPropertyChanged(BR.c217);
     }
 
@@ -2344,6 +2353,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC218(String c218) {
         this.c218 = c218;
+        setC21896x(c218.equals("96") ? this.c21896x : "");
         notifyPropertyChanged(BR.c218);
     }
 
@@ -2378,13 +2388,24 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getC221n() {
-        return c221n;
+    public String getC221() {
+        return c221;
     }
 
-    public void setC221n(String c221n) {
-        this.c221n = c221n;
-        notifyPropertyChanged(BR.c221n);
+    public void setC221(String c221) {
+        this.c221 = c221;
+        setC221ax(c221.equals("998") ? "" : this.getC221ax());
+        notifyPropertyChanged(BR.c221);
+    }
+
+    @Bindable
+    public String getC221ax() {
+        return c221ax;
+    }
+
+    public void setC221ax(String c221ax) {
+        this.c221ax = c221ax;
+        notifyPropertyChanged(BR.c221ax);
     }
 
     @Bindable
@@ -4983,7 +5004,8 @@ public class ModuleC extends BaseObservable implements Observable {
             this.c21896x = json.getString("c21896x");
             this.c219 = json.getString("c219");
             this.c220 = json.getString("c220");
-            this.c221n = json.getString("c221n");
+            this.c221 = json.getString("c221");
+            this.c221ax = json.getString("c221ax");
         }
     }
 
@@ -5461,7 +5483,8 @@ public class ModuleC extends BaseObservable implements Observable {
                 .put("c21896x", c21896x)
                 .put("c219", c219)
                 .put("c220", c220)
-                .put("c221n", c221n);
+                .put("c221", c221)
+                .put("c221ax", c221ax);
         return json.toString();
     }
 

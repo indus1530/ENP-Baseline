@@ -39,8 +39,6 @@ import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityFamilyListBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionAS2Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionBS1AActivity;
 
 
 public class FamilyMembersListActivity extends AppCompatActivity {

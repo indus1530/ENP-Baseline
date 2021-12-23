@@ -25,29 +25,6 @@ import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportCluster;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportDate;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportPending;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.ConsentActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionAS1Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionAS2Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionBS1AActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionBS2Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionBS3Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionBS4AActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionBS4BActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionBS5Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionBS6Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionBS7Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionCS1AActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionCS2Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionCS3AActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionCS3BActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionCS4Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionCS5Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionDS1Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionDS2Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionDS3Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionES1Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionES2Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionES3Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionES4Activity;
 
 
 public class MainActivity extends AppCompatActivity {

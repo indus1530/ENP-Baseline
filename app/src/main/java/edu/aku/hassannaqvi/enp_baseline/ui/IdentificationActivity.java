@@ -27,7 +27,6 @@ import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityIdentificationBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
 import edu.aku.hassannaqvi.enp_baseline.models.Villages;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionAS1Activity;
 
 
 public class IdentificationActivity extends AppCompatActivity {

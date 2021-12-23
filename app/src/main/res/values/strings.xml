@@ -3123,10 +3123,11 @@ For example, some start talking earlier than others, or they might already say s
     <string name="c2069701">Yes</string>
     <string name="c2069702">No</string>
     <string name="c20697998">Don’t Know</string>
-    <string name="c206oth">Any Other</string>
-    <string name="c206oth01">Yes</string>
-    <string name="c206oth02">No</string>
-    <string name="c20696">Other specify </string>
+    <string name="c20696"> Any Other </string>
+    <string name="c2069601">Yes</string>
+    <string name="c2069602">No</string>
+    <string name="c20696998">Don’t Know</string>
+    <string name="c20696x"> Other Specify </string>
     <string name="c207">Did you take iron folic acid (IFA)/FefolVit during your previous pregnancy?</string>
     <string name="c20701">Yes</string>
     <string name="c20702">No</string>

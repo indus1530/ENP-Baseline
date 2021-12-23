@@ -4057,6 +4057,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60101(String c60101) {
+        if (this.c60101.equals(c60101)) return;
         this.c60101 = c60101;
         notifyPropertyChanged(BR.c60101);
     }
@@ -4067,6 +4068,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60102(String c60102) {
+        if (this.c60102.equals(c60102)) return;
         this.c60102 = c60102;
         notifyPropertyChanged(BR.c60102);
     }
@@ -4077,6 +4079,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60103(String c60103) {
+        if (this.c60103.equals(c60103)) return;
         this.c60103 = c60103;
         notifyPropertyChanged(BR.c60103);
     }
@@ -4087,6 +4090,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60104(String c60104) {
+        if (this.c60104.equals(c60104)) return;
         this.c60104 = c60104;
         notifyPropertyChanged(BR.c60104);
     }
@@ -4097,6 +4101,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60105(String c60105) {
+        if (this.c60105.equals(c60105)) return;
         this.c60105 = c60105;
         notifyPropertyChanged(BR.c60105);
     }
@@ -4107,6 +4112,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60106(String c60106) {
+        if (this.c60106.equals(c60106)) return;
         this.c60106 = c60106;
         notifyPropertyChanged(BR.c60106);
     }
@@ -4117,6 +4123,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60107(String c60107) {
+        if (this.c60107.equals(c60107)) return;
         this.c60107 = c60107;
         notifyPropertyChanged(BR.c60107);
     }
@@ -4127,7 +4134,15 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60197(String c60197) {
+        if (this.c60197.equals(c60197)) return;
         this.c60197 = c60197;
+        setC60101(c60197.equals("97") ? "" : this.c60101);
+        setC60102(c60197.equals("97") ? "" : this.c60102);
+        setC60103(c60197.equals("97") ? "" : this.c60103);
+        setC60104(c60197.equals("97") ? "" : this.c60104);
+        setC60105(c60197.equals("97") ? "" : this.c60105);
+        setC60106(c60197.equals("97") ? "" : this.c60106);
+        setC60107(c60197.equals("97") ? "" : this.c60107);
         notifyPropertyChanged(BR.c60197);
     }
 
@@ -4137,6 +4152,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60201(String c60201) {
+        if (this.c60201.equals(c60201)) return;
         this.c60201 = c60201;
         notifyPropertyChanged(BR.c60201);
     }
@@ -4147,6 +4163,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60202(String c60202) {
+        if (this.c60202.equals(c60202)) return;
         this.c60202 = c60202;
         notifyPropertyChanged(BR.c60202);
     }
@@ -4157,6 +4174,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60203(String c60203) {
+        if (this.c60203.equals(c60203)) return;
         this.c60203 = c60203;
         notifyPropertyChanged(BR.c60203);
     }
@@ -4167,6 +4185,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60204(String c60204) {
+        if (this.c60204.equals(c60204)) return;
         this.c60204 = c60204;
         notifyPropertyChanged(BR.c60204);
     }
@@ -4177,6 +4196,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60205(String c60205) {
+        if (this.c60205.equals(c60205)) return;
         this.c60205 = c60205;
         notifyPropertyChanged(BR.c60205);
     }
@@ -4187,6 +4207,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60206(String c60206) {
+        if (this.c60206.equals(c60206)) return;
         this.c60206 = c60206;
         notifyPropertyChanged(BR.c60206);
     }
@@ -4197,6 +4218,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60207(String c60207) {
+        if (this.c60207.equals(c60207)) return;
         this.c60207 = c60207;
         notifyPropertyChanged(BR.c60207);
     }
@@ -4207,7 +4229,15 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60297(String c60297) {
+        if (this.c60297.equals(c60297)) return;
         this.c60297 = c60297;
+        setC60201(c60297.equals("97") ? "" : this.c60201);
+        setC60202(c60297.equals("97") ? "" : this.c60202);
+        setC60203(c60297.equals("97") ? "" : this.c60203);
+        setC60204(c60297.equals("97") ? "" : this.c60204);
+        setC60205(c60297.equals("97") ? "" : this.c60205);
+        setC60206(c60297.equals("97") ? "" : this.c60206);
+        setC60207(c60297.equals("97") ? "" : this.c60207);
         notifyPropertyChanged(BR.c60297);
     }
 
@@ -4217,6 +4247,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60301(String c60301) {
+        if (this.c60301.equals(c60301)) return;
         this.c60301 = c60301;
         notifyPropertyChanged(BR.c60301);
     }
@@ -4227,6 +4258,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60302(String c60302) {
+        if (this.c60302.equals(c60302)) return;
         this.c60302 = c60302;
         notifyPropertyChanged(BR.c60302);
     }
@@ -4237,6 +4269,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60303(String c60303) {
+        if (this.c60303.equals(c60303)) return;
         this.c60303 = c60303;
         notifyPropertyChanged(BR.c60303);
     }
@@ -4247,6 +4280,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60304(String c60304) {
+        if (this.c60304.equals(c60304)) return;
         this.c60304 = c60304;
         notifyPropertyChanged(BR.c60304);
     }
@@ -4257,6 +4291,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60305(String c60305) {
+        if (this.c60305.equals(c60305)) return;
         this.c60305 = c60305;
         notifyPropertyChanged(BR.c60305);
     }
@@ -4267,6 +4302,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60306(String c60306) {
+        if (this.c60306.equals(c60306)) return;
         this.c60306 = c60306;
         notifyPropertyChanged(BR.c60306);
     }
@@ -4277,6 +4313,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60307(String c60307) {
+        if (this.c60307.equals(c60307)) return;
         this.c60307 = c60307;
         notifyPropertyChanged(BR.c60307);
     }
@@ -4287,7 +4324,15 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60397(String c60397) {
+        if (this.c60397.equals(c60397)) return;
         this.c60397 = c60397;
+        setC60301(c60397.equals("97") ? "" : this.c60301);
+        setC60302(c60397.equals("97") ? "" : this.c60302);
+        setC60303(c60397.equals("97") ? "" : this.c60303);
+        setC60304(c60397.equals("97") ? "" : this.c60304);
+        setC60305(c60397.equals("97") ? "" : this.c60305);
+        setC60306(c60397.equals("97") ? "" : this.c60306);
+        setC60307(c60397.equals("97") ? "" : this.c60307);
         notifyPropertyChanged(BR.c60397);
     }
 
@@ -4297,6 +4342,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60401(String c60401) {
+        if (this.c60401.equals(c60401)) return;
         this.c60401 = c60401;
         notifyPropertyChanged(BR.c60401);
     }
@@ -4307,6 +4353,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60402(String c60402) {
+        if (this.c60402.equals(c60402)) return;
         this.c60402 = c60402;
         notifyPropertyChanged(BR.c60402);
     }
@@ -4317,6 +4364,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60403(String c60403) {
+        if (this.c60403.equals(c60403)) return;
         this.c60403 = c60403;
         notifyPropertyChanged(BR.c60403);
     }
@@ -4327,6 +4375,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60404(String c60404) {
+        if (this.c60404.equals(c60404)) return;
         this.c60404 = c60404;
         notifyPropertyChanged(BR.c60404);
     }
@@ -4337,6 +4386,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60405(String c60405) {
+        if (this.c60405.equals(c60405)) return;
         this.c60405 = c60405;
         notifyPropertyChanged(BR.c60405);
     }
@@ -4347,6 +4397,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60406(String c60406) {
+        if (this.c60406.equals(c60406)) return;
         this.c60406 = c60406;
         notifyPropertyChanged(BR.c60406);
     }
@@ -4357,6 +4408,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60407(String c60407) {
+        if (this.c60407.equals(c60407)) return;
         this.c60407 = c60407;
         notifyPropertyChanged(BR.c60407);
     }
@@ -4367,7 +4419,15 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60497(String c60497) {
+        if (this.c60497.equals(c60497)) return;
         this.c60497 = c60497;
+        setC60401(c60497.equals("97") ? "" : this.c60401);
+        setC60402(c60497.equals("97") ? "" : this.c60402);
+        setC60403(c60497.equals("97") ? "" : this.c60403);
+        setC60404(c60497.equals("97") ? "" : this.c60404);
+        setC60405(c60497.equals("97") ? "" : this.c60405);
+        setC60406(c60497.equals("97") ? "" : this.c60406);
+        setC60407(c60497.equals("97") ? "" : this.c60407);
         notifyPropertyChanged(BR.c60497);
     }
 
@@ -4377,6 +4437,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60501(String c60501) {
+        if (this.c60501.equals(c60501)) return;
         this.c60501 = c60501;
         notifyPropertyChanged(BR.c60501);
     }
@@ -4387,6 +4448,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60502(String c60502) {
+        if (this.c60502.equals(c60502)) return;
         this.c60502 = c60502;
         notifyPropertyChanged(BR.c60502);
     }
@@ -4397,6 +4459,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60503(String c60503) {
+        if (this.c60503.equals(c60503)) return;
         this.c60503 = c60503;
         notifyPropertyChanged(BR.c60503);
     }
@@ -4407,6 +4470,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60504(String c60504) {
+        if (this.c60504.equals(c60504)) return;
         this.c60504 = c60504;
         notifyPropertyChanged(BR.c60504);
     }
@@ -4417,6 +4481,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60505(String c60505) {
+        if (this.c60505.equals(c60505)) return;
         this.c60505 = c60505;
         notifyPropertyChanged(BR.c60505);
     }
@@ -4427,6 +4492,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60506(String c60506) {
+        if (this.c60506.equals(c60506)) return;
         this.c60506 = c60506;
         notifyPropertyChanged(BR.c60506);
     }
@@ -4437,6 +4503,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60507(String c60507) {
+        if (this.c60507.equals(c60507)) return;
         this.c60507 = c60507;
         notifyPropertyChanged(BR.c60507);
     }
@@ -4447,7 +4514,15 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60597(String c60597) {
+        if (this.c60597.equals(c60597)) return;
         this.c60597 = c60597;
+        setC60501(c60597.equals("97") ? "" : this.c60501);
+        setC60502(c60597.equals("97") ? "" : this.c60502);
+        setC60503(c60597.equals("97") ? "" : this.c60503);
+        setC60504(c60597.equals("97") ? "" : this.c60504);
+        setC60505(c60597.equals("97") ? "" : this.c60505);
+        setC60506(c60597.equals("97") ? "" : this.c60506);
+        setC60507(c60597.equals("97") ? "" : this.c60507);
         notifyPropertyChanged(BR.c60597);
     }
 
@@ -4457,6 +4532,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60601(String c60601) {
+        if (this.c60601.equals(c60601)) return;
         this.c60601 = c60601;
         notifyPropertyChanged(BR.c60601);
     }
@@ -4467,6 +4543,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60602(String c60602) {
+        if (this.c60602.equals(c60602)) return;
         this.c60602 = c60602;
         notifyPropertyChanged(BR.c60602);
     }
@@ -4477,6 +4554,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60603(String c60603) {
+        if (this.c60603.equals(c60603)) return;
         this.c60603 = c60603;
         notifyPropertyChanged(BR.c60603);
     }
@@ -4487,6 +4565,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60604(String c60604) {
+        if (this.c60604.equals(c60604)) return;
         this.c60604 = c60604;
         notifyPropertyChanged(BR.c60604);
     }
@@ -4497,6 +4576,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60605(String c60605) {
+        if (this.c60605.equals(c60605)) return;
         this.c60605 = c60605;
         notifyPropertyChanged(BR.c60605);
     }
@@ -4507,6 +4587,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60606(String c60606) {
+        if (this.c60606.equals(c60606)) return;
         this.c60606 = c60606;
         notifyPropertyChanged(BR.c60606);
     }
@@ -4517,6 +4598,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60607(String c60607) {
+        if (this.c60607.equals(c60607)) return;
         this.c60607 = c60607;
         notifyPropertyChanged(BR.c60607);
     }
@@ -4527,7 +4609,15 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60697(String c60697) {
+        if (this.c60697.equals(c60697)) return;
         this.c60697 = c60697;
+        setC60601(c60697.equals("97") ? "" : this.c60601);
+        setC60602(c60697.equals("97") ? "" : this.c60602);
+        setC60603(c60697.equals("97") ? "" : this.c60603);
+        setC60604(c60697.equals("97") ? "" : this.c60604);
+        setC60605(c60697.equals("97") ? "" : this.c60605);
+        setC60606(c60697.equals("97") ? "" : this.c60606);
+        setC60607(c60697.equals("97") ? "" : this.c60607);
         notifyPropertyChanged(BR.c60697);
     }
 
@@ -4537,6 +4627,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60701(String c60701) {
+        if (this.c60701.equals(c60701)) return;
         this.c60701 = c60701;
         notifyPropertyChanged(BR.c60701);
     }
@@ -4547,6 +4638,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60702(String c60702) {
+        if (this.c60702.equals(c60702)) return;
         this.c60702 = c60702;
         notifyPropertyChanged(BR.c60702);
     }
@@ -4557,6 +4649,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60703(String c60703) {
+        if (this.c60703.equals(c60703)) return;
         this.c60703 = c60703;
         notifyPropertyChanged(BR.c60703);
     }
@@ -4567,6 +4660,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60704(String c60704) {
+        if (this.c60704.equals(c60704)) return;
         this.c60704 = c60704;
         notifyPropertyChanged(BR.c60704);
     }
@@ -4577,6 +4671,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60705(String c60705) {
+        if (this.c60705.equals(c60705)) return;
         this.c60705 = c60705;
         notifyPropertyChanged(BR.c60705);
     }
@@ -4587,6 +4682,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60706(String c60706) {
+        if (this.c60706.equals(c60706)) return;
         this.c60706 = c60706;
         notifyPropertyChanged(BR.c60706);
     }
@@ -4597,6 +4693,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60707(String c60707) {
+        if (this.c60707.equals(c60707)) return;
         this.c60707 = c60707;
         notifyPropertyChanged(BR.c60707);
     }
@@ -4607,7 +4704,15 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60797(String c60797) {
+        if (this.c60797.equals(c60797)) return;
         this.c60797 = c60797;
+        setC60701(c60797.equals("97") ? "" : this.c60701);
+        setC60702(c60797.equals("97") ? "" : this.c60702);
+        setC60703(c60797.equals("97") ? "" : this.c60703);
+        setC60704(c60797.equals("97") ? "" : this.c60704);
+        setC60705(c60797.equals("97") ? "" : this.c60705);
+        setC60706(c60797.equals("97") ? "" : this.c60706);
+        setC60707(c60797.equals("97") ? "" : this.c60707);
         notifyPropertyChanged(BR.c60797);
     }
 
@@ -4617,6 +4722,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60801(String c60801) {
+        if (this.c60801.equals(c60801)) return;
         this.c60801 = c60801;
         notifyPropertyChanged(BR.c60801);
     }
@@ -4627,6 +4733,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60802(String c60802) {
+        if (this.c60802.equals(c60802)) return;
         this.c60802 = c60802;
         notifyPropertyChanged(BR.c60802);
     }
@@ -4637,6 +4744,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60803(String c60803) {
+        if (this.c60803.equals(c60803)) return;
         this.c60803 = c60803;
         notifyPropertyChanged(BR.c60803);
     }
@@ -4647,6 +4755,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60804(String c60804) {
+        if (this.c60804.equals(c60804)) return;
         this.c60804 = c60804;
         notifyPropertyChanged(BR.c60804);
     }
@@ -4657,6 +4766,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60805(String c60805) {
+        if (this.c60805.equals(c60805)) return;
         this.c60805 = c60805;
         notifyPropertyChanged(BR.c60805);
     }
@@ -4667,6 +4777,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60806(String c60806) {
+        if (this.c60806.equals(c60806)) return;
         this.c60806 = c60806;
         notifyPropertyChanged(BR.c60806);
     }
@@ -4677,6 +4788,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60807(String c60807) {
+        if (this.c60807.equals(c60807)) return;
         this.c60807 = c60807;
         notifyPropertyChanged(BR.c60807);
     }
@@ -4687,7 +4799,15 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60897(String c60897) {
+        if (this.c60897.equals(c60897)) return;
         this.c60897 = c60897;
+        setC60801(c60897.equals("97") ? "" : this.c60801);
+        setC60802(c60897.equals("97") ? "" : this.c60802);
+        setC60803(c60897.equals("97") ? "" : this.c60803);
+        setC60804(c60897.equals("97") ? "" : this.c60804);
+        setC60805(c60897.equals("97") ? "" : this.c60805);
+        setC60806(c60897.equals("97") ? "" : this.c60806);
+        setC60807(c60897.equals("97") ? "" : this.c60807);
         notifyPropertyChanged(BR.c60897);
     }
 
@@ -4697,6 +4817,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60901(String c60901) {
+        if (this.c60901.equals(c60901)) return;
         this.c60901 = c60901;
         notifyPropertyChanged(BR.c60901);
     }
@@ -4707,6 +4828,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60902(String c60902) {
+        if (this.c60902.equals(c60902)) return;
         this.c60902 = c60902;
         notifyPropertyChanged(BR.c60902);
     }
@@ -4717,6 +4839,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60903(String c60903) {
+        if (this.c60903.equals(c60903)) return;
         this.c60903 = c60903;
         notifyPropertyChanged(BR.c60903);
     }
@@ -4727,6 +4850,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60904(String c60904) {
+        if (this.c60904.equals(c60904)) return;
         this.c60904 = c60904;
         notifyPropertyChanged(BR.c60904);
     }
@@ -4737,6 +4861,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60905(String c60905) {
+        if (this.c60905.equals(c60905)) return;
         this.c60905 = c60905;
         notifyPropertyChanged(BR.c60905);
     }
@@ -4747,6 +4872,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60906(String c60906) {
+        if (this.c60906.equals(c60906)) return;
         this.c60906 = c60906;
         notifyPropertyChanged(BR.c60906);
     }
@@ -4757,6 +4883,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60907(String c60907) {
+        if (this.c60907.equals(c60907)) return;
         this.c60907 = c60907;
         notifyPropertyChanged(BR.c60907);
     }
@@ -4767,7 +4894,15 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC60997(String c60997) {
+        if (this.c60997.equals(c60997)) return;
         this.c60997 = c60997;
+        setC60901(c60997.equals("97") ? "" : this.c60901);
+        setC60902(c60997.equals("97") ? "" : this.c60902);
+        setC60903(c60997.equals("97") ? "" : this.c60903);
+        setC60904(c60997.equals("97") ? "" : this.c60904);
+        setC60905(c60997.equals("97") ? "" : this.c60905);
+        setC60906(c60997.equals("97") ? "" : this.c60906);
+        setC60907(c60997.equals("97") ? "" : this.c60907);
         notifyPropertyChanged(BR.c60997);
     }
 
@@ -4777,6 +4912,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC61001(String c61001) {
+        if (this.c61001.equals(c61001)) return;
         this.c61001 = c61001;
         notifyPropertyChanged(BR.c61001);
     }
@@ -4787,6 +4923,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC61002(String c61002) {
+        if (this.c61002.equals(c61002)) return;
         this.c61002 = c61002;
         notifyPropertyChanged(BR.c61002);
     }
@@ -4797,6 +4934,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC61003(String c61003) {
+        if (this.c61003.equals(c61003)) return;
         this.c61003 = c61003;
         notifyPropertyChanged(BR.c61003);
     }
@@ -4807,6 +4945,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC61004(String c61004) {
+        if (this.c61004.equals(c61004)) return;
         this.c61004 = c61004;
         notifyPropertyChanged(BR.c61004);
     }
@@ -4817,6 +4956,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC61005(String c61005) {
+        if (this.c61005.equals(c61005)) return;
         this.c61005 = c61005;
         notifyPropertyChanged(BR.c61005);
     }
@@ -4827,6 +4967,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC61006(String c61006) {
+        if (this.c61006.equals(c61006)) return;
         this.c61006 = c61006;
         notifyPropertyChanged(BR.c61006);
     }
@@ -4837,6 +4978,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC61007(String c61007) {
+        if (this.c61007.equals(c61007)) return;
         this.c61007 = c61007;
         notifyPropertyChanged(BR.c61007);
     }
@@ -4847,7 +4989,15 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     public void setC61097(String c61097) {
-        this.c61097 = c61097;
+        if (this.c61097.equals(c61097)) return;
+        this.c60397 = c60397;
+        setC61001(c61097.equals("97") ? "" : this.c61001);
+        setC61002(c61097.equals("97") ? "" : this.c61002);
+        setC61003(c61097.equals("97") ? "" : this.c61003);
+        setC61004(c61097.equals("97") ? "" : this.c61004);
+        setC61005(c61097.equals("97") ? "" : this.c61005);
+        setC61006(c61097.equals("97") ? "" : this.c61006);
+        setC61007(c61097.equals("97") ? "" : this.c61007);
         notifyPropertyChanged(BR.c61097);
     }
 

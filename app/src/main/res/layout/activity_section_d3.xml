@@ -534,7 +534,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="52dp"
                                 android:layout_weight="4"
-                                android:text="VACCINE NAMES"
+                                android:text="Vaccine Names"
                                 android:textColor="@color/black" />
 
                             <TextView
@@ -3314,34 +3314,42 @@
                         <RadioGroup
                             android:id="@+id/d328"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/d32801"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d328.equals(`1`)}"
                                 android:onClick="@{()->form.setD328(`1`)}"
                                 android:text="@string/d32801" />
 
                             <RadioButton
                                 android:id="@+id/d32802"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d328.equals(`2`)}"
                                 android:onClick="@{()->form.setD328(`2`)}"
                                 android:text="@string/d32802" />
 
                             <RadioButton
                                 android:id="@+id/d328998"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d328.equals(`998`)}"
                                 android:onClick="@{()->form.setD328(`998`)}"
                                 android:text="@string/d328998" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d329  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -3375,34 +3383,42 @@
                         <RadioGroup
                             android:id="@+id/d329"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/d32901"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d329.equals(`1`)}"
                                 android:onClick="@{()->form.setD329(`1`)}"
                                 android:text="@string/d32901" />
 
                             <RadioButton
                                 android:id="@+id/d32902"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d329.equals(`2`)}"
                                 android:onClick="@{()->form.setD329(`2`)}"
                                 android:text="@string/d32902" />
 
                             <RadioButton
                                 android:id="@+id/d32998"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d329.equals(`998`)}"
                                 android:onClick="@{()->form.setD329(`998`)}"
                                 android:text="@string/d32998" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d330  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -3444,6 +3460,7 @@
                                 android:id="@+id/d33001"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33001.equals(`1`)}"
                                 android:onClick="@{()->form.setD33001(form.d33001.equals(`1`)?``:`1`)}"
                                 android:text="@string/d33001" />
@@ -3452,6 +3469,7 @@
                                 android:id="@+id/d33002"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33002.equals(`2`)}"
                                 android:onClick="@{()->form.setD33002(form.d33002.equals(`2`)?``:`2`)}"
                                 android:text="@string/d33002" />
@@ -3460,6 +3478,7 @@
                                 android:id="@+id/d33003"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33003.equals(`3`)}"
                                 android:onClick="@{()->form.setD33003(form.d33003.equals(`3`)?``:`3`)}"
                                 android:text="@string/d33003" />
@@ -3468,6 +3487,7 @@
                                 android:id="@+id/d33004"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33004.equals(`4`)}"
                                 android:onClick="@{()->form.setD33004(form.d33004.equals(`4`)?``:`4`)}"
                                 android:text="@string/d33004" />
@@ -3476,6 +3496,7 @@
                                 android:id="@+id/d33005"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33005.equals(`5`)}"
                                 android:onClick="@{()->form.setD33005(form.d33005.equals(`5`)?``:`5`)}"
                                 android:text="@string/d33005" />
@@ -3484,6 +3505,7 @@
                                 android:id="@+id/d33006"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33006.equals(`6`)}"
                                 android:onClick="@{()->form.setD33006(form.d33006.equals(`6`)?``:`6`)}"
                                 android:text="@string/d33006" />
@@ -3492,6 +3514,7 @@
                                 android:id="@+id/d33007"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33007.equals(`7`)}"
                                 android:onClick="@{()->form.setD33007(form.d33007.equals(`7`)?``:`7`)}"
                                 android:text="@string/d33007" />
@@ -3500,6 +3523,7 @@
                                 android:id="@+id/d33008"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33008.equals(`8`)}"
                                 android:onClick="@{()->form.setD33008(form.d33008.equals(`8`)?``:`8`)}"
                                 android:text="@string/d33008" />
@@ -3508,6 +3532,7 @@
                                 android:id="@+id/d33009"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33009.equals(`9`)}"
                                 android:onClick="@{()->form.setD33009(form.d33009.equals(`9`)?``:`9`)}"
                                 android:text="@string/d33009" />
@@ -3516,6 +3541,7 @@
                                 android:id="@+id/d33010"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33010.equals(`10`)}"
                                 android:onClick="@{()->form.setD33010(form.d33010.equals(`10`)?``:`10`)}"
                                 android:text="@string/d33010" />
@@ -3524,6 +3550,7 @@
                                 android:id="@+id/d33011"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33011.equals(`11`)}"
                                 android:onClick="@{()->form.setD33011(form.d33011.equals(`11`)?``:`11`)}"
                                 android:text="@string/d33011" />
@@ -3532,6 +3559,7 @@
                                 android:id="@+id/d33012"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33012.equals(`12`)}"
                                 android:onClick="@{()->form.setD33012(form.d33012.equals(`12`)?``:`12`)}"
                                 android:text="@string/d33012" />
@@ -3540,6 +3568,7 @@
                                 android:id="@+id/d33013"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33013.equals(`13`)}"
                                 android:onClick="@{()->form.setD33013(form.d33013.equals(`13`)?``:`13`)}"
                                 android:text="@string/d33013" />
@@ -3556,6 +3585,7 @@
                                 android:id="@+id/d33096"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.d330998.equals(`998`)}"
                                 android:checked="@{form.d33096.equals(`96`)}"
                                 android:onClick="@{()->form.setD33096(form.d33096.equals(`96`)?``:`96`)}"
                                 android:text="@string/d33096" />

@@ -2605,6 +2605,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40401(String d40401) {
+        if (this.d40401.equals(d40401)) return;
         this.d40401 = d40401;
         notifyPropertyChanged(BR.d40401);
     }
@@ -2615,6 +2616,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40402(String d40402) {
+        if (this.d40402.equals(d40402)) return;
         this.d40402 = d40402;
         notifyPropertyChanged(BR.d40402);
     }
@@ -2625,6 +2627,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40403(String d40403) {
+        if (this.d40403.equals(d40403)) return;
         this.d40403 = d40403;
         notifyPropertyChanged(BR.d40403);
     }
@@ -2635,6 +2638,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40404(String d40404) {
+        if (this.d40404.equals(d40404)) return;
         this.d40404 = d40404;
         notifyPropertyChanged(BR.d40404);
     }
@@ -2645,6 +2649,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40405(String d40405) {
+        if (this.d40405.equals(d40405)) return;
         this.d40405 = d40405;
         notifyPropertyChanged(BR.d40405);
     }
@@ -2655,6 +2660,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40406(String d40406) {
+        if (this.d40406.equals(d40406)) return;
         this.d40406 = d40406;
         notifyPropertyChanged(BR.d40406);
     }
@@ -2665,6 +2671,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40407(String d40407) {
+        if (this.d40407.equals(d40407)) return;
         this.d40407 = d40407;
         notifyPropertyChanged(BR.d40407);
     }
@@ -2675,6 +2682,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40408(String d40408) {
+        if (this.d40408.equals(d40408)) return;
         this.d40408 = d40408;
         notifyPropertyChanged(BR.d40408);
     }
@@ -2685,6 +2693,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40409(String d40409) {
+        if (this.d40409.equals(d40409)) return;
         this.d40409 = d40409;
         notifyPropertyChanged(BR.d40409);
     }
@@ -2695,6 +2704,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40410(String d40410) {
+        if (this.d40410.equals(d40410)) return;
         this.d40410 = d40410;
         notifyPropertyChanged(BR.d40410);
     }
@@ -2705,6 +2715,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40411(String d40411) {
+        if (this.d40411.equals(d40411)) return;
         this.d40411 = d40411;
         notifyPropertyChanged(BR.d40411);
     }
@@ -2715,7 +2726,9 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40496(String d40496) {
+        if (this.d40496.equals(d40496)) return;
         this.d40496 = d40496;
+        setD40496x(d40496.equals("96") ? this.d40496x : "");
         notifyPropertyChanged(BR.d40496);
     }
 
@@ -2735,7 +2748,20 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD404998(String d404998) {
+        if (this.d404998.equals(d404998)) return;
         this.d404998 = d404998;
+        setD40401(d404998.equals("998") ? "" : this.d40401);
+        setD40402(d404998.equals("998") ? "" : this.d40402);
+        setD40403(d404998.equals("998") ? "" : this.d40403);
+        setD40404(d404998.equals("998") ? "" : this.d40404);
+        setD40405(d404998.equals("998") ? "" : this.d40405);
+        setD40406(d404998.equals("998") ? "" : this.d40406);
+        setD40407(d404998.equals("998") ? "" : this.d40407);
+        setD40408(d404998.equals("998") ? "" : this.d40408);
+        setD40409(d404998.equals("998") ? "" : this.d40409);
+        setD40410(d404998.equals("998") ? "" : this.d40410);
+        setD40411(d404998.equals("998") ? "" : this.d40411);
+        setD40496(d404998.equals("998") ? "" : this.d40496);
         notifyPropertyChanged(BR.d404998);
     }
 

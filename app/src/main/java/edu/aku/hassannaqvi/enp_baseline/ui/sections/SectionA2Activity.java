@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.form;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.familyMember;
 
 import android.os.Bundle;
 
@@ -21,7 +21,7 @@ public class SectionA2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a2);
-        bi.setForm(form);
+        bi.setFamilymember(familyMember);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
     }

@@ -70,7 +70,7 @@ public class SectionA1Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionBS5Activity.class));
+            startActivity(new Intent(this, SectionA3Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

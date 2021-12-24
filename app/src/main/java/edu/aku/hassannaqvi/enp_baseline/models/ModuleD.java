@@ -2485,6 +2485,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40301(String d40301) {
+        if (this.d40301.equals(d40301)) return;
         this.d40301 = d40301;
         notifyPropertyChanged(BR.d40301);
     }
@@ -2495,6 +2496,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40302(String d40302) {
+        if (this.d40302.equals(d40302)) return;
         this.d40302 = d40302;
         notifyPropertyChanged(BR.d40302);
     }
@@ -2505,6 +2507,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40303(String d40303) {
+        if (this.d40303.equals(d40303)) return;
         this.d40303 = d40303;
         notifyPropertyChanged(BR.d40303);
     }
@@ -2515,6 +2518,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40304(String d40304) {
+        if (this.d40304.equals(d40304)) return;
         this.d40304 = d40304;
         notifyPropertyChanged(BR.d40304);
     }
@@ -2525,6 +2529,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40305(String d40305) {
+        if (this.d40305.equals(d40305)) return;
         this.d40305 = d40305;
         notifyPropertyChanged(BR.d40305);
     }
@@ -2535,6 +2540,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40306(String d40306) {
+        if (this.d40306.equals(d40306)) return;
         this.d40306 = d40306;
         notifyPropertyChanged(BR.d40306);
     }
@@ -2545,6 +2551,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40307(String d40307) {
+        if (this.d40307.equals(d40307)) return;
         this.d40307 = d40307;
         notifyPropertyChanged(BR.d40307);
     }
@@ -2555,6 +2562,7 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40308(String d40308) {
+        if (this.d40308.equals(d40308)) return;
         this.d40308 = d40308;
         notifyPropertyChanged(BR.d40308);
     }
@@ -2565,7 +2573,9 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     public void setD40396(String d40396) {
+        if (this.d40396.equals(d40396)) return;
         this.d40396 = d40396;
+        setD40396x(d40396.equals("96") ? this.d40396x : "");
         notifyPropertyChanged(BR.d40396);
     }
 

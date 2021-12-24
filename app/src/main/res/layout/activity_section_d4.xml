@@ -252,26 +252,33 @@
                         <RadioGroup
                             android:id="@+id/d402"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/d40201"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d402.equals(`1`)}"
                                 android:onClick="@{()->form.setD402(`1`)}"
                                 android:text="@string/d40201" />
 
                             <RadioButton
                                 android:id="@+id/d40202"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d402.equals(`2`)}"
                                 android:onClick="@{()->form.setD402(`2`)}"
                                 android:text="@string/d40202" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d403  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -309,6 +316,12 @@
                             android:orientation="vertical"
                             android:tag="0">
 
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/d403t1" />
+
                             <CheckBox
                                 android:id="@+id/d40301"
                                 android:layout_width="match_parent"
@@ -332,6 +345,12 @@
                                 android:checked="@{form.d40303.equals(`3`)}"
                                 android:onClick="@{()->form.setD40303(form.d40303.equals(`3`)?``:`3`)}"
                                 android:text="@string/d40303" />
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/d403t2" />
 
                             <CheckBox
                                 android:id="@+id/d40304"
@@ -390,43 +409,13 @@
                                 android:tag="d40396"
                                 android:text="@={form.d40396x}"
                                 android:visibility="@{form.d40396.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!-- d403t1  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVd403t1"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/d403t1" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- d403t2  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVd403t2"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/d403t2" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- d404  CheckBox   -->
                 <androidx.cardview.widget.CardView

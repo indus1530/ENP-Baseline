@@ -1,14 +1,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
 
         <variable
             name="form"
-            type="edu.aku.hassannaqvi.enp_baseline.models.Form" />
+            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleD" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,14 +30,16 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectiond4morbiditycareseekingbehaviourcs_mainheading"
+            app:subtitle="@string/d4"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectiondsub_title"
+            app:title="@string/modd"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -42,22 +47,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- d4title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVd4title"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/d4title" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- d4instr  Title   -->
                 <androidx.cardview.widget.CardView
@@ -70,11 +59,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/d4instr" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d401  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -118,7 +111,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40101.equals(`1`)}"
                                 android:onClick="@{()->form.setD40101(form.d40101.equals(`1`)?``:`1`)}"
-
                                 android:text="@string/d40101" />
 
                             <CheckBox
@@ -127,7 +119,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40102.equals(`2`)}"
                                 android:onClick="@{()->form.setD40102(form.d40102.equals(`2`)?``:`2`)}"
-
                                 android:text="@string/d40102" />
 
                             <CheckBox
@@ -136,7 +127,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40103.equals(`3`)}"
                                 android:onClick="@{()->form.setD40103(form.d40103.equals(`3`)?``:`3`)}"
-
                                 android:text="@string/d40103" />
 
                             <CheckBox
@@ -145,7 +135,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40104.equals(`4`)}"
                                 android:onClick="@{()->form.setD40104(form.d40104.equals(`4`)?``:`4`)}"
-
                                 android:text="@string/d40104" />
 
                             <CheckBox
@@ -154,7 +143,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40105.equals(`5`)}"
                                 android:onClick="@{()->form.setD40105(form.d40105.equals(`5`)?``:`5`)}"
-
                                 android:text="@string/d40105" />
 
                             <CheckBox
@@ -163,7 +151,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40106.equals(`6`)}"
                                 android:onClick="@{()->form.setD40106(form.d40106.equals(`6`)?``:`6`)}"
-
                                 android:text="@string/d40106" />
 
                             <CheckBox
@@ -172,7 +159,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40107.equals(`7`)}"
                                 android:onClick="@{()->form.setD40107(form.d40107.equals(`7`)?``:`7`)}"
-
                                 android:text="@string/d40107" />
 
                             <CheckBox
@@ -181,7 +167,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40108.equals(`8`)}"
                                 android:onClick="@{()->form.setD40108(form.d40108.equals(`8`)?``:`8`)}"
-
                                 android:text="@string/d40108" />
 
                             <CheckBox
@@ -190,7 +175,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40110.equals(`10`)}"
                                 android:onClick="@{()->form.setD40110(form.d40110.equals(`10`)?``:`10`)}"
-
                                 android:text="@string/d40110" />
 
                             <CheckBox
@@ -217,11 +201,14 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d401998.equals(`998`)}"
                                 android:onClick="@{()->form.setD401998(form.d401998.equals(`998`)?``:`998`)}"
-
                                 android:text="@string/d401998" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d402  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -318,7 +305,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40301.equals(`1`)}"
                                 android:onClick="@{()->form.setD40301(form.d40301.equals(`1`)?``:`1`)}"
-
                                 android:text="@string/d40301" />
 
                             <CheckBox
@@ -327,7 +313,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40302.equals(`2`)}"
                                 android:onClick="@{()->form.setD40302(form.d40302.equals(`2`)?``:`2`)}"
-
                                 android:text="@string/d40302" />
 
                             <CheckBox
@@ -336,7 +321,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40303.equals(`3`)}"
                                 android:onClick="@{()->form.setD40303(form.d40303.equals(`3`)?``:`3`)}"
-
                                 android:text="@string/d40303" />
 
                             <CheckBox
@@ -345,7 +329,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40304.equals(`4`)}"
                                 android:onClick="@{()->form.setD40304(form.d40304.equals(`4`)?``:`4`)}"
-
                                 android:text="@string/d40304" />
 
                             <CheckBox
@@ -354,7 +337,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40305.equals(`5`)}"
                                 android:onClick="@{()->form.setD40305(form.d40305.equals(`5`)?``:`5`)}"
-
                                 android:text="@string/d40305" />
 
                             <CheckBox
@@ -363,7 +345,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40306.equals(`6`)}"
                                 android:onClick="@{()->form.setD40306(form.d40306.equals(`6`)?``:`6`)}"
-
                                 android:text="@string/d40306" />
 
                             <CheckBox
@@ -372,7 +353,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40307.equals(`7`)}"
                                 android:onClick="@{()->form.setD40307(form.d40307.equals(`7`)?``:`7`)}"
-
                                 android:text="@string/d40307" />
 
                             <CheckBox
@@ -381,7 +361,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40308.equals(`8`)}"
                                 android:onClick="@{()->form.setD40308(form.d40308.equals(`8`)?``:`8`)}"
-
                                 android:text="@string/d40308" />
 
                             <CheckBox
@@ -481,7 +460,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40401.equals(`1`)}"
                                 android:onClick="@{()->form.setD40401(form.d40401.equals(`1`)?``:`1`)}"
-
                                 android:text="@string/d40401" />
 
                             <CheckBox
@@ -490,7 +468,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40402.equals(`2`)}"
                                 android:onClick="@{()->form.setD40402(form.d40402.equals(`2`)?``:`2`)}"
-
                                 android:text="@string/d40402" />
 
                             <CheckBox
@@ -499,7 +476,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40403.equals(`3`)}"
                                 android:onClick="@{()->form.setD40403(form.d40403.equals(`3`)?``:`3`)}"
-
                                 android:text="@string/d40403" />
 
                             <CheckBox
@@ -508,7 +484,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40404.equals(`4`)}"
                                 android:onClick="@{()->form.setD40404(form.d40404.equals(`4`)?``:`4`)}"
-
                                 android:text="@string/d40404" />
 
                             <CheckBox
@@ -517,7 +492,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40405.equals(`5`)}"
                                 android:onClick="@{()->form.setD40405(form.d40405.equals(`5`)?``:`5`)}"
-
                                 android:text="@string/d40405" />
 
                             <CheckBox
@@ -526,7 +500,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40406.equals(`6`)}"
                                 android:onClick="@{()->form.setD40406(form.d40406.equals(`6`)?``:`6`)}"
-
                                 android:text="@string/d40406" />
 
                             <CheckBox
@@ -535,7 +508,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40407.equals(`7`)}"
                                 android:onClick="@{()->form.setD40407(form.d40407.equals(`7`)?``:`7`)}"
-
                                 android:text="@string/d40407" />
 
                             <CheckBox
@@ -544,7 +516,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40408.equals(`8`)}"
                                 android:onClick="@{()->form.setD40408(form.d40408.equals(`8`)?``:`8`)}"
-
                                 android:text="@string/d40408" />
 
                             <CheckBox
@@ -553,7 +524,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40409.equals(`9`)}"
                                 android:onClick="@{()->form.setD40409(form.d40409.equals(`9`)?``:`9`)}"
-
                                 android:text="@string/d40409" />
 
                             <CheckBox
@@ -562,7 +532,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40410.equals(`10`)}"
                                 android:onClick="@{()->form.setD40410(form.d40410.equals(`10`)?``:`10`)}"
-
                                 android:text="@string/d40410" />
 
                             <CheckBox
@@ -571,7 +540,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d40411.equals(`11`)}"
                                 android:onClick="@{()->form.setD40411(form.d40411.equals(`11`)?``:`11`)}"
-
                                 android:text="@string/d40411" />
 
                             <CheckBox
@@ -598,7 +566,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d404998.equals(`998`)}"
                                 android:onClick="@{()->form.setD404998(form.d404998.equals(`998`)?``:`998`)}"
-
                                 android:text="@string/d404998" />
                         </LinearLayout>
                     </LinearLayout>
@@ -753,6 +720,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -792,7 +760,15 @@
 
                 </LinearLayout>
                 <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
+
         </ScrollView>
+
+
     </LinearLayout>
+
+
 </layout>

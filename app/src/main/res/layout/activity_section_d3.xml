@@ -494,7 +494,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- d305 -->
+                <!-- d305 VACCINATION -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd305"
                     style="@style/cardView">
@@ -3158,9 +3158,13 @@
                                 android:checked="@{form.d325.equals(`4`)}"
                                 android:onClick="@{()->form.setD325(`4`)}"
                                 android:text="@string/d32504" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d326  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -3194,34 +3198,42 @@
                         <RadioGroup
                             android:id="@+id/d326"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/d32601"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d326.equals(`1`)}"
                                 android:onClick="@{()->form.setD326(`1`)}"
                                 android:text="@string/d32601" />
 
                             <RadioButton
                                 android:id="@+id/d32602"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d326.equals(`2`)}"
                                 android:onClick="@{()->form.setD326(`2`)}"
                                 android:text="@string/d32602" />
 
                             <RadioButton
                                 android:id="@+id/d326998"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.d326.equals(`998`)}"
                                 android:onClick="@{()->form.setD326(`998`)}"
                                 android:text="@string/d326998" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d327  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -3255,16 +3267,20 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/d327"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/d327"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.d327}"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d328  Radio   -->
                 <androidx.cardview.widget.CardView

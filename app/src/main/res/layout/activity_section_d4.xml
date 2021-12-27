@@ -210,7 +210,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d401998.equals(`998`)}"
-                                android:onClick="@{()->form.setD401998(form.d401998.equals(`998`)?``:`998`)}"
+                                android:onClick="@{()->form.setD401998(form.d401998.equals(`998`)?``:`998`) + d402.clearCheck()}"
                                 android:text="@string/d401998" />
 
                         </LinearLayout>
@@ -218,6 +218,13 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/fldGrpd402"
+                    android:visibility="@{form.d401998.equals(`998`) ? View.GONE : View.VISIBLE}">
 
 
                 <!-- d402  Radio   -->
@@ -279,6 +286,13 @@
 
                 </androidx.cardview.widget.CardView>
 
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/fldGrpd403"
+                        android:visibility="@{form.d402.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                 <!-- d403  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -585,6 +599,9 @@
 
                 </androidx.cardview.widget.CardView>
 
+                    </LinearLayout>
+                </LinearLayout>
+
 
                 <!-- modstatus  Title   -->
                 <androidx.cardview.widget.CardView
@@ -734,6 +751,8 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+
 
 
                 <!--EndButton LinearLayout-->

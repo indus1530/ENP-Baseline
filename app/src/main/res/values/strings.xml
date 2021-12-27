@@ -3561,9 +3561,9 @@ For example, some start talking earlier than others, or they might already say s
     <string name="c61006">Dinner</string>
     <string name="c61007">Between Dinner and sleep</string>
     <string name="c61097">Not Consumed</string>
-    <string name="istatus">Was module completed?</string>
+    <!--<string name="istatus">Was module completed?</string>
     <string name="istatus01">Yes</string>
-    <string name="istatus02">No</string>
+    <string name="istatus02">No</string>-->
     <string name="reason">Reason for not completing</string>
     <string name="reason01">Consent not provided </string>
     <string name="reason02">No household member available</string>

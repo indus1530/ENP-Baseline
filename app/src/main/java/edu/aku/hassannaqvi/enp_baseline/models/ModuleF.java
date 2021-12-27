@@ -592,6 +592,7 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setIstf01(String istf01) {
         this.istf01 = istf01;
+        setIstf02(istf02.equals("2") ? this.istf02 : "");
         notifyPropertyChanged(BR.istf01);
     }
 
@@ -602,6 +603,7 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setIstf02(String istf02) {
         this.istf02 = istf02;
+        setIstf0296x(istf02.equals("96") ? this.istf0296x : "");
         notifyPropertyChanged(BR.istf02);
     }
 

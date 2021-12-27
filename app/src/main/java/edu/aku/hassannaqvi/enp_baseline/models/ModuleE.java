@@ -1159,6 +1159,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20101(String e20101) {
+        if (this.e20101.equals(e20101)) return;
         this.e20101 = e20101;
         notifyPropertyChanged(BR.e20101);
     }
@@ -1169,6 +1170,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20102(String e20102) {
+        if (this.e20102.equals(e20102)) return;
         this.e20102 = e20102;
         notifyPropertyChanged(BR.e20102);
     }
@@ -1179,6 +1181,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20103(String e20103) {
+        if (this.e20103.equals(e20103)) return;
         this.e20103 = e20103;
         notifyPropertyChanged(BR.e20103);
     }
@@ -1189,6 +1192,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20104(String e20104) {
+        if (this.e20104.equals(e20104)) return;
         this.e20104 = e20104;
         notifyPropertyChanged(BR.e20104);
     }
@@ -1199,6 +1203,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20105(String e20105) {
+        if (this.e20105.equals(e20105)) return;
         this.e20105 = e20105;
         notifyPropertyChanged(BR.e20105);
     }
@@ -1209,6 +1214,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20106(String e20106) {
+        if (this.e20106.equals(e20106)) return;
         this.e20106 = e20106;
         notifyPropertyChanged(BR.e20106);
     }
@@ -1219,6 +1225,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20107(String e20107) {
+        if (this.e20107.equals(e20107)) return;
         this.e20107 = e20107;
         notifyPropertyChanged(BR.e20107);
     }
@@ -1229,7 +1236,15 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20197(String e20197) {
+        if (this.e20197.equals(e20197)) return;
         this.e20197 = e20197;
+        setE20101(e20197.equals("97") ? "" : this.e20101);
+        setE20102(e20197.equals("97") ? "" : this.e20102);
+        setE20103(e20197.equals("97") ? "" : this.e20103);
+        setE20104(e20197.equals("97") ? "" : this.e20104);
+        setE20105(e20197.equals("97") ? "" : this.e20105);
+        setE20106(e20197.equals("97") ? "" : this.e20106);
+        setE20107(e20197.equals("97") ? "" : this.e20107);
         notifyPropertyChanged(BR.e20197);
     }
 
@@ -1309,7 +1324,15 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20297(String e20297) {
-        this.e20297 = e20297;
+        if (this.e20297.equals(e20297)) return;
+        this.e20197 = e20197;
+        setE20201(e20297.equals("97") ? "" : this.e20201);
+        setE20202(e20297.equals("97") ? "" : this.e20202);
+        setE20203(e20297.equals("97") ? "" : this.e20203);
+        setE20204(e20297.equals("97") ? "" : this.e20204);
+        setE20205(e20297.equals("97") ? "" : this.e20205);
+        setE20206(e20297.equals("97") ? "" : this.e20206);
+        setE20207(e20297.equals("97") ? "" : this.e20207);
         notifyPropertyChanged(BR.e20297);
     }
 
@@ -1389,7 +1412,15 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20397(String e20397) {
+        if (this.e20397.equals(e20397)) return;
         this.e20397 = e20397;
+        setE20301(e20397.equals("97") ? "" : this.e20301);
+        setE20302(e20397.equals("97") ? "" : this.e20302);
+        setE20303(e20397.equals("97") ? "" : this.e20303);
+        setE20304(e20397.equals("97") ? "" : this.e20304);
+        setE20305(e20397.equals("97") ? "" : this.e20305);
+        setE20306(e20397.equals("97") ? "" : this.e20306);
+        setE20307(e20397.equals("97") ? "" : this.e20307);
         notifyPropertyChanged(BR.e20397);
     }
 
@@ -1469,7 +1500,15 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20497(String e20497) {
+        if (this.e20497.equals(e20497)) return;
         this.e20497 = e20497;
+        setE20401(e20497.equals("97") ? "" : this.e20401);
+        setE20402(e20497.equals("97") ? "" : this.e20402);
+        setE20403(e20497.equals("97") ? "" : this.e20403);
+        setE20404(e20497.equals("97") ? "" : this.e20404);
+        setE20405(e20497.equals("97") ? "" : this.e20405);
+        setE20406(e20497.equals("97") ? "" : this.e20406);
+        setE20407(e20497.equals("97") ? "" : this.e20407);
         notifyPropertyChanged(BR.e20497);
     }
 
@@ -1549,7 +1588,15 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20597(String e20597) {
+        if (this.e20597.equals(e20597)) return;
         this.e20597 = e20597;
+        setE20501(e20597.equals("97") ? "" : this.e20501);
+        setE20502(e20597.equals("97") ? "" : this.e20502);
+        setE20503(e20597.equals("97") ? "" : this.e20503);
+        setE20504(e20597.equals("97") ? "" : this.e20504);
+        setE20505(e20597.equals("97") ? "" : this.e20505);
+        setE20506(e20597.equals("97") ? "" : this.e20506);
+        setE20507(e20597.equals("97") ? "" : this.e20507);
         notifyPropertyChanged(BR.e20597);
     }
 
@@ -1629,7 +1676,15 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20697(String e20697) {
+        if (this.e20697.equals(e20697)) return;
         this.e20697 = e20697;
+        setE20601(e20697.equals("97") ? "" : this.e20601);
+        setE20602(e20697.equals("97") ? "" : this.e20602);
+        setE20603(e20697.equals("97") ? "" : this.e20603);
+        setE20604(e20697.equals("97") ? "" : this.e20604);
+        setE20605(e20697.equals("97") ? "" : this.e20605);
+        setE20606(e20697.equals("97") ? "" : this.e20606);
+        setE20607(e20697.equals("97") ? "" : this.e20607);
         notifyPropertyChanged(BR.e20697);
     }
 
@@ -1709,7 +1764,15 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20797(String e20797) {
+        if (this.e20797.equals(e20797)) return;
         this.e20797 = e20797;
+        setE20701(e20797.equals("97") ? "" : this.e20701);
+        setE20702(e20797.equals("97") ? "" : this.e20702);
+        setE20703(e20797.equals("97") ? "" : this.e20703);
+        setE20704(e20797.equals("97") ? "" : this.e20704);
+        setE20705(e20797.equals("97") ? "" : this.e20705);
+        setE20706(e20797.equals("97") ? "" : this.e20706);
+        setE20707(e20797.equals("97") ? "" : this.e20707);
         notifyPropertyChanged(BR.e20797);
     }
 
@@ -1789,7 +1852,15 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20897(String e20897) {
+        if (this.e20897.equals(e20897)) return;
         this.e20897 = e20897;
+        setE20801(e20897.equals("97") ? "" : this.e20801);
+        setE20802(e20897.equals("97") ? "" : this.e20802);
+        setE20803(e20897.equals("97") ? "" : this.e20803);
+        setE20804(e20897.equals("97") ? "" : this.e20804);
+        setE20805(e20897.equals("97") ? "" : this.e20805);
+        setE20806(e20897.equals("97") ? "" : this.e20806);
+        setE20807(e20897.equals("97") ? "" : this.e20807);
         notifyPropertyChanged(BR.e20897);
     }
 
@@ -1869,7 +1940,15 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE20997(String e20997) {
-        this.e20997 = e20997;
+        if (this.e20997.equals(e20997)) return;
+        this.e20197 = e20197;
+        setE20901(e20997.equals("97") ? "" : this.e20901);
+        setE20902(e20997.equals("97") ? "" : this.e20902);
+        setE20903(e20997.equals("97") ? "" : this.e20903);
+        setE20904(e20997.equals("97") ? "" : this.e20904);
+        setE20905(e20997.equals("97") ? "" : this.e20905);
+        setE20906(e20997.equals("97") ? "" : this.e20906);
+        setE20907(e20997.equals("97") ? "" : this.e20907);
         notifyPropertyChanged(BR.e20997);
     }
 
@@ -1949,7 +2028,15 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE21097(String e21097) {
+        if (this.e21097.equals(e21097)) return;
         this.e21097 = e21097;
+        setE21001(e21097.equals("97") ? "" : this.e21001);
+        setE21002(e21097.equals("97") ? "" : this.e21002);
+        setE21003(e21097.equals("97") ? "" : this.e21003);
+        setE21004(e21097.equals("97") ? "" : this.e21004);
+        setE21005(e21097.equals("97") ? "" : this.e21005);
+        setE21006(e21097.equals("97") ? "" : this.e21006);
+        setE21007(e21097.equals("97") ? "" : this.e21007);
         notifyPropertyChanged(BR.e21097);
     }
 

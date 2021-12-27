@@ -2473,6 +2473,31 @@ public class ModuleD extends BaseObservable implements Observable {
         //setD40109(d401998.equals("998") ? "" : this.d40109);
         setD40110(d401998.equals("998") ? "" : this.d40110);
         setD40196(d401998.equals("998") ? "" : this.d40196);
+
+        setD402(d401998.equals("998") ? "" : this.d402);
+        setD40301(d401998.equals("998") ? "" : this.d40301);
+        setD40302(d401998.equals("998") ? "" : this.d40302);
+        setD40303(d401998.equals("998") ? "" : this.d40303);
+        setD40304(d401998.equals("998") ? "" : this.d40304);
+        setD40305(d401998.equals("998") ? "" : this.d40305);
+        setD40306(d401998.equals("998") ? "" : this.d40306);
+        setD40307(d401998.equals("998") ? "" : this.d40307);
+        setD40308(d401998.equals("998") ? "" : this.d40308);
+        setD40396(d401998.equals("998") ? "" : this.d40396);
+
+        setD40401(d401998.equals("998") ? "" : this.d40401);
+        setD40402(d401998.equals("998") ? "" : this.d40402);
+        setD40403(d401998.equals("998") ? "" : this.d40403);
+        setD40404(d401998.equals("998") ? "" : this.d40404);
+        setD40405(d401998.equals("998") ? "" : this.d40405);
+        setD40406(d401998.equals("998") ? "" : this.d40406);
+        setD40407(d401998.equals("998") ? "" : this.d40407);
+        setD40408(d401998.equals("998") ? "" : this.d40408);
+        setD40409(d401998.equals("998") ? "" : this.d40409);
+        setD40410(d401998.equals("998") ? "" : this.d40410);
+        setD40411(d401998.equals("998") ? "" : this.d40411);
+        setD40496(d401998.equals("998") ? "" : this.d40496);
+        setD404998(d401998.equals("998") ? "" : this.d404998);
         notifyPropertyChanged(BR.d401998);
     }
 
@@ -2483,6 +2508,28 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD402(String d402) {
         this.d402 = d402;
+        setD40301(d402.equals("1") ? this.d40301 : "");
+        setD40302(d402.equals("1") ? this.d40302 : "");
+        setD40303(d402.equals("1") ? this.d40303 : "");
+        setD40304(d402.equals("1") ? this.d40304 : "");
+        setD40305(d402.equals("1") ? this.d40305 : "");
+        setD40306(d402.equals("1") ? this.d40306 : "");
+        setD40307(d402.equals("1") ? this.d40307 : "");
+        setD40308(d402.equals("1") ? this.d40308 : "");
+        setD40396(d402.equals("1") ? this.d40396 : "");
+        setD40401(d402.equals("1") ? this.d40401 : "");
+        setD40402(d402.equals("1") ? this.d40402 : "");
+        setD40403(d402.equals("1") ? this.d40403 : "");
+        setD40404(d402.equals("1") ? this.d40404 : "");
+        setD40405(d402.equals("1") ? this.d40405 : "");
+        setD40406(d402.equals("1") ? this.d40406 : "");
+        setD40407(d402.equals("1") ? this.d40407 : "");
+        setD40408(d402.equals("1") ? this.d40408 : "");
+        setD40409(d402.equals("1") ? this.d40409 : "");
+        setD40410(d402.equals("1") ? this.d40410 : "");
+        setD40411(d402.equals("1") ? this.d40411 : "");
+        setD40496(d402.equals("1") ? this.d40496 : "");
+        setD404998(d402.equals("1") ? this.d404998 : "");
         notifyPropertyChanged(BR.d402);
     }
 

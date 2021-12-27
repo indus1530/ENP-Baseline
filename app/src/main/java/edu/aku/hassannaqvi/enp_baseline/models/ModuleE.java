@@ -1076,6 +1076,8 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE124(String e124) {
         this.e124 = e124;
+        setE12401x(e124.equals("1") ? this.e12401x : "");
+        setE12402x(e124.equals("2") ? this.e12402x : "");
         notifyPropertyChanged(BR.e124);
     }
 
@@ -1106,6 +1108,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE125(String e125) {
         this.e125 = e125;
+        setE12596x(e125.equals("96") ? this.e12596x : "");
         notifyPropertyChanged(BR.e125);
     }
 
@@ -1136,6 +1139,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE127(String e127) {
         this.e127 = e127;
+        setE12701x(e127.equals("1") ? this.e12701x : "");
         notifyPropertyChanged(BR.e127);
     }
 

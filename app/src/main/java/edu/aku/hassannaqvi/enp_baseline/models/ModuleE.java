@@ -97,7 +97,9 @@ public class ModuleE extends BaseObservable implements Observable {
     private String e113f = _EMPTY_;
     private String e113g = _EMPTY_;
     private String e113h = _EMPTY_;
-    private String e113j96x = _EMPTY_;
+    private String e11397 = _EMPTY_;
+    private String e11396 = _EMPTY_;
+    private String e11396x = _EMPTY_;
     private String e114 = _EMPTY_;
     private String e115 = _EMPTY_;
     private String e116 = _EMPTY_;
@@ -352,6 +354,8 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE107(String e107) {
         this.e107 = e107;
+        setE10701x(e107.equals("1") ? this.e10701x : "");
+        setE10702x(e107.equals("2") ? this.e10702x : "");
         notifyPropertyChanged(BR.e107);
     }
 
@@ -401,6 +405,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE10901(String e10901) {
+        if (this.e10901.equals(e10901)) return;
         this.e10901 = e10901;
         notifyPropertyChanged(BR.e10901);
     }
@@ -411,6 +416,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE10902(String e10902) {
+        if (this.e10902.equals(e10902)) return;
         this.e10902 = e10902;
         notifyPropertyChanged(BR.e10902);
     }
@@ -421,6 +427,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE10903(String e10903) {
+        if (this.e10903.equals(e10903)) return;
         this.e10903 = e10903;
         notifyPropertyChanged(BR.e10903);
     }
@@ -431,6 +438,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE10904(String e10904) {
+        if (this.e10904.equals(e10904)) return;
         this.e10904 = e10904;
         notifyPropertyChanged(BR.e10904);
     }
@@ -441,6 +449,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE10905(String e10905) {
+        if (this.e10905.equals(e10905)) return;
         this.e10905 = e10905;
         notifyPropertyChanged(BR.e10905);
     }
@@ -451,6 +460,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE10906(String e10906) {
+        if (this.e10906.equals(e10906)) return;
         this.e10906 = e10906;
         notifyPropertyChanged(BR.e10906);
     }
@@ -461,6 +471,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE10907(String e10907) {
+        if (this.e10907.equals(e10907)) return;
         this.e10907 = e10907;
         notifyPropertyChanged(BR.e10907);
     }
@@ -471,6 +482,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE10908(String e10908) {
+        if (this.e10908.equals(e10908)) return;
         this.e10908 = e10908;
         notifyPropertyChanged(BR.e10908);
     }
@@ -481,7 +493,9 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE10996(String e10996) {
+        if (this.e10996.equals(e10996)) return;
         this.e10996 = e10996;
+        setE10996x(e10996.equals("96") ? this.e10996x : "");
         notifyPropertyChanged(BR.e10996);
     }
 
@@ -521,6 +535,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11001(String e11001) {
+        if (this.e11001.equals(e11001)) return;
         this.e11001 = e11001;
         notifyPropertyChanged(BR.e11001);
     }
@@ -531,6 +546,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11002(String e11002) {
+        if (this.e11002.equals(e11002)) return;
         this.e11002 = e11002;
         notifyPropertyChanged(BR.e11002);
     }
@@ -541,6 +557,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11003(String e11003) {
+        if (this.e11003.equals(e11003)) return;
         this.e11003 = e11003;
         notifyPropertyChanged(BR.e11003);
     }
@@ -551,6 +568,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11004(String e11004) {
+        if (this.e11004.equals(e11004)) return;
         this.e11004 = e11004;
         notifyPropertyChanged(BR.e11004);
     }
@@ -561,6 +579,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11005(String e11005) {
+        if (this.e11005.equals(e11005)) return;
         this.e11005 = e11005;
         notifyPropertyChanged(BR.e11005);
     }
@@ -571,7 +590,9 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11096(String e11096) {
+        if (this.e11096.equals(e11096)) return;
         this.e11096 = e11096;
+        setE11096x(e11096.equals("96") ? this.e11096x : "");
         notifyPropertyChanged(BR.e11096);
     }
 
@@ -592,6 +613,8 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE111(String e111) {
         this.e111 = e111;
+        setE11101x(e111.equals("1") ? this.e11101x : "");
+        setE11102x(e111.equals("2") ? this.e11102x : "");
         notifyPropertyChanged(BR.e111);
     }
 
@@ -622,6 +645,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE112(String e112) {
         this.e112 = e112;
+        setE11201x(e112.equals("1") ? this.e11201x : "");
         notifyPropertyChanged(BR.e112);
     }
 
@@ -716,14 +740,36 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getE113j96x() {
-        return e113j96x;
+    public String getE11397() {
+        return e11397;
     }
 
-    public void setE113j96x(String e113j96x) {
-        this.e113j96x = e113j96x;
-        notifyPropertyChanged(BR.e113j96x);
+    public void setE11397(String e11397) {
+        this.e11397 = e11397;
+        notifyPropertyChanged(BR.e11397);
     }
+
+    @Bindable
+    public String getE11396() {
+        return e11396;
+    }
+
+    public void setE11396(String e11396) {
+        this.e11396 = e11396;
+        setE11396x(e11396.equals("96") ? this.e11396x : "");
+        notifyPropertyChanged(BR.e11396);
+    }
+
+    @Bindable
+    public String getE11396x() {
+        return e11396x;
+    }
+
+    public void setE11396x(String e11396x) {
+        this.e11396x = e11396x;
+        notifyPropertyChanged(BR.e11396x);
+    }
+
 
     @Bindable
     public String getE114() {
@@ -761,6 +807,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11601(String e11601) {
+        if (this.e11601.equals(e11601)) return;
         this.e11601 = e11601;
         notifyPropertyChanged(BR.e11601);
     }
@@ -771,6 +818,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11602(String e11602) {
+        if (this.e11602.equals(e11602)) return;
         this.e11602 = e11602;
         notifyPropertyChanged(BR.e11602);
     }
@@ -781,6 +829,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11603(String e11603) {
+        if (this.e11603.equals(e11603)) return;
         this.e11603 = e11603;
         notifyPropertyChanged(BR.e11603);
     }
@@ -791,6 +840,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11604(String e11604) {
+        if (this.e11604.equals(e11604)) return;
         this.e11604 = e11604;
         notifyPropertyChanged(BR.e11604);
     }
@@ -801,6 +851,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11605(String e11605) {
+        if (this.e11605.equals(e11605)) return;
         this.e11605 = e11605;
         notifyPropertyChanged(BR.e11605);
     }
@@ -811,6 +862,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11606(String e11606) {
+        if (this.e11606.equals(e11606)) return;
         this.e11606 = e11606;
         notifyPropertyChanged(BR.e11606);
     }
@@ -821,6 +873,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11607(String e11607) {
+        if (this.e11607.equals(e11607)) return;
         this.e11607 = e11607;
         notifyPropertyChanged(BR.e11607);
     }
@@ -831,6 +884,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11608(String e11608) {
+        if (this.e11608.equals(e11608)) return;
         this.e11608 = e11608;
         notifyPropertyChanged(BR.e11608);
     }
@@ -841,7 +895,9 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11696(String e11696) {
+        if (this.e11696.equals(e11696)) return;
         this.e11696 = e11696;
+        setE11696x(e11696.equals("96") ? this.e11696x : "");
         notifyPropertyChanged(BR.e11696);
     }
 
@@ -871,6 +927,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11701(String e11701) {
+        if (this.e11701.equals(e11701)) return;
         this.e11701 = e11701;
         notifyPropertyChanged(BR.e11701);
     }
@@ -881,6 +938,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11702(String e11702) {
+        if (this.e11702.equals(e11702)) return;
         this.e11702 = e11702;
         notifyPropertyChanged(BR.e11702);
     }
@@ -891,7 +949,9 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE11703(String e11703) {
+        if (this.e11703.equals(e11703)) return;
         this.e11703 = e11703;
+        setE11703x(e11703.equals("96") ? this.e11703x : "");
         notifyPropertyChanged(BR.e11703);
     }
 
@@ -961,6 +1021,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE12201(String e12201) {
+        if (this.e12201.equals(e12201)) return;
         this.e12201 = e12201;
         notifyPropertyChanged(BR.e12201);
     }
@@ -971,6 +1032,7 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE12202(String e12202) {
+        if (this.e12202.equals(e12202)) return;
         this.e12202 = e12202;
         notifyPropertyChanged(BR.e12202);
     }
@@ -981,7 +1043,9 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     public void setE12296(String e12296) {
+        if (this.e12296.equals(e12296)) return;
         this.e12296 = e12296;
+        setE12296x(e12296.equals("96") ? this.e12296x : "");
         notifyPropertyChanged(BR.e12296);
     }
 
@@ -2128,7 +2192,9 @@ public class ModuleE extends BaseObservable implements Observable {
             this.e113f = json.getString("e113f");
             this.e113g = json.getString("e113g");
             this.e113h = json.getString("e113h");
-            this.e113j96x = json.getString("e113j96x");
+            this.e11397 = json.getString("e11397");
+            this.e11396 = json.getString("e11396");
+            this.e11396x = json.getString("e11396x");
             this.e114 = json.getString("e114");
             this.e115 = json.getString("e115");
             this.e116 = json.getString("e116");
@@ -2339,7 +2405,9 @@ public class ModuleE extends BaseObservable implements Observable {
                 .put("e113f", e113f)
                 .put("e113g", e113g)
                 .put("e113h", e113h)
-                .put("e113j96x", e113j96x)
+                .put("e11397", e11397)
+                .put("e11396", e11396)
+                .put("e11396x", e11396x)
                 .put("e114", e114)
                 .put("e115", e115)
                 .put("e116", e116)

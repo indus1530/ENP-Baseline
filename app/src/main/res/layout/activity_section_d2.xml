@@ -145,7 +145,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d201.equals(`2`)}"
-                                android:onClick="@{()->form.setD201(`2`)}"
+                                android:onClick="@{()->form.setD201(`2`) + d202.clearCheck()}"
                                 android:text="@string/d20102"
                                 android:layout_weight="1"/>
                         </RadioGroup>
@@ -155,7 +155,8 @@
                 <!-- d202  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd202"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d201.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -598,7 +599,8 @@
                 <!-- d206c  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd206c"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d206b.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -633,6 +635,7 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.d206c}"
+                            app:defaultValue="99"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
@@ -707,7 +710,8 @@
                 <!-- d206e  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd206e"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d206d.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -742,6 +746,7 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.d206e}"
+                            app:defaultValue="99"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
@@ -816,7 +821,8 @@
                 <!-- d206g  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd206g"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    >
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -862,7 +868,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d206g.equals(`2`)}"
-                                android:onClick="@{()->form.setD206g(`2`)}"
+                                android:onClick="@{()->form.setD206g(`2`) + d206i.clearCheck()}"
                                 android:text="@string/d206g02"
                                 android:layout_weight="1"/>
 
@@ -871,7 +877,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d206g.equals(`998`)}"
-                                android:onClick="@{()->form.setD206g(`998`)}"
+                                android:onClick="@{()->form.setD206g(`998`) + d206i.clearCheck()}"
                                 android:text="@string/d206g998"
                                 android:layout_weight="1"/>
                         </RadioGroup>
@@ -881,7 +887,8 @@
                 <!-- d206h  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd206h"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d206g.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -916,6 +923,7 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.d206h}"
+                            app:defaultValue="99"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
@@ -925,7 +933,8 @@
                 <!-- d206i  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd206i"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d206g.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1231,7 +1240,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d206m.equals(`2`)}"
-                                android:onClick="@{()->form.setD206m(`2`)}"
+                                android:onClick="@{()->form.setD206m(`2`) + d206n.clearCheck()}"
                                 android:text="@string/d206m02"
                                 android:layout_weight="1"/>
 
@@ -1240,7 +1249,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d206m.equals(`998`)}"
-                                android:onClick="@{()->form.setD206m(`998`)}"
+                                android:onClick="@{()->form.setD206m(`998`) + d206n.clearCheck()}"
                                 android:text="@string/d206m998"
                                 android:layout_weight="1"/>
                         </RadioGroup>
@@ -1250,7 +1259,8 @@
                 <!-- d206n  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd206n"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d206m.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1426,7 +1436,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d206p.equals(`2`)}"
-                                android:onClick="@{()->form.setD206p(`2`)}"
+                                android:onClick="@{()->form.setD206p(`2`) + d206q.clearCheck()}"
                                 android:text="@string/d206p02"
                                 android:layout_weight="1"/>
 
@@ -1435,7 +1445,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d206p.equals(`998`)}"
-                                android:onClick="@{()->form.setD206p(`998`)}"
+                                android:onClick="@{()->form.setD206p(`998`) + d206q.clearCheck()}"
                                 android:text="@string/d206p998"
                                 android:layout_weight="1"/>
                         </RadioGroup>
@@ -1445,7 +1455,8 @@
                 <!-- d206q  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd206q"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d206p.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1593,7 +1604,8 @@
                 <!-- d207b  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd207b"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d206a.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2807,12 +2819,19 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.d209.equals(`2`)}"
-                                android:onClick="@{()->form.setD209(`2`)}"
+                                android:onClick="@{()->form.setD209(`2`) + d210.clearCheck() + d211.clearCheck()}"
                                 android:text="@string/d20902"
                                 android:layout_weight="1"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fldGrpd210"
+                    android:orientation="vertical"
+                    android:visibility="@{form.d209.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                 <!-- d210  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2988,6 +3007,8 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout

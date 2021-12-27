@@ -495,6 +495,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD201(String d201) {
         this.d201 = d201;
+        setD202(d201.equals("1") ? this.d202 : "");
         notifyPropertyChanged(BR.d201);
     }
 
@@ -505,6 +506,9 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD202(String d202) {
         this.d202 = d202;
+        setD20202x(d202.equals("2") ? this.d20202x : "");
+        setD20203x(d202.equals("3") ? this.d20203x : "");
+
         notifyPropertyChanged(BR.d202);
     }
 
@@ -575,6 +579,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD206b(String d206b) {
         this.d206b = d206b;
+        setD206c(d206b.equals("1") ? this.d206c : "");
         notifyPropertyChanged(BR.d206b);
     }
 
@@ -595,6 +600,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD206d(String d206d) {
         this.d206d = d206d;
+        setD206e(d206d.equals("1") ? this.d206e : "");
         notifyPropertyChanged(BR.d206d);
     }
 
@@ -625,6 +631,8 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD206g(String d206g) {
         this.d206g = d206g;
+        setD206h(d206g.equals("1") ? this.d206h : "");
+        setD206i(d206g.equals("1") ? this.d206i : "");
         notifyPropertyChanged(BR.d206g);
     }
 
@@ -685,6 +693,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD206m(String d206m) {
         this.d206m = d206m;
+        setD206n(d206m.equals("1") ? this.d206n : "");
         notifyPropertyChanged(BR.d206m);
     }
 
@@ -715,6 +724,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD206p(String d206p) {
         this.d206p = d206p;
+        setD206q(d206p.equals("1") ? this.d206q : "");
         notifyPropertyChanged(BR.d206p);
     }
 
@@ -735,6 +745,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD207a(String d207a) {
         this.d207a = d207a;
+        setD207b(d207a.equals("1") ? this.d207b : "");
         notifyPropertyChanged(BR.d207a);
     }
 
@@ -935,6 +946,9 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD209(String d209) {
         this.d209 = d209;
+        setD210(d209.equals("1") ? this.d210 : "");
+        setD211(d209.equals("1") ? this.d211 : "");
+
         notifyPropertyChanged(BR.d209);
     }
 
@@ -945,6 +959,8 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD210(String d210) {
         this.d210 = d210;
+        setD21001x(d210.equals("1") ? this.d21001x : "");
+        setD21002x(d210.equals("2") ? this.d21002x : "");
         notifyPropertyChanged(BR.d210);
     }
 
@@ -975,6 +991,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD211(String d211) {
         this.d211 = d211;
+        setD21196x(d211.equals("96") ? this.d21196x : ""); // For all other
         notifyPropertyChanged(BR.d211);
     }
 

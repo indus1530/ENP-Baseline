@@ -204,7 +204,7 @@
                             <EditText
                                 android:id="@+id/a30196x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a30196"
                                 android:tag="a30196"
@@ -285,7 +285,7 @@
                         <EditText
                             android:id="@+id/a30296x"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="52dp"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/a30296"
                             android:text="@={form.a30296x}"
@@ -469,7 +469,7 @@
                             <EditText
                                 android:id="@+id/a30396x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a30396"
                                 android:tag="a30396"
@@ -713,7 +713,7 @@
                             <EditText
                                 android:id="@+id/a30696x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a30696"
                                 android:tag="a30696"
@@ -856,7 +856,7 @@
                             <EditText
                                 android:id="@+id/a30796x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a30796"
                                 android:tag="a30796"
@@ -962,7 +962,7 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/a309"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="52dp"
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
@@ -1086,7 +1086,7 @@
                             <EditText
                                 android:id="@+id/a31096x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a31096"
                                 android:tag="a31096"

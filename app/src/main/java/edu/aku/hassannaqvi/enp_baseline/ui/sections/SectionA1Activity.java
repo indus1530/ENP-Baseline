@@ -38,6 +38,13 @@ public class SectionA1Activity extends AppCompatActivity {
         setupSkips();
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
+
+
+        /*bi.a109.setFilters(new InputFilter[] {
+                (cs, start, end, spanned, dStart, dEnd) -> cs.toString().replaceAll("[^a-zA-Z ]*","")
+        });*/
+
+
     }
 
 

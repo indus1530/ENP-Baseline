@@ -113,6 +113,10 @@ public class ModuleD extends BaseObservable implements Observable {
     private String d30501d = _EMPTY_;
     private String d30501m = _EMPTY_;
     private String d30501y = _EMPTY_;
+    private String check0 = _EMPTY_;
+    private String check6 = _EMPTY_;
+    private String check10 = _EMPTY_;
+    private String check14 = _EMPTY_;
     private String d30502d = _EMPTY_;
     private String d30502m = _EMPTY_;
     private String d30502y = _EMPTY_;
@@ -1024,6 +1028,83 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD302(String d302) {
         this.d302 = d302;
+        setD303(d302.equals("1") ? "" : this.d303);
+        setD304d(d302.equals("1") ? this.d304d : "");
+        setD304m(d302.equals("1") ? this.d304m : "");
+        setD304y(d302.equals("1") ? this.d304y : "");
+
+        setD30501d(d302.equals("1") ? this.d30501d : "");
+        setD30501m(d302.equals("1") ? this.d30501m : "");
+        setD30501y(d302.equals("1") ? this.d30501y : "");
+        setCheck0(d302.equals("1") ? this.check0 : "");
+
+        setD30502d(d302.equals("1") ? this.d30502d : "");
+        setD30502m(d302.equals("1") ? this.d30502m : "");
+        setD30502y(d302.equals("1") ? this.d30502y : "");
+
+        setD30503d(d302.equals("1") ? this.d30503d : "");
+        setD30503m(d302.equals("1") ? this.d30503m : "");
+        setD30503y(d302.equals("1") ? this.d30503y : "");
+        setCheck6(d302.equals("1") ? this.check6 : "");
+
+        setD30504d(d302.equals("1") ? this.d30504d : "");
+        setD30504m(d302.equals("1") ? this.d30504m : "");
+        setD30504y(d302.equals("1") ? this.d30504y : "");
+
+        setD30505d(d302.equals("1") ? this.d30505d : "");
+        setD30505m(d302.equals("1") ? this.d30505m : "");
+        setD30505y(d302.equals("1") ? this.d30505y : "");
+
+        setD30506d(d302.equals("1") ? this.d30506d : "");
+        setD30506m(d302.equals("1") ? this.d30506m : "");
+        setD30506y(d302.equals("1") ? this.d30506y : "");
+
+        setD30507d(d302.equals("1") ? this.d30507d : "");
+        setD30507m(d302.equals("1") ? this.d30507m : "");
+        setD30507y(d302.equals("1") ? this.d30507y : "");
+        setCheck10(d302.equals("1") ? this.check10 : "");
+
+        setD30508d(d302.equals("1") ? this.d30508d : "");
+        setD30508m(d302.equals("1") ? this.d30508m : "");
+        setD30508y(d302.equals("1") ? this.d30508y : "");
+
+        setD30509d(d302.equals("1") ? this.d30509d : "");
+        setD30509m(d302.equals("1") ? this.d30509m : "");
+        setD30509y(d302.equals("1") ? this.d30509y : "");
+
+        setD30510d(d302.equals("1") ? this.d30510d : "");
+        setD30510m(d302.equals("1") ? this.d30510m : "");
+        setD30510y(d302.equals("1") ? this.d30510y : "");
+
+        setD30511d(d302.equals("1") ? this.d30511d : "");
+        setD30511m(d302.equals("1") ? this.d30511m : "");
+        setD30511y(d302.equals("1") ? this.d30511y : "");
+        setCheck14(d302.equals("1") ? this.check14 : "");
+
+        setD30512d(d302.equals("1") ? this.d30512d : "");
+        setD30512m(d302.equals("1") ? this.d30512m : "");
+        setD30512y(d302.equals("1") ? this.d30512y : "");
+
+        setD30513d(d302.equals("1") ? this.d30513d : "");
+        setD30513m(d302.equals("1") ? this.d30513m : "");
+        setD30513y(d302.equals("1") ? this.d30513y : "");
+
+        setD30514d(d302.equals("1") ? this.d30514d : "");
+        setD30514m(d302.equals("1") ? this.d30514m : "");
+        setD30514y(d302.equals("1") ? this.d30514y : "");
+
+        setD30515d(d302.equals("1") ? this.d30515d : "");
+        setD30515m(d302.equals("1") ? this.d30515m : "");
+        setD30515y(d302.equals("1") ? this.d30515y : "");
+
+        setD30516d(d302.equals("1") ? this.d30507d : "");
+        setD30516m(d302.equals("1") ? this.d30507m : "");
+        setD30516y(d302.equals("1") ? this.d30516y : "");
+
+        setD307(d302.equals("1") ? this.d307 : "");
+
+
+
         notifyPropertyChanged(BR.d302);
     }
 
@@ -1076,6 +1157,46 @@ public class ModuleD extends BaseObservable implements Observable {
     public void setD304y(String d304y) {
         this.d304y = d304y;
         notifyPropertyChanged(BR.d304y);
+    }
+
+    @Bindable
+    public String getCheck0() {
+        return check0;
+    }
+
+    @Bindable
+    public String getCheck6() {
+        return check6;
+    }
+
+    @Bindable
+    public String getCheck10() {
+        return check10;
+    }
+
+    @Bindable
+    public String getCheck14() {
+        return check14;
+    }
+
+    public void setCheck0(String check0) {
+        this.check0 = check0;
+        notifyPropertyChanged(BR.check0);
+    }
+
+    public void setCheck6(String check6) {
+        this.check6 = check6;
+        notifyPropertyChanged(BR.check6);
+    }
+
+    public void setCheck10(String check10) {
+        this.check10 = check10;
+        notifyPropertyChanged(BR.check10);
+    }
+
+    public void setCheck14(String check14) {
+        this.check14 = check14;
+        notifyPropertyChanged(BR.check14);
     }
 
     @Bindable
@@ -1565,6 +1686,22 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD307(String d307) {
         this.d307 = d307;
+        setD308(d307.equals("1") ? "" : this.d308);
+        setD309(d307.equals("1") ? "" : this.d309);
+        setD310(d307.equals("1") ? "" : this.d310);
+        setD311(d307.equals("1") ? "" : this.d311);
+        setD312(d307.equals("1") ? "" : this.d312);
+        setD313(d307.equals("1") ? "" : this.d313);
+        setD313(d307.equals("1") ? "" : this.d313);
+        setD314(d307.equals("1") ? "" : this.d314);
+        setD315(d307.equals("1") ? "" : this.d315);
+        setD316(d307.equals("1") ? "" : this.d316);
+        setD317(d307.equals("1") ? "" : this.d317);
+        setD318(d307.equals("1") ? "" : this.d318);
+        setD319(d307.equals("1") ? "" : this.d319);
+        setD320(d307.equals("1") ? "" : this.d320);
+        setD321(d307.equals("1") ? "" : this.d321);
+        setD322(d307.equals("1") ? "" : this.d322);
         notifyPropertyChanged(BR.d307);
     }
 
@@ -1575,6 +1712,27 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD308(String d308) {
         this.d308 = d308;
+        setD309(d308.equals("1") ? this.d309 : "");
+        setD310(d308.equals("1") ? this.d310 : "");
+        setD311(d308.equals("1") ? this.d311 : "");
+        setD312(d308.equals("1") ? this.d312 : "");
+        setD31201x(d308.equals("1") ? this.d31201x : "");
+        setD313(d308.equals("1") ? this.d313 : "");
+        setD314(d308.equals("1") ? this.d314 : "");
+        setD31401x(d308.equals("1") ? this.d31401x : "");
+        setD315(d308.equals("1") ? this.d315 : "");
+        setD316(d308.equals("1") ? this.d316 : "");
+        setD31601x(d308.equals("1") ? this.d31601x : "");
+        setD317(d308.equals("1") ? this.d317 : "");
+        setD318(d308.equals("1") ? this.d318 : "");
+        setD319(d308.equals("1") ? this.d319 : "");
+        setD320(d308.equals("1") ? this.d320 : "");
+        setD321(d308.equals("1") ? this.d321 : "");
+        setD322(d308.equals("1") ? this.d322 : "");
+        setD323a(d308.equals("1") ? this.d323a : "");
+        setD323b01(d308.equals("1") ? this.d323b01 : "");
+        setD323b02(d308.equals("1") ? this.d323b02 : "");
+
         notifyPropertyChanged(BR.d308);
     }
 
@@ -1595,6 +1753,9 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD310(String d310) {
         this.d310 = d310;
+        setD311(d310.equals("1") ? this.d311 : "");
+        setD312(d312.equals("1") ? this.d312 : "");
+        setD313(d310.equals("1") ? this.d313 : "");
         notifyPropertyChanged(BR.d310);
     }
 
@@ -1636,6 +1797,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD313(String d313) {
         this.d313 = d313;
+        setD314(d313.equals("1") ? this.d314 : "" );
         notifyPropertyChanged(BR.d313);
     }
 
@@ -1667,6 +1829,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD315(String d315) {
         this.d315 = d315;
+        setD316(d315.equals("1") ? this.d316 : "");
         notifyPropertyChanged(BR.d315);
     }
 
@@ -1698,6 +1861,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD317(String d317) {
         this.d317 = d317;
+        setD318(d317.equals("1") ? this.d318 : "");
         notifyPropertyChanged(BR.d317);
     }
 
@@ -1739,6 +1903,8 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD320(String d320) {
         this.d320 = d320;
+        setD321(d320.equals("1") ? this.d321 : "");
+        setD322(d320.equals("1") ? this.d322 : "");
         notifyPropertyChanged(BR.d320);
     }
 
@@ -1771,6 +1937,30 @@ public class ModuleD extends BaseObservable implements Observable {
     public void setD322(String d322) {
         this.d322 = d322;
         setD32296x(d322.equals("96") ? this.d32296x : "");
+
+        setD323a(d322.equals("3") ? "" : this.d323a);
+        setD323b01(d322.equals("3") ? "" : this.d323b01);
+        setD323b02(d322.equals("3") ? "" : this.d323b02);
+        setD32401(d322.equals("3") ? "" : this.d32401);
+        setD32402(d322.equals("3") ? "" : this.d32402);
+        setD32403(d322.equals("3") ? "" : this.d32403);
+        setD32404(d322.equals("3") ? "" : this.d32404);
+        setD32405(d322.equals("3") ? "" : this.d32405);
+        setD32406(d322.equals("3") ? "" : this.d32406);
+        setD32407(d322.equals("3") ? "" : this.d32407);
+        setD32408(d322.equals("3") ? "" : this.d32408);
+        setD32409(d322.equals("3") ? "" : this.d32409);
+        setD32410(d322.equals("3") ? "" : this.d32410);
+        setD32411(d322.equals("3") ? "" : this.d32411);
+        setD32412(d322.equals("3") ? "" : this.d32412);
+        setD32413(d322.equals("3") ? "" : this.d32413);
+        setD32414(d322.equals("3") ? "" : this.d32414);
+        setD32415(d322.equals("3") ? "" : this.d32415);
+        setD32416(d322.equals("3") ? "" : this.d32416);
+        setD32417(d322.equals("3") ? "" : this.d32417);
+        setD324998(d322.equals("3") ? "" : this.d324998);
+        setD32496(d322.equals("3") ? "" : this.d32496);
+
         notifyPropertyChanged(BR.d322);
     }
 
@@ -2090,6 +2280,9 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD326(String d326) {
         this.d326 = d326;
+        setD327(d326.equals("1") ? this.d327 : "");
+        setD328(d326.equals("1") ? this.d328 : "");
+        setD329(d326.equals("1") ? this.d329 : "");
         notifyPropertyChanged(BR.d326);
     }
 
@@ -2110,6 +2303,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD328(String d328) {
         this.d328 = d328;
+        setD329(d328.equals("1") ? this.d329 : "");
         notifyPropertyChanged(BR.d328);
     }
 

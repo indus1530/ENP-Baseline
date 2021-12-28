@@ -737,6 +737,8 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC111(String c111) {
         this.c111 = c111;
+        setC112mm(c111.equals("1") ? this.c112mm : "");
+        setC112wk(c111.equals("1") ? this.c112wk : "");
         notifyPropertyChanged(BR.c111);
     }
 
@@ -1569,6 +1571,38 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC201(String c201) {
         this.c201 = c201;
+        setC20201(c201.equals("1") ? this.c20201 : "");
+        setC20202(c201.equals("1") ? this.c20202 : "");
+        setC20203(c201.equals("1") ? this.c20203 : "");
+        setC20204(c201.equals("1") ? this.c20204 : "");
+        setC20205(c201.equals("1") ? this.c20205 : "");
+        setC20206(c201.equals("1") ? this.c20206 : "");
+        setC20207(c201.equals("1") ? this.c20207 : "");
+        setC20208(c201.equals("1") ? this.c20208 : "");
+        setC20296(c201.equals("1") ? this.c20296 : "");
+
+        setC20301(c201.equals("1") ? this.c20301 : "");
+        setC20302(c201.equals("1") ? this.c20302 : "");
+        setC20303(c201.equals("1") ? this.c20303 : "");
+        setC20304(c201.equals("1") ? this.c20304 : "");
+        setC20305(c201.equals("1") ? this.c20305 : "");
+        setC20396(c201.equals("1") ? this.c20396 : "");
+
+        setC204(c201.equals("1") ? this.c204 : "");
+        setC205(c201.equals("1") ? this.c205 : "");
+        setC20601(c201.equals("1") ? this.c20601 : "");
+        setC20602(c201.equals("1") ? this.c20602 : "");
+        setC20603(c201.equals("1") ? this.c20603 : "");
+        setC20604(c201.equals("1") ? this.c20604 : "");
+        setC20605(c201.equals("1") ? this.c20605 : "");
+        setC20606(c201.equals("1") ? this.c20606 : "");
+        setC20607(c201.equals("1") ? this.c20607 : "");
+        setC20608(c201.equals("1") ? this.c20608 : "");
+        setC20697(c201.equals("1") ? this.c20697 : "");
+        setC20696(c201.equals("1") ? this.c20696 : "");
+
+
+
         notifyPropertyChanged(BR.c201);
     }
 

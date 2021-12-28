@@ -666,7 +666,8 @@
                 <!-- cs1t6  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs1t6"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{modc.c111.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -687,7 +688,8 @@
                 <!-- c112 MonthWeek -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc112"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{modc.c111.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

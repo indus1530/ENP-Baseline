@@ -35,7 +35,7 @@
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
-        <ScrollView
+        <!--<ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -54,7 +54,7 @@
                     android:text="@string/sa2inst" />
 
 
-                <!-- sa2name  Input   -->
+                &lt;!&ndash; sa2name  Input   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsa2name"
                     style="@style/cardView">
@@ -90,7 +90,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a201  Input-Numeric   -->
+                &lt;!&ndash; a201  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa201"
                     style="@style/cardView">
@@ -138,7 +138,7 @@
                     android:text="@string/a202t2" />
 
 
-                <!-- a202  Input   -->
+                &lt;!&ndash; a202  Input   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa202"
                     style="@style/cardView">
@@ -174,7 +174,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a203  Radio   -->
+                &lt;!&ndash; a203  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa203"
                     style="@style/cardView">
@@ -361,7 +361,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a204  Radio   -->
+                &lt;!&ndash; a204  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa204"
                     style="@style/cardView">
@@ -421,7 +421,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a205  Title   -->
+                &lt;!&ndash; a205  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa205"
                     style="@style/cardView">
@@ -542,7 +542,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a206  CheckBox   -->
+                &lt;!&ndash; a206  CheckBox   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa206"
                     style="@style/cardView">
@@ -660,7 +660,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a207  CheckBox   -->
+                &lt;!&ndash; a207  CheckBox   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa207"
                     style="@style/cardView">
@@ -761,7 +761,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a208  Radio   -->
+                &lt;!&ndash; a208  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa208"
                     style="@style/cardView">
@@ -848,7 +848,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a209  Radio   -->
+                &lt;!&ndash; a209  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa209"
                     style="@style/cardView">
@@ -913,7 +913,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- a210  Radio   -->
+                &lt;!&ndash; a210  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa210"
                     style="@style/cardView">
@@ -969,7 +969,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- a211  Radio   -->
+                &lt;!&ndash; a211  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa211"
                     style="@style/cardView">
@@ -1086,7 +1086,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- a212  Radio   -->
+                &lt;!&ndash; a212  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa212"
                     style="@style/cardView">
@@ -1225,7 +1225,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!--EndButton LinearLayout-->
+                &lt;!&ndash;EndButton LinearLayout&ndash;&gt;
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1263,12 +1263,12 @@
                         android:textStyle="bold" />
 
                 </LinearLayout>
-                <!--EndButton LinearLayout-->
+                &lt;!&ndash;EndButton LinearLayout&ndash;&gt;
 
 
             </LinearLayout>
 
-        </ScrollView>
+        </ScrollView>-->
 
     </LinearLayout>
 

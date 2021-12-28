@@ -13,18 +13,34 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.AndroidManager;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.enp_baseline.models.Child;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
-import edu.aku.hassannaqvi.enp_baseline.models.LateAdolescent;
-import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
-import edu.aku.hassannaqvi.enp_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.enp_baseline.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.SyncActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportCluster;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportDate;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportPending;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.ConsentActivity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA1Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA2Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA3AActivity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA4Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA5Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionB1Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionB2Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC1Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC2Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC3Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC4Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC5Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC6Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionD1Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionD2Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionD3Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionD4Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionE1Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionE2Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionF1Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionF2Activity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -82,101 +98,94 @@ public class MainActivity extends AppCompatActivity {
                 break;*/
             case R.id.seca1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionAS1Activity.class));
+                startActivity(new Intent(this, SectionA1Activity.class));
                 break;
             case R.id.seca2:
                 MainApp.familyMember = new FamilyMembers();
-                startActivity(new Intent(this, SectionAS2Activity.class));
+                startActivity(new Intent(this, SectionA2Activity.class));
                 break;
 
             case R.id.seca3:
-                MainApp.mwra = new MWRA();
-                startActivity(new Intent(this, SectionBS1AActivity.class));
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionA3AActivity.class));
+                break;
+
+            case R.id.seca4:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionA4Activity.class));
+                break;
+            case R.id.seca5:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionA5Activity.class));
                 break;
             case R.id.secb1:
-                MainApp.mwra = new MWRA();
-                startActivity(new Intent(this, SectionBS2Activity.class));
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionB1Activity.class));
+                break;
+            case R.id.secb2:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionB2Activity.class));
                 break;
             case R.id.secc1:
-                MainApp.mwra = new MWRA();
-                startActivity(new Intent(this, SectionBS3Activity.class));
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionC1Activity.class));
                 break;
             case R.id.secc2:
-                MainApp.mwra = new MWRA();
-                startActivity(new Intent(this, SectionBS4AActivity.class));
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionC2Activity.class));
+                break;
+
+            case R.id.secc3:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionC3Activity.class));
+                break;
+
+            case R.id.secc4:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionC4Activity.class));
+                break;
+            case R.id.secc5:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionC5Activity.class));
+                break;
+            case R.id.secc6:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionC6Activity.class));
                 break;
             case R.id.secd1:
-                MainApp.mwra = new MWRA();
-                startActivity(new Intent(this, SectionBS4BActivity.class));
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionD1Activity.class));
+                break;
+            case R.id.secd2:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionD2Activity.class));
+                break;
+            case R.id.secd3:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionD3Activity.class));
+                break;
+            case R.id.secd4:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionD4Activity.class));
                 break;
             case R.id.sece1:
-                MainApp.mwra = new MWRA();
-                startActivity(new Intent(this, SectionBS5Activity.class));
-                break;
-            case R.id.secf1:
-                MainApp.mwra = new MWRA();
-                startActivity(new Intent(this, SectionBS6Activity.class));
-                break;
-            case R.id.secf2:
-                MainApp.mwra = new MWRA();
-                startActivity(new Intent(this, SectionBS7Activity.class));
-                break;
-            case R.id.secf3:
-                MainApp.child = new Child();
-                startActivity(new Intent(this, SectionCS1AActivity.class));
-                break;
-            case R.id.secg1:
-                MainApp.child = new Child();
-                startActivity(new Intent(this, SectionCS2Activity.class));
-                break;
-            case R.id.secg2:
-                MainApp.child = new Child();
-                startActivity(new Intent(this, SectionCS3AActivity.class));
-                break;
-            case R.id.secg3:
-                MainApp.child = new Child();
-                startActivity(new Intent(this, SectionCS3BActivity.class));
-                break;
-            case R.id.secg4:
-                MainApp.child = new Child();
-                startActivity(new Intent(this, SectionCS4Activity.class));
-                break;
-            case R.id.secg5:
-                MainApp.child = new Child();
-                startActivity(new Intent(this, SectionCS5Activity.class));
-                break;
-            case R.id.secg6:
-                MainApp.motherKAP = new MotherKAP();
-                startActivity(new Intent(this, SectionDS1Activity.class));
-                break;
-            case R.id.secg7:
-                MainApp.motherKAP = new MotherKAP();
-                startActivity(new Intent(this, SectionDS2Activity.class));
-                break;
-            case R.id.d3:
-                MainApp.motherKAP = new MotherKAP();
-                startActivity(new Intent(this, SectionDS3Activity.class));
-                break;
-            case R.id.e1:
-                MainApp.ladol = new LateAdolescent();
-                startActivity(new Intent(this, SectionES1Activity.class));
-                break;
-            case R.id.e2:
-                MainApp.ladol = new LateAdolescent();
-                startActivity(new Intent(this, SectionES2Activity.class));
-                break;
-            case R.id.e3:
-                MainApp.ladol = new LateAdolescent();
-                startActivity(new Intent(this, SectionES3Activity.class));
-                break;
-            case R.id.e4:
-                MainApp.ladol = new LateAdolescent();
-                startActivity(new Intent(this, SectionES4Activity.class));
-                break;
-            case R.id.con:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, ConsentActivity.class));
+                startActivity(new Intent(this, SectionE1Activity.class));
                 break;
+
+            case R.id.e2:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionE2Activity.class));
+                break;
+            case R.id.f1:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionF1Activity.class));
+                break;
+            case R.id.f2:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionF2Activity.class));
+                break;
+
             case R.id.dbManager:
                 startActivity(new Intent(this, AndroidManager.class));
                 break;

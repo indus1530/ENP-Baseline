@@ -1,46 +1,45 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modb;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.moda;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.enp_baseline.R;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
-import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionB2Binding;
+import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionA3BBinding;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 
-public class SectionB2Activity extends AppCompatActivity {
+public class SectionA3BActivity extends AppCompatActivity {
 
-    private static final String TAG = "SectionB2Activity";
-    ActivitySectionB2Binding bi;
+    private static final String TAG = "SectionA3BActivity";
+    ActivitySectionA3BBinding bi;
     private DatabaseHelper db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b2);
-        bi.setForm(modb);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a3_b);
+        bi.setForm(moda);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 
         setupSkips();
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
-
     }
 
     private void setupSkips() {
     }
-
 
     private boolean updateDB() {
         /*if (MainApp.superuser) return true;
@@ -68,10 +67,9 @@ public class SectionB2Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionC1Activity.class));
+            startActivity(new Intent(this, SectionA4Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
-
 
     private void saveDraft() {
     }

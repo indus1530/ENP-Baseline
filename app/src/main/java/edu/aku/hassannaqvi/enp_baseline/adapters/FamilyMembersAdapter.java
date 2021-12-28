@@ -69,7 +69,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 /** Select mother IF
  *  Mother is alive and present in house
  */
-        if (!members.getHl8().equals("") && !members.getHl8().equals("97")
+        /*if (!members.getHl8().equals("") && !members.getHl8().equals("97")
         ) {
             if (members.getA204().equals("1")) {
                 motherRelation = " S/o ";
@@ -81,7 +81,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
             motherPresent = MainApp.familyList.get(Integer.parseInt(members.getHl8()) - 1).getHl10().equals("1");
 
         }
-
+*/
     /*      <string name="hl701"> Married </string>
             <string name="hl702"> Widowed </string>
             <string name="hl703"> Divorced </string>
@@ -146,9 +146,9 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
 
         cloaked.setVisibility(!members.getMemCate().equals("") ? View.GONE : View.VISIBLE);
-        mainIcon.setImageResource(members.getHl10().equals("1") ? (members.getA204().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl) : R.drawable.ic_not_available);
+        //mainIcon.setImageResource(members.getHl10().equals("1") ? (members.getA204().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl) : R.drawable.ic_not_available);
         //MainApp.selectedMWRA = members.getIndexed().equals("1") || members.getIndexed().equals("2") ? "-" : "";
-        mainIcon.setBackgroundColor(members.getHl10().equals("1") ? (members.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("2") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getA204().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink)) : mContext.getResources().getColor(R.color.gray));
+        //mainIcon.setBackgroundColor(members.getHl10().equals("1") ? (members.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("2") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getA204().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink)) : mContext.getResources().getColor(R.color.gray));
         //  mainIcon.setBackgroundColor(  ((ColorDrawable) mainIcon.getBackground()).getColor());
         if (members.getMemCate().equals("2"))
             cloaked.setVisibility(motherPresent ? View.GONE : View.VISIBLE);

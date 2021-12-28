@@ -60,12 +60,12 @@ public class AdolSelectionActivity extends AppCompatActivity {
 
         for (Integer a : adolListAll) {
 
-            adolNames.add(MainApp.familyList.get(a - 1).getHl2());
+           /* adolNames.add(MainApp.familyList.get(a - 1).getHl2());
             adolCodes.add(MainApp.familyList.get(a - 1).getHl1());
             adolAges.add(MainApp.familyList.get(a - 1).getHl6y());
             adolFmUID.add(MainApp.familyList.get(a - 1).getUid());
 
-
+*/
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(AdolSelectionActivity.this,
@@ -185,7 +185,7 @@ public class AdolSelectionActivity extends AppCompatActivity {
         if (!formValidation()) return;
 
         adolListAll.remove(bi.es1resp.getSelectedItemPosition() - 1);
-        startActivity(new Intent(this, SectionES1Activity.class).putExtra("age", bi.age.getText().toString()));
+        //startActivity(new Intent(this, SectionES1Activity.class).putExtra("age", bi.age.getText().toString()));
         finish();
 
 

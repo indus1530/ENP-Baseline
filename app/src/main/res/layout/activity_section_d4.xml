@@ -621,7 +621,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- modcom  Radio   -->
-                <androidx.cardview.widget.CardView
+               <!-- <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVmodcom"
                     style="@style/cardView">
 
@@ -673,7 +673,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- modreason  Radio   -->
+                &lt;!&ndash; modreason  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVmodreason"
                     style="@style/cardView">
@@ -751,7 +751,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
+-->
 
 
 

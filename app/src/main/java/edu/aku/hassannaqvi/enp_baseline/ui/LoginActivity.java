@@ -319,10 +319,10 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             //if(!Validator.emptySpinner(this, bi.countrySwitch)) return;
-            if (bi.countrySwitch.getSelectedItemPosition() == 0) {
+            /*if (bi.countrySwitch.getSelectedItemPosition() == 0) {
                 bi.as1q01.setError(getString(R.string.as1q01));
                 return;
-            }
+            }*/
 
             if ((username.equals("dmu@aku") && password.equals("aku?dmu"))
                     || (username.equals("test1234") && password.equals("test1234"))

@@ -29,7 +29,9 @@
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="false"
         tools:replace="android:allowBackup">
-
+        <activity
+            android:name=".ui.sections.SectionA3BActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.sections.SectionF2Activity"
             android:exported="true"
@@ -121,7 +123,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name=".ui.sections.SectionA3Activity"
+            android:name=".ui.sections.SectionA3AActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
@@ -135,7 +137,6 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
-
         <activity
             android:name=".ui.sections.ConsentActivity"
             android:screenOrientation="portrait"

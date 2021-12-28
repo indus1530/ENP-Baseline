@@ -192,7 +192,7 @@ public class IdentificationActivity extends AppCompatActivity {
         if (!hhExists()) {
             saveDraftForm();
             finish();
-            startActivity(new Intent(this, SectionAS1Activity.class));
+            //startActivity(new Intent(this, SectionAS1Activity.class));
         } else if (MainApp.entryType != Integer.parseInt(MainApp.form.getEntryType())) {
             Toast.makeText(this, String.format("This form has been entered as %s", MainApp.form.getEntryType().equals("1") ? "interview." : "data-entry"), Toast.LENGTH_SHORT).show();
 
@@ -200,7 +200,7 @@ public class IdentificationActivity extends AppCompatActivity {
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
             finish();
-            startActivity(new Intent(this, SectionAS1Activity.class));
+            //startActivity(new Intent(this, SectionAS1Activity.class));
         }
 
     }

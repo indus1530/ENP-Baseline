@@ -1,9 +1,11 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modb;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.moda;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.mwra;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,30 +14,33 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.enp_baseline.R;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
-import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionB2Binding;
+import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionA3ABinding;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 
-public class SectionB2Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionB2Activity";
-    ActivitySectionB2Binding bi;
+public class SectionA3AActivity extends AppCompatActivity {
+
+    private static final String TAG = "SectionA3AActivity";
+    ActivitySectionA3ABinding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b2);
-        bi.setForm(modb);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a3_a);
+        bi.setForm(moda);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 
         setupSkips();
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
-
     }
 
     private void setupSkips() {
@@ -68,7 +73,7 @@ public class SectionB2Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionC1Activity.class));
+            startActivity(new Intent(this, SectionA3BActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
@@ -86,5 +91,4 @@ public class SectionB2Activity extends AppCompatActivity {
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
-
 }

@@ -2006,6 +2006,20 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC207(String c207) {
         this.c207 = c207;
+        setC208(c207.equals("1") ? this.c208 : "");
+        setC20901(c207.equals("1") ?  this.c20901 : "");
+        setC20902(c207.equals("1") ?  this.c20902 : "");
+        setC20903(c207.equals("1") ?  this.c20903 : "");
+        setC20904(c207.equals("1") ?  this.c20904 : "");
+        setC20905(c207.equals("1") ?  this.c20905 : "");
+        setC20906(c207.equals("1") ?  this.c20906 : "");
+        setC20907(c207.equals("1") ?  this.c20907 : "");
+        setC20908(c207.equals("1") ?  this.c20908 : "");
+        setC20996(c207.equals("1") ?  this.c20996 : "");
+        setC21001(c207.equals("1") ?  this.c21001 : "");
+        setC21002(c207.equals("1") ?  this.c21002 : "");
+        setC21096(c207.equals("1") ?  this.c21096 : "");
+        setC211(c207.equals("1") ?  this.c211 : "");
         notifyPropertyChanged(BR.c207);
     }
 
@@ -2232,6 +2246,11 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC212(String c212) {
         this.c212 = c212;
+        setC213(c212.equals("1") ? this.c213 : "");
+        setC214(c212.equals("1") ? this.c214 : "");
+        setC21501(c212.equals("1") ? this.c21501 : "");
+        setC21502(c212.equals("1") ? this.c21502 : "");
+        setC21596(c212.equals("1") ? this.c21596 : "");
         notifyPropertyChanged(BR.c212);
     }
 
@@ -2338,6 +2357,9 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC216(String c216) {
         this.c216 = c216;
+        setC217(c216.equals("2") ? "" : this.c217);
+        setC218(c216.equals("2") ? "" : this.c218);
+
         notifyPropertyChanged(BR.c216);
     }
 
@@ -2411,6 +2433,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC220(String c220) {
         this.c220 = c220;
+        setC221(c220.equals("1") ? this.c221 : "");
         notifyPropertyChanged(BR.c220);
     }
 

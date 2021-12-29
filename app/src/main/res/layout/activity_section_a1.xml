@@ -746,7 +746,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{moda.a113.equals(`2`)}"
-                                android:onClick="@{()->moda.setA113(`2`)}"
+                                android:onClick="@{()->moda.setA113(`2`) + a114.clearCheck()}"
                                 android:text="@string/a11302" />
 
                         </RadioGroup>
@@ -760,7 +760,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa114"
                     style="@style/cardView"
-                    android:visibility="@{moda.a112.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{moda.a112.equals(`1`) &amp;&amp; moda.a113.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

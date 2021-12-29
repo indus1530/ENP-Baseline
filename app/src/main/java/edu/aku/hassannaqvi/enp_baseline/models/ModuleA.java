@@ -511,6 +511,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA113(String a113) {
         this.a113 = a113;
+        setA114(a113.equals("2") ? "" : this.a114);
         notifyPropertyChanged(BR.a113);
     }
 

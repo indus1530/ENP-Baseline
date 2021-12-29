@@ -77,7 +77,9 @@ public class SectionA1Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, moda.getA112().equals("2") ? EndingActivity.class : SectionA3AActivity.class));
+            startActivity(new Intent(this, moda.getA112().equals("2")
+                    || moda.getA113().equals("2")
+                    || moda.getA114().equals("2") ? EndingActivity.class : SectionA3AActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

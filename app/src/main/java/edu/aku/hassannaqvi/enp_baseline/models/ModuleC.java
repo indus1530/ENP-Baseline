@@ -3740,6 +3740,21 @@ public class ModuleC extends BaseObservable implements Observable {
     public void setC401(String c401) {
         this.c401 = c401;
         setC402(c401.equals("1") ? this.c402 : "");
+        setC40301(c401.equals("1") ? this.c40301 : "");
+        setC40302(c401.equals("1") ? this.c40302 : "");
+        setC40303(c401.equals("1") ? this.c40303 : "");
+        setC40304(c401.equals("1") ? this.c40304 : "");
+        setC40305(c401.equals("1") ? this.c40305 : "");
+        setC40306(c401.equals("1") ? this.c40306 : "");
+        setC40307(c401.equals("1") ? this.c40307 : "");
+        setC40308(c401.equals("1") ? this.c40308 : "");
+        setC40309(c401.equals("1") ? this.c40309 : "");
+        setC40310(c401.equals("1") ? this.c40310 : "");
+        setC40311(c401.equals("1") ? this.c40311 : "");
+        setC40396(c401.equals("1") ? this.c40396 : "");
+        setC404(c401.equals("1") ? this.c404 : "");
+        setC405(c401.equals("1") ? this.c405 : "");
+        setC406(c401.equals("1") ? this.c406 : "");
         notifyPropertyChanged(BR.c401);
     }
 
@@ -3751,6 +3766,18 @@ public class ModuleC extends BaseObservable implements Observable {
     public void setC402(String c402) {
         this.c402 = c402;
         setC40296x(c402.equals("96") ? this.c40296x : "");
+        setC40301(c402.equals("6") ? "" : this.c40301);
+        setC40302(c402.equals("6") ? "" : this.c40302);
+        setC40303(c402.equals("6") ? "" : this.c40303);
+        setC40304(c402.equals("6") ? "" : this.c40304);
+        setC40305(c402.equals("6") ? "" : this.c40305);
+        setC40306(c402.equals("6") ? "" : this.c40306);
+        setC40307(c402.equals("6") ? "" : this.c40307);
+        setC40308(c402.equals("6") ? "" : this.c40308);
+        setC40309(c402.equals("6") ? "" : this.c40309);
+        setC40310(c402.equals("6") ? "" : this.c40310);
+        setC40311(c402.equals("6") ? "" : this.c40311);
+        setC40396(c402.equals("6") ? "" : this.c40396);
         notifyPropertyChanged(BR.c402);
     }
 
@@ -3925,6 +3952,8 @@ public class ModuleC extends BaseObservable implements Observable {
     public void setC404(String c404) {
         this.c404 = c404;
         setC40401x(c404.equals("1") ? this.c40401x : "");
+        setC405(c404.equals("998") ? "" : this.c405);
+        setC406(c404.equals("998") ? "" : this.c406);
         notifyPropertyChanged(BR.c404);
     }
 
@@ -3945,6 +3974,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC405(String c405) {
         this.c405 = c405;
+        setC406(c405.equals("1") ? this.c406 : "");
         notifyPropertyChanged(BR.c405);
     }
 

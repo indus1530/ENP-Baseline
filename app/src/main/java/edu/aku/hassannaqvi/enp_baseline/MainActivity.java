@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionA1Activity.class));
                 break;
             case R.id.seca2:
-                MainApp.moda = new ModuleA();
+                MainApp.familyMember = new FamilyMembers();
                 startActivity(new Intent(this, SectionA2Activity.class));
                 break;
 

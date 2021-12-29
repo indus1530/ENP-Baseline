@@ -470,6 +470,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA208(String a208) {
         this.a208 = a208;
+        setA209(a208.equals("5") ? "" : this.a209);
+        setA210(a208.equals("5") ? "" : this.a210);
         notifyPropertyChanged(BR.a208);
     }
 
@@ -686,9 +688,12 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
 
             // set current Date
-            int curDay = !MainApp.form.getAs1q15d().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15d()) : 15;
+            /*int curDay = !MainApp.form.getAs1q15d().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15d()) : 15;
             int curMonth = !MainApp.form.getAs1q15m().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15m()) : 6;
-            int curYear = Integer.parseInt(MainApp.form.getAs1q15y());
+            int curYear = Integer.parseInt(MainApp.form.getAs1q15y());*/
+            int curDay = !MainApp.moda.getA108d().equals("98") ? Integer.parseInt(MainApp.moda.getA108d()) : 15;
+            int curMonth = !MainApp.moda.getA108m().equals("98") ? Integer.parseInt(MainApp.moda.getA108m()) : 6;
+            int curYear = Integer.parseInt(MainApp.moda.getA108y());
             Calendar cur = Calendar.getInstance();
 
 

@@ -398,7 +398,7 @@
 
                             <RadioButton
                                 android:id="@+id/a20401"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a204.equals(`1`)}"
@@ -407,7 +407,7 @@
 
                             <RadioButton
                                 android:id="@+id/a20402"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a204.equals(`2`)}"
@@ -542,7 +542,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a206  CheckBox   -->
+                <!-- a206  AgeCount   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa206"
                     style="@style/cardView">
@@ -764,7 +764,8 @@
                 <!-- a208  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa208"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{familymember.a206y.length() != 0 &amp;&amp; Integer.parseInt(familymember.a206y) &gt; 10 ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -838,7 +839,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a208.equals(`5`)}"
-                                android:onClick="@{()->familymember.setA208(`5`)}"
+                                android:onClick="@{()->familymember.setA208(`5`) + a209.clearCheck() + a210.clearCheck()}"
                                 android:text="@string/a20805" />
 
                         </RadioGroup>
@@ -851,7 +852,8 @@
                 <!-- a209  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa209"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{familymember.a208.equals(`5`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -885,8 +887,8 @@
 
                             <RadioButton
                                 android:id="@+id/a20901"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a209.equals(`1`)}"
                                 android:onClick="@{()->familymember.setA209(`1`)}"
@@ -894,8 +896,8 @@
 
                             <RadioButton
                                 android:id="@+id/a20902"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a209.equals(`2`)}"
                                 android:onClick="@{()->familymember.setA209(`2`)}"
@@ -903,20 +905,25 @@
 
                             <RadioButton
                                 android:id="@+id/a20903"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a209.equals(`3`)}"
                                 android:onClick="@{()->familymember.setA209(`3`)}"
                                 android:text="@string/a20903" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a210  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa210"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{familymember.a208.equals(`5`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -950,8 +957,8 @@
 
                             <RadioButton
                                 android:id="@+id/a21001"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a210.equals(`1`)}"
                                 android:onClick="@{()->familymember.setA210(`1`)}"
@@ -959,15 +966,19 @@
 
                             <RadioButton
                                 android:id="@+id/a21002"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a210.equals(`2`)}"
                                 android:onClick="@{()->familymember.setA210(`2`)}"
                                 android:text="@string/a21002" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a211  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1085,6 +1096,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- a212  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1268,7 +1280,9 @@
 
             </LinearLayout>
 
+
         </ScrollView>
+
 
     </LinearLayout>
 

@@ -486,7 +486,8 @@
                 <!-- a304  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa304"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a303.equals(`1`) || form.a303.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

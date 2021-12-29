@@ -632,6 +632,7 @@ public class ModuleA extends BaseObservable implements Observable {
     public void setA303(String a303) {
         this.a303 = a303;
         setA30396x(a303.equals("96") ? this.a30396x : "");
+        setA304(a303.equals("1") || a303.equals("2") ? "" : this.a304);
         notifyPropertyChanged(BR.a303);
     }
 

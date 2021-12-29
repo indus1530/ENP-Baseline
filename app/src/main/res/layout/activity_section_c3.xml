@@ -494,7 +494,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.c305.equals(`2`)}"
-                                android:onClick="@{()->form.setC305(`2`)}"
+                                android:onClick="@{()->form.setC305(`2`) + c306.clearCheck()}"
                                 android:text="@string/c30502" />
 
                             <RadioButton
@@ -503,7 +503,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.c305.equals(`998`)}"
-                                android:onClick="@{()->form.setC305(`998`)}"
+                                android:onClick="@{()->form.setC305(`998`) + c306.clearCheck()}"
                                 android:text="@string/c305998" />
 
                         </RadioGroup>
@@ -516,7 +516,8 @@
                 <!-- c306  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc306"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.c305.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1072,7 +1073,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.c312.equals(`2`)}"
-                                android:onClick="@{()->form.setC312(`2`)}"
+                                android:onClick="@{()->form.setC312(`2`) + c313.clearCheck() + c314.clearCheck()}"
                                 android:text="@string/c31202" />
 
                             <RadioButton
@@ -1081,7 +1082,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.c312.equals(`998`)}"
-                                android:onClick="@{()->form.setC312(`998`)}"
+                                android:onClick="@{()->form.setC312(`998`) + c313.clearCheck() + c314.clearCheck()}"
                                 android:text="@string/c312998" />
 
                         </RadioGroup>
@@ -1091,6 +1092,12 @@
                 </androidx.cardview.widget.CardView>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fldGrpc313"
+                    android:orientation="vertical"
+                    android:visibility="@{form.c312.equals(`1`) ? View.VISIBLE : View.GONE}">
                 <!-- c313  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc313"
@@ -1317,6 +1324,8 @@
 
                 </androidx.cardview.widget.CardView>
 
+                </LinearLayout>
+
 
                 <!-- c315  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1368,7 +1377,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.c315.equals(`2`)}"
-                                android:onClick="@{()->form.setC315(`2`)}"
+                                android:onClick="@{()->form.setC315(`2`) + c317.clearCheck()}"
                                 android:text="@string/c31502" />
 
                         </RadioGroup>
@@ -1378,6 +1387,11 @@
                 </androidx.cardview.widget.CardView>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fldGrpc316"
+                    android:orientation="vertical">
                 <!-- c316  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc316"
@@ -1801,6 +1815,8 @@
 
                 </androidx.cardview.widget.CardView>
 
+                </LinearLayout>
+
 
                 <!-- c320  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1852,7 +1868,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.c320.equals(`2`)}"
-                                android:onClick="@{()->form.setC320(`2`)}"
+                                android:onClick="@{()->form.setC320(`2`) + c322.clearCheck()}"
                                 android:text="@string/c32002" />
 
                         </RadioGroup>
@@ -1861,6 +1877,11 @@
 
                 </androidx.cardview.widget.CardView>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fldGrpc321"
+                    android:orientation="vertical">
 
                 <!-- c321  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -2254,6 +2275,7 @@
 
                 </androidx.cardview.widget.CardView>
 
+                </LinearLayout>
 
                 <!-- c325  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2305,7 +2327,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.c325.equals(`2`)}"
-                                android:onClick="@{()->form.setC325(`2`)}"
+                                android:onClick="@{()->form.setC325(`2`) + c326.clearCheck() + c327.clearCheck()}"
                                 android:text="@string/c32502" />
 
                             <RadioButton
@@ -2323,6 +2345,13 @@
 
                 </androidx.cardview.widget.CardView>
 
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/fldGrpc326"
+                    android:visibility="@{form.c325.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                 <!-- c326  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2507,6 +2536,8 @@
 
                 </androidx.cardview.widget.CardView>
 
+                </LinearLayout>
+
 
                 <!-- c328  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2649,7 +2680,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.c329.equals(`2`)}"
-                                android:onClick="@{()->form.setC329(`2`)}"
+                                android:onClick="@{()->form.setC329(`2`) + c330.clearCheck()}"
                                 android:text="@string/c32902" />
 
                         </RadioGroup>
@@ -2659,6 +2690,12 @@
                 </androidx.cardview.widget.CardView>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fldGrpc330"
+                    android:orientation="vertical"
+                    android:visibility="@{form.c329.equals(`1`) ? View.VISIBLE : View.GONE}">
                 <!-- c330  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc330"
@@ -2913,6 +2950,8 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
 
 
                 <!--EndButton LinearLayout-->

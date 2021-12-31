@@ -2316,6 +2316,15 @@ For example, some start talking earlier than others, or they might already say s
     <string name="a21210">Retired</string>
     <string name="a21296">Others, (Specify)</string>
 
+    <string name="Q_a213">a213</string>
+    <string name="a213">Line Number of Parents (For  Children under 5 years)</string>
+    <string name="a21301">Mother Line Number</string>
+    <string name="a21302">Father Line Number </string>
+    <string name="Q_a214">a214</string>
+    <string name="a214">Availability at the time of survey</string>
+    <string name="a21401">Available</string>
+    <string name="a21402">Unavailable</string>
+
     <string name="a3"> A3: Socio-Economic status (SES): </string>
     <string name="a301">What is the mother tongue of the head of the household?</string>
     <string name="a30101">Urdu</string>

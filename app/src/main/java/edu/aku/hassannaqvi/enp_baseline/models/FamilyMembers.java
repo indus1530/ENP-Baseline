@@ -76,6 +76,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String a211 = _EMPTY_;
     private String a212 = _EMPTY_;
     private String a21296x = _EMPTY_;
+    private String a21301 = _EMPTY_;
+    private String a21302 = _EMPTY_;
+    private String a214 = _EMPTY_;
 
     private boolean expanded;
     private boolean mwra;
@@ -333,7 +336,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.a205y = a205y;
         if (a205y.equals("9998")) {
             setA205m("98");
-            setA205m("");
+            setA206d("");
+            setA206m("");
             setA205y("");
         }
         // Calculate age
@@ -349,6 +353,15 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA206y(String a206y) {
         this.a206y = a206y;
+        boolean b = a206y.length() > 0 && Integer.parseInt(a206y) < 11;
+        setA208(b ? "" : this.a208);
+        setA209(b ? "" : this.a209);
+        setA210(b ? "" : this.a210);
+        setA211(a206y.length() > 0 && Integer.parseInt(a206y) < 3 ? "" : this.a211);
+        setA212(a206y.length() > 0 && Integer.parseInt(a206y) < 10 ? "" : this.a212);
+        boolean b1 = a206y.length() > 0 && Integer.parseInt(a206y) > 4;
+        setA21301(b1 ? "" : this.a21301);
+        setA21302(b1 ? "" : this.a21302);
         notifyPropertyChanged(BR.a206y);
     }
 
@@ -526,6 +539,35 @@ public class FamilyMembers extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.a21296x);
     }
 
+    @Bindable
+    public String getA21301() {
+        return a21301;
+    }
+
+    public void setA21301(String a21301) {
+        this.a21301 = a21301;
+        notifyPropertyChanged(BR.a21301);
+    }
+
+    @Bindable
+    public String getA21302() {
+        return a21302;
+    }
+
+    public void setA21302(String a21302) {
+        this.a21302 = a21302;
+        notifyPropertyChanged(BR.a21302);
+    }
+
+    @Bindable
+    public String getA214() {
+        return a214;
+    }
+
+    public void setA214(String a214) {
+        this.a214 = a214;
+        notifyPropertyChanged(BR.a214);
+    }
 
 
     @Bindable
@@ -613,6 +655,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
             this.a211 = json.getString("a211");
             this.a212 = json.getString("a212");
             this.a21296x = json.getString("a21296x");
+            this.a21301 = json.getString("a21301");
+            this.a21302 = json.getString("a21302");
+            this.a214 = json.getString("a214");
         }
     }
 
@@ -669,7 +714,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 .put("a210", a210)
                 .put("a211", a211)
                 .put("a212", a212)
-                .put("a21296x", a21296x);
+                .put("a21296x", a21296x)
+                .put("a21301", a21301)
+                .put("a21302", a21302)
+                .put("a214", a214);
         return json.toString();
     }
 

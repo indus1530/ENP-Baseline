@@ -479,6 +479,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={familymember.a205d}"
+                                app:defaultValue="98"
                                 app:maxValue="31"
                                 app:minValue="1"
                                 app:type="range" />
@@ -595,6 +596,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:enabled="@{familymember.a205y.equals(`9998`)}"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -620,6 +622,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:enabled="@{familymember.a205y.equals(`9998`)}"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -645,6 +648,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:enabled="@{familymember.a205y.equals(`9998`)}"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -853,7 +857,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa209"
                     style="@style/cardView"
-                    android:visibility="@{familymember.a208.equals(`5`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{familymember.a208.equals(`5`) || (familymember.a206y.length() != 0 &amp;&amp; Integer.parseInt(familymember.a206y) &lt; 11)? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -923,7 +927,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa210"
                     style="@style/cardView"
-                    android:visibility="@{familymember.a208.equals(`5`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{familymember.a208.equals(`5`) || (familymember.a206y.length() != 0 &amp;&amp; Integer.parseInt(familymember.a206y) &lt; 11) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -983,7 +987,8 @@
                 <!-- a211  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa211"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{familymember.a206y.length() != 0 &amp;&amp; Integer.parseInt(familymember.a206y) &gt; 2 ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1101,7 +1106,8 @@
                 <!-- a212  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa212"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{familymember.a206y.length() != 0 &amp;&amp; Integer.parseInt(familymember.a206y) &gt; 9 ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1229,6 +1235,150 @@
                                 android:tag="a21296"
                                 android:text="@={familymember.a21296x}"
                                 android:visibility="@{familymember.a212.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- a213  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVa213"
+                    style="@style/cardView"
+                    android:visibility="@{familymember.a206y.length() != 0 &amp;&amp; Integer.parseInt(familymember.a206y) &lt; 5 ? View.VISIBLE : View.GONE}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_a213" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/a213" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/a21301" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/a21301"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={familymember.a21301}"
+                                app:maxValue="99"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/a21302" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/a21302"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={familymember.a21302}"
+                                app:maxValue="99"
+                                app:minValue="1"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- a214  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVa214"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_a214" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/a214" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/a214"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/a21401"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a214.equals(`1`)}"
+                                android:onClick="@{()->familymember.setA214(`1`)}"
+                                android:text="@string/a21401" />
+
+                            <RadioButton
+                                android:id="@+id/a21402"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{familymember.a214.equals(`2`)}"
+                                android:onClick="@{()->familymember.setA214(`2`)}"
+                                android:text="@string/a21402" />
 
                         </RadioGroup>
 

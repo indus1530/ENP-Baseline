@@ -512,7 +512,6 @@ public class ModuleD extends BaseObservable implements Observable {
         this.d202 = d202;
         setD20202x(d202.equals("2") ? this.d20202x : "");
         setD20203x(d202.equals("3") ? this.d20203x : "");
-
         notifyPropertyChanged(BR.d202);
     }
 

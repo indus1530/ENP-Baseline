@@ -5,6 +5,8 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.mwra;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -40,9 +42,9 @@ public class SectionA1Activity extends AppCompatActivity {
             bi.btnContinue.setText("Review Next");
 
 
-        /*bi.a109.setFilters(new InputFilter[] {
-                (cs, start, end, spanned, dStart, dEnd) -> cs.toString().replaceAll("[^a-zA-Z ]*","")
-        });*/
+        bi.a109.setFilters(new InputFilter[]{
+                (cs, start, end, spanned, dStart, dEnd) -> cs.toString().replaceAll("[^a-zA-Z ]*", "")
+        });
 
 
     }
@@ -73,6 +75,8 @@ public class SectionA1Activity extends AppCompatActivity {
 
 
     public void btnContinue(View view) {
+        bi.btnContinue.setEnabled(false);
+        new Handler().postDelayed(() -> bi.btnContinue.setEnabled(true), 5000);
         if (!formValidation()) return;
         saveDraft();
         if (updateDB()) {

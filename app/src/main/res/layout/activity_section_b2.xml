@@ -338,6 +338,13 @@
                 </androidx.cardview.widget.CardView>
 
 
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fldGrpb204"
+                    android:orientation="vertical"
+                    android:visibility="@{form.b203.equals(`3`) ? View.GONE : View.VISIBLE}">
                 <!-- b204  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVb204"
@@ -558,6 +565,8 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
 
 
                 <!-- b206  Title   -->
@@ -1817,7 +1826,7 @@
                                 android:layout_height="wrap_content"
                                 android:enabled="@{!form.b218998.equals(`998`)}"
                                 android:checked="@{form.b21806.equals(`6`)}"
-                                android:onClick="@{()->form.setB21806(form.b21806.equals(`6`)?``:`6`)}"
+                                android:onClick="@{()->form.setB21806(form.b21806.equals(`6`)?``:`6`) + b219.clearCheck()}"
                                 android:text="@string/b21806" />
 
                             <CheckBox
@@ -1844,7 +1853,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b218998.equals(`998`)}"
-                                android:onClick="@{()->form.setB218998(form.b218998.equals(`998`)?``:`998`)}"
+                                android:onClick="@{()->form.setB218998(form.b218998.equals(`998`)?``:`998`) + b219.clearCheck()}"
                                 android:text="@string/b218998" />
 
                         </LinearLayout>
@@ -1857,7 +1866,8 @@
                 <!-- b219  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVb219"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.b218998.equals(`998`)  || form.b21806.equals(`6`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2048,7 +2058,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.b220.equals(`6`)}"
-                                android:onClick="@{()->form.setB220(`6`)}"
+                                android:onClick="@{()->form.setB220(`6`) + b223.clearCheck()}"
                                 android:text="@string/b22006" />
 
                             <RadioButton
@@ -2075,6 +2085,14 @@
 
                 </androidx.cardview.widget.CardView>
 
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/fldGrpb221"
+                    android:visibility="@{form.b220.equals(`6`) ?  View.GONE : View.VISIBLE}">
 
                 <!-- b221  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -2340,6 +2358,8 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
 
 
                 <!-- istb01  Radio   -->

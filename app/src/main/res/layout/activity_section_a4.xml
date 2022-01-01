@@ -107,7 +107,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a401.equals(`2`)}"
-                                android:onClick="@{()->form.setA401(`2`)}"
+                                android:onClick="@{()->form.setA401(`2`) + a402.clearCheck()}"
                                 android:text="@string/a40102" />
 
                             <RadioButton
@@ -115,7 +115,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a401.equals(`3`)}"
-                                android:onClick="@{()->form.setA401(`3`)}"
+                                android:onClick="@{()->form.setA401(`3`) + a402.clearCheck()}"
                                 android:text="@string/a40103" />
 
                             <RadioButton
@@ -123,7 +123,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a401.equals(`4`)}"
-                                android:onClick="@{()->form.setA401(`4`)}"
+                                android:onClick="@{()->form.setA401(`4`) + a402.clearCheck()}"
                                 android:text="@string/a40104" />
 
                         </RadioGroup>
@@ -136,7 +136,8 @@
                 <!-- a402  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa402"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a401.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -202,7 +203,8 @@
                 <!-- a403  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa403"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a401.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -247,7 +249,7 @@
                                 android:layout_height="wrap_content"
                                 android:enabled="@{!form.a40305.equals(`5`)}"
                                 android:checked="@{form.a40301.equals(`1`)}"
-                                android:onClick="@{()->form.setA40301(form.a40301.equals(`1`)?``:`1`)}"
+                                android:onClick="@{()->form.setA40301(form.a40301.equals(`1`)?``:`1`) + a404.clearCheck()}"
                                 android:text="@string/a40301" />
 
                             <CheckBox
@@ -256,7 +258,7 @@
                                 android:layout_height="wrap_content"
                                 android:enabled="@{!form.a40305.equals(`5`)}"
                                 android:checked="@{form.a40302.equals(`2`)}"
-                                android:onClick="@{()->form.setA40302(form.a40302.equals(`2`)?``:`2`)}"
+                                android:onClick="@{()->form.setA40302(form.a40302.equals(`2`)?``:`2`) + a404.clearCheck()}"
                                 android:text="@string/a40302" />
 
                             <CheckBox
@@ -265,7 +267,7 @@
                                 android:layout_height="wrap_content"
                                 android:enabled="@{!form.a40305.equals(`5`)}"
                                 android:checked="@{form.a40303.equals(`3`)}"
-                                android:onClick="@{()->form.setA40303(form.a40303.equals(`3`)?``:`3`)}"
+                                android:onClick="@{()->form.setA40303(form.a40303.equals(`3`)?``:`3`) + a404.clearCheck()}"
                                 android:text="@string/a40303" />
 
                             <CheckBox
@@ -295,7 +297,8 @@
                 <!-- a404  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa404"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a40301.equals(`1`) || form.a40302.equals(`2`) || form.a40303.equals(`3`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -355,7 +358,8 @@
                 <!-- a405  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa405"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a40301.equals(`1`) || form.a40302.equals(`2`) || form.a40303.equals(`3`) || form.a404.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -564,7 +568,7 @@
                             <EditText
                                 android:id="@+id/a40696x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a40696"
                                 android:tag="a40696"

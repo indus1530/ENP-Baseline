@@ -338,7 +338,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
             setA205m("98");
             setA206d("");
             setA206m("");
-            setA205y("");
+            setA206y("");
         }
         // Calculate age
         CaluculateAge();

@@ -166,7 +166,7 @@
                         <EditText
                             android:id="@+id/b102"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="52dp"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/b102"
                             android:text="@={modb.b102}" />
@@ -627,7 +627,7 @@
                             <EditText
                                 android:id="@+id/b10796x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/b10796"
                                 android:tag="b10796"
@@ -1093,7 +1093,7 @@
                             <EditText
                                 android:id="@+id/b11296x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/b11296"
                                 android:tag="b11296"

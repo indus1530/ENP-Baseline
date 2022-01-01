@@ -622,7 +622,8 @@
                 <!-- a306  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa306"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a305.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -835,7 +836,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a307.equals(`8`)}"
-                                android:onClick="@{()->form.setA307(`8`)}"
+                                android:onClick="@{()->form.setA307(`8`) + a308.clearCheck()}"
                                 android:text="@string/a30708" />
 
                             <RadioButton
@@ -843,7 +844,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a307.equals(`9`)}"
-                                android:onClick="@{()->form.setA307(`9`)}"
+                                android:onClick="@{()->form.setA307(`9`) + a308.clearCheck()}"
                                 android:text="@string/a30709" />
 
                             <RadioButton
@@ -874,7 +875,8 @@
                 <!-- a308  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa308"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a307.equals(`8`) || form.a307.equals(`9`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -934,7 +936,8 @@
                 <!-- a309  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa309"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a307.equals(`8`) || form.a307.equals(`9`)  || form.a308.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

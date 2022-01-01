@@ -666,6 +666,13 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA305(String a305) {
         this.a305 = a305;
+        setA30601(a305.equals("2") ? "" : this.a30601);
+        setA30602(a305.equals("2") ? "" : this.a30602);
+        setA30603(a305.equals("2") ? "" : this.a30603);
+        setA30604(a305.equals("2") ? "" : this.a30604);
+        setA30605(a305.equals("2") ? "" : this.a30605);
+        setA30606(a305.equals("2") ? "" : this.a30606);
+        setA30696(a305.equals("2") ? "" : this.a30696);
         notifyPropertyChanged(BR.a305);
     }
 
@@ -766,6 +773,8 @@ public class ModuleA extends BaseObservable implements Observable {
     public void setA307(String a307) {
         this.a307 = a307;
         setA30796x(a307.equals("96") ? this.a30796x : "");
+        setA308(a307.equals("8") || a307.equals("9") ? "" : this.a308);
+        setA309(a307.equals("8") || a307.equals("9") ? "" : this.a309);
         notifyPropertyChanged(BR.a307);
     }
 
@@ -786,6 +795,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA308(String a308) {
         this.a308 = a308;
+        setA309(a308.equals("2") ? "" : this.a309);
         notifyPropertyChanged(BR.a308);
     }
 
@@ -1201,6 +1211,7 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA319(String a319) {
         this.a319 = a319;
+        setA320(a319.equals("1") ? this.a320 : "");
         notifyPropertyChanged(BR.a319);
     }
 
@@ -1265,6 +1276,14 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA321(String a321) {
         this.a321 = a321;
+        setA322a(a321.equals("1") ? this.a322a : "");
+        setA322b(a321.equals("1") ? this.a322b : "");
+        setA322c(a321.equals("1") ? this.a322c : "");
+        setA322d(a321.equals("1") ? this.a322d : "");
+        setA322e(a321.equals("1") ? this.a322e : "");
+        setA322f(a321.equals("1") ? this.a322f : "");
+        setA322g(a321.equals("1") ? this.a322g : "");
+        setA322998(a321.equals("1") ? this.a322998 : "");
         notifyPropertyChanged(BR.a321);
     }
 

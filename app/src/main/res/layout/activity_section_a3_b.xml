@@ -492,7 +492,7 @@
                             <EditText
                                 android:id="@+id/a31396x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a31396"
                                 android:tag="a31396"
@@ -717,7 +717,7 @@
                             <EditText
                                 android:id="@+id/a31596x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a31596"
                                 android:tag="a31596"
@@ -906,7 +906,7 @@
                             <EditText
                                 android:id="@+id/a31696x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a31696"
                                 android:tag="a31696"
@@ -1111,7 +1111,7 @@
                             <EditText
                                 android:id="@+id/a31796x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a31796"
                                 android:tag="a31796"
@@ -1157,7 +1157,7 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/a318"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="52dp"
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
@@ -1213,7 +1213,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.a319.equals(`1`)}"
-                                android:onClick="@{()->form.setA319(`1`)}"
+                                android:onClick="@{()->form.setA319(`1`) + a320.clearCheck()}"
                                 android:text="@string/a31901" />
 
                             <RadioButton
@@ -1235,7 +1235,8 @@
                 <!-- a320  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa320"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a319.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1444,7 +1445,8 @@
                 <!-- a322  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa322"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.a321.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

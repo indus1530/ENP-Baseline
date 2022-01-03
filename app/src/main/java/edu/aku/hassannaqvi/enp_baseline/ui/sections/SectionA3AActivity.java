@@ -28,6 +28,7 @@ public class SectionA3AActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a3_a);
         bi.setForm(moda);
         db = MainApp.appInfo.dbHelper;

@@ -30,9 +30,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/es1title"
+            app:subtitle="@string/e1"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/es1knowledgeattitudeandpractices_mainheading"
+            app:title="@string/mode"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
@@ -52,7 +52,7 @@
                     style="@style/info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/es1title" />
+                    android:text="@string/e1title3" />
 
                 <!-- es1resp  Input   -->
                 <androidx.cardview.widget.CardView
@@ -74,14 +74,14 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_es1resp" />
+                                android:text="@string/Q_e101" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="@string/es1resp" />
+                                android:text="@string/e101" />
 
                             <TextView
                                 android:layout_width="115dp"
@@ -109,7 +109,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:minHeight="56dp"
-                                android:prompt="@string/es1resp"
+                                android:prompt="@string/e101"
                                 android:spinnerMode="dropdown" />
 
                             <TextView

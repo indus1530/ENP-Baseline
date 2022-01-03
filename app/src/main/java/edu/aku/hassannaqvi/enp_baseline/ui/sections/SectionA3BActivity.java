@@ -2,13 +2,13 @@ package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.moda;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -28,6 +28,7 @@ public class SectionA3BActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a3_b);
         bi.setForm(moda);
         db = MainApp.appInfo.dbHelper;

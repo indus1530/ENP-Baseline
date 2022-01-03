@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.form;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.moda;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,9 +33,8 @@ public class ConsentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_consent);
-        bi.setForm(form);
+        bi.setForm(moda);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 
@@ -66,7 +65,7 @@ public class ConsentActivity extends AppCompatActivity {
 
 
             // Check Consent = Yes
-            if (bi.as1q2301.isChecked()) {
+            if (moda.getA114().equals("1")) {
                 i = new Intent(this, FamilyMembersListActivity.class).putExtra("complete", true);
             } else {
                 i = new Intent(this, EndingActivity.class).putExtra("complete", false);

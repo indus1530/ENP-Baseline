@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.form;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.mode;
 
 import android.content.Intent;
@@ -28,6 +27,7 @@ public class SectionE1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e1);
         bi.setForm(mode);
         db = MainApp.appInfo.dbHelper;

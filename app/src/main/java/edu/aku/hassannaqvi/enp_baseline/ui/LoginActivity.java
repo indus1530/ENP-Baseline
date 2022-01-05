@@ -73,39 +73,7 @@ public class LoginActivity extends AppCompatActivity {
     private int countryCode;
     private ArrayList<String> countryNameList;
     private ArrayList<String> countryCodeList;
-   /* private int PhotoSerial = 0;
-    private String photolist;
-    ActivityResultLauncher<Intent> takePhotoLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        // There are no request codes
-                        //Intent data = result.getData();
-                        Intent data = result.getData();
 
-                        Toast.makeText(LoginActivity.this, "Photo Taken", Toast.LENGTH_SHORT).show();
-
-                        String fileName = data.getStringExtra("FileName");
-                        //   photolist = photolist + fileName + ";";
-                        PhotoSerial++;
-
-                        bi.b117.setText(bi.b117.getText().toString() + PhotoSerial + " - " + fileName + ";\r\n");
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Photo Cancelled", Toast.LENGTH_SHORT).show();
-
-                        //TODO: Implement functionality below when photo was not taken
-                        // ...
-                        bi.b117.setText("Photo not taken.");
-                    }
-
-                    if (result.getResultCode() == Activity.RESULT_CANCELED) {
-                        Toast.makeText(LoginActivity.this, "No family member added.", Toast.LENGTH_SHORT).show();
-                    }
-
-                }
-            });*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,79 +106,26 @@ public class LoginActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_login);
         setSupportActionBar(bi.toolbar);
-
         db = MainApp.appInfo.getDbHelper();
-
-
         MainApp.appInfo = new AppInfo(this);
         MainApp.user = new Users();
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
-
         dbBackup();
     }
+
 
     @Override
     protected void onResume() {
         super.onResume();
         settingCountryCode();
-        /*if (getIntent().hasExtra("pos")) {
-            pos = getIntent().getExtras().getInt("pos");
-            bi.countrySwitch.setSelection(pos);
-        }*/
     }
-    /*    private void settingCountryCode() {
 
 
-     *//*
-        bi.countrySwitch.setChecked(false);
-
-
-        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean showBounds) {
-               // prefs.setShowBounds(showBounds);
-            }
-        });
-*//*
-     *//*      editor
-                .putString("lang", bi.countrySwitch.isChecked()? "1" : "3")
-                .apply();*//*
-        bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
-
-        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // do something, the isChecked will be
-                // true if the switch is in the On position
-                changeLanguage(isChecked ? 1 : 3);
-
-                startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-
-            }
-        });
-
-    }*/
-
-
-    /*    *//*
-     * Setting country code in Shared Preference
-     * *//*
-    private void initializingCountry() {
-        countryCode= Integer.parseInt(sharedPref.getString("lang", "0"));
-            if (countryCode == 0) {
-               MainApp.editor.putString("lang","1").apply();
-            }
-
-        changeLanguage(1);
-    }*/
 
     public void dbBackup() {
 
-
         if (MainApp.sharedPref.getBoolean("flag", false)) {
-
             String dt = MainApp.sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
-
             if (!dt.equals(new SimpleDateFormat("dd-MM-yy").format(new Date()))) {
                 MainApp.editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
                 MainApp.editor.apply();
@@ -365,24 +280,17 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void hideSystemUI() {
-        // Enables regular immersive mode.
-        // For "lean back" mode, remove SYSTEM_UI_FLAG_IMMERSIVE.
-        // Or for "sticky immersive," replace it with SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE
-                        // Set the content to appear under the system bars so that the
-                        // content doesn't resize when the system bars hide and show.
                         | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        // Hide the nav bar and status bar
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
 
-    // Shows the system bars by removing all the flags
-// except for the ones that make the content appear under the system bars.
+
     private void showSystemUI() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
@@ -406,7 +314,7 @@ public class LoginActivity extends AppCompatActivity {
                 MainApp.editor
                         .putString("lang", "1")
                         .apply();
-            case 2:
+            /*case 2:
                 lang = "ps";
                 country = "AF";
                 MainApp.editor
@@ -423,7 +331,7 @@ public class LoginActivity extends AppCompatActivity {
                 country = "KG";
                 MainApp.editor
                         .putString("lang", "4")
-                        .apply();
+                        .apply();*/
             default:
                 lang = "en";
                 country = "US";
@@ -527,7 +435,7 @@ public class LoginActivity extends AppCompatActivity {
                 MainApp.langRTL = true;
                 break;
 
-            case R.id.AF:
+           /* case R.id.AF:
                 MainApp.selectedLanguage = 2;
                 MainApp.langRTL = true;
                 break;
@@ -540,7 +448,7 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.KG:
                 MainApp.selectedLanguage = 4;
                 MainApp.langRTL = false;
-                break;
+                break;*/
 
             default:
                 MainApp.selectedLanguage = 0;

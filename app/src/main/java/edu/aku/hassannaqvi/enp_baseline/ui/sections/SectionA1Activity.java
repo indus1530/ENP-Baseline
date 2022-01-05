@@ -4,15 +4,16 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.moda;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.InputFilter;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import edu.aku.hassannaqvi.enp_baseline.R;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
@@ -73,15 +74,23 @@ public class SectionA1Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         bi.btnContinue.setEnabled(false);
-        new Handler().postDelayed(() -> bi.btnContinue.setEnabled(true), 5000);
+        Timer buttonTimer = new Timer();
+        buttonTimer.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                runOnUiThread(() -> bi.btnContinue.setEnabled(true));
+            }
+        }, 10000);
+
         if (!formValidation()) return;
         saveDraft();
-        if (updateDB()) {
+        /*if (updateDB()) {
             finish();
             startActivity(new Intent(this, moda.getA112().equals("2")
                     || moda.getA113().equals("2")
                     || moda.getA114().equals("2") ? EndingActivity.class : SectionA3AActivity.class));
-        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
+        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();*/
     }
 
 
@@ -97,5 +106,12 @@ public class SectionA1Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
+        /*if (Validator.emptyCheckingContainer(this, bi.GrpName)) {
+            bi.btnContinue.setEnabled(false);
+            return true;
+        } else {
+            bi.btnContinue.setEnabled(true);
+            return false;
+        }*/
     }
 }

@@ -13,7 +13,7 @@
             <item
                 android:id="@+id/PK"
                 android:title="Urdu" />
-            <item
+           <!-- <item
                 android:id="@+id/AF"
                 android:title="Dari" />
             <item
@@ -21,7 +21,7 @@
                 android:title="Tajik" />
             <item
                 android:id="@+id/KG"
-                android:title="Russian" />
+                android:title="Russian" />-->
             <item
                 android:id="@+id/EN"
                 android:title="English" />

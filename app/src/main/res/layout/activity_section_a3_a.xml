@@ -548,8 +548,8 @@
                                 android:maxLength="3"
                                 android:text="@={form.a304}"
                                 app:defaultValue="998"
-                                app:maxValue="60"
-                                app:minValue="0"
+                                app:maxValue="180"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>

@@ -14,7 +14,6 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.AndroidManager;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
-import edu.aku.hassannaqvi.enp_baseline.models.Form;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleA;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleB;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleC;
@@ -29,6 +28,7 @@ import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportPending;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA1Activity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA2Activity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA3AActivity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA3BActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA4Activity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA5Activity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionB1Activity;
@@ -94,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.startInterview:
             case R.id.startDataEntry:
-
-                MainApp.form = new Form();
+            case R.id.seca:
+                MainApp.moda = new ModuleA();
                 startActivity(new Intent(this, IdentificationActivity.class));
                 break;
         /*    case R.id.openAnthro:
@@ -111,9 +111,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionA2Activity.class));
                 break;
 
-            case R.id.seca3:
+            case R.id.seca3a:
                 MainApp.moda = new ModuleA();
                 startActivity(new Intent(this, SectionA3AActivity.class));
+                break;
+
+            case R.id.seca3b:
+                MainApp.moda = new ModuleA();
+                startActivity(new Intent(this, SectionA3BActivity.class));
                 break;
 
             case R.id.seca4:

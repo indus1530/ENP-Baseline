@@ -798,6 +798,76 @@
 
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/c113dd" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/c113dd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={modc.c113dd}"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/c113mm" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/c113mm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={modc.c113mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/c113yy" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/c113yy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="####"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={modc.c113yy}"
+                                app:maxValue="2022"
+                                app:minValue="2021"
+                                app:type="range" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -980,76 +1050,6 @@
                                 android:tag="c11596"
                                 android:text="@={modc.c11596x}"
                                 android:visibility="@{modc.c11596.equals(`96`) ? View.VISIBLE : View.GONE}" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/c113dd" />
-
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/c113dd"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={modc.c113dd}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/c113mm" />
-
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/c113mm"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={modc.c113mm}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/c113yy" />
-
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/c113yy"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={modc.c113yy}"
-                                    app:maxValue="2022"
-                                    app:minValue="2021"
-                                    app:type="range" />
-
-                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -1375,6 +1375,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119a.equals(`1`)}"
                                 android:onClick="@{()->modc.setC119a(`1`)}"
                                 android:text="@string/c119a01" />
@@ -1384,6 +1385,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119a.equals(`2`)}"
                                 android:onClick="@{()->modc.setC119a(`2`)}"
                                 android:text="@string/c119a02" />
@@ -1395,6 +1397,7 @@
                             android:id="@+id/c119b"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:enabled="@{!modc.c11998.equals(`1`)}"
                             android:orientation="horizontal">
 
                             <TextView
@@ -1409,6 +1412,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119b.equals(`1`)}"
                                 android:onClick="@{()->modc.setC119b(`1`)}"
                                 android:text="@string/c119b01" />
@@ -1418,6 +1422,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119b.equals(`2`)}"
                                 android:onClick="@{()->modc.setC119b(`2`)}"
                                 android:text="@string/c119b02" />
@@ -1429,6 +1434,7 @@
                             android:id="@+id/c119c"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:enabled="@{!modc.c11998.equals(`1`)}"
                             android:orientation="horizontal">
 
                             <TextView
@@ -1443,6 +1449,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119c.equals(`1`)}"
                                 android:onClick="@{()->modc.setC119c(`1`)}"
                                 android:text="@string/c119c01" />
@@ -1452,6 +1459,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119c.equals(`2`)}"
                                 android:onClick="@{()->modc.setC119c(`2`)}"
                                 android:text="@string/c119c02" />
@@ -1463,6 +1471,7 @@
                             android:id="@+id/c119d"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:enabled="@{!modc.c11998.equals(`1`)}"
                             android:orientation="horizontal">
 
                             <TextView
@@ -1477,6 +1486,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119d.equals(`1`)}"
                                 android:onClick="@{()->modc.setC119d(`1`)}"
                                 android:text="@string/c119d01" />
@@ -1486,6 +1496,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119d.equals(`2`)}"
                                 android:onClick="@{()->modc.setC119d(`2`)}"
                                 android:text="@string/c119d02" />
@@ -1497,6 +1508,7 @@
                             android:id="@+id/c119e"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:enabled="@{!modc.c11998.equals(`1`)}"
                             android:orientation="horizontal">
 
                             <TextView
@@ -1511,6 +1523,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119e.equals(`1`)}"
                                 android:onClick="@{()->modc.setC119e(`1`)}"
                                 android:text="@string/c119e01" />
@@ -1520,6 +1533,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119e.equals(`2`)}"
                                 android:onClick="@{()->modc.setC119e(`2`)}"
                                 android:text="@string/c119e02" />
@@ -1531,6 +1545,7 @@
                             android:id="@+id/c119f"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:enabled="@{!modc.c11998.equals(`1`)}"
                             android:orientation="horizontal">
 
                             <TextView
@@ -1545,6 +1560,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119f.equals(`1`)}"
                                 android:onClick="@{()->modc.setC119f(`1`)}"
                                 android:text="@string/c119f01" />
@@ -1554,6 +1570,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119f.equals(`2`)}"
                                 android:onClick="@{()->modc.setC119f(`2`)}"
                                 android:text="@string/c119f02" />
@@ -1565,6 +1582,7 @@
                             android:id="@+id/c119g"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:enabled="@{!modc.c11998.equals(`1`)}"
                             android:orientation="horizontal">
 
                             <TextView
@@ -1579,6 +1597,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119g.equals(`1`)}"
                                 android:onClick="@{()->modc.setC119g(`1`)}"
                                 android:text="@string/c119g01" />
@@ -1588,6 +1607,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119g.equals(`2`)}"
                                 android:onClick="@{()->modc.setC119g(`2`)}"
                                 android:text="@string/c119g02" />
@@ -1599,6 +1619,7 @@
                             android:id="@+id/c119h"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:enabled="@{!modc.c11998.equals(`1`)}"
                             android:orientation="horizontal">
 
                             <TextView
@@ -1613,6 +1634,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119h.equals(`1`)}"
                                 android:onClick="@{()->modc.setC119h(`1`)}"
                                 android:text="@string/c119h01" />
@@ -1622,6 +1644,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119h.equals(`2`)}"
                                 android:onClick="@{()->modc.setC119h(`2`)}"
                                 android:text="@string/c119h02" />
@@ -1648,7 +1671,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{modc.c11998.equals(`1`)}"
-                                android:onClick="@{()->modc.setC11998(`1`) + c119.clearCheck() + c119.setEnabled(false) + c119h.clearCheck() + c119h.setEnabled(false)}"
+                                android:onClick="@{()->modc.setC11998(`1`) + c119a.clearCheck() + c119b.clearCheck() + c119c.clearCheck() + c119d.clearCheck() + c119e.clearCheck() + c119f.clearCheck() + c119g.clearCheck() + c119h.clearCheck() + c119.clearCheck()}"
                                 android:text="@string/c1199801" />
 
                             <RadioButton
@@ -1681,6 +1704,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119.equals(`96`)}"
                                 android:onClick="@{()->modc.setC119(`96`)}"
                                 android:text="@string/c119a01" />
@@ -1690,6 +1714,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!modc.c11998.equals(`1`)}"
                                 android:checked="@{modc.c119.equals(`2`)}"
                                 android:onClick="@{()->modc.setC119(`2`)}"
                                 android:text="@string/c119a02" />

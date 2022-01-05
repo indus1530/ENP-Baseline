@@ -451,6 +451,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setA20705(String a20705) {
         if (this.a20705.equals(a20705)) return;
         this.a20705 = a20705;
+        setA20701(a20705.equals("5") ? "" : this.a20701);
+        setA20702(a20705.equals("5") ? "" : this.a20702);
+        setA20703(a20705.equals("5") ? "" : this.a20703);
+        setA20704(a20705.equals("5") ? "" : this.a20704);
+        setA20796(a20705.equals("5") ? "" : this.a20796);
         notifyPropertyChanged(BR.a20705);
     }
 

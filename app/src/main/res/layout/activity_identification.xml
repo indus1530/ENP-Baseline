@@ -67,15 +67,17 @@
                             android:text="@string/Q_a101" />
 
                         <TextView
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/a101" />
 
                         <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/as1q01"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:minHeight="56dp"
                             android:prompt="@string/a101"
                             android:spinnerMode="dropdown" />
@@ -104,15 +106,17 @@
                             android:text="@string/Q_a102" />
 
                         <TextView
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/a102" />
 
                         <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/a102"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:minHeight="56dp"
                             android:prompt="@string/a102"
                             android:spinnerMode="dropdown" />
@@ -141,15 +145,17 @@
                             android:text="@string/Q_a103" />
 
                         <TextView
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/a103" />
 
                         <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/a103"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:minHeight="56dp"
                             android:prompt="@string/a103"
                             android:spinnerMode="dropdown" />
@@ -178,15 +184,17 @@
                             android:text="@string/Q_a104" />
 
                         <TextView
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/a104" />
 
                         <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/a104"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:minHeight="56dp"
                             android:prompt="@string/a104"
                             android:spinnerMode="dropdown" />
@@ -215,15 +223,17 @@
                             android:text="@string/Q_a105" />
 
                         <TextView
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/a105" />
 
                         <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/a105"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:minHeight="56dp"
                             android:prompt="@string/a105"
                             android:spinnerMode="dropdown" />
@@ -252,15 +262,17 @@
                             android:text="@string/Q_a106" />
 
                         <TextView
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/a106" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/a106"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
@@ -295,15 +307,17 @@
                             android:text="@string/Q_a107" />
 
                         <TextView
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/a107" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/a107"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"

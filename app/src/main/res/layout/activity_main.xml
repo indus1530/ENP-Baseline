@@ -369,6 +369,21 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/seca"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="A"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                        <TextView
                             android:id="@+id/seca1"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
@@ -399,7 +414,7 @@
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/seca3"
+                            android:id="@+id/seca3a"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -409,7 +424,22 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="A3"
+                            android:text="A3A"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/seca3b"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="A3B"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -429,6 +459,14 @@
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:id="@+id/seca5"
                             android:layout_width="60dp"
@@ -444,7 +482,6 @@
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
-
                         <TextView
                             android:id="@+id/secb1"
                             android:layout_width="60dp"
@@ -459,15 +496,6 @@
                             android:text="B1"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/secb2"
@@ -529,6 +557,15 @@
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:id="@+id/secc4"
                             android:layout_width="60dp"
@@ -558,15 +595,6 @@
                             android:text="C5"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
-
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/secc6"
@@ -628,6 +656,14 @@
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/secd4"
@@ -658,15 +694,6 @@
                             android:text="E1"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
-
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/e2"
@@ -712,7 +739,6 @@
                             android:text="F2"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
-
 
 
                     </LinearLayout>

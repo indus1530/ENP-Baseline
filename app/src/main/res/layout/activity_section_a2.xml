@@ -54,6 +54,20 @@
                     android:text="@string/sa2inst" />
 
 
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a202t1" />
+
+
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a202t2" />
+
+
                 <!-- sa2name  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsa2name"
@@ -76,7 +90,7 @@
                             android:layout_height="match_parent"
                             android:text="@string/sa2name" />
 
-                        <EditText
+                        <androidx.appcompat.widget.AppCompatEditText
                             android:id="@+id/sa2name"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -124,20 +138,6 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <TextView
-                    style="@style/info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/a202t1" />
-
-
-                <TextView
-                    style="@style/info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/a202t2" />
-
-
                 <!-- a202  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa202"
@@ -166,6 +166,7 @@
                             android:layout_height="match_parent"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/a202"
+                            android:inputType="textPersonName"
                             android:maxLength="20"
                             android:text="@={familymember.a202}" />
 
@@ -202,6 +203,13 @@
                                 android:text="@string/a203" />
 
                         </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/hl3name"
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
 
                         <RadioGroup
                             android:id="@+id/a203"
@@ -369,31 +377,26 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_a204" />
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_a204" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/a204" />
-
-                        </LinearLayout>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/a204" />
 
                         <RadioGroup
                             android:id="@+id/a204"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -595,8 +598,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:enabled="@{familymember.a205y.equals(`9998`)}"
+                                android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -621,8 +624,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:enabled="@{familymember.a205y.equals(`9998`)}"
+                                android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -647,8 +650,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:enabled="@{familymember.a205y.equals(`9998`)}"
+                                android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -705,6 +708,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{familymember.a20701.equals(`1`)}"
+                                android:enabled="@{!familymember.a20705.equals(`5`)}"
                                 android:onClick="@{()->familymember.setA20701(familymember.a20701.equals(`1`)?``:`1`)}"
                                 android:text="@string/a20701" />
 
@@ -713,6 +717,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{familymember.a20702.equals(`2`)}"
+                                android:enabled="@{!familymember.a20705.equals(`5`)}"
                                 android:onClick="@{()->familymember.setA20702(familymember.a20702.equals(`2`)?``:`2`)}"
                                 android:text="@string/a20702" />
 
@@ -721,6 +726,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{familymember.a20703.equals(`3`)}"
+                                android:enabled="@{!familymember.a20705.equals(`5`)}"
                                 android:onClick="@{()->familymember.setA20703(familymember.a20703.equals(`3`)?``:`3`)}"
                                 android:text="@string/a20703" />
 
@@ -729,6 +735,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{familymember.a20704.equals(`4`)}"
+                                android:enabled="@{!familymember.a20705.equals(`5`)}"
                                 android:onClick="@{()->familymember.setA20704(familymember.a20704.equals(`4`)?``:`4`)}"
                                 android:text="@string/a20704" />
 
@@ -745,6 +752,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{familymember.a20796.equals(`96`)}"
+                                android:enabled="@{!familymember.a20705.equals(`5`)}"
                                 android:onClick="@{()->familymember.setA20796(familymember.a20796.equals(`96`)?``:`96`)}"
                                 android:text="@string/a20796" />
 
@@ -1207,6 +1215,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{familymember.a212.equals(`9`)}"
+                                android:enabled="@{familymember.a204.equals(`2`)}"
                                 android:onClick="@{()->familymember.setA212(`9`)}"
                                 android:text="@string/a21209" />
 
@@ -1278,47 +1287,73 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/textView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/a21301" />
+                                android:orientation="vertical">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/a21301"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={familymember.a21301}"
-                                app:maxValue="99"
-                                app:minValue="1"
-                                app:type="range" />
+                                <TextView
+                                    style="@style/textView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/a21301" />
 
-                            <TextView
-                                style="@style/textView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/a21302" />
+                                <!--<com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/a21301"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={familymember.a21301}"
+                                    app:maxValue="99"
+                                    app:minValue="1"
+                                    app:type="range" />-->
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/a21302"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/a21301"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/a21301" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={familymember.a21302}"
-                                app:maxValue="99"
-                                app:minValue="1"
-                                app:type="range" />
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/textView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/a21302" />
+
+                                <!--<com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/a21302"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={familymember.a21302}"
+                                    app:maxValue="99"
+                                    app:minValue="1"
+                                    app:type="range" />-->
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/a21302"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/a21302" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
 

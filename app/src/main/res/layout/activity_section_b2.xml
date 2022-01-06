@@ -211,7 +211,7 @@
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={form.b202w}"
-                                app:maxValue="4"
+                                app:maxValue="3"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -232,7 +232,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.b202m}"
-                                app:maxValue="12"
+                                app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -253,7 +253,7 @@
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={form.b202y}"
-                                app:maxValue="5"
+                                app:maxValue="9"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -340,12 +340,14 @@
 
 
                 <LinearLayout
+                    android:id="@+id/fldGrpb204"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/fldGrpb204"
                     android:orientation="vertical"
                     android:visibility="@{form.b203.equals(`3`) ? View.GONE : View.VISIBLE}">
-                <!-- b204  CheckBox   -->
+
+
+                    <!-- b204  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVb204"
                     style="@style/cardView">
@@ -398,12 +400,12 @@
                                 android:layout_weight="1"
                                 android:enabled="@{!form.b204998.equals(`998`)}"
                                 android:gravity="center"
-                                android:hint="##"
+                                android:hint="#"
                                 android:inputType="number"
-                                android:maxLength="2"
+                                android:maxLength="1"
                                 android:text="@={form.b204w}"
-                                app:maxValue="42"
-                                app:minValue="1"
+                                app:maxValue="3"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <TextView
@@ -496,11 +498,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="#"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="1"
+                                android:maxLength="2"
                                 android:text="@={form.b205a}"
-                                app:maxValue="3"
+                                app:maxValue="15"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -524,11 +526,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="#"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="1"
+                                android:maxLength="2"
                                 android:text="@={form.b205b}"
-                                app:maxValue="3"
+                                app:maxValue="15"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -556,7 +558,7 @@
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={form.b205c}"
-                                app:maxValue="2"
+                                app:maxValue="5"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -624,8 +626,8 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.b20601}"
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:maxValue="23"
+                                app:minValue="5"
                                 app:type="range" />
 
                         </LinearLayout>

@@ -85,7 +85,16 @@ public class SectionB2Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
+        if (!modb.getB202w().isEmpty() && !modb.getB202m().isEmpty() && !modb.getB202y().isEmpty()) {
+            if (Integer.parseInt(modb.getB202w()) + Integer.parseInt(modb.getB202m()) + Integer.parseInt(modb.getB202y()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.b202w, "All Values Can't be zero");
+        }
+        if (!modb.getB204w().isEmpty() && !modb.getB204m().isEmpty()) {
+            if (Integer.parseInt(modb.getB204w()) + Integer.parseInt(modb.getB204m()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.b204w, "All Values Can't be zero");
+        }
+        return true;
     }
 
 }

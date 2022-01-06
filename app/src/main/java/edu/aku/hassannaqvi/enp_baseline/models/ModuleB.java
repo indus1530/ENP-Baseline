@@ -489,6 +489,8 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB105d(String b105d) {
         this.b105d = b105d;
+        setB106(b105.length() > 0 && Integer.parseInt(b105d) > 0 ? this.b106 : "");
+        setB10698(b105.length() > 0 && Integer.parseInt(b105d) > 0 ? this.b10698 : "");
         notifyPropertyChanged(BR.b105d);
     }
 

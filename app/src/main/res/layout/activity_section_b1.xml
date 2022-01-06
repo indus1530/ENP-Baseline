@@ -206,6 +206,7 @@
                                 android:gravity="center"
                                 android:hint="#####-#######-#"
                                 android:inputType="number"
+                                android:maxLength="13"
                                 android:text="@={modb.b103}"
                                 app:defaultValue="null"
                                 app:pattern="[0-9]{5,5}[0-9]{7,7}[0-9]{1,1}"
@@ -280,7 +281,7 @@
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={modb.b104y}"
-                                app:maxValue="5"
+                                app:maxValue="9"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -302,7 +303,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={modb.b104m}"
-                                app:maxValue="12"
+                                app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -324,7 +325,7 @@
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={modb.b104w}"
-                                app:maxValue="4"
+                                app:maxValue="3"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -396,7 +397,7 @@
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={modb.b105d}"
-                                app:maxValue="5"
+                                app:maxValue="9"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -418,7 +419,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={modb.b105w}"
-                                app:maxValue="12"
+                                app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -440,7 +441,7 @@
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={modb.b105m}"
-                                app:maxValue="4"
+                                app:maxValue="3"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -463,7 +464,8 @@
                 <!-- b106  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVb106"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{modb.b105d.length() &gt; 0 &amp;&amp; Integer.parseInt(modb.b105d) &gt; 0 ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -511,8 +513,8 @@
                                 android:inputType="number"
                                 android:maxLength="5"
                                 android:text="@={modb.b106}"
-                                app:maxValue="99999"
-                                app:minValue="1"
+                                app:maxValue="60000"
+                                app:minValue="1000"
                                 app:type="range" />
 
                             <CheckBox
@@ -681,8 +683,8 @@
                                 android:inputType="number"
                                 android:maxLength="5"
                                 android:text="@={modb.b108}"
-                                app:maxValue="99999"
-                                app:minValue="1"
+                                app:maxValue="60000"
+                                app:minValue="1000"
                                 app:type="range" />
 
                             <CheckBox

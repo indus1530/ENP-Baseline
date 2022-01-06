@@ -575,10 +575,10 @@
     <string name="b11405">موٹر سائکل </string>
     <string name="b11406">پیسے کسی اور کے ذریعہ منگوائے</string>
     <string name="b11496">دیگر وضاحت کریں </string>
-    <string name="b115">پیسے لینے کی سہولت تک پہنچنےمیں آپ کو کتنا وقت لگتاہے ؟</string>
-    <string name="b11501a">وقت گھنٹوں  میں</string>
-    <string name="b11501b">وقت  منٹس میں</string>
-    <string name="b11598">معلوم نہیں</string>
+    <string name="b115">پیسے لینے کی سہولت تک پہنچنےمیں آپ کو کتنا وقت لگتا ہے ؟ </string>
+    <string name="b115h"> گھنٹوں </string>
+    <string name="b115m"> منٹس </string>
+    <string name="b11598"> معلوم نہیں </string>
     <string name="b116">مالی امداد دینے والے مرکز تک آ نے جانے کے لئے کتنی رقم خرچ کی گئی تھی؟</string>
     <string name="b11601">رقم</string>
     <string name="b11698">معلوم نہیں</string>

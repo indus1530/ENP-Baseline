@@ -33,6 +33,7 @@ public class SectionB1Activity extends AppCompatActivity {
         bi.setModb(modb);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
+        modb.setB101(String.valueOf(MainApp.bCount + 1));
 
         setupSkips();
         if (MainApp.superuser)

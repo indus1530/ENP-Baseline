@@ -654,7 +654,7 @@
     <string name="b101">Line number of the index Woman</string>
     <string name="b102">Name of index woman</string>
     <string name="b103">CNIC number / BISP ID of index woman</string>
-    <string name="b10398">Not available at the time of interview</string>
+    <string name="b10398"> Not Available at the time of interview </string>
     <string name="b104">How long have this household been a BISP beneficiary?</string>
     <string name="b104y"> Year(s) </string>
     <string name="b104m"> Month(s) </string>

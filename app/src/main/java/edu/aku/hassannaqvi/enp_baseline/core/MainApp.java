@@ -104,6 +104,7 @@ public class MainApp extends Application {
     public static List<FamilyMembers> motherList;
     //public static FamilyMembers familyMember;
     public static int memberCount = 0;
+    public static int bCount = 0;
     public static String selectedMWRA;
     public static String selectedChild;
     public static String selectedAdolMale;

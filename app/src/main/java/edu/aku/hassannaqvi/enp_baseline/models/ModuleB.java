@@ -1123,7 +1123,12 @@ public class ModuleB extends BaseObservable implements Observable {
         setB205a(b203.equals("3") ? "" : this.b205a);
         setB205b(b203.equals("3") ? "" : this.b205b);
         setB205c(b203.equals("3") ? "" : this.b205c);
-
+        setB20601(b203.equals("1") ? "" : this.b20601);
+        setB209(b203.equals("1") ? "" : this.b209);
+        setB209a(b203.equals("1") ? "" : this.b209a);
+        setB209b(b203.equals("1") ? "" : this.b209b);
+        setB209c(b203.equals("1") ? "" : this.b209c);
+        setB210(b203.equals("1") ? "" : this.b210);
         notifyPropertyChanged(BR.b203);
     }
 
@@ -1266,7 +1271,11 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     public void setB209(String b209) {
+        if (this.b209.equals(b209)) return;
         this.b209 = b209;
+        setB209a(b209.equals("998") ? "" : this.b209a);
+        setB209b(b209.equals("998") ? "" : this.b209b);
+        setB209c(b209.equals("998") ? "" : this.b209c);
         notifyPropertyChanged(BR.b209);
     }
 
@@ -1717,6 +1726,13 @@ public class ModuleB extends BaseObservable implements Observable {
     public void setB21806(String b21806) {
         if (this.b21806.equals(b21806)) return;
         this.b21806 = b21806;
+        setB21801(b21806.equals("6") ? "" : this.b21801);
+        setB21802(b21806.equals("6") ? "" : this.b21802);
+        setB21803(b21806.equals("6") ? "" : this.b21803);
+        setB21804(b21806.equals("6") ? "" : this.b21804);
+        setB21805(b21806.equals("6") ? "" : this.b21805);
+        setB218998(b21806.equals("6") ? "" : this.b218998);
+        setB21896(b21806.equals("6") ? "" : this.b21896);
         setB219(b21806.equals("6") ? "" : this.b219);
         notifyPropertyChanged(BR.b21806);
     }
@@ -1758,7 +1774,6 @@ public class ModuleB extends BaseObservable implements Observable {
         setB21805(b218998.equals("998") ? "" : this.b21805);
         setB21806(b218998.equals("998") ? "" : this.b21806);
         setB21896(b218998.equals("998") ? "" : this.b21896);
-
         setB219(b218998.equals("998") ? "" : this.b219);
         notifyPropertyChanged(BR.b218998);
     }
@@ -1797,7 +1812,8 @@ public class ModuleB extends BaseObservable implements Observable {
         setB222h(b220.equals("6") ? "" : this.b222h);
         setB222m(b220.equals("6") ? "" : this.b222m);
         setB222998(b220.equals("6") ? "" : this.b222998);
-        setB222(b220.equals("6") ? "" : this.b222);
+        setB223(b220.equals("6") ? "" : this.b223);
+        setB224(b220.equals("6") ? "" : this.b224);
         notifyPropertyChanged(BR.b220);
     }
 

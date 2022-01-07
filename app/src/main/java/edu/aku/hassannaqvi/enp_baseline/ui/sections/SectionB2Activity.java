@@ -94,6 +94,14 @@ public class SectionB2Activity extends AppCompatActivity {
             if (Integer.parseInt(modb.getB204w()) + Integer.parseInt(modb.getB204m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b204w, "All Values Can't be zero");
         }
+        if (!modb.getB21201().isEmpty() && !modb.getB21202().isEmpty()) {
+            if (Integer.parseInt(modb.getB21201()) + Integer.parseInt(modb.getB21202()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.b21101, "All Values Can't be zero");
+        }
+        if (!modb.getB222h().isEmpty() && !modb.getB222m().isEmpty()) {
+            if (Integer.parseInt(modb.getB222h()) + Integer.parseInt(modb.getB222m()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.b222h, "All Values Can't be zero");
+        }
         return true;
     }
 

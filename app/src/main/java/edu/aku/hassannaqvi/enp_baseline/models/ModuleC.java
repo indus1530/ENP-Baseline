@@ -636,6 +636,14 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC102(String c102) {
         this.c102 = c102;
+        setC104(c102.equals("2") ? "" : this.c104);
+        setC105(c102.equals("2") ? "" : this.c105);
+        setC106(c102.equals("2") ? "" : this.c106);
+        setC107(c102.equals("2") ? "" : this.c107);
+        setC108(c102.equals("2") ? "" : this.c108);
+        setC109(c102.equals("2") ? "" : this.c109);
+        setC110(c102.equals("2") ? "" : this.c110);
+        setC111(c102.equals("2") ? "" : this.c111);
         notifyPropertyChanged(BR.c102);
     }
 

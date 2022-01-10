@@ -1329,6 +1329,20 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC120(String c120) {
         this.c120 = c120;
+        setC121(c120.equals("1") ? this.c121 : "");
+        setC12201(c120.equals("1") ? this.c12201 : "");
+        setC12202(c120.equals("1") ? this.c12202 : "");
+        setC12203(c120.equals("1") ? this.c12203 : "");
+        setC12204(c120.equals("1") ? this.c12204 : "");
+        setC12205(c120.equals("1") ? this.c12205 : "");
+        setC12206(c120.equals("1") ? this.c12206 : "");
+        setC12207(c120.equals("1") ? this.c12207 : "");
+        setC12208(c120.equals("1") ? this.c12208 : "");
+        setC12296(c120.equals("1") ? this.c12296 : "");
+        setC12301(c120.equals("1") ? this.c12301 : "");
+        setC12302(c120.equals("1") ? this.c12302 : "");
+        setC12396(c120.equals("1") ? this.c12396 : "");
+        setC124(c120.equals("1") ? this.c124 : "");
         notifyPropertyChanged(BR.c120);
     }
 

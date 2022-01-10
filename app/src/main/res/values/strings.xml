@@ -1021,8 +1021,8 @@
     <string name="c12902">No</string>
     <string name="c129998">Don’t Know</string>
     <string name="c130">How many sachets have you consumed in the past 4 weeks?</string>
-    <string name="c130s">Cartons</string>
-    <string name="c130c">Sachet</string>
+    <string name="c130s">Sachet</string>
+    <string name="c130c">Cartons</string>
     <string name="c131">Where did you get SNF from?</string>
     <string name="c13101">Government</string>
     <string name="c13102">NGO</string>

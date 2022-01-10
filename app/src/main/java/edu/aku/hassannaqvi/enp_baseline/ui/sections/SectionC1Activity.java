@@ -137,6 +137,10 @@ public class SectionC1Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
+        if (!modc.getC112wk().isEmpty() && !modc.getC112mm().isEmpty()) {
+            if (Integer.parseInt(modc.getC112wk()) + Integer.parseInt(modc.getC112mm()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.c112wk, "All Values Can't be zero");
+        }
         if (!modc.getC116w().isEmpty() && !modc.getC116m().isEmpty()) {
             if (Integer.parseInt(modc.getC116w()) + Integer.parseInt(modc.getC116m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.c116w, "All Values Can't be zero");

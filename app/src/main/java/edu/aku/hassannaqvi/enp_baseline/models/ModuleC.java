@@ -643,6 +643,7 @@ public class ModuleC extends BaseObservable implements Observable {
         setC109(c102.equals("2") ? "" : this.c109);
         setC110(c102.equals("2") ? "" : this.c110);
         setC111(c102.equals("2") ? "" : this.c111);
+        setC112wk(c102.equals("2") ? "" : this.c112wk);
         setC112mm(c102.equals("2") ? "" : this.c112mm);
         setC113dd(c102.equals("2") ? "" : this.c113dd);
         setC113mm(c102.equals("2") ? "" : this.c113mm);
@@ -802,8 +803,65 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC111(String c111) {
         this.c111 = c111;
-        setC112mm(c111.equals("1") ? this.c112mm : "");
         setC112wk(c111.equals("1") ? this.c112wk : "");
+        setC112mm(c111.equals("1") ? this.c112mm : "");
+        setC113dd(c111.equals("1") ? this.c113dd : "");
+        setC113mm(c111.equals("1") ? this.c113mm : "");
+        setC113yy(c111.equals("1") ? this.c113yy : "");
+        setC114(c111.equals("1") ? this.c114 : "");
+        setC11501(c111.equals("1") ? this.c11501 : "");
+        setC11502(c111.equals("1") ? this.c11502 : "");
+        setC11503(c111.equals("1") ? this.c11503 : "");
+        setC11504(c111.equals("1") ? this.c11504 : "");
+        setC11505(c111.equals("1") ? this.c11505 : "");
+        setC11506(c111.equals("1") ? this.c11506 : "");
+        setC11507(c111.equals("1") ? this.c11507 : "");
+        setC11508(c111.equals("1") ? this.c11508 : "");
+        setC11596(c111.equals("1") ? this.c11596 : "");
+        setC116w(c111.equals("1") ? this.c116w : "");
+        setC116m(c111.equals("1") ? this.c116m : "");
+        setC116998(c111.equals("1") ? this.c116998 : "");
+        setC11701(c111.equals("1") ? this.c11701 : "");
+        setC11702(c111.equals("1") ? this.c11702 : "");
+        setC11703(c111.equals("1") ? this.c11703 : "");
+        setC11796(c111.equals("1") ? this.c11796 : "");
+        setC118(c111.equals("1") ? this.c118 : "");
+        setC119(c111.equals("1") ? this.c119 : "");
+        setC119a(c111.equals("1") ? this.c119a : "");
+        setC119b(c111.equals("1") ? this.c119b : "");
+        setC119c(c111.equals("1") ? this.c119c : "");
+        setC119d(c111.equals("1") ? this.c119d : "");
+        setC119e(c111.equals("1") ? this.c119e : "");
+        setC119f(c111.equals("1") ? this.c119f : "");
+        setC119g(c111.equals("1") ? this.c119g : "");
+        setC119h(c111.equals("1") ? this.c119h : "");
+        setC11998(c111.equals("1") ? this.c11998 : "");
+        setC120(c111.equals("1") ? this.c120 : "");
+        setC121(c111.equals("1") ? this.c121 : "");
+        setC12201(c111.equals("1") ? this.c12201 : "");
+        setC12202(c111.equals("1") ? this.c12202 : "");
+        setC12203(c111.equals("1") ? this.c12203 : "");
+        setC12204(c111.equals("1") ? this.c12204 : "");
+        setC12205(c111.equals("1") ? this.c12205 : "");
+        setC12206(c111.equals("1") ? this.c12206 : "");
+        setC12207(c111.equals("1") ? this.c12207 : "");
+        setC12208(c111.equals("1") ? this.c12208 : "");
+        setC12296(c111.equals("1") ? this.c12296 : "");
+        setC12301(c111.equals("1") ? this.c12301 : "");
+        setC12302(c111.equals("1") ? this.c12302 : "");
+        setC12396(c111.equals("1") ? this.c12396 : "");
+        setC124(c111.equals("1") ? this.c124 : "");
+        setC125(c111.equals("1") ? this.c125 : "");
+        setC126(c111.equals("1") ? this.c126 : "");
+        setC127(c111.equals("1") ? this.c127 : "");
+        setC12801(c111.equals("1") ? this.c12801 : "");
+        setC12802(c111.equals("1") ? this.c12802 : "");
+        setC12896(c111.equals("1") ? this.c12896 : "");
+        setC129(c111.equals("1") ? this.c129 : "");
+        setC130(c111.equals("1") ? this.c130 : "");
+        setC131(c111.equals("1") ? this.c131 : "");
+        setC132(c111.equals("1") ? this.c132 : "");
+        setC133(c111.equals("1") ? this.c133 : "");
         notifyPropertyChanged(BR.c111);
     }
 
@@ -864,6 +922,33 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC114(String c114) {
         this.c114 = c114;
+        setC11501(c114.equals("1") ? this.c11501 : "");
+        setC11502(c114.equals("1") ? this.c11502 : "");
+        setC11503(c114.equals("1") ? this.c11503 : "");
+        setC11504(c114.equals("1") ? this.c11504 : "");
+        setC11505(c114.equals("1") ? this.c11505 : "");
+        setC11506(c114.equals("1") ? this.c11506 : "");
+        setC11507(c114.equals("1") ? this.c11507 : "");
+        setC11508(c114.equals("1") ? this.c11508 : "");
+        setC11596(c114.equals("1") ? this.c11596 : "");
+        setC116w(c114.equals("1") ? this.c116w : "");
+        setC116m(c114.equals("1") ? this.c116m : "");
+        setC116998(c114.equals("1") ? this.c116998 : "");
+        setC11701(c114.equals("1") ? this.c11701 : "");
+        setC11702(c114.equals("1") ? this.c11702 : "");
+        setC11703(c114.equals("1") ? this.c11703 : "");
+        setC11796(c114.equals("1") ? this.c11796 : "");
+        setC118(c114.equals("1") ? this.c118 : "");
+        setC119(c114.equals("1") ? this.c119 : "");
+        setC119a(c114.equals("1") ? this.c119a : "");
+        setC119b(c114.equals("1") ? this.c119b : "");
+        setC119c(c114.equals("1") ? this.c119c : "");
+        setC119d(c114.equals("1") ? this.c119d : "");
+        setC119e(c114.equals("1") ? this.c119e : "");
+        setC119f(c114.equals("1") ? this.c119f : "");
+        setC119g(c114.equals("1") ? this.c119g : "");
+        setC119h(c114.equals("1") ? this.c119h : "");
+        setC11998(c114.equals("1") ? this.c11998 : "");
         notifyPropertyChanged(BR.c114);
     }
 

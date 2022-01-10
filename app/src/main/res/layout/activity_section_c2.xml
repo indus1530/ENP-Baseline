@@ -619,6 +619,7 @@
                                     android:id="@+id/c2060101"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20601.equals(`1`)}"
                                     android:onClick="@{()->modc.setC20601(`1`)}"
                                     android:text="@string/c2060101" />
@@ -627,6 +628,7 @@
                                     android:id="@+id/c2060102"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20601.equals(`2`)}"
                                     android:onClick="@{()->modc.setC20601(`2`)}"
                                     android:text="@string/c2060102" />
@@ -635,6 +637,7 @@
                                     android:id="@+id/c20601998"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20601.equals(`998`)}"
                                     android:onClick="@{()->modc.setC20601(`998`)}"
                                     android:text="@string/c20601998" />
@@ -659,6 +662,7 @@
                                     android:id="@+id/c2060201"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20602.equals(`1`)}"
                                     android:onClick="@{()->modc.setC20602(`1`)}"
                                     android:text="@string/c2060201" />
@@ -667,6 +671,7 @@
                                     android:id="@+id/c2060202"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20602.equals(`2`)}"
                                     android:onClick="@{()->modc.setC20602(`2`)}"
                                     android:text="@string/c2060202" />
@@ -675,6 +680,7 @@
                                     android:id="@+id/c20602998"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20602.equals(`998`)}"
                                     android:onClick="@{()->modc.setC20602(`998`)}"
                                     android:text="@string/c20602998" />
@@ -699,6 +705,7 @@
                                     android:id="@+id/c2060301"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20603.equals(`1`)}"
                                     android:onClick="@{()->modc.setC20603(`1`)}"
                                     android:text="@string/c2060301" />
@@ -707,6 +714,7 @@
                                     android:id="@+id/c2060302"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20603.equals(`2`)}"
                                     android:onClick="@{()->modc.setC20603(`2`)}"
                                     android:text="@string/c2060302" />
@@ -715,6 +723,7 @@
                                     android:id="@+id/c20603998"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20603.equals(`998`)}"
                                     android:onClick="@{()->modc.setC20603(`998`)}"
                                     android:text="@string/c20603998" />
@@ -739,6 +748,7 @@
                                     android:id="@+id/c2060401"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20604.equals(`1`)}"
                                     android:onClick="@{()->modc.setC20604(`1`)}"
                                     android:text="@string/c2060401" />
@@ -747,6 +757,7 @@
                                     android:id="@+id/c2060402"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20604.equals(`2`)}"
                                     android:onClick="@{()->modc.setC20604(`2`)}"
                                     android:text="@string/c2060402" />
@@ -755,6 +766,7 @@
                                     android:id="@+id/c20604998"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20604.equals(`998`)}"
                                     android:onClick="@{()->modc.setC20604(`998`)}"
                                     android:text="@string/c20604998" />
@@ -779,6 +791,7 @@
                                     android:id="@+id/c2060501"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20605.equals(`1`)}"
                                     android:onClick="@{()->modc.setC20605(`1`)}"
                                     android:text="@string/c2060501" />
@@ -787,6 +800,7 @@
                                     android:id="@+id/c2060502"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20605.equals(`2`)}"
                                     android:onClick="@{()->modc.setC20605(`2`)}"
                                     android:text="@string/c2060502" />
@@ -795,6 +809,7 @@
                                     android:id="@+id/c20605998"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20605.equals(`998`)}"
                                     android:onClick="@{()->modc.setC20605(`998`)}"
                                     android:text="@string/c20605998" />
@@ -819,6 +834,7 @@
                                     android:id="@+id/c2060601"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20606.equals(`1`)}"
                                     android:onClick="@{()->modc.setC20606(`1`)}"
                                     android:text="@string/c2060601" />
@@ -827,6 +843,7 @@
                                     android:id="@+id/c2060602"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20606.equals(`2`)}"
                                     android:onClick="@{()->modc.setC20606(`2`)}"
                                     android:text="@string/c2060602" />
@@ -835,6 +852,7 @@
                                     android:id="@+id/c20606998"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20606.equals(`998`)}"
                                     android:onClick="@{()->modc.setC20606(`998`)}"
                                     android:text="@string/c20606998" />
@@ -859,6 +877,7 @@
                                     android:id="@+id/c2060701"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20607.equals(`1`)}"
                                     android:onClick="@{()->modc.setC20607(`1`)}"
                                     android:text="@string/c2060701" />
@@ -867,6 +886,7 @@
                                     android:id="@+id/c2060702"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20607.equals(`2`)}"
                                     android:onClick="@{()->modc.setC20607(`2`)}"
                                     android:text="@string/c2060702" />
@@ -875,6 +895,7 @@
                                     android:id="@+id/c20607998"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20607.equals(`998`)}"
                                     android:onClick="@{()->modc.setC20607(`998`)}"
                                     android:text="@string/c20607998" />
@@ -899,6 +920,7 @@
                                     android:id="@+id/c2060801"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20608.equals(`1`)}"
                                     android:onClick="@{()->modc.setC20608(`1`)}"
                                     android:text="@string/c2060801" />
@@ -907,6 +929,7 @@
                                     android:id="@+id/c2060802"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20608.equals(`2`)}"
                                     android:onClick="@{()->modc.setC20608(`2`)}"
                                     android:text="@string/c2060802" />
@@ -915,6 +938,7 @@
                                     android:id="@+id/c20608998"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20608.equals(`998`)}"
                                     android:onClick="@{()->modc.setC20608(`998`)}"
                                     android:text="@string/c20608998" />
@@ -940,7 +964,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:checked="@{modc.c20697.equals(`1`)}"
-                                    android:onClick="@{()->modc.setC20697(`1`)}"
+                                    android:onClick="@{()->modc.setC20697(`1`) + c20601.clearCheck() + c20602.clearCheck() + c20603.clearCheck() + c20604.clearCheck() + c20605.clearCheck() + c20606.clearCheck() + c20607.clearCheck() + c20608.clearCheck() + c20696.clearCheck()}"
                                     android:text="@string/c2069701" />
 
                                 <RadioButton
@@ -979,6 +1003,7 @@
                                     android:id="@+id/c2069601"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20696.equals(`1`)}"
                                     android:onClick="@{()->modc.setC20696(`1`)}"
                                     android:text="@string/c2069601" />
@@ -987,6 +1012,7 @@
                                     android:id="@+id/c2069602"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20696.equals(`2`)}"
                                     android:onClick="@{()->modc.setC20696(`2`)}"
                                     android:text="@string/c2069602" />
@@ -995,6 +1021,7 @@
                                     android:id="@+id/c20696998"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:enabled="@{!modc.c20697.equals(`1`)}"
                                     android:checked="@{modc.c20696.equals(`998`)}"
                                     android:onClick="@{()->modc.setC20696(`998`)}"
                                     android:text="@string/c20696998" />

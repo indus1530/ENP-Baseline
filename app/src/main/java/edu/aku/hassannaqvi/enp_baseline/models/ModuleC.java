@@ -2138,6 +2138,15 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC20697(String c20697) {
         this.c20697 = c20697;
+        setC20601(c20697.equals("1") ? "" : this.c20601);
+        setC20602(c20697.equals("1") ? "" : this.c20602);
+        setC20603(c20697.equals("1") ? "" : this.c20603);
+        setC20604(c20697.equals("1") ? "" : this.c20604);
+        setC20605(c20697.equals("1") ? "" : this.c20605);
+        setC20606(c20697.equals("1") ? "" : this.c20606);
+        setC20607(c20697.equals("1") ? "" : this.c20607);
+        setC20608(c20697.equals("1") ? "" : this.c20608);
+        setC20696(c20697.equals("1") ? "" : this.c20696);
         notifyPropertyChanged(BR.c20697);
     }
 

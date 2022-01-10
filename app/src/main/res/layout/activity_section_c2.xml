@@ -109,10 +109,10 @@
 
 
                 <LinearLayout
-                    android:id="@+id/fldGrpc202"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="@{modc.c201.equals(`1`) ? View.VISIBLE : View.GONE}">
 
 
                     <!-- c202  CheckBox   -->
@@ -1107,7 +1107,6 @@
 
 
                 <LinearLayout
-                    android:id="@+id/fldGrpc208"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -1583,7 +1582,6 @@
 
 
                 <LinearLayout
-                    android:id="@+id/fldGrpc213"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -1933,7 +1931,6 @@
 
 
                 <LinearLayout
-                    android:id="@+id/fldGrpc217"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"

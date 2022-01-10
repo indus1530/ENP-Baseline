@@ -2572,54 +2572,61 @@
 
                             </LinearLayout>
 
-                            <LinearLayout
+                            <RadioGroup
+                                android:id="@+id/c130"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/c130s" />
-
-                                <com.edittextpicker.aliazaz.EditTextPicker
+                                <RadioButton
                                     android:id="@+id/c130s"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:checked="@{modc.c130.equals(`1`)}"
+                                    android:onClick="@{()->modc.setC130(`1`)}"
+                                    android:text="@string/c130s" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/c130sx"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@={modc.c130s}"
+                                    android:text="@={modc.c130sx}"
+                                    android:visibility="@{modc.c130.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="99"
                                     app:minValue="0"
                                     app:type="range" />
 
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/c130c" />
-
-                                <com.edittextpicker.aliazaz.EditTextPicker
+                                <RadioButton
                                     android:id="@+id/c130c"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:checked="@{modc.c130.equals(`2`)}"
+                                    android:onClick="@{()->modc.setC130(`2`)}"
+                                    android:text="@string/c130c" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/c130cx"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@={modc.c130c}"
+                                    android:text="@={modc.c130cx}"
+                                    android:visibility="@{modc.c130.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="99"
                                     app:minValue="0"
                                     app:type="range" />
 
-                            </LinearLayout>
+                            </RadioGroup>
 
                         </LinearLayout>
 

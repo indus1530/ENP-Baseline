@@ -128,8 +128,9 @@ public class ModuleC extends BaseObservable implements Observable {
     private String c12896 = _EMPTY_;
     private String c12896x = _EMPTY_;
     private String c129 = _EMPTY_;
-    private String c130s = _EMPTY_;
-    private String c130c = _EMPTY_;
+    private String c130 = _EMPTY_;
+    private String c130cx = _EMPTY_;
+    private String c130sx = _EMPTY_;
     private String c131 = _EMPTY_;
     private String c13196x = _EMPTY_;
     private String c132 = _EMPTY_;
@@ -656,6 +657,50 @@ public class ModuleC extends BaseObservable implements Observable {
         setC11507(c102.equals("2") ? "" : this.c11507);
         setC11508(c102.equals("2") ? "" : this.c11508);
         setC11596(c102.equals("2") ? "" : this.c11596);
+        setC116w(c102.equals("2") ? "" : this.c116w);
+        setC116m(c102.equals("2") ? "" : this.c116m);
+        setC116998(c102.equals("2") ? "" : this.c116998);
+        setC11701(c102.equals("2") ? "" : this.c11701);
+        setC11702(c102.equals("2") ? "" : this.c11702);
+        setC11703(c102.equals("2") ? "" : this.c11703);
+        setC11796(c102.equals("2") ? "" : this.c11796);
+        setC118(c102.equals("2") ? "" : this.c118);
+        setC119(c102.equals("2") ? "" : this.c119);
+        setC119a(c102.equals("2") ? "" : this.c119a);
+        setC119b(c102.equals("2") ? "" : this.c119b);
+        setC119c(c102.equals("2") ? "" : this.c119c);
+        setC119d(c102.equals("2") ? "" : this.c119d);
+        setC119e(c102.equals("2") ? "" : this.c119e);
+        setC119f(c102.equals("2") ? "" : this.c119f);
+        setC119g(c102.equals("2") ? "" : this.c119g);
+        setC119h(c102.equals("2") ? "" : this.c119h);
+        setC11998(c102.equals("2") ? "" : this.c11998);
+        setC120(c102.equals("2") ? "" : this.c120);
+        setC121(c102.equals("2") ? "" : this.c121);
+        setC12201(c102.equals("2") ? "" : this.c12201);
+        setC12202(c102.equals("2") ? "" : this.c12202);
+        setC12203(c102.equals("2") ? "" : this.c12203);
+        setC12204(c102.equals("2") ? "" : this.c12204);
+        setC12205(c102.equals("2") ? "" : this.c12205);
+        setC12206(c102.equals("2") ? "" : this.c12206);
+        setC12207(c102.equals("2") ? "" : this.c12207);
+        setC12208(c102.equals("2") ? "" : this.c12208);
+        setC12296(c102.equals("2") ? "" : this.c12296);
+        setC12301(c102.equals("2") ? "" : this.c12301);
+        setC12302(c102.equals("2") ? "" : this.c12302);
+        setC12396(c102.equals("2") ? "" : this.c12396);
+        setC124(c102.equals("2") ? "" : this.c124);
+        setC125(c102.equals("2") ? "" : this.c125);
+        setC126(c102.equals("2") ? "" : this.c126);
+        setC127(c102.equals("2") ? "" : this.c127);
+        setC12801(c102.equals("2") ? "" : this.c12801);
+        setC12802(c102.equals("2") ? "" : this.c12802);
+        setC12896(c102.equals("2") ? "" : this.c12896);
+        setC129(c102.equals("2") ? "" : this.c129);
+        setC130(c102.equals("2") ? "" : this.c130);
+        setC131(c102.equals("2") ? "" : this.c131);
+        setC132(c102.equals("2") ? "" : this.c132);
+        setC133(c102.equals("2") ? "" : this.c133);
         notifyPropertyChanged(BR.c102);
     }
 
@@ -1491,23 +1536,35 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getC130s() {
-        return c130s;
+    public String getC130() {
+        return c130;
     }
 
-    public void setC130s(String c130s) {
-        this.c130s = c130s;
-        notifyPropertyChanged(BR.c130s);
+    public void setC130(String c130) {
+        this.c130 = c130;
+        setC130sx(c130.equals("1") ? this.c130sx : "");
+        setC130cx(c130.equals("2") ? this.c130cx : "");
+        notifyPropertyChanged(BR.c130);
     }
 
     @Bindable
-    public String getC130c() {
-        return c130c;
+    public String getC130sx() {
+        return c130sx;
     }
 
-    public void setC130c(String c130c) {
-        this.c130c = c130c;
-        notifyPropertyChanged(BR.c130c);
+    public void setC130sx(String c130sx) {
+        this.c130sx = c130sx;
+        notifyPropertyChanged(BR.c130sx);
+    }
+
+    @Bindable
+    public String getC130cx() {
+        return c130cx;
+    }
+
+    public void setC130cx(String c130cx) {
+        this.c130cx = c130cx;
+        notifyPropertyChanged(BR.c130cx);
     }
 
     @Bindable
@@ -1548,7 +1605,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC133(String c133) {
         this.c133 = c133;
-        setC133ax(c133.equals("998") ? "" : this.c133ax);
+        setC133ax(c133.equals("1") ? this.c133ax : "");
         notifyPropertyChanged(BR.c133);
     }
 
@@ -5264,8 +5321,9 @@ public class ModuleC extends BaseObservable implements Observable {
             this.c12896 = json.getString("c12896");
             this.c12896x = json.getString("c12896x");
             this.c129 = json.getString("c129");
-            this.c130s = json.getString("c130s");
-            this.c130c = json.getString("c130c");
+            this.c130 = json.getString("c130");
+            this.c130sx = json.getString("c130sx");
+            this.c130cx = json.getString("c130cx");
             this.c131 = json.getString("c131");
             this.c13196x = json.getString("c13196x");
             this.c132 = json.getString("c132");
@@ -5736,8 +5794,9 @@ public class ModuleC extends BaseObservable implements Observable {
                 .put("c12896", c12896)
                 .put("c12896x", c12896x)
                 .put("c129", c129)
-                .put("c130s", c130s)
-                .put("c130c", c130c)
+                .put("c130s", c130)
+                .put("c130sx", c130sx)
+                .put("c130cx", c130cx)
                 .put("c131", c131)
                 .put("c13196x", c13196x)
                 .put("c132", c132)

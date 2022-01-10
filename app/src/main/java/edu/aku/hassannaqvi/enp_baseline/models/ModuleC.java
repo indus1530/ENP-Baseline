@@ -1701,6 +1701,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC132(String c132) {
         this.c132 = c132;
+        setC133(c132.equals("1") ? this.c133 : "");
         notifyPropertyChanged(BR.c132);
     }
 

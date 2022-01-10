@@ -2817,7 +2817,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:checked="@{modc.c132.equals(`2`)}"
-                                        android:onClick="@{()->modc.setC132(`2`)}"
+                                        android:onClick="@{()->modc.setC132(`2`) + c133.clearCheck()}"
                                         android:text="@string/c13202" />
 
                                     <RadioButton
@@ -2826,7 +2826,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:checked="@{modc.c132.equals(`998`)}"
-                                        android:onClick="@{()->modc.setC132(`998`)}"
+                                        android:onClick="@{()->modc.setC132(`998`) + c133.clearCheck()}"
                                         android:text="@string/c132998" />
 
                                 </RadioGroup>
@@ -2839,7 +2839,8 @@
                         <!-- c133 Radio -->
                         <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVc133"
-                            style="@style/cardView">
+                            style="@style/cardView"
+                            android:visibility="@{modc.c132.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -2886,13 +2887,13 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:gravity="center"
-                                        android:hint="##"
+                                        android:hint="#"
                                         android:inputType="number"
-                                        android:maxLength="2"
+                                        android:maxLength="1"
                                         android:tag="c133a"
                                         android:text="@={modc.c133ax}"
                                         android:visibility="@{modc.c133.equals(`1`) ? View.VISIBLE : View.GONE}"
-                                        app:maxValue="15"
+                                        app:maxValue="5"
                                         app:minValue="1"
                                         app:type="range" />
 

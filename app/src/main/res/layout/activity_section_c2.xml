@@ -98,7 +98,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{modc.c201.equals(`2`)}"
-                                android:onClick="@{()->modc.setC201(`2`) + c204.clearCheck() + c205.clearCheck() + c20601.clearCheck() + c20602.clearCheck() + c20603.clearCheck() + c20604.clearCheck() + c20605.clearCheck() + c20606.clearCheck() + c20607.clearCheck() + c20608.clearCheck() + c20697.clearCheck() + c20696.clearCheck()}"
+                                android:onClick="@{()->modc.setC201(`2`) + c205.clearCheck() + c20601.clearCheck() + c20602.clearCheck() + c20603.clearCheck() + c20604.clearCheck() + c20605.clearCheck() + c20606.clearCheck() + c20607.clearCheck() + c20608.clearCheck() + c20697.clearCheck() + c20696.clearCheck()}"
                                 android:text="@string/c20102" />
 
                         </RadioGroup>
@@ -426,48 +426,40 @@
 
                             </LinearLayout>
 
-                            <RadioGroup
-                                android:id="@+id/c204"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
-                                <RadioButton
-                                    android:id="@+id/c20401"
+                                <TextView
+                                    style="@style/textView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{modc.c204.equals(`1`)}"
-                                    android:onClick="@{()->modc.setC204(`1`)}"
-                                    android:text="@string/c20401" />
+                                    android:text="@string/c204w" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/c20401x"
+                                    android:id="@+id/c204w"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="##"
+                                    android:enabled="@{!modc.c20498.equals(`998`)}"
                                     android:inputType="number"
-                                    android:maxLength="2"
-                                    android:tag="c20401"
-                                    android:text="@={modc.c20401x}"
-                                    android:visibility="@{modc.c204.equals(`1`) ? View.VISIBLE : View.GONE}"
-                                    app:maxValue="42"
+                                    android:hint="#"
+                                    android:maxLength="1"
+                                    android:text="@={modc.c204w}"
+                                    app:maxValue="3"
                                     app:minValue="0"
                                     app:type="range" />
 
-                                <RadioButton
-                                    android:id="@+id/c20402"
+                                <TextView
+                                    style="@style/textView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{modc.c204.equals(`2`)}"
-                                    android:onClick="@{()->modc.setC204(`2`)}"
-                                    android:text="@string/c20402" />
+                                    android:text="@string/c204m" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/c20402x"
+                                    android:id="@+id/c204m"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
@@ -475,22 +467,22 @@
                                     android:hint="#"
                                     android:inputType="number"
                                     android:maxLength="1"
-                                    android:tag="c20402"
-                                    android:text="@={modc.c20402x}"
-                                    android:visibility="@{modc.c204.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:enabled="@{!modc.c20498.equals(`998`)}"
+                                    android:text="@={modc.c204m}"
                                     app:maxValue="9"
                                     app:minValue="0"
                                     app:type="range" />
 
-                                <RadioButton
-                                    android:id="@+id/c204998"
+                                <CheckBox
+                                    android:id="@+id/c20498"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:checked="@{modc.c204.equals(`998`)}"
-                                    android:onClick="@{()->modc.setC204(`998`)}"
+                                    android:checked="@{modc.c20498.equals(`998`)}"
+                                    android:onClick="@{()->modc.setC20498(modc.c20498.equals(`998`)?``:`998`)}"
+                                    android:tag="-1"
                                     android:text="@string/c204998" />
 
-                            </RadioGroup>
+                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -554,7 +546,7 @@
                                     android:text="@={modc.c20501x}"
                                     android:visibility="@{modc.c205.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="15"
-                                    app:minValue="0"
+                                    app:minValue="1"
                                     app:type="range" />
 
                                 <RadioButton
@@ -1998,14 +1990,14 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:hint="###"
+                                    android:hint="##"
                                     android:inputType="number"
-                                    android:maxLength="3"
+                                    android:maxLength="2"
                                     android:tag="c21701"
                                     android:text="@={modc.c21701x}"
                                     android:visibility="@{modc.c217.equals(`1`) ? View.VISIBLE : View.GONE}"
-                                    app:maxValue="100"
-                                    app:minValue="0"
+                                    app:maxValue="20"
+                                    app:minValue="1"
                                     app:type="range" />
 
                                 <RadioButton
@@ -2029,8 +2021,8 @@
                                     android:tag="c21702"
                                     android:text="@={modc.c21702x}"
                                     android:visibility="@{modc.c217.equals(`2`) ? View.VISIBLE : View.GONE}"
-                                    app:maxValue="100"
-                                    app:minValue="0"
+                                    app:maxValue="300"
+                                    app:minValue="1"
                                     app:type="range" />
 
                             </RadioGroup>
@@ -2329,7 +2321,7 @@
                                 android:text="@={modc.c221ax}"
                                 android:visibility="@{modc.c221.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="5"
-                                app:minValue="0"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton

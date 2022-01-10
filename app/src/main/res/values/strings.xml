@@ -1065,8 +1065,8 @@
     <string name="c203t5">Other Source</string>
     <string name="c20396">Any Other Source (specify) </string>
     <string name="c204">How many weeks or months pregnant were you when you first received antenatal care during last pregnancy? Record the answer as stated by respondent. If “9 months” or later, record 9.</string>
-    <string name="c20401">Weeks </string>
-    <string name="c20402">Months </string>
+    <string name="c204w"> Weeks </string>
+    <string name="c204m"> Months </string>
     <string name="c204998">Don’t Know</string>
     <string name="c205">How many times did you receive antenatal care during last pregnancy? Probe to identify the number of times antenatal care was received. If a range is given, record the minimum number of times antenatal care received.</string>
     <string name="c20501">Number of times </string>

@@ -158,9 +158,9 @@ public class ModuleC extends BaseObservable implements Observable {
     private String c20305x = _EMPTY_;
     private String c20396 = _EMPTY_;
     private String c20396x = _EMPTY_;
-    private String c204 = _EMPTY_;
-    private String c20401x = _EMPTY_;
-    private String c20402x = _EMPTY_;
+    private String c204m = _EMPTY_;
+    private String c204w = _EMPTY_;
+    private String c20498 = _EMPTY_;
     private String c205 = _EMPTY_;
     private String c20501x = _EMPTY_;
     private String c20601 = _EMPTY_;
@@ -1751,7 +1751,9 @@ public class ModuleC extends BaseObservable implements Observable {
         setC20305(c201.equals("1") ? this.c20305 : "");
         setC20396(c201.equals("1") ? this.c20396 : "");
 
-        setC204(c201.equals("1") ? this.c204 : "");
+        setC204w(c201.equals("1") ? this.c204w : "");
+        setC204m(c201.equals("1") ? this.c204m : "");
+        setC20498(c201.equals("1") ? this.c20498 : "");
         setC205(c201.equals("1") ? this.c205 : "");
         setC20601(c201.equals("1") ? this.c20601 : "");
         setC20602(c201.equals("1") ? this.c20602 : "");
@@ -1999,35 +2001,36 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getC204() {
-        return c204;
+    public String getC204m() {
+        return c204m;
     }
 
-    public void setC204(String c204) {
-        this.c204 = c204;
-        setC20401x(c204.equals("1") ? this.c20401x : "");
-        setC20402x(c204.equals("2") ? this.c20402x : "");
-        notifyPropertyChanged(BR.c204);
-    }
-
-    @Bindable
-    public String getC20401x() {
-        return c20401x;
-    }
-
-    public void setC20401x(String c20401x) {
-        this.c20401x = c20401x;
-        notifyPropertyChanged(BR.c20401x);
+    public void setC204m(String c204m) {
+        this.c204m = c204m;
+        notifyPropertyChanged(BR.c204m);
     }
 
     @Bindable
-    public String getC20402x() {
-        return c20402x;
+    public String getC204w() {
+        return c204w;
     }
 
-    public void setC20402x(String c20402x) {
-        this.c20402x = c20402x;
-        notifyPropertyChanged(BR.c20402x);
+    public void setC204w(String c204w) {
+        this.c204w = c204w;
+        notifyPropertyChanged(BR.c204w);
+    }
+
+    @Bindable
+    public String getC20498() {
+        return c20498;
+    }
+
+    public void setC20498(String c20498) {
+        if (this.c20498.equals(c20498)) return;
+        this.c20498 = c20498;
+        setC204m(c20498.equals("998") ? "" : this.c204m);
+        setC204w(c20498.equals("998") ? "" : this.c204w);
+        notifyPropertyChanged(BR.c20498);
     }
 
     @Bindable
@@ -2616,7 +2619,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC221(String c221) {
         this.c221 = c221;
-        setC221ax(c221.equals("998") ? "" : this.getC221ax());
+        setC221ax(c221.equals("1") ? this.getC221ax() : "");
         notifyPropertyChanged(BR.c221);
     }
 
@@ -5475,9 +5478,9 @@ public class ModuleC extends BaseObservable implements Observable {
             this.c20305x = json.getString("c20305x");
             this.c20396 = json.getString("c20396");
             this.c20396x = json.getString("c20396x");
-            this.c204 = json.getString("c204");
-            this.c20401x = json.getString("c20401x");
-            this.c20402x = json.getString("c20402x");
+            this.c204m = json.getString("c204m");
+            this.c204w = json.getString("c204w");
+            this.c20498 = json.getString("c20498");
             this.c205 = json.getString("c205");
             this.c20501x = json.getString("c20501x");
             this.c20601 = json.getString("c206");
@@ -5946,9 +5949,9 @@ public class ModuleC extends BaseObservable implements Observable {
                 .put("c20305x", c20305x)
                 .put("c20396", c20396)
                 .put("c20396x", c20396x)
-                .put("c204", c204)
-                .put("c20401x", c20401x)
-                .put("c20402x", c20402x)
+                .put("c204m", c204m)
+                .put("c204w", c204w)
+                .put("c20498", c20498)
                 .put("c205", c205)
                 .put("c20501x", c20501x)
                 .put("c20601", c20601)

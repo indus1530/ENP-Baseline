@@ -216,8 +216,8 @@
                             android:layout_height="52dp"
                             android:hint="@string/a109"
                             android:maxLength="20"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:inputType="textPersonName"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                            android:inputType="text"
                             android:text="@={moda.a109}" />
 
                         <!--android:inputType="textPersonName"

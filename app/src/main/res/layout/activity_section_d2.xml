@@ -217,8 +217,8 @@
                                 android:tag="d20202"
                                 android:text="@={form.d20202x}"
                                 android:visibility="@{form.d202.equals(`2`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="24"
-                                app:minValue="0"
+                                app:maxValue="23"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -235,15 +235,15 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="#"
+                                android:hint="##"
                                 android:gravity="center"
                                 android:inputType="number"
-                                android:maxLength="1"
+                                android:maxLength="2"
                                 android:tag="d20203"
                                 android:text="@={form.d20203x}"
                                 android:visibility="@{form.d202.equals(`3`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="2"
-                                app:minValue="0"
+                                app:maxValue="90"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </RadioGroup>
@@ -789,7 +789,8 @@
                 <!-- d206f  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd206f"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d206d.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1375,7 +1376,9 @@
                 <!-- d206o  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd206o"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d206m.equals(`1`) ? View.VISIBLE : View.GONE}"
+                    >
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1660,7 +1663,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd207b"
                     style="@style/cardView"
-                    android:visibility="@{form.d206a.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.d207a.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2835,12 +2838,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="##"
+                            app:defaultValue="99"
                             android:gravity="center"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.d208}"
-                            app:maxValue="99"
-                            app:minValue="1"
+                            app:maxValue="7"
+                            app:minValue="0"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -2966,8 +2970,8 @@
                                 android:tag="d21001"
                                 android:text="@={form.d21001x}"
                                 android:visibility="@{form.d210.equals(`1`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="10"
-                                app:minValue="0"
+                                app:maxValue="20"
+                                app:minValue="1"
                                 app:type="range"
                                 android:layout_weight="1"/>
 
@@ -2985,15 +2989,15 @@
                                 android:layout_weight="1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="##"
+                                android:hint="###"
                                 android:gravity="center"
                                 android:inputType="number"
-                                android:maxLength="2"
+                                android:maxLength="3"
                                 android:tag="d21002"
                                 android:text="@={form.d21002x}"
                                 android:visibility="@{form.d210.equals(`2`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="10"
-                                app:minValue="0"
+                                app:maxValue="300"
+                                app:minValue="1"
                                 app:type="range" />
                         </RadioGroup>
                     </LinearLayout>

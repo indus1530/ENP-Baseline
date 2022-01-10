@@ -4,6 +4,8 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
@@ -40,6 +42,55 @@ public class SectionC1Activity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+
+        bi.c104.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.c104.getText().toString().isEmpty()) return;
+                bi.c110.setMinvalue(Float.parseFloat(bi.c104.getText().toString()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        bi.c106.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.c106.getText().toString().isEmpty()) return;
+                bi.c107.setMaxvalue(Float.parseFloat(bi.c106.getText().toString()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        bi.c107.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.c107.getText().toString().isEmpty()) return;
+                bi.c108.setMaxvalue(Float.parseFloat(bi.c107.getText().toString()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
     }
 
 
@@ -85,6 +136,11 @@ public class SectionC1Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
+        if (!modc.getC116w().isEmpty() && !modc.getC116m().isEmpty()) {
+            if (Integer.parseInt(modc.getC116w()) + Integer.parseInt(modc.getC116m()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.c116w, "All Values Can't be zero");
+        }
+        return true;
     }
 }

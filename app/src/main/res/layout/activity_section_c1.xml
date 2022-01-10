@@ -438,7 +438,6 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={modc.c107}"
-                                android:beforeTextChanged="@{()->modc.c106.length() &gt; 0 ? c107.setMaxvalue(Float.parseFloat(modc.c106)) : c107.setMaxvalue(15f)}"
                                 app:maxValue="15"
                                 app:minValue="1"
                                 app:type="range" />
@@ -1102,17 +1101,14 @@
                                 android:orientation="horizontal"
                                 android:tag="0">
 
-                                <CheckBox
-                                    android:id="@+id/c116wk"
+                                <TextView
+                                    style="@style/textView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{modc.c116wk.equals(`1`)}"
-                                    android:onClick="@{()->modc.setC116wk(modc.c116wk.equals(`1`)?``:`1`)}"
-                                    android:text="@string/c116wk" />
+                                    android:text="@string/c116w" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/c116wkx"
+                                    android:id="@+id/c116w"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
@@ -1121,23 +1117,20 @@
                                     android:inputType="number"
                                     android:maxLength="1"
                                     android:tag="c116wk"
-                                    android:text="@={modc.c116wkx}"
-                                    android:visibility="@{modc.c116wk.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                    android:enabled="@{!modc.c116998.equals(`998`)}"
+                                    android:text="@={modc.c116w}"
                                     app:maxValue="3"
                                     app:minValue="0"
                                     app:type="range" />
 
-                                <CheckBox
-                                    android:id="@+id/c116mm"
+                                <TextView
+                                    style="@style/textView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:checked="@{modc.c116mm.equals(`2`)}"
-                                    android:onClick="@{()->modc.setC116mm(modc.c116mm.equals(`2`)?``:`2`)}"
-                                    android:text="@string/c116mm" />
+                                    android:text="@string/c116m" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/c116mmx"
+                                    android:id="@+id/c116m"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
@@ -1146,11 +1139,19 @@
                                     android:inputType="number"
                                     android:maxLength="1"
                                     android:tag="c116mm"
-                                    android:text="@={modc.c116mmx}"
-                                    android:visibility="@{modc.c116mm.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:enabled="@{!modc.c116998.equals(`998`)}"
+                                    android:text="@={modc.c116m}"
                                     app:maxValue="9"
                                     app:minValue="0"
                                     app:type="range" />
+
+                                <CheckBox
+                                    android:id="@+id/c116998"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:checked="@{modc.c116998.equals(`998`)}"
+                                    android:onClick="@{()->modc.setC116998(modc.c116998.equals(`998`)?``:`998`)}"
+                                    android:text="@string/c116998" />
 
                             </LinearLayout>
 

@@ -928,9 +928,9 @@
     <string name="c11508">Community midwife</string>
     <string name="c11596">Other (specify)</string>
     <string name="c116">How many weeks or months pregnant were you when you first received antenatal care during current pregnancy? Record the answer as stated by respondent. If “9 months” or later, record 9.</string>
-    <string name="c116wk">Weeks</string>
-    <string name="c116mm">Months</string>
-    <string name="c116998">Don’t Know</string>
+    <string name="c116w"> Weeks </string>
+    <string name="c116m"> Months </string>
+    <string name="c116998"> Don’t Know </string>
     <string name="c117">Where have you been registered?</string>
     <string name="c117t1">Community midwife ‘s facility</string>
     <string name="c11701">Birthing station</string>

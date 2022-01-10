@@ -77,11 +77,9 @@ public class ModuleC extends BaseObservable implements Observable {
     private String c11508 = _EMPTY_;
     private String c11596 = _EMPTY_;
     private String c11596x = _EMPTY_;
-    private String c116 = _EMPTY_;
-    private String c116wk = _EMPTY_;
-    private String c116wkx = _EMPTY_;
-    private String c116mm = _EMPTY_;
-    private String c116mmx = _EMPTY_;
+    private String c116w = _EMPTY_;
+    private String c116m = _EMPTY_;
+    private String c116998 = _EMPTY_;
     private String c117 = _EMPTY_;
     private String c11701 = _EMPTY_;
     private String c11702 = _EMPTY_;
@@ -644,6 +642,20 @@ public class ModuleC extends BaseObservable implements Observable {
         setC109(c102.equals("2") ? "" : this.c109);
         setC110(c102.equals("2") ? "" : this.c110);
         setC111(c102.equals("2") ? "" : this.c111);
+        setC112mm(c102.equals("2") ? "" : this.c112mm);
+        setC113dd(c102.equals("2") ? "" : this.c113dd);
+        setC113mm(c102.equals("2") ? "" : this.c113mm);
+        setC113yy(c102.equals("2") ? "" : this.c113yy);
+        setC114(c102.equals("2") ? "" : this.c114);
+        setC11501(c102.equals("2") ? "" : this.c11501);
+        setC11502(c102.equals("2") ? "" : this.c11502);
+        setC11503(c102.equals("2") ? "" : this.c11503);
+        setC11504(c102.equals("2") ? "" : this.c11504);
+        setC11505(c102.equals("2") ? "" : this.c11505);
+        setC11506(c102.equals("2") ? "" : this.c11506);
+        setC11507(c102.equals("2") ? "" : this.c11507);
+        setC11508(c102.equals("2") ? "" : this.c11508);
+        setC11596(c102.equals("2") ? "" : this.c11596);
         notifyPropertyChanged(BR.c102);
     }
 
@@ -931,57 +943,36 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getC116() {
-        return c116;
+    public String getC116w() {
+        return c116w;
     }
 
-    public void setC116(String c116) {
-        this.c116 = c116;
-        notifyPropertyChanged(BR.c116);
-    }
-
-    @Bindable
-    public String getC116wk() {
-        return c116wk;
-    }
-
-    public void setC116wk(String c116wk) {
-        if (this.c116wk.equals(c116wk)) return;
-        this.c116wk = c116wk;
-        setC116wkx(c116wk.equals("1") ? this.c116wkx : "");
-        notifyPropertyChanged(BR.c116wk);
+    public void setC116w(String c116w) {
+        this.c116w = c116w;
+        notifyPropertyChanged(BR.c116w);
     }
 
     @Bindable
-    public String getC116wkx() {
-        return c116wkx;
+    public String getC116m() {
+        return c116m;
     }
 
-    public void setC116wkx(String c116wkx) {
-        this.c116wkx = c116wkx;
-        notifyPropertyChanged(BR.c116wkx);
-    }
-
-    @Bindable
-    public String getC116mm() {
-        return c116mm;
-    }
-
-    public void setC116mm(String c116mm) {
-        if (this.c116mm.equals(c116mm)) return;
-        this.c116mm = c116mm;
-        setC116mmx(c116mm.equals("2") ? this.c116mmx : "");
-        notifyPropertyChanged(BR.c116mm);
+    public void setC116m(String c116m) {
+        this.c116m = c116m;
+        notifyPropertyChanged(BR.c116m);
     }
 
     @Bindable
-    public String getC116mmx() {
-        return c116mmx;
+    public String getC116998() {
+        return c116998;
     }
 
-    public void setC116mmx(String c116mmx) {
-        this.c116mmx = c116mmx;
-        notifyPropertyChanged(BR.c116mmx);
+    public void setC116998(String c116998) {
+        if (this.c116998.equals(c116998)) return;
+        this.c116998 = c116998;
+        setC116w(c116998.equals("998") ? "" : this.c116w);
+        setC116m(c116998.equals("998") ? "" : this.c116m);
+        notifyPropertyChanged(BR.c116998);
     }
 
     @Bindable
@@ -5222,11 +5213,9 @@ public class ModuleC extends BaseObservable implements Observable {
             this.c11508 = json.getString("c11508");
             this.c11596 = json.getString("c11596");
             this.c11596x = json.getString("c11596x");
-            this.c116 = json.getString("c116");
-            this.c116wk = json.getString("c116wk");
-            this.c116wkx = json.getString("c116wkx");
-            this.c116mm = json.getString("c116mm");
-            this.c116mmx = json.getString("c116mmx");
+            this.c116w = json.getString("c116w");
+            this.c116m = json.getString("c116m");
+            this.c116998 = json.getString("c116998");
             this.c117 = json.getString("c117");
             this.c11701 = json.getString("c11701");
             this.c11702 = json.getString("c11702");
@@ -5696,11 +5685,9 @@ public class ModuleC extends BaseObservable implements Observable {
                 .put("c11508", c11508)
                 .put("c11596", c11596)
                 .put("c11596x", c11596x)
-                .put("c116", c116)
-                .put("c116wk", c116wk)
-                .put("c116wkx", c116wkx)
-                .put("c116mm", c116mm)
-                .put("c116mmx", c116mmx)
+                .put("c116w", c116w)
+                .put("c116m", c116m)
+                .put("c116998", c116998)
                 .put("c117", c117)
                 .put("c11701", c11701)
                 .put("c11702", c11702)

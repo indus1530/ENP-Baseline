@@ -526,7 +526,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="Vaccination Date" />
+                                    android:text="@string/d305" />
 
                             </LinearLayout>
 
@@ -541,7 +541,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="52dp"
                                     android:layout_weight="4"
-                                    android:text="@string/d305"
+                                    android:text="@string/d3050"
                                     android:textColor="@color/black" />
 
                                 <TextView

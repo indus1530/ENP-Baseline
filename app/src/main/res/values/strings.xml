@@ -1764,8 +1764,9 @@
     <string name="d3ins2">If the date is recorded but not readable, record 44 in day column</string>
     <string name="d3ins3">If the date is not recorded but a tick () mark is present, record 88 in day column</string>
     <string name="d3ins4">If neither date is recorded nor a tick () mark is present, prompt the mother for each such antigen and record 66 if she confirms the receipt of respective antigen by recall otherwise record 97.</string>
+    <string name="d305"> Vaccination’s Detail &amp; Date </string>
     <string name="d3vact1"> Vaccinations At Birth </string>
-    <string name="d305"> Vaccine Names </string>
+    <string name="d3050"> Vaccine Names </string>
     <string name="d30501"> B C G ( T B ) </string>
     <string name="d30501d">Day</string>
     <string name="d30501m">Month</string>

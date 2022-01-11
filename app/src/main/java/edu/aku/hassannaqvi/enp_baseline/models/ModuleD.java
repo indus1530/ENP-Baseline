@@ -1166,9 +1166,33 @@ public class ModuleD extends BaseObservable implements Observable {
         return check0;
     }
 
+    public void setCheck0(String check0) {
+        if (this.check0.equals(check0)) return;
+        this.check0 = check0;
+        setD30502d(check0.equals("0") ? this.d30501d : "");
+        setD30502m(check0.equals("0") ? this.d30501m : "");
+        setD30502y(check0.equals("0") ? this.d30501y : "");
+        notifyPropertyChanged(BR.check0);
+    }
+
     @Bindable
     public String getCheck6() {
         return check6;
+    }
+
+    public void setCheck6(String check6) {
+        if (this.check6.equals(check6)) return;
+        this.check6 = check6;
+        setD30504d(check6.equals("6") ? this.d30503d : "");
+        setD30504m(check6.equals("6") ? this.d30503m : "");
+        setD30504y(check6.equals("6") ? this.d30503y : "");
+        setD30505d(check6.equals("6") ? this.d30503d : "");
+        setD30505m(check6.equals("6") ? this.d30503m : "");
+        setD30505y(check6.equals("6") ? this.d30503y : "");
+        setD30506d(check6.equals("6") ? this.d30503d : "");
+        setD30506m(check6.equals("6") ? this.d30503m : "");
+        setD30506y(check6.equals("6") ? this.d30503y : "");
+        notifyPropertyChanged(BR.check6);
     }
 
     @Bindable
@@ -1176,28 +1200,38 @@ public class ModuleD extends BaseObservable implements Observable {
         return check10;
     }
 
+    public void setCheck10(String check10) {
+        if (this.check10.equals(check10)) return;
+        this.check10 = check10;
+        setD30508d(check10.equals("10") ? this.d30507d : "");
+        setD30508m(check10.equals("10") ? this.d30507m : "");
+        setD30508y(check10.equals("10") ? this.d30507y : "");
+        setD30509d(check10.equals("10") ? this.d30507d : "");
+        setD30509m(check10.equals("10") ? this.d30507m : "");
+        setD30509y(check10.equals("10") ? this.d30507y : "");
+        setD30510d(check10.equals("10") ? this.d30507d : "");
+        setD30510m(check10.equals("10") ? this.d30507m : "");
+        setD30510y(check10.equals("10") ? this.d30507y : "");
+        notifyPropertyChanged(BR.check10);
+    }
+
     @Bindable
     public String getCheck14() {
         return check14;
     }
 
-    public void setCheck0(String check0) {
-        this.check0 = check0;
-        notifyPropertyChanged(BR.check0);
-    }
-
-    public void setCheck6(String check6) {
-        this.check6 = check6;
-        notifyPropertyChanged(BR.check6);
-    }
-
-    public void setCheck10(String check10) {
-        this.check10 = check10;
-        notifyPropertyChanged(BR.check10);
-    }
-
     public void setCheck14(String check14) {
+        if (this.check14.equals(check14)) return;
         this.check14 = check14;
+        setD30512d(check14.equals("14") ? this.d30511d : "");
+        setD30512m(check14.equals("14") ? this.d30511m : "");
+        setD30512y(check14.equals("14") ? this.d30511y : "");
+        setD30513d(check14.equals("14") ? this.d30511d : "");
+        setD30513m(check14.equals("14") ? this.d30511m : "");
+        setD30513y(check14.equals("14") ? this.d30511y : "");
+        setD30514d(check14.equals("14") ? this.d30511d : "");
+        setD30514m(check14.equals("14") ? this.d30511m : "");
+        setD30514y(check14.equals("14") ? this.d30511y : "");
         notifyPropertyChanged(BR.check14);
     }
 
@@ -1228,6 +1262,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD30501y(String d30501y) {
         this.d30501y = d30501y;
+        setCheck0(d30501y.length() == 4 ? this.check0 : "");
         notifyPropertyChanged(BR.d30501y);
     }
 
@@ -1288,6 +1323,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD30503y(String d30503y) {
         this.d30503y = d30503y;
+        setCheck6(d30503y.length() == 4 ? this.check6 : "");
         notifyPropertyChanged(BR.d30503y);
     }
 
@@ -1408,6 +1444,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD30507y(String d30507y) {
         this.d30507y = d30507y;
+        setCheck10(d30507y.length() == 4 ? this.check10 : "");
         notifyPropertyChanged(BR.d30507y);
     }
 
@@ -1528,6 +1565,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD30511y(String d30511y) {
         this.d30511y = d30511y;
+        setCheck14(d30511y.length() == 4 ? this.check14 : "");
         notifyPropertyChanged(BR.d30511y);
     }
 

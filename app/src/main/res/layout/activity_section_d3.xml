@@ -541,7 +541,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="52dp"
                                     android:layout_weight="4"
-                                    android:text="Vaccine Names"
+                                    android:text="@string/d305"
                                     android:textColor="@color/black" />
 
                                 <TextView
@@ -637,6 +637,9 @@
                                 android:id="@+id/check0"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked="@{form.check0.equals(`0`)}"
+                                android:onClick="@{()->form.setCheck0(form.check0.equals(`0`)?``:`0`)}"
+                                android:visibility="@{form.d30501y.length()==4 ? View.VISIBLE : View.GONE}"
                                 android:tag="-1"
                                 android:text="@string/check0" />
 
@@ -765,6 +768,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:tag="-1"
+                                android:checked="@{form.check6.equals(`6`)}"
+                                android:onClick="@{()->form.setCheck6(form.check6.equals(`6`)?``:`6`)}"
+                                android:visibility="@{form.d30503y.length()==4 ? View.VISIBLE : View.GONE}"
                                 android:text="@string/check6" />
 
                             <!-- d30504 -->
@@ -1006,6 +1012,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:tag="-1"
+                                android:checked="@{form.check10.equals(`10`)}"
+                                android:onClick="@{()->form.setCheck10(form.check10.equals(`10`)?``:`10`)}"
+                                android:visibility="@{form.d30507y.length()==4 ? View.VISIBLE : View.GONE}"
                                 android:text="@string/check10" />
 
                             <!-- d30508 -->
@@ -1247,6 +1256,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:tag="-1"
+                                android:checked="@{form.check14.equals(`14`)}"
+                                android:onClick="@{()->form.setCheck14(form.check14.equals(`14`)?``:`14`)}"
+                                android:visibility="@{form.d30511y.length()==4 ? View.VISIBLE : View.GONE}"
                                 android:text="@string/check14" />
 
                             <!-- d30512 -->

@@ -236,7 +236,14 @@ public class ModuleC extends BaseObservable implements Observable {
     private String c311hx = _EMPTY_;
     private String c311dx = _EMPTY_;
     private String c312 = _EMPTY_;
-    private String c313 = _EMPTY_;
+    private String c31301 = _EMPTY_;
+    private String c31302 = _EMPTY_;
+    private String c31303 = _EMPTY_;
+    private String c31304 = _EMPTY_;
+    private String c31305 = _EMPTY_;
+    private String c31306 = _EMPTY_;
+    private String c31396 = _EMPTY_;
+    private String c313998 = _EMPTY_;
     private String c31396x = _EMPTY_;
     private String c314 = _EMPTY_;
     private String c31401x = _EMPTY_;
@@ -2777,6 +2784,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC308(String c308) {
         this.c308 = c308;
+        setC309(c308.equals("1") ? this.c309 : "");
         notifyPropertyChanged(BR.c308);
     }
 
@@ -2852,22 +2860,117 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC312(String c312) {
         this.c312 = c312;
-        setC313(c312.equals("1") ? this.c313 : "");
+        setC31301(c312.equals("1") ? this.c31301 : "");
+        setC31302(c312.equals("1") ? this.c31302 : "");
+        setC31303(c312.equals("1") ? this.c31303 : "");
+        setC31304(c312.equals("1") ? this.c31304 : "");
+        setC31305(c312.equals("1") ? this.c31305 : "");
+        setC31306(c312.equals("1") ? this.c31306 : "");
+        setC31396(c312.equals("1") ? this.c31396 : "");
+        setC313998(c312.equals("1") ? this.c313998 : "");
         setC314(c312.equals("1") ? this.c314 : "");
 
         notifyPropertyChanged(BR.c312);
     }
 
     @Bindable
-    public String getC313() {
-        return c313;
+    public String getC31301() {
+        return c31301;
     }
 
-    public void setC313(String c313) {
-        this.c313 = c313;
-        setC31396x(c313.equals("96") ? this.c31396x : "");
-        notifyPropertyChanged(BR.c313);
+    @Bindable
+    public String getC31302() {
+        return c31302;
     }
+
+    @Bindable
+    public String getC31303() {
+        return c31303;
+    }
+
+    @Bindable
+    public String getC31304() {
+        return c31304;
+    }
+
+    @Bindable
+    public String getC31305() {
+        return c31305;
+    }
+
+    @Bindable
+    public String getC31306() {
+        return c31306;
+    }
+
+    @Bindable
+    public String getC31396() {
+        return c31396;
+    }
+
+    @Bindable
+    public String getC313998() {
+        return c313998;
+    }
+
+    public void setC31301(String c31301) {
+        if (this.c31301.equals(c31301)) return;
+        this.c31301 = c31301;
+        notifyPropertyChanged(BR.c31301);
+    }
+
+    public void setC31302(String c31302) {
+        if (this.c31302.equals(c31302)) return;
+        this.c31302 = c31302;
+        setC314(c31302.equals("2") ? this.c314 : "");
+        notifyPropertyChanged(BR.c31302);
+    }
+
+    public void setC31303(String c31303) {
+        if (this.c31303.equals(c31303)) return;
+        this.c31303 = c31303;
+        notifyPropertyChanged(BR.c31303);
+    }
+
+    public void setC31304(String c31304) {
+        if (this.c31304.equals(c31304)) return;
+        this.c31304 = c31304;
+        notifyPropertyChanged(BR.c31304);
+    }
+
+    public void setC31305(String c31305) {
+        if (this.c31305.equals(c31305)) return;
+        this.c31305 = c31305;
+        notifyPropertyChanged(BR.c31305);
+    }
+
+    public void setC31306(String c31306) {
+        if (this.c31306.equals(c31306)) return;
+        this.c31306 = c31306;
+        notifyPropertyChanged(BR.c31306);
+    }
+
+    public void setC31396(String c31396) {
+        if (this.c31396.equals(c31396)) return;
+        this.c31396 = c31396;
+        setC31396x(c31396.equals("96") ? this.c31396x : "");
+        notifyPropertyChanged(BR.c31396);
+    }
+
+    public void setC313998(String c313998) {
+        if (this.c313998.equals(c313998)) return;
+        this.c313998 = c313998;
+
+        setC31301(c313998.equals("998") ? "" : this.c31301);
+        setC31302(c313998.equals("998") ? "" : this.c31302);
+        setC31303(c313998.equals("998") ? "" : this.c31303);
+        setC31304(c313998.equals("998") ? "" : this.c31304);
+        setC31305(c313998.equals("998") ? "" : this.c31305);
+        setC31306(c313998.equals("998") ? "" : this.c31306);
+        setC31396(c313998.equals("998") ? "" : this.c31396);
+        notifyPropertyChanged(BR.c313998);
+    }
+
 
     @Bindable
     public String getC31396x() {
@@ -5317,7 +5420,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC61097(String c61097) {
         if (this.c61097.equals(c61097)) return;
-        this.c60397 = c60397;
+        this.c61097 = c61097;
         setC61001(c61097.equals("97") ? "" : this.c61001);
         setC61002(c61097.equals("97") ? "" : this.c61002);
         setC61003(c61097.equals("97") ? "" : this.c61003);
@@ -5564,7 +5667,14 @@ public class ModuleC extends BaseObservable implements Observable {
             this.c311hx = json.getString("c311hx");
             this.c311dx = json.getString("c311dx");
             this.c312 = json.getString("c312");
-            this.c313 = json.getString("c313");
+            this.c31301 = json.getString("c31301");
+            this.c31302 = json.getString("c31302");
+            this.c31303 = json.getString("c31303");
+            this.c31304 = json.getString("c31304");
+            this.c31305 = json.getString("c31305");
+            this.c31306 = json.getString("c31306");
+            this.c31396 = json.getString("c31396");
+            this.c313998 = json.getString("c31301");
             this.c31396x = json.getString("c31396x");
             this.c314 = json.getString("c314");
             this.c31401x = json.getString("c31401x");
@@ -6034,7 +6144,14 @@ public class ModuleC extends BaseObservable implements Observable {
                 .put("c311hx", c311hx)
                 .put("c311dx", c311dx)
                 .put("c312", c312)
-                .put("c313", c313)
+                .put("c31301", c31301)
+                .put("c31302", c31302)
+                .put("c31303", c31303)
+                .put("c31304", c31304)
+                .put("c31305", c31305)
+                .put("c31306", c31306)
+                .put("c31396", c31396)
+                .put("c31398", c313998)
                 .put("c31396x", c31396x)
                 .put("c314", c314)
                 .put("c31401x", c31401x)

@@ -164,12 +164,12 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="3"
+                                android:maxLength="2"
                                 android:text="@={modc.c5011}"
-                                app:maxValue="100"
-                                app:minValue="0"
+                                app:maxValue="15"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -329,12 +329,12 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="3"
+                                android:maxLength="2"
                                 android:text="@={modc.c5021}"
-                                app:maxValue="100"
-                                app:minValue="0"
+                                app:maxValue="15"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -494,12 +494,12 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="3"
+                                android:maxLength="2"
                                 android:text="@={modc.c5031}"
-                                app:maxValue="100"
-                                app:minValue="0"
+                                app:maxValue="15"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -683,12 +683,12 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="3"
+                                android:maxLength="2"
                                 android:text="@={modc.c5041}"
-                                app:maxValue="100"
-                                app:minValue="0"
+                                app:maxValue="15"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>

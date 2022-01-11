@@ -540,33 +540,42 @@
                                     style="@style/textView"
                                     android:layout_width="0dp"
                                     android:layout_height="52dp"
-                                    android:layout_weight="4"
+                                    android:layout_weight="3.5"
                                     android:text="@string/d3050"
                                     android:textColor="@color/black" />
 
-                                <TextView
-                                    style="@style/textView"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/d30501d"
-                                    android:textColor="@color/black" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/d30501m"
-                                    android:textColor="@color/black" />
+                                    <TextView
+                                        style="@style/textView"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="@string/d30501d"
+                                        android:textColor="@color/black" />
 
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/d30501y"
-                                    android:textColor="@color/black" />
+                                    <TextView
+                                        style="@style/textView"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="@string/d30501m"
+                                        android:textColor="@color/black" />
+
+                                    <TextView
+                                        style="@style/textView"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="@string/d30501y"
+                                        android:textColor="@color/black" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -585,51 +594,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30501" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30501d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30501d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30501m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30501m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30501d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30501d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30501y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30501y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30501m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30501m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30501y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30501y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -639,9 +658,9 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.check0.equals(`0`)}"
                                 android:onClick="@{()->form.setCheck0(form.check0.equals(`0`)?``:`0`)}"
-                                android:visibility="@{form.d30501y.length()==4 ? View.VISIBLE : View.GONE}"
                                 android:tag="-1"
-                                android:text="@string/check0" />
+                                android:text="@string/check0"
+                                android:visibility="@{form.d30501y.length()==4 ? View.VISIBLE : View.GONE}" />
 
                             <!-- d30502 -->
                             <LinearLayout
@@ -652,51 +671,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30502" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30502d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30502d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30502m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30502m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30502d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30502d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30502y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30502y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30502m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30502m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30502y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30502y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -715,51 +744,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30503" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30503d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30503d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30503m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30503m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30503d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30503d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30503y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30503y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30503m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30503m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30503y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30503y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -767,11 +806,11 @@
                                 android:id="@+id/check6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:tag="-1"
                                 android:checked="@{form.check6.equals(`6`)}"
                                 android:onClick="@{()->form.setCheck6(form.check6.equals(`6`)?``:`6`)}"
-                                android:visibility="@{form.d30503y.length()==4 ? View.VISIBLE : View.GONE}"
-                                android:text="@string/check6" />
+                                android:tag="-1"
+                                android:text="@string/check6"
+                                android:visibility="@{form.d30503y.length()==4 ? View.VISIBLE : View.GONE}" />
 
                             <!-- d30504 -->
                             <LinearLayout
@@ -782,51 +821,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30504" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30504d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30504d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30504m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30504m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30504d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30504d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30504y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30504y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30504m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30504m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30504y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30504y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -839,51 +888,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30505" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30505d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30505d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30505m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30505m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30505d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30505d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30505y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30505y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30505m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30505m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30505y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30505y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -896,51 +955,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30506" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30506d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30506d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30506m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30506m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30506d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30506d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30506y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30506y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30506m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30506m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30506y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30506y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -959,51 +1028,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30507" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30507d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30507d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30507m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30507m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30507d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30507d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30507y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30507y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30507m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30507m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30507y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30507y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -1011,11 +1090,11 @@
                                 android:id="@+id/check10"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:tag="-1"
                                 android:checked="@{form.check10.equals(`10`)}"
                                 android:onClick="@{()->form.setCheck10(form.check10.equals(`10`)?``:`10`)}"
-                                android:visibility="@{form.d30507y.length()==4 ? View.VISIBLE : View.GONE}"
-                                android:text="@string/check10" />
+                                android:tag="-1"
+                                android:text="@string/check10"
+                                android:visibility="@{form.d30507y.length()==4 ? View.VISIBLE : View.GONE}" />
 
                             <!-- d30508 -->
                             <LinearLayout
@@ -1026,51 +1105,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30508" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30508d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30508d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30508m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30508m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30508d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30508d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30508y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30508y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30508m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30508m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30508y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30508y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -1083,51 +1172,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30509" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30509d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30509d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30509m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30509m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30509d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30509d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30509y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30509y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30509m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30509m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30509y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30509y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -1140,51 +1239,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30510" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30510d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30510d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30510m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30510m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30510d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30510d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30510y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30510y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30510m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30510m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30510y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30510y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -1203,51 +1312,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30511" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30511d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30511d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30511m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30511m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30511d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30511d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30511y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30511y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30511m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30511m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30511y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30511y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -1255,11 +1374,11 @@
                                 android:id="@+id/check14"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:tag="-1"
                                 android:checked="@{form.check14.equals(`14`)}"
                                 android:onClick="@{()->form.setCheck14(form.check14.equals(`14`)?``:`14`)}"
-                                android:visibility="@{form.d30511y.length()==4 ? View.VISIBLE : View.GONE}"
-                                android:text="@string/check14" />
+                                android:tag="-1"
+                                android:text="@string/check14"
+                                android:visibility="@{form.d30511y.length()==4 ? View.VISIBLE : View.GONE}" />
 
                             <!-- d30512 -->
                             <LinearLayout
@@ -1270,51 +1389,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30512" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30512d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30512d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30512m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30512m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30512d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30512d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30512y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30512y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30512m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30512m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30512y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30512y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -1327,51 +1456,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30513" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30513d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30513d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30513m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30513m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30513d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30513d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30513y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30513y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30513m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30513m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30513y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30513y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -1384,51 +1523,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30514" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30514d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30514d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30514m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30514m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30514d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30514d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30514y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30514y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30514m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30514m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30514y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30514y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -1447,51 +1596,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30515" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30515d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30515d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30515m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30515m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30515d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30515d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30515y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30515y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30515m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30515m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30515y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30515y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -1510,51 +1669,61 @@
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="0dp"
-                                    android:layout_height="52dp"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="3.5"
+                                    android:minHeight="52dp"
                                     android:text="@string/d30516" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30516d"
+                                <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30516d}"
-                                    app:maxValue="31"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    android:layout_weight="3"
+                                    android:layoutDirection="ltr"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30516m"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.d30516m}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30516d"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30516d}"
+                                        app:maxValue="31"
+                                        app:minValue="1"
+                                        app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/d30516y"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.d30516y}"
-                                    app:maxValue="2021"
-                                    app:minValue="2015"
-                                    app:type="range" />
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30516m"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.d30516m}"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/d30516y"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.d30516y}"
+                                        app:maxValue="2021"
+                                        app:minValue="2015"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -2735,199 +2904,197 @@
 
                 </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/fldGrpd323"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:visibility="@{form.d322.equals(`3`) ? View.GONE : View.VISIBLE}">
-                        <!-- d323a  Radio   -->
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/fldGrpCVd323a"
-                            style="@style/cardView"
-                            android:visibility="@{form.d308.equals(`2`) || form.d308.equals(`998`) ? View.GONE : View.VISIBLE}">
+                <LinearLayout
+                    android:id="@+id/fldGrpd323"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{form.d322.equals(`3`) ? View.GONE : View.VISIBLE}">
+                    <!-- d323a  Radio   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVd323a"
+                        style="@style/cardView"
+                        android:visibility="@{form.d308.equals(`2`) || form.d308.equals(`998`) ? View.GONE : View.VISIBLE}">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                                <LinearLayout
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_d323a" />
+
+                                <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/bottom"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        style="@style/quesNum"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:text="@string/Q_d323a" />
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:text="@string/d323a" />
-
-                                </LinearLayout>
-
-                                <RadioGroup
-                                    android:id="@+id/d323a"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
-
-                                    <RadioButton
-                                        android:id="@+id/d323a01"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.d323a.equals(`1`)}"
-                                        android:onClick="@{()->form.setD323a(`1`)}"
-                                        android:text="@string/d323a01" />
-
-                                    <RadioButton
-                                        android:id="@+id/d323a02"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.d323a.equals(`2`)}"
-                                        android:onClick="@{()->form.setD323a(`2`)}"
-                                        android:text="@string/d323a02" />
-
-                                    <RadioButton
-                                        android:id="@+id/d323a03"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.d323a.equals(`3`)}"
-                                        android:onClick="@{()->form.setD323a(`3`)}"
-                                        android:text="@string/d323a03" />
-
-                                    <RadioButton
-                                        android:id="@+id/d323a04"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.d323a.equals(`4`)}"
-                                        android:onClick="@{()->form.setD323a(`4`)}"
-                                        android:text="@string/d323a04" />
-
-                                    <RadioButton
-                                        android:id="@+id/d323a05"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.d323a.equals(`5`)}"
-                                        android:onClick="@{()->form.setD323a(`5`)}"
-                                        android:text="@string/d323a05" />
-
-                                    <RadioButton
-                                        android:id="@+id/d323a96"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.d323a.equals(`96`)}"
-                                        android:onClick="@{()->form.setD323a(`96`)}"
-                                        android:text="@string/d323a96" />
-
-                                    <EditText
-                                        android:id="@+id/d323a96x"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="52dp"
-                                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                        android:hint="@string/d323a96"
-                                        android:tag="d323a96"
-                                        android:text="@={form.d323a96x}"
-                                        android:visibility="@{form.d323a.equals(`96`) ? View.VISIBLE : View.GONE}" />
-
-                                </RadioGroup>
+                                    android:layout_height="match_parent"
+                                    android:text="@string/d323a" />
 
                             </LinearLayout>
 
-                        </androidx.cardview.widget.CardView>
+                            <RadioGroup
+                                android:id="@+id/d323a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/d323a01"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.d323a.equals(`1`)}"
+                                    android:onClick="@{()->form.setD323a(`1`)}"
+                                    android:text="@string/d323a01" />
+
+                                <RadioButton
+                                    android:id="@+id/d323a02"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.d323a.equals(`2`)}"
+                                    android:onClick="@{()->form.setD323a(`2`)}"
+                                    android:text="@string/d323a02" />
+
+                                <RadioButton
+                                    android:id="@+id/d323a03"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.d323a.equals(`3`)}"
+                                    android:onClick="@{()->form.setD323a(`3`)}"
+                                    android:text="@string/d323a03" />
+
+                                <RadioButton
+                                    android:id="@+id/d323a04"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.d323a.equals(`4`)}"
+                                    android:onClick="@{()->form.setD323a(`4`)}"
+                                    android:text="@string/d323a04" />
+
+                                <RadioButton
+                                    android:id="@+id/d323a05"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.d323a.equals(`5`)}"
+                                    android:onClick="@{()->form.setD323a(`5`)}"
+                                    android:text="@string/d323a05" />
+
+                                <RadioButton
+                                    android:id="@+id/d323a96"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.d323a.equals(`96`)}"
+                                    android:onClick="@{()->form.setD323a(`96`)}"
+                                    android:text="@string/d323a96" />
+
+                                <EditText
+                                    android:id="@+id/d323a96x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="52dp"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:hint="@string/d323a96"
+                                    android:tag="d323a96"
+                                    android:text="@={form.d323a96x}"
+                                    android:visibility="@{form.d323a.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
 
 
-                        <!-- d323b  Title   -->
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/fldGrpCVd323b"
-                            style="@style/cardView"
-                            android:visibility="@{form.d308.equals(`2`) || form.d308.equals(`998`) ? View.GONE : View.VISIBLE}">
+                    <!-- d323b  Title   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVd323b"
+                        style="@style/cardView"
+                        android:visibility="@{form.d308.equals(`2`) || form.d308.equals(`998`) ? View.GONE : View.VISIBLE}">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                                <LinearLayout
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_d323b" />
+
+                                <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/bottom"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        style="@style/quesNum"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:text="@string/Q_d323b" />
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:text="@string/d323b" />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        style="@style/textView"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:text="@string/d323b01" />
-
-                                    <com.edittextpicker.aliazaz.EditTextPicker
-                                        android:id="@+id/d323b01"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:gravity="center"
-                                        android:hint="##"
-                                        android:inputType="number"
-                                        android:maxLength="2"
-                                        android:text="@={form.d323b01}"
-                                        app:maxValue="24"
-                                        app:minValue="0"
-                                        app:type="range" />
-
-                                    <TextView
-                                        style="@style/textView"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:text="@string/d323b02" />
-
-                                    <com.edittextpicker.aliazaz.EditTextPicker
-                                        android:id="@+id/d323b02"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:gravity="center"
-                                        android:hint="##"
-                                        android:inputType="number"
-                                        android:maxLength="2"
-                                        android:text="@={form.d323b02}"
-                                        app:maxValue="59"
-                                        app:minValue="0"
-                                        app:type="range" />
-
-                                </LinearLayout>
+                                    android:layout_height="match_parent"
+                                    android:text="@string/d323b" />
 
                             </LinearLayout>
 
-                        </androidx.cardview.widget.CardView>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/d323b01" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/d323b01"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.d323b01}"
+                                    app:maxValue="24"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                                <TextView
+                                    style="@style/textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/d323b02" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/d323b02"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.d323b02}"
+                                    app:maxValue="59"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
 
 
-                    </LinearLayout>
-
-
+                </LinearLayout>
 
 
                 <!-- d324  CheckBox   -->

@@ -307,13 +307,12 @@ public class LoginActivity extends AppCompatActivity {
         String lang;
         String country;
 
-        switch (countryCode) {
-            case 1:
-                lang = "ur";
-                country = "PK";
-                MainApp.editor
-                        .putString("lang", "1")
-                        .apply();
+        if (countryCode == 1) {
+            lang = "ur";
+            country = "PK";
+            MainApp.editor
+                    .putString("lang", "1")
+                    .apply();
             /*case 2:
                 lang = "ps";
                 country = "AF";
@@ -332,13 +331,12 @@ public class LoginActivity extends AppCompatActivity {
                 MainApp.editor
                         .putString("lang", "4")
                         .apply();*/
-            default:
-                lang = "en";
-                country = "US";
-                MainApp.editor
-                        .putString("lang", "0")
-                        .apply();
         }
+        lang = "en";
+        country = "US";
+        MainApp.editor
+                .putString("lang", "0")
+                .apply();
 
         Locale locale = new Locale(lang, country);
         Locale.setDefault(locale);
@@ -396,7 +394,7 @@ public class LoginActivity extends AppCompatActivity {
      * */
     private void initializingCountry() {
         countryCode = Integer.parseInt(MainApp.sharedPref.getString("lang", "0"));
-        if (countryCode == 0) {
+        if (countryCode != 0) {
             MainApp.editor.putString("lang", "1").apply();
         }
 
@@ -461,5 +459,24 @@ public class LoginActivity extends AppCompatActivity {
 
         return true;
     }
+
+    // set Persian language in the app
+    //setLanguage(context, "fa");
+
+    /*public void setLanguage(Context c, String lang) {
+        Locale localeNew = new Locale(lang);
+        Locale.setDefault(localeNew);
+
+        Resources res = c.getResources();
+        Configuration newConfig = new Configuration(res.getConfiguration());
+        newConfig.locale = localeNew;
+        newConfig.setLayoutDirection(localeNew);
+        res.updateConfiguration(newConfig, res.getDisplayMetrics());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            newConfig.setLocale(localeNew);
+            c.createConfigurationContext(newConfig);
+        }
+    }*/
 }
 

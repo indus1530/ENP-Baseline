@@ -493,7 +493,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.e105.equals(`2`)}"
-                                android:onClick="@{()->form.setE105(`2`) + e107.clearCheck() + e108.clearCheck() + e111.clearCheck() + e112.clearCheck() + e113a.clearCheck() + e113b.clearCheck() + e113c.clearCheck() + e113d.clearCheck() + e113e.clearCheck() + e113f.clearCheck() + e113g.clearCheck() + e113h.clearCheck() + e114.clearCheck() + e115.clearCheck() + e118.clearCheck() + e119.clearCheck() + e120.clearCheck() + e121.clearCheck() + e123.clearCheck() + e124.clearCheck() + e125.clearCheck() + e126.clearCheck() + e127.clearCheck()}"
+                                android:onClick="@{()->form.setE105(`2`) + e108.clearCheck() + e111.clearCheck() + e112.clearCheck() + e113a.clearCheck() + e113b.clearCheck() + e113c.clearCheck() + e113d.clearCheck() + e113e.clearCheck() + e113f.clearCheck() + e113g.clearCheck() + e113h.clearCheck() + e114.clearCheck() + e115.clearCheck() + e118.clearCheck() + e119.clearCheck() + e120.clearCheck() + e121.clearCheck() + e123.clearCheck() + e124.clearCheck() + e125.clearCheck() + e126.clearCheck() + e127.clearCheck()}"
                                 android:text="@string/e10502" />
 
                         </RadioGroup>
@@ -652,48 +652,20 @@
 
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/e107"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/e10701"
+                            <TextView
+                                style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.e107.equals(`1`)}"
-                                android:onClick="@{()->form.setE107(`1`)}"
-                                android:text="@string/e10701" />
+                                android:text="@string/e107w" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/e10701x"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:tag="e10701"
-                                android:text="@={form.e10701x}"
-                                android:visibility="@{form.e107.equals(`1`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="42"
-                                app:minValue="1"
-                                app:type="range" />
-
-                            <RadioButton
-                                android:id="@+id/e10702"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{form.e107.equals(`2`)}"
-                                android:onClick="@{()->form.setE107(`2`)}"
-                                android:text="@string/e10702" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/e10702x"
+                                android:id="@+id/e107w"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -701,14 +673,33 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
-                                android:tag="e10702"
-                                android:text="@={form.e10702x}"
-                                android:visibility="@{form.e107.equals(`2`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="9"
-                                app:minValue="1"
+                                android:text="@={form.e107w}"
+                                app:maxValue="3"
+                                app:minValue="0"
                                 app:type="range" />
 
-                        </RadioGroup>
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/e107m" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/e107m"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="#"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:text="@={form.e107m}"
+                                app:maxValue="9"
+                                app:minValue="0"
+                                app:type="range" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 

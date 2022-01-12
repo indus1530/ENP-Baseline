@@ -2058,9 +2058,9 @@
     <string name="e106d">Day</string>
     <string name="e106m">Month</string>
     <string name="e106y">Year</string>
-    <string name="e107">What is your gestational age?</string>
-    <string name="e10701">Weeks</string>
-    <string name="e10702">Months</string>
+    <string name="e107"> What is your gestational age ? </string>
+    <string name="e107w"> Weeks </string>
+    <string name="e107m"> Months </string>
     <string name="e108">Did you see anyone for antenatal care for your current pregnancy?</string>
     <string name="e10801">Yes</string>
     <string name="e10802">No</string>
@@ -2086,8 +2086,8 @@
     <string name="e11096">Any Other Source (specify)</string>
     <string name="e111">How many weeks or months pregnant were you when you first received antenatal care during current pregnancy?</string>
     <string name="e111t">Record the answer as stated by respondent. If “9 months” or later, record 9.</string>
-    <string name="e11101">Weeks</string>
-    <string name="e11102">Months</string>
+    <string name="e111w"> Weeks </string>
+    <string name="e111m"> Months </string>
     <string name="e111998">Don’t Know</string>
     <string name="e112">How many times did you receive antenatal care during current pregnancy?</string>
     <string name="e112t">Probe to identify the number of times antenatal care was received. If a range is given, record the minimum number of times antenatal care received.</string>

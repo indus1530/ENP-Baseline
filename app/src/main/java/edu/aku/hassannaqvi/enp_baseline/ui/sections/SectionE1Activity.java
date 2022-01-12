@@ -90,6 +90,10 @@ public class SectionE1Activity extends AppCompatActivity {
             if (Integer.parseInt(mode.getE107w()) + Integer.parseInt(mode.getE107m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.e107w, "All Values Can't be zero");
         }
+        if (!mode.getE111w().isEmpty() && !mode.getE111m().isEmpty()) {
+            if (Integer.parseInt(mode.getE111w()) + Integer.parseInt(mode.getE111m()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.e111w, "All Values Can't be zero");
+        }
         return true;
     }
 }

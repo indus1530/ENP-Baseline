@@ -493,7 +493,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.e105.equals(`2`)}"
-                                android:onClick="@{()->form.setE105(`2`) + e108.clearCheck() + e111.clearCheck() + e112.clearCheck() + e113a.clearCheck() + e113b.clearCheck() + e113c.clearCheck() + e113d.clearCheck() + e113e.clearCheck() + e113f.clearCheck() + e113g.clearCheck() + e113h.clearCheck() + e114.clearCheck() + e115.clearCheck() + e118.clearCheck() + e119.clearCheck() + e120.clearCheck() + e121.clearCheck() + e123.clearCheck() + e124.clearCheck() + e125.clearCheck() + e126.clearCheck() + e127.clearCheck()}"
+                                android:onClick="@{()->form.setE105(`2`) + e108.clearCheck() + e112.clearCheck() + e113a.clearCheck() + e113b.clearCheck() + e113c.clearCheck() + e113d.clearCheck() + e113e.clearCheck() + e113f.clearCheck() + e113g.clearCheck() + e113h.clearCheck() + e114.clearCheck() + e115.clearCheck() + e118.clearCheck() + e119.clearCheck() + e120.clearCheck() + e121.clearCheck() + e123.clearCheck() + e124.clearCheck() + e125.clearCheck() + e126.clearCheck() + e127.clearCheck()}"
                                 android:text="@string/e10502" />
 
                         </RadioGroup>
@@ -756,7 +756,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.e108.equals(`2`)}"
-                                android:onClick="@{()->form.setE108(`2`) + e108.clearCheck() + e111.clearCheck() + e112.clearCheck() + e113a.clearCheck() + e113b.clearCheck() + e113c.clearCheck() + e113d.clearCheck() + e113e.clearCheck() + e113f.clearCheck() + e113g.clearCheck() + e113h.clearCheck()}"
+                                android:onClick="@{()->form.setE108(`2`) + e108.clearCheck() + e112.clearCheck() + e113a.clearCheck() + e113b.clearCheck() + e113c.clearCheck() + e113d.clearCheck() + e113e.clearCheck() + e113f.clearCheck() + e113g.clearCheck() + e113h.clearCheck()}"
                                 android:text="@string/e10802" />
 
                         </RadioGroup>
@@ -1052,48 +1052,20 @@
                             android:layout_height="wrap_content"
                             android:text="@string/e111t" />
 
-                        <RadioGroup
-                            android:id="@+id/e111"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/e11101"
+                            <TextView
+                                style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.e111.equals(`1`)}"
-                                android:onClick="@{()->form.setE111(`1`)}"
-                                android:text="@string/e11101" />
+                                android:text="@string/e111w" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/e11101x"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:tag="e11101"
-                                android:text="@={form.e11101x}"
-                                android:visibility="@{form.e111.equals(`1`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="42"
-                                app:minValue="1"
-                                app:type="range" />
-
-                            <RadioButton
-                                android:id="@+id/e11102"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{form.e111.equals(`2`)}"
-                                android:onClick="@{()->form.setE111(`2`)}"
-                                android:text="@string/e11102" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/e11102x"
+                                android:id="@+id/e111w"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -1101,23 +1073,33 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
-                                android:tag="e11102"
-                                android:text="@={form.e11102x}"
-                                android:visibility="@{form.e111.equals(`2`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="9"
-                                app:minValue="1"
+                                android:text="@={form.e111w}"
+                                app:maxValue="3"
+                                app:minValue="0"
                                 app:type="range" />
 
-                            <RadioButton
-                                android:id="@+id/e111998"
+                            <TextView
+                                style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.e111.equals(`998`)}"
-                                android:onClick="@{()->form.setE111(`998`)}"
-                                android:text="@string/e111998" />
+                                android:text="@string/e111m" />
 
-                        </RadioGroup>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/e111m"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="#"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:text="@={form.e111m}"
+                                app:maxValue="9"
+                                app:minValue="0"
+                                app:type="range" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -1259,6 +1241,7 @@
                                 android:id="@+id/e113a01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113a.equals(`1`)}"
                                 android:onClick="@{()->form.setE113a(`1`)}"
                                 android:text="@string/e113a01" />
@@ -1267,6 +1250,7 @@
                                 android:id="@+id/e113a02"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113a.equals(`2`)}"
                                 android:onClick="@{()->form.setE113a(`2`)}"
                                 android:text="@string/e113a02" />
@@ -1275,6 +1259,7 @@
                                 android:id="@+id/e113a998"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113a.equals(`998`)}"
                                 android:onClick="@{()->form.setE113a(`998`)}"
                                 android:text="@string/e113a998" />
@@ -1299,6 +1284,7 @@
                                 android:id="@+id/e113b01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113b.equals(`1`)}"
                                 android:onClick="@{()->form.setE113b(`1`)}"
                                 android:text="@string/e113b01" />
@@ -1307,6 +1293,7 @@
                                 android:id="@+id/e113b02"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113b.equals(`2`)}"
                                 android:onClick="@{()->form.setE113b(`2`)}"
                                 android:text="@string/e113b02" />
@@ -1315,6 +1302,7 @@
                                 android:id="@+id/e113b998"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113b.equals(`998`)}"
                                 android:onClick="@{()->form.setE113b(`998`)}"
                                 android:text="@string/e113b998" />
@@ -1339,6 +1327,7 @@
                                 android:id="@+id/e113c01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113c.equals(`1`)}"
                                 android:onClick="@{()->form.setE113c(`1`)}"
                                 android:text="@string/e113c01" />
@@ -1347,6 +1336,7 @@
                                 android:id="@+id/e113c02"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113c.equals(`2`)}"
                                 android:onClick="@{()->form.setE113c(`2`)}"
                                 android:text="@string/e113c02" />
@@ -1355,6 +1345,7 @@
                                 android:id="@+id/e113c998"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113c.equals(`998`)}"
                                 android:onClick="@{()->form.setE113c(`998`)}"
                                 android:text="@string/e113c998" />
@@ -1379,6 +1370,7 @@
                                 android:id="@+id/e113d01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113d.equals(`1`)}"
                                 android:onClick="@{()->form.setE113d(`1`)}"
                                 android:text="@string/e113d01" />
@@ -1387,6 +1379,7 @@
                                 android:id="@+id/e113d02"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113d.equals(`2`)}"
                                 android:onClick="@{()->form.setE113d(`2`)}"
                                 android:text="@string/e113d02" />
@@ -1395,6 +1388,7 @@
                                 android:id="@+id/e113d998"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113d.equals(`998`)}"
                                 android:onClick="@{()->form.setE113d(`998`)}"
                                 android:text="@string/e113d998" />
@@ -1419,6 +1413,7 @@
                                 android:id="@+id/e113e01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113e.equals(`1`)}"
                                 android:onClick="@{()->form.setE113e(`1`)}"
                                 android:text="@string/e113e01" />
@@ -1427,6 +1422,7 @@
                                 android:id="@+id/e113e02"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113e.equals(`2`)}"
                                 android:onClick="@{()->form.setE113e(`2`)}"
                                 android:text="@string/e113e02" />
@@ -1435,6 +1431,7 @@
                                 android:id="@+id/e113e998"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113e.equals(`998`)}"
                                 android:onClick="@{()->form.setE113e(`998`)}"
                                 android:text="@string/e113e998" />
@@ -1459,6 +1456,7 @@
                                 android:id="@+id/e113f01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113f.equals(`1`)}"
                                 android:onClick="@{()->form.setE113f(`1`)}"
                                 android:text="@string/e113f01" />
@@ -1467,6 +1465,7 @@
                                 android:id="@+id/e113f02"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113f.equals(`2`)}"
                                 android:onClick="@{()->form.setE113f(`2`)}"
                                 android:text="@string/e113f02" />
@@ -1475,6 +1474,7 @@
                                 android:id="@+id/e113f998"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113f.equals(`998`)}"
                                 android:onClick="@{()->form.setE113f(`998`)}"
                                 android:text="@string/e113f998" />
@@ -1499,6 +1499,7 @@
                                 android:id="@+id/e113g01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113g.equals(`1`)}"
                                 android:onClick="@{()->form.setE113g(`1`)}"
                                 android:text="@string/e113g01" />
@@ -1507,6 +1508,7 @@
                                 android:id="@+id/e113g02"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113g.equals(`2`)}"
                                 android:onClick="@{()->form.setE113g(`2`)}"
                                 android:text="@string/e113g02" />
@@ -1515,6 +1517,7 @@
                                 android:id="@+id/e113g998"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113g.equals(`998`)}"
                                 android:onClick="@{()->form.setE113g(`998`)}"
                                 android:text="@string/e113g998" />
@@ -1539,6 +1542,7 @@
                                 android:id="@+id/e113h01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113h.equals(`1`)}"
                                 android:onClick="@{()->form.setE113h(`1`)}"
                                 android:text="@string/e113h01" />
@@ -1547,6 +1551,7 @@
                                 android:id="@+id/e113h02"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113h.equals(`2`)}"
                                 android:onClick="@{()->form.setE113h(`2`)}"
                                 android:text="@string/e113h02" />
@@ -1555,6 +1560,7 @@
                                 android:id="@+id/e113h998"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e113h.equals(`998`)}"
                                 android:onClick="@{()->form.setE113h(`998`)}"
                                 android:text="@string/e113h998" />
@@ -1580,7 +1586,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:checked="@{form.e11397.equals(`1`)}"
-                                android:onClick="@{()->form.setE11397(`1`)}"
+                                android:onClick="@{()->form.setE11397(`1`) + e113a.clearCheck() + e113b.clearCheck() + e113c.clearCheck() + e113d.clearCheck() + e113e.clearCheck() + e113f.clearCheck() + e113g.clearCheck() + e113h.clearCheck() + e11396.clearCheck()}"
                                 android:text="@string/e1139701" />
 
                             <RadioButton
@@ -1611,6 +1617,7 @@
                                 android:id="@+id/e1139601"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e11396.equals(`96`)}"
                                 android:onClick="@{()->form.setE11396(`96`)}"
                                 android:text="@string/e1139601" />
@@ -1619,6 +1626,7 @@
                                 android:id="@+id/e1139602"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="@{!form.e11397.equals(`1`)}"
                                 android:checked="@{form.e11396.equals(`2`)}"
                                 android:onClick="@{()->form.setE11396(`2`)}"
                                 android:text="@string/e1139602" />
@@ -2380,7 +2388,9 @@
 
 
                     </LinearLayout>
-                <!-- e123  Radio   -->
+
+
+                    <!-- e123  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVe123"
                     style="@style/cardView">
@@ -2440,13 +2450,16 @@
                 </androidx.cardview.widget.CardView>
 
 
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/fldGrpe124"
                         android:orientation="vertical"
                         android:visibility="@{form.e123.equals(`1`) ? View.VISIBLE : View.GONE}">
-                <!-- e124  Radio   -->
+
+
+                        <!-- e124  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVe124"
                     style="@style/cardView">
@@ -2705,7 +2718,6 @@
                     android:id="@+id/fldGrpCVe127"
                     style="@style/cardView"
                     android:visibility="@{form.e126.equals(`1`) ? View.VISIBLE : View.GONE}">
-
 
                     <LinearLayout
                         android:layout_width="match_parent"

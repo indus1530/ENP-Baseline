@@ -2079,7 +2079,7 @@
     <string name="e110t1">Home</string>
     <string name="e11001">Respondent’s home </string>
     <string name="e11002">Other home</string>
-    <string name="e110t2">Community midwife ‘s facility </string>
+    <string name="e110t2"> Community Midwife‘s Facility </string>
     <string name="e11003">Birthing station</string>
     <string name="e11004">Public Health Facility</string>
     <string name="e11005">Private Health Facility</string>
@@ -2088,7 +2088,6 @@
     <string name="e111t">Record the answer as stated by respondent. If “9 months” or later, record 9.</string>
     <string name="e111w"> Weeks </string>
     <string name="e111m"> Months </string>
-    <string name="e111998">Don’t Know</string>
     <string name="e112">How many times did you receive antenatal care during current pregnancy?</string>
     <string name="e112t">Probe to identify the number of times antenatal care was received. If a range is given, record the minimum number of times antenatal care received.</string>
     <string name="e11201">Number of times</string>

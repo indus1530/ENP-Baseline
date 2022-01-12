@@ -335,7 +335,6 @@ public class ModuleE extends BaseObservable implements Observable {
         setE11096(e105.equals("1") ? this.e11096 : "");
         setE111w(e105.equals("1") ? this.e111w : "");
         setE111m(e105.equals("1") ? this.e111m : "");
-        setE11198(e105.equals("1") ? this.e11198 : "");
         setE112(e105.equals("1") ? this.e112 : "");
         setE113a(e105.equals("1") ? this.e113a : "");
         setE113b(e105.equals("1") ? this.e113b : "");
@@ -345,6 +344,8 @@ public class ModuleE extends BaseObservable implements Observable {
         setE113f(e105.equals("1") ? this.e113f : "");
         setE113g(e105.equals("1") ? this.e113g : "");
         setE113h(e105.equals("1") ? this.e113h : "");
+        setE11397(e105.equals("1") ? this.e11397 : "");
+        setE11396(e105.equals("1") ? this.e11396 : "");
         setE114(e105.equals("1") ? this.e114 : "");
         setE115(e105.equals("1") ? this.e115 : "");
         setE11601(e105.equals("1") ? this.e11601 : "");
@@ -450,7 +451,6 @@ public class ModuleE extends BaseObservable implements Observable {
         setE11096(e108.equals("1") ? this.e11096 : "");
         setE111w(e108.equals("1") ? this.e111w : "");
         setE111m(e108.equals("1") ? this.e111m : "");
-        setE11198(e108.equals("1") ? this.e11198 : "");
         setE112(e108.equals("1") ? this.e112 : "");
         setE113a(e108.equals("1") ? this.e113a : "");
         setE113b(e108.equals("1") ? this.e113b : "");
@@ -460,6 +460,8 @@ public class ModuleE extends BaseObservable implements Observable {
         setE113f(e108.equals("1") ? this.e113f : "");
         setE113g(e108.equals("1") ? this.e113g : "");
         setE113h(e108.equals("1") ? this.e113h : "");
+        setE11397(e108.equals("1") ? this.e11397 : "");
+        setE11396(e108.equals("1") ? this.e11396 : "");
         notifyPropertyChanged(BR.e108);
     }
 

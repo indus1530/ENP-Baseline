@@ -18,7 +18,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -43,7 +42,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -56,7 +54,6 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
-import edu.aku.hassannaqvi.enp_baseline.models.Villages;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -117,9 +114,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        settingCountryCode();
     }
-
 
 
     public void dbBackup() {
@@ -205,7 +200,6 @@ public class LoginActivity extends AppCompatActivity {
         // Reset errors.
         bi.username.setError(null);
         bi.password.setError(null);
-        bi.as1q01.setError(null);
         Toast.makeText(this, String.valueOf(attemptCounter), Toast.LENGTH_SHORT).show();
         if (attemptCounter == 7) {
             Intent iLogin = new Intent(edu.aku.hassannaqvi.enp_baseline.ui.LoginActivity.this, MainActivity.class);
@@ -303,40 +297,33 @@ public class LoginActivity extends AppCompatActivity {
     /*
      * Toggle Language
      * */
+
     private void changeLanguage(int countryCode) {
         String lang;
         String country;
 
-        if (countryCode == 1) {
-            lang = "ur";
-            country = "PK";
-            MainApp.editor
-                    .putString("lang", "1")
-                    .apply();
-            /*case 2:
-                lang = "ps";
-                country = "AF";
+        switch (countryCode) {
+            case 1:
+                lang = "ur";
+                country = "PK";
+                MainApp.editor
+                        .putString("lang", "1")
+                        .apply();
+                break;
+            case 2:
+                lang = "sd";
+                country = "PK";
                 MainApp.editor
                         .putString("lang", "2")
                         .apply();
-            case 3:
-                lang = "tg";
-                country = "TJ";
+                break;
+            default:
+                lang = "en";
+                country = "US";
                 MainApp.editor
-                        .putString("lang", "3")
+                        .putString("lang", "0")
                         .apply();
-            case 4:
-                lang = "ru";
-                country = "KG";
-                MainApp.editor
-                        .putString("lang", "4")
-                        .apply();*/
         }
-        lang = "en";
-        country = "US";
-        MainApp.editor
-                .putString("lang", "0")
-                .apply();
 
         Locale locale = new Locale(lang, country);
         Locale.setDefault(locale);
@@ -347,55 +334,14 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void settingCountryCode() {
-
-
-        Collection<Villages> countries = db.getAllCountries();
-
-        countryNameList = new ArrayList<>();
-        countryCodeList = new ArrayList<>();
-
-        countryNameList.add("...");
-        countryCodeList.add("...");
-
-        for (Villages c : countries) {
-            countryNameList.add(c.getCountry());
-            countryCodeList.add(c.getCcode());
-        }
-
-
-        bi.countrySwitch.setAdapter(new ArrayAdapter<>(LoginActivity.this, R.layout.custom_spinner, countryNameList));
-
-
-        bi.countrySwitch.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if (position != 0 && position != pos) {
-                    MainApp.selectedCountry = Integer.parseInt(countryCodeList.get(position));
-                    // changeLanguage(MainApp.selectedCountry);
-
-                    //  startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).putExtra("pos", position));
-                    //   overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
-    }
 
     /*
      * Setting country code in Shared Preference
      * */
     private void initializingCountry() {
         countryCode = Integer.parseInt(MainApp.sharedPref.getString("lang", "0"));
-        if (countryCode != 0) {
-            MainApp.editor.putString("lang", "1").apply();
+        if (countryCode == 0) {
+            MainApp.editor.putString("lang", "0").apply();
         }
 
         changeLanguage(Integer.parseInt(MainApp.sharedPref.getString("lang", "0")));
@@ -433,20 +379,11 @@ public class LoginActivity extends AppCompatActivity {
                 MainApp.langRTL = true;
                 break;
 
-           /* case R.id.AF:
+            /*case R.id.SD:
                 MainApp.selectedLanguage = 2;
                 MainApp.langRTL = true;
-                break;
-
-            case R.id.TJ:
-                MainApp.selectedLanguage = 3;
-                MainApp.langRTL = false;
-                break;
-
-            case R.id.KG:
-                MainApp.selectedLanguage = 4;
-                MainApp.langRTL = false;
                 break;*/
+
 
             default:
                 MainApp.selectedLanguage = 0;
@@ -460,23 +397,5 @@ public class LoginActivity extends AppCompatActivity {
         return true;
     }
 
-    // set Persian language in the app
-    //setLanguage(context, "fa");
-
-    /*public void setLanguage(Context c, String lang) {
-        Locale localeNew = new Locale(lang);
-        Locale.setDefault(localeNew);
-
-        Resources res = c.getResources();
-        Configuration newConfig = new Configuration(res.getConfiguration());
-        newConfig.locale = localeNew;
-        newConfig.setLayoutDirection(localeNew);
-        res.updateConfiguration(newConfig, res.getDisplayMetrics());
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            newConfig.setLocale(localeNew);
-            c.createConfigurationContext(newConfig);
-        }
-    }*/
 }
 

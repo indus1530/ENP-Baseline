@@ -18,6 +18,7 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionA1Binding;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
+import edu.aku.hassannaqvi.enp_baseline.ui.lists.FamilyMembersListActivity;
 
 public class SectionA1Activity extends AppCompatActivity {
     private static final String TAG = "SectionA1Activity";
@@ -67,10 +68,16 @@ public class SectionA1Activity extends AppCompatActivity {
         if (!formValidation()) return;
         saveDraft();
         if (updateDB()) {
-            finish();
-            startActivity(new Intent(this, moda.getA112().equals("2")
+            Intent i;
+            if (moda.getA112().equals("2")
                     || moda.getA113().equals("2")
-                    || moda.getA114().equals("2") ? EndingActivity.class : SectionA3AActivity.class));
+                    || moda.getA114().equals("2")) {
+                i = new Intent(this, EndingActivity.class).putExtra("complete", false);
+            } else {
+                i = new Intent(this, FamilyMembersListActivity.class);
+            }
+            finish();
+            startActivity(i);
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

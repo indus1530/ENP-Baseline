@@ -77,7 +77,7 @@
                             android:id="@+id/as1q01"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:minHeight="56dp"
                             android:prompt="@string/a101"
                             android:spinnerMode="dropdown" />
@@ -116,7 +116,7 @@
                             android:id="@+id/a102"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:minHeight="56dp"
                             android:prompt="@string/a102"
                             android:spinnerMode="dropdown" />
@@ -155,7 +155,7 @@
                             android:id="@+id/a103"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:minHeight="56dp"
                             android:prompt="@string/a103"
                             android:spinnerMode="dropdown" />
@@ -194,7 +194,7 @@
                             android:id="@+id/a104"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:minHeight="56dp"
                             android:prompt="@string/a104"
                             android:spinnerMode="dropdown" />
@@ -233,7 +233,7 @@
                             android:id="@+id/a105"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:minHeight="56dp"
                             android:prompt="@string/a105"
                             android:spinnerMode="dropdown" />
@@ -272,7 +272,7 @@
                             android:id="@+id/a106"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
@@ -317,7 +317,7 @@
                             android:id="@+id/a107"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"

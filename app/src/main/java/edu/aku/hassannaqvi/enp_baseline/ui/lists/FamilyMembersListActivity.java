@@ -3,8 +3,6 @@ package edu.aku.hassannaqvi.enp_baseline.ui.lists;
 import static android.view.View.VISIBLE;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.adolListFemale;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.adolListMale;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedChild;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedChildName;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -38,7 +36,7 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityFamilyListBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
-import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA2Activity;
 
 
 public class FamilyMembersListActivity extends AppCompatActivity {
@@ -294,19 +292,16 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
 
             FloatingActionButton fab = findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (MainApp.superuser) {
-                        Toast.makeText(FamilyMembersListActivity.this, "Supervisors cannot add new members.", Toast.LENGTH_LONG).show();
+            fab.setOnClickListener(view -> {
+                if (MainApp.superuser) {
+                    Toast.makeText(FamilyMembersListActivity.this, "Supervisors cannot add new members.", Toast.LENGTH_LONG).show();
 
-                    } else if (MainApp.selectedMWRA.equals("")) {
-                        //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
-                        MainApp.familyMember = new FamilyMembers();
-                        //addFemale();
-                    } else {
-                        Toast.makeText(FamilyMembersListActivity.this, "This form has been locked. You cannot add new family member to locked forms", Toast.LENGTH_LONG).show();
-                    }
+                } else if (MainApp.selectedMWRA.equals("")) {
+                    //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
+                    MainApp.familyMember = new FamilyMembers();
+                    addMember();
+                } else {
+                    Toast.makeText(FamilyMembersListActivity.this, "This form has been locked. You cannot add new family member to locked forms", Toast.LENGTH_LONG).show();
                 }
             });
 
@@ -397,7 +392,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }*/
     }
 
-    public void addFemale() {
+    public void addMember() {
         addMoreMember();
 
       /*  if (MainApp.familyList.size() >= Integer.parseInt(MainApp.form.getH220b())) {
@@ -556,9 +551,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
     private void addMoreMember() {
         MainApp.familyMember = new FamilyMembers();
-        //Intent intent = new Intent(this, SectionAS2Activity.class);
+        Intent intent = new Intent(this, SectionA2Activity.class);
         //   finish();
-        //MemberInfoLauncher.launch(intent);
+        MemberInfoLauncher.launch(intent);
     }
 
     public void btnEnd(View view) {

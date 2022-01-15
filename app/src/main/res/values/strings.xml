@@ -544,11 +544,10 @@
     <string name="a31901">Yes</string>
     <string name="a31902">No</string>
     <string name="a320">If yes, how many acres or Kanals of agricultural land do members of this household own? </string>
-    <string name="a32001">Acres</string>
-    <string name="a32002">Kanals</string>
-    <string name="a32003">Marlas</string>
-    <string name="a32096">Others, (Specify)</string>
-    <string name="a320998">Don’t know</string>
+    <string name="a320a"> Acres </string>
+    <string name="a320k"> Kanals </string>
+    <string name="a320m"> Marlas </string>
+    <string name="a320998"> Don’t Know </string>
     <string name="a321">Does any member of the household own livestock, animals, or poultry?</string>
     <string name="a32101">Yes</string>
     <string name="a32102">No</string>

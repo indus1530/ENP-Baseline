@@ -443,12 +443,11 @@
     <string name="a319">کیا اس گھر میں رہنے والا کوئی فرد  زرعی زمین کا مالک ہے؟</string>
     <string name="a31901"> ہاں</string>
     <string name="a31902"> نہیں</string>
-    <string name="a320">اگر ہاں، تو اس گھر کے افراد کے پاس کتنے مربہ/ایکٹرپر مشتمل زمین ہے ؟</string>
-    <string name="a32001"> ایکٹر</string>
-    <string name="a32002"> کنال</string>
-    <string name="a32003">مرلے </string>
-    <string name="a32096">دیگر وضاحت کریں</string>
-    <string name="a320998"> معلوم نہیں</string>
+    <string name="a320"> اگر ہاں، تو اس گھر کے افراد کے پاس کتنے مربہ / ایکڑ پر مشتمل زمین ہے ؟ </string>
+    <string name="a320a"> ایکڑ </string>
+    <string name="a320k"> کنال </string>
+    <string name="a320m"> مرلے </string>
+    <string name="a320998"> معلوم نہیں </string>
     <string name="a321">کیاآپ اپنا مال مویشی،جانور یا مرغی خانہ رکھتے ہیں؟</string>
     <string name="a32101">ہاں</string>
     <string name="a32102">نہیں</string>

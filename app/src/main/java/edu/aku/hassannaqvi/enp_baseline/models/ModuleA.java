@@ -134,11 +134,10 @@ public class ModuleA extends BaseObservable implements Observable {
     private String a31796x = _EMPTY_;
     private String a318 = _EMPTY_;
     private String a319 = _EMPTY_;
-    private String a320 = _EMPTY_;
-    private String a32001x = _EMPTY_;
-    private String a32002x = _EMPTY_;
-    private String a32003x = _EMPTY_;
-    private String a32096x = _EMPTY_;
+    private String a320a = _EMPTY_;
+    private String a320k = _EMPTY_;
+    private String a320m = _EMPTY_;
+    private String a32098 = _EMPTY_;
     private String a321 = _EMPTY_;
     private String a304 = _EMPTY_;
     private String a322a = _EMPTY_;
@@ -1211,62 +1210,55 @@ public class ModuleA extends BaseObservable implements Observable {
 
     public void setA319(String a319) {
         this.a319 = a319;
-        setA320(a319.equals("1") ? this.a320 : "");
+        setA320a(a319.equals("2") ? "" : this.a320a);
+        setA320k(a319.equals("2") ? "" : this.a320k);
+        setA320m(a319.equals("2") ? "" : this.a320m);
+        setA32098(a319.equals("2") ? "" : this.a32098);
         notifyPropertyChanged(BR.a319);
     }
 
     @Bindable
-    public String getA320() {
-        return a320;
+    public String getA320a() {
+        return a320a;
     }
 
-    public void setA320(String a320) {
-        this.a320 = a320;
-        setA32001x(a320.equals("1") ? this.a32001x : "");
-        setA32002x(a320.equals("2") ? this.a32002x : "");
-        setA32003x(a320.equals("3") ? this.a32003x : "");
-        setA32096x(a320.equals("96") ? this.a32096x : "");
-        notifyPropertyChanged(BR.a320);
+    public void setA320a(String a320a) {
+        this.a320a = a320a;
+        notifyPropertyChanged(BR.a320a);
     }
 
     @Bindable
-    public String getA32001x() {
-        return a32001x;
+    public String getA320k() {
+        return a320k;
     }
 
-    public void setA32001x(String a32001x) {
-        this.a32001x = a32001x;
-        notifyPropertyChanged(BR.a32001x);
-    }
-
-    @Bindable
-    public String getA32002x() {
-        return a32002x;
-    }
-
-    public void setA32002x(String a32002x) {
-        this.a32002x = a32002x;
-        notifyPropertyChanged(BR.a32002x);
+    public void setA320k(String a320k) {
+        this.a320k = a320k;
+        notifyPropertyChanged(BR.a320k);
     }
 
     @Bindable
-    public String getA32003x() {
-        return a32003x;
+    public String getA320m() {
+        return a320m;
     }
 
-    public void setA32003x(String a32003x) {
-        this.a32003x = a32003x;
-        notifyPropertyChanged(BR.a32003x);
+    public void setA320m(String a320m) {
+        this.a320m = a320m;
+        notifyPropertyChanged(BR.a320m);
     }
 
     @Bindable
-    public String getA32096x() {
-        return a32096x;
+    public String getA32098() {
+        return a32098;
     }
 
-    public void setA32096x(String a32096x) {
-        this.a32096x = a32096x;
-        notifyPropertyChanged(BR.a32096x);
+    public void setA32098(String a32098) {
+        if (this.a32098.equals(a32098)) return;
+        this.a32098 = a32098;
+        setA320a(a32098.equals("998") ? "" : this.a320a);
+        setA320k(a32098.equals("998") ? "" : this.a320k);
+        setA320m(a32098.equals("998") ? "" : this.a320m);
+        notifyPropertyChanged(BR.a32098);
     }
 
     @Bindable
@@ -2020,11 +2012,10 @@ public class ModuleA extends BaseObservable implements Observable {
             this.a31796x = json.getString("a31796x");
             this.a318 = json.getString("a318");
             this.a319 = json.getString("a319");
-            this.a320 = json.getString("a320");
-            this.a32001x = json.getString("a32001x");
-            this.a32002x = json.getString("a32002x");
-            this.a32003x = json.getString("a32003x");
-            this.a32096x = json.getString("a32096x");
+            this.a320a = json.getString("a320a");
+            this.a320k = json.getString("a320k");
+            this.a320m = json.getString("a320m");
+            this.a32098 = json.getString("a32098");
             this.a321 = json.getString("a321");
             this.a322a = json.getString("a322a");
             this.a322ax = json.getString("a322ax");
@@ -2214,11 +2205,10 @@ public class ModuleA extends BaseObservable implements Observable {
                 .put("a31796x", a31796x)
                 .put("a318", a318)
                 .put("a319", a319)
-                .put("a320", a320)
-                .put("a32001x", a32001x)
-                .put("a32002x", a32002x)
-                .put("a32003x", a32003x)
-                .put("a32096x", a32096x)
+                .put("a320a", a320a)
+                .put("a320k", a320k)
+                .put("a320m", a320m)
+                .put("a32098", a32098)
                 .put("a321", a321)
                 .put("a322a", a322a)
                 .put("a322ax", a322ax)

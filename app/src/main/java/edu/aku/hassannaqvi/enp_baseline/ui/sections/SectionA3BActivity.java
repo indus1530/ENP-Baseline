@@ -84,7 +84,12 @@ public class SectionA3BActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
+        if (!moda.getA320a().isEmpty() && !moda.getA320k().isEmpty() && !moda.getA320m().isEmpty()) {
+            if (Integer.parseInt(moda.getA320a()) + Integer.parseInt(moda.getA320k()) + Integer.parseInt(moda.getA320m()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.a320a, "All Values Can't be zero");
+        }
+        return true;
     }
 
 }

@@ -5,6 +5,8 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
+
+import java.util.Calendar;
 
 import edu.aku.hassannaqvi.enp_baseline.R;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
@@ -40,6 +44,27 @@ public class SectionA1Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
+
+        bi.a108y.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.a108y.getText().toString().isEmpty()) return;
+                bi.a108d.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2021 ? 10f : 1f);
+                bi.a108m.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2021 ? 12f : 1f);
+                bi.a108d.setMaxvalue(Integer.parseInt(bi.a108y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+                bi.a108m.setMaxvalue(Integer.parseInt(bi.a108y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
+                        Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
     }
 
 

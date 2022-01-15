@@ -272,102 +272,119 @@
                             android:layout_height="wrap_content"
                             android:text="@string/f104instr" />
 
+                        <!--f10401-->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <LinearLayout
+                            <TextView
+                                style="@style/textView"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="vertical">
+                                android:text="@string/f10401" />
 
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f10401" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f10402" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f10403" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f104m" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f10401"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="vertical">
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.f10401}"
+                                app:maxValue="30"
+                                app:minValue="1"
+                                app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f10401"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.f10401}"
-                                    app:maxValue="30"
-                                    app:minValue="1"
-                                    app:type="range" />
+                        </LinearLayout>
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f10402"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.f10402}"
-                                    app:maxValue="30"
-                                    app:minValue="1"
-                                    app:type="range" />
+                        <!--f10402-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f10403"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.f10403}"
-                                    app:maxValue="30"
-                                    app:minValue="1"
-                                    app:type="range" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f10402" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f104m"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.f104m}"
-                                    app:maxValue="30"
-                                    app:minValue="1"
-                                    app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f10402"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.f10402}"
+                                app:maxValue="30"
+                                app:minValue="1"
+                                app:type="range" />
 
-                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!--f10403-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f10403" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f10403"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.f10403}"
+                                app:maxValue="30"
+                                app:minValue="1"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                        <!--f104m-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f104m" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f104m"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.f104m}"
+                                app:maxValue="30"
+                                app:minValue="1"
+                                app:type="range" />
 
                         </LinearLayout>
 
@@ -411,102 +428,119 @@
                             android:layout_height="wrap_content"
                             android:text="@string/f105instr" />
 
+                        <!--f10501-->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <LinearLayout
+                            <TextView
+                                style="@style/textView"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="vertical">
+                                android:text="@string/f10501" />
 
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f10501" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f10502" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f10503" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f105m" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f10501"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="vertical">
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                android:text="@={form.f10501}"
+                                app:maxValue="120"
+                                app:minValue="20"
+                                app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f10501"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="###"
-                                    android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text="@={form.f10501}"
-                                    app:maxValue="120"
-                                    app:minValue="20"
-                                    app:type="range" />
+                        </LinearLayout>
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f10502"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="###"
-                                    android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text="@={form.f10502}"
-                                    app:maxValue="120"
-                                    app:minValue="20"
-                                    app:type="range" />
+                        <!--f10502-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f10503"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="###"
-                                    android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text="@={form.f10503}"
-                                    app:maxValue="120"
-                                    app:minValue="20"
-                                    app:type="range" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f10502" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f105m"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="###"
-                                    android:inputType="number"
-                                    android:maxLength="3"
-                                    android:text="@={form.f105m}"
-                                    app:maxValue="120"
-                                    app:minValue="20"
-                                    app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f10502"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                android:text="@={form.f10502}"
+                                app:maxValue="120"
+                                app:minValue="20"
+                                app:type="range" />
 
-                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!--f10503-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f10503" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f10503"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                android:text="@={form.f10503}"
+                                app:maxValue="120"
+                                app:minValue="20"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                        <!--f105m-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f105m" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f105m"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                android:text="@={form.f105m}"
+                                app:maxValue="120"
+                                app:minValue="20"
+                                app:type="range" />
 
                         </LinearLayout>
 
@@ -550,102 +584,119 @@
                             android:layout_height="wrap_content"
                             android:text="@string/f106instr" />
 
+                        <!--f10601-->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <LinearLayout
+                            <TextView
+                                style="@style/textView"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="vertical">
+                                android:text="@string/f10601" />
 
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f10601" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f10602" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f10603" />
-
-                                <TextView
-                                    style="@style/textView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/f106m" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f10601"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="vertical">
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.f10601}"
+                                app:maxValue="20"
+                                app:minValue="5"
+                                app:type="range" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f10601"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.f10601}"
-                                    app:maxValue="20"
-                                    app:minValue="5"
-                                    app:type="range" />
+                        </LinearLayout>
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f10602"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.f10602}"
-                                    app:maxValue="20"
-                                    app:minValue="5"
-                                    app:type="range" />
+                        <!--f10602-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f10603"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.f10603}"
-                                    app:maxValue="20"
-                                    app:minValue="5"
-                                    app:type="range" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f10602" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/f106m"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.f106m}"
-                                    app:maxValue="20"
-                                    app:minValue="5"
-                                    app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f10602"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.f10602}"
+                                app:maxValue="20"
+                                app:minValue="5"
+                                app:type="range" />
 
-                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!--f10603-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f10603" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f10603"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.f10603}"
+                                app:maxValue="20"
+                                app:minValue="5"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                        <!--f106m-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f106m" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f1060m"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.f106m}"
+                                app:maxValue="20"
+                                app:minValue="5"
+                                app:type="range" />
 
                         </LinearLayout>
 
@@ -661,7 +712,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
 

@@ -730,6 +730,7 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layoutDirection="ltr"
                                     android:orientation="horizontal">
 
                                     <TextView
@@ -813,6 +814,7 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layoutDirection="ltr"
                                     android:orientation="horizontal">
 
                                     <TextView
@@ -1110,6 +1112,7 @@
                                         android:id="@+id/c116check"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layoutDirection="ltr"
                                         android:orientation="horizontal"
                                         android:tag="0">
 

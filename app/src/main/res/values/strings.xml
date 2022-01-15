@@ -1153,11 +1153,11 @@
     <string name="c21302">2nd trimester</string>
     <string name="c21303">3rd trimester</string>
     <string name="c214">How many days did you use MULTIPLE MICRONUTRIENT SUPPLEMENTS (MMS) during last pregnancy?</string>
-    <string name="c21401">0 Days</string>
-    <string name="c21402">&lt; 60 Days</string>
-    <string name="c21403">60-89 Days</string>
-    <string name="c21404">90+ Days</string>
-    <string name="c214998">Don’t know </string>
+    <string name="c21401"> 0 Days </string>
+    <string name="c21402"> &lt; 60 Days </string>
+    <string name="c21403"> 60-89 Days </string>
+    <string name="c21404"> 90+ Days </string>
+    <string name="c214998"> Don’t know </string>
     <string name="c215">From Where did you get multiple micronutrient supplements (MMS) while you were pregnant?</string>
     <string name="c215t1">Public Health Facility</string>
     <string name="c21501">Name of Public Health Facility</string>
@@ -2334,7 +2334,7 @@
     <string name="f10701">Yes</string>
     <string name="f10702">No</string>
     <string name="f108">Remarks </string>
-    <string name="f109">Measurement status</string>
+    <string name="f109"> Measurement Status </string>
     <string name="f10901">Recorded</string>
     <string name="f10902">Not recorded </string>
 

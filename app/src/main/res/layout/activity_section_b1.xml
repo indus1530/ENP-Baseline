@@ -263,13 +263,13 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layoutDirection="ltr"
                             android:orientation="horizontal">
 
                             <TextView
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/b104y" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -291,7 +291,6 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/b104m" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -313,7 +312,6 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/b104w" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -379,13 +377,13 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layoutDirection="ltr"
                             android:orientation="horizontal">
 
                             <TextView
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/b105d" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -407,7 +405,6 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/b105w" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -429,7 +426,6 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/b105m" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -1371,13 +1367,13 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/b115h" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1399,7 +1395,6 @@
                                     style="@style/textView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/b115m" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker

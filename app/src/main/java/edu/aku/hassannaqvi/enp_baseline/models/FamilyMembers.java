@@ -741,12 +741,15 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
 
             // set current Date
-            /*int curDay = !MainApp.form.getAs1q15d().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15d()) : 15;
-            int curMonth = !MainApp.form.getAs1q15m().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15m()) : 6;
-            int curYear = Integer.parseInt(MainApp.form.getAs1q15y());*/
-            int curDay = !MainApp.moda.getA108d().equals("98") ? Integer.parseInt(MainApp.moda.getA108d()) : 15;
-            int curMonth = !MainApp.moda.getA108m().equals("98") ? Integer.parseInt(MainApp.moda.getA108m()) : 6;
-            int curYear = Integer.parseInt(MainApp.moda.getA108y());
+            int curDay = MainApp.moda != null && !MainApp.moda.getA108d().isEmpty()
+                    ? Integer.parseInt(MainApp.moda.getA108d())
+                    : Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+            int curMonth = MainApp.moda != null && !MainApp.moda.getA108m().isEmpty()
+                    ? Integer.parseInt(MainApp.moda.getA108m())
+                    : Calendar.getInstance().get(Calendar.MONTH) + 1;
+            int curYear = MainApp.moda != null && !MainApp.moda.getA108y().isEmpty()
+                    ? Integer.parseInt(MainApp.moda.getA108y())
+                    : Calendar.getInstance().get(Calendar.YEAR);
             Calendar cur = Calendar.getInstance();
 
 

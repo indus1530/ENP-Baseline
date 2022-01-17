@@ -739,7 +739,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC105(String c105) {
         this.c105 = c105;
-        setC10501x(c105.equals("998") ? "" : this.c10501x);
+        setC10501x(c105.equals("1") ? this.c10501x : "");
         notifyPropertyChanged(BR.c105);
     }
 

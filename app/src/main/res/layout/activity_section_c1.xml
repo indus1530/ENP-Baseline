@@ -834,6 +834,7 @@
                                         android:inputType="number"
                                         android:maxLength="2"
                                         android:text="@={modc.c113dd}"
+                                        app:defaultValue="98"
                                         app:maxValue="31"
                                         app:minValue="1"
                                         app:type="range" />
@@ -855,6 +856,7 @@
                                         android:inputType="number"
                                         android:maxLength="2"
                                         android:text="@={modc.c113mm}"
+                                        app:defaultValue="98"
                                         app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
@@ -876,6 +878,7 @@
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={modc.c113yy}"
+                                        app:defaultValue="9998"
                                         app:maxValue="2022"
                                         app:minValue="2021"
                                         app:type="range" />
@@ -1166,6 +1169,7 @@
                                             android:layout_height="match_parent"
                                             android:checked="@{modc.c116998.equals(`998`)}"
                                             android:onClick="@{()->modc.setC116998(modc.c116998.equals(`998`)?``:`998`)}"
+                                            android:tag="-1"
                                             android:text="@string/c116998" />
 
                                     </LinearLayout>

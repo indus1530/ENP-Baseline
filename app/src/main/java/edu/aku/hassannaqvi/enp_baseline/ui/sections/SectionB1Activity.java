@@ -92,9 +92,9 @@ public class SectionB1Activity extends AppCompatActivity {
             if (Integer.parseInt(modb.getB104y()) + Integer.parseInt(modb.getB104m()) + Integer.parseInt(modb.getB104w()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b104y, "All Values Can't be zero");
         }
-        if (!modb.getB105d().isEmpty() && !modb.getB105m().isEmpty() && !modb.getB105w().isEmpty()) {
-            if (Integer.parseInt(modb.getB105d()) + Integer.parseInt(modb.getB105m()) + Integer.parseInt(modb.getB105w()) == 0)
-                return Validator.emptyCustomTextBox(this, bi.b105d, "All Values Can't be zero");
+        if (!modb.getB105y().isEmpty() && !modb.getB105m().isEmpty() && !modb.getB105w().isEmpty()) {
+            if (Integer.parseInt(modb.getB105y()) + Integer.parseInt(modb.getB105m()) + Integer.parseInt(modb.getB105w()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.b105y, "All Values Can't be zero");
         }
         if (!modb.getB115h().isEmpty() && !modb.getB115m().isEmpty()) {
             if (Integer.parseInt(modb.getB115h()) + Integer.parseInt(modb.getB115m()) == 0)

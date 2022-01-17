@@ -384,10 +384,10 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/b105d" />
+                                android:text="@string/b105y" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/b105d"
+                                android:id="@+id/b105y"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -396,7 +396,7 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
-                                android:text="@={modb.b105d}"
+                                android:text="@={modb.b105y}"
                                 app:maxValue="9"
                                 app:minValue="0"
                                 app:type="range" />
@@ -463,7 +463,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVb106"
                     style="@style/cardView"
-                    android:visibility="@{modb.b105d.length() &gt; 0 &amp;&amp; Integer.parseInt(modb.b105d) &gt; 0 ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{modb.b104y.length() &gt; 0 &amp;&amp; Integer.parseInt(modb.b104y) &gt; 0 ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

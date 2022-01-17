@@ -52,14 +52,12 @@ public class ModuleB extends BaseObservable implements Observable {
     private String b102 = _EMPTY_;
     private String b103 = _EMPTY_;
     private String b10398 = _EMPTY_;
-    private String b104 = _EMPTY_;
     private String b10498 = _EMPTY_;
     private String b104y = _EMPTY_;
     private String b104m = _EMPTY_;
     private String b104w = _EMPTY_;
-    private String b105 = _EMPTY_;
     private String b10598 = _EMPTY_;
-    private String b105d = _EMPTY_;
+    private String b105y = _EMPTY_;
     private String b105w = _EMPTY_;
     private String b105m = _EMPTY_;
     private String b106 = _EMPTY_;
@@ -405,16 +403,6 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getB104() {
-        return b104;
-    }
-
-    public void setB104(String b104) {
-        this.b104 = b104;
-        notifyPropertyChanged(BR.b104);
-    }
-
-    @Bindable
     public String getB10498() {
         return b10498;
     }
@@ -435,6 +423,9 @@ public class ModuleB extends BaseObservable implements Observable {
 
     public void setB104y(String b104y) {
         this.b104y = b104y;
+        boolean b = b104y.length() > 0 && Integer.parseInt(b104y) > 0;
+        setB106(b ? this.b106 : "");
+        setB10698(b ? this.b10698 : "");
         notifyPropertyChanged(BR.b104y);
     }
 
@@ -459,16 +450,6 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getB105() {
-        return b105;
-    }
-
-    public void setB105(String b105) {
-        this.b105 = b105;
-        notifyPropertyChanged(BR.b105);
-    }
-
-    @Bindable
     public String getB10598() {
         return b10598;
     }
@@ -476,22 +457,20 @@ public class ModuleB extends BaseObservable implements Observable {
     public void setB10598(String b10598) {
         if (this.b10598.equals(b10598)) return;
         this.b10598 = b10598;
-        setB105d(b10598.equals("998") ? "" : this.b105d);
+        setB105y(b10598.equals("998") ? "" : this.b105y);
         setB105w(b10598.equals("998") ? "" : this.b105w);
         setB105m(b10598.equals("998") ? "" : this.b105m);
         notifyPropertyChanged(BR.b10598);
     }
 
     @Bindable
-    public String getB105d() {
-        return b105d;
+    public String getB105y() {
+        return b105y;
     }
 
-    public void setB105d(String b105d) {
-        this.b105d = b105d;
-        setB106(b105.length() > 0 && Integer.parseInt(b105d) > 0 ? this.b106 : "");
-        setB10698(b105.length() > 0 && Integer.parseInt(b105d) > 0 ? this.b10698 : "");
-        notifyPropertyChanged(BR.b105d);
+    public void setB105y(String b105y) {
+        this.b105y = b105y;
+        notifyPropertyChanged(BR.b105y);
     }
 
     @Bindable
@@ -1987,16 +1966,14 @@ public class ModuleB extends BaseObservable implements Observable {
             this.b102 = json.getString("b102");
             this.b103 = json.getString("b103");
             this.b10398 = json.getString("b10398");
-            this.b104 = json.getString("b104");
-            this.b10498 = json.getString("b10498");
             this.b104y = json.getString("b104y");
             this.b104m = json.getString("b104m");
             this.b104w = json.getString("b104w");
-            this.b105 = json.getString("b105");
-            this.b10598 = json.getString("b10598");
-            this.b105d = json.getString("b105d");
+            this.b10498 = json.getString("b10498");
+            this.b105y = json.getString("b105y");
             this.b105w = json.getString("b105w");
             this.b105m = json.getString("b105m");
+            this.b10598 = json.getString("b10598");
             this.b106 = json.getString("b106");
             this.b10698 = json.getString("b10698");
             this.b107 = json.getString("b107");
@@ -2168,16 +2145,14 @@ public class ModuleB extends BaseObservable implements Observable {
                 .put("b102", b102)
                 .put("b103", b103)
                 .put("b10398", b10398)
-                .put("b104", b104)
-                .put("b10498", b10498)
                 .put("b104y", b104y)
                 .put("b104m", b104m)
                 .put("b104w", b104w)
-                .put("b105", b105)
-                .put("b10598", b10598)
-                .put("b105d", b105d)
+                .put("b10498", b10498)
+                .put("b105y", b105y)
                 .put("b105w", b105w)
                 .put("b105m", b105m)
+                .put("b10598", b10598)
                 .put("b106", b106)
                 .put("b10698", b10698)
                 .put("b107", b107)

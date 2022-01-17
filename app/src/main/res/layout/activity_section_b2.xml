@@ -254,7 +254,7 @@
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={form.b202y}"
-                                app:maxValue="9"
+                                app:maxValue="3"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -629,7 +629,7 @@
                                 android:maxLength="2"
                                 android:text="@={form.b20601}"
                                 app:maxValue="23"
-                                app:minValue="5"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>

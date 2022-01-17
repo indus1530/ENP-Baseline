@@ -752,11 +752,11 @@
     <string name="b202m"> Months </string>
     <string name="b202y"> Years </string>
     <string name="b202998"> Don’t Know </string>
-    <string name="b203">What is your status as ENP beneficiary?</string>
-    <string name="b20301">Pregnant, no child under 2 years</string>
-    <string name="b20302">Pregnant and has a child under 2  years</string>
-    <string name="b20303">Not pregnant, has a child under 2 years </string>
-    <string name="b204ins">(For currently pregnant women only)</string>
+    <string name="b203"> What is your status as ENP beneficiary ? </string>
+    <string name="b20301"> Pregnant, no child under 2 years </string>
+    <string name="b20302"> Pregnant and has a child under 2 years </string>
+    <string name="b20303"> Not pregnant, has a child under 2 years </string>
+    <string name="b204ins"> For currently pregnant women only </string>
     <string name="b204"> What is your gestational age ? </string>
     <string name="b204w"> Weeks </string>
     <string name="b204m"> Months </string>

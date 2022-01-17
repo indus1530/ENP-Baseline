@@ -1733,9 +1733,9 @@
     <string name="d211">Where did you get SNF (Wawamum) from?</string>
     <string name="d21101">Government</string>
     <string name="d21102">NGO</string>
-    <string name="d21103">ENP facilitation center</string>
-    <string name="d21104">Purchased myself</string>
-    <string name="d21196">Others (Specify)</string>
+    <string name="d21103"> ENP Facilitation Center </string>
+    <string name="d21104"> Purchased Myself </string>
+    <string name="d21196"> Others (Specify) </string>
 
     <string name="d3"> D3: Immunization Status: </string>
     <string name="d3title">SECTION D3: IMMUNIZATION STATUS                                                                                             </string>

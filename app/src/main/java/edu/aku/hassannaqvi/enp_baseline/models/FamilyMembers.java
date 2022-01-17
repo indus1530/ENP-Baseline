@@ -62,6 +62,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String a206y = _EMPTY_;
     private String a206m = _EMPTY_;
     private String a206d = _EMPTY_;
+    private long ageMon = 0;
     private String a207 = _EMPTY_;
     private String a20701 = _EMPTY_;
     private String a20702 = _EMPTY_;
@@ -362,6 +363,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         boolean b1 = a206y.length() > 0 && Integer.parseInt(a206y) > 4;
         setA21301(b1 ? "" : this.a21301);
         setA21302(b1 ? "" : this.a21302);
+        setAgeMon();
         notifyPropertyChanged(BR.a206y);
     }
 
@@ -373,6 +375,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA206m(String a206m) {
         this.a206m = a206m;
+        setAgeMon();
         notifyPropertyChanged(BR.a206m);
     }
 
@@ -384,9 +387,25 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA206d(String a206d) {
         this.a206d = a206d;
+        setAgeMon();
         notifyPropertyChanged(BR.a206d);
     }
 
+
+    @Bindable
+    public long getAgeMon() {
+        return ageMon;
+    }
+
+    public void setAgeMon() {
+        this.ageMon = 0;
+        if (!this.a206d.isEmpty() && !this.a206m.isEmpty() && !this.a206y.isEmpty()) {
+            this.ageMon = Integer.parseInt(this.a206y) * 12L
+                    + Integer.parseInt(this.a206m)
+                    + Integer.parseInt(this.a206d) / 30;
+        }
+        notifyPropertyChanged(BR.ageMon);
+    }
 
 
     @Bindable
@@ -646,6 +665,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
             this.a206y = json.getString("a206y");
             this.a206m = json.getString("a206m");
             this.a206d = json.getString("a206d");
+            this.ageMon = json.getLong("ageMon");
             this.a207 = json.getString("a207");
             this.a20701 = json.getString("a20701");
             this.a20702 = json.getString("a20702");
@@ -706,6 +726,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 .put("a206y", a206y)
                 .put("a206m", a206m)
                 .put("a206d", a206d)
+                .put("ageMon", ageMon)
                 .put("a207", a207)
                 .put("a20701", a20701)
                 .put("a20702", a20702)

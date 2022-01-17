@@ -50,7 +50,7 @@ public class SectionA2Activity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         MainApp.familyMember.setA201(String.valueOf(MainApp.memberCount + 1));
         bi.a205y.setMaxvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))));
-        bi.a205y.setMinvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))) - 99);
+        bi.a205y.setMinvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))) - 95);
 
         setupListener();
         //populateSpinner();
@@ -74,6 +74,25 @@ public class SectionA2Activity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 bi.hl3name.setVisibility(View.VISIBLE);
                 bi.hl3name.setText("What is the relationship of " + familyMember.getA202() + " with the head of household");
+            }
+        });
+
+        bi.a205y.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.a205y.getText().toString().isEmpty()) return;
+                bi.a205d.setMaxvalue(Integer.parseInt(bi.a205y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+                bi.a205m.setMaxvalue(Integer.parseInt(bi.a205y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
+                        Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
             }
         });
     }

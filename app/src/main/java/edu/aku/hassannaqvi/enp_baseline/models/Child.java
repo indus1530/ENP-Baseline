@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 
 public class Child extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "Child";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;

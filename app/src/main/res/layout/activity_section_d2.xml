@@ -2857,10 +2857,10 @@
 
 
                 <LinearLayout
+                    android:id="@+id/in6to23"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="@{form.d209.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:orientation="vertical">
 
 
                     <!-- d209  Radio   -->

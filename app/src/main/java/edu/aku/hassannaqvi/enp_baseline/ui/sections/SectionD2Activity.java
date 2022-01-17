@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.familyMember;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modd;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
@@ -37,6 +38,10 @@ public class SectionD2Activity extends AppCompatActivity {
         setupSkips();
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
+        //TODO: Need be selected Member
+        if (familyMember.getAgeMon() >= 6 && familyMember.getAgeMon() <= 23)
+            bi.in6to23.setVisibility(View.VISIBLE);
+        else bi.in6to23.setVisibility(View.GONE);
     }
 
     private void setupSkips() {

@@ -2302,6 +2302,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="#"
+                                android:tag="c221a"
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={modc.c221ax}"

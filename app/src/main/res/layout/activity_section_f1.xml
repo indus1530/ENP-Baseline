@@ -334,9 +334,11 @@
 
                         <!--f10403-->
                         <LinearLayout
+                            android:id="@+id/llf10403"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 style="@style/textView"
@@ -364,9 +366,11 @@
 
                         <!--f104m-->
                         <LinearLayout
+                            android:id="@+id/llf104m"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 style="@style/textView"
@@ -494,9 +498,11 @@
 
                         <!--f10503-->
                         <LinearLayout
+                            android:id="@+id/llf10503"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 style="@style/textView"
@@ -524,9 +530,11 @@
 
                         <!--f105m-->
                         <LinearLayout
+                            android:id="@+id/llf105m"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 style="@style/textView"
@@ -654,9 +662,11 @@
 
                         <!--f10603-->
                         <LinearLayout
+                            android:id="@+id/llf10603"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 style="@style/textView"
@@ -684,9 +694,11 @@
 
                         <!--f106m-->
                         <LinearLayout
+                            android:id="@+id/llf106m"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 style="@style/textView"
@@ -731,7 +743,7 @@
                         <TextView
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="55dp"
                             android:text="@string/Q_f107" />
 
                         <TextView

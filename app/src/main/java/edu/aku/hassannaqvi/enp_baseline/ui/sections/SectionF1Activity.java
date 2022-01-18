@@ -5,12 +5,16 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.enp_baseline.R;
@@ -40,6 +44,38 @@ public class SectionF1Activity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+        getDiff(new EditTextPicker[]{bi.f10401, bi.f10402}, bi.llf10403, bi.llf104m);
+        getDiff(new EditTextPicker[]{bi.f10501, bi.f10502}, bi.llf10503, bi.llf105m);
+        getDiff(new EditTextPicker[]{bi.f10601, bi.f10602}, bi.llf10603, bi.llf106m);
+    }
+
+
+    private void getDiff(EditTextPicker[] edxArray, LinearLayout l1, LinearLayout l2) {
+        for (EditTextPicker edx : edxArray) {
+            edx.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if (edxArray[0].getText().toString().isEmpty() || edxArray[1].getText().toString().isEmpty())
+                        return;
+                    l1.setVisibility(View.GONE);
+                    l2.setVisibility(View.GONE);
+                    if ((Float.parseFloat(edxArray[0].getText().toString()) - Float.parseFloat(edxArray[1].getText().toString()) >= 0.5)
+                            || (Float.parseFloat(edxArray[0].getText().toString()) - Float.parseFloat(edxArray[1].getText().toString()) <= -0.5)) {
+                        l1.setVisibility(View.VISIBLE);
+                        l2.setVisibility(View.VISIBLE);
+                    }
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                }
+            });
+
+        }
     }
 
 

@@ -261,9 +261,11 @@
 
                         <!--f20303-->
                         <LinearLayout
+                            android:id="@+id/llf20303"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 style="@style/textView"
@@ -291,9 +293,11 @@
 
                         <!--f203m-->
                         <LinearLayout
+                            android:id="@+id/llf203m"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 style="@style/textView"
@@ -421,9 +425,11 @@
 
                         <!--f20403-->
                         <LinearLayout
+                            android:id="@+id/llf20403"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 style="@style/textView"
@@ -451,9 +457,11 @@
 
                         <!--f204m-->
                         <LinearLayout
+                            android:id="@+id/llf204m"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 style="@style/textView"

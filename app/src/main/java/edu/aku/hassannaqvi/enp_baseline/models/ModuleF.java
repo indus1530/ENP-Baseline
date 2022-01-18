@@ -302,6 +302,12 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF10401(String f10401) {
         this.f10401 = f10401;
+        if (f10401.length() > 0 && this.f10402.length() > 0) {
+            setF10403((Float.parseFloat(f10401) - Float.parseFloat(this.f10402) >= 0.5)
+                    || (Float.parseFloat(f10401) - Float.parseFloat(this.f10402) <= -0.5) ? this.f10403 : "");
+            setF104m((Float.parseFloat(f10401) - Float.parseFloat(this.f10402) >= 0.5)
+                    || (Float.parseFloat(f10401) - Float.parseFloat(this.f10402) <= -0.5) ? this.f104m : "");
+        }
         notifyPropertyChanged(BR.f10401);
     }
 
@@ -312,6 +318,12 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF10402(String f10402) {
         this.f10402 = f10402;
+        if (this.f10401.length() > 0 && f10402.length() > 0) {
+            setF10403((Float.parseFloat(this.f10401) - Float.parseFloat(f10402) >= 0.5)
+                    || (Float.parseFloat(this.f10401) - Float.parseFloat(f10402) <= -0.5) ? this.f10403 : "");
+            setF104m((Float.parseFloat(this.f10401) - Float.parseFloat(f10402) >= 0.5)
+                    || (Float.parseFloat(this.f10401) - Float.parseFloat(f10402) <= -0.5) ? this.f104m : "");
+        }
         notifyPropertyChanged(BR.f10402);
     }
 
@@ -342,6 +354,12 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF10501(String f10501) {
         this.f10501 = f10501;
+        if (f10501.length() > 0 && this.f10502.length() > 0) {
+            setF10503((Float.parseFloat(f10501) - Float.parseFloat(this.f10502) >= 0.5)
+                    || (Float.parseFloat(f10501) - Float.parseFloat(this.f10502) <= -0.5) ? this.f10503 : "");
+            setF105m((Float.parseFloat(f10501) - Float.parseFloat(this.f10502) >= 0.5)
+                    || (Float.parseFloat(f10501) - Float.parseFloat(this.f10502) <= -0.5) ? this.f105m : "");
+        }
         notifyPropertyChanged(BR.f10501);
     }
 
@@ -352,6 +370,12 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF10502(String f10502) {
         this.f10502 = f10502;
+        if (this.f10501.length() > 0 && f10502.length() > 0) {
+            setF10503((Float.parseFloat(this.f10501) - Float.parseFloat(f10502) >= 0.5)
+                    || (Float.parseFloat(this.f10501) - Float.parseFloat(f10502) <= -0.5) ? this.f10503 : "");
+            setF105m((Float.parseFloat(this.f10501) - Float.parseFloat(f10502) >= 0.5)
+                    || (Float.parseFloat(this.f10501) - Float.parseFloat(f10502) <= -0.5) ? this.f105m : "");
+        }
         notifyPropertyChanged(BR.f10502);
     }
 
@@ -382,6 +406,12 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF10601(String f10601) {
         this.f10601 = f10601;
+        if (f10601.length() > 0 && this.f10602.length() > 0) {
+            setF10603((Float.parseFloat(f10601) - Float.parseFloat(this.f10602) >= 0.5)
+                    || (Float.parseFloat(f10601) - Float.parseFloat(this.f10602) <= -0.5) ? this.f10603 : "");
+            setF106m((Float.parseFloat(f10601) - Float.parseFloat(this.f10602) >= 0.5)
+                    || (Float.parseFloat(f10601) - Float.parseFloat(this.f10602) <= -0.5) ? this.f106m : "");
+        }
         notifyPropertyChanged(BR.f10601);
     }
 
@@ -392,6 +422,12 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF10602(String f10602) {
         this.f10602 = f10602;
+        if (this.f10601.length() > 0 && f10602.length() > 0) {
+            setF10603((Float.parseFloat(this.f10601) - Float.parseFloat(f10602) >= 0.5)
+                    || (Float.parseFloat(this.f10601) - Float.parseFloat(f10602) <= -0.5) ? this.f10603 : "");
+            setF106m((Float.parseFloat(this.f10601) - Float.parseFloat(f10602) >= 0.5)
+                    || (Float.parseFloat(this.f10601) - Float.parseFloat(f10602) <= -0.5) ? this.f106m : "");
+        }
         notifyPropertyChanged(BR.f10602);
     }
 
@@ -482,6 +518,12 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF20301(String f20301) {
         this.f20301 = f20301;
+        if (f20301.length() > 0 && this.f20302.length() > 0) {
+            setF20303((Float.parseFloat(f20301) - Float.parseFloat(this.f20302) >= 1)
+                    || (Float.parseFloat(f20301) - Float.parseFloat(this.f20302) <= -1) ? this.f20303 : "");
+            setF203m((Float.parseFloat(f20301) - Float.parseFloat(this.f20302) >= 1)
+                    || (Float.parseFloat(f20301) - Float.parseFloat(this.f20302) <= -1) ? this.f203m : "");
+        }
         notifyPropertyChanged(BR.f20301);
     }
 
@@ -492,6 +534,12 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF20302(String f20302) {
         this.f20302 = f20302;
+        if (this.f20301.length() > 0 && f20302.length() > 0) {
+            setF20303((Float.parseFloat(this.f20301) - Float.parseFloat(f20302) >= 0.5)
+                    || (Float.parseFloat(this.f20301) - Float.parseFloat(f20302) <= -0.5) ? this.f20303 : "");
+            setF203m((Float.parseFloat(this.f20301) - Float.parseFloat(f20302) >= 0.5)
+                    || (Float.parseFloat(this.f20301) - Float.parseFloat(f20302) <= -0.5) ? this.f203m : "");
+        }
         notifyPropertyChanged(BR.f20302);
     }
 
@@ -522,6 +570,12 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF20401(String f20401) {
         this.f20401 = f20401;
+        if (f20401.length() > 0 && this.f20402.length() > 0) {
+            setF20403((Float.parseFloat(f20401) - Float.parseFloat(this.f20402) >= 1)
+                    || (Float.parseFloat(f20401) - Float.parseFloat(this.f20402) <= -1) ? this.f20403 : "");
+            setF204m((Float.parseFloat(f20401) - Float.parseFloat(this.f20402) >= 1)
+                    || (Float.parseFloat(f20401) - Float.parseFloat(this.f20402) <= -1) ? this.f204m : "");
+        }
         notifyPropertyChanged(BR.f20401);
     }
 
@@ -532,6 +586,12 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF20402(String f20402) {
         this.f20402 = f20402;
+        if (this.f20401.length() > 0 && f20402.length() > 0) {
+            setF20403((Float.parseFloat(this.f20401) - Float.parseFloat(f20402) >= 1)
+                    || (Float.parseFloat(this.f20401) - Float.parseFloat(f20402) <= -1) ? this.f20403 : "");
+            setF204m((Float.parseFloat(this.f20401) - Float.parseFloat(f20402) >= 1)
+                    || (Float.parseFloat(this.f20401) - Float.parseFloat(f20402) <= -1) ? this.f204m : "");
+        }
         notifyPropertyChanged(BR.f20402);
     }
 

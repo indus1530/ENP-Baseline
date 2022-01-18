@@ -48,6 +48,27 @@ public class SectionD3Activity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+
+        bi.d304y.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.d304y.getText().toString().isEmpty()) return;
+                bi.d304d.setMaxvalue(Integer.parseInt(bi.d304y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+                bi.d304m.setMaxvalue(Integer.parseInt(bi.d304y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
+                        Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+
         setDefault(bi.d30501d, bi.d30501m, bi.d30501y);
         setDefault(bi.d30502d, bi.d30502m, bi.d30502y);
         setDefault(bi.d30503d, bi.d30503m, bi.d30503y);

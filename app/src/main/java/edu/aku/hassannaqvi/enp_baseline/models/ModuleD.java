@@ -1038,7 +1038,6 @@ public class ModuleD extends BaseObservable implements Observable {
         setD30501d(d302.equals("1") ? this.d30501d : "");
         setD30501m(d302.equals("1") ? this.d30501m : "");
         setD30501y(d302.equals("1") ? this.d30501y : "");
-        setCheck0(d302.equals("1") ? this.check0 : "");
 
         setD30502d(d302.equals("1") ? this.d30502d : "");
         setD30502m(d302.equals("1") ? this.d30502m : "");
@@ -1047,7 +1046,6 @@ public class ModuleD extends BaseObservable implements Observable {
         setD30503d(d302.equals("1") ? this.d30503d : "");
         setD30503m(d302.equals("1") ? this.d30503m : "");
         setD30503y(d302.equals("1") ? this.d30503y : "");
-        setCheck6(d302.equals("1") ? this.check6 : "");
 
         setD30504d(d302.equals("1") ? this.d30504d : "");
         setD30504m(d302.equals("1") ? this.d30504m : "");
@@ -1064,7 +1062,6 @@ public class ModuleD extends BaseObservable implements Observable {
         setD30507d(d302.equals("1") ? this.d30507d : "");
         setD30507m(d302.equals("1") ? this.d30507m : "");
         setD30507y(d302.equals("1") ? this.d30507y : "");
-        setCheck10(d302.equals("1") ? this.check10 : "");
 
         setD30508d(d302.equals("1") ? this.d30508d : "");
         setD30508m(d302.equals("1") ? this.d30508m : "");
@@ -1081,7 +1078,6 @@ public class ModuleD extends BaseObservable implements Observable {
         setD30511d(d302.equals("1") ? this.d30511d : "");
         setD30511m(d302.equals("1") ? this.d30511m : "");
         setD30511y(d302.equals("1") ? this.d30511y : "");
-        setCheck14(d302.equals("1") ? this.check14 : "");
 
         setD30512d(d302.equals("1") ? this.d30512d : "");
         setD30512m(d302.equals("1") ? this.d30512m : "");
@@ -1104,9 +1100,6 @@ public class ModuleD extends BaseObservable implements Observable {
         setD30516y(d302.equals("1") ? this.d30516y : "");
 
         setD307(d302.equals("1") ? this.d307 : "");
-
-
-
         notifyPropertyChanged(BR.d302);
     }
 
@@ -1774,22 +1767,6 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD307(String d307) {
         this.d307 = d307;
-        setD308(d307.equals("1") ? "" : this.d308);
-        setD309(d307.equals("1") ? "" : this.d309);
-        setD310(d307.equals("1") ? "" : this.d310);
-        setD311(d307.equals("1") ? "" : this.d311);
-        setD312(d307.equals("1") ? "" : this.d312);
-        setD313(d307.equals("1") ? "" : this.d313);
-        setD313(d307.equals("1") ? "" : this.d313);
-        setD314(d307.equals("1") ? "" : this.d314);
-        setD315(d307.equals("1") ? "" : this.d315);
-        setD316(d307.equals("1") ? "" : this.d316);
-        setD317(d307.equals("1") ? "" : this.d317);
-        setD318(d307.equals("1") ? "" : this.d318);
-        setD319(d307.equals("1") ? "" : this.d319);
-        setD320(d307.equals("1") ? "" : this.d320);
-        setD321(d307.equals("1") ? "" : this.d321);
-        setD322(d307.equals("1") ? "" : this.d322);
         notifyPropertyChanged(BR.d307);
     }
 

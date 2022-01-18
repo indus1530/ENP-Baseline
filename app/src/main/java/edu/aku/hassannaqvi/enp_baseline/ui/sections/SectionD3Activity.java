@@ -48,38 +48,56 @@ public class SectionD3Activity extends AppCompatActivity {
     }
 
     private void setupSkips() {
-        setDefault(bi.d30501d);
-        setDefault(bi.d30502d);
-        setDefault(bi.d30503d);
-        setDefault(bi.d30504d);
-        setDefault(bi.d30505d);
-        setDefault(bi.d30506d);
-        setDefault(bi.d30507d);
-        setDefault(bi.d30508d);
-        setDefault(bi.d30509d);
-        setDefault(bi.d30510d);
-        setDefault(bi.d30511d);
-        setDefault(bi.d30512d);
-        setDefault(bi.d30513d);
-        setDefault(bi.d30514d);
-        setDefault(bi.d30515d);
-        setDefault(bi.d30516d);
+        setDefault(bi.d30501d, bi.d30501m, bi.d30501y);
+        setDefault(bi.d30502d, bi.d30502m, bi.d30502y);
+        setDefault(bi.d30503d, bi.d30503m, bi.d30503y);
+        setDefault(bi.d30504d, bi.d30504m, bi.d30504y);
+        setDefault(bi.d30505d, bi.d30505m, bi.d30505y);
+        setDefault(bi.d30506d, bi.d30506m, bi.d30506y);
+        setDefault(bi.d30507d, bi.d30507m, bi.d30507y);
+        setDefault(bi.d30508d, bi.d30508m, bi.d30508y);
+        setDefault(bi.d30509d, bi.d30509m, bi.d30509y);
+        setDefault(bi.d30510d, bi.d30510m, bi.d30510y);
+        setDefault(bi.d30511d, bi.d30511m, bi.d30511y);
+        setDefault(bi.d30512d, bi.d30512m, bi.d30512y);
+        setDefault(bi.d30513d, bi.d30513m, bi.d30513y);
+        setDefault(bi.d30514d, bi.d30514m, bi.d30514y);
+        setDefault(bi.d30515d, bi.d30515m, bi.d30515y);
+        setDefault(bi.d30516d, bi.d30516m, bi.d30516y);
     }
 
 
-    private void setDefault(EditTextPicker edx) {
-        edx.addTextChangedListener(new TextWatcher() {
+    private void setDefault(EditTextPicker day, EditTextPicker mon, EditTextPicker year) {
+        day.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (edx.getText().toString().isEmpty()) return;
-                if (Integer.parseInt(edx.getText().toString()) == 44) edx.setRangedefaultvalue(44f);
-                if (Integer.parseInt(edx.getText().toString()) == 66) edx.setRangedefaultvalue(66f);
-                if (Integer.parseInt(edx.getText().toString()) == 88) edx.setRangedefaultvalue(88f);
-                if (Integer.parseInt(edx.getText().toString()) == 97) edx.setRangedefaultvalue(97f);
+                if (day.getText().toString().isEmpty()) return;
+                mon.setEnabled(true);
+                year.setEnabled(true);
+                if (Integer.parseInt(day.getText().toString()) == 44) {
+                    day.setRangedefaultvalue(44f);
+                    mon.setEnabled(false);
+                    year.setEnabled(false);
+                }
+                if (Integer.parseInt(day.getText().toString()) == 66) {
+                    day.setRangedefaultvalue(66f);
+                    mon.setEnabled(false);
+                    year.setEnabled(false);
+                }
+                if (Integer.parseInt(day.getText().toString()) == 88) {
+                    day.setRangedefaultvalue(88f);
+                    mon.setEnabled(false);
+                    year.setEnabled(false);
+                }
+                if (Integer.parseInt(day.getText().toString()) == 97) {
+                    day.setRangedefaultvalue(97f);
+                    mon.setEnabled(false);
+                    year.setEnabled(false);
+                }
             }
 
             @Override
@@ -344,11 +362,7 @@ public class SectionD3Activity extends AppCompatActivity {
             if (!validateDates(month15, d30516date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30516y, "Vaccine Date Should be Greater Than NINE MONTH Vaccine date");
             }
-
-
         }
-
-
         return true;
     }
 

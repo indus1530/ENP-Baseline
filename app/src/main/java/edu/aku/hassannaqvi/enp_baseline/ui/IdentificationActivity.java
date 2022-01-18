@@ -65,7 +65,8 @@ public class IdentificationActivity extends AppCompatActivity {
     private void populateSpinner() {
 
         // Populate Provinces
-        Collection<Villages> provinces = db.getProvinceByCountry(String.valueOf(MainApp.selectedCountry));
+        //Collection<Villages> provinces = db.getProvinceByCountry(String.valueOf(MainApp.selectedCountry));
+        Collection<Villages> provinces = db.getProvinceByCountry("1");
         provinceNames = new ArrayList<>();
         provinceCodes = new ArrayList<>();
         provinceNames.add("...");
@@ -77,11 +78,12 @@ public class IdentificationActivity extends AppCompatActivity {
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, provinceNames);
-        bi.a102.setAdapter(adapter);
-        bi.a102.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a101.setAdapter(adapter);
+        bi.a101.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.a102.setAdapter(null);
                 bi.a103.setAdapter(null);
                 bi.a104.setAdapter(null);
                 bi.a105.setAdapter(null);
@@ -91,7 +93,8 @@ public class IdentificationActivity extends AppCompatActivity {
                 if (position == 0) return;
                 MainApp.selectedProvince = provinceCodes.get(position);
                 // Populate Districts
-                Collection<Villages> districts = db.getDistrictsByProvince(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince);
+                //Collection<Villages> districts = db.getDistrictsByProvince(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince);
+                Collection<Villages> districts = db.getDistrictsByProvince("1", String.valueOf(bi.a101.getSelectedItemPosition()));
                 districtNames = new ArrayList<>();
                 districtCodes = new ArrayList<>();
                 districtNames.add("...");
@@ -103,7 +106,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 }
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, districtNames);
-                bi.a103.setAdapter(adapter);
+                bi.a102.setAdapter(adapter);
             }
 
             @Override
@@ -111,9 +114,10 @@ public class IdentificationActivity extends AppCompatActivity {
             }
         });
 
-        bi.a103.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a102.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.a103.setAdapter(null);
                 bi.a104.setAdapter(null);
                 bi.a105.setAdapter(null);
                 bi.a106.setText(null);
@@ -122,7 +126,8 @@ public class IdentificationActivity extends AppCompatActivity {
 
                 MainApp.selectedDistrict = districtCodes.get(position);
                 // Populate Villages
-                Collection<Villages> villages = db.getVillagesByDistrict(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince, MainApp.selectedDistrict);
+                //Collection<Villages> villages = db.getVillagesByDistrict(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince, MainApp.selectedDistrict);
+                Collection<Villages> villages = db.getVillagesByDistrict("1", String.valueOf(bi.a101.getSelectedItemPosition()), String.valueOf(bi.a102.getSelectedItemPosition()));
 
                 villageNames = new ArrayList<>();
                 villageCodes = new ArrayList<>();
@@ -138,7 +143,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 }
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, villageNames);
-                bi.a104.setAdapter(adapter);
+                bi.a103.setAdapter(adapter);
 
             }
 
@@ -147,7 +152,7 @@ public class IdentificationActivity extends AppCompatActivity {
             }
         });
 
-        bi.a104.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a103.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 bi.a106.setText(null);

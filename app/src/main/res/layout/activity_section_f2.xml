@@ -218,10 +218,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="###.##"
+                                android:textDirection="ltr"
                                 android:inputType="number"
-                                android:maxLength="3"
                                 android:text="@={form.f20301}"
+                                app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="30"
                                 app:type="range" />
@@ -247,10 +248,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="###.##"
+                                android:textDirection="ltr"
                                 android:inputType="number"
-                                android:maxLength="3"
                                 android:text="@={form.f20302}"
+                                app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="30"
                                 app:type="range" />
@@ -276,10 +278,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="###.##"
+                                android:textDirection="ltr"
                                 android:inputType="number"
-                                android:maxLength="3"
                                 android:text="@={form.f20303}"
+                                app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="30"
                                 app:type="range" />
@@ -305,10 +308,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="###.##"
+                                android:textDirection="ltr"
                                 android:inputType="number"
-                                android:maxLength="3"
                                 android:text="@={form.f203m}"
+                                app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="30"
                                 app:type="range" />
@@ -374,10 +378,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="###.##"
+                                android:textDirection="ltr"
                                 android:inputType="number"
-                                android:maxLength="3"
                                 android:text="@={form.f20401}"
+                                app:mask="###.##"
                                 app:maxValue="180"
                                 app:minValue="90"
                                 app:type="range" />
@@ -403,10 +408,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="###.##"
+                                android:textDirection="ltr"
                                 android:inputType="number"
-                                android:maxLength="3"
                                 android:text="@={form.f20402}"
+                                app:mask="###.##"
                                 app:maxValue="180"
                                 app:minValue="90"
                                 app:type="range" />
@@ -432,10 +438,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="###.##"
+                                android:textDirection="ltr"
                                 android:inputType="number"
-                                android:maxLength="3"
                                 android:text="@={form.f20403}"
+                                app:mask="###.##"
                                 app:maxValue="180"
                                 app:minValue="90"
                                 app:type="range" />
@@ -461,10 +468,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="###.##"
+                                android:textDirection="ltr"
                                 android:inputType="number"
-                                android:maxLength="3"
                                 android:text="@={form.f204m}"
+                                app:mask="###.##"
                                 app:maxValue="180"
                                 app:minValue="90"
                                 app:type="range" />
@@ -541,8 +549,11 @@
                                 android:checked="@{form.f205.equals(``)}"
                                 android:onClick="@{()->form.setF205(``)}"
                                 android:text="@string/f20504" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 

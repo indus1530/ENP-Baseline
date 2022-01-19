@@ -201,6 +201,7 @@ public class SectionA2Activity extends AppCompatActivity {
         }
     }
 
+
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;

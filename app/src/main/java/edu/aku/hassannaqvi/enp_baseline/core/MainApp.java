@@ -59,7 +59,6 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
-    public static Recipient modb;
     public static ModuleC modc;
     public static ModuleD modd;
     public static ModuleE mode;

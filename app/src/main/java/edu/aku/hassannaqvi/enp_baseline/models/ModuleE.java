@@ -2374,8 +2374,8 @@ public class ModuleE extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
 
         sEhHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
-        sE1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA2)));
-        sE2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA3)));
+        sE1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
+        sE2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
         return this;
     }
 
@@ -2589,8 +2589,8 @@ public class ModuleE extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
         json.put(FormsTable.COLUMN_SA1, new JSONObject(sEhtoString()));
-        json.put(FormsTable.COLUMN_SA2, new JSONObject(sE1toString()));
-        json.put(FormsTable.COLUMN_SA3, new JSONObject(sE2toString()));
+        json.put(FormsTable.COLUMN_SA1, new JSONObject(sE1toString()));
+        json.put(FormsTable.COLUMN_SA1, new JSONObject(sE2toString()));
         return json;
     }
 

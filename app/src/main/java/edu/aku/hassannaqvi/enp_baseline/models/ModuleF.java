@@ -696,7 +696,7 @@ public class ModuleF extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
 
         sF1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
-        sF2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA2)));
+        sF2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
         return this;
     }
 
@@ -772,7 +772,7 @@ public class ModuleF extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
         json.put(FormsTable.COLUMN_SA1, new JSONObject(sF1toString()));
-        json.put(FormsTable.COLUMN_SA2, new JSONObject(sF2toString()));
+        json.put(FormsTable.COLUMN_SA1, new JSONObject(sF2toString()));
         return json;
     }
 

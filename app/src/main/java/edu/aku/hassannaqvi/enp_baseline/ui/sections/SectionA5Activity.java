@@ -1,10 +1,11 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.moda;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.form;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -13,7 +14,10 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.enp_baseline.R;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionA5Binding;
@@ -30,7 +34,7 @@ public class SectionA5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a5);
-        bi.setForm(moda);
+        bi.setForm(form);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 
@@ -44,12 +48,12 @@ public class SectionA5Activity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        /*if (MainApp.superuser) return true;
+        if (MainApp.superuser) return true;
 
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SB42, mwra.sB42toString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA5, form.sA5toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -59,9 +63,7 @@ public class SectionA5Activity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
 
     public void btnContinue(View view) {

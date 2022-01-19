@@ -39,7 +39,7 @@ public class SectionD2Activity extends AppCompatActivity {
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
         //TODO: Need be selected Member
-        if (familyMember.getAgeMon() >= 6 && familyMember.getAgeMon() <= 23)
+        if (familyMember != null && familyMember.getAgeMon() >= 6 && familyMember.getAgeMon() <= 23)
             bi.in6to23.setVisibility(View.VISIBLE);
         else bi.in6to23.setVisibility(View.GONE);
     }

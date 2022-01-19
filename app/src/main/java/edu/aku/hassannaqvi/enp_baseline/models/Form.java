@@ -25,7 +25,7 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 
 public class Form extends BaseObservable implements Observable {
 
-    private final String TAG = "ModuleA";
+    private final String TAG = "Form";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
     private String projectName = PROJECT_NAME;
@@ -1911,7 +1911,8 @@ public class Form extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
 
         sA1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
-        sA3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA3)));
+        sA3AHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA3A)));
+        sA3BHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA3B)));
         sA4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA4)));
         sA5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA5)));
         return this;
@@ -1947,8 +1948,8 @@ public class Form extends BaseObservable implements Observable {
         }
     }
 
-    public void sA3Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sA3Hydrate: " + string);
+    public void sA3AHydrate(String string) throws JSONException {
+        Log.d(TAG, "sA3AHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -1993,6 +1994,14 @@ public class Form extends BaseObservable implements Observable {
             this.a31117 = json.getString("a31117");
             this.a31118 = json.getString("a31118");
             this.a31119 = json.getString("a31119");
+        }
+    }
+
+    public void sA3BHydrate(String string) throws JSONException {
+        Log.d(TAG, "sA3BHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.a31201 = json.getString("a31201");
             this.a31202 = json.getString("a31202");
             this.a31203 = json.getString("a31203");
@@ -2108,7 +2117,8 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
         json.put(FormsTable.COLUMN_SA1, new JSONObject(sA1toString()));
-        json.put(FormsTable.COLUMN_SA3, new JSONObject(sA3toString()));
+        json.put(FormsTable.COLUMN_SA3A, new JSONObject(sA3AtoString()));
+        json.put(FormsTable.COLUMN_SA3B, new JSONObject(sA3BtoString()));
         json.put(FormsTable.COLUMN_SA4, new JSONObject(sA4toString()));
         json.put(FormsTable.COLUMN_SA5, new JSONObject(sA5toString()));
         return json;
@@ -2142,7 +2152,7 @@ public class Form extends BaseObservable implements Observable {
         return json.toString();
     }
 
-    public String sA3toString() throws JSONException {
+    public String sA3AtoString() throws JSONException {
         Log.d(TAG, "sA3toString: ");
         JSONObject json = new JSONObject();
         json.put("a301", a301)
@@ -2185,8 +2195,14 @@ public class Form extends BaseObservable implements Observable {
                 .put("a31116", a31116)
                 .put("a31117", a31117)
                 .put("a31118", a31118)
-                .put("a31119", a31119)
-                .put("a31201", a31201)
+                .put("a31119", a31119);
+        return json.toString();
+    }
+
+    public String sA3BtoString() throws JSONException {
+        Log.d(TAG, "sA3toString: ");
+        JSONObject json = new JSONObject();
+        json.put("a31201", a31201)
                 .put("a31202", a31202)
                 .put("a31203", a31203)
                 .put("a31204", a31204)

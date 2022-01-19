@@ -18,7 +18,6 @@ import edu.aku.hassannaqvi.enp_baseline.adapters.FormsAdapter;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityFormsReportBinding;
-import edu.aku.hassannaqvi.enp_baseline.models.Form;
 
 public class FormsReportPending extends AppCompatActivity {
     DatabaseHelper db;

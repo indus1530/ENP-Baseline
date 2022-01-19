@@ -34,6 +34,7 @@ import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.LateAdolescentT
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.MotherKAPTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.MwraTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.PregnancyTable;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.RecipientTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.VillagesTable;
@@ -47,6 +48,7 @@ import edu.aku.hassannaqvi.enp_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
+import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
 import edu.aku.hassannaqvi.enp_baseline.models.VersionApp;
 import edu.aku.hassannaqvi.enp_baseline.models.Villages;
@@ -85,6 +87,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_ECDINFO);
 
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
+        db.execSQL(CreateTable.SQL_CREATE_RECIPIENT);
         db.execSQL(CreateTable.SQL_CREATE_MOTHER_KAP);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
 
@@ -398,6 +401,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addRecipient(Recipient rcpt) throws JSONException {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(RecipientTable.COLUMN_PROJECT_NAME, rcpt.getProjectName());
+        values.put(RecipientTable.COLUMN_UID, rcpt.getUid());
+        values.put(RecipientTable.COLUMN_UUID, rcpt.getUuid());
+        values.put(RecipientTable.COLUMN_PSU_CODE, rcpt.getPsuCode());
+        values.put(RecipientTable.COLUMN_HHID, rcpt.getHhid());
+        values.put(RecipientTable.COLUMN_USERNAME, rcpt.getUserName());
+        values.put(RecipientTable.COLUMN_SYSDATE, rcpt.getSysDate());
+        values.put(RecipientTable.COLUMN_INDEXED, rcpt.getIndexed());
+        values.put(RecipientTable.COLUMN_SB1, rcpt.sB1toString());
+        values.put(RecipientTable.COLUMN_SB2, rcpt.sB2toString());
+
+        values.put(RecipientTable.COLUMN_BSTATUSA, rcpt.getbStatusa());
+        values.put(RecipientTable.COLUMN_BSTATUSB, rcpt.getbStatusb());
+        values.put(RecipientTable.COLUMN_BSTATUSB96x, rcpt.getbStatusb96x());
+
+        values.put(RecipientTable.COLUMN_DEVICETAGID, rcpt.getDeviceTag());
+        values.put(RecipientTable.COLUMN_DEVICEID, rcpt.getDeviceId());
+        values.put(RecipientTable.COLUMN_APPVERSION, rcpt.getAppver());
+        values.put(RecipientTable.COLUMN_SYNCED, rcpt.getSynced());
+        values.put(RecipientTable.COLUMN_SYNCED_DATE, rcpt.getSyncDate());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                RecipientTable.TABLE_NAME,
+                RecipientTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
 
     //UPDATE in DB
     public int updatesFormColumn(String column, String value) {
@@ -531,6 +571,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.familyMember.getId())};
 
         return db.update(FamilyMembersTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesRecipientColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = RecipientTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.rcpt.getId())};
+
+        return db.update(RecipientTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

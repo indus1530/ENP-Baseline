@@ -762,14 +762,14 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
 
             // set current Date
-            int curDay = MainApp.moda != null && !MainApp.moda.getA108d().isEmpty()
-                    ? Integer.parseInt(MainApp.moda.getA108d())
+            int curDay = MainApp.form != null && !MainApp.form.getA108d().isEmpty()
+                    ? Integer.parseInt(MainApp.form.getA108d())
                     : Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
-            int curMonth = MainApp.moda != null && !MainApp.moda.getA108m().isEmpty()
-                    ? Integer.parseInt(MainApp.moda.getA108m())
+            int curMonth = MainApp.form != null && !MainApp.form.getA108m().isEmpty()
+                    ? Integer.parseInt(MainApp.form.getA108m())
                     : Calendar.getInstance().get(Calendar.MONTH) + 1;
-            int curYear = MainApp.moda != null && !MainApp.moda.getA108y().isEmpty()
-                    ? Integer.parseInt(MainApp.moda.getA108y())
+            int curYear = MainApp.form != null && !MainApp.form.getA108y().isEmpty()
+                    ? Integer.parseInt(MainApp.form.getA108y())
                     : Calendar.getInstance().get(Calendar.YEAR);
             Calendar cur = Calendar.getInstance();
 

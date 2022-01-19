@@ -1112,12 +1112,10 @@
                                     </LinearLayout>
 
                                     <LinearLayout
-                                        android:id="@+id/c116check"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layoutDirection="ltr"
-                                        android:orientation="horizontal"
-                                        android:tag="0">
+                                        android:orientation="horizontal">
 
                                         <TextView
                                             style="@style/textView"
@@ -1135,7 +1133,6 @@
                                             android:hint="#"
                                             android:inputType="number"
                                             android:maxLength="1"
-                                            android:tag="c116wk"
                                             android:text="@={modc.c116w}"
                                             app:maxValue="3"
                                             app:minValue="0"
@@ -1157,7 +1154,6 @@
                                             android:hint="#"
                                             android:inputType="number"
                                             android:maxLength="1"
-                                            android:tag="c116mm"
                                             android:text="@={modc.c116m}"
                                             app:maxValue="9"
                                             app:minValue="0"

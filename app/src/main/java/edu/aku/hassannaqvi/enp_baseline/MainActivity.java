@@ -14,12 +14,12 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.AndroidManager;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
-import edu.aku.hassannaqvi.enp_baseline.models.ModuleA;
-import edu.aku.hassannaqvi.enp_baseline.models.ModuleB;
+import edu.aku.hassannaqvi.enp_baseline.models.Form;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleC;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleD;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleE;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleF;
+import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
 import edu.aku.hassannaqvi.enp_baseline.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.SyncActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportCluster;
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.startInterview:
             case R.id.startDataEntry:
             case R.id.seca:
-                MainApp.moda = new ModuleA();
+                MainApp.moda = new Form();
                 startActivity(new Intent(this, IdentificationActivity.class));
                 break;
         /*    case R.id.openAnthro:
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionA2Activity.class));
                 break;*/
             case R.id.seca1:
-                MainApp.moda = new ModuleA();
+                MainApp.moda = new Form();
                 startActivity(new Intent(this, SectionA1Activity.class));
                 break;
             case R.id.seca2:
@@ -112,29 +112,29 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.seca3a:
-                MainApp.moda = new ModuleA();
+                MainApp.moda = new Form();
                 startActivity(new Intent(this, SectionA3AActivity.class));
                 break;
 
             case R.id.seca3b:
-                MainApp.moda = new ModuleA();
+                MainApp.moda = new Form();
                 startActivity(new Intent(this, SectionA3BActivity.class));
                 break;
 
             case R.id.seca4:
-                MainApp.moda = new ModuleA();
+                MainApp.moda = new Form();
                 startActivity(new Intent(this, SectionA4Activity.class));
                 break;
             case R.id.seca5:
-                MainApp.moda = new ModuleA();
+                MainApp.moda = new Form();
                 startActivity(new Intent(this, SectionA5Activity.class));
                 break;
             case R.id.secb1:
-                MainApp.modb = new ModuleB();
+                MainApp.modb = new Recipient();
                 startActivity(new Intent(this, SectionB1Activity.class));
                 break;
             case R.id.secb2:
-                MainApp.modb = new ModuleB();
+                MainApp.modb = new Recipient();
                 startActivity(new Intent(this, SectionB2Activity.class));
                 break;
             case R.id.secc1:

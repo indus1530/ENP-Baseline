@@ -19,30 +19,33 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.enp_baseline.BR;
-import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.RecipientTable;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 
 
-public class ModuleB extends BaseObservable implements Observable {
+public class Recipient extends BaseObservable implements Observable {
 
-    private final String TAG = "ModuleB";
+    private final String TAG = "Recipient";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
     private String projectName = PROJECT_NAME;
     // APP VARIABLES
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
+    private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
+    private String indexed = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
     private String endTime = _EMPTY_;
-    private String iStatus = _EMPTY_;
-    private String iStatus96x = _EMPTY_;
+    private String bStatusa = _EMPTY_;
+    private String bStatusb = _EMPTY_;
+    private String bStatusb96x = _EMPTY_;
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
     private String entryType = _EMPTY_;
@@ -186,12 +189,9 @@ public class ModuleB extends BaseObservable implements Observable {
     private String b222m = _EMPTY_;
     private String b223 = _EMPTY_;
     private String b224 = _EMPTY_;
-    public String istb01;
-    public String istb02;
-    public String istb02096x;
 
 
-    public ModuleB() {
+    public Recipient() {
 
 /*        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setUserName(MainApp.user.getUserName());
@@ -241,6 +241,14 @@ public class ModuleB extends BaseObservable implements Observable {
         this.uid = uid;
     }
 
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     @Bindable
     public String getPsuCode() {
         return psuCode;
@@ -269,6 +277,16 @@ public class ModuleB extends BaseObservable implements Observable {
     public void setSno(String sno) {
         this.sno = sno;
         notifyPropertyChanged(BR.sno);
+    }
+
+    @Bindable
+    public String getIndexed() {
+        return indexed;
+    }
+
+    public void setIndexed(String Indexed) {
+        this.indexed = Indexed;
+        notifyPropertyChanged(BR.indexed);
     }
 
     public String getUserName() {
@@ -327,20 +345,34 @@ public class ModuleB extends BaseObservable implements Observable {
         this.endTime = endTime;
     }
 
-    public String getiStatus() {
-        return iStatus;
+    @Bindable
+    public String getbStatusa() {
+        return bStatusa;
     }
 
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
+    public void setbStatusa(String bStatusa) {
+        this.bStatusa = bStatusa;
+        notifyPropertyChanged(BR.bStatusa);
     }
 
-    public String getiStatus96x() {
-        return iStatus96x;
+    @Bindable
+    public String getbStatusb() {
+        return bStatusb;
     }
 
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
+    public void setbStatusb(String bStatusb) {
+        this.bStatusb = bStatusb;
+        notifyPropertyChanged(BR.bStatusb);
+    }
+
+    @Bindable
+    public String getbStatusb96x() {
+        return bStatusb96x;
+    }
+
+    public void setbStatusb96x(String bStatusb96x) {
+        this.bStatusb96x = bStatusb96x;
+        notifyPropertyChanged(BR.bStatusb96x);
     }
 
     public String getSynced() {
@@ -1902,58 +1934,29 @@ public class ModuleB extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.b224);
     }
 
-    @Bindable
-    public String getIstb01() {
-        return istb01;
-    }
 
-    public void setIstb01(String istb01) {
-        this.istb01 = istb01;
-        setIstb02(istb01.equals("1") ? "" : this.istb02);
-        notifyPropertyChanged(BR.istb01);
-    }
+    public Recipient Hydrate(Cursor cursor) throws JSONException {
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_UUID));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_PROJECT_NAME));
+        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_PSU_CODE));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_HHID));
+        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_SNO));
+        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_INDEXED));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_APPVERSION));
+        this.bStatusa = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_BSTATUSA));
+        this.bStatusb = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_BSTATUSB));
+        this.bStatusb96x = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_BSTATUSB96x));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_SYNCED_DATE));
 
-    @Bindable
-    public String getIstb02() {
-        return istb02;
-    }
-
-    public void setIstb02(String istb02) {
-        this.istb02 = istb02;
-        setIstb02096x(istb02.equals("96") ? this.istb02096x : "");
-        notifyPropertyChanged(BR.istb02);
-    }
-
-    @Bindable
-    public String getIstb02096x() {
-        return istb02096x;
-    }
-
-    public void setIstb02096x(String istb02096x) {
-        this.istb02096x = istb02096x;
-        notifyPropertyChanged(BR.istb02096x);
-    }
-
-
-    public ModuleB Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PROJECT_NAME));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_HHID));
-        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SNO));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
-        this.entryType = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ENTRY_TYPE));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
-
-        sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
-        sB2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
+        sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_SB1)));
+        sB2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_SB2)));
         return this;
     }
 
@@ -2108,9 +2111,6 @@ public class ModuleB extends BaseObservable implements Observable {
             this.b222m = json.getString("b222m");
             this.b223 = json.getString("b223");
             this.b224 = json.getString("b224");
-            this.istb01 = json.getString("istb01");
-            this.istb02 = json.getString("istb02");
-            this.istb02096x = json.getString("istb02096x");
         }
     }
 
@@ -2118,23 +2118,27 @@ public class ModuleB extends BaseObservable implements Observable {
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
 
-        json.put(FormsTable.COLUMN_ID, this.id);
-        json.put(FormsTable.COLUMN_UID, this.uid);
-        json.put(FormsTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(FormsTable.COLUMN_PSU_CODE, this.psuCode);
-        json.put(FormsTable.COLUMN_HHID, this.hhid);
-        json.put(FormsTable.COLUMN_SNO, this.sno);
-        json.put(FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ENTRY_TYPE, this.entryType);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(FormsTable.COLUMN_SYNCED, this.synced);
-        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
-        json.put(FormsTable.COLUMN_APPVERSION, this.appver);
-        json.put(FormsTable.COLUMN_SA1, new JSONObject(sB1toString()));
-        json.put(FormsTable.COLUMN_SA1, new JSONObject(sB2toString()));
+        json.put(RecipientTable.COLUMN_ID, this.id);
+        json.put(RecipientTable.COLUMN_UID, this.uid);
+        json.put(RecipientTable.COLUMN_UUID, this.uuid);
+        json.put(RecipientTable.COLUMN_PROJECT_NAME, this.projectName);
+        json.put(RecipientTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(RecipientTable.COLUMN_HHID, this.hhid);
+        json.put(RecipientTable.COLUMN_INDEXED, this.indexed);
+        json.put(RecipientTable.COLUMN_SNO, this.sno);
+        json.put(RecipientTable.COLUMN_USERNAME, this.userName);
+        json.put(RecipientTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(RecipientTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(RecipientTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(RecipientTable.COLUMN_BSTATUSA, this.bStatusa);
+        json.put(RecipientTable.COLUMN_BSTATUSB, this.bStatusb);
+        json.put(RecipientTable.COLUMN_BSTATUSB96x, this.bStatusb96x);
+        json.put(RecipientTable.COLUMN_SYNCED, this.synced);
+        json.put(RecipientTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(RecipientTable.COLUMN_APPVERSION, this.appver);
+
+        json.put(RecipientTable.COLUMN_SB1, new JSONObject(sB1toString()));
+        json.put(RecipientTable.COLUMN_SB2, new JSONObject(sB2toString()));
         return json;
     }
 
@@ -2284,10 +2288,7 @@ public class ModuleB extends BaseObservable implements Observable {
                 .put("b222h", b222h)
                 .put("b222m", b222m)
                 .put("b223", b223)
-                .put("b224", b224)
-                .put("istb01", istb01)
-                .put("istb02", istb02)
-                .put("istb02096x", istb02096x);
+                .put("b224", b224);
         return json.toString();
     }
 

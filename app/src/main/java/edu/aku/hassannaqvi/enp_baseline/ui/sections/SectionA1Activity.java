@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.moda;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.form;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -34,7 +34,7 @@ public class SectionA1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a1);
-        bi.setModa(moda);
+        bi.setForm(form);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         setupSkips();
@@ -94,9 +94,9 @@ public class SectionA1Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             Intent i;
-            if (moda.getA112().equals("2")
-                    || moda.getA113().equals("2")
-                    || moda.getA114().equals("2")) {
+            if (form.getA112().equals("2")
+                    || form.getA113().equals("2")
+                    || form.getA114().equals("2")) {
                 i = new Intent(this, EndingActivity.class).putExtra("complete", false);
             } else {
                 i = new Intent(this, FamilyMembersListActivity.class);

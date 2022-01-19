@@ -202,12 +202,13 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form.setDeviceId(MainApp.deviceid);
         MainApp.form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.form.setAs1q01(String.valueOf(MainApp.selectedCountry));
-        MainApp.form.setAs1q02(MainApp.selectedProvince);
-        MainApp.form.setAs1q05(MainApp.selectedDistrict);
-        MainApp.form.setAs1q07(MainApp.selectedPSU);
-        MainApp.form.setAs1q03(MainApp.selectedPSU);
-        MainApp.form.setAs1q08(MainApp.selectedHHID);
+        MainApp.form.setA101(String.valueOf(MainApp.selectedCountry));
+        MainApp.form.setA102(MainApp.selectedProvince);
+        MainApp.form.setA103(MainApp.selectedDistrict);
+        MainApp.form.setA104(MainApp.selectedPSU);
+        MainApp.form.setA105(MainApp.selectedPSU);
+        MainApp.form.setA106(bi.a107.getText().toString());
+        MainApp.form.setA107(bi.a107.getText().toString());
         MainApp.form.setSno(MainApp.selectedHHID);
 
     }

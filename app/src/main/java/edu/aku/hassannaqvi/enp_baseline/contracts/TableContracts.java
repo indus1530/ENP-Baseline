@@ -17,7 +17,6 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SA1 = "sA1";
-        public static final String COLUMN_SA2 = "sA2";
         public static final String COLUMN_SA3 = "sA3";
         public static final String COLUMN_SA4 = "sA4";
         public static final String COLUMN_SA5 = "sA5";
@@ -73,6 +72,31 @@ public class TableContracts {
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
+    }
+
+    public static abstract class RecipientTable implements BaseColumns {
+        public static final String TABLE_NAME = "Recipient";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_PSU_CODE = "psuCode";
+        public static final String COLUMN_HHID = "hhid";
+        public static final String COLUMN_SNO = "sno";
+        public static final String COLUMN_INDEXED = "indexed";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+        public static final String COLUMN_SB1 = "sB1";
+        public static final String COLUMN_SB2 = "sB2";
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_BSTATUSA = "bstatusa";
+        public static final String COLUMN_BSTATUSB = "bstatusb";
+        public static final String COLUMN_BSTATUSB96x = "bstatusb96x";
     }
 
 

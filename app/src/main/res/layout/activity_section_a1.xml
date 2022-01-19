@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="moda"
-            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleA" />
+            name="form"
+            type="edu.aku.hassannaqvi.enp_baseline.models.Form" />
 
     </data>
 
@@ -120,7 +120,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={moda.a108d}"
+                                android:text="@={form.a108d}"
                                 app:maxValue="31"
                                 app:minValue="1"
                                 app:type="range" />
@@ -145,7 +145,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={moda.a108m}"
+                                android:text="@={form.a108m}"
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
@@ -170,7 +170,7 @@
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
-                                android:text="@={moda.a108y}"
+                                android:text="@={form.a108y}"
                                 app:maxValue="2022"
                                 app:minValue="2021"
                                 app:type="range" />
@@ -219,7 +219,7 @@
                             android:maxLength="20"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                             android:inputType="text"
-                            android:text="@={moda.a109}" />
+                            android:text="@={form.a109}" />
 
                         <!--android:inputType="textPersonName"
                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "-->
@@ -269,8 +269,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{moda.a110.equals(`1`)}"
-                                android:onClick="@{()->moda.setA110(`1`)}"
+                                android:checked="@{form.a110.equals(`1`)}"
+                                android:onClick="@{()->form.setA110(`1`)}"
                                 android:text="@string/a11001" />
 
                             <RadioButton
@@ -278,8 +278,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{moda.a110.equals(`2`)}"
-                                android:onClick="@{()->moda.setA110(`2`)}"
+                                android:checked="@{form.a110.equals(`2`)}"
+                                android:onClick="@{()->form.setA110(`2`)}"
                                 android:text="@string/a11002" />
 
                         </RadioGroup>
@@ -332,7 +332,7 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={moda.a111}"
+                            android:text="@={form.a111}"
                             app:maxValue="99"
                             app:minValue="18"
                             app:type="range" />
@@ -382,8 +382,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{moda.a112.equals(`1`)}"
-                                android:onClick="@{()->moda.setA112(`1`)}"
+                                android:checked="@{form.a112.equals(`1`)}"
+                                android:onClick="@{()->form.setA112(`1`)}"
                                 android:text="@string/a11201" />
 
                             <RadioButton
@@ -391,8 +391,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{moda.a112.equals(`2`)}"
-                                android:onClick="@{()->moda.setA112(`2`) + a113.clearCheck() + a114.clearCheck()}"
+                                android:checked="@{form.a112.equals(`2`)}"
+                                android:onClick="@{()->form.setA112(`2`) + a113.clearCheck() + a114.clearCheck()}"
                                 android:text="@string/a11202" />
 
                         </RadioGroup>
@@ -406,7 +406,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa113"
                     style="@style/cardView"
-                    android:visibility="@{moda.a112.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.a112.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -443,8 +443,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{moda.a113.equals(`1`)}"
-                                android:onClick="@{()->moda.setA113(`1`)}"
+                                android:checked="@{form.a113.equals(`1`)}"
+                                android:onClick="@{()->form.setA113(`1`)}"
                                 android:text="@string/a11301" />
 
                             <RadioButton
@@ -452,8 +452,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{moda.a113.equals(`2`)}"
-                                android:onClick="@{()->moda.setA113(`2`) + a114.clearCheck()}"
+                                android:checked="@{form.a113.equals(`2`)}"
+                                android:onClick="@{()->form.setA113(`2`) + a114.clearCheck()}"
                                 android:text="@string/a11302" />
 
                         </RadioGroup>
@@ -467,7 +467,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa114"
                     style="@style/cardView"
-                    android:visibility="@{moda.a112.equals(`1`) &amp;&amp; moda.a113.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.a112.equals(`1`) &amp;&amp; form.a113.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -504,8 +504,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{moda.a114.equals(`1`)}"
-                                android:onClick="@{()->moda.setA114(`1`)}"
+                                android:checked="@{form.a114.equals(`1`)}"
+                                android:onClick="@{()->form.setA114(`1`)}"
                                 android:text="@string/a11401" />
 
                             <RadioButton
@@ -513,8 +513,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{moda.a114.equals(`2`)}"
-                                android:onClick="@{()->moda.setA114(`2`)}"
+                                android:checked="@{form.a114.equals(`2`)}"
+                                android:onClick="@{()->form.setA114(`2`)}"
                                 android:text="@string/a11402" />
 
                         </RadioGroup>
@@ -575,7 +575,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={moda.a115h}"
+                                android:text="@={form.a115h}"
                                 app:maxValue="19"
                                 app:minValue="7"
                                 app:type="range" />
@@ -596,7 +596,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={moda.a115m}"
+                                android:text="@={form.a115m}"
                                 app:maxValue="59"
                                 app:minValue="0"
                                 app:type="range" />
@@ -659,7 +659,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={moda.a116h}"
+                                android:text="@={form.a116h}"
                                 app:maxValue="19"
                                 app:minValue="7"
                                 app:type="range" />
@@ -680,7 +680,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={moda.a116m}"
+                                android:text="@={form.a116m}"
                                 app:maxValue="59"
                                 app:minValue="0"
                                 app:type="range" />
@@ -727,7 +727,7 @@
                             android:layout_height="52dp"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/a117"
-                            android:text="@={moda.a117}" />
+                            android:text="@={form.a117}" />
 
                     </LinearLayout>
 
@@ -771,7 +771,7 @@
                             android:hint="###"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={moda.a118}"
+                            android:text="@={form.a118}"
                             app:maxValue="50"
                             app:minValue="1"
                             app:type="range" />

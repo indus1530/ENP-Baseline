@@ -71,6 +71,32 @@ object CreateTable {
             + " );"
             )
 
+
+    const val SQL_CREATE_RECIPIENT = ("CREATE TABLE "
+            + RecipientTable.TABLE_NAME + "("
+            + RecipientTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + RecipientTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + RecipientTable.COLUMN_UID + " TEXT,"
+            + RecipientTable.COLUMN_UUID + " TEXT,"
+            + RecipientTable.COLUMN_PSU_CODE + " TEXT,"
+            + RecipientTable.COLUMN_HHID + " TEXT,"
+            + RecipientTable.COLUMN_SNO + " TEXT,"
+            + RecipientTable.COLUMN_USERNAME + " TEXT,"
+            + RecipientTable.COLUMN_SYSDATE + " TEXT,"
+            + RecipientTable.COLUMN_INDEXED + " TEXT,"
+            + RecipientTable.COLUMN_BSTATUSA + " TEXT,"
+            + RecipientTable.COLUMN_BSTATUSB + " TEXT,"
+            + RecipientTable.COLUMN_BSTATUSB96x + " TEXT,"
+            + RecipientTable.COLUMN_DEVICEID + " TEXT,"
+            + RecipientTable.COLUMN_DEVICETAGID + " TEXT,"
+            + RecipientTable.COLUMN_SYNCED + " TEXT,"
+            + RecipientTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + RecipientTable.COLUMN_APPVERSION + " TEXT,"
+            + RecipientTable.COLUMN_SB1 + " TEXT,"
+            + RecipientTable.COLUMN_SB2 + " TEXT"
+            + " );"
+            )
+
     const val SQL_CREATE_MOTHER_KAP = ("CREATE TABLE "
             + MotherKAPTable.TABLE_NAME + "("
             + MotherKAPTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"

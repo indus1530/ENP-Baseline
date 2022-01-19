@@ -2025,15 +2025,15 @@
     <string name="ista0203">No eligible respondent available</string>
     <string name="ista0204">Available eligible respondent not competent for interview</string>
     <string name="ista0296">Others, (Specify)</string>
-    <string name="istbtitle">Result of Module B Questionnaire</string>
-    <string name="istb01">Was module completed?</string>
-    <string name="istb0101">Yes</string>
-    <string name="istb0102">No</string>
-    <string name="istb02">Reason for not completing</string>
-    <string name="istb0201">Consent was withdrawn </string>
-    <string name="istb0202">No eligible respondent available for this module</string>
-    <string name="istb0203">Available eligible respondent not competent for interview</string>
-    <string name="istb02096">Others, (Specify)</string>
+    <string name="bstatus"> Result of Module B Questionnaire </string>
+    <string name="bstatusa"> Was Module completed ? </string>
+    <string name="bstatusaa"> Yes </string>
+    <string name="bstatusab"> No </string>
+    <string name="bstatusb"> Reason for not completing </string>
+    <string name="bstatusba"> Consent was withdrawn </string>
+    <string name="bstatusbb"> No eligible respondent available for this module </string>
+    <string name="bstatusbc"> Available eligible respondent not competent for interview </string>
+    <string name="bstatusb96"> Others, (Specify) </string>
 
 
     <string name="mode"> Module E: </string>
@@ -2906,7 +2906,7 @@
     <string name='Q_istatus'>istatus</string>
     <string name='Q_istb01'>istb01</string>
     <string name='Q_istb02'>istb02</string>
-    <string name='Q_istbtitle'>istbtitle</string>
+    <string name='Q_bstatus'>bstatus</string>
     <string name='Q_istf01'>istf01</string>
     <string name='Q_istf02'>istf02</string>
     <string name='Q_istftitle'>istftitle</string>

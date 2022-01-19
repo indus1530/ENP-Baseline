@@ -8,7 +8,7 @@
 
         <variable
             name="modb"
-            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleB" />
+            type="edu.aku.hassannaqvi.enp_baseline.models.Recipient" />
 
     </data>
 

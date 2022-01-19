@@ -2375,7 +2375,7 @@
                 </LinearLayout>
 
 
-                <!-- bstatus  Radio   -->
+                <!-- bsta  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVistb01"
                     style="@style/cardView">
@@ -2395,17 +2395,17 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_bstatus" />
+                                android:text="@string/Q_bsta" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/bstatus" />
+                                android:text="@string/bsta" />
 
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/bstatusa"
+                            android:id="@+id/bstaa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -2415,25 +2415,25 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="2"
-                                android:text="@string/bstatusa" />
+                                android:text="@string/bstaa" />
 
                             <RadioButton
-                                android:id="@+id/bstatusaa"
+                                android:id="@+id/bstaaa"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{rcpt.bStatusa.equals(`1`)}"
-                                android:onClick="@{()->rcpt.setbStatusa(`1`) + bstatusb.clearCheck()}"
-                                android:text="@string/bstatusaa" />
+                                android:checked="@{rcpt.bstaa.equals(`1`)}"
+                                android:onClick="@{()->rcpt.setBstaa(`1`) + bstab.clearCheck()}"
+                                android:text="@string/bstaaa" />
 
                             <RadioButton
-                                android:id="@+id/bstatusab"
+                                android:id="@+id/bstaab"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{rcpt.bStatusa.equals(`2`)}"
-                                android:onClick="@{()->rcpt.setbStatusa(`2`)}"
-                                android:text="@string/bstatusab" />
+                                android:checked="@{rcpt.bstaa.equals(`2`)}"
+                                android:onClick="@{()->rcpt.setBstaa(`2`)}"
+                                android:text="@string/bstaab" />
 
                         </RadioGroup>
 
@@ -2441,7 +2441,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{rcpt.bStatusa.equals(`1`) ? View.GONE : View.VISIBLE}">
+                            android:visibility="@{rcpt.bstaa.equals(`1`) ? View.GONE : View.VISIBLE}">
 
                             <TextView
                                 style="@style/textView"
@@ -2449,55 +2449,55 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="top|center"
-                                android:text="@string/bstatusb" />
+                                android:text="@string/bstab" />
 
                             <RadioGroup
-                                android:id="@+id/bstatusb"
+                                android:id="@+id/bstab"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1">
 
                                 <RadioButton
-                                    android:id="@+id/bstatusba"
+                                    android:id="@+id/bstaba"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{rcpt.bStatusb.equals(`1`)}"
-                                    android:onClick="@{()->rcpt.setbStatusb(`1`)}"
-                                    android:text="@string/bstatusba" />
+                                    android:checked="@{rcpt.bstab.equals(`1`)}"
+                                    android:onClick="@{()->rcpt.setBstab(`1`)}"
+                                    android:text="@string/bstaba" />
 
                                 <RadioButton
-                                    android:id="@+id/bstatusbb"
+                                    android:id="@+id/bstabb"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{rcpt.bStatusb.equals(`2`)}"
-                                    android:onClick="@{()->rcpt.setbStatusb(`2`)}"
-                                    android:text="@string/bstatusbb" />
+                                    android:checked="@{rcpt.bstab.equals(`2`)}"
+                                    android:onClick="@{()->rcpt.setBstab(`2`)}"
+                                    android:text="@string/bstabb" />
 
                                 <RadioButton
-                                    android:id="@+id/bstatusbc"
+                                    android:id="@+id/bstabc"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{rcpt.bStatusb.equals(`3`)}"
-                                    android:onClick="@{()->rcpt.setbStatusb(`3`)}"
-                                    android:text="@string/bstatusbc" />
+                                    android:checked="@{rcpt.bstab.equals(`3`)}"
+                                    android:onClick="@{()->rcpt.setBstab(`3`)}"
+                                    android:text="@string/bstabc" />
 
                                 <RadioButton
-                                    android:id="@+id/bstatusb96"
+                                    android:id="@+id/bstab96"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{rcpt.bStatusb.equals(`96`)}"
-                                    android:onClick="@{()->rcpt.setbStatusb(`96`)}"
-                                    android:text="@string/bstatusb96" />
+                                    android:checked="@{rcpt.bstab.equals(`96`)}"
+                                    android:onClick="@{()->rcpt.setBstab(`96`)}"
+                                    android:text="@string/bstab96" />
 
                                 <EditText
                                     android:id="@+id/bstatusb96x"
                                     android:layout_width="match_parent"
                                     android:layout_height="52dp"
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                    android:hint="@string/bstatusb96"
-                                    android:tag="bstatusb96"
-                                    android:text="@={rcpt.bStatusb96x}"
-                                    android:visibility="@{rcpt.bStatusb.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                    android:hint="@string/bstab96"
+                                    android:tag="bstab96"
+                                    android:text="@={rcpt.bstab96x}"
+                                    android:visibility="@{rcpt.bstab.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                             </RadioGroup>
 

@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modb;
+
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.rcpt;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -13,11 +14,16 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.enp_baseline.R;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionB2Binding;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
+
+
 
 public class SectionB2Activity extends AppCompatActivity {
 
@@ -30,7 +36,7 @@ public class SectionB2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b2);
-        bi.setForm(modb);
+        bi.setRcpt(rcpt);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 
@@ -45,24 +51,20 @@ public class SectionB2Activity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        /*if (MainApp.superuser) return true;
+        if (MainApp.superuser) return true;
 
-        db = MainApp.appInfo.getDbHelper();
-        long updcount = 0;
+        int updcount = 0;
         try {
-            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SB42, mwra.sB42toString());
+            updcount = db.updatesRecipientColumn(TableContracts.RecipientTable.COLUMN_SB2, rcpt.sB2toString());
         } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
-        else {
+        if (updcount == 1) {
+            return true;
+        } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
 
     public void btnContinue(View view) {
@@ -87,20 +89,20 @@ public class SectionB2Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
-        if (!modb.getB202w().isEmpty() && !modb.getB202m().isEmpty() && !modb.getB202y().isEmpty()) {
-            if (Integer.parseInt(modb.getB202w()) + Integer.parseInt(modb.getB202m()) + Integer.parseInt(modb.getB202y()) == 0)
+        if (!rcpt.getB202w().isEmpty() && !rcpt.getB202m().isEmpty() && !rcpt.getB202y().isEmpty()) {
+            if (Integer.parseInt(rcpt.getB202w()) + Integer.parseInt(rcpt.getB202m()) + Integer.parseInt(rcpt.getB202y()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b202w, "All Values Can't be zero");
         }
-        if (!modb.getB204w().isEmpty() && !modb.getB204m().isEmpty()) {
-            if (Integer.parseInt(modb.getB204w()) + Integer.parseInt(modb.getB204m()) == 0)
+        if (!rcpt.getB204w().isEmpty() && !rcpt.getB204m().isEmpty()) {
+            if (Integer.parseInt(rcpt.getB204w()) + Integer.parseInt(rcpt.getB204m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b204w, "All Values Can't be zero");
         }
-        if (!modb.getB21201().isEmpty() && !modb.getB21202().isEmpty()) {
-            if (Integer.parseInt(modb.getB21201()) + Integer.parseInt(modb.getB21202()) == 0)
+        if (!rcpt.getB21201().isEmpty() && !rcpt.getB21202().isEmpty()) {
+            if (Integer.parseInt(rcpt.getB21201()) + Integer.parseInt(rcpt.getB21202()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b21101, "All Values Can't be zero");
         }
-        if (!modb.getB222h().isEmpty() && !modb.getB222m().isEmpty()) {
-            if (Integer.parseInt(modb.getB222h()) + Integer.parseInt(modb.getB222m()) == 0)
+        if (!rcpt.getB222h().isEmpty() && !rcpt.getB222m().isEmpty()) {
+            if (Integer.parseInt(rcpt.getB222h()) + Integer.parseInt(rcpt.getB222m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b222h, "All Values Can't be zero");
         }
         return true;

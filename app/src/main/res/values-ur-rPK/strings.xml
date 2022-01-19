@@ -1900,15 +1900,16 @@
     <string name="b22301">ہاں</string>
     <string name="b22302">نہیں</string>
     <string name="b224">اگر ہاں تو وضاحت فرمائیں</string>
-    <string name="bstatus"> ماڈیول B سوالنامے کا نتیجہ </string>
-    <string name="bstatusa"> کیا ماڈیول مکمل ہو گیا تھا ؟ </string>
-    <string name="bstatusaa"> ہاں </string>
-    <string name="bstatusab"> نہیں </string>
-    <string name="bstatusb"> مکمل نہ ہونے کی وجہ ؟ </string>
-    <string name="bstatusba"> اجازت واپس لے لی گئی </string>
-    <string name="bstatusbb"> اس ماڈیول کا اہل جواب دہندہ گھر پر موجود نہیں </string>
-    <string name="bstatusbc"> اہل جواب دہندہ انٹرویو کے لیے موزوں نہیں </string>
-    <string name="bstatusb96"> دیگر وضاحت کریں </string>
+    <string name="bsta"> ماڈیول B سوالنامے کا نتیجہ </string>
+    <string name="bstaa"> کیا ماڈیول مکمل ہو گیا تھا ؟ </string>
+    <string name="bstaaa"> ہاں </string>
+    <string name="bstaab"> نہیں </string>
+    <string name="bstab"> مکمل نہ ہونے کی وجہ ؟ </string>
+    <string name="bstaba"> اجازت واپس لے لی گئی </string>
+    <string name="bstabb"> اس ماڈیول کا اہل جواب دہندہ گھر پر موجود نہیں </string>
+    <string name="bstabc"> اہل جواب دہندہ انٹرویو کے لیے موزوں نہیں </string>
+    <string name="bstab96"> دیگر وضاحت کریں </string>
+
     <string name="ehtitle"> گهر کی شناخت </string>
     <string name="eh101"> کلسٹر نمبر</string>
     <string name="eh102"> ضلع</string>
@@ -2779,7 +2780,7 @@
     <string name='Q_istatus'>istatus</string>
     <string name='Q_istb01'>istb01</string>
     <string name='Q_istb02'>istb02</string>
-    <string name='Q_bstatus'>bstatus</string>
+    <string name='Q_bsta'>bsta</string>
     <string name='Q_istf01'>istf01</string>
     <string name='Q_istf02'>istf02</string>
     <string name='Q_istftitle'>istftitle</string>

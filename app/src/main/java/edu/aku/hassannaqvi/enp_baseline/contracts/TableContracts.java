@@ -95,9 +95,7 @@ public class TableContracts {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_BSTATUSA = "bstatusa";
-        public static final String COLUMN_BSTATUSB = "bstatusb";
-        public static final String COLUMN_BSTATUSB96x = "bstatusb96x";
+        public static final String COLUMN_ISTATUS = "istatus";
     }
 
 

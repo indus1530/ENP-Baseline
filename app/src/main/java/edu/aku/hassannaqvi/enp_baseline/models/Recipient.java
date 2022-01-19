@@ -43,12 +43,10 @@ public class Recipient extends BaseObservable implements Observable {
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
     private String endTime = _EMPTY_;
-    private String bStatusa = _EMPTY_;
-    private String bStatusb = _EMPTY_;
-    private String bStatusb96x = _EMPTY_;
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
     private String entryType = _EMPTY_;
+    private String iStatus = _EMPTY_;
 
     // FIELD VARIABLES
     private String b101 = _EMPTY_;
@@ -189,6 +187,9 @@ public class Recipient extends BaseObservable implements Observable {
     private String b222m = _EMPTY_;
     private String b223 = _EMPTY_;
     private String b224 = _EMPTY_;
+    private String bstaa = _EMPTY_;
+    private String bstab = _EMPTY_;
+    private String bstab96x = _EMPTY_;
 
 
     public Recipient() {
@@ -345,35 +346,14 @@ public class Recipient extends BaseObservable implements Observable {
         this.endTime = endTime;
     }
 
-    @Bindable
-    public String getbStatusa() {
-        return bStatusa;
+    public String getiStatus() {
+        return iStatus;
     }
 
-    public void setbStatusa(String bStatusa) {
-        this.bStatusa = bStatusa;
-        notifyPropertyChanged(BR.bStatusa);
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
     }
 
-    @Bindable
-    public String getbStatusb() {
-        return bStatusb;
-    }
-
-    public void setbStatusb(String bStatusb) {
-        this.bStatusb = bStatusb;
-        notifyPropertyChanged(BR.bStatusb);
-    }
-
-    @Bindable
-    public String getbStatusb96x() {
-        return bStatusb96x;
-    }
-
-    public void setbStatusb96x(String bStatusb96x) {
-        this.bStatusb96x = bStatusb96x;
-        notifyPropertyChanged(BR.bStatusb96x);
-    }
 
     public String getSynced() {
         return synced;
@@ -1935,6 +1915,37 @@ public class Recipient extends BaseObservable implements Observable {
     }
 
 
+    @Bindable
+    public String getBstaa() {
+        return bstaa;
+    }
+
+    public void setBstaa(String bstaa) {
+        this.bstaa = bstaa;
+        notifyPropertyChanged(BR.bstaa);
+    }
+
+    @Bindable
+    public String getBstab() {
+        return bstab;
+    }
+
+    public void setBstab(String bstab) {
+        this.bstab = bstab;
+        notifyPropertyChanged(BR.bstab);
+    }
+
+    @Bindable
+    public String getBstab96x() {
+        return bstab96x;
+    }
+
+    public void setBstab96x(String bstab96x) {
+        this.bstab96x = bstab96x;
+        notifyPropertyChanged(BR.bstab96x);
+    }
+
+
     public Recipient Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_UID));
@@ -1949,9 +1960,7 @@ public class Recipient extends BaseObservable implements Observable {
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_APPVERSION));
-        this.bStatusa = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_BSTATUSA));
-        this.bStatusb = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_BSTATUSB));
-        this.bStatusb96x = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_BSTATUSB96x));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_SYNCED_DATE));
 
@@ -2111,6 +2120,9 @@ public class Recipient extends BaseObservable implements Observable {
             this.b222m = json.getString("b222m");
             this.b223 = json.getString("b223");
             this.b224 = json.getString("b224");
+            this.bstaa = json.getString("bstaa");
+            this.bstab = json.getString("bstab");
+            this.bstab96x = json.getString("bstab96x");
         }
     }
 
@@ -2130,9 +2142,7 @@ public class Recipient extends BaseObservable implements Observable {
         json.put(RecipientTable.COLUMN_SYSDATE, this.sysDate);
         json.put(RecipientTable.COLUMN_DEVICEID, this.deviceId);
         json.put(RecipientTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(RecipientTable.COLUMN_BSTATUSA, this.bStatusa);
-        json.put(RecipientTable.COLUMN_BSTATUSB, this.bStatusb);
-        json.put(RecipientTable.COLUMN_BSTATUSB96x, this.bStatusb96x);
+        json.put(RecipientTable.COLUMN_ISTATUS, this.iStatus);
         json.put(RecipientTable.COLUMN_SYNCED, this.synced);
         json.put(RecipientTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(RecipientTable.COLUMN_APPVERSION, this.appver);
@@ -2288,7 +2298,10 @@ public class Recipient extends BaseObservable implements Observable {
                 .put("b222h", b222h)
                 .put("b222m", b222m)
                 .put("b223", b223)
-                .put("b224", b224);
+                .put("b224", b224)
+                .put("bstaa", bstaa)
+                .put("bstab", bstab)
+                .put("bstab96x", bstab96x);
         return json.toString();
     }
 

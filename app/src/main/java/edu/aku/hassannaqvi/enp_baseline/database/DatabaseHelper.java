@@ -114,6 +114,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SA1, form.sA1toString());
+        values.put(FormsTable.COLUMN_SA3A, form.sA3AtoString());
+        values.put(FormsTable.COLUMN_SA3B, form.sA3BtoString());
+        values.put(FormsTable.COLUMN_SA4, form.sA4toString());
+        values.put(FormsTable.COLUMN_SA5, form.sA5toString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_ENTRY_TYPE, form.getEntryType());
@@ -419,9 +423,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(RecipientTable.COLUMN_SB1, rcpt.sB1toString());
         values.put(RecipientTable.COLUMN_SB2, rcpt.sB2toString());
 
-        values.put(RecipientTable.COLUMN_BSTATUSA, rcpt.getbStatusa());
-        values.put(RecipientTable.COLUMN_BSTATUSB, rcpt.getbStatusb());
-        values.put(RecipientTable.COLUMN_BSTATUSB96x, rcpt.getbStatusb96x());
+        values.put(RecipientTable.COLUMN_ISTATUS, rcpt.getiStatus());
 
         values.put(RecipientTable.COLUMN_DEVICETAGID, rcpt.getDeviceTag());
         values.put(RecipientTable.COLUMN_DEVICEID, rcpt.getDeviceId());

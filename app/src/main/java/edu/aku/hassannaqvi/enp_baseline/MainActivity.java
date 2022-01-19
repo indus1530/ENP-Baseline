@@ -15,7 +15,7 @@ import edu.aku.hassannaqvi.enp_baseline.database.AndroidManager;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
-import edu.aku.hassannaqvi.enp_baseline.models.ModuleC;
+import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleD;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleE;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleF;
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.startInterview:
             case R.id.startDataEntry:
             case R.id.seca:
-                MainApp.moda = new Form();
+                MainApp.form = new Form();
                 startActivity(new Intent(this, IdentificationActivity.class));
                 break;
         /*    case R.id.openAnthro:
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionA2Activity.class));
                 break;*/
             case R.id.seca1:
-                MainApp.moda = new Form();
+                MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA1Activity.class));
                 break;
             case R.id.seca2:
@@ -112,55 +112,55 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.seca3a:
-                MainApp.moda = new Form();
+                MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA3AActivity.class));
                 break;
 
             case R.id.seca3b:
-                MainApp.moda = new Form();
+                MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA3BActivity.class));
                 break;
 
             case R.id.seca4:
-                MainApp.moda = new Form();
+                MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA4Activity.class));
                 break;
             case R.id.seca5:
-                MainApp.moda = new Form();
+                MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA5Activity.class));
                 break;
             case R.id.secb1:
-                MainApp.modb = new Recipient();
+                MainApp.rcpt = new Recipient();
                 startActivity(new Intent(this, SectionB1Activity.class));
                 break;
             case R.id.secb2:
-                MainApp.modb = new Recipient();
+                MainApp.rcpt = new Recipient();
                 startActivity(new Intent(this, SectionB2Activity.class));
                 break;
             case R.id.secc1:
-                MainApp.modc = new ModuleC();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionC1Activity.class));
                 break;
             case R.id.secc2:
-                MainApp.modc = new ModuleC();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionC2Activity.class));
                 break;
 
             case R.id.secc3:
-                MainApp.modc = new ModuleC();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionC3Activity.class));
                 break;
 
             case R.id.secc4:
-                MainApp.modc = new ModuleC();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionC4Activity.class));
                 break;
             case R.id.secc5:
-                MainApp.modc = new ModuleC();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionC5Activity.class));
                 break;
             case R.id.secc6:
-                MainApp.modc = new ModuleC();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionC6Activity.class));
                 break;
             case R.id.secd1:

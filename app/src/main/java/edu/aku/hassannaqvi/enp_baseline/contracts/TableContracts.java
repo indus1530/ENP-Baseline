@@ -180,15 +180,12 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_INDEXED = "indexed";
-        public static final String COLUMN_SB1 = "sb1";
-
-        public static final String COLUMN_SB2 = "sb2";
-        public static final String COLUMN_SB3 = "sb3";
-        public static final String COLUMN_SB41 = "sb41";
-        public static final String COLUMN_SB42 = "sb42";
-        public static final String COLUMN_SB5 = "sb5";
-        public static final String COLUMN_SB6 = "sb6";
-        public static final String COLUMN_SB7 = "sb7";
+        public static final String COLUMN_SC1 = "sC1";
+        public static final String COLUMN_SC2 = "sC2";
+        public static final String COLUMN_SC3 = "sC3";
+        public static final String COLUMN_SC4 = "sC4";
+        public static final String COLUMN_SC5 = "sC5";
+        public static final String COLUMN_SC6 = "sC6";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
@@ -242,10 +239,10 @@ public class TableContracts {
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_SC1 = "sc1";
         public static final String COLUMN_SC2 = "sc2";
-        public static final String COLUMN_SC31 = "sc31";
-        public static final String COLUMN_SC32 = "sc32";
+        public static final String COLUMN_SC3 = "sc3";
         public static final String COLUMN_SC4 = "sc4";
         public static final String COLUMN_SC5 = "sc5";
+        public static final String COLUMN_SC6 = "sc6";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";

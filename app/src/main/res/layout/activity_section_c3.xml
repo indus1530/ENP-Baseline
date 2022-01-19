@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="modc"
-            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleC" />
+            name="mwra"
+            type="edu.aku.hassannaqvi.enp_baseline.models.MWRA" />
 
     </data>
 
@@ -92,40 +92,40 @@
                                 android:id="@+id/c30101"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c301.equals(`1`)}"
-                                android:onClick="@{()->modc.setC301(`1`)}"
+                                android:checked="@{mwra.c301.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC301(`1`)}"
                                 android:text="@string/c30101" />
 
                             <RadioButton
                                 android:id="@+id/c30102"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c301.equals(`2`)}"
-                                android:onClick="@{()->modc.setC301(`2`)}"
+                                android:checked="@{mwra.c301.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC301(`2`)}"
                                 android:text="@string/c30102" />
 
                             <RadioButton
                                 android:id="@+id/c30103"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c301.equals(`3`)}"
-                                android:onClick="@{()->modc.setC301(`3`)}"
+                                android:checked="@{mwra.c301.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC301(`3`)}"
                                 android:text="@string/c30103" />
 
                             <RadioButton
                                 android:id="@+id/c30104"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c301.equals(`4`)}"
-                                android:onClick="@{()->modc.setC301(`4`)}"
+                                android:checked="@{mwra.c301.equals(`4`)}"
+                                android:onClick="@{()->mwra.setC301(`4`)}"
                                 android:text="@string/c30104" />
 
                             <RadioButton
                                 android:id="@+id/c30105"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c301.equals(`5`)}"
-                                android:onClick="@{()->modc.setC301(`5`)}"
+                                android:checked="@{mwra.c301.equals(`5`)}"
+                                android:onClick="@{()->mwra.setC301(`5`)}"
                                 android:text="@string/c30105" />
 
                             <TextView
@@ -138,32 +138,32 @@
                                 android:id="@+id/c30106"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c301.equals(`6`)}"
-                                android:onClick="@{()->modc.setC301(`6`)}"
+                                android:checked="@{mwra.c301.equals(`6`)}"
+                                android:onClick="@{()->mwra.setC301(`6`)}"
                                 android:text="@string/c30106" />
 
                             <RadioButton
                                 android:id="@+id/c30107"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c301.equals(`7`)}"
-                                android:onClick="@{()->modc.setC301(`7`)}"
+                                android:checked="@{mwra.c301.equals(`7`)}"
+                                android:onClick="@{()->mwra.setC301(`7`)}"
                                 android:text="@string/c30107" />
 
                             <RadioButton
                                 android:id="@+id/c30108"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c301.equals(`8`)}"
-                                android:onClick="@{()->modc.setC301(`8`)}"
+                                android:checked="@{mwra.c301.equals(`8`)}"
+                                android:onClick="@{()->mwra.setC301(`8`)}"
                                 android:text="@string/c30108" />
 
                             <RadioButton
                                 android:id="@+id/c30196"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c301.equals(`96`)}"
-                                android:onClick="@{()->modc.setC301(`96`)}"
+                                android:checked="@{mwra.c301.equals(`96`)}"
+                                android:onClick="@{()->mwra.setC301(`96`)}"
                                 android:text="@string/c30196" />
 
                             <EditText
@@ -173,8 +173,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c30196"
                                 android:tag="c30196"
-                                android:text="@={modc.c30196x}"
-                                android:visibility="@{modc.c301.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c30196x}"
+                                android:visibility="@{mwra.c301.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 
@@ -227,16 +227,16 @@
                                 android:id="@+id/c30201"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c302.equals(`1`)}"
-                                android:onClick="@{()->modc.setC302(`1`)}"
+                                android:checked="@{mwra.c302.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC302(`1`)}"
                                 android:text="@string/c30201" />
 
                             <RadioButton
                                 android:id="@+id/c30202"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c302.equals(`2`)}"
-                                android:onClick="@{()->modc.setC302(`2`)}"
+                                android:checked="@{mwra.c302.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC302(`2`)}"
                                 android:text="@string/c30202" />
 
                             <TextView
@@ -249,8 +249,8 @@
                                 android:id="@+id/c30203"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c302.equals(`3`)}"
-                                android:onClick="@{()->modc.setC302(`3`)}"
+                                android:checked="@{mwra.c302.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC302(`3`)}"
                                 android:text="@string/c30203" />
 
                             <TextView
@@ -263,8 +263,8 @@
                                 android:id="@+id/c30204"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c302.equals(`4`)}"
-                                android:onClick="@{()->modc.setC302(`4`)}"
+                                android:checked="@{mwra.c302.equals(`4`)}"
+                                android:onClick="@{()->mwra.setC302(`4`)}"
                                 android:text="@string/c30204" />
 
                             <EditText
@@ -274,8 +274,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c30204"
                                 android:tag="c30204"
-                                android:text="@={modc.c30204x}"
-                                android:visibility="@{modc.c302.equals(`4`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c30204x}"
+                                android:visibility="@{mwra.c302.equals(`4`) ? View.VISIBLE : View.GONE}" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -287,8 +287,8 @@
                                 android:id="@+id/c30205"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c302.equals(`5`)}"
-                                android:onClick="@{()->modc.setC302(`5`)}"
+                                android:checked="@{mwra.c302.equals(`5`)}"
+                                android:onClick="@{()->mwra.setC302(`5`)}"
                                 android:text="@string/c30205" />
 
                             <EditText
@@ -298,8 +298,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c30205"
                                 android:tag="c30205"
-                                android:text="@={modc.c30205x}"
-                                android:visibility="@{modc.c302.equals(`5`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c30205x}"
+                                android:visibility="@{mwra.c302.equals(`5`) ? View.VISIBLE : View.GONE}" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -311,8 +311,8 @@
                                 android:id="@+id/c30296"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c302.equals(`96`)}"
-                                android:onClick="@{()->modc.setC302(`96`)}"
+                                android:checked="@{mwra.c302.equals(`96`)}"
+                                android:onClick="@{()->mwra.setC302(`96`)}"
                                 android:text="@string/c30296" />
 
                             <EditText
@@ -322,8 +322,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c30296"
                                 android:tag="c30296"
-                                android:text="@={modc.c30296x}"
-                                android:visibility="@{modc.c302.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c30296x}"
+                                android:visibility="@{mwra.c302.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 
@@ -370,24 +370,24 @@
                                 android:id="@+id/c30301"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c303.equals(`1`)}"
-                                android:onClick="@{()->modc.setC303(`1`)}"
+                                android:checked="@{mwra.c303.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC303(`1`)}"
                                 android:text="@string/c30301" />
 
                             <RadioButton
                                 android:id="@+id/c30302"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c303.equals(`2`)}"
-                                android:onClick="@{()->modc.setC303(`2`)}"
+                                android:checked="@{mwra.c303.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC303(`2`)}"
                                 android:text="@string/c30302" />
 
                             <RadioButton
                                 android:id="@+id/c30303"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c303.equals(`3`)}"
-                                android:onClick="@{()->modc.setC303(`3`)}"
+                                android:checked="@{mwra.c303.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC303(`3`)}"
                                 android:text="@string/c30303" />
 
                         </RadioGroup>
@@ -434,7 +434,7 @@
                             android:hint="#"
                             android:inputType="number"
                             android:maxLength="1"
-                            android:text="@={modc.c304}"
+                            android:text="@={mwra.c304}"
                             app:maxValue="9"
                             app:minValue="5"
                             app:type="range" />
@@ -484,8 +484,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c305.equals(`1`)}"
-                                android:onClick="@{()->modc.setC305(`1`)}"
+                                android:checked="@{mwra.c305.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC305(`1`)}"
                                 android:text="@string/c30501" />
 
                             <RadioButton
@@ -493,8 +493,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c305.equals(`2`)}"
-                                android:onClick="@{()->modc.setC305(`2`) + c306.clearCheck()}"
+                                android:checked="@{mwra.c305.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC305(`2`) + c306.clearCheck()}"
                                 android:text="@string/c30502" />
 
                             <RadioButton
@@ -502,8 +502,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c305.equals(`998`)}"
-                                android:onClick="@{()->modc.setC305(`998`) + c306.clearCheck()}"
+                                android:checked="@{mwra.c305.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC305(`998`) + c306.clearCheck()}"
                                 android:text="@string/c305998" />
 
                         </RadioGroup>
@@ -517,7 +517,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc306"
                     style="@style/cardView"
-                    android:visibility="@{modc.c305.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{mwra.c305.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -554,8 +554,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c306.equals(`1`)}"
-                                android:onClick="@{()->modc.setC306(`1`)}"
+                                android:checked="@{mwra.c306.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC306(`1`)}"
                                 android:text="@string/c30601" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -569,8 +569,8 @@
                                 android:textDirection="ltr"
                                 android:maxLength="4"
                                 android:tag="c30601"
-                                android:text="@={modc.c30601x}"
-                                android:visibility="@{modc.c306.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:text="@={mwra.c30601x}"
+                                android:visibility="@{mwra.c306.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:mask="#.##"
                                 app:maxValue="5.00"
                                 app:minValue="0.80"
@@ -582,8 +582,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c306.equals(`2`)}"
-                                android:onClick="@{()->modc.setC306(`2`)}"
+                                android:checked="@{mwra.c306.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC306(`2`)}"
                                 android:text="@string/c30602" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -597,8 +597,8 @@
                                 android:textDirection="ltr"
                                 android:maxLength="4"
                                 android:tag="c30602"
-                                android:text="@={modc.c30602x}"
-                                android:visibility="@{modc.c306.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                android:text="@={mwra.c30602x}"
+                                android:visibility="@{mwra.c306.equals(`2`) ? View.VISIBLE : View.GONE}"
                                 app:mask="#.##"
                                 app:maxValue="5.00"
                                 app:minValue="0.80"
@@ -610,8 +610,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c306.equals(`998`)}"
-                                android:onClick="@{()->modc.setC306(`998`)}"
+                                android:checked="@{mwra.c306.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC306(`998`)}"
                                 android:text="@string/c306998" />
 
                         </RadioGroup>
@@ -659,48 +659,48 @@
                                 android:id="@+id/c30701"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c307.equals(`1`)}"
-                                android:onClick="@{()->modc.setC307(`1`)}"
+                                android:checked="@{mwra.c307.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC307(`1`)}"
                                 android:text="@string/c30701" />
 
                             <RadioButton
                                 android:id="@+id/c30702"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c307.equals(`2`)}"
-                                android:onClick="@{()->modc.setC307(`2`)}"
+                                android:checked="@{mwra.c307.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC307(`2`)}"
                                 android:text="@string/c30702" />
 
                             <RadioButton
                                 android:id="@+id/c30703"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c307.equals(`3`)}"
-                                android:onClick="@{()->modc.setC307(`3`)}"
+                                android:checked="@{mwra.c307.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC307(`3`)}"
                                 android:text="@string/c30703" />
 
                             <RadioButton
                                 android:id="@+id/c30704"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c307.equals(`4`)}"
-                                android:onClick="@{()->modc.setC307(`4`)}"
+                                android:checked="@{mwra.c307.equals(`4`)}"
+                                android:onClick="@{()->mwra.setC307(`4`)}"
                                 android:text="@string/c30704" />
 
                             <RadioButton
                                 android:id="@+id/c30705"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c307.equals(`5`)}"
-                                android:onClick="@{()->modc.setC307(`5`)}"
+                                android:checked="@{mwra.c307.equals(`5`)}"
+                                android:onClick="@{()->mwra.setC307(`5`)}"
                                 android:text="@string/c30705" />
 
                             <RadioButton
                                 android:id="@+id/c307998"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c307.equals(`998`)}"
-                                android:onClick="@{()->modc.setC307(`998`)}"
+                                android:checked="@{mwra.c307.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC307(`998`)}"
                                 android:text="@string/c307998" />
 
                         </RadioGroup>
@@ -750,8 +750,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c308.equals(`1`)}"
-                                android:onClick="@{()->modc.setC308(`1`)}"
+                                android:checked="@{mwra.c308.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC308(`1`)}"
                                 android:text="@string/c30801" />
 
                             <RadioButton
@@ -759,8 +759,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c308.equals(`2`)}"
-                                android:onClick="@{()->modc.setC308(`2`)}"
+                                android:checked="@{mwra.c308.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC308(`2`)}"
                                 android:text="@string/c30802" />
 
                             <RadioButton
@@ -768,8 +768,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c308.equals(`998`)}"
-                                android:onClick="@{()->modc.setC308(`998`)}"
+                                android:checked="@{mwra.c308.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC308(`998`)}"
                                 android:text="@string/c308998" />
 
                         </RadioGroup>
@@ -783,7 +783,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc309"
                     style="@style/cardView"
-                    android:visibility="@{modc.c308.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{mwra.c308.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -820,8 +820,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c309.equals(`1`)}"
-                                android:onClick="@{()->modc.setC309(`1`)}"
+                                android:checked="@{mwra.c309.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC309(`1`)}"
                                 android:text="@string/c30901" />
 
                             <RadioButton
@@ -829,8 +829,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c309.equals(`2`)}"
-                                android:onClick="@{()->modc.setC309(`2`)}"
+                                android:checked="@{mwra.c309.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC309(`2`)}"
                                 android:text="@string/c30902" />
 
                             <RadioButton
@@ -838,8 +838,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c309.equals(`998`)}"
-                                android:onClick="@{()->modc.setC309(`998`)}"
+                                android:checked="@{mwra.c309.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC309(`998`)}"
                                 android:text="@string/c309998" />
 
                         </RadioGroup>
@@ -889,8 +889,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c310.equals(`1`)}"
-                                android:onClick="@{()->modc.setC310(`1`)}"
+                                android:checked="@{mwra.c310.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC310(`1`)}"
                                 android:text="@string/c310h" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -903,8 +903,8 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="c310h"
-                                android:text="@={modc.c310hx}"
-                                android:visibility="@{modc.c310.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:text="@={mwra.c310hx}"
+                                android:visibility="@{mwra.c310.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="24"
                                 app:minValue="0"
                                 app:type="range" />
@@ -913,8 +913,8 @@
                                 android:id="@+id/c310998"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:checked="@{modc.c310.equals(`998`)}"
-                                android:onClick="@{()->modc.setC310(`998`)}"
+                                android:checked="@{mwra.c310.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC310(`998`)}"
                                 android:text="@string/c310998" />
 
                         </RadioGroup>
@@ -962,40 +962,40 @@
                                 android:id="@+id/c31101"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c311.equals(`1`)}"
-                                android:onClick="@{()->modc.setC311(`1`)}"
+                                android:checked="@{mwra.c311.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC311(`1`)}"
                                 android:text="@string/c31101" />
 
                             <RadioButton
                                 android:id="@+id/c311h"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c311.equals(`2`)}"
-                                android:onClick="@{()->modc.setC311(`2`)}"
+                                android:checked="@{mwra.c311.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC311(`2`)}"
                                 android:text="@string/c311h" />
 
                             <RadioButton
                                 android:id="@+id/c311d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c311.equals(`3`)}"
-                                android:onClick="@{()->modc.setC311(`3`)}"
+                                android:checked="@{mwra.c311.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC311(`3`)}"
                                 android:text="@string/c311d" />
 
                             <RadioButton
                                 android:id="@+id/c31197"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c311.equals(`97`)}"
-                                android:onClick="@{()->modc.setC311(`97`)}"
+                                android:checked="@{mwra.c311.equals(`97`)}"
+                                android:onClick="@{()->mwra.setC311(`97`)}"
                                 android:text="@string/c31197" />
 
                             <RadioButton
                                 android:id="@+id/c311998"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c311.equals(`998`)}"
-                                android:onClick="@{()->modc.setC311(`998`)}"
+                                android:checked="@{mwra.c311.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC311(`998`)}"
                                 android:text="@string/c311998" />
 
                         </RadioGroup>
@@ -1008,8 +1008,8 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={modc.c311hx}"
-                            android:visibility="@{modc.c311.equals(`2`) ? View.VISIBLE : View.GONE}"
+                            android:text="@={mwra.c311hx}"
+                            android:visibility="@{mwra.c311.equals(`2`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="23"
                             app:minValue="1"
                             app:type="range" />
@@ -1022,8 +1022,8 @@
                             android:hint="#"
                             android:inputType="number"
                             android:maxLength="1"
-                            android:text="@={modc.c311dx}"
-                            android:visibility="@{modc.c311.equals(`3`) ? View.VISIBLE : View.GONE}"
+                            android:text="@={mwra.c311dx}"
+                            android:visibility="@{mwra.c311.equals(`3`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="9"
                             app:minValue="1"
                             app:type="range" />
@@ -1073,8 +1073,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c312.equals(`1`)}"
-                                android:onClick="@{()->modc.setC312(`1`)}"
+                                android:checked="@{mwra.c312.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC312(`1`)}"
                                 android:text="@string/c31201" />
 
                             <RadioButton
@@ -1082,8 +1082,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c312.equals(`2`)}"
-                                android:onClick="@{()->modc.setC312(`2`) + c314.clearCheck()}"
+                                android:checked="@{mwra.c312.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC312(`2`) + c314.clearCheck()}"
                                 android:text="@string/c31202" />
 
                             <RadioButton
@@ -1091,8 +1091,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c312.equals(`998`)}"
-                                android:onClick="@{()->modc.setC312(`998`)  + c314.clearCheck()}"
+                                android:checked="@{mwra.c312.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC312(`998`)  + c314.clearCheck()}"
                                 android:text="@string/c312998" />
 
                         </RadioGroup>
@@ -1107,7 +1107,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/fldGrpc313"
                     android:orientation="vertical"
-                    android:visibility="@{modc.c312.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{mwra.c312.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <!-- c313  CheckBox   -->
                     <androidx.cardview.widget.CardView
@@ -1149,63 +1149,63 @@
                                     android:id="@+id/c31301"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c31301.equals(`1`)}"
-                                    android:onClick="@{()->modc.setC31301(modc.c31301.equals(`1`)?``:`1`)}"
-                                    android:enabled="@{!modc.c313998.equals(`998`)}"
+                                    android:checked="@{mwra.c31301.equals(`1`)}"
+                                    android:enabled="@{!mwra.c313998.equals(`998`)}"
+                                    android:onClick="@{()->mwra.setC31301(mwra.c31301.equals(`1`)?``:`1`)}"
                                     android:text="@string/c31301" />
 
                                 <CheckBox
                                     android:id="@+id/c31302"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c31302.equals(`2`)}"
-                                    android:onClick="@{()->modc.setC31302(modc.c31302.equals(`2`)?``:`2`)}"
-                                    android:enabled="@{!modc.c313998.equals(`998`) &amp;&amp; !modc.c31301.equals(`1`)}"
+                                    android:checked="@{mwra.c31302.equals(`2`)}"
+                                    android:enabled="@{!mwra.c313998.equals(`998`) &amp;&amp; !mwra.c31301.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC31302(mwra.c31302.equals(`2`)?``:`2`)}"
                                     android:text="@string/c31302" />
 
                                 <CheckBox
                                     android:id="@+id/c31303"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c31303.equals(`3`)}"
-                                    android:onClick="@{()->modc.setC31303(modc.c31303.equals(`3`)?``:`3`)}"
-                                    android:enabled="@{!modc.c313998.equals(`998`) &amp;&amp; !modc.c31301.equals(`1`)}"
+                                    android:checked="@{mwra.c31303.equals(`3`)}"
+                                    android:enabled="@{!mwra.c313998.equals(`998`) &amp;&amp; !mwra.c31301.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC31303(mwra.c31303.equals(`3`)?``:`3`)}"
                                     android:text="@string/c31303" />
 
                                 <CheckBox
                                     android:id="@+id/c31304"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c31304.equals(`4`)}"
-                                    android:onClick="@{()->modc.setC31304(modc.c31304.equals(`4`)?``:`4`)}"
-                                    android:enabled="@{!modc.c313998.equals(`998`) &amp;&amp; !modc.c31301.equals(`1`)}"
+                                    android:checked="@{mwra.c31304.equals(`4`)}"
+                                    android:enabled="@{!mwra.c313998.equals(`998`) &amp;&amp; !mwra.c31301.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC31304(mwra.c31304.equals(`4`)?``:`4`)}"
                                     android:text="@string/c31304" />
 
                                 <CheckBox
                                     android:id="@+id/c31305"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c31305.equals(`5`)}"
-                                    android:onClick="@{()->modc.setC31305(modc.c31305.equals(`5`)?``:`5`)}"
-                                    android:enabled="@{!modc.c313998.equals(`998`) &amp;&amp; !modc.c31301.equals(`1`)}"
+                                    android:checked="@{mwra.c31305.equals(`5`)}"
+                                    android:enabled="@{!mwra.c313998.equals(`998`) &amp;&amp; !mwra.c31301.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC31305(mwra.c31305.equals(`5`)?``:`5`)}"
                                     android:text="@string/c31305" />
 
                                 <CheckBox
                                     android:id="@+id/c31306"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c31306.equals(`6`)}"
-                                    android:onClick="@{()->modc.setC31306(modc.c31306.equals(`6`)?``:`6`)}"
-                                    android:enabled="@{!modc.c313998.equals(`998`)}"
+                                    android:checked="@{mwra.c31306.equals(`6`)}"
+                                    android:enabled="@{!mwra.c313998.equals(`998`)}"
+                                    android:onClick="@{()->mwra.setC31306(mwra.c31306.equals(`6`)?``:`6`)}"
                                     android:text="@string/c31306" />
 
                                 <CheckBox
                                     android:id="@+id/c31396"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c31396.equals(`96`)}"
-                                    android:onClick="@{()->modc.setC31396(modc.c31396.equals(`96`)?``:`96`)}"
-                                    android:enabled="@{!modc.c313998.equals(`998`) &amp;&amp; !modc.c31301.equals(`1`)}"
+                                    android:checked="@{mwra.c31396.equals(`96`)}"
+                                    android:enabled="@{!mwra.c313998.equals(`998`) &amp;&amp; !mwra.c31301.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC31396(mwra.c31396.equals(`96`)?``:`96`)}"
                                     android:text="@string/c31396" />
 
                                 <EditText
@@ -1215,16 +1215,16 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/c31396"
                                     android:tag="c31396"
-                                    android:text="@={modc.c31396x}"
-                                    android:visibility="@{modc.c31396.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                    android:text="@={mwra.c31396x}"
+                                    android:visibility="@{mwra.c31396.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                                 <CheckBox
                                     android:id="@+id/c313998"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c313998.equals(`998`)}"
-                                    android:onClick="@{()->modc.setC313998(modc.c313998.equals(`998`)?``:`998`)}"
-                                    android:enabled="@{!modc.c31301.equals(`1`)}"
+                                    android:checked="@{mwra.c313998.equals(`998`)}"
+                                    android:enabled="@{!mwra.c31301.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC313998(mwra.c313998.equals(`998`)?``:`998`)}"
                                     android:text="@string/c313998" />
 
                             </LinearLayout>
@@ -1235,20 +1235,20 @@
 
 
                     <!-- c314  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc314"
-                    style="@style/cardView"
-                    android:visibility="@{modc.c31302.equals(`2`) ? View.VISIBLE : View.GONE}">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVc314"
+                        style="@style/cardView"
+                        android:visibility="@{mwra.c31302.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
                             <TextView
@@ -1279,8 +1279,8 @@
                                 android:id="@+id/c31401"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c314.equals(`1`)}"
-                                android:onClick="@{()->modc.setC314(`1`)}"
+                                android:checked="@{mwra.c314.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC314(`1`)}"
                                 android:text="@string/c31401" />
 
                             <EditText
@@ -1290,8 +1290,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c31401"
                                 android:tag="c31401"
-                                android:text="@={modc.c31401x}"
-                                android:visibility="@{modc.c314.equals(`1`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c31401x}"
+                                android:visibility="@{mwra.c314.equals(`1`) ? View.VISIBLE : View.GONE}" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -1303,8 +1303,8 @@
                                 android:id="@+id/c31402"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c314.equals(`2`)}"
-                                android:onClick="@{()->modc.setC314(`2`)}"
+                                android:checked="@{mwra.c314.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC314(`2`)}"
                                 android:text="@string/c31402" />
 
                             <EditText
@@ -1314,8 +1314,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c31402"
                                 android:tag="c31402"
-                                android:text="@={modc.c31402x}"
-                                android:visibility="@{modc.c314.equals(`2`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c31402x}"
+                                android:visibility="@{mwra.c314.equals(`2`) ? View.VISIBLE : View.GONE}" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -1327,8 +1327,8 @@
                                 android:id="@+id/c31496"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c314.equals(`96`)}"
-                                android:onClick="@{()->modc.setC314(`96`)}"
+                                android:checked="@{mwra.c314.equals(`96`)}"
+                                android:onClick="@{()->mwra.setC314(`96`)}"
                                 android:text="@string/c31496" />
 
                             <EditText
@@ -1338,8 +1338,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c31496"
                                 android:tag="c31496"
-                                android:text="@={modc.c31496x}"
-                                android:visibility="@{modc.c314.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c31496x}"
+                                android:visibility="@{mwra.c314.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 
@@ -1390,8 +1390,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c315.equals(`1`)}"
-                                android:onClick="@{()->modc.setC315(`1`)}"
+                                android:checked="@{mwra.c315.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC315(`1`)}"
                                 android:text="@string/c31501" />
 
                             <RadioButton
@@ -1399,8 +1399,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c315.equals(`2`)}"
-                                android:onClick="@{()->modc.setC315(`2`) + c317.clearCheck()}"
+                                android:checked="@{mwra.c315.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC315(`2`) + c317.clearCheck()}"
                                 android:text="@string/c31502" />
 
                         </RadioGroup>
@@ -1415,18 +1415,18 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/fldGrpc316"
                     android:orientation="vertical"
-                    android:visibility="@{modc.c315.equals(`1`) ? View.VISIBLE : View.GONE}">
-                <!-- c316  CheckBox   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc316"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    android:visibility="@{mwra.c315.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    <!-- c316  CheckBox   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVc316"
+                        style="@style/cardView">
 
                         <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
@@ -1456,72 +1456,72 @@
                                 android:id="@+id/c31601"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31601.equals(`1`)}"
-                                android:onClick="@{()->modc.setC31601(modc.c31601.equals(`1`)?``:`1`)}"
+                                android:checked="@{mwra.c31601.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC31601(mwra.c31601.equals(`1`)?``:`1`)}"
                                 android:text="@string/c31601" />
 
                             <CheckBox
                                 android:id="@+id/c31602"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31602.equals(`2`)}"
-                                android:onClick="@{()->modc.setC31602(modc.c31602.equals(`2`)?``:`2`)}"
+                                android:checked="@{mwra.c31602.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC31602(mwra.c31602.equals(`2`)?``:`2`)}"
                                 android:text="@string/c31602" />
 
                             <CheckBox
                                 android:id="@+id/c31603"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31603.equals(`3`)}"
-                                android:onClick="@{()->modc.setC31603(modc.c31603.equals(`3`)?``:`3`)}"
+                                android:checked="@{mwra.c31603.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC31603(mwra.c31603.equals(`3`)?``:`3`)}"
                                 android:text="@string/c31603" />
 
                             <CheckBox
                                 android:id="@+id/c31604"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31604.equals(`4`)}"
-                                android:onClick="@{()->modc.setC31604(modc.c31604.equals(`4`)?``:`4`)}"
+                                android:checked="@{mwra.c31604.equals(`4`)}"
+                                android:onClick="@{()->mwra.setC31604(mwra.c31604.equals(`4`)?``:`4`)}"
                                 android:text="@string/c31604" />
 
                             <CheckBox
                                 android:id="@+id/c31605"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31605.equals(`5`)}"
-                                android:onClick="@{()->modc.setC31605(modc.c31605.equals(`5`)?``:`5`)}"
+                                android:checked="@{mwra.c31605.equals(`5`)}"
+                                android:onClick="@{()->mwra.setC31605(mwra.c31605.equals(`5`)?``:`5`)}"
                                 android:text="@string/c31605" />
 
                             <CheckBox
                                 android:id="@+id/c31606"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31606.equals(`6`)}"
-                                android:onClick="@{()->modc.setC31606(modc.c31606.equals(`6`)?``:`6`)}"
+                                android:checked="@{mwra.c31606.equals(`6`)}"
+                                android:onClick="@{()->mwra.setC31606(mwra.c31606.equals(`6`)?``:`6`)}"
                                 android:text="@string/c31606" />
 
                             <CheckBox
                                 android:id="@+id/c31607"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31607.equals(`7`)}"
-                                android:onClick="@{()->modc.setC31607(modc.c31607.equals(`7`)?``:`7`)}"
+                                android:checked="@{mwra.c31607.equals(`7`)}"
+                                android:onClick="@{()->mwra.setC31607(mwra.c31607.equals(`7`)?``:`7`)}"
                                 android:text="@string/c31607" />
 
                             <CheckBox
                                 android:id="@+id/c31608"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31608.equals(`8`)}"
-                                android:onClick="@{()->modc.setC31608(modc.c31608.equals(`8`)?``:`8`)}"
+                                android:checked="@{mwra.c31608.equals(`8`)}"
+                                android:onClick="@{()->mwra.setC31608(mwra.c31608.equals(`8`)?``:`8`)}"
                                 android:text="@string/c31608" />
 
                             <CheckBox
                                 android:id="@+id/c31696"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31696.equals(`96`)}"
-                                android:onClick="@{()->modc.setC31696(modc.c31696.equals(`96`)?``:`96`)}"
+                                android:checked="@{mwra.c31696.equals(`96`)}"
+                                android:onClick="@{()->mwra.setC31696(mwra.c31696.equals(`96`)?``:`96`)}"
                                 android:text="@string/c31696" />
 
                             <EditText
@@ -1531,8 +1531,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c31696"
                                 android:tag="c31696"
-                                android:text="@={modc.c31696x}"
-                                android:visibility="@{modc.c31696.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c31696x}"
+                                android:visibility="@{mwra.c31696.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
 
@@ -1581,8 +1581,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c317.equals(`1`)}"
-                                android:onClick="@{()->modc.setC317(`1`)}"
+                                android:checked="@{mwra.c317.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC317(`1`)}"
                                 android:text="@string/c317h" />
 
                             <RadioButton
@@ -1590,8 +1590,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c317.equals(`2`)}"
-                                android:onClick="@{()->modc.setC317(`2`)}"
+                                android:checked="@{mwra.c317.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC317(`2`)}"
                                 android:text="@string/c317d" />
 
                             <RadioButton
@@ -1599,16 +1599,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c317.equals(`3`)}"
-                                android:onClick="@{()->modc.setC317(`3`)}"
+                                android:checked="@{mwra.c317.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC317(`3`)}"
                                 android:text="@string/c317w" />
 
                             <RadioButton
                                 android:id="@+id/c317998"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:checked="@{modc.c317.equals(`998`)}"
-                                android:onClick="@{()->modc.setC317(`998`)}"
+                                android:checked="@{mwra.c317.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC317(`998`)}"
                                 android:text="@string/c317998" />
 
                         </RadioGroup>
@@ -1621,8 +1621,8 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={modc.c317hx}"
-                            android:visibility="@{modc.c317.equals(`1`) ? View.VISIBLE : View.GONE}"
+                            android:text="@={mwra.c317hx}"
+                            android:visibility="@{mwra.c317.equals(`1`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="23"
                             app:minValue="0"
                             app:type="range" />
@@ -1635,8 +1635,8 @@
                             android:hint="#"
                             android:inputType="number"
                             android:maxLength="1"
-                            android:text="@={modc.c317dx}"
-                            android:visibility="@{modc.c317.equals(`2`) ? View.VISIBLE : View.GONE}"
+                            android:text="@={mwra.c317dx}"
+                            android:visibility="@{mwra.c317.equals(`2`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="6"
                             app:minValue="1"
                             app:type="range" />
@@ -1649,8 +1649,8 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={modc.c317wx}"
-                            android:visibility="@{modc.c317.equals(`3`) ? View.VISIBLE : View.GONE}"
+                            android:text="@={mwra.c317wx}"
+                            android:visibility="@{mwra.c317.equals(`3`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="20"
                             app:minValue="1"
                             app:type="range" />
@@ -1697,7 +1697,7 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={modc.c318}"
+                            android:text="@={mwra.c318}"
                             app:maxValue="10"
                             app:minValue="0"
                             app:type="range" />
@@ -1747,80 +1747,80 @@
                                 android:id="@+id/c31901"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31901.equals(`1`)}"
-                                android:onClick="@{()->modc.setC31901(modc.c31901.equals(`1`)?``:`1`)}"
+                                android:checked="@{mwra.c31901.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC31901(mwra.c31901.equals(`1`)?``:`1`)}"
                                 android:text="@string/c31901" />
 
                             <CheckBox
                                 android:id="@+id/c31902"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31902.equals(`2`)}"
-                                android:onClick="@{()->modc.setC31902(modc.c31902.equals(`2`)?``:`2`)}"
+                                android:checked="@{mwra.c31902.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC31902(mwra.c31902.equals(`2`)?``:`2`)}"
                                 android:text="@string/c31902" />
 
                             <CheckBox
                                 android:id="@+id/c31903"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31903.equals(`3`)}"
-                                android:onClick="@{()->modc.setC31903(modc.c31903.equals(`3`)?``:`3`)}"
+                                android:checked="@{mwra.c31903.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC31903(mwra.c31903.equals(`3`)?``:`3`)}"
                                 android:text="@string/c31903" />
 
                             <CheckBox
                                 android:id="@+id/c31904"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31904.equals(`4`)}"
-                                android:onClick="@{()->modc.setC31904(modc.c31904.equals(`4`)?``:`4`)}"
+                                android:checked="@{mwra.c31904.equals(`4`)}"
+                                android:onClick="@{()->mwra.setC31904(mwra.c31904.equals(`4`)?``:`4`)}"
                                 android:text="@string/c31904" />
 
                             <CheckBox
                                 android:id="@+id/c31905"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31905.equals(`5`)}"
-                                android:onClick="@{()->modc.setC31905(modc.c31905.equals(`5`)?``:`5`)}"
+                                android:checked="@{mwra.c31905.equals(`5`)}"
+                                android:onClick="@{()->mwra.setC31905(mwra.c31905.equals(`5`)?``:`5`)}"
                                 android:text="@string/c31905" />
 
                             <CheckBox
                                 android:id="@+id/c31906"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31906.equals(`6`)}"
-                                android:onClick="@{()->modc.setC31906(modc.c31906.equals(`6`)?``:`6`)}"
+                                android:checked="@{mwra.c31906.equals(`6`)}"
+                                android:onClick="@{()->mwra.setC31906(mwra.c31906.equals(`6`)?``:`6`)}"
                                 android:text="@string/c31906" />
 
                             <CheckBox
                                 android:id="@+id/c31907"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31907.equals(`7`)}"
-                                android:onClick="@{()->modc.setC31907(modc.c31907.equals(`7`)?``:`7`)}"
+                                android:checked="@{mwra.c31907.equals(`7`)}"
+                                android:onClick="@{()->mwra.setC31907(mwra.c31907.equals(`7`)?``:`7`)}"
                                 android:text="@string/c31907" />
 
                             <CheckBox
                                 android:id="@+id/c31908"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31908.equals(`8`)}"
-                                android:onClick="@{()->modc.setC31908(modc.c31908.equals(`8`)?``:`8`)}"
+                                android:checked="@{mwra.c31908.equals(`8`)}"
+                                android:onClick="@{()->mwra.setC31908(mwra.c31908.equals(`8`)?``:`8`)}"
                                 android:text="@string/c31908" />
 
                             <CheckBox
                                 android:id="@+id/c31909"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31909.equals(`9`)}"
-                                android:onClick="@{()->modc.setC31909(modc.c31909.equals(`9`)?``:`9`)}"
+                                android:checked="@{mwra.c31909.equals(`9`)}"
+                                android:onClick="@{()->mwra.setC31909(mwra.c31909.equals(`9`)?``:`9`)}"
                                 android:text="@string/c31909" />
 
                             <CheckBox
                                 android:id="@+id/c31996"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c31996.equals(`96`)}"
-                                android:onClick="@{()->modc.setC31996(modc.c31996.equals(`96`)?``:`96`)}"
+                                android:checked="@{mwra.c31996.equals(`96`)}"
+                                android:onClick="@{()->mwra.setC31996(mwra.c31996.equals(`96`)?``:`96`)}"
                                 android:text="@string/c31996" />
 
                             <EditText
@@ -1830,8 +1830,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c31996"
                                 android:tag="c31996"
-                                android:text="@={modc.c31996x}"
-                                android:visibility="@{modc.c31996.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c31996x}"
+                                android:visibility="@{mwra.c31996.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
 
@@ -1882,8 +1882,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c320.equals(`1`)}"
-                                android:onClick="@{()->modc.setC320(`1`)}"
+                                android:checked="@{mwra.c320.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC320(`1`)}"
                                 android:text="@string/c32001" />
 
                             <RadioButton
@@ -1891,8 +1891,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c320.equals(`2`)}"
-                                android:onClick="@{()->modc.setC320(`2`) + c322.clearCheck()}"
+                                android:checked="@{mwra.c320.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC320(`2`) + c322.clearCheck()}"
                                 android:text="@string/c32002" />
 
                         </RadioGroup>
@@ -1906,17 +1906,17 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/fldGrpc321"
                     android:orientation="vertical"
-                    android:visibility="@{modc.c320.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{mwra.c320.equals(`1`) ? View.VISIBLE : View.GONE}">
 
-                <!-- c321  CheckBox   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc321"
-                    style="@style/cardView">
+                    <!-- c321  CheckBox   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVc321"
+                        style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1948,72 +1948,72 @@
                                 android:id="@+id/c32101"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32101.equals(`1`)}"
-                                android:onClick="@{()->modc.setC32101(modc.c32101.equals(`1`)?``:`1`)}"
+                                android:checked="@{mwra.c32101.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC32101(mwra.c32101.equals(`1`)?``:`1`)}"
                                 android:text="@string/c32101" />
 
                             <CheckBox
                                 android:id="@+id/c32102"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32102.equals(`2`)}"
-                                android:onClick="@{()->modc.setC32102(modc.c32102.equals(`2`)?``:`2`)}"
+                                android:checked="@{mwra.c32102.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC32102(mwra.c32102.equals(`2`)?``:`2`)}"
                                 android:text="@string/c32102" />
 
                             <CheckBox
                                 android:id="@+id/c32103"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32103.equals(`3`)}"
-                                android:onClick="@{()->modc.setC32103(modc.c32103.equals(`3`)?``:`3`)}"
+                                android:checked="@{mwra.c32103.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC32103(mwra.c32103.equals(`3`)?``:`3`)}"
                                 android:text="@string/c32103" />
 
                             <CheckBox
                                 android:id="@+id/c32104"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32104.equals(`4`)}"
-                                android:onClick="@{()->modc.setC32104(modc.c32104.equals(`4`)?``:`4`)}"
+                                android:checked="@{mwra.c32104.equals(`4`)}"
+                                android:onClick="@{()->mwra.setC32104(mwra.c32104.equals(`4`)?``:`4`)}"
                                 android:text="@string/c32104" />
 
                             <CheckBox
                                 android:id="@+id/c32105"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32105.equals(`5`)}"
-                                android:onClick="@{()->modc.setC32105(modc.c32105.equals(`5`)?``:`5`)}"
+                                android:checked="@{mwra.c32105.equals(`5`)}"
+                                android:onClick="@{()->mwra.setC32105(mwra.c32105.equals(`5`)?``:`5`)}"
                                 android:text="@string/c32105" />
 
                             <CheckBox
                                 android:id="@+id/c32106"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32106.equals(`6`)}"
-                                android:onClick="@{()->modc.setC32106(modc.c32106.equals(`6`)?``:`6`)}"
+                                android:checked="@{mwra.c32106.equals(`6`)}"
+                                android:onClick="@{()->mwra.setC32106(mwra.c32106.equals(`6`)?``:`6`)}"
                                 android:text="@string/c32106" />
 
                             <CheckBox
                                 android:id="@+id/c32107"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32107.equals(`7`)}"
-                                android:onClick="@{()->modc.setC32107(modc.c32107.equals(`7`)?``:`7`)}"
+                                android:checked="@{mwra.c32107.equals(`7`)}"
+                                android:onClick="@{()->mwra.setC32107(mwra.c32107.equals(`7`)?``:`7`)}"
                                 android:text="@string/c32107" />
 
                             <CheckBox
                                 android:id="@+id/c32108"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32108.equals(`8`)}"
-                                android:onClick="@{()->modc.setC32108(modc.c32108.equals(`8`)?``:`8`)}"
+                                android:checked="@{mwra.c32108.equals(`8`)}"
+                                android:onClick="@{()->mwra.setC32108(mwra.c32108.equals(`8`)?``:`8`)}"
                                 android:text="@string/c32108" />
 
                             <CheckBox
                                 android:id="@+id/c32196"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32196.equals(`96`)}"
-                                android:onClick="@{()->modc.setC32196(modc.c32196.equals(`96`)?``:`96`)}"
+                                android:checked="@{mwra.c32196.equals(`96`)}"
+                                android:onClick="@{()->mwra.setC32196(mwra.c32196.equals(`96`)?``:`96`)}"
                                 android:text="@string/c32196" />
 
                             <EditText
@@ -2023,8 +2023,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c32196"
                                 android:tag="c32196"
-                                android:text="@={modc.c32196x}"
-                                android:visibility="@{modc.c32196.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c32196x}"
+                                android:visibility="@{mwra.c32196.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
 
@@ -2073,8 +2073,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c322.equals(`1`)}"
-                                android:onClick="@{()->modc.setC322(`1`)}"
+                                android:checked="@{mwra.c322.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC322(`1`)}"
                                 android:text="@string/c322h" />
 
                             <RadioButton
@@ -2082,8 +2082,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c322.equals(`2`)}"
-                                android:onClick="@{()->modc.setC322(`2`)}"
+                                android:checked="@{mwra.c322.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC322(`2`)}"
                                 android:text="@string/c322d" />
 
                             <RadioButton
@@ -2091,8 +2091,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c322.equals(`3`)}"
-                                android:onClick="@{()->modc.setC322(`3`)}"
+                                android:checked="@{mwra.c322.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC322(`3`)}"
                                 android:text="@string/c322w" />
 
                             <RadioButton
@@ -2100,8 +2100,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c322.equals(`998`)}"
-                                android:onClick="@{()->modc.setC322(`998`)}"
+                                android:checked="@{mwra.c322.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC322(`998`)}"
                                 android:text="@string/c322998" />
 
                         </RadioGroup>
@@ -2114,8 +2114,8 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={modc.c322hx}"
-                            android:visibility="@{modc.c322.equals(`1`) ? View.VISIBLE : View.GONE}"
+                            android:text="@={mwra.c322hx}"
+                            android:visibility="@{mwra.c322.equals(`1`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="23"
                             app:minValue="0"
                             app:type="range" />
@@ -2128,8 +2128,8 @@
                             android:hint="#"
                             android:inputType="number"
                             android:maxLength="1"
-                            android:text="@={modc.c322dx}"
-                            android:visibility="@{modc.c322.equals(`2`) ? View.VISIBLE : View.GONE}"
+                            android:text="@={mwra.c322dx}"
+                            android:visibility="@{mwra.c322.equals(`2`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="6"
                             app:minValue="1"
                             app:type="range" />
@@ -2142,8 +2142,8 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={modc.c322wx}"
-                            android:visibility="@{modc.c322.equals(`3`) ? View.VISIBLE : View.GONE}"
+                            android:text="@={mwra.c322wx}"
+                            android:visibility="@{mwra.c322.equals(`3`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="20"
                             app:minValue="1"
                             app:type="range" />
@@ -2190,7 +2190,7 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={modc.c323}"
+                            android:text="@={mwra.c323}"
                             app:maxValue="10"
                             app:minValue="0"
                             app:type="range" />
@@ -2240,48 +2240,48 @@
                                 android:id="@+id/c32401"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32401.equals(`1`)}"
-                                android:onClick="@{()->modc.setC32401(modc.c32401.equals(`1`)?``:`1`)}"
+                                android:checked="@{mwra.c32401.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC32401(mwra.c32401.equals(`1`)?``:`1`)}"
                                 android:text="@string/c32401" />
 
                             <CheckBox
                                 android:id="@+id/c32402"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32402.equals(`2`)}"
-                                android:onClick="@{()->modc.setC32402(modc.c32402.equals(`2`)?``:`2`)}"
+                                android:checked="@{mwra.c32402.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC32402(mwra.c32402.equals(`2`)?``:`2`)}"
                                 android:text="@string/c32402" />
 
                             <CheckBox
                                 android:id="@+id/c32403"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32403.equals(`3`)}"
-                                android:onClick="@{()->modc.setC32403(modc.c32403.equals(`3`)?``:`3`)}"
+                                android:checked="@{mwra.c32403.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC32403(mwra.c32403.equals(`3`)?``:`3`)}"
                                 android:text="@string/c32403" />
 
                             <CheckBox
                                 android:id="@+id/c32404"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32404.equals(`4`)}"
-                                android:onClick="@{()->modc.setC32404(modc.c32404.equals(`4`)?``:`4`)}"
+                                android:checked="@{mwra.c32404.equals(`4`)}"
+                                android:onClick="@{()->mwra.setC32404(mwra.c32404.equals(`4`)?``:`4`)}"
                                 android:text="@string/c32404" />
 
                             <CheckBox
                                 android:id="@+id/c32405"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32405.equals(`5`)}"
-                                android:onClick="@{()->modc.setC32405(modc.c32405.equals(`5`)?``:`5`)}"
+                                android:checked="@{mwra.c32405.equals(`5`)}"
+                                android:onClick="@{()->mwra.setC32405(mwra.c32405.equals(`5`)?``:`5`)}"
                                 android:text="@string/c32405" />
 
                             <CheckBox
                                 android:id="@+id/c32496"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c32496.equals(`96`)}"
-                                android:onClick="@{()->modc.setC32496(modc.c32496.equals(`96`)?``:`96`)}"
+                                android:checked="@{mwra.c32496.equals(`96`)}"
+                                android:onClick="@{()->mwra.setC32496(mwra.c32496.equals(`96`)?``:`96`)}"
                                 android:text="@string/c32496" />
 
                             <EditText
@@ -2291,8 +2291,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c32496"
                                 android:tag="c32496"
-                                android:text="@={modc.c32496x}"
-                                android:visibility="@{modc.c32496.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c32496x}"
+                                android:visibility="@{mwra.c32496.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
 
@@ -2342,8 +2342,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c325.equals(`1`)}"
-                                android:onClick="@{()->modc.setC325(`1`)}"
+                                android:checked="@{mwra.c325.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC325(`1`)}"
                                 android:text="@string/c32501" />
 
                             <RadioButton
@@ -2351,8 +2351,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c325.equals(`2`)}"
-                                android:onClick="@{()->modc.setC325(`2`) + c326.clearCheck() + c327.clearCheck() + c328.clearCheck()}"
+                                android:checked="@{mwra.c325.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC325(`2`) + c326.clearCheck() + c327.clearCheck() + c328.clearCheck()}"
                                 android:text="@string/c32502" />
 
                             <RadioButton
@@ -2360,8 +2360,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c325.equals(`998`)}"
-                                android:onClick="@{()->modc.setC325(`998`) + c326.clearCheck() + c327.clearCheck() + c328.clearCheck()}"
+                                android:checked="@{mwra.c325.equals(`998`)}"
+                                android:onClick="@{()->mwra.setC325(`998`) + c326.clearCheck() + c327.clearCheck() + c328.clearCheck()}"
                                 android:text="@string/c325998" />
 
                         </RadioGroup>
@@ -2376,17 +2376,17 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/fldGrpc326"
-                    android:visibility="@{modc.c325.equals(`2`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{mwra.c325.equals(`2`) ? View.GONE : View.VISIBLE}">
 
-                <!-- c326  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc326"
-                    style="@style/cardView">
+                    <!-- c326  Radio   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVc326"
+                        style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2418,8 +2418,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c326.equals(`1`)}"
-                                android:onClick="@{()->modc.setC326(`1`)}"
+                                android:checked="@{mwra.c326.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC326(`1`)}"
                                 android:text="@string/c32601" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -2432,8 +2432,8 @@
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="c32601"
-                                android:text="@={modc.c32601x}"
-                                android:visibility="@{modc.c326.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:text="@={mwra.c32601x}"
+                                android:visibility="@{mwra.c326.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="300"
                                 app:minValue="1"
                                 app:type="range" />
@@ -2443,8 +2443,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c326.equals(`2`)}"
-                                android:onClick="@{()->modc.setC326(`2`)}"
+                                android:checked="@{mwra.c326.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC326(`2`)}"
                                 android:text="@string/c32602" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -2457,8 +2457,8 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="c32602"
-                                android:text="@={modc.c32602x}"
-                                android:visibility="@{modc.c326.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                android:text="@={mwra.c32602x}"
+                                android:visibility="@{mwra.c326.equals(`2`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -2510,8 +2510,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c327.equals(`1`)}"
-                                android:onClick="@{()->modc.setC327(`1`)}"
+                                android:checked="@{mwra.c327.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC327(`1`)}"
                                 android:text="@string/c32701" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -2524,8 +2524,8 @@
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="c32701"
-                                android:text="@={modc.c32701x}"
-                                android:visibility="@{modc.c327.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:text="@={mwra.c32701x}"
+                                android:visibility="@{mwra.c327.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="300"
                                 app:minValue="1"
                                 app:type="range" />
@@ -2535,8 +2535,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c327.equals(`2`)}"
-                                android:onClick="@{()->modc.setC327(`2`)}"
+                                android:checked="@{mwra.c327.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC327(`2`)}"
                                 android:text="@string/c32702" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -2549,8 +2549,8 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="c32702"
-                                android:text="@={modc.c32702x}"
-                                android:visibility="@{modc.c327.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                android:text="@={mwra.c32702x}"
+                                android:visibility="@{mwra.c327.equals(`2`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -2600,40 +2600,40 @@
                                     android:id="@+id/c32801"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c328.equals(`1`)}"
-                                    android:onClick="@{()->modc.setC328(`1`)}"
+                                    android:checked="@{mwra.c328.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC328(`1`)}"
                                     android:text="@string/c32801" />
 
                                 <RadioButton
                                     android:id="@+id/c32802"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c328.equals(`2`)}"
-                                    android:onClick="@{()->modc.setC328(`2`)}"
+                                    android:checked="@{mwra.c328.equals(`2`)}"
+                                    android:onClick="@{()->mwra.setC328(`2`)}"
                                     android:text="@string/c32802" />
 
                                 <RadioButton
                                     android:id="@+id/c32803"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c328.equals(`3`)}"
-                                    android:onClick="@{()->modc.setC328(`3`)}"
+                                    android:checked="@{mwra.c328.equals(`3`)}"
+                                    android:onClick="@{()->mwra.setC328(`3`)}"
                                     android:text="@string/c32803" />
 
                                 <RadioButton
                                     android:id="@+id/c32804"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c328.equals(`4`)}"
-                                    android:onClick="@{()->modc.setC328(`4`)}"
+                                    android:checked="@{mwra.c328.equals(`4`)}"
+                                    android:onClick="@{()->mwra.setC328(`4`)}"
                                     android:text="@string/c32804" />
 
                                 <RadioButton
                                     android:id="@+id/c32896"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c328.equals(`96`)}"
-                                    android:onClick="@{()->modc.setC328(`96`)}"
+                                    android:checked="@{mwra.c328.equals(`96`)}"
+                                    android:onClick="@{()->mwra.setC328(`96`)}"
                                     android:text="@string/c32896" />
 
                                 <EditText
@@ -2643,8 +2643,8 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/c32896"
                                     android:tag="c32896"
-                                    android:text="@={modc.c32896x}"
-                                    android:visibility="@{modc.c328.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                    android:text="@={mwra.c32896x}"
+                                    android:visibility="@{mwra.c328.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                             </RadioGroup>
 
@@ -2695,8 +2695,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c329.equals(`1`)}"
-                                android:onClick="@{()->modc.setC329(`1`)}"
+                                android:checked="@{mwra.c329.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC329(`1`)}"
                                 android:text="@string/c32901" />
 
                             <RadioButton
@@ -2704,8 +2704,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c329.equals(`2`)}"
-                                android:onClick="@{()->modc.setC329(`2`) + c330.clearCheck()}"
+                                android:checked="@{mwra.c329.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC329(`2`) + c330.clearCheck()}"
                                 android:text="@string/c32902" />
 
                         </RadioGroup>
@@ -2720,18 +2720,18 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/fldGrpc330"
                     android:orientation="vertical"
-                    android:visibility="@{modc.c329.equals(`1`) ? View.VISIBLE : View.GONE}">
-                <!-- c330  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc330"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    android:visibility="@{mwra.c329.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    <!-- c330  Radio   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVc330"
+                        style="@style/cardView">
 
                         <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
@@ -2767,8 +2767,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c330.equals(`1`)}"
-                                android:onClick="@{()->modc.setC330(`1`)}"
+                                android:checked="@{mwra.c330.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC330(`1`)}"
                                 android:text="@string/c33001" />
 
                             <RadioButton
@@ -2776,8 +2776,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c330.equals(`2`)}"
-                                android:onClick="@{()->modc.setC330(`2`)}"
+                                android:checked="@{mwra.c330.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC330(`2`)}"
                                 android:text="@string/c33002" />
 
                         </RadioGroup>
@@ -2788,20 +2788,20 @@
 
 
                 <!-- c331  CheckBox   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc331"
-                    style="@style/cardView"
-                    android:visibility="@{modc.c330.equals(`1`) ? View.VISIBLE : View.GONE}">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVc331"
+                        style="@style/cardView"
+                        android:visibility="@{mwra.c330.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
                             <TextView
@@ -2828,136 +2828,136 @@
                                 android:id="@+id/c33101"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33101.equals(`1`)}"
-                                android:onClick="@{()->modc.setC33101(modc.c33101.equals(`1`)?``:`1`)}"
+                                android:checked="@{mwra.c33101.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC33101(mwra.c33101.equals(`1`)?``:`1`)}"
                                 android:text="@string/c33101" />
 
                             <CheckBox
                                 android:id="@+id/c33102"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33102.equals(`2`)}"
-                                android:onClick="@{()->modc.setC33102(modc.c33102.equals(`2`)?``:`2`)}"
+                                android:checked="@{mwra.c33102.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC33102(mwra.c33102.equals(`2`)?``:`2`)}"
                                 android:text="@string/c33102" />
 
                             <CheckBox
                                 android:id="@+id/c33103"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33103.equals(`3`)}"
-                                android:onClick="@{()->modc.setC33103(modc.c33103.equals(`3`)?``:`3`)}"
+                                android:checked="@{mwra.c33103.equals(`3`)}"
+                                android:onClick="@{()->mwra.setC33103(mwra.c33103.equals(`3`)?``:`3`)}"
                                 android:text="@string/c33103" />
 
                             <CheckBox
                                 android:id="@+id/c33104"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33104.equals(`4`)}"
-                                android:onClick="@{()->modc.setC33104(modc.c33104.equals(`4`)?``:`4`)}"
+                                android:checked="@{mwra.c33104.equals(`4`)}"
+                                android:onClick="@{()->mwra.setC33104(mwra.c33104.equals(`4`)?``:`4`)}"
                                 android:text="@string/c33104" />
 
                             <CheckBox
                                 android:id="@+id/c33105"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33105.equals(`5`)}"
-                                android:onClick="@{()->modc.setC33105(modc.c33105.equals(`5`)?``:`5`)}"
+                                android:checked="@{mwra.c33105.equals(`5`)}"
+                                android:onClick="@{()->mwra.setC33105(mwra.c33105.equals(`5`)?``:`5`)}"
                                 android:text="@string/c33105" />
 
                             <CheckBox
                                 android:id="@+id/c33106"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33106.equals(`6`)}"
-                                android:onClick="@{()->modc.setC33106(modc.c33106.equals(`6`)?``:`6`)}"
+                                android:checked="@{mwra.c33106.equals(`6`)}"
+                                android:onClick="@{()->mwra.setC33106(mwra.c33106.equals(`6`)?``:`6`)}"
                                 android:text="@string/c33106" />
 
                             <CheckBox
                                 android:id="@+id/c33107"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33107.equals(`7`)}"
-                                android:onClick="@{()->modc.setC33107(modc.c33107.equals(`7`)?``:`7`)}"
+                                android:checked="@{mwra.c33107.equals(`7`)}"
+                                android:onClick="@{()->mwra.setC33107(mwra.c33107.equals(`7`)?``:`7`)}"
                                 android:text="@string/c33107" />
 
                             <CheckBox
                                 android:id="@+id/c33108"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33108.equals(`8`)}"
-                                android:onClick="@{()->modc.setC33108(modc.c33108.equals(`8`)?``:`8`)}"
+                                android:checked="@{mwra.c33108.equals(`8`)}"
+                                android:onClick="@{()->mwra.setC33108(mwra.c33108.equals(`8`)?``:`8`)}"
                                 android:text="@string/c33108" />
 
                             <CheckBox
                                 android:id="@+id/c33109"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33109.equals(`9`)}"
-                                android:onClick="@{()->modc.setC33109(modc.c33109.equals(`9`)?``:`9`)}"
+                                android:checked="@{mwra.c33109.equals(`9`)}"
+                                android:onClick="@{()->mwra.setC33109(mwra.c33109.equals(`9`)?``:`9`)}"
                                 android:text="@string/c33109" />
 
                             <CheckBox
                                 android:id="@+id/c33110"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33110.equals(`10`)}"
-                                android:onClick="@{()->modc.setC33110(modc.c33110.equals(`10`)?``:`10`)}"
+                                android:checked="@{mwra.c33110.equals(`10`)}"
+                                android:onClick="@{()->mwra.setC33110(mwra.c33110.equals(`10`)?``:`10`)}"
                                 android:text="@string/c33110" />
 
                             <CheckBox
                                 android:id="@+id/c33111"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33111.equals(`11`)}"
-                                android:onClick="@{()->modc.setC33111(modc.c33111.equals(`11`)?``:`11`)}"
+                                android:checked="@{mwra.c33111.equals(`11`)}"
+                                android:onClick="@{()->mwra.setC33111(mwra.c33111.equals(`11`)?``:`11`)}"
                                 android:text="@string/c33111" />
 
                             <CheckBox
                                 android:id="@+id/c33112"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33112.equals(`12`)}"
-                                android:onClick="@{()->modc.setC33112(modc.c33112.equals(`12`)?``:`12`)}"
+                                android:checked="@{mwra.c33112.equals(`12`)}"
+                                android:onClick="@{()->mwra.setC33112(mwra.c33112.equals(`12`)?``:`12`)}"
                                 android:text="@string/c33112" />
 
                             <CheckBox
                                 android:id="@+id/c33113"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33113.equals(`13`)}"
-                                android:onClick="@{()->modc.setC33113(modc.c33113.equals(`13`)?``:`13`)}"
+                                android:checked="@{mwra.c33113.equals(`13`)}"
+                                android:onClick="@{()->mwra.setC33113(mwra.c33113.equals(`13`)?``:`13`)}"
                                 android:text="@string/c33113" />
 
                             <CheckBox
                                 android:id="@+id/c33114"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33114.equals(`14`)}"
-                                android:onClick="@{()->modc.setC33114(modc.c33114.equals(`14`)?``:`14`)}"
+                                android:checked="@{mwra.c33114.equals(`14`)}"
+                                android:onClick="@{()->mwra.setC33114(mwra.c33114.equals(`14`)?``:`14`)}"
                                 android:text="@string/c33114" />
 
                             <CheckBox
                                 android:id="@+id/c33115"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33115.equals(`15`)}"
-                                android:onClick="@{()->modc.setC33115(modc.c33115.equals(`15`)?``:`15`)}"
+                                android:checked="@{mwra.c33115.equals(`15`)}"
+                                android:onClick="@{()->mwra.setC33115(mwra.c33115.equals(`15`)?``:`15`)}"
                                 android:text="@string/c33115" />
 
                             <CheckBox
                                 android:id="@+id/c33116"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33116.equals(`16`)}"
-                                android:onClick="@{()->modc.setC33116(modc.c33116.equals(`16`)?``:`16`)}"
+                                android:checked="@{mwra.c33116.equals(`16`)}"
+                                android:onClick="@{()->mwra.setC33116(mwra.c33116.equals(`16`)?``:`16`)}"
                                 android:text="@string/c33116" />
 
                             <CheckBox
                                 android:id="@+id/c33196"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{modc.c33196.equals(`96`)}"
-                                android:onClick="@{()->modc.setC33196(modc.c33196.equals(`96`)?``:`96`)}"
+                                android:checked="@{mwra.c33196.equals(`96`)}"
+                                android:onClick="@{()->mwra.setC33196(mwra.c33196.equals(`96`)?``:`96`)}"
                                 android:text="@string/c33196" />
 
                             <EditText
@@ -2967,8 +2967,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c33196"
                                 android:tag="c33196"
-                                android:text="@={modc.c33196x}"
-                                android:visibility="@{modc.c33196.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={mwra.c33196x}"
+                                android:visibility="@{mwra.c33196.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
 

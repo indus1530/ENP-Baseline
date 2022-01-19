@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modc;
+
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.mwra;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -30,7 +31,7 @@ public class SectionC4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c4);
-        bi.setModc(modc);
+        bi.setMwra(mwra);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 

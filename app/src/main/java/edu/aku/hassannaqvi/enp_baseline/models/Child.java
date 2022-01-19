@@ -1881,8 +1881,8 @@ public class Child extends BaseObservable implements Observable {
 
         sC1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC1)));
         sC2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC2)));
-        sC31Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC31)));
-        sC32Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC32)));
+        sC31Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC3)));
+        sC32Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC6)));
         sC4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC4)));
         sC5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SC5)));
 
@@ -2265,8 +2265,8 @@ public class Child extends BaseObservable implements Observable {
         json.put(TableContracts.ChildTable.COLUMN_APPVERSION, this.appver);
         json.put(TableContracts.ChildTable.COLUMN_SC1, new JSONObject(sC1toString()));
         json.put(TableContracts.ChildTable.COLUMN_SC2, new JSONObject(sC2toString()));
-        json.put(TableContracts.ChildTable.COLUMN_SC31, new JSONObject(sC31toString()));
-        json.put(TableContracts.ChildTable.COLUMN_SC32, new JSONObject(sC32toString()));
+        json.put(TableContracts.ChildTable.COLUMN_SC3, new JSONObject(sC31toString()));
+        json.put(TableContracts.ChildTable.COLUMN_SC6, new JSONObject(sC32toString()));
         json.put(TableContracts.ChildTable.COLUMN_SC4, new JSONObject(sC4toString()));
         json.put(TableContracts.ChildTable.COLUMN_SC5, new JSONObject(sC5toString()));
 

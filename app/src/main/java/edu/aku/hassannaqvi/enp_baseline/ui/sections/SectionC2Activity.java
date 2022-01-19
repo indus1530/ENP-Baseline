@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modc;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.mwra;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -30,7 +30,7 @@ public class SectionC2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c2);
-        bi.setModc(modc);
+        bi.setMwra(mwra);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 
@@ -86,8 +86,8 @@ public class SectionC2Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
-        if (!modc.getC204w().isEmpty() && !modc.getC204m().isEmpty()) {
-            if (Integer.parseInt(modc.getC204w()) + Integer.parseInt(modc.getC204m()) == 0)
+        if (!mwra.getC204w().isEmpty() && !mwra.getC204m().isEmpty()) {
+            if (Integer.parseInt(mwra.getC204w()) + Integer.parseInt(mwra.getC204m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.c204w, "All Values Can't be zero");
         }
         return true;

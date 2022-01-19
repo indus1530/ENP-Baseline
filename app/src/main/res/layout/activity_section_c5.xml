@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="modc"
-            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleC" />
+            name="mwra"
+            type="edu.aku.hassannaqvi.enp_baseline.models.MWRA" />
 
     </data>
 
@@ -130,8 +130,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c501.equals(`1`)}"
-                                android:onClick="@{()->modc.setC501(`1`)}"
+                                android:checked="@{mwra.c501.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC501(`1`)}"
                                 android:text="@string/c50101" />
 
                             <RadioButton
@@ -139,8 +139,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c501.equals(`2`)}"
-                                android:onClick="@{()->modc.setC501(`2`) + c5012.clearCheck()}"
+                                android:checked="@{mwra.c501.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC501(`2`) + c5012.clearCheck()}"
                                 android:text="@string/c50102" />
 
                         </RadioGroup>
@@ -149,7 +149,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c501.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c501.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -167,7 +167,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={modc.c5011}"
+                                android:text="@={mwra.c5011}"
                                 app:maxValue="15"
                                 app:minValue="1"
                                 app:type="range" />
@@ -178,7 +178,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c501.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c501.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -197,24 +197,24 @@
                                     android:id="@+id/c501201"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5012.equals(`1`)}"
-                                    android:onClick="@{()->modc.setC5012(`1`)}"
+                                    android:checked="@{mwra.c5012.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC5012(`1`)}"
                                     android:text="@string/c501201" />
 
                                 <RadioButton
                                     android:id="@+id/c501202"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5012.equals(`2`)}"
-                                    android:onClick="@{()->modc.setC5012(`2`)}"
+                                    android:checked="@{mwra.c5012.equals(`2`)}"
+                                    android:onClick="@{()->mwra.setC5012(`2`)}"
                                     android:text="@string/c501202" />
 
                                 <RadioButton
                                     android:id="@+id/c501203"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5012.equals(`3`)}"
-                                    android:onClick="@{()->modc.setC5012(`3`)}"
+                                    android:checked="@{mwra.c5012.equals(`3`)}"
+                                    android:onClick="@{()->mwra.setC5012(`3`)}"
                                     android:text="@string/c501203" />
 
                             </RadioGroup>
@@ -225,7 +225,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c501.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c501.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -243,7 +243,7 @@
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
-                                android:text="@={modc.c5013}"
+                                android:text="@={mwra.c5013}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
@@ -295,8 +295,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c502.equals(`1`)}"
-                                android:onClick="@{()->modc.setC502(`1`)}"
+                                android:checked="@{mwra.c502.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC502(`1`)}"
                                 android:text="@string/c50201" />
 
                             <RadioButton
@@ -304,8 +304,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c502.equals(`2`)}"
-                                android:onClick="@{()->modc.setC502(`2`) + c5022.clearCheck()}"
+                                android:checked="@{mwra.c502.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC502(`2`) + c5022.clearCheck()}"
                                 android:text="@string/c50202" />
 
                         </RadioGroup>
@@ -314,7 +314,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c502.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c502.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -332,7 +332,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={modc.c5021}"
+                                android:text="@={mwra.c5021}"
                                 app:maxValue="15"
                                 app:minValue="1"
                                 app:type="range" />
@@ -343,7 +343,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c502.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c502.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -362,24 +362,24 @@
                                     android:id="@+id/c502201"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5022.equals(`1`)}"
-                                    android:onClick="@{()->modc.setC5022(`1`)}"
+                                    android:checked="@{mwra.c5022.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC5022(`1`)}"
                                     android:text="@string/c502201" />
 
                                 <RadioButton
                                     android:id="@+id/c502202"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5022.equals(`2`)}"
-                                    android:onClick="@{()->modc.setC5022(`2`)}"
+                                    android:checked="@{mwra.c5022.equals(`2`)}"
+                                    android:onClick="@{()->mwra.setC5022(`2`)}"
                                     android:text="@string/c502202" />
 
                                 <RadioButton
                                     android:id="@+id/c502203"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5022.equals(`3`)}"
-                                    android:onClick="@{()->modc.setC5022(`3`)}"
+                                    android:checked="@{mwra.c5022.equals(`3`)}"
+                                    android:onClick="@{()->mwra.setC5022(`3`)}"
                                     android:text="@string/c502203" />
 
                             </RadioGroup>
@@ -390,7 +390,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c502.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c502.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -408,7 +408,7 @@
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
-                                android:text="@={modc.c5023}"
+                                android:text="@={mwra.c5023}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
@@ -460,8 +460,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c503.equals(`1`)}"
-                                android:onClick="@{()->modc.setC503(`1`)}"
+                                android:checked="@{mwra.c503.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC503(`1`)}"
                                 android:text="@string/c50301" />
 
                             <RadioButton
@@ -469,8 +469,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c503.equals(`2`)}"
-                                android:onClick="@{()->modc.setC503(`2`) + c5032.clearCheck()}"
+                                android:checked="@{mwra.c503.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC503(`2`) + c5032.clearCheck()}"
                                 android:text="@string/c50302" />
 
                         </RadioGroup>
@@ -479,7 +479,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c503.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c503.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -497,7 +497,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={modc.c5031}"
+                                android:text="@={mwra.c5031}"
                                 app:maxValue="15"
                                 app:minValue="1"
                                 app:type="range" />
@@ -508,7 +508,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c503.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c503.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -527,24 +527,24 @@
                                     android:id="@+id/c503201"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5032.equals(`1`)}"
-                                    android:onClick="@{()->modc.setC5032(`1`)}"
+                                    android:checked="@{mwra.c5032.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC5032(`1`)}"
                                     android:text="@string/c503201" />
 
                                 <RadioButton
                                     android:id="@+id/c503202"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5032.equals(`2`)}"
-                                    android:onClick="@{()->modc.setC5032(`2`)}"
+                                    android:checked="@{mwra.c5032.equals(`2`)}"
+                                    android:onClick="@{()->mwra.setC5032(`2`)}"
                                     android:text="@string/c503202" />
 
                                 <RadioButton
                                     android:id="@+id/c503203"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5032.equals(`3`)}"
-                                    android:onClick="@{()->modc.setC5032(`3`)}"
+                                    android:checked="@{mwra.c5032.equals(`3`)}"
+                                    android:onClick="@{()->mwra.setC5032(`3`)}"
                                     android:text="@string/c503203" />
 
                             </RadioGroup>
@@ -555,7 +555,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c503.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c503.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -573,7 +573,7 @@
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
-                                android:text="@={modc.c5033}"
+                                android:text="@={mwra.c5033}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
@@ -625,8 +625,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c504.equals(`1`)}"
-                                android:onClick="@{()->modc.setC504(`1`)}"
+                                android:checked="@{mwra.c504.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC504(`1`)}"
                                 android:text="@string/c50401" />
 
                             <RadioButton
@@ -634,8 +634,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c504.equals(`2`)}"
-                                android:onClick="@{()->modc.setC504(`2`) + c5042.clearCheck()}"
+                                android:checked="@{mwra.c504.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC504(`2`) + c5042.clearCheck()}"
                                 android:text="@string/c50402" />
 
                         </RadioGroup>
@@ -644,7 +644,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c504.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c504.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -660,7 +660,7 @@
                                 android:layout_weight="1"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c50496"
-                                android:text="@={modc.c50496x}" />
+                                android:text="@={mwra.c50496x}" />
 
                         </LinearLayout>
 
@@ -668,7 +668,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c504.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c504.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -686,7 +686,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={modc.c5041}"
+                                android:text="@={mwra.c5041}"
                                 app:maxValue="15"
                                 app:minValue="1"
                                 app:type="range" />
@@ -697,7 +697,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c504.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c504.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -716,24 +716,24 @@
                                     android:id="@+id/c504201"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5042.equals(`1`)}"
-                                    android:onClick="@{()->modc.setC5042(`1`)}"
+                                    android:checked="@{mwra.c5042.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setC5042(`1`)}"
                                     android:text="@string/c504201" />
 
                                 <RadioButton
                                     android:id="@+id/c504202"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5042.equals(`2`)}"
-                                    android:onClick="@{()->modc.setC5042(`2`)}"
+                                    android:checked="@{mwra.c5042.equals(`2`)}"
+                                    android:onClick="@{()->mwra.setC5042(`2`)}"
                                     android:text="@string/c504202" />
 
                                 <RadioButton
                                     android:id="@+id/c504203"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{modc.c5042.equals(`3`)}"
-                                    android:onClick="@{()->modc.setC5042(`3`)}"
+                                    android:checked="@{mwra.c5042.equals(`3`)}"
+                                    android:onClick="@{()->mwra.setC5042(`3`)}"
                                     android:text="@string/c504203" />
 
                             </RadioGroup>
@@ -744,7 +744,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{modc.c504.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.c504.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -762,7 +762,7 @@
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
-                                android:text="@={modc.c5043}"
+                                android:text="@={mwra.c5043}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
@@ -814,8 +814,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c505.equals(`1`)}"
-                                android:onClick="@{()->modc.setC505(`1`)}"
+                                android:checked="@{mwra.c505.equals(`1`)}"
+                                android:onClick="@{()->mwra.setC505(`1`)}"
                                 android:text="@string/c50501" />
 
                             <RadioButton
@@ -823,8 +823,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c505.equals(`2`)}"
-                                android:onClick="@{()->modc.setC505(`2`)}"
+                                android:checked="@{mwra.c505.equals(`2`)}"
+                                android:onClick="@{()->mwra.setC505(`2`)}"
                                 android:text="@string/c50502" />
 
                             <RadioButton
@@ -832,8 +832,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{modc.c505.equals(`96`)}"
-                                android:onClick="@{()->modc.setC505(`96`)}"
+                                android:checked="@{mwra.c505.equals(`96`)}"
+                                android:onClick="@{()->mwra.setC505(`96`)}"
                                 android:text="@string/c50596" />
 
                         </RadioGroup>
@@ -844,8 +844,8 @@
                             android:layout_height="52dp"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/c50596"
-                            android:text="@={modc.c50596x}"
-                            android:visibility="@{modc.c505.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                            android:text="@={mwra.c50596x}"
+                            android:visibility="@{mwra.c505.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                     </LinearLayout>
 

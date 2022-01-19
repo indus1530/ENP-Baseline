@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modc;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.mwra;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -33,7 +33,7 @@ public class SectionC1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c1);
-        bi.setModc(modc);
+        bi.setMwra(mwra);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 
@@ -138,12 +138,12 @@ public class SectionC1Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
-        if (!modc.getC112wk().isEmpty() && !modc.getC112mm().isEmpty()) {
-            if (Integer.parseInt(modc.getC112wk()) + Integer.parseInt(modc.getC112mm()) == 0)
+        if (!mwra.getC112wk().isEmpty() && !mwra.getC112mm().isEmpty()) {
+            if (Integer.parseInt(mwra.getC112wk()) + Integer.parseInt(mwra.getC112mm()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.c112wk, "All Values Can't be zero");
         }
-        if (!modc.getC116w().isEmpty() && !modc.getC116m().isEmpty()) {
-            if (Integer.parseInt(modc.getC116w()) + Integer.parseInt(modc.getC116m()) == 0)
+        if (!mwra.getC116w().isEmpty() && !mwra.getC116m().isEmpty()) {
+            if (Integer.parseInt(mwra.getC116w()) + Integer.parseInt(mwra.getC116m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.c116w, "All Values Can't be zero");
         }
         return true;

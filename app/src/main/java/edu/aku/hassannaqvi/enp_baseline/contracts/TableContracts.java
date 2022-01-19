@@ -237,12 +237,10 @@ public class TableContracts {
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_INDEXED = "indexed";
         public static final String COLUMN_SNO = "sno";
-        public static final String COLUMN_SC1 = "sc1";
-        public static final String COLUMN_SC2 = "sc2";
-        public static final String COLUMN_SC3 = "sc3";
-        public static final String COLUMN_SC4 = "sc4";
-        public static final String COLUMN_SC5 = "sc5";
-        public static final String COLUMN_SC6 = "sc6";
+        public static final String COLUMN_SD1 = "sD1";
+        public static final String COLUMN_SD2 = "sD2";
+        public static final String COLUMN_SD3 = "sD3";
+        public static final String COLUMN_SD4 = "sD4";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";

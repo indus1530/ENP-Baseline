@@ -1,7 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.child;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.familyMember;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modd;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -31,7 +31,7 @@ public class SectionD2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d2);
-        bi.setForm(modd);
+        bi.setChild(child);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 

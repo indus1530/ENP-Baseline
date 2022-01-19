@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modd;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.child;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -27,6 +27,7 @@ import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionD3Binding;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 
+
 public class SectionD3Activity extends AppCompatActivity {
 
     private static final String TAG = "SectionD3Activity";
@@ -38,7 +39,7 @@ public class SectionD3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d3);
-        bi.setForm(modd);
+        bi.setChild(child);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 
@@ -241,167 +242,167 @@ public class SectionD3Activity extends AppCompatActivity {
 
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
 
-        if (modd.getD302().equals("1")) {
+        if (child.getD302().equals("1")) {
             // Only set once
             // IM04 - DOB
-            String dobDate = modd.getD304y()
-                    + "-" + modd.getD304m()
-                    + "-" + modd.getD304d();
+            String dobDate = child.getD304y()
+                    + "-" + child.getD304m()
+                    + "-" + child.getD304d();
 
             //D30501
-            String d30501date = modd.getD30501y()
-                    + "-" + modd.getD30501m()
-                    + "-" + modd.getD30501d();
+            String d30501date = child.getD30501y()
+                    + "-" + child.getD30501m()
+                    + "-" + child.getD30501d();
             if (!validateDatesBCG(dobDate, d30501date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30501y, "Vaccine Date Should be Greater Than DOB");
             }
 
             //D30502
-            String d30502date = modd.getD30502y()
-                    + "-" + modd.getD30502m()
-                    + "-" + modd.getD30502d();
+            String d30502date = child.getD30502y()
+                    + "-" + child.getD30502m()
+                    + "-" + child.getD30502d();
             if (!validateDatesBCG(dobDate, d30502date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30502y, "Vaccine Date Should be Greater Than DOB");
             }
 
 
             //week6
-            String week6 = modd.getD30501y()
-                    + "-" + modd.getD30501m()
-                    + "-" + modd.getD30501d();
+            String week6 = child.getD30501y()
+                    + "-" + child.getD30501m()
+                    + "-" + child.getD30501d();
 
             // D30503
-            String d30503date = modd.getD30503y()
-                    + "-" + modd.getD30503m()
-                    + "-" + modd.getD30503d();
+            String d30503date = child.getD30503y()
+                    + "-" + child.getD30503m()
+                    + "-" + child.getD30503d();
             if (!validateDates(week6, d30503date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30503y, "Vaccine Date Should be Greater Than BCG");
             }
 
             // D30504
-            String d30504date = modd.getD30504y()
-                    + "-" + modd.getD30504m()
-                    + "-" + modd.getD30504d();
+            String d30504date = child.getD30504y()
+                    + "-" + child.getD30504m()
+                    + "-" + child.getD30504d();
             if (!validateDates(week6, d30504date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30504y, "Vaccine Date Should be Greater Than BCG");
             }
 
             // D30505
-            String d30505date = modd.getD30505y()
-                    + "-" + modd.getD30505m()
-                    + "-" + modd.getD30505d();
+            String d30505date = child.getD30505y()
+                    + "-" + child.getD30505m()
+                    + "-" + child.getD30505d();
             if (!validateDates(week6, d30505date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30505y, "Vaccine Date Should be Greater Than BCG");
             }
 
             // D30506
-            String d30506date = modd.getD30506y()
-                    + "-" + modd.getD30506m()
-                    + "-" + modd.getD30506d();
+            String d30506date = child.getD30506y()
+                    + "-" + child.getD30506m()
+                    + "-" + child.getD30506d();
             if (!validateDates(week6, d30506date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30506y, "Vaccine Date Should be Greater Than BCG");
             }
 
 
             //week10
-            String week10 = modd.getD30506y()
-                    + "-" + modd.getD30506m()
-                    + "-" + modd.getD30506d();
+            String week10 = child.getD30506y()
+                    + "-" + child.getD30506m()
+                    + "-" + child.getD30506d();
 
             // D30507
-            String d30507date = modd.getD30507y()
-                    + "-" + modd.getD30507m()
-                    + "-" + modd.getD30507d();
+            String d30507date = child.getD30507y()
+                    + "-" + child.getD30507m()
+                    + "-" + child.getD30507d();
             if (!validateDates(week10, d30507date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30507y, "Vaccine Date Should be Greater Than SIX Week Vaccine date");
             }
 
             // D30508
-            String d30508date = modd.getD30508y()
-                    + "-" + modd.getD30508m()
-                    + "-" + modd.getD30508d();
+            String d30508date = child.getD30508y()
+                    + "-" + child.getD30508m()
+                    + "-" + child.getD30508d();
             if (!validateDates(week10, d30508date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30508y, "Vaccine Date Should be Greater Than SIX Week Vaccine date");
             }
 
             // D30509
-            String d30509date = modd.getD30509y()
-                    + "-" + modd.getD30509m()
-                    + "-" + modd.getD30509d();
+            String d30509date = child.getD30509y()
+                    + "-" + child.getD30509m()
+                    + "-" + child.getD30509d();
             if (!validateDates(week10, d30509date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30509y, "Vaccine Date Should be Greater Than SIX Week Vaccine date");
             }
 
             // D30510
-            String d30510date = modd.getD30510y()
-                    + "-" + modd.getD30510m()
-                    + "-" + modd.getD30510d();
+            String d30510date = child.getD30510y()
+                    + "-" + child.getD30510m()
+                    + "-" + child.getD30510d();
             if (!validateDates(week10, d30510date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30510y, "Vaccine Date Should be Greater Than SIX Week Vaccine date");
             }
 
 
             //week14
-            String week14 = modd.getD30510y()
-                    + "-" + modd.getD30510m()
-                    + "-" + modd.getD30510d();
+            String week14 = child.getD30510y()
+                    + "-" + child.getD30510m()
+                    + "-" + child.getD30510d();
 
             // D30511
-            String d30511date = modd.getD30511y()
-                    + "-" + modd.getD30511m()
-                    + "-" + modd.getD30511d();
+            String d30511date = child.getD30511y()
+                    + "-" + child.getD30511m()
+                    + "-" + child.getD30511d();
             if (!validateDates(week14, d30511date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30511y, "Vaccine Date Should be Greater Than TEN Week Vaccine date");
             }
 
             // D30512
-            String d30512date = modd.getD30512y()
-                    + "-" + modd.getD30512m()
-                    + "-" + modd.getD30512d();
+            String d30512date = child.getD30512y()
+                    + "-" + child.getD30512m()
+                    + "-" + child.getD30512d();
             if (!validateDates(week14, d30512date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30512y, "Vaccine Date Should be Greater Than TEN Week Vaccine date");
             }
 
             // D30513
-            String d30513date = modd.getD30513y()
-                    + "-" + modd.getD30513m()
-                    + "-" + modd.getD30513d();
+            String d30513date = child.getD30513y()
+                    + "-" + child.getD30513m()
+                    + "-" + child.getD30513d();
             if (!validateDates(week14, d30513date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30513y, "Vaccine Date Should be Greater Than TEN Week Vaccine date");
             }
 
             // D30514
-            String d30514date = modd.getD30514y()
-                    + "-" + modd.getD30514m()
-                    + "-" + modd.getD30514d();
+            String d30514date = child.getD30514y()
+                    + "-" + child.getD30514m()
+                    + "-" + child.getD30514d();
             if (!validateDates(week14, d30514date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30514y, "Vaccine Date Should be Greater Than TEN Week Vaccine date");
             }
 
 
             //month9
-            String month9 = modd.getD30514y()
-                    + "-" + modd.getD30514m()
-                    + "-" + modd.getD30514d();
+            String month9 = child.getD30514y()
+                    + "-" + child.getD30514m()
+                    + "-" + child.getD30514d();
 
             // D30515
-            String d30515date = modd.getD30515y()
-                    + "-" + modd.getD30515m()
-                    + "-" + modd.getD30515d();
+            String d30515date = child.getD30515y()
+                    + "-" + child.getD30515m()
+                    + "-" + child.getD30515d();
             if (!validateDates(month9, d30515date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30515y, "Vaccine Date Should be Greater Than 14 Week Vaccine date");
             }
 
 
             //month15
-            String month15 = modd.getD30515y()
-                    + "-" + modd.getD30515m()
-                    + "-" + modd.getD30515d();
+            String month15 = child.getD30515y()
+                    + "-" + child.getD30515m()
+                    + "-" + child.getD30515d();
 
             // D30516
-            String d30516date = modd.getD30516y()
-                    + "-" + modd.getD30516m()
-                    + "-" + modd.getD30516d();
+            String d30516date = child.getD30516y()
+                    + "-" + child.getD30516m()
+                    + "-" + child.getD30516d();
             if (!validateDates(month15, d30516date)) {
                 return Validator.emptyCustomTextBox(this, bi.d30516y, "Vaccine Date Should be Greater Than NINE MONTH Vaccine date");
             }

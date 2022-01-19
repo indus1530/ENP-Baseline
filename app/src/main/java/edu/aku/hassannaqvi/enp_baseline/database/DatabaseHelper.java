@@ -207,12 +207,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_HHID, child.getHhid());
         values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
-        values.put(ChildTable.COLUMN_SC1, child.sC1toString());
-        values.put(ChildTable.COLUMN_SC2, child.sC2toString());
-        values.put(ChildTable.COLUMN_SC3, child.sC31toString());
-        values.put(ChildTable.COLUMN_SC6, child.sC32toString());
-        values.put(ChildTable.COLUMN_SC4, child.sC4toString());
-        values.put(ChildTable.COLUMN_SC5, child.sC5toString());
+        values.put(ChildTable.COLUMN_SD1, child.sD1toString());
+        values.put(ChildTable.COLUMN_SD2, child.sD2toString());
+        values.put(ChildTable.COLUMN_SD3, child.sD3toString());
+        values.put(ChildTable.COLUMN_SD4, child.sD4toString());
         values.put(ChildTable.COLUMN_ISTATUS, child.getiStatus());
         values.put(ChildTable.COLUMN_DEVICETAGID, child.getDeviceTag());
         values.put(ChildTable.COLUMN_DEVICEID, child.getDeviceId());

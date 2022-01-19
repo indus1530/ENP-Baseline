@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleD" />
+            name="child"
+            type="edu.aku.hassannaqvi.enp_baseline.models.Child" />
 
     </data>
 
@@ -142,7 +142,7 @@
                                 android:layout_weight="1"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/d101"
-                                android:text="@={form.d101}" />
+                                android:text="@={child.d101}" />
 
                         </LinearLayout>
 
@@ -181,7 +181,7 @@
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
-                                android:text="@={form.d102}"
+                                android:text="@={child.d102}"
                                 app:maxValue="100"
                                 app:minValue="1"
                                 app:type="range" />
@@ -223,7 +223,7 @@
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
-                                android:text="@={form.d103}"
+                                android:text="@={child.d103}"
                                 app:maxValue="100"
                                 app:minValue="1"
                                 app:type="range" />
@@ -273,8 +273,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.d104.equals(`1`)}"
-                                android:onClick="@{()->form.setD104(`1`)}"
+                                android:checked="@{child.d104.equals(`1`)}"
+                                android:onClick="@{()->child.setD104(`1`)}"
                                 android:text="@string/d10401" />
 
                             <RadioButton
@@ -282,8 +282,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.d104.equals(`2`)}"
-                                android:onClick="@{()->form.setD104(`2`)}"
+                                android:checked="@{child.d104.equals(`2`)}"
+                                android:onClick="@{()->child.setD104(`2`)}"
                                 android:text="@string/d10402" />
 
                         </RadioGroup>
@@ -333,8 +333,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.d105.equals(`1`)}"
-                                android:onClick="@{()->form.setD105(`1`)}"
+                                android:checked="@{child.d105.equals(`1`)}"
+                                android:onClick="@{()->child.setD105(`1`)}"
                                 android:text="@string/d10501" />
 
                             <RadioButton
@@ -342,8 +342,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.d105.equals(`2`)}"
-                                android:onClick="@{()->form.setD105(`2`)}"
+                                android:checked="@{child.d105.equals(`2`)}"
+                                android:onClick="@{()->child.setD105(`2`)}"
                                 android:text="@string/d10502" />
 
                             <RadioButton
@@ -351,8 +351,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.d105.equals(`998`)}"
-                                android:onClick="@{()->form.setD105(`998`)}"
+                                android:checked="@{child.d105.equals(`998`)}"
+                                android:onClick="@{()->child.setD105(`998`)}"
                                 android:text="@string/d105998" />
 
                         </RadioGroup>

@@ -247,13 +247,10 @@ object CreateTable {
             + ChildTable.COLUMN_SYNCED + " TEXT,"
             + ChildTable.COLUMN_SYNCED_DATE + " TEXT,"
             + ChildTable.COLUMN_APPVERSION + " TEXT,"
-            + ChildTable.COLUMN_SC1 + " TEXT,"
-            + ChildTable.COLUMN_SC2 + " TEXT,"
-            + ChildTable.COLUMN_SC3 + " TEXT,"
-            + ChildTable.COLUMN_SC6 + " TEXT,"
-            + ChildTable.COLUMN_SC4 + " TEXT,"
-            + ChildTable.COLUMN_SC5 + " TEXT"
-
+            + ChildTable.COLUMN_SD1 + " TEXT,"
+            + ChildTable.COLUMN_SD2 + " TEXT,"
+            + ChildTable.COLUMN_SD3 + " TEXT,"
+            + ChildTable.COLUMN_SD4 + " TEXT"
             + " );"
             )
 

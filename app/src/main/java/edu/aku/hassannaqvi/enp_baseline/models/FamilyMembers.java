@@ -300,6 +300,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA204(String a204) {
         this.a204 = a204;
+        setA209(a204.equals("2") ? this.a209 : "");
         notifyPropertyChanged(BR.a204);
     }
 
@@ -508,7 +509,6 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setA208(String a208) {
         this.a208 = a208;
         setA209(a208.equals("5") ? "" : this.a209);
-        setA210(a208.equals("5") ? "" : this.a210);
         notifyPropertyChanged(BR.a208);
     }
 
@@ -519,6 +519,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA209(String a209) {
         this.a209 = a209;
+        setA210(a209.equals("1") ? this.a210 : "");
         notifyPropertyChanged(BR.a209);
     }
 

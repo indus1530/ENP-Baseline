@@ -2075,7 +2075,7 @@
     <string name="e127998">معلوم نہیں</string>
     <string name="f1titlea">ماڈیول ایف : جسمانی پیمائش اور طبی معائنہ</string>
     <string name="f1titleb">گھر میں موجود پانچ سال سے کم عمر تمام بچے اور  تولیدی صحت کی حامل  15 سے 49 سال کی خواتین کے لیے،  جو گھر میں موجود ہوں</string>
-    <string name="f1titlec">ٹیبل ایف1:  بچوں (0-59 ماہ کی عمر) کے لیے پُر کیا جائے گا  جو گھر میں موجود ہوں ۔  </string>
+    <string name="f1titlec"> ٹیبل ایف 1:  بچوں ( 0 – 59 ماہ کی عمر ) کے لیے پُر کیا جائے گا  جو گھر میں موجود ہوں ۔ </string>
     <string name="f101name">بچے کا نام</string>
     <string name="f101">لائن نمبر</string>
     <string name="f102">عمر(مہینوں میں)</string>
@@ -2107,7 +2107,6 @@
     <string name="f109"> پیمائش کی حیثیت </string>
     <string name="f10901"> ریکارڈ کیا گیا </string>
     <string name="f10902"> ریکارڈ نہیں کیا گیا </string>
-    <string name="f2titlec"> ٹیبل اف 2: تولیدی عمر ( 15 – 49 سال ) کی خواتین کے لیے بھرا جاۓ جو گھر میں موجود ہوں </string>
     <string name="f201name"> عورت کا نام </string>
     <string name="f201"> لائن نمبر </string>
     <string name="f202"> عمر ( سالوں میں ) </string>

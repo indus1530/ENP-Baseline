@@ -220,6 +220,7 @@
                                 android:id="@+id/a20301"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`1`)}"
                                 android:onClick="@{()->familymember.setA203(`1`)}"
                                 android:text="@string/a20301" />
@@ -228,6 +229,7 @@
                                 android:id="@+id/a20302"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`2`)}"
                                 android:onClick="@{()->familymember.setA203(`2`)}"
                                 android:text="@string/a20302" />
@@ -236,6 +238,7 @@
                                 android:id="@+id/a20303"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`3`)}"
                                 android:onClick="@{()->familymember.setA203(`3`)}"
                                 android:text="@string/a20303" />
@@ -244,6 +247,7 @@
                                 android:id="@+id/a20304"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`4`)}"
                                 android:onClick="@{()->familymember.setA203(`4`)}"
                                 android:text="@string/a20304" />
@@ -252,6 +256,7 @@
                                 android:id="@+id/a20305"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`5`)}"
                                 android:onClick="@{()->familymember.setA203(`5`)}"
                                 android:text="@string/a20305" />
@@ -260,6 +265,7 @@
                                 android:id="@+id/a20306"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`6`)}"
                                 android:onClick="@{()->familymember.setA203(`6`)}"
                                 android:text="@string/a20306" />
@@ -268,6 +274,7 @@
                                 android:id="@+id/a20307"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`7`)}"
                                 android:onClick="@{()->familymember.setA203(`7`)}"
                                 android:text="@string/a20307" />
@@ -276,6 +283,7 @@
                                 android:id="@+id/a20308"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`8`)}"
                                 android:onClick="@{()->familymember.setA203(`8`)}"
                                 android:text="@string/a20308" />
@@ -284,6 +292,7 @@
                                 android:id="@+id/a20309"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`9`)}"
                                 android:onClick="@{()->familymember.setA203(`9`)}"
                                 android:text="@string/a20309" />
@@ -292,6 +301,7 @@
                                 android:id="@+id/a20310"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`10`)}"
                                 android:onClick="@{()->familymember.setA203(`10`)}"
                                 android:text="@string/a20310" />
@@ -300,6 +310,7 @@
                                 android:id="@+id/a20311"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`11`)}"
                                 android:onClick="@{()->familymember.setA203(`11`)}"
                                 android:text="@string/a20311" />
@@ -308,6 +319,7 @@
                                 android:id="@+id/a20312"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`12`)}"
                                 android:onClick="@{()->familymember.setA203(`12`)}"
                                 android:text="@string/a20312" />
@@ -316,6 +328,7 @@
                                 android:id="@+id/a20313"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`13`)}"
                                 android:onClick="@{()->familymember.setA203(`13`)}"
                                 android:text="@string/a20313" />
@@ -324,6 +337,7 @@
                                 android:id="@+id/a20314"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`14`)}"
                                 android:onClick="@{()->familymember.setA203(`14`)}"
                                 android:text="@string/a20314" />
@@ -332,6 +346,7 @@
                                 android:id="@+id/a20315"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`15`)}"
                                 android:onClick="@{()->familymember.setA203(`15`)}"
                                 android:text="@string/a20315" />
@@ -340,6 +355,7 @@
                                 android:id="@+id/a20396"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`96`)}"
                                 android:onClick="@{()->familymember.setA203(`96`)}"
                                 android:text="@string/a20396" />
@@ -358,6 +374,7 @@
                                 android:id="@+id/a203998"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!familymember.a201.equals(`1`)}"
                                 android:checked="@{familymember.a203.equals(`998`)}"
                                 android:onClick="@{()->familymember.setA203(`998`)}"
                                 android:text="@string/a203998" />
@@ -405,7 +422,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a204.equals(`1`)}"
-                                android:onClick="@{()->familymember.setA204(`1`)}"
+                                android:onClick="@{()->familymember.setA204(`1`) + a209.clearCheck() + a210.clearCheck()}"
                                 android:text="@string/a20401" />
 
                             <RadioButton
@@ -867,7 +884,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa209"
                     style="@style/cardView"
-                    android:visibility="@{familymember.a208.equals(`5`) || (familymember.a206y.length() != 0 &amp;&amp; Integer.parseInt(familymember.a206y) &lt; 11)? View.GONE : View.VISIBLE}">
+                    android:visibility="@{familymember.a204.equals(`2`) &amp;&amp; !familymember.a208.equals(`5`) &amp;&amp; (familymember.a206y.length() != 0 &amp;&amp; Integer.parseInt(familymember.a206y) &gt; 10) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -914,7 +931,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a209.equals(`2`)}"
-                                android:onClick="@{()->familymember.setA209(`2`)}"
+                                android:onClick="@{()->familymember.setA209(`2`) + a209.clearCheck() + a210.clearCheck()}"
                                 android:text="@string/a20902" />
 
                             <RadioButton
@@ -923,7 +940,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{familymember.a209.equals(`3`)}"
-                                android:onClick="@{()->familymember.setA209(`3`)}"
+                                android:onClick="@{()->familymember.setA209(`3`) + a209.clearCheck() + a210.clearCheck()}"
                                 android:text="@string/a20903" />
 
                         </RadioGroup>
@@ -937,7 +954,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa210"
                     style="@style/cardView"
-                    android:visibility="@{familymember.a208.equals(`5`) || (familymember.a206y.length() != 0 &amp;&amp; Integer.parseInt(familymember.a206y) &lt; 11) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{familymember.a209.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1319,6 +1336,7 @@
                                     android:id="@+id/a21301"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:minHeight="56dp"
                                     android:hint="@string/a21301" />
 
                             </LinearLayout>
@@ -1353,6 +1371,7 @@
                                     android:id="@+id/a21302"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:minHeight="56dp"
                                     android:hint="@string/a21302" />
 
                             </LinearLayout>

@@ -48,27 +48,6 @@
                 android:orientation="vertical">
 
 
-                <!-- f1titleb  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVf1titleb"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/f1titleb" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
                 <!-- f101name  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf101name"

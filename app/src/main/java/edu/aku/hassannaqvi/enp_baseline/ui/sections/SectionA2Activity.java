@@ -6,6 +6,7 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -203,6 +204,8 @@ public class SectionA2Activity extends AppCompatActivity {
 
 
     public void btnContinue(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         // saveDraft();
@@ -228,13 +231,7 @@ public class SectionA2Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        if (Validator.emptyCheckingContainer(this, bi.GrpName)) {
-            bi.btnContinue.setEnabled(false);
-            return true;
-        } else {
-            bi.btnContinue.setEnabled(true);
-            return false;
-        }
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
 

@@ -5,6 +5,7 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -93,8 +94,9 @@ public class SectionA1Activity extends AppCompatActivity {
 
 
     public void btnContinue(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             Intent i;
             if (form.getA112().equals("2")
@@ -110,10 +112,6 @@ public class SectionA1Activity extends AppCompatActivity {
     }
 
 
-    private void saveDraft() {
-    }
-
-
     public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
@@ -121,12 +119,6 @@ public class SectionA1Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        if (Validator.emptyCheckingContainer(this, bi.GrpName)) {
-            bi.btnContinue.setEnabled(false);
-            return true;
-        } else {
-            bi.btnContinue.setEnabled(true);
-            return false;
-        }
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 }

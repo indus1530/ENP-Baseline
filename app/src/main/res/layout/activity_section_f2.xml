@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleF" />
+            name="anthw"
+            type="edu.aku.hassannaqvi.enp_baseline.models.WAnthro" />
 
     </data>
 
@@ -77,7 +77,7 @@
                                 android:layout_height="match_parent"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/f201name"
-                                android:text="@={form.f201name}" />
+                                android:text="@={anthw.f201name}" />
 
                         </LinearLayout>
 
@@ -114,7 +114,7 @@
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
-                                android:text="@={form.f201}"
+                                android:text="@={anthw.f201}"
                                 app:maxValue="100"
                                 app:minValue="1"
                                 app:type="range" />
@@ -154,7 +154,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.f202}"
+                                android:text="@={anthw.f202}"
                                 app:maxValue="49"
                                 app:minValue="15"
                                 app:type="range" />
@@ -221,7 +221,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f20301}"
+                                android:text="@={anthw.f20301}"
                                 app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="30"
@@ -251,7 +251,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f20302}"
+                                android:text="@={anthw.f20302}"
                                 app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="30"
@@ -283,7 +283,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f20303}"
+                                android:text="@={anthw.f20303}"
                                 app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="30"
@@ -315,7 +315,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f203m}"
+                                android:text="@={anthw.f203m}"
                                 app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="30"
@@ -385,7 +385,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f20401}"
+                                android:text="@={anthw.f20401}"
                                 app:mask="###.##"
                                 app:maxValue="180"
                                 app:minValue="90"
@@ -415,7 +415,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f20402}"
+                                android:text="@={anthw.f20402}"
                                 app:mask="###.##"
                                 app:maxValue="180"
                                 app:minValue="90"
@@ -447,7 +447,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f20403}"
+                                android:text="@={anthw.f20403}"
                                 app:mask="###.##"
                                 app:maxValue="180"
                                 app:minValue="90"
@@ -479,7 +479,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f204m}"
+                                android:text="@={anthw.f204m}"
                                 app:mask="###.##"
                                 app:maxValue="180"
                                 app:minValue="90"
@@ -530,32 +530,32 @@
                                 android:id="@+id/f20501"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.f205.equals(``)}"
-                                android:onClick="@{()->form.setF205(``)}"
+                                android:checked="@{anthw.f205.equals(``)}"
+                                android:onClick="@{()->anthw.setF205(``)}"
                                 android:text="@string/f20501" />
 
                             <RadioButton
                                 android:id="@+id/f20502"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.f205.equals(``)}"
-                                android:onClick="@{()->form.setF205(``)}"
+                                android:checked="@{anthw.f205.equals(``)}"
+                                android:onClick="@{()->anthw.setF205(``)}"
                                 android:text="@string/f20502" />
 
                             <RadioButton
                                 android:id="@+id/f20503"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.f205.equals(``)}"
-                                android:onClick="@{()->form.setF205(``)}"
+                                android:checked="@{anthw.f205.equals(``)}"
+                                android:onClick="@{()->anthw.setF205(``)}"
                                 android:text="@string/f20503" />
 
                             <RadioButton
                                 android:id="@+id/f20504"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.f205.equals(``)}"
-                                android:onClick="@{()->form.setF205(``)}"
+                                android:checked="@{anthw.f205.equals(``)}"
+                                android:onClick="@{()->anthw.setF205(``)}"
                                 android:text="@string/f20504" />
 
                         </RadioGroup>
@@ -600,7 +600,7 @@
                             android:layout_height="52dp"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/f206"
-                            android:text="@={form.f206}" />
+                            android:text="@={anthw.f206}" />
 
                     </LinearLayout>
 
@@ -647,8 +647,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.f207.equals(`1`)}"
-                                android:onClick="@{()->form.setF207(`1`)}"
+                                android:checked="@{anthw.f207.equals(`1`)}"
+                                android:onClick="@{()->anthw.setF207(`1`)}"
                                 android:text="@string/f20901" />
 
                             <RadioButton
@@ -656,8 +656,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.f207.equals(`2`)}"
-                                android:onClick="@{()->form.setF207(`2`)}"
+                                android:checked="@{anthw.f207.equals(`2`)}"
+                                android:onClick="@{()->anthw.setF207(`2`)}"
                                 android:text="@string/f20902" />
 
                         </RadioGroup>
@@ -720,8 +720,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.istf01.equals(`1`)}"
-                                android:onClick="@{()->form.setIstf01(`1`) + istf02.clearCheck()}"
+                                android:checked="@{anthw.istf01.equals(`1`)}"
+                                android:onClick="@{()->anthw.setIstf01(`1`) + istf02.clearCheck()}"
                                 android:text="@string/istf0101" />
 
                             <RadioButton
@@ -729,8 +729,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.istf01.equals(`2`)}"
-                                android:onClick="@{()->form.setIstf01(`2`)}"
+                                android:checked="@{anthw.istf01.equals(`2`)}"
+                                android:onClick="@{()->anthw.setIstf01(`2`)}"
                                 android:text="@string/istf0102" />
 
                         </RadioGroup>
@@ -744,7 +744,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVistf02"
                     style="@style/cardView"
-                    android:visibility="@{form.istf01.equals(`2`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{anthw.istf01.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -779,32 +779,32 @@
                                 android:id="@+id/istf0201"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.istf02.equals(`1`)}"
-                                android:onClick="@{()->form.setIstf02(`1`)}"
+                                android:checked="@{anthw.istf02.equals(`1`)}"
+                                android:onClick="@{()->anthw.setIstf02(`1`)}"
                                 android:text="@string/istf0201" />
 
                             <RadioButton
                                 android:id="@+id/istf0202"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.istf02.equals(`2`)}"
-                                android:onClick="@{()->form.setIstf02(`2`)}"
+                                android:checked="@{anthw.istf02.equals(`2`)}"
+                                android:onClick="@{()->anthw.setIstf02(`2`)}"
                                 android:text="@string/istf0202" />
 
                             <RadioButton
                                 android:id="@+id/istf0203"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.istf02.equals(`3`)}"
-                                android:onClick="@{()->form.setIstf02(`3`)}"
+                                android:checked="@{anthw.istf02.equals(`3`)}"
+                                android:onClick="@{()->anthw.setIstf02(`3`)}"
                                 android:text="@string/istf0203" />
 
                             <RadioButton
                                 android:id="@+id/istf0296"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.istf02.equals(`96`)}"
-                                android:onClick="@{()->form.setIstf02(`96`)}"
+                                android:checked="@{anthw.istf02.equals(`96`)}"
+                                android:onClick="@{()->anthw.setIstf02(`96`)}"
                                 android:text="@string/istf0296" />
 
                             <EditText
@@ -814,8 +814,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/istf0296"
                                 android:tag="istf0296"
-                                android:text="@={form.istf0296x}"
-                                android:visibility="@{form.istf02.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={anthw.istf0296x}"
+                                android:visibility="@{anthw.istf02.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 

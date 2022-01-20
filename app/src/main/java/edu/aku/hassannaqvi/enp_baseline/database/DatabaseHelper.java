@@ -25,6 +25,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.CAnthroTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.ECDInfoTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.EntryLogTable;
@@ -38,7 +39,9 @@ import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.RecipientTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.VillagesTable;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.WAnthroTable;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
+import edu.aku.hassannaqvi.enp_baseline.models.CAnthro;
 import edu.aku.hassannaqvi.enp_baseline.models.Child;
 import edu.aku.hassannaqvi.enp_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.enp_baseline.models.EntryLog;
@@ -52,6 +55,7 @@ import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
 import edu.aku.hassannaqvi.enp_baseline.models.VersionApp;
 import edu.aku.hassannaqvi.enp_baseline.models.Villages;
+import edu.aku.hassannaqvi.enp_baseline.models.WAnthro;
 
 
 
@@ -79,15 +83,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_VILLAGES);
         //db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
-        db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
-        db.execSQL(CreateTable.SQL_CREATE_MWRA);
-        db.execSQL(CreateTable.SQL_CREATE_PREGNANCY);
-        db.execSQL(CreateTable.SQL_CREATE_ADOLESCENT);
-        db.execSQL(CreateTable.SQL_CREATE_CHILD);
-        db.execSQL(CreateTable.SQL_CREATE_ECDINFO);
-
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_RECIPIENT);
+        db.execSQL(CreateTable.SQL_CREATE_MWRA);
+        db.execSQL(CreateTable.SQL_CREATE_WANTHRO);
+        db.execSQL(CreateTable.SQL_CREATE_CHILD);
+        db.execSQL(CreateTable.SQL_CREATE_CANTHRO);
+        db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
+        db.execSQL(CreateTable.SQL_CREATE_PREGNANCY);
+        db.execSQL(CreateTable.SQL_CREATE_ADOLESCENT);
+        db.execSQL(CreateTable.SQL_CREATE_ECDINFO);
+
         db.execSQL(CreateTable.SQL_CREATE_MOTHER_KAP);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
 
@@ -194,6 +200,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addWAnthro(WAnthro anthw) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(WAnthroTable.COLUMN_PROJECT_NAME, anthw.getProjectName());
+        values.put(WAnthroTable.COLUMN_UID, anthw.getUid());
+        values.put(WAnthroTable.COLUMN_UUID, anthw.getUuid());
+        values.put(WAnthroTable.COLUMN_FMUID, anthw.getFmuid());
+        //  values.put(WAnthroTable.COLUMN_MUID, anthw.getMuid());
+        values.put(WAnthroTable.COLUMN_SNO, anthw.getSno());
+        values.put(WAnthroTable.COLUMN_PSU_CODE, anthw.getpsuCode());
+        values.put(WAnthroTable.COLUMN_HHID, anthw.getHhid());
+        values.put(WAnthroTable.COLUMN_USERNAME, anthw.getUserName());
+        values.put(WAnthroTable.COLUMN_SYSDATE, anthw.getSysDate());
+        values.put(WAnthroTable.COLUMN_SF2, anthw.sF2toString());
+        values.put(WAnthroTable.COLUMN_ISTATUS, anthw.getiStatus());
+        values.put(WAnthroTable.COLUMN_DEVICETAGID, anthw.getDeviceTag());
+        values.put(WAnthroTable.COLUMN_DEVICEID, anthw.getDeviceId());
+        values.put(WAnthroTable.COLUMN_APPVERSION, anthw.getAppver());
+        values.put(WAnthroTable.COLUMN_SYNCED, anthw.getSynced());
+        values.put(WAnthroTable.COLUMN_SYNCED_DATE, anthw.getSyncDate());
+
+        long newRowId;
+        newRowId = db.insert(
+                WAnthroTable.TABLE_NAME,
+                WAnthroTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
     public Long addChild(Child child) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
@@ -221,6 +256,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 ChildTable.TABLE_NAME,
                 ChildTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addCAnthro(CAnthro anthc) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(CAnthroTable.COLUMN_PROJECT_NAME, anthc.getProjectName());
+        values.put(CAnthroTable.COLUMN_UID, anthc.getUid());
+        values.put(CAnthroTable.COLUMN_UUID, anthc.getUuid());
+        values.put(CAnthroTable.COLUMN_FMUID, anthc.getFmuid());
+        values.put(CAnthroTable.COLUMN_MUID, anthc.getMuid());
+        values.put(CAnthroTable.COLUMN_SNO, anthc.getSno());
+        values.put(CAnthroTable.COLUMN_PSU_CODE, anthc.getpsuCode());
+        values.put(CAnthroTable.COLUMN_HHID, anthc.getHhid());
+        values.put(CAnthroTable.COLUMN_USERNAME, anthc.getUserName());
+        values.put(CAnthroTable.COLUMN_SYSDATE, anthc.getSysDate());
+        values.put(CAnthroTable.COLUMN_SF1, anthc.sF1toString());
+        values.put(CAnthroTable.COLUMN_ISTATUS, anthc.getiStatus());
+        values.put(CAnthroTable.COLUMN_DEVICETAGID, anthc.getDeviceTag());
+        values.put(CAnthroTable.COLUMN_DEVICEID, anthc.getDeviceId());
+        values.put(CAnthroTable.COLUMN_APPVERSION, anthc.getAppver());
+        values.put(CAnthroTable.COLUMN_SYNCED, anthc.getSynced());
+        values.put(CAnthroTable.COLUMN_SYNCED_DATE, anthc.getSyncDate());
+        long newRowId;
+        newRowId = db.insert(
+                CAnthroTable.TABLE_NAME,
+                CAnthroTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -584,6 +647,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.rcpt.getId())};
 
         return db.update(RecipientTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesWAnthroColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = WAnthroTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.anthw.getId())};
+
+        return db.update(WAnthroTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesCAnthroColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = CAnthroTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.anthc.getId())};
+
+        return db.update(CAnthroTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

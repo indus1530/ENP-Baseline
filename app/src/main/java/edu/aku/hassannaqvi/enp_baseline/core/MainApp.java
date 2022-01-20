@@ -31,6 +31,7 @@ import edu.aku.hassannaqvi.enp_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
+import edu.aku.hassannaqvi.enp_baseline.models.WAnthro;
 
 
 public class MainApp extends Application {
@@ -59,6 +60,7 @@ public class MainApp extends Application {
     public static Form form;
     public static ModuleE mode;
     public static CAnthro anthc;
+    public static WAnthro anthw;
     public static MWRA mwra;
     public static Pregnancy pregnancy;
     public static Child child;

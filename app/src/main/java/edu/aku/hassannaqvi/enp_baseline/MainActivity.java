@@ -19,8 +19,8 @@ import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
 import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleE;
-import edu.aku.hassannaqvi.enp_baseline.models.ModuleF;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
+import edu.aku.hassannaqvi.enp_baseline.models.WAnthro;
 import edu.aku.hassannaqvi.enp_baseline.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.SyncActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportCluster;
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionF1Activity.class));
                 break;
             case R.id.f2:
-                MainApp.modf = new ModuleF();
+                MainApp.anthw = new WAnthro();
                 startActivity(new Intent(this, SectionF2Activity.class));
                 break;
 

@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.modf;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.anthw;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -34,7 +34,7 @@ public class SectionF2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f2);
-        bi.setForm(modf);
+        bi.setAnthw(anthw);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
 

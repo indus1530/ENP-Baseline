@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.enp_baseline.models.ModuleF" />
+            name="anthc"
+            type="edu.aku.hassannaqvi.enp_baseline.models.CAnthro" />
 
     </data>
 
@@ -76,7 +76,7 @@
                             android:layout_height="match_parent"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/f101name"
-                            android:text="@={form.f101name}" />
+                            android:text="@={anthc.f101name}" />
 
                     </LinearLayout>
 
@@ -113,7 +113,7 @@
                             android:hint="###"
                             android:inputType="number"
                             android:maxLength="3"
-                            android:text="@={form.f101}"
+                            android:text="@={anthc.f101}"
                             app:maxValue="100"
                             app:minValue="1"
                             app:type="range" />
@@ -153,7 +153,7 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={form.f102}"
+                            android:text="@={anthc.f102}"
                             app:maxValue="59"
                             app:minValue="0"
                             app:type="range" />
@@ -196,8 +196,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.f103.equals(`1`)}"
-                                android:onClick="@{()->form.setF103(`1`)}"
+                                android:checked="@{anthc.f103.equals(`1`)}"
+                                android:onClick="@{()->anthc.setF103(`1`)}"
                                 android:text="@string/f10301" />
 
                             <RadioButton
@@ -205,8 +205,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.f103.equals(`2`)}"
-                                android:onClick="@{()->form.setF103(`2`)}"
+                                android:checked="@{anthc.f103.equals(`2`)}"
+                                android:onClick="@{()->anthc.setF103(`2`)}"
                                 android:text="@string/f10302" />
 
                         </RadioGroup>
@@ -273,7 +273,7 @@
                                 android:hint="##.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f10401}"
+                                android:text="@={anthc.f10401}"
                                 app:mask="##.##"
                                 app:maxValue="30"
                                 app:minValue="1"
@@ -303,7 +303,7 @@
                                 android:hint="##.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f10402}"
+                                android:text="@={anthc.f10402}"
                                 app:mask="##.##"
                                 app:maxValue="30"
                                 app:minValue="1"
@@ -335,7 +335,7 @@
                                 android:hint="##.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f10403}"
+                                android:text="@={anthc.f10403}"
                                 app:mask="##.##"
                                 app:maxValue="30"
                                 app:minValue="1"
@@ -367,7 +367,7 @@
                                 android:hint="##.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f104m}"
+                                android:text="@={anthc.f104m}"
                                 app:mask="##.##"
                                 app:maxValue="30"
                                 app:minValue="1"
@@ -437,7 +437,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f10501}"
+                                android:text="@={anthc.f10501}"
                                 app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="20"
@@ -467,7 +467,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f10502}"
+                                android:text="@={anthc.f10502}"
                                 app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="20"
@@ -499,7 +499,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f10503}"
+                                android:text="@={anthc.f10503}"
                                 app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="20"
@@ -531,7 +531,7 @@
                                 android:hint="###.##"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f105m}"
+                                android:text="@={anthc.f105m}"
                                 app:mask="###.##"
                                 app:maxValue="120"
                                 app:minValue="20"
@@ -601,7 +601,7 @@
                                 android:hint="##.#"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f10601}"
+                                android:text="@={anthc.f10601}"
                                 app:mask="##.#"
                                 app:maxValue="20"
                                 app:minValue="5"
@@ -631,7 +631,7 @@
                                 android:hint="##.#"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f10602}"
+                                android:text="@={anthc.f10602}"
                                 app:mask="##.#"
                                 app:maxValue="20"
                                 app:minValue="5"
@@ -663,7 +663,7 @@
                                 android:hint="##.#"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f10603}"
+                                android:text="@={anthc.f10603}"
                                 app:mask="##.#"
                                 app:maxValue="20"
                                 app:minValue="5"
@@ -695,7 +695,7 @@
                                 android:hint="##.#"
                                 android:textDirection="ltr"
                                 android:inputType="number"
-                                android:text="@={form.f106m}"
+                                android:text="@={anthc.f106m}"
                                 app:mask="##.#"
                                 app:maxValue="20"
                                 app:minValue="5"
@@ -741,8 +741,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.f107.equals(`1`)}"
-                                android:onClick="@{()->form.setF107(`1`)}"
+                                android:checked="@{anthc.f107.equals(`1`)}"
+                                android:onClick="@{()->anthc.setF107(`1`)}"
                                 android:text="@string/f10701" />
 
                             <RadioButton
@@ -750,8 +750,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.f107.equals(`2`)}"
-                                android:onClick="@{()->form.setF107(`2`)}"
+                                android:checked="@{anthc.f107.equals(`2`)}"
+                                android:onClick="@{()->anthc.setF107(`2`)}"
                                 android:text="@string/f10702" />
 
                         </RadioGroup>
@@ -789,7 +789,7 @@
                             android:layout_height="match_parent"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/f108"
-                            android:text="@={form.f108}" />
+                            android:text="@={anthc.f108}" />
 
                     </LinearLayout>
 
@@ -829,8 +829,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.f109.equals(`1`)}"
-                                android:onClick="@{()->form.setF109(`1`)}"
+                                android:checked="@{anthc.f109.equals(`1`)}"
+                                android:onClick="@{()->anthc.setF109(`1`)}"
                                 android:text="@string/f10901" />
 
                             <RadioButton
@@ -838,8 +838,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.f109.equals(`2`)}"
-                                android:onClick="@{()->form.setF109(`2`)}"
+                                android:checked="@{anthc.f109.equals(`2`)}"
+                                android:onClick="@{()->anthc.setF109(`2`)}"
                                 android:text="@string/f10902" />
 
                         </RadioGroup>

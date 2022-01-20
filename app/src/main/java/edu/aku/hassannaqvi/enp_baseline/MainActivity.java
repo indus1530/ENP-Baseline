@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.AndroidManager;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.enp_baseline.models.CAnthro;
 import edu.aku.hassannaqvi.enp_baseline.models.Child;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
@@ -189,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionE2Activity.class));
                 break;
             case R.id.f1:
-                MainApp.modf = new ModuleF();
+                MainApp.anthc = new CAnthro();
                 startActivity(new Intent(this, SectionF1Activity.class));
                 break;
             case R.id.f2:

@@ -19,6 +19,7 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
+import edu.aku.hassannaqvi.enp_baseline.models.CAnthro;
 import edu.aku.hassannaqvi.enp_baseline.models.Child;
 import edu.aku.hassannaqvi.enp_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
@@ -26,7 +27,6 @@ import edu.aku.hassannaqvi.enp_baseline.models.Form;
 import edu.aku.hassannaqvi.enp_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.ModuleE;
-import edu.aku.hassannaqvi.enp_baseline.models.ModuleF;
 import edu.aku.hassannaqvi.enp_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
@@ -58,7 +58,7 @@ public class MainApp extends Application {
     public static String[] downloadData;
     public static Form form;
     public static ModuleE mode;
-    public static ModuleF modf;
+    public static CAnthro anthc;
     public static MWRA mwra;
     public static Pregnancy pregnancy;
     public static Child child;

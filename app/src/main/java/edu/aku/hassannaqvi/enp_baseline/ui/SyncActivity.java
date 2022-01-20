@@ -244,7 +244,7 @@ public class SyncActivity extends AppCompatActivity {
 
                     downloadTables.add(new SyncModel(TableContracts.UsersTable.TABLE_NAME));
 
-                    downloadTables.add(new SyncModel(TableContracts.VillagesTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(TableContracts.ClustersTable.TABLE_NAME));
 //                    downloadTables.add(new SyncModel(RandomTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(TableContracts.VersionTable.TABLE_NAME));
                 } else {
@@ -330,7 +330,7 @@ public class SyncActivity extends AppCompatActivity {
                                         jsonArray = new JSONArray(result);
                                         insertCount = db.syncUser(jsonArray);
                                         break;
-                                    case TableContracts.VillagesTable.TABLE_NAME:
+                                    case TableContracts.ClustersTable.TABLE_NAME:
                                         jsonArray = new JSONArray(result);
                                         insertCount = db.syncClusters(jsonArray);
                                         break;

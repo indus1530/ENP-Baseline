@@ -136,19 +136,21 @@ public class TableContracts {
 
     }
 
-    public static abstract class VillagesTable implements BaseColumns {
+    public static abstract class ClustersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "villages";
+        public static final String TABLE_NAME = "clusters";
         public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_COUNTRY = "country";
-        public static final String COLUMN_CCODE = "ccode";
-        public static final String COLUMN_PROVINCE = "province";
-        public static final String COLUMN_PROVCODE = "provcode";
-        public static final String COLUMN_DISTRICT_NAME = "district_name";
-        public static final String COLUMN_DCODE = "dcode";
-        public static final String COLUMN_VILLAGE = "village";
-        public static final String COLUMN_VCODE = "vcode";
-        public static final String COLUMN_PSUCODE = "psucode";
+        public static final String COLUMN_PROVINCE_CODE = "provinceCode";
+        public static final String COLUMN_PROVINCE_NAME = "provinceName";
+        public static final String COLUMN_DISTRICT_CODE = "districtCode";
+        public static final String COLUMN_DISTRICT_NAME = "districtName";
+        public static final String COLUMN_TEHSIL_CODE = "tehsilCode";
+        public static final String COLUMN_TEHSIL_NAME = "tehsilName";
+        public static final String COLUMN_UC_CODE = "ucCode";
+        public static final String COLUMN_UC_NAME = "ucName";
+        public static final String COLUMN_VILLAGE_CODE = "villageCode";
+        public static final String COLUMN_VILLAGE_NAME = "villageName";
+        public static final String COLUMN_CLUSTER_NO = "clusterNo";
     }
 
 

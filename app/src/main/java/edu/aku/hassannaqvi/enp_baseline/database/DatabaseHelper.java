@@ -27,6 +27,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.CAnthroTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.ChildTable;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.ClustersTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.ECDInfoTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.EntryLogTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.FamilyMembersTable;
@@ -38,11 +39,11 @@ import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.PregnancyTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.RecipientTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.VersionTable;
-import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.VillagesTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.WAnthroTable;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.models.CAnthro;
 import edu.aku.hassannaqvi.enp_baseline.models.Child;
+import edu.aku.hassannaqvi.enp_baseline.models.Clusters;
 import edu.aku.hassannaqvi.enp_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.enp_baseline.models.EntryLog;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
@@ -54,7 +55,6 @@ import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
 import edu.aku.hassannaqvi.enp_baseline.models.VersionApp;
-import edu.aku.hassannaqvi.enp_baseline.models.Villages;
 import edu.aku.hassannaqvi.enp_baseline.models.WAnthro;
 
 
@@ -80,7 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
-        db.execSQL(CreateTable.SQL_CREATE_VILLAGES);
+        db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
         //db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
@@ -949,29 +949,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public int syncClusters(JSONArray clusterList) {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        db.delete(VillagesTable.TABLE_NAME, null, null);
+        db.delete(ClustersTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
             for (int i = 0; i < clusterList.length(); i++) {
 
                 JSONObject json = clusterList.getJSONObject(i);
 
-                Villages villages = new Villages();
-                villages.sync(json);
+                Clusters clusters = new Clusters();
+                clusters.sync(json);
                 ContentValues values = new ContentValues();
 
-                values.put(VillagesTable.COLUMN_COUNTRY, villages.getCountry());
-                values.put(VillagesTable.COLUMN_CCODE, villages.getCcode());
-                values.put(VillagesTable.COLUMN_PROVINCE, villages.getProvince());
-                values.put(VillagesTable.COLUMN_PROVCODE, villages.getProvcode());
-                values.put(VillagesTable.COLUMN_DISTRICT_NAME, villages.getDistrict_name());
-                values.put(VillagesTable.COLUMN_DCODE, villages.getDcode());
-                values.put(VillagesTable.COLUMN_VILLAGE, villages.getVillage());
-                values.put(VillagesTable.COLUMN_VCODE, villages.getVcode());
-                values.put(VillagesTable.COLUMN_PSUCODE, villages.getPsucode());
+                values.put(ClustersTable.COLUMN_PROVINCE_CODE, clusters.getProvinceCode());
+                values.put(ClustersTable.COLUMN_PROVINCE_NAME, clusters.getProvinceName());
+                values.put(ClustersTable.COLUMN_DISTRICT_CODE, clusters.getDistrictCode());
+                values.put(ClustersTable.COLUMN_DISTRICT_NAME, clusters.getDistrictName());
+                values.put(ClustersTable.COLUMN_TEHSIL_CODE, clusters.getTehsilCode());
+                values.put(ClustersTable.COLUMN_TEHSIL_NAME, clusters.getTehsilName());
+                values.put(ClustersTable.COLUMN_UC_CODE, clusters.getUcCode());
+                values.put(ClustersTable.COLUMN_UC_NAME, clusters.getUcName());
+                values.put(ClustersTable.COLUMN_VILLAGE_CODE, clusters.getVillageCode());
+                values.put(ClustersTable.COLUMN_VILLAGE_NAME, clusters.getVillageName());
+                values.put(ClustersTable.COLUMN_CLUSTER_NO, clusters.getClusterNo());
 
 
-                long rowID = db.insert(VillagesTable.TABLE_NAME, null, values);
+                long rowID = db.insert(ClustersTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
 
@@ -1734,24 +1736,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Villages getVillagesByCode(String psucode) {
+    public Clusters getVillagesByCode(String psucode) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
-        String whereClause = VillagesTable.COLUMN_PSUCODE + " = ?";
+        String whereClause = ClustersTable.COLUMN_CLUSTER_NO + " = ?";
 
         String[] whereArgs = {psucode};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = VillagesTable.COLUMN_PSUCODE + " ASC";
+        String orderBy = ClustersTable.COLUMN_CLUSTER_NO + " ASC";
 
-        Villages e = new Villages();
+        Clusters e = new Clusters();
         try {
             c = db.query(
-                    VillagesTable.TABLE_NAME,  // The table to query
+                    ClustersTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1760,7 +1762,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy
             );
             while (c.moveToNext()) {
-                e = new Villages().hydrate(c);
+                e = new Clusters().hydrate(c);
             }
         } finally {
             if (c != null) {
@@ -1957,22 +1959,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<Villages> getAllCountries() {
+    public Collection<Clusters> getAllProvinces() {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
         Boolean distinct = true;
-        String tableName = VillagesTable.TABLE_NAME;
+        String tableName = ClustersTable.TABLE_NAME;
         String[] columns = null;
         String whereClause = null;
         String[] whereArgs = null;
-        String groupBy = VillagesTable.COLUMN_COUNTRY;
+        String groupBy = ClustersTable.COLUMN_DISTRICT_CODE;
         String having = null;
-        String orderBy = VillagesTable.COLUMN_COUNTRY + " ASC";
+        String orderBy = ClustersTable.COLUMN_DISTRICT_CODE + " ASC";
         String limitRows = "9999";
 
-        Collection<Villages> allCountries = new ArrayList<>();
+        Collection<Clusters> all = new ArrayList<>();
         try {
             c = db.query(
                     distinct,       // Distinct values
@@ -1986,9 +1988,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     limitRows
             );
             while (c.moveToNext()) {
-
-                allCountries.add(new Villages().hydrate(c));
-
+                all.add(new Clusters().hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -1998,24 +1998,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allCountries;
+        return all;
     }
 
-    public Collection<Villages> getProvinceByCountry(String cCode) {
+    public Collection<Clusters> getDistrictsByProvince(String provinceCode) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
         Boolean distinct = true;
-        String tableName = VillagesTable.TABLE_NAME;
+        String tableName = ClustersTable.TABLE_NAME;
         String[] columns = null;
-        String whereClause = VillagesTable.COLUMN_CCODE + "= ?";
-        String[] whereArgs = {cCode};
-        String groupBy = VillagesTable.COLUMN_PROVINCE;
+        String whereClause = ClustersTable.COLUMN_PROVINCE_CODE + "= ?";
+        String[] whereArgs = {provinceCode};
+        String groupBy = ClustersTable.COLUMN_TEHSIL_CODE;
         String having = null;
-        String orderBy = VillagesTable.COLUMN_PROVINCE + " ASC";
+        String orderBy = ClustersTable.COLUMN_TEHSIL_CODE + " ASC";
         String limitRows = "9999";
 
-        Collection<Villages> allProvinces = new ArrayList<>();
+        Collection<Clusters> all = new ArrayList<>();
         try {
             c = db.query(
                     distinct,       // Distinct values
@@ -2029,9 +2029,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     limitRows
             );
             while (c.moveToNext()) {
-
-                allProvinces.add(new Villages().hydrate(c));
-
+                all.add(new Clusters().hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -2041,25 +2039,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allProvinces;
+        return all;
     }
 
-    public Collection<Villages> getDistrictsByProvince(String cCode, String provCode) {
+    public Collection<Clusters> getTehsilsByDistrict(String provinceCode, String districtCode) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
         Boolean distinct = true;
-        String tableName = VillagesTable.TABLE_NAME;
+        String tableName = ClustersTable.TABLE_NAME;
         String[] columns = null;
-        String whereClause = VillagesTable.COLUMN_CCODE + "= ? AND " +
-                VillagesTable.COLUMN_PROVCODE + "= ? ";
-        String[] whereArgs = {cCode, provCode};
-        String groupBy = VillagesTable.COLUMN_DISTRICT_NAME;
+        String whereClause = ClustersTable.COLUMN_PROVINCE_CODE + "= ? AND " +
+                ClustersTable.COLUMN_DISTRICT_CODE + "= ? ";
+        String[] whereArgs = {provinceCode, districtCode};
+        String groupBy = ClustersTable.COLUMN_UC_CODE;
         String having = null;
-        String orderBy = VillagesTable.COLUMN_DISTRICT_NAME + " ASC";
+        String orderBy = ClustersTable.COLUMN_UC_CODE + " ASC";
         String limitRows = "9999";
 
-        Collection<Villages> allProvinces = new ArrayList<>();
+        Collection<Clusters> all = new ArrayList<>();
         try {
             c = db.query(
                     distinct,       // Distinct values
@@ -2074,7 +2072,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
 
-                allProvinces.add(new Villages().hydrate(c));
+                all.add(new Clusters().hydrate(c));
 
             }
         } finally {
@@ -2085,27 +2083,110 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allProvinces;
+        return all;
     }
 
-    public Collection<Villages> getVillagesByDistrict(String cCode, String provCode, String distCode) {
+    public Collection<Clusters> getUcsByTehsil(String districtCode, String tehsilCode) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+
+        Boolean distinct = true;
+        String tableName = ClustersTable.TABLE_NAME;
+        String[] columns = null;
+        String whereClause = ClustersTable.COLUMN_DISTRICT_CODE + "= ? AND " +
+                ClustersTable.COLUMN_TEHSIL_CODE + "= ? ";
+        String[] whereArgs = {districtCode, tehsilCode};
+        String groupBy = ClustersTable.COLUMN_CLUSTER_NO;
+        String having = null;
+        String orderBy = ClustersTable.COLUMN_CLUSTER_NO + " ASC";
+        String limitRows = "9999";
+
+        Collection<Clusters> all = new ArrayList<>();
+        try {
+            c = db.query(
+                    distinct,       // Distinct values
+                    tableName,      // The table to query
+                    columns,        // The columns to return
+                    whereClause,    // The columns for the WHERE clause
+                    whereArgs,      // The values for the WHERE clause
+                    groupBy,        // don't group the rows
+                    having,         // don't filter by row groups
+                    orderBy,
+                    limitRows
+            );
+            while (c.moveToNext()) {
+                all.add(new Clusters().hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return all;
+    }
+
+    public Collection<Clusters> getClusterByUc(String ucCode) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+
+        Boolean distinct = true;
+        String tableName = ClustersTable.TABLE_NAME;
+        String[] columns = null;
+        String whereClause = ClustersTable.COLUMN_UC_CODE + "= ? ";
+        String[] whereArgs = {ucCode};
+        String groupBy = ClustersTable.COLUMN_CLUSTER_NO;
+        String having = null;
+        String orderBy = ClustersTable.COLUMN_CLUSTER_NO + " ASC";
+        String limitRows = "9999";
+
+        Collection<Clusters> all = new ArrayList<>();
+        try {
+            c = db.query(
+                    distinct,       // Distinct values
+                    tableName,      // The table to query
+                    columns,        // The columns to return
+                    whereClause,    // The columns for the WHERE clause
+                    whereArgs,      // The values for the WHERE clause
+                    groupBy,        // don't group the rows
+                    having,         // don't filter by row groups
+                    orderBy,
+                    limitRows
+            );
+            while (c.moveToNext()) {
+                all.add(new Clusters().hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return all;
+    }
+
+    public Collection<Clusters> getVillagesByDistrict(String districtCode, String tehsilCode, String ucCode) {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
         Boolean distinct = true;
-        String tableName = VillagesTable.TABLE_NAME;
+        String tableName = ClustersTable.TABLE_NAME;
         String[] columns = null;
-        String whereClause = VillagesTable.COLUMN_CCODE + "= ? AND " +
-                VillagesTable.COLUMN_PROVCODE + "= ? AND " +
-                VillagesTable.COLUMN_DCODE + "= ? ";
-        String[] whereArgs = {cCode, provCode, distCode};
-        String groupBy = VillagesTable.COLUMN_VILLAGE;
+        String whereClause = ClustersTable.COLUMN_DISTRICT_CODE + "= ? AND " +
+                ClustersTable.COLUMN_TEHSIL_CODE + "= ? AND " +
+                ClustersTable.COLUMN_UC_CODE + "= ? ";
+        String[] whereArgs = {districtCode, tehsilCode, ucCode};
+        String groupBy = ClustersTable.COLUMN_VILLAGE_CODE;
         String having = null;
-        String orderBy = VillagesTable.COLUMN_VILLAGE + " ASC";
+        String orderBy = ClustersTable.COLUMN_VILLAGE_CODE + " ASC";
         String limitRows = "9999";
 
-        Collection<Villages> allVillages = new ArrayList<>();
+        Collection<Clusters> all = new ArrayList<>();
         try {
             c = db.query(
                     distinct,       // Distinct values
@@ -2119,9 +2200,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     limitRows
             );
             while (c.moveToNext()) {
-
-                allVillages.add(new Villages().hydrate(c));
-
+                all.add(new Clusters().hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -2131,7 +2210,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allVillages;
+        return all;
     }
 
     public Form getFormByPSUHHNo(String psuCode, String hhid) throws JSONException {

@@ -27,8 +27,8 @@ import edu.aku.hassannaqvi.enp_baseline.R;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityIdentificationBinding;
+import edu.aku.hassannaqvi.enp_baseline.models.Clusters;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
-import edu.aku.hassannaqvi.enp_baseline.models.Villages;
 
 
 public class IdentificationActivity extends AppCompatActivity {
@@ -40,8 +40,13 @@ public class IdentificationActivity extends AppCompatActivity {
     private ArrayList<String> provinceCodes;
     private ArrayList<String> districtNames;
     private ArrayList<String> districtCodes;
+    private ArrayList<String> tehsilNames;
+    private ArrayList<String> tehsilCodes;
+    private ArrayList<String> ucNames;
+    private ArrayList<String> ucCodes;
     private ArrayList<String> villageNames;
     private ArrayList<String> villageCodes;
+    private ArrayList<String> clusters;
     private ArrayList<String> psuCode;
     private ArrayList<String> headHH;
     private Intent openIntent;
@@ -66,15 +71,15 @@ public class IdentificationActivity extends AppCompatActivity {
 
         // Populate Provinces
         //Collection<Villages> provinces = db.getProvinceByCountry(String.valueOf(MainApp.selectedCountry));
-        Collection<Villages> provinces = db.getProvinceByCountry("1");
+        Collection<Clusters> provinces = db.getAllProvinces();
         provinceNames = new ArrayList<>();
         provinceCodes = new ArrayList<>();
         provinceNames.add("...");
         provinceCodes.add("...");
 
-        for (Villages p : provinces) {
-            provinceNames.add(p.getProvince());
-            provinceCodes.add(p.getProvcode());
+        for (Clusters p : provinces) {
+            provinceNames.add(p.getProvinceName());
+            provinceCodes.add(p.getProvinceCode());
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, provinceNames);
@@ -93,16 +98,15 @@ public class IdentificationActivity extends AppCompatActivity {
                 if (position == 0) return;
                 MainApp.selectedProvince = provinceCodes.get(position);
                 // Populate Districts
-                //Collection<Villages> districts = db.getDistrictsByProvince(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince);
-                Collection<Villages> districts = db.getDistrictsByProvince("1", String.valueOf(bi.a101.getSelectedItemPosition()));
+                Collection<Clusters> districts = db.getDistrictsByProvince(MainApp.selectedProvince);
                 districtNames = new ArrayList<>();
                 districtCodes = new ArrayList<>();
                 districtNames.add("...");
                 districtCodes.add("...");
 
-                for (Villages d : districts) {
-                    districtNames.add(d.getDistrict_name());
-                    districtCodes.add(d.getDcode());
+                for (Clusters d : districts) {
+                    districtNames.add(d.getDistrictName());
+                    districtCodes.add(d.getDistrictCode());
                 }
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, districtNames);
@@ -125,24 +129,22 @@ public class IdentificationActivity extends AppCompatActivity {
                 if (position == 0) return;
 
                 MainApp.selectedDistrict = districtCodes.get(position);
-                // Populate Villages
-                //Collection<Villages> villages = db.getVillagesByDistrict(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince, MainApp.selectedDistrict);
-                Collection<Villages> villages = db.getVillagesByDistrict("1", String.valueOf(bi.a101.getSelectedItemPosition()), String.valueOf(bi.a102.getSelectedItemPosition()));
-
-                villageNames = new ArrayList<>();
-                villageCodes = new ArrayList<>();
-                psuCode = new ArrayList<>();
+                // Populate TEHSILS
+                Collection<Clusters> tehsils = db.getTehsilsByDistrict(MainApp.selectedProvince, MainApp.selectedDistrict);
+                tehsilNames = new ArrayList<>();
+                tehsilCodes = new ArrayList<>();
+                //psuCode = new ArrayList<>();
                 villageNames.add("...");
                 villageCodes.add("...");
-                psuCode.add("...");
+                //psuCode.add("...");
 
-                for (Villages v : villages) {
-                    villageNames.add(v.getVillage());
-                    villageCodes.add(v.getVcode());
-                    psuCode.add(v.getPsucode());
+                for (Clusters v : tehsils) {
+                    tehsilNames.add(v.getTehsilName());
+                    tehsilCodes.add(v.getTehsilCode());
+                    //psuCode.add(v.getClusterNo());
                 }
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, villageNames);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, tehsilNames);
                 bi.a103.setAdapter(adapter);
 
             }
@@ -155,11 +157,57 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.a103.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.a104.setAdapter(null);
+                bi.a105.setAdapter(null);
                 bi.a106.setText(null);
+                bi.a107.setText(null);
                 if (position == 0) return;
 
-                MainApp.selectedVillage = villageCodes.get(position);
-                MainApp.selectedPSU = psuCode.get(position);
+                MainApp.selectedDistrict = districtCodes.get(position);
+                // Populate UCS
+                Collection<Clusters> ucs = db.getUcsByTehsil(MainApp.selectedDistrict, tehsilCodes.get(position));
+                ucNames = new ArrayList<>();
+                ucCodes = new ArrayList<>();
+                ucNames.add("...");
+                ucCodes.add("...");
+                //psuCode.add("...");
+
+                for (Clusters v : ucs) {
+                    ucNames.add(v.getUcName());
+                    ucCodes.add(v.getUcCode());
+                }
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, ucNames);
+                bi.a104.setAdapter(adapter);
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        bi.a104.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.a105.setAdapter(null);
+                bi.a106.setText(null);
+                bi.a107.setText(null);
+                if (position == 0) return;
+
+                // Populate Clusters
+                Collection<Clusters> ucs = db.getClusterByUc(ucCodes.get(position));
+                clusters = new ArrayList<>();
+                clusters.add("...");
+
+                for (Clusters v : ucs) {
+                    clusters.add(v.getClusterNo());
+                }
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, clusters);
+                bi.a105.setAdapter(adapter);
 
 
             }

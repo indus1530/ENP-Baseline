@@ -6,6 +6,7 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -39,13 +40,7 @@ public class SectionB1Activity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         rcpt.setB101(String.valueOf(MainApp.bCount + 1));
-
-        setupSkips();
-        if (MainApp.superuser)
-            bi.btnContinue.setText("Review Next");
-    }
-
-    private void setupSkips() {
+        if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 
 
@@ -91,6 +86,8 @@ public class SectionB1Activity extends AppCompatActivity {
 
 
     public void btnContinue(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {

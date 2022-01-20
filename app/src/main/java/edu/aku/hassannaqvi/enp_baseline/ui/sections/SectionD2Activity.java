@@ -6,6 +6,7 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -34,18 +35,14 @@ public class SectionD2Activity extends AppCompatActivity {
         bi.setChild(child);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
-
-        setupSkips();
-        if (MainApp.superuser)
-            bi.btnContinue.setText("Review Next");
+        if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         //TODO: Need be selected Member
         if (familyMember != null && familyMember.getAgeMon() >= 6 && familyMember.getAgeMon() <= 23)
             bi.in6to23.setVisibility(View.VISIBLE);
         else bi.in6to23.setVisibility(View.GONE);
     }
 
-    private void setupSkips() {
-    }
+
 
 
     private boolean updateDB() {
@@ -70,8 +67,9 @@ public class SectionD2Activity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionD3Activity.class));
@@ -79,8 +77,6 @@ public class SectionD2Activity extends AppCompatActivity {
     }
 
 
-    private void saveDraft() {
-    }
 
 
     public void btnEnd(View view) {

@@ -5,6 +5,7 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -36,11 +37,10 @@ public class SectionC1Activity extends AppCompatActivity {
         bi.setMwra(mwra);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
-
         setupSkips();
-        if (MainApp.superuser)
-            bi.btnContinue.setText("Review Next");
+        if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
+
 
     private void setupSkips() {
 
@@ -117,17 +117,15 @@ public class SectionC1Activity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionC2Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
-
-    private void saveDraft() {
-    }
 
 
     public void btnEnd(View view) {

@@ -6,6 +6,8 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
@@ -34,9 +36,29 @@ public class SectionE1Activity extends AppCompatActivity {
         bi.setForm(mode);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
+        setupSkips();
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 
+    private void setupSkips() {
+
+        bi.e103.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.e103.getText().toString().isEmpty()) return;
+                bi.e104.setMinvalue(Integer.parseInt(bi.e104.getText().toString()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+    }
 
     private boolean updateDB() {
         /*if (MainApp.superuser) return true;

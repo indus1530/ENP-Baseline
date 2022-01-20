@@ -435,7 +435,7 @@
                             android:maxLength="2"
                             android:text="@={form.e104}"
                             app:maxValue="49"
-                            app:minValue="11"
+                            app:minValue="14"
                             app:type="range" />
 
                     </LinearLayout>

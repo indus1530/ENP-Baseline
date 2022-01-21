@@ -1,5 +1,4 @@
 package edu.aku.hassannaqvi.enp_baseline.core;
-
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 
 import com.scottyab.rootbeer.RootBeer;
@@ -19,6 +19,7 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
+import edu.aku.hassannaqvi.enp_baseline.BuildConfig;
 import edu.aku.hassannaqvi.enp_baseline.models.CAnthro;
 import edu.aku.hassannaqvi.enp_baseline.models.Child;
 import edu.aku.hassannaqvi.enp_baseline.models.ECDInfo;
@@ -49,6 +50,7 @@ public class MainApp extends Application {
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
     public static final String _UPDATE_URL = MainApp._IP + "/enp_bl/app/hhsurvey";
     public static final String _EMPTY_ = "";
+    private static final String TAG = "MainApp";
     public static String IBAHC = "";
 
     //COUNTRIES
@@ -82,8 +84,8 @@ public class MainApp extends Application {
     public static SharedPreferences.Editor editor;
     public static SharedPreferences sharedPref;
     public static String deviceid;
-    public static int versionCode = edu.aku.hassannaqvi.enp_baseline.BuildConfig.VERSION_CODE;
-    public static String versionName = edu.aku.hassannaqvi.enp_baseline.BuildConfig.VERSION_NAME;
+    public static int versionCode = BuildConfig.VERSION_CODE;
+    public static String versionName = BuildConfig.VERSION_NAME;
     public static int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 2;
     public static long TWO_MINUTES = 1000 * 60 * 2;
     public static boolean permissionCheck = false;
@@ -221,7 +223,9 @@ public class MainApp extends Application {
         try {
             ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
             Bundle bundle = ai.metaData;
-            IBAHC = bundle.getString("YEK_REVRES").substring(16, 32);
+            int TRATS = bundle.getInt("YEK_TRATS");
+            IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
+            Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }

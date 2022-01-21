@@ -119,6 +119,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SNO, form.getSno());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
+        values.put(FormsTable.COLUMN_PROVINCE_CODE, form.getProvinceCode());
+        values.put(FormsTable.COLUMN_DISTRICT_CODE, form.getTehsilCode());
+        values.put(FormsTable.COLUMN_TEHSIL_CODE, form.getProvinceCode());
+        values.put(FormsTable.COLUMN_UC_CODE, form.getProvinceCode());
+        values.put(FormsTable.COLUMN_VILLAGE_CODE, form.getProvinceCode());
+        values.put(FormsTable.COLUMN_A105B, form.getA105b());
+        values.put(FormsTable.COLUMN_A106, form.getA106());
+        values.put(FormsTable.COLUMN_A107, form.getA107());
         values.put(FormsTable.COLUMN_SA1, form.sA1toString());
         values.put(FormsTable.COLUMN_SA3A, form.sA3AtoString());
         values.put(FormsTable.COLUMN_SA3B, form.sA3BtoString());
@@ -709,7 +717,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 UsersTable.COLUMN_USERNAME,
                 UsersTable.COLUMN_PASSWORD,
                 UsersTable.COLUMN_FULLNAME,
-                UsersTable.COLUMN_DESIGNATION,
+                UsersTable.COLUMN_DISTRICT_CODE,
+                //UsersTable.COLUMN_DESIGNATION,
         };
         String whereClause = UsersTable.COLUMN_USERNAME + "=? AND " + UsersTable.COLUMN_PASSWORD + "=?";
         String[] whereArgs = {username, password};
@@ -933,7 +942,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
                 values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
                 values.put(UsersTable.COLUMN_FULLNAME, user.getFullname());
-                values.put(UsersTable.COLUMN_DESIGNATION, user.getDesignation());
+                values.put(UsersTable.COLUMN_DISTRICT_CODE, user.getDistrictCode());
+                //values.put(UsersTable.COLUMN_DESIGNATION, user.getDesignation());
                 long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
@@ -1969,9 +1979,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause = null;
         String[] whereArgs = null;
-        String groupBy = ClustersTable.COLUMN_DISTRICT_CODE;
+        String groupBy = ClustersTable.COLUMN_PROVINCE_NAME;
         String having = null;
-        String orderBy = ClustersTable.COLUMN_DISTRICT_CODE + " ASC";
+        String orderBy = ClustersTable.COLUMN_PROVINCE_NAME + " ASC";
         String limitRows = "9999";
 
         Collection<Clusters> all = new ArrayList<>();
@@ -2010,9 +2020,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause = ClustersTable.COLUMN_PROVINCE_CODE + "= ?";
         String[] whereArgs = {provinceCode};
-        String groupBy = ClustersTable.COLUMN_TEHSIL_CODE;
+        String groupBy = ClustersTable.COLUMN_DISTRICT_NAME;
         String having = null;
-        String orderBy = ClustersTable.COLUMN_TEHSIL_CODE + " ASC";
+        String orderBy = ClustersTable.COLUMN_DISTRICT_NAME + " ASC";
         String limitRows = "9999";
 
         Collection<Clusters> all = new ArrayList<>();
@@ -2052,9 +2062,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String whereClause = ClustersTable.COLUMN_PROVINCE_CODE + "= ? AND " +
                 ClustersTable.COLUMN_DISTRICT_CODE + "= ? ";
         String[] whereArgs = {provinceCode, districtCode};
-        String groupBy = ClustersTable.COLUMN_UC_CODE;
+        String groupBy = ClustersTable.COLUMN_TEHSIL_NAME;
         String having = null;
-        String orderBy = ClustersTable.COLUMN_UC_CODE + " ASC";
+        String orderBy = ClustersTable.COLUMN_TEHSIL_NAME + " ASC";
         String limitRows = "9999";
 
         Collection<Clusters> all = new ArrayList<>();
@@ -2096,9 +2106,52 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String whereClause = ClustersTable.COLUMN_DISTRICT_CODE + "= ? AND " +
                 ClustersTable.COLUMN_TEHSIL_CODE + "= ? ";
         String[] whereArgs = {districtCode, tehsilCode};
-        String groupBy = ClustersTable.COLUMN_CLUSTER_NO;
+        String groupBy = ClustersTable.COLUMN_UC_NAME;
         String having = null;
-        String orderBy = ClustersTable.COLUMN_CLUSTER_NO + " ASC";
+        String orderBy = ClustersTable.COLUMN_UC_NAME + " ASC";
+        String limitRows = "9999";
+
+        Collection<Clusters> all = new ArrayList<>();
+        try {
+            c = db.query(
+                    distinct,       // Distinct values
+                    tableName,      // The table to query
+                    columns,        // The columns to return
+                    whereClause,    // The columns for the WHERE clause
+                    whereArgs,      // The values for the WHERE clause
+                    groupBy,        // don't group the rows
+                    having,         // don't filter by row groups
+                    orderBy,
+                    limitRows
+            );
+            while (c.moveToNext()) {
+                all.add(new Clusters().hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return all;
+    }
+
+
+    public Collection<Clusters> getVillagesByUc(String tehsilCode, String ucCode) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+
+        Boolean distinct = true;
+        String tableName = ClustersTable.TABLE_NAME;
+        String[] columns = null;
+        String whereClause = ClustersTable.COLUMN_TEHSIL_CODE + "= ? AND " +
+                ClustersTable.COLUMN_UC_CODE + "= ? ";
+        String[] whereArgs = {tehsilCode, ucCode};
+        String groupBy = ClustersTable.COLUMN_VILLAGE_NAME;
+        String having = null;
+        String orderBy = ClustersTable.COLUMN_VILLAGE_NAME + " ASC";
         String limitRows = "9999";
 
         Collection<Clusters> all = new ArrayList<>();

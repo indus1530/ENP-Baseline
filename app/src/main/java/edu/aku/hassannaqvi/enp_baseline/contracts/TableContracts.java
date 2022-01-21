@@ -16,6 +16,14 @@ public class TableContracts {
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
+        public static final String COLUMN_PROVINCE_CODE = "provinceCode";
+        public static final String COLUMN_DISTRICT_CODE = "districtCode";
+        public static final String COLUMN_TEHSIL_CODE = "tehsilCode";
+        public static final String COLUMN_UC_CODE = "ucCode";
+        public static final String COLUMN_VILLAGE_CODE = "villageCode";
+        public static final String COLUMN_A105B = "a105B";
+        public static final String COLUMN_A106 = "a106";
+        public static final String COLUMN_A107 = "a107";
         public static final String COLUMN_SA1 = "sA1";
         public static final String COLUMN_SA3A = "sA3A";
         public static final String COLUMN_SA3B = "sA3B";
@@ -132,7 +140,8 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_PASSWORD = "password";
         public static final String COLUMN_FULLNAME = "full_name";
-        public static final String COLUMN_DESIGNATION = "designation";
+        public static final String COLUMN_DISTRICT_CODE = "district_code";
+        //public static final String COLUMN_DESIGNATION = "designation";
 
     }
 

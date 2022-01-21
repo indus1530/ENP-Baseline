@@ -120,6 +120,8 @@ public class MainApp extends Application {
     public static int selectedLanguage = 0;
     public static String selectedProvince = "";
     public static String selectedDistrict = "";
+    public static String selectedTehsil = "";
+    public static String selectedUc = "";
     public static String selectedVillage = "";
     public static String selectedPSU = "";
     public static String selectedHHID = "";

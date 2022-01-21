@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -73,20 +72,43 @@ public class SectionA1Activity extends AppCompatActivity {
     }
 
 
+    private boolean insertNewRecord() {
+        if (!MainApp.form.getUid().equals("") || MainApp.superuser) return true;
+
+        MainApp.form.populateMeta();
+
+        long rowId = 0;
+        try {
+            rowId = db.addForm(MainApp.form);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        MainApp.form.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.form.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+
     private boolean updateDB() {
         if (MainApp.superuser) return true;
 
-        db = MainApp.appInfo.getDbHelper();
-        long updcount = 0;
+        int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA1, form.sA1toString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA1, MainApp.form.sA1toString());
         } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
-        else {
+        if (updcount == 1) {
+            return true;
+        } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -97,6 +119,7 @@ public class SectionA1Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         if (updateDB()) {
             Intent i;
             if (form.getA112().equals("2")

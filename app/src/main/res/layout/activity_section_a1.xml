@@ -768,7 +768,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="52dp"
                             android:gravity="center"
-                            android:hint="###"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.a118}"

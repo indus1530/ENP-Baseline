@@ -24,6 +24,14 @@ object CreateTable {
             + FormsTable.COLUMN_SYNCED + " TEXT,"
             + FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
+            + FormsTable.COLUMN_PROVINCE_CODE + " TEXT,"
+            + FormsTable.COLUMN_DISTRICT_CODE + " TEXT,"
+            + FormsTable.COLUMN_TEHSIL_CODE + " TEXT,"
+            + FormsTable.COLUMN_UC_CODE + " TEXT,"
+            + FormsTable.COLUMN_VILLAGE_CODE + " TEXT,"
+            + FormsTable.COLUMN_A105B + " TEXT,"
+            + FormsTable.COLUMN_A106 + " TEXT,"
+            + FormsTable.COLUMN_A107 + " TEXT,"
             + FormsTable.COLUMN_SA1 + " TEXT,"
             + FormsTable.COLUMN_SA3A + " TEXT,"
             + FormsTable.COLUMN_SA3B + " TEXT,"
@@ -331,7 +339,8 @@ object CreateTable {
             + UsersTable.COLUMN_USERNAME + " TEXT,"
             + UsersTable.COLUMN_PASSWORD + " TEXT,"
             + UsersTable.COLUMN_FULLNAME + " TEXT,"
-            + UsersTable.COLUMN_DESIGNATION + " TEXT"
+            + UsersTable.COLUMN_DISTRICT_CODE + " TEXT"
+            /*+ UsersTable.COLUMN_DESIGNATION + " TEXT"*/
             + " );"
             )
 

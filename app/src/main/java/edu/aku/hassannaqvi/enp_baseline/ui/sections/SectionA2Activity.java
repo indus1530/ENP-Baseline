@@ -54,7 +54,7 @@ public class SectionA2Activity extends AppCompatActivity {
         bi.a205y.setMinvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))) - 95);
 
         setupListener();
-        //populateSpinner();
+        populateSpinner();
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
     }

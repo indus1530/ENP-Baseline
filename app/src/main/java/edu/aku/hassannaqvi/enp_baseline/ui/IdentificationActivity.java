@@ -1,5 +1,11 @@
 package edu.aku.hassannaqvi.enp_baseline.ui;
 
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.form;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedDistrict;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedProvince;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedTehsil;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedUc;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedVillage;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -29,6 +35,7 @@ import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityIdentificationBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.Clusters;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA1Activity;
 
 
 public class IdentificationActivity extends AppCompatActivity {
@@ -46,7 +53,6 @@ public class IdentificationActivity extends AppCompatActivity {
     private ArrayList<String> ucCodes;
     private ArrayList<String> villageNames;
     private ArrayList<String> villageCodes;
-    private ArrayList<String> clusters;
     private ArrayList<String> psuCode;
     private ArrayList<String> headHH;
     private Intent openIntent;
@@ -91,7 +97,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.a102.setAdapter(null);
                 bi.a103.setAdapter(null);
                 bi.a104.setAdapter(null);
-                bi.a105.setAdapter(null);
+                bi.a105a.setAdapter(null);
                 bi.a106.setText(null);
                 bi.a107.setText(null);
 
@@ -123,25 +129,21 @@ public class IdentificationActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 bi.a103.setAdapter(null);
                 bi.a104.setAdapter(null);
-                bi.a105.setAdapter(null);
+                bi.a105a.setAdapter(null);
                 bi.a106.setText(null);
                 bi.a107.setText(null);
                 if (position == 0) return;
-
                 MainApp.selectedDistrict = districtCodes.get(position);
                 // Populate TEHSILS
                 Collection<Clusters> tehsils = db.getTehsilsByDistrict(MainApp.selectedProvince, MainApp.selectedDistrict);
                 tehsilNames = new ArrayList<>();
                 tehsilCodes = new ArrayList<>();
-                //psuCode = new ArrayList<>();
-                villageNames.add("...");
-                villageCodes.add("...");
-                //psuCode.add("...");
+                tehsilNames.add("...");
+                tehsilCodes.add("...");
 
                 for (Clusters v : tehsils) {
                     tehsilNames.add(v.getTehsilName());
                     tehsilCodes.add(v.getTehsilCode());
-                    //psuCode.add(v.getClusterNo());
                 }
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, tehsilNames);
@@ -158,19 +160,17 @@ public class IdentificationActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 bi.a104.setAdapter(null);
-                bi.a105.setAdapter(null);
+                bi.a105a.setAdapter(null);
                 bi.a106.setText(null);
                 bi.a107.setText(null);
                 if (position == 0) return;
-
-                MainApp.selectedDistrict = districtCodes.get(position);
+                MainApp.selectedTehsil = tehsilCodes.get(position);
                 // Populate UCS
                 Collection<Clusters> ucs = db.getUcsByTehsil(MainApp.selectedDistrict, tehsilCodes.get(position));
                 ucNames = new ArrayList<>();
                 ucCodes = new ArrayList<>();
                 ucNames.add("...");
                 ucCodes.add("...");
-                //psuCode.add("...");
 
                 for (Clusters v : ucs) {
                     ucNames.add(v.getUcName());
@@ -192,22 +192,26 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.a104.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.a105.setAdapter(null);
+                bi.a105a.setAdapter(null);
+                bi.a105b.setText(null);
                 bi.a106.setText(null);
                 bi.a107.setText(null);
                 if (position == 0) return;
-
+                MainApp.selectedUc = ucCodes.get(position);
                 // Populate Clusters
-                Collection<Clusters> ucs = db.getClusterByUc(ucCodes.get(position));
-                clusters = new ArrayList<>();
-                clusters.add("...");
+                Collection<Clusters> villages = db.getVillagesByUc(selectedTehsil, selectedUc);
+                villageNames = new ArrayList<>();
+                villageCodes = new ArrayList<>();
+                villageNames.add("...");
+                villageCodes.add("...");
 
-                for (Clusters v : ucs) {
-                    clusters.add(v.getClusterNo());
+                for (Clusters v : villages) {
+                    villageNames.add(v.getVillageName());
+                    villageCodes.add(v.getVillageCode());
                 }
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, clusters);
-                bi.a105.setAdapter(adapter);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, villageNames);
+                bi.a105a.setAdapter(adapter);
 
 
             }
@@ -218,17 +222,31 @@ public class IdentificationActivity extends AppCompatActivity {
             }
         });
 
+        bi.a105a.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.a105b.setText(null);
+                bi.a106.setText(null);
+                bi.a107.setText(null);
+                if (position == 0) return;
+                MainApp.selectedVillage = villageCodes.get(position);
+                //MainApp.selectedPSU = psuCode.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
 
     }
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        MainApp.selectedHHID = bi.a106.getText().toString();
-
         if (!hhExists()) {
             saveDraftForm();
             finish();
-            //startActivity(new Intent(this, SectionAS1Activity.class));
+            startActivity(new Intent(this, SectionA1Activity.class));
         } else if (MainApp.entryType != Integer.parseInt(MainApp.form.getEntryType())) {
             Toast.makeText(this, String.format("This form has been entered as %s", MainApp.form.getEntryType().equals("1") ? "interview." : "data-entry"), Toast.LENGTH_SHORT).show();
 
@@ -236,7 +254,7 @@ public class IdentificationActivity extends AppCompatActivity {
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
             finish();
-            //startActivity(new Intent(this, SectionAS1Activity.class));
+            startActivity(new Intent(this, SectionA1Activity.class));
         }
 
     }
@@ -250,13 +268,21 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form.setDeviceId(MainApp.deviceid);
         MainApp.form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.form.setA101(String.valueOf(MainApp.selectedCountry));
-        MainApp.form.setA102(MainApp.selectedProvince);
-        MainApp.form.setA103(MainApp.selectedDistrict);
-        MainApp.form.setA104(MainApp.selectedPSU);
-        MainApp.form.setA105(MainApp.selectedPSU);
-        MainApp.form.setA106(bi.a107.getText().toString());
+        MainApp.form.setProvinceCode(selectedProvince);
+        MainApp.form.setA101(bi.a101.getSelectedItem().toString());
+        MainApp.form.setDistrictCode(selectedDistrict);
+        MainApp.form.setA102(bi.a102.getSelectedItem().toString());
+        MainApp.form.setTehsilCode(selectedTehsil);
+        MainApp.form.setA103(bi.a103.getSelectedItem().toString());
+        MainApp.form.setUcCode(selectedUc);
+        MainApp.form.setA104(bi.a104.getSelectedItem().toString());
+        MainApp.form.setVillageCode(selectedVillage);
+        MainApp.form.setA105a(bi.a105a.getSelectedItem().toString());
+        MainApp.form.setA105b(bi.a105b.getText().toString());
+        MainApp.form.setA106(bi.a106.getText().toString());
         MainApp.form.setA107(bi.a107.getText().toString());
+        MainApp.selectedPSU = form.getA105b();
+        MainApp.selectedHHID = form.getA106();
         MainApp.form.setSno(MainApp.selectedHHID);
 
     }

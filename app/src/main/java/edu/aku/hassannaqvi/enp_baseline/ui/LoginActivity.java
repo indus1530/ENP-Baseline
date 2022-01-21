@@ -239,7 +239,7 @@ public class LoginActivity extends AppCompatActivity {
             ) {
                 MainApp.user.setUserName(username);
                 MainApp.admin = username.contains("@") || username.contains("test1234");
-                MainApp.superuser = MainApp.user.getDesignation().equals("Supervisor");
+                //MainApp.superuser = MainApp.user.getDesignation().equals("Supervisor");
 
                 Intent iLogin = new Intent(edu.aku.hassannaqvi.enp_baseline.ui.LoginActivity.this, MainActivity.class);
                 startActivity(iLogin);

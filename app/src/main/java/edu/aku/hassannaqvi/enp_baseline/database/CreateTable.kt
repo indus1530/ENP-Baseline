@@ -277,7 +277,8 @@ object CreateTable {
             + PregnancyTable.COLUMN_SYNCED + " TEXT,"
             + PregnancyTable.COLUMN_SYNCED_DATE + " TEXT,"
             + PregnancyTable.COLUMN_APPVERSION + " TEXT,"
-            + PregnancyTable.COLUMN_SB1 + " TEXT"
+            + PregnancyTable.COLUMN_SE1 + " TEXT,"
+            + PregnancyTable.COLUMN_SE2 + " TEXT"
 
             + " );"
             )

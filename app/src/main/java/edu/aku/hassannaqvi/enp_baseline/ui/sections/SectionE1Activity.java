@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.mode;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregnancy;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -16,7 +17,10 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.enp_baseline.R;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionE1Binding;
@@ -33,7 +37,7 @@ public class SectionE1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e1);
-        bi.setForm(mode);
+        bi.setPreg(pregnancy);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         setupSkips();
@@ -60,13 +64,40 @@ public class SectionE1Activity extends AppCompatActivity {
 
     }
 
+    private boolean insertNewRecord() {
+
+        if (!pregnancy.getUid().equals("") || MainApp.superuser) return true;
+
+        pregnancy.populateMeta();
+
+
+        long rowId = 0;
+        try {
+            rowId = db.addPregnancy(pregnancy);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        pregnancy.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            pregnancy.setUid(pregnancy.getDeviceId() + pregnancy.getId());
+            db.updatesPregnancyColumn(TableContracts.PregnancyTable.COLUMN_UID, pregnancy.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+
     private boolean updateDB() {
-        /*if (MainApp.superuser) return true;
+        if (MainApp.superuser) return true;
 
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SB42, mwra.sB42toString());
+            updcount = db.updatesPregnancyColumn(TableContracts.PregnancyTable.COLUMN_SE1, pregnancy.sE1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -76,15 +107,14 @@ public class SectionE1Activity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
 
     public void btnContinue(View view) {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionE2Activity.class));
@@ -100,12 +130,12 @@ public class SectionE1Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
-        if (!mode.getE107w().isEmpty() && !mode.getE107m().isEmpty()) {
-            if (Integer.parseInt(mode.getE107w()) + Integer.parseInt(mode.getE107m()) == 0)
+        if (!pregnancy.getE107w().isEmpty() && !pregnancy.getE107m().isEmpty()) {
+            if (Integer.parseInt(pregnancy.getE107w()) + Integer.parseInt(pregnancy.getE107m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.e107w, "All Values Can't be zero");
         }
-        if (!mode.getE111w().isEmpty() && !mode.getE111m().isEmpty()) {
-            if (Integer.parseInt(mode.getE111w()) + Integer.parseInt(mode.getE111m()) == 0)
+        if (!pregnancy.getE111w().isEmpty() && !pregnancy.getE111m().isEmpty()) {
+            if (Integer.parseInt(pregnancy.getE111w()) + Integer.parseInt(pregnancy.getE111m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.e111w, "All Values Can't be zero");
         }
         return true;

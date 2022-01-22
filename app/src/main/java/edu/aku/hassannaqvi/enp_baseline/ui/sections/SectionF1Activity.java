@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -18,7 +19,10 @@ import androidx.databinding.DataBindingUtil;
 import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.enp_baseline.R;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionF1Binding;
@@ -77,14 +81,39 @@ public class SectionF1Activity extends AppCompatActivity {
         }
     }
 
+    private boolean insertNewRecord() {
+
+        if (!anthc.getUid().equals("") || MainApp.superuser) return true;
+
+        anthc.populateMeta();
+
+        long rowId = 0;
+        try {
+            rowId = db.addCAnthro(anthc);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        anthc.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            anthc.setUid(anthc.getDeviceId() + anthc.getId());
+            db.updatesCAnthroColumn(TableContracts.CAnthroTable.COLUMN_UID, anthc.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
 
     private boolean updateDB() {
-        /*if (MainApp.superuser) return true;
+        if (MainApp.superuser) return true;
 
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SB42, mwra.sB42toString());
+            updcount = db.updatesCAnthroColumn(TableContracts.CAnthroTable.COLUMN_SF1, anthc.sF1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -94,15 +123,14 @@ public class SectionF1Activity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
 
     public void btnContinue(View view) {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionF2Activity.class));

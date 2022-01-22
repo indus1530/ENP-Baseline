@@ -339,7 +339,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyTable.COLUMN_SNO, preg.getSno());
         values.put(PregnancyTable.COLUMN_USERNAME, preg.getUserName());
         values.put(PregnancyTable.COLUMN_SYSDATE, preg.getSysDate());
-        values.put(PregnancyTable.COLUMN_SB1, preg.sB1toString());
+        values.put(PregnancyTable.COLUMN_SE1, preg.sE1toString());
+        values.put(PregnancyTable.COLUMN_SE2, preg.sE2toString());
         values.put(PregnancyTable.COLUMN_ISTATUS, preg.getiStatus());
         values.put(PregnancyTable.COLUMN_DEVICETAGID, preg.getDeviceTag());
         values.put(PregnancyTable.COLUMN_DEVICEID, preg.getDeviceId());

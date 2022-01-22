@@ -40,7 +40,7 @@ import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityFamilyListBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA2Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC1Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionB1Activity;
 
 
 public class FamilyMembersListActivity extends AppCompatActivity {
@@ -258,8 +258,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.selectedMWRA = "";
         selectedChild = "";
         MainApp.selectedChildName = "";
-        MainApp.selectedAdolMale = "";
-        MainApp.selectedAdolFemale = "";
+        MainApp.selectedRecipient = "";
+        MainApp.selectedPreg1st = "";
 
         // Set Selected Members
         for (int i = 0; i < MainApp.familyList.size(); i++) {
@@ -282,10 +282,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             }
             // Set AdolMale
             if (MainApp.familyList.get(i).getIndexed().equals("3"))
-                MainApp.selectedAdolMale = String.valueOf(i);
+                MainApp.selectedRecipient = String.valueOf(i);
             // Set AdolFemale
             if (MainApp.familyList.get(i).getIndexed().equals("4"))
-                MainApp.selectedAdolFemale = String.valueOf(i);
+                MainApp.selectedPreg1st = String.valueOf(i);
 
 
             MainApp.hhheadSelected = MainApp.familyList.get(i).getA203().equals("1");
@@ -427,7 +427,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         }
         finish();
-        startActivity(new Intent(this, MainApp.selectedMWRA.equals("") ? EndingActivity.class : SectionC1Activity.class).putExtra("complete", true));
+        startActivity(new Intent(this, MainApp.selectedRecipient.equals("") ? EndingActivity.class : SectionB1Activity.class).putExtra("complete", true));
 
         //MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
 
@@ -491,13 +491,13 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             sno = recipient.get(Integer.parseInt(kishGridAdolMale));
 
             // Updating database to mark selected adolmale
-            MainApp.selectedAdolMale = String.valueOf(sno - 1);
-            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale));
+            MainApp.selectedRecipient = String.valueOf(sno - 1);
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient));
             db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "3");
 
             // Updating adapter
-            MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale)).setIndexed("3");
-            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdolMale));
+            MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient)).setIndexed("3");
+            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedRecipient));
         }
 
         if (preg1st.size() > 0) {
@@ -506,13 +506,13 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             sno = preg1st.get(Integer.parseInt(kishGridAdolFemale));
 
             // Updating database to mark selected adolfemale
-            MainApp.selectedAdolFemale = String.valueOf(sno - 1);
-            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale));
+            MainApp.selectedPreg1st = String.valueOf(sno - 1);
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedPreg1st));
             db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
 
             // Updating adapter
-            MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale)).setIndexed("4");
-            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdolFemale));
+            MainApp.familyList.get(Integer.parseInt(MainApp.selectedPreg1st)).setIndexed("4");
+            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedPreg1st));
         }
 
         bi.btnRand.setVisibility(View.INVISIBLE);
@@ -838,25 +838,25 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 // ADOLESCENT MALE
             // Updating database to mark selected adolmale
             if (recipient.size() > 0) {
-                MainApp.selectedAdolMale = String.valueOf(Integer.parseInt(recipientSno.get(bi.recipientList.getSelectedItemPosition())) - 1);
-                MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale));
+                MainApp.selectedRecipient = String.valueOf(Integer.parseInt(recipientSno.get(bi.recipientList.getSelectedItemPosition())) - 1);
+                MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient));
                 db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "3");
 
                 // Updating adapter and notify Adolescent Male selection
-                MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale)).setIndexed("3");
-                familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdolMale));
+                MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient)).setIndexed("3");
+                familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedRecipient));
             }
 
 // ADOLESCENT FEMALE
             // Updating database to mark selected adolFemale
             if (preg1st.size() > 0) {
-                MainApp.selectedAdolFemale = String.valueOf(Integer.parseInt(preg1stSno.get(bi.preg1stList.getSelectedItemPosition())) - 1);
-                MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale));
+                MainApp.selectedPreg1st = String.valueOf(Integer.parseInt(preg1stSno.get(bi.preg1stList.getSelectedItemPosition())) - 1);
+                MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedPreg1st));
                 db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
 
                 // Updating adapter and notify Adolescent Female selection
-                MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale)).setIndexed("4");
-                familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdolFemale));
+                MainApp.familyList.get(Integer.parseInt(MainApp.selectedPreg1st)).setIndexed("4");
+                familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedPreg1st));
             }
             bi.selectionLists.setVisibility(View.GONE);
             bi.familyComplete.setEnabled(false);

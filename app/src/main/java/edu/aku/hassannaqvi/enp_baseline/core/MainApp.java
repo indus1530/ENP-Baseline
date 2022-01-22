@@ -105,8 +105,8 @@ public class MainApp extends Application {
     public static int bCount = 0;
     public static String selectedMWRA;
     public static String selectedChild;
-    public static String selectedAdolMale;
-    public static String selectedAdolFemale;
+    public static String selectedRecipient;
+    public static String selectedPreg1st;
     public static int memberCountComplete;
     public static boolean memberComplete;
     public static int ecdCount;

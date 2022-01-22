@@ -1,7 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.rcpt;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.recipient;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -37,7 +37,7 @@ public class SectionB2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b2);
-        bi.setRcpt(rcpt);
+        bi.setRcpt(recipient);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
@@ -50,7 +50,7 @@ public class SectionB2Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesRecipientColumn(TableContracts.RecipientTable.COLUMN_SB2, rcpt.sB2toString());
+            updcount = db.updatesRecipientColumn(TableContracts.RecipientTable.COLUMN_SB2, recipient.sB2toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -81,20 +81,20 @@ public class SectionB2Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
-        if (!rcpt.getB202w().isEmpty() && !rcpt.getB202m().isEmpty() && !rcpt.getB202y().isEmpty()) {
-            if (Integer.parseInt(rcpt.getB202w()) + Integer.parseInt(rcpt.getB202m()) + Integer.parseInt(rcpt.getB202y()) == 0)
+        if (!recipient.getB202w().isEmpty() && !recipient.getB202m().isEmpty() && !recipient.getB202y().isEmpty()) {
+            if (Integer.parseInt(recipient.getB202w()) + Integer.parseInt(recipient.getB202m()) + Integer.parseInt(recipient.getB202y()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b202w, "All Values Can't be zero");
         }
-        if (!rcpt.getB204w().isEmpty() && !rcpt.getB204m().isEmpty()) {
-            if (Integer.parseInt(rcpt.getB204w()) + Integer.parseInt(rcpt.getB204m()) == 0)
+        if (!recipient.getB204w().isEmpty() && !recipient.getB204m().isEmpty()) {
+            if (Integer.parseInt(recipient.getB204w()) + Integer.parseInt(recipient.getB204m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b204w, "All Values Can't be zero");
         }
-        if (!rcpt.getB21201().isEmpty() && !rcpt.getB21202().isEmpty()) {
-            if (Integer.parseInt(rcpt.getB21201()) + Integer.parseInt(rcpt.getB21202()) == 0)
+        if (!recipient.getB21201().isEmpty() && !recipient.getB21202().isEmpty()) {
+            if (Integer.parseInt(recipient.getB21201()) + Integer.parseInt(recipient.getB21202()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b21101, "All Values Can't be zero");
         }
-        if (!rcpt.getB222h().isEmpty() && !rcpt.getB222m().isEmpty()) {
-            if (Integer.parseInt(rcpt.getB222h()) + Integer.parseInt(rcpt.getB222m()) == 0)
+        if (!recipient.getB222h().isEmpty() && !recipient.getB222m().isEmpty()) {
+            if (Integer.parseInt(recipient.getB222h()) + Integer.parseInt(recipient.getB222m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b222h, "All Values Can't be zero");
         }
         return true;

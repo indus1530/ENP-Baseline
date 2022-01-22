@@ -69,6 +69,7 @@ object CreateTable {
             + RecipientTable.COLUMN_PROJECT_NAME + " TEXT,"
             + RecipientTable.COLUMN_UID + " TEXT,"
             + RecipientTable.COLUMN_UUID + " TEXT,"
+            + RecipientTable.COLUMN_FMUID + " TEXT,"
             + RecipientTable.COLUMN_PSU_CODE + " TEXT,"
             + RecipientTable.COLUMN_HHID + " TEXT,"
             + RecipientTable.COLUMN_SNO + " TEXT,"

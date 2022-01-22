@@ -483,6 +483,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(RecipientTable.COLUMN_PROJECT_NAME, rcpt.getProjectName());
         values.put(RecipientTable.COLUMN_UID, rcpt.getUid());
         values.put(RecipientTable.COLUMN_UUID, rcpt.getUuid());
+        values.put(RecipientTable.COLUMN_FMUID, rcpt.getFmuid());
         values.put(RecipientTable.COLUMN_PSU_CODE, rcpt.getPsuCode());
         values.put(RecipientTable.COLUMN_HHID, rcpt.getHhid());
         values.put(RecipientTable.COLUMN_USERNAME, rcpt.getUserName());
@@ -653,7 +654,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = RecipientTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.rcpt.getId())};
+        String[] selectionArgs = {String.valueOf(MainApp.recipient.getId())};
 
         return db.update(RecipientTable.TABLE_NAME,
                 values,
@@ -1873,16 +1874,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return membersByUID;
     }
 
-    public FamilyMembers getSelectedMemberBYUID(String uid) throws JSONException {
+    public FamilyMembers getSelectedMemberBYUID(String uid, String index) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
         String whereClause;
         whereClause = FamilyMembersTable.COLUMN_UUID + "=? AND "
-                + FamilyMembersTable.COLUMN_INDEXED + "=?";
+                + FamilyMembersTable.COLUMN_INDEXED + " like ? ";
 
-        String[] whereArgs = {uid, "1"};
+        String[] whereArgs = {uid, "'%" + index + "%'"};
 
         String groupBy = null;
         String having = null;
@@ -2535,5 +2536,45 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return lateAdol;
+    }
+
+    public Recipient getRecipientByUID(String fmuid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = RecipientTable.COLUMN_UUID + "=? AND " +
+                RecipientTable.COLUMN_FMUID + "=?";
+
+        String[] whereArgs = {MainApp.form.getUid(), fmuid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = RecipientTable.COLUMN_ID + " ASC";
+
+        Recipient recipient = new Recipient();  // Pregnancies can never be null.
+
+        c = db.query(
+                RecipientTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                   // The sort order
+        );
+/*        if (c.getCount() >= ecdNo) {
+            c.moveToPosition(ecdNo);
+            ecdInfo = new ECDInfo().Hydrate(c);
+        }*/
+        while (c.moveToNext()) {
+            recipient = new Recipient().Hydrate(c);
+        }
+
+        db.close();
+
+        return recipient;
     }
 }

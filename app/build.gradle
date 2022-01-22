@@ -91,7 +91,7 @@ android {
         }
 
         debug {
-            resValue("string", "DB_PASSWORD_enp_baseline", "V@ca#!0nSurvIv0r")
+            resValue("string", "DB_PASSWORD_enp_baseline.db", "M@!rRiaGMU@lTIpL")
         }
     }
     compileOptions {

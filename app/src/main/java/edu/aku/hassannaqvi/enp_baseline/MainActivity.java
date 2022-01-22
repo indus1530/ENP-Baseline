@@ -131,11 +131,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionA5Activity.class));
                 break;
             case R.id.secb1:
-                MainApp.rcpt = new Recipient();
+                MainApp.recipient = new Recipient();
                 startActivity(new Intent(this, SectionB1Activity.class));
                 break;
             case R.id.secb2:
-                MainApp.rcpt = new Recipient();
+                MainApp.recipient = new Recipient();
                 startActivity(new Intent(this, SectionB2Activity.class));
                 break;
             case R.id.secc1:

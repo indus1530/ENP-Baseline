@@ -3,7 +3,7 @@ package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.adolListAll;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.mwra;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.preg1st;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.recipient;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.recipientsList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -64,7 +64,7 @@ public class SectionC1Activity extends AppCompatActivity {
             bi.btnContinue.setText("Review Next");
 
 
-        for (Integer a : recipient) {
+        for (Integer a : recipientsList) {
 
             if (!MainApp.familyList.get(a - 1).getIndexed().equals("")) {
                 adolListAll.add(a);

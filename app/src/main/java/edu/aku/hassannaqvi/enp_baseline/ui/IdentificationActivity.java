@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.enp_baseline.ui;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.form;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedDistrict;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedProvince;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedTehsil;
@@ -243,6 +242,9 @@ public class IdentificationActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+
+        MainApp.selectedPSU = bi.a105b.getText().toString();
+        MainApp.selectedHHID = bi.a106.getText().toString();
         if (!hhExists()) {
             saveDraftForm();
             finish();
@@ -281,8 +283,6 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form.setA105b(bi.a105b.getText().toString());
         MainApp.form.setA106(bi.a106.getText().toString());
         MainApp.form.setA107(bi.a107.getText().toString());
-        MainApp.selectedPSU = form.getA105b();
-        MainApp.selectedHHID = form.getA106();
         MainApp.form.setSno(MainApp.selectedHHID);
 
     }

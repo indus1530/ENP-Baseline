@@ -388,7 +388,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA206d(String a206d) {
         this.a206d = a206d;
-        setAgeMon();
+      //  setAgeMon();
         notifyPropertyChanged(BR.a206d);
     }
 
@@ -400,10 +400,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setAgeMon() {
         this.ageMon = 0;
-        if (!this.a206d.isEmpty() && !this.a206m.isEmpty() && !this.a206y.isEmpty()) {
+        if (!this.a206m.isEmpty() && !this.a206y.isEmpty()) {
             this.ageMon = Integer.parseInt(this.a206y) * 12L
-                    + Integer.parseInt(this.a206m)
-                    + Integer.parseInt(this.a206d) / 30;
+                    + Integer.parseInt(this.a206m);
+
         }
         notifyPropertyChanged(BR.ageMon);
     }

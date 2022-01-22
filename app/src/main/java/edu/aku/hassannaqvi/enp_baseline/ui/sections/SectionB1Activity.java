@@ -1,7 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.rcpt;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.recipient;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -36,30 +36,30 @@ public class SectionB1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b1);
-        bi.setRcpt(rcpt);
+        bi.setRcpt(recipient);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
-        rcpt.setB101(String.valueOf(MainApp.bCount + 1));
+        recipient.setB101(String.valueOf(MainApp.bCount + 1));
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 
 
     private boolean insertNewRecord() {
-        if (!rcpt.getUid().equals("") || MainApp.superuser) return true;
-        MainApp.rcpt.populateMeta();
+        if (!recipient.getUid().equals("") || MainApp.superuser) return true;
+        MainApp.recipient.populateMeta();
 
         long rowId = 0;
         try {
-            rowId = db.addRecipient(MainApp.rcpt);
+            rowId = db.addRecipient(MainApp.recipient);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        MainApp.rcpt.setId(String.valueOf(rowId));
+        MainApp.recipient.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            MainApp.rcpt.setUid(MainApp.rcpt.getDeviceId() + MainApp.rcpt.getId());
-            db.updatesRecipientColumn(TableContracts.RecipientTable.COLUMN_UID, rcpt.getUid());
+            MainApp.recipient.setUid(MainApp.recipient.getDeviceId() + MainApp.recipient.getId());
+            db.updatesRecipientColumn(TableContracts.RecipientTable.COLUMN_UID, recipient.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -72,7 +72,7 @@ public class SectionB1Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesRecipientColumn(TableContracts.RecipientTable.COLUMN_SB1, rcpt.sB1toString());
+            updcount = db.updatesRecipientColumn(TableContracts.RecipientTable.COLUMN_SB1, recipient.sB1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -105,16 +105,16 @@ public class SectionB1Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
-        if (!rcpt.getB104y().isEmpty() && !rcpt.getB104m().isEmpty() && !rcpt.getB104w().isEmpty()) {
-            if (Integer.parseInt(rcpt.getB104y()) + Integer.parseInt(rcpt.getB104m()) + Integer.parseInt(rcpt.getB104w()) == 0)
+        if (!recipient.getB104y().isEmpty() && !recipient.getB104m().isEmpty() && !recipient.getB104w().isEmpty()) {
+            if (Integer.parseInt(recipient.getB104y()) + Integer.parseInt(recipient.getB104m()) + Integer.parseInt(recipient.getB104w()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b104y, "All Values Can't be zero");
         }
-        if (!rcpt.getB105y().isEmpty() && !rcpt.getB105m().isEmpty() && !rcpt.getB105w().isEmpty()) {
-            if (Integer.parseInt(rcpt.getB105y()) + Integer.parseInt(rcpt.getB105m()) + Integer.parseInt(rcpt.getB105w()) == 0)
+        if (!recipient.getB105y().isEmpty() && !recipient.getB105m().isEmpty() && !recipient.getB105w().isEmpty()) {
+            if (Integer.parseInt(recipient.getB105y()) + Integer.parseInt(recipient.getB105m()) + Integer.parseInt(recipient.getB105w()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b105y, "All Values Can't be zero");
         }
-        if (!rcpt.getB115h().isEmpty() && !rcpt.getB115m().isEmpty()) {
-            if (Integer.parseInt(rcpt.getB115h()) + Integer.parseInt(rcpt.getB115m()) == 0)
+        if (!recipient.getB115h().isEmpty() && !recipient.getB115m().isEmpty()) {
+            if (Integer.parseInt(recipient.getB115h()) + Integer.parseInt(recipient.getB115m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b115h, "All Values Can't be zero");
         }
         return true;

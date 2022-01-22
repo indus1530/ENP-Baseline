@@ -154,6 +154,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mother_List">Mothers</string>
+    <string name="caregiver_List">Caregiver</string>
     <string name="child_List">Children</string>
     <string name="recipientList">BISP Recipient</string>
     <string name="preg1stList">1st Time Pregnant</string>

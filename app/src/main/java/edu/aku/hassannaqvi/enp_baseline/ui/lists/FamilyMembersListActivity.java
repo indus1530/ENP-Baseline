@@ -1,10 +1,13 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.lists;
 
-import static android.view.View.VISIBLE;
+
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.caregiverList;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.childOfSelectedMWRAList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.preg1st;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.recipient;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.recipientsList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedChild;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedChildName;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedRecipient;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -46,7 +49,7 @@ import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionB1Activity;
 public class FamilyMembersListActivity extends AppCompatActivity {
 
 
-    private static final String TAG = "FamilyMembersListActivity";
+    private static final String TAG = "FamilyMembersList";
     private final boolean selectionCheck = false;
     ActivityFamilyListBinding bi;
     DatabaseHelper db;
@@ -88,91 +91,11 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                             }
                         }
-                        /** populateMothersList
-                         *      Familymember has a value in mothers Serial Number (HL8)
-                         *      Mother not already exists in the MWRA List
-                         */
-                        String motherSno = MainApp.familyMember.getA21301();
-                        if (Integer.parseInt(MainApp.familyMember.getA206y()) < 5 && MainApp.familyMember.getA214().equals("1")
-                                && !motherSno.equals("")
-                                && !motherSno.equals("97")
-                                && !MainApp.mwraList.contains(Integer.parseInt(motherSno))
-
-                        ) {
-                            FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);
-                            /**
-                             * Mother is present
-                             * Mother's age is between 15 - 49
-                             */
-                            if (mother.getA214().equals("1") && Integer.parseInt(mother.getA206y()) >= 15 && Integer.parseInt(mother.getA206y()) < 50) {
-                                MainApp.mwraList.add(Integer.parseInt(motherSno));
-                            }
-                        }
-
-                        /** Populate Adolescent:
-                         *                      Age:    15-19,
-                         *           Marital Status:    unmarried or 99,
-                         *      Availability Status:    Present
-                         */
-                        if (
-                                Integer.parseInt(MainApp.familyMember.getA206y()) >= 15 && Integer.parseInt(MainApp.familyMember.getA206y()) <= 50   // 15 - 50 year old
-                                        && (!MainApp.familyMember.getA208().equals("5") && !MainApp.familyMember.getA208().equals("99"))
-                                        && MainApp.familyMember.getA209().equals("1")
-                                        && MainApp.familyMember.getA210().equals("1")
-                                        && MainApp.familyMember.getA214().equals("1")
-
-                        ) {
-
-                            /** Populate Preganacy 1st */
-                            if (MainApp.familyMember.getA204().equals("2"))
-                                preg1st.add(Integer.valueOf(MainApp.familyMember.getA201()));
-                        }
-
-                        if (
-                                MainApp.familyMember.getA20701().equals("1")
-                                        || MainApp.familyMember.getA20702().equals("2")
-                                        || MainApp.familyMember.getA20703().equals("3")
-                                        || MainApp.familyMember.getA20704().equals("4")
-                                        || MainApp.familyMember.getA20796().equals("96")
-
-                        ) {
-
-                            /** Populate Recipient */
-                            if (MainApp.familyMember.getA214().equals("1"))
-                                recipient.add(Integer.valueOf(MainApp.familyMember.getA201()));
-                        }
-
-
-/*                        // Populate lists for MWRA and ADOL
-                        if (!MainApp.familyMembers.getMemCate().equals("")) {
-                            switch (MainApp.familyMembers.getMemCate()) {
-
-                              //MWRA List
-                                case "1":
-                                    MainApp.mwraList.add(MainApp.familyMembers);
-                                    MainApp.mwraCount++;
-                                    break;
-
-                                    //
-                                case "2":
-                                    MainApp.adolList.add(MainApp.familyMembers);
-                                    MainApp.adolCount++;
-                                    break;
-                                case "3":
-                                    MainApp.maleList.add(MainApp.familyMembers);
-                                    MainApp.maleCount++;
-                                    break;
-                            }
-
-                        }*/
 
 
                         MainApp.memberCount++;
                         familyMembersAdapter.notifyItemInserted(MainApp.familyList.size() - 1);
-                        //  Collections.sort(MainApp.fm, new SortByStatus());
-                        //fmAdapter.notifyDataSetChanged();
 
-                        //        }
                         checkCompleteFm();
                     }
                     if (result.getResultCode() == Activity.RESULT_CANCELED) {
@@ -181,8 +104,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                 }
             });
-    private ArrayList<String> motherNames, childNames, recipientNames, preg1stNames;
-    private ArrayList<String> motherSno, childSno, recipientSno, preg1stSno;
+    private ArrayList<String> caregiverNames, childNames, recipientNames, preg1stNames;
+    private ArrayList<String> caregiverSno, motherSno, childSno, recipientSno, preg1stSno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -196,8 +119,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         MainApp.familyList = new ArrayList<>();
         MainApp.mwraList = new ArrayList<Integer>();
+        MainApp.caregiverList = new ArrayList<Integer>();
+        childOfSelectedMWRAList = new ArrayList<Integer>();
         preg1st = new ArrayList<Integer>();
-        recipient = new ArrayList<Integer>();
+        recipientsList = new ArrayList<Integer>();
         MainApp.adolListAll = new ArrayList<>();
         MainApp.fatherList = new ArrayList<>();
         MainApp.motherList = new ArrayList<>();
@@ -222,30 +147,48 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                     }
                 }
 
-                // Populate mothers' list
-                String motherSno = fm.getA21301(); // mother's line number from child
-                if (Integer.parseInt(fm.getA206y()) < 5 && fm.getA214().equals("1") &&
-                        !motherSno.equals("") && !motherSno.equals("97") && !MainApp.mwraList.contains(Integer.parseInt(motherSno))) {
-                    // MainApp.mwraList.add(Integer.parseInt(motherSno));
-                    FamilyMembers mother = MainApp.familyList.get(Integer.parseInt(motherSno) - 1);
+                /** Populate Under-5 Child
+                 *
+                 *      If age in months is less than 60
+                 * */
+                if (fm.getAgeMon() < 60) {
 
-                    if (mother.getA214().equals("1") && Integer.parseInt(mother.getA206y()) < 50 && Integer.parseInt(mother.getA206y()) >= 15) {
-                        MainApp.mwraList.add(Integer.parseInt(motherSno));
-                    }
+                    childOfSelectedMWRAList.add(Integer.valueOf(fm.getA201()));
+
                 }
 
-                // Populate Adolescent
+                /** Populate Recipient
+                 *
+                 *      If any BISP is marked
+                 *
+                 * */
                 if (
-                        Integer.parseInt(fm.getA206y()) >= 10 && Integer.parseInt(fm.getA206y()) <= 19   // 10 - 19 year old
-                                && (fm.getA208().equals("5") || fm.getA208().equals("99"))
+                        fm.getA20701().equals("1")
+                                || fm.getA20702().equals("2")
+                                || fm.getA20703().equals("3")
+                                || fm.getA20704().equals("4")
+                                || fm.getA20796().equals("96")) {
 
-                ) {
-                    // Male
-                    if (fm.getA204().equals("1"))
-                        recipient.add(Integer.valueOf(fm.getA201()));
-                    // Female
-                    if (fm.getA204().equals("2"))
-                        preg1st.add(Integer.valueOf(fm.getA201()));
+                    recipientsList.add(Integer.valueOf(fm.getA201()));
+                }
+
+                /** Populate First Pregnant:
+                 *
+                 *   Is first time pregnant:    Y
+                 *
+                 */
+                if (fm.getA210().equals("1")) {
+
+                    preg1st.add(Integer.valueOf(fm.getA201()));
+                }
+                /** Populate Caregiver List:
+                 *
+                 *   Any female 15
+                 *
+                 */
+                if (Integer.parseInt(fm.getA206y()) > 14
+                        && fm.getA204().equals("2")) {
+                    caregiverList.add(Integer.valueOf(fm.getA201()));
                 }
 
             }
@@ -264,36 +207,33 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         // Set Selected Members
         for (int i = 0; i < MainApp.familyList.size(); i++) {
 
-            // Set Mother
-            if (MainApp.familyList.get(i).getIndexed().equals("1")) {
-                MainApp.selectedMWRA = String.valueOf(i);
-                bi.btnRand.setVisibility(View.INVISIBLE);
-                //bi.btnContinue.setVisibility(View.VISIBLE);
-                bi.btnContinue.setEnabled(true);
-                bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
-                // break;
-            }
-
             // Set Child
-            if (MainApp.familyList.get(i).getIndexed().equals("2")) {
+            if (MainApp.familyList.get(i).getIndexed().contains("2")) {
                 selectedChild = String.valueOf(i);
                 selectedChildName = MainApp.familyList.get(i).getA202();
                 MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(i).getA206y());
             }
-            // Set AdolMale
-            if (MainApp.familyList.get(i).getIndexed().equals("3"))
-                MainApp.selectedRecipient = String.valueOf(i);
-            // Set AdolFemale
-            if (MainApp.familyList.get(i).getIndexed().equals("4"))
-                MainApp.selectedPreg1st = String.valueOf(i);
+
+            // Set Recipient
+            if (MainApp.familyList.get(i).getIndexed().contains("R")) {
+                selectedRecipient = String.valueOf(i);
+                MainApp.selectedRecipientName = MainApp.familyList.get(i).getA202();
+
+            }
 
 
             MainApp.hhheadSelected = MainApp.familyList.get(i).getA203().equals("1");
 
         }
 
-        bi.btnContinue.setEnabled(!MainApp.selectedMWRA.equals(""));
-        bi.btnContinue.setBackground(!MainApp.selectedMWRA.equals("") ? getResources().getDrawable(R.drawable.button_shape_green) : getResources().getDrawable(R.drawable.button_shape_gray));
+        if (!selectedChild.equals("") && !selectedRecipient.equals("")) {
+            bi.btnRand.setVisibility(View.INVISIBLE);
+            //bi.btnContinue.setVisibility(View.VISIBLE);
+            bi.btnContinue.setEnabled(true);
+            bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
+        }
+        //   bi.btnContinue.setEnabled(!MainApp.selectedMWRA.equals(""));
+        //  bi.btnContinue.setBackground(!MainApp.selectedMWRA.equals("") ? getResources().getDrawable(R.drawable.button_shape_green) : getResources().getDrawable(R.drawable.button_shape_gray));
 
         //bi.btnContinue.setVisibility(!MainApp.selectedMWRA.equals("") ? View.VISIBLE : View.INVISIBLE);
         MainApp.memberCount = Math.round(MainApp.familyList.size());
@@ -328,8 +268,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
         // Family Complete criteria: MWRA must exist
-        if (MainApp.mwraList.size() > 0) {
-            bi.familyComplete.setVisibility(VISIBLE);
+        if (childOfSelectedMWRAList.size() > 0 && recipientsList.size() > 0) {
+            bi.familyComplete.setVisibility(View.VISIBLE);
 
         } else {
             bi.familyComplete.setVisibility(View.GONE);
@@ -337,7 +277,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }
 
         // Disable family complete check if MWRA indexed
-        if (!MainApp.selectedMWRA.equals("")) {
+        if (!MainApp.selectedChild.equals("") && !selectedRecipient.equals("")) {
             bi.familyComplete.setChecked(true);
             bi.familyComplete.setEnabled(false);
         }
@@ -420,14 +360,17 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     public void btnContinue(View view) {
 
         try {
-            MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid());
+            // child
+            MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid(), "R");
+            MainApp.recipient = db.getRecipientByUID(MainApp.familyList.get(Integer.parseInt(selectedRecipient)).getUid());
+
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(FamilyMembers): " + e.getMessage(), Toast.LENGTH_LONG).show();
 
         }
         finish();
-        startActivity(new Intent(this, MainApp.selectedRecipient.equals("") ? EndingActivity.class : SectionB1Activity.class).putExtra("complete", true));
+        startActivity(new Intent(this, MainApp.selectedChild.equals("") || MainApp.selectedRecipient.equals("") ? EndingActivity.class : SectionB1Activity.class).putExtra("complete", true));
 
         //MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
 
@@ -445,7 +388,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
     }
 
-    private void proceedSelect() {
+  /*  private void proceedSelect() {
 
         String hhno = MainApp.form.getSno().substring(MainApp.form.getSno().length() - 1);
         // Select Index Mother using KishGrid
@@ -463,15 +406,15 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
 
         // Select Child using KishGrid
-        MainApp.childOfSelectedMWRAList = new ArrayList<>();
+        childOfSelectedMWRAList = new ArrayList<>();
         for (FamilyMembers fm : MainApp.familyList) {
             if (fm.getA21301().equals(MainApp.familyMember.getA201()) && fm.getA214().equals("1") && Integer.parseInt(fm.getA206y()) < 5) {
-                MainApp.childOfSelectedMWRAList.add(Integer.parseInt(fm.getA201()));
+                childOfSelectedMWRAList.add(Integer.parseInt(fm.getA201()));
             }
         }
 
-        String kishGridChild = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.childOfSelectedMWRAList.size());
-        sno = MainApp.childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
+        String kishGridChild = MainApp.kishGrid(Integer.parseInt(hhno), childOfSelectedMWRAList.size());
+        sno = childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
 
         // Updating database to mark indexed mother
         selectedChild = String.valueOf(sno - 1);
@@ -486,9 +429,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
 
         // Select AdolMale using KishGrid
-        if (recipient.size() > 0) {
-            String kishGridAdolMale = MainApp.kishGrid(Integer.parseInt(hhno), recipient.size());
-            sno = recipient.get(Integer.parseInt(kishGridAdolMale));
+        if (recipientsList.size() > 0) {
+            String kishGridAdolMale = MainApp.kishGrid(Integer.parseInt(hhno), recipientsList.size());
+            sno = recipientsList.get(Integer.parseInt(kishGridAdolMale));
 
             // Updating database to mark selected adolmale
             MainApp.selectedRecipient = String.valueOf(sno - 1);
@@ -519,7 +462,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         // bi.btnContinue.setVisibility(View.VISIBLE);
         bi.btnContinue.setEnabled(true);
         bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
-    }
+    }*/
 
   /*  private void displayAddMoreDialog() {
         new AlertDialog.Builder(this)
@@ -597,112 +540,41 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     }*/
 
     public void btnRand(View view) {
-/*        if (MainApp.familyList.size() < Integer.parseInt(MainApp.form.getH220b())) {
-            displayProceedDialog();
-        } else {*/
-        if (MainApp.mwraList.size() > 0 && MainApp.selectedMWRA.equals("")) {
 
-            if (MainApp.entryType == 1) {
+        if (childOfSelectedMWRAList.size() > 0 && MainApp.selectedChild.equals("")) {
+
+          /*  if (MainApp.entryType == 1) {
                 proceedSelect();
-            }
+            }*/
             if (MainApp.entryType == 2) {
                 showSelect();
             }
         } else {
-            bi.btnRand.setVisibility(VISIBLE);
+            bi.btnRand.setVisibility(View.VISIBLE);
         }
-        /*       }*/
+
     }
 
     private void showSelect() {
 
-        bi.selectionLists.setVisibility(VISIBLE);
+        bi.selectionLists.setVisibility(View.VISIBLE);
+        bi.childList.setAdapter(null);
 
-        // Populate Mothers List
-        if (MainApp.mwraList.size() > 0) {
-            motherNames = new ArrayList<>();
-            motherSno = new ArrayList<>();
-
-            motherNames.add("...");
-            motherSno.add("...");
-
-            for (Integer m : MainApp.mwraList) {
-
-                motherNames.add(MainApp.familyList.get(m - 1).getA202());
-                motherSno.add(MainApp.familyList.get(m - 1).getA201());
-
-            }
-
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(FamilyMembersListActivity.this,
-                    R.layout.custom_spinner, motherNames);
-
-            bi.mwraList.setAdapter(adapter);
-
-            bi.mwraList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                    bi.childList.setAdapter(null);
-                    if (position == 0) return;
-
-                    MainApp.childOfSelectedMWRAList = new ArrayList<>();
-                    for (FamilyMembers fm : MainApp.familyList) {
-                        if (fm.getA21301().equals(motherSno.get(position)) && fm.getA214().equals("1") && Integer.parseInt(fm.getA206y()) < 5) {
-                            MainApp.childOfSelectedMWRAList.add(Integer.parseInt(fm.getA201()));
-                        }
-                    }
-
-                    // Populate Childs List
-                    if (MainApp.childOfSelectedMWRAList.size() > 0) {
-                        childNames = new ArrayList<>();
-                        childSno = new ArrayList<>();
-
-                        childNames.add("...");
-                        childSno.add("...");
-
-                        for (Integer c : MainApp.childOfSelectedMWRAList) {
-
-                            childNames.add(MainApp.familyList.get(c - 1).getA202());
-                            childSno.add(MainApp.familyList.get(c - 1).getA201());
-
-                        }
-
-                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(FamilyMembersListActivity.this,
-                                R.layout.custom_spinner, childNames);
-
-                        bi.childList.setAdapter(adapter);
-                        bi.childDD.setVisibility(View.VISIBLE);
-
-                    } else {
-                        bi.childDD.setVisibility(View.GONE);
-                    }
-
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-
-
-        } else {
-            bi.motherDD.setVisibility(View.GONE);
-        }
-
-
-       /* // Populate Childs List
-        if (MainApp.childOfSelectedMWRAList.size() > 0) {
+        // Populate Childs List
+        if (childOfSelectedMWRAList.size() > 0) {
             childNames = new ArrayList<>();
             childSno = new ArrayList<>();
+            motherSno = new ArrayList<>();
 
             childNames.add("...");
             childSno.add("...");
+            motherSno.add("...");
 
-            for (Integer c : MainApp.childOfSelectedMWRAList) {
+            for (Integer c : childOfSelectedMWRAList) {
 
                 childNames.add(MainApp.familyList.get(c - 1).getA202());
                 childSno.add(MainApp.familyList.get(c - 1).getA201());
+                motherSno.add(MainApp.familyList.get(c - 1).getA21301());
 
             }
 
@@ -710,17 +582,66 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                     R.layout.custom_spinner, childNames);
 
             bi.childList.setAdapter(adapter);
+            bi.childDD.setVisibility(View.VISIBLE);
+
+            bi.childList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+
+                    if (position == 0) return;
+
+                    if (!motherSno.get(position).equals("") && !motherSno.get(position).equals("97")) {
+                        String motherName = MainApp.familyList.get(Integer.parseInt(motherSno.get(position)) - 1).getA202();
+                        bi.motherName.setText(motherName);
+                        bi.motherDD.setVisibility(View.VISIBLE);
+                        bi.caregiverDD.setVisibility(View.GONE);
+                        bi.caregiverList.setAdapter(null);
+                    } else {
+
+                        if (caregiverList.size() > 0) {
+                            caregiverNames = new ArrayList<>();
+                            caregiverSno = new ArrayList<>();
+
+                            caregiverNames.add("...");
+                            caregiverSno.add("...");
+
+                            for (Integer c : childOfSelectedMWRAList) {
+
+                                caregiverNames.add(MainApp.familyList.get(c - 1).getA202());
+                                caregiverSno.add(MainApp.familyList.get(c - 1).getA201());
+
+                            }
+
+                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(FamilyMembersListActivity.this,
+                                    R.layout.custom_spinner, caregiverNames);
+
+                            bi.caregiverList.setAdapter(adapter);
+                            bi.caregiverDD.setVisibility(View.VISIBLE);
+                            bi.motherDD.setVisibility(View.GONE);
+
+                        }
+                    }
+
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+            });
+
         } else {
             bi.childDD.setVisibility(View.GONE);
-        }*/
+        }
 
-        // Populate AdolMales List
-        if (recipient.size() > 0) {
+        // Populate BISP Recipients List
+        if (recipientsList.size() > 0) {
+
             recipientNames = new ArrayList<>();
             recipientSno = new ArrayList<>();
             recipientNames.add("...");
             recipientSno.add("...");
-            for (Integer am : recipient) {
+            for (Integer am : recipientsList) {
                 recipientNames.add(MainApp.familyList.get(am - 1).getA202());
                 recipientSno.add(MainApp.familyList.get(am - 1).getA201());
             }
@@ -728,28 +649,15 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(FamilyMembersListActivity.this,
                     R.layout.custom_spinner, recipientNames);
             bi.recipientList.setAdapter(adapter);
+            bi.recipienDD.setVisibility(View.VISIBLE);
+
         } else {
             bi.recipienDD.setVisibility(View.GONE);
         }
-
-        // Populate AdolFemales List
-        if (preg1st.size() > 0) {
-            preg1stNames = new ArrayList<>();
-            preg1stSno = new ArrayList<>();
-            preg1stNames.add("...");
-            preg1stSno.add("...");
-            for (Integer af : preg1st) {
-                preg1stNames.add(MainApp.familyList.get(af - 1).getA202());
-                preg1stSno.add(MainApp.familyList.get(af - 1).getA201());
-            }
-
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(FamilyMembersListActivity.this,
-                    R.layout.custom_spinner, preg1stNames);
-
-            bi.preg1stList.setAdapter(adapter);
-        } else {
-            bi.preg1stDD.setVisibility(View.GONE);
-        }
+        bi.btnRand.setVisibility(View.INVISIBLE);
+        // bi.btnContinue.setVisibility(View.VISIBLE);
+        bi.btnContinue.setEnabled(true);
+        bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_green));
     }
 
     @Override
@@ -764,9 +672,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
     public void finalizeFamily(View view) {
         if (bi.familyComplete.isChecked()) {
-            if (MainApp.mwraList.size() > 0 && MainApp.selectedMWRA.equals("")) {
+            if (childOfSelectedMWRAList.size() > 0 && selectedChildName.equals("")) {
                 //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedMWRA))).setStatus("1");
-                bi.btnRand.setVisibility(VISIBLE);
+                bi.btnRand.setVisibility(View.VISIBLE);
                 // bi.btnContinue.setVisibility(View.INVISIBLE);
                 bi.btnContinue.setEnabled(false);
                 bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_gray));
@@ -783,9 +691,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             bi.btnContinue.setBackground(getResources().getDrawable(R.drawable.button_shape_gray));
 
 
-            bi.mwraList.setAdapter(null);
+            //    bi.mwraList.setAdapter(null);
             bi.childList.setAdapter(null);
-            bi.preg1stList.setAdapter(null);
+            //   bi.preg1stList.setAdapter(null);
             bi.recipientList.setAdapter(null);
             bi.selectionLists.setVisibility(View.GONE);
         }
@@ -793,61 +701,71 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
     public void btnProceed(View view) {
         if (formValidation()) {
-/*            if (MainApp.mwraList.size() > 0 && bi.mwraList.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "Mother not selected", Toast.LENGTH_SHORT).show();
-                return;
-            }
+
 
             if (MainApp.childOfSelectedMWRAList.size() > 0 && bi.childList.getSelectedItemPosition() == 0) {
                 Toast.makeText(this, "Child not selected", Toast.LENGTH_SHORT).show();
+                if (caregiverList.size() > 0 && bi.caregiverList.getSelectedItemPosition() == 0 && bi.motherName.getText().equals("")) {
+                    Toast.makeText(this, "Caregiver not selected", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 return;
             }
 
-            if (MainApp.adolListMale.size() > 0 && bi.adolMaleList.getSelectedItemPosition() == 0) {
+            if (recipientsList.size() > 0 && bi.recipientList.getSelectedItemPosition() == 0) {
                 Toast.makeText(this, "Adolescent male not selected", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            if (MainApp.adolListFemale.size() > 0 && bi.adolFemaleList.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "Adolescent female not selected", Toast.LENGTH_SHORT).show();
-                return;
-            }*/
-
-// MWRA
-            // Updating database to mark indexed mother
-            MainApp.selectedMWRA = String.valueOf(Integer.parseInt(motherSno.get(bi.mwraList.getSelectedItemPosition())) - 1);
-            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
-            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
-
-            // Updating adapter and notify MWRA selection
-            MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).setIndexed("1");
-            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedMWRA));
-
-// CHILD
+            // CHILD
             // Updating database to mark selected Child
             selectedChild = String.valueOf(Integer.parseInt(childSno.get(bi.childList.getSelectedItemPosition())) - 1);
             selectedChildName = MainApp.familyList.get(Integer.parseInt(selectedChild)).getA202();
             MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild)).getA206y());
             MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(selectedChild));
-            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
 
             // Updating adapter and notify Child selection
-            MainApp.familyList.get(Integer.parseInt(selectedChild)).setIndexed("2");
+            MainApp.familyList.get(Integer.parseInt(selectedChild)).setIndexed("1");
             familyMembersAdapter.notifyItemChanged(Integer.parseInt(selectedChild));
 
-// ADOLESCENT MALE
-            // Updating database to mark selected adolmale
-            if (recipient.size() > 0) {
-                MainApp.selectedRecipient = String.valueOf(Integer.parseInt(recipientSno.get(bi.recipientList.getSelectedItemPosition())) - 1);
-                MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient));
+
+            // CHILD
+            // Updating database to mark indexed child
+            MainApp.selectedMWRA = String.valueOf(Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild)).getA21301()) - 1);
+            MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
+            db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
+
+            // Updating adapter and notify child selection
+            MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).setIndexed("2");
+            familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedMWRA));
+
+
+            // CAREGIVER
+            // Updating database to mark selected caregiver
+            if (caregiverList.size() > 0 && MainApp.selectedMWRA.equals("96")) {
+                MainApp.selectedCaregiver = String.valueOf(Integer.parseInt(caregiverSno.get(bi.caregiverList.getSelectedItemPosition())) - 1);
+                MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedCaregiver));
                 db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "3");
 
-                // Updating adapter and notify Adolescent Male selection
-                MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient)).setIndexed("3");
+                // Updating adapter and notify Caregiver selection
+                MainApp.familyList.get(Integer.parseInt(MainApp.selectedCaregiver)).setIndexed("3");
+                familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedCaregiver));
+            }
+
+            // BISP RECIPIENTS
+            // Updating database to mark selected BISP Recipent
+            if (recipientsList.size() > 0) {
+                MainApp.selectedRecipient = String.valueOf(Integer.parseInt(recipientSno.get(bi.recipientList.getSelectedItemPosition())) - 1);
+                MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient));
+                db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "R");
+
+                // Updating adapter and notify BISP Recipent selection
+                MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient)).setIndexed("R");
                 familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedRecipient));
             }
 
-// ADOLESCENT FEMALE
+/*// ADOLESCENT FEMALE
             // Updating database to mark selected adolFemale
             if (preg1st.size() > 0) {
                 MainApp.selectedPreg1st = String.valueOf(Integer.parseInt(preg1stSno.get(bi.preg1stList.getSelectedItemPosition())) - 1);
@@ -857,7 +775,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 // Updating adapter and notify Adolescent Female selection
                 MainApp.familyList.get(Integer.parseInt(MainApp.selectedPreg1st)).setIndexed("4");
                 familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedPreg1st));
-            }
+            }*/
             bi.selectionLists.setVisibility(View.GONE);
             bi.familyComplete.setEnabled(false);
             bi.btnContinue.setEnabled(true);

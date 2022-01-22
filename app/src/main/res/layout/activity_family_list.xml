@@ -118,27 +118,6 @@
                             android:orientation="vertical">
 
                             <LinearLayout
-                                android:id="@+id/motherDD"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/bottom"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    style="@style/sub_labels"
-                                    android:layout_width="168dp"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/mother_List" />
-
-
-                                <androidx.appcompat.widget.AppCompatSpinner
-                                    android:id="@+id/mwraList"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
                                 android:id="@+id/childDD"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -160,6 +139,54 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/motherDD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:visibility="gone"
+                                tools:visibility="visible"
+
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="168dp"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/mother_List" />
+
+
+                                <TextView
+                                    android:id="@+id/motherName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/caregiverDD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:visibility="gone"
+                                tools:visibility="visible"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="168dp"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/caregiver_List" />
+
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/caregiverList"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
                                 android:id="@+id/recipienDD"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -179,28 +206,30 @@
                                     android:layout_height="match_parent" />
 
                             </LinearLayout>
+                            <!--
 
-                            <LinearLayout
-                                android:id="@+id/preg1stDD"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/bottom"
-                                android:orientation="horizontal">
+                                                        <LinearLayout
+                                                            android:id="@+id/preg1stDD"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:background="@drawable/bottom"
+                                                            android:orientation="horizontal">
 
-                                <TextView
-                                    style="@style/sub_labels"
-                                    android:layout_width="168dp"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/preg1stList" />
+                                                            <TextView
+                                                                style="@style/sub_labels"
+                                                                android:layout_width="168dp"
+                                                                android:layout_height="match_parent"
+                                                                android:text="@string/preg1stList" />
 
 
-                                <androidx.appcompat.widget.AppCompatSpinner
-                                    android:id="@+id/preg1stList"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent" />
+                                                            <androidx.appcompat.widget.AppCompatSpinner
+                                                                android:id="@+id/preg1stList"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="match_parent" />
 
-                            </LinearLayout>
+                                                        </LinearLayout>
 
+                            -->
 
                             <Button
                                 android:id="@+id/btnProceed"
@@ -317,7 +346,7 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
                     android:shadowColor="@color/redDark"
-                    android:text="Select Indexed Mother"
+                    android:text="Mark selection"
                     android:textColor="@color/white"
                     android:visibility="invisible" />
 

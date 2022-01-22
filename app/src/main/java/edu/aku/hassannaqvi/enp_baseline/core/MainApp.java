@@ -68,7 +68,8 @@ public class MainApp extends Application {
     public static MotherKAP motherKAP;
     public static LateAdolescent ladol;
     public static FamilyMembers familyMember;
-    public static Recipient rcpt;
+
+    public static Recipient recipient;
     public static int preg_count = 0;
     public static int child_count = 0;
 
@@ -92,8 +93,9 @@ public class MainApp extends Application {
     public static List<String> subjectNames;
     public static List<FamilyMembers> familyList;
     public static List<Integer> mwraList;
-    public static List<Integer> recipient;
+    public static List<Integer> recipientsList;
     public static List<Integer> preg1st;
+    public static List<Integer> caregiverList;
     public static List<Integer> adolListAll;
     public static List<Integer> childOfSelectedMWRAList;
     public static List<FamilyMembers> fatherList;
@@ -102,8 +104,11 @@ public class MainApp extends Application {
     public static int memberCount = 0;
     public static int bCount = 0;
     public static String selectedMWRA;
+    public static String selectedCaregiver;
     public static String selectedChild;
     public static String selectedRecipient;
+    public static String selectedRecipientName;
+
     public static String selectedPreg1st;
     public static int memberCountComplete;
     public static boolean memberComplete;
@@ -205,10 +210,10 @@ public class MainApp extends Application {
     public void onCreate() {
         super.onCreate();
         RootBeer rootBeer = new RootBeer(this);
-        if (rootBeer.isRooted()) {
+/*        if (rootBeer.isRooted()) {
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
-        }
+        }*/
         //Initiate DateTime
         //Initializ App info
         appInfo = new AppInfo(this);

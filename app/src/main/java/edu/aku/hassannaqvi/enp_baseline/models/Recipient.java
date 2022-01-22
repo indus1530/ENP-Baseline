@@ -33,6 +33,7 @@ public class Recipient extends BaseObservable implements Observable {
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
+    private String fmuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String psuCode = _EMPTY_;
@@ -248,6 +249,14 @@ public class Recipient extends BaseObservable implements Observable {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public String getFmuid() {
+        return fmuid;
+    }
+
+    public void setFmuid(String fmuid) {
+        this.fmuid = fmuid;
     }
 
     @Bindable
@@ -1952,6 +1961,7 @@ public class Recipient extends BaseObservable implements Observable {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_UUID));
+        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_FMUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_PROJECT_NAME));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_HHID));
@@ -2135,6 +2145,7 @@ public class Recipient extends BaseObservable implements Observable {
         json.put(RecipientTable.COLUMN_ID, this.id);
         json.put(RecipientTable.COLUMN_UID, this.uid);
         json.put(RecipientTable.COLUMN_UUID, this.uuid);
+        json.put(RecipientTable.COLUMN_FMUID, this.fmuid);
         json.put(RecipientTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(RecipientTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(RecipientTable.COLUMN_HHID, this.hhid);

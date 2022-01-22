@@ -18,7 +18,7 @@ import edu.aku.hassannaqvi.enp_baseline.models.Child;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
 import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
-import edu.aku.hassannaqvi.enp_baseline.models.ModuleE;
+import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
 import edu.aku.hassannaqvi.enp_baseline.models.WAnthro;
 import edu.aku.hassannaqvi.enp_baseline.ui.IdentificationActivity;
@@ -181,12 +181,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionD4Activity.class));
                 break;
             case R.id.sece1:
-                MainApp.mode = new ModuleE();
+                MainApp.pregnancy = new Pregnancy();
                 startActivity(new Intent(this, SectionE1Activity.class));
                 break;
 
             case R.id.e2:
-                MainApp.mode = new ModuleE();
+                MainApp.pregnancy = new Pregnancy();
                 startActivity(new Intent(this, SectionE2Activity.class));
                 break;
             case R.id.f1:

@@ -27,7 +27,6 @@ import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
 import edu.aku.hassannaqvi.enp_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
-import edu.aku.hassannaqvi.enp_baseline.models.ModuleE;
 import edu.aku.hassannaqvi.enp_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
@@ -60,7 +59,6 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
-    public static ModuleE mode;
     public static CAnthro anthc;
     public static WAnthro anthw;
     public static MWRA mwra;

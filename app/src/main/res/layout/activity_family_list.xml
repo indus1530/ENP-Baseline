@@ -160,7 +160,7 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:id="@+id/adolMaleDD"
+                                android:id="@+id/recipienDD"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bottom"
@@ -170,18 +170,18 @@
                                     style="@style/sub_labels"
                                     android:layout_width="168dp"
                                     android:layout_height="match_parent"
-                                    android:text="@string/adol_male_List" />
+                                    android:text="@string/recipientList" />
 
 
                                 <androidx.appcompat.widget.AppCompatSpinner
-                                    android:id="@+id/adolMaleList"
+                                    android:id="@+id/recipientList"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent" />
 
                             </LinearLayout>
 
                             <LinearLayout
-                                android:id="@+id/adolFemaleDD"
+                                android:id="@+id/preg1stDD"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bottom"
@@ -191,11 +191,11 @@
                                     style="@style/sub_labels"
                                     android:layout_width="168dp"
                                     android:layout_height="match_parent"
-                                    android:text="@string/adol_female_List" />
+                                    android:text="@string/preg1stList" />
 
 
                                 <androidx.appcompat.widget.AppCompatSpinner
-                                    android:id="@+id/adolFemaleList"
+                                    android:id="@+id/preg1stList"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent" />
 

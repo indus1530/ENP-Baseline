@@ -94,8 +94,8 @@ public class MainApp extends Application {
     public static List<String> subjectNames;
     public static List<FamilyMembers> familyList;
     public static List<Integer> mwraList;
-    public static List<Integer> adolListMale;
-    public static List<Integer> adolListFemale;
+    public static List<Integer> recipient;
+    public static List<Integer> preg1st;
     public static List<Integer> adolListAll;
     public static List<Integer> childOfSelectedMWRAList;
     public static List<FamilyMembers> fatherList;

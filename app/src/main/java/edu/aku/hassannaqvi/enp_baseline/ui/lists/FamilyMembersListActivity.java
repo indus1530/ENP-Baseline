@@ -1,8 +1,8 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.lists;
 
 import static android.view.View.VISIBLE;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.adolListFemale;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.adolListMale;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.preg1st;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.recipient;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedChild;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedChildName;
 
@@ -46,7 +46,7 @@ import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC1Activity;
 public class FamilyMembersListActivity extends AppCompatActivity {
 
 
-    private static final String TAG = "MwraActivity";
+    private static final String TAG = "FamilyMembersListActivity";
     private final boolean selectionCheck = false;
     ActivityFamilyListBinding bi;
     DatabaseHelper db;
@@ -115,22 +115,31 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                          *      Availability Status:    Present
                          */
                         if (
-                                Integer.parseInt(MainApp.familyMember.getA206y()) >= 15 && Integer.parseInt(MainApp.familyMember.getA206y()) <= 19   // 10 - 19 year old
-                                        && (MainApp.familyMember.getA208().equals("5") || MainApp.familyMember.getA208().equals("99")) && MainApp.familyMember.getA214().equals("1")
+                                Integer.parseInt(MainApp.familyMember.getA206y()) >= 15 && Integer.parseInt(MainApp.familyMember.getA206y()) <= 50   // 15 - 50 year old
+                                        && (!MainApp.familyMember.getA208().equals("5") && !MainApp.familyMember.getA208().equals("99"))
+                                        && MainApp.familyMember.getA209().equals("1")
+                                        && MainApp.familyMember.getA210().equals("1")
+                                        && MainApp.familyMember.getA214().equals("1")
 
                         ) {
 
-                            /** Populate Adolescent Male
-                             *      Gender: Male
-                             */
-                            if (MainApp.familyMember.getA204().equals("1"))
-                                adolListMale.add(Integer.valueOf(MainApp.familyMember.getA201()));
-
-                            /** Populate Adolescent Female
-                             *      Gender: Female
-                             */
+                            /** Populate Preganacy 1st */
                             if (MainApp.familyMember.getA204().equals("2"))
-                                adolListFemale.add(Integer.valueOf(MainApp.familyMember.getA201()));
+                                preg1st.add(Integer.valueOf(MainApp.familyMember.getA201()));
+                        }
+
+                        if (
+                                MainApp.familyMember.getA20701().equals("1")
+                                        || MainApp.familyMember.getA20702().equals("2")
+                                        || MainApp.familyMember.getA20703().equals("3")
+                                        || MainApp.familyMember.getA20704().equals("4")
+                                        || MainApp.familyMember.getA20796().equals("96")
+
+                        ) {
+
+                            /** Populate Recipient */
+                            if (MainApp.familyMember.getA214().equals("1"))
+                                recipient.add(Integer.valueOf(MainApp.familyMember.getA201()));
                         }
 
 
@@ -172,8 +181,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                 }
             });
-    private ArrayList<String> motherNames, childNames, adolMaleNames, adolFemaleNames;
-    private ArrayList<String> motherSno, childSno, adolMaleSno, adolFemaleSno;
+    private ArrayList<String> motherNames, childNames, recipientNames, preg1stNames;
+    private ArrayList<String> motherSno, childSno, recipientSno, preg1stSno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,8 +196,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         MainApp.familyList = new ArrayList<>();
         MainApp.mwraList = new ArrayList<Integer>();
-        adolListFemale = new ArrayList<Integer>();
-        adolListMale = new ArrayList<Integer>();
+        preg1st = new ArrayList<Integer>();
+        recipient = new ArrayList<Integer>();
         MainApp.adolListAll = new ArrayList<>();
         MainApp.fatherList = new ArrayList<>();
         MainApp.motherList = new ArrayList<>();
@@ -233,10 +242,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 ) {
                     // Male
                     if (fm.getA204().equals("1"))
-                        adolListMale.add(Integer.valueOf(fm.getA201()));
+                        recipient.add(Integer.valueOf(fm.getA201()));
                     // Female
                     if (fm.getA204().equals("2"))
-                        adolListFemale.add(Integer.valueOf(fm.getA201()));
+                        preg1st.add(Integer.valueOf(fm.getA201()));
                 }
 
             }
@@ -477,9 +486,9 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
 
         // Select AdolMale using KishGrid
-        if (adolListMale.size() > 0) {
-            String kishGridAdolMale = MainApp.kishGrid(Integer.parseInt(hhno), adolListMale.size());
-            sno = adolListMale.get(Integer.parseInt(kishGridAdolMale));
+        if (recipient.size() > 0) {
+            String kishGridAdolMale = MainApp.kishGrid(Integer.parseInt(hhno), recipient.size());
+            sno = recipient.get(Integer.parseInt(kishGridAdolMale));
 
             // Updating database to mark selected adolmale
             MainApp.selectedAdolMale = String.valueOf(sno - 1);
@@ -491,10 +500,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedAdolMale));
         }
 
-        if (adolListFemale.size() > 0) {
+        if (preg1st.size() > 0) {
             // Select AdolFemale using KishGrid
-            String kishGridAdolFemale = MainApp.kishGrid(Integer.parseInt(hhno), adolListFemale.size());
-            sno = adolListFemale.get(Integer.parseInt(kishGridAdolFemale));
+            String kishGridAdolFemale = MainApp.kishGrid(Integer.parseInt(hhno), preg1st.size());
+            sno = preg1st.get(Integer.parseInt(kishGridAdolFemale));
 
             // Updating database to mark selected adolfemale
             MainApp.selectedAdolFemale = String.valueOf(sno - 1);
@@ -706,49 +715,40 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }*/
 
         // Populate AdolMales List
-        if (adolListMale.size() > 0) {
-            adolMaleNames = new ArrayList<>();
-            adolMaleSno = new ArrayList<>();
-
-            adolMaleNames.add("...");
-            adolMaleSno.add("...");
-
-            for (Integer am : adolListMale) {
-
-                adolMaleNames.add(MainApp.familyList.get(am - 1).getA202());
-                adolMaleSno.add(MainApp.familyList.get(am - 1).getA201());
-
+        if (recipient.size() > 0) {
+            recipientNames = new ArrayList<>();
+            recipientSno = new ArrayList<>();
+            recipientNames.add("...");
+            recipientSno.add("...");
+            for (Integer am : recipient) {
+                recipientNames.add(MainApp.familyList.get(am - 1).getA202());
+                recipientSno.add(MainApp.familyList.get(am - 1).getA201());
             }
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(FamilyMembersListActivity.this,
-                    R.layout.custom_spinner, adolMaleNames);
-
-            bi.adolMaleList.setAdapter(adapter);
+                    R.layout.custom_spinner, recipientNames);
+            bi.recipientList.setAdapter(adapter);
         } else {
-            bi.adolMaleDD.setVisibility(View.GONE);
+            bi.recipienDD.setVisibility(View.GONE);
         }
 
         // Populate AdolFemales List
-        if (adolListFemale.size() > 0) {
-            adolFemaleNames = new ArrayList<>();
-            adolFemaleSno = new ArrayList<>();
-
-            adolFemaleNames.add("...");
-            adolFemaleSno.add("...");
-
-            for (Integer af : adolListFemale) {
-
-                adolFemaleNames.add(MainApp.familyList.get(af - 1).getA202());
-                adolFemaleSno.add(MainApp.familyList.get(af - 1).getA201());
-
+        if (preg1st.size() > 0) {
+            preg1stNames = new ArrayList<>();
+            preg1stSno = new ArrayList<>();
+            preg1stNames.add("...");
+            preg1stSno.add("...");
+            for (Integer af : preg1st) {
+                preg1stNames.add(MainApp.familyList.get(af - 1).getA202());
+                preg1stSno.add(MainApp.familyList.get(af - 1).getA201());
             }
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(FamilyMembersListActivity.this,
-                    R.layout.custom_spinner, adolFemaleNames);
+                    R.layout.custom_spinner, preg1stNames);
 
-            bi.adolFemaleList.setAdapter(adapter);
+            bi.preg1stList.setAdapter(adapter);
         } else {
-            bi.adolFemaleDD.setVisibility(View.GONE);
+            bi.preg1stDD.setVisibility(View.GONE);
         }
     }
 
@@ -785,8 +785,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
             bi.mwraList.setAdapter(null);
             bi.childList.setAdapter(null);
-            bi.adolFemaleList.setAdapter(null);
-            bi.adolMaleList.setAdapter(null);
+            bi.preg1stList.setAdapter(null);
+            bi.recipientList.setAdapter(null);
             bi.selectionLists.setVisibility(View.GONE);
         }
     }
@@ -837,8 +837,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
 // ADOLESCENT MALE
             // Updating database to mark selected adolmale
-            if (adolListMale.size() > 0) {
-                MainApp.selectedAdolMale = String.valueOf(Integer.parseInt(adolMaleSno.get(bi.adolMaleList.getSelectedItemPosition())) - 1);
+            if (recipient.size() > 0) {
+                MainApp.selectedAdolMale = String.valueOf(Integer.parseInt(recipientSno.get(bi.recipientList.getSelectedItemPosition())) - 1);
                 MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolMale));
                 db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "3");
 
@@ -849,8 +849,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
 // ADOLESCENT FEMALE
             // Updating database to mark selected adolFemale
-            if (adolListFemale.size() > 0) {
-                MainApp.selectedAdolFemale = String.valueOf(Integer.parseInt(adolFemaleSno.get(bi.adolFemaleList.getSelectedItemPosition())) - 1);
+            if (preg1st.size() > 0) {
+                MainApp.selectedAdolFemale = String.valueOf(Integer.parseInt(preg1stSno.get(bi.preg1stList.getSelectedItemPosition())) - 1);
                 MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedAdolFemale));
                 db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");
 

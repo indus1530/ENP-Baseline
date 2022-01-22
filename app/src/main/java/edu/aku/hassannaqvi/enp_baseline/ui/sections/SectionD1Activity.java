@@ -1,11 +1,13 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.child;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.childOfSelectedMWRAList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,10 +16,16 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
+import java.util.ArrayList;
+
 import edu.aku.hassannaqvi.enp_baseline.R;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionD1Binding;
+import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 
 public class SectionD1Activity extends AppCompatActivity {
@@ -31,22 +39,81 @@ public class SectionD1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d1);
-        bi.setChild(child);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
+
+
+        try {
+            MainApp.child = db.getChildByUUid();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(Child): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+//        if (MainApp.mwra == null) MainApp.mwra = new MWRA();
+
+        child.setD101(MainApp.mwra.getC101());
+        child.setD102(MainApp.mwra.getC103());
+
+        bi.setChild(child);
+        setSupportActionBar(bi.toolbar);
+
+
+        childOfSelectedMWRAList = new ArrayList<>();
+        for (FamilyMembers child : MainApp.familyList) {
+            Log.d(TAG, "onCreate: childmsno " + child.getA21301() + " fmsno: " + (Integer.parseInt(MainApp.selectedMWRA) + 1));
+
+            int motherSno = Integer.parseInt(child.getA21301());
+            int selectedMwraSno = Integer.parseInt(MainApp.selectedMWRA) + 1;
+
+            // All children for EDC, Available or Not
+            // Removed Condition: && child.getHl10().equals("1")
+            if (motherSno == selectedMwraSno && Integer.parseInt(child.getA206y()) < 5) {
+                childOfSelectedMWRAList.add(Integer.valueOf(child.getA201()));
+            }
+        }
+
+        //child.setCs1q02(String.valueOf(childOfSelectedMWRAList.size()));
+
+        // Mother's Name as Respondent
+        /*bi.cs1q0101.setText(MainApp.mwra.getBs1resp());
+        bi.cs1q0102.setText(MainApp.mwra.getBs1respline());*/
+        //   child = new Child();
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 
 
+    private boolean insertNewRecord() {
+        if (!child.getUid().equals("") || MainApp.superuser) return true;
+        child.populateMeta();
+
+        long rowId = 0;
+        try {
+            rowId = db.addChild(child);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        child.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            child.setUid(child.getDeviceId() + child.getId());
+            db.updatesChildColumn(TableContracts.ChildTable.COLUMN_UID, child.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
 
 
     private boolean updateDB() {
-        /*if (MainApp.superuser) return true;
+        if (MainApp.superuser) return true;
 
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SB42, mwra.sB42toString());
+            updcount = db.updatesChildColumn(TableContracts.ChildTable.COLUMN_SD1, child.sD1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -56,15 +123,14 @@ public class SectionD1Activity extends AppCompatActivity {
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
 
     public void btnContinue(View view) {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionD2Activity.class));

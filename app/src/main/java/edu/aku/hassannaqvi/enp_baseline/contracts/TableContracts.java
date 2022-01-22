@@ -140,8 +140,8 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_PASSWORD = "password";
         public static final String COLUMN_FULLNAME = "full_name";
-        public static final String COLUMN_DISTRICT_CODE = "district_code";
-        //public static final String COLUMN_DESIGNATION = "designation";
+        public static final String COLUMN_DISTRICT_CODE = "dist_id";
+        public static final String COLUMN_DESIGNATION = "designation";
 
     }
 

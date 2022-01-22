@@ -51,9 +51,6 @@ public class EndingActivity extends AppCompatActivity {
         bi.istatusc.setEnabled(!check);
         bi.istatusd.setEnabled(!check);
         bi.istatuse.setEnabled(!check);
-        bi.istatusf.setEnabled(!check);
-        bi.istatusg.setEnabled(!check);
-        bi.istatush.setEnabled(!check);
 
 
     }
@@ -64,11 +61,9 @@ public class EndingActivity extends AppCompatActivity {
                 : bi.istatusc.isChecked() ? "3"
                 : bi.istatusd.isChecked() ? "4"
                 : bi.istatuse.isChecked() ? "5"
-                : bi.istatusf.isChecked() ? "6"
-                : bi.istatusg.isChecked() ? "7"
-                : bi.istatush.isChecked() ? "8"
                 : bi.istatus96.isChecked() ? "96"
                 : "-1");
+        form.setiStatus96x(bi.istatus96x.getText().toString());
         // form.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
     }
 

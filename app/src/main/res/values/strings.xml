@@ -106,15 +106,11 @@
 
 
     <string name="istatus"> Result of Household Questionnaire interview </string>
-    <string name="istatusi"> Discuss any result not completed with team leader </string>
-    <string name="istatus01"> Completed </string>
-    <string name="istatus02"> No household member at home or no competent respondent at home at time of visit </string>
-    <string name="istatus03"> Entire household is absent for extended period </string>
-    <string name="istatus04"> Refused </string>
-    <string name="istatus05"> Dwelling vacant or address not a dwelling </string>
-    <string name="istatus06"> Dwelling not found </string>
-    <string name="istatus07"> No Child or adolescent 18 years or below present in the HH </string>
-    <string name="istatus08"> No MWRA 18 or above of age live in this household ? </string>
+    <string name="istatusa"> Yes </string>
+    <string name="istatusb"> Consent Not Provided </string>
+    <string name="istatusc"> Household is Not Eligible </string>
+    <string name="istatusd"> No eligible Respondent Available </string>
+    <string name="istatuse"> Available Eligible Respondent Not Competent For Interview </string>
     <string name="istatus96"> Other (Specify) </string>
 
 
@@ -159,8 +155,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mother_List">Mothers</string>
     <string name="child_List">Children</string>
-    <string name="adol_male_List">Adol Male</string>
-    <string name="adol_female_List">Adol Female</string>
+    <string name="recipientList">BISP Recipient</string>
+    <string name="preg1stList">1st Time Pregnant</string>
 
 
     <!--EHSAS NASHUNUMA PROGRAMME-->

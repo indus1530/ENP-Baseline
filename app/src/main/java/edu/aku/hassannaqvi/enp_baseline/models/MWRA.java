@@ -52,6 +52,11 @@ public class MWRA extends BaseObservable implements Observable {
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
 
+    //ModuleStatusVariables
+    private String cstaa = _EMPTY_;
+    private String cstab = _EMPTY_;
+    private String cstab96x = _EMPTY_;
+
     // FIELD VARIABLES
     private String c101 = _EMPTY_;
     private String c102 = _EMPTY_;
@@ -5464,6 +5469,39 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
 
+    @Bindable
+    public String getCstaa() {
+        return cstaa;
+    }
+
+    public void setCstaa(String cstaa) {
+        this.cstaa = cstaa;
+        setCstab(cstaa.equals("2") ? this.cstab : "");
+        notifyPropertyChanged(BR.cstaa);
+    }
+
+    @Bindable
+    public String getCstab() {
+        return cstab;
+    }
+
+    public void setCstab(String cstab) {
+        this.cstab = cstab;
+        setCstab96x(cstab.equals("96") ? this.cstab96x : "");
+        notifyPropertyChanged(BR.cstab);
+    }
+
+    @Bindable
+    public String getCstab96x() {
+        return cstab96x;
+    }
+
+    public void setCstab96x(String cstab96x) {
+        this.cstab96x = cstab96x;
+        notifyPropertyChanged(BR.cstab96x);
+    }
+
+
     public MWRA Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UID));
@@ -5946,6 +5984,9 @@ public class MWRA extends BaseObservable implements Observable {
             this.c61006 = json.getString("c61006");
             this.c61007 = json.getString("c61007");
             this.c61097 = json.getString("c61097");
+            this.cstaa = json.getString("cstaa");
+            this.cstab = json.getString("cstab");
+            this.cstab96x = json.getString("cstab96x");
         }
     }
 
@@ -6421,7 +6462,10 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("c61005", c61005)
                 .put("c61006", c61006)
                 .put("c61007", c61007)
-                .put("c61097", c61097);
+                .put("c61097", c61097)
+                .put("cstaa", cstaa)
+                .put("cstab", cstab)
+                .put("cstab96x", cstab96x);
         return json.toString();
     }
 

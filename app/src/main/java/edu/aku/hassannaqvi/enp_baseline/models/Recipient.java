@@ -1922,6 +1922,7 @@ public class Recipient extends BaseObservable implements Observable {
 
     public void setBstaa(String bstaa) {
         this.bstaa = bstaa;
+        setBstab(bstaa.equals("2") ? this.bstab : "");
         notifyPropertyChanged(BR.bstaa);
     }
 
@@ -1932,6 +1933,7 @@ public class Recipient extends BaseObservable implements Observable {
 
     public void setBstab(String bstab) {
         this.bstab = bstab;
+        setBstab96x(bstab.equals("96") ? this.bstab96x : "");
         notifyPropertyChanged(BR.bstab);
     }
 

@@ -673,9 +673,9 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- istatitlea  Title   -->
+                <!-- asta  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVistatitlea"
+                    android:id="@+id/fldGrpCVistb01"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -693,139 +693,121 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_istatitlea" />
+                                android:text="@string/Q_asta" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/istatitlea" />
+                                android:text="@string/asta" />
 
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/ista01"
+                            android:id="@+id/astaa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="3"
-                                android:text="@string/ista01" />
+                                android:layout_weight="2"
+                                android:text="@string/astaa" />
 
                             <RadioButton
-                                android:id="@+id/ista0101"
-                                android:layout_width="0dp"
+                                android:id="@+id/astaaa"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.ista01.equals(`1`)}"
-                                android:onClick="@{()->form.setIsta01(`1`) + ista02.clearCheck()}"
-                                android:text="@string/ista0101" />
+                                android:checked="@{form.astaa.equals(`1`)}"
+                                android:onClick="@{()->form.setAstaa(`1`) + astab.clearCheck()}"
+                                android:text="@string/astaaa" />
 
                             <RadioButton
-                                android:id="@+id/ista0102"
-                                android:layout_width="0dp"
+                                android:id="@+id/astaab"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.ista01.equals(`2`)}"
-                                android:onClick="@{()->form.setIsta01(`2`)}"
-                                android:text="@string/ista0102" />
+                                android:checked="@{form.astaa.equals(`2`)}"
+                                android:onClick="@{()->form.setAstaa(`2`)}"
+                                android:text="@string/astaab" />
 
                         </RadioGroup>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- ista02  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVista02"
-                    style="@style/cardView"
-                    android:visibility="@{form.ista01.equals(`1`) ? View.GONE : View.VISIBLE}">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="@{form.astaa.equals(`1`) ? View.GONE : View.VISIBLE}">
 
                             <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
+                                style="@style/textView"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ista02" />
+                                android:layout_weight="1"
+                                android:gravity="top|center"
+                                android:text="@string/astab" />
 
-                            <TextView
-                                android:layout_width="match_parent"
+                            <RadioGroup
+                                android:id="@+id/astab"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:text="@string/ista02" />
+                                android:layout_weight="1">
+
+                                <RadioButton
+                                    android:id="@+id/astaba"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.astab.equals(`1`)}"
+                                    android:onClick="@{()->form.setAstab(`1`)}"
+                                    android:text="@string/astaba" />
+
+                                <RadioButton
+                                    android:id="@+id/astabb"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.astab.equals(`2`)}"
+                                    android:onClick="@{()->form.setAstab(`2`)}"
+                                    android:text="@string/astabb" />
+
+                                <RadioButton
+                                    android:id="@+id/astabc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.astab.equals(`3`)}"
+                                    android:onClick="@{()->form.setAstab(`3`)}"
+                                    android:text="@string/astabc" />
+
+                                <RadioButton
+                                    android:id="@+id/astabd"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.astab.equals(`4`)}"
+                                    android:onClick="@{()->form.setAstab(`4`)}"
+                                    android:text="@string/astabd" />
+
+                                <RadioButton
+                                    android:id="@+id/astab96"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.astab.equals(`96`)}"
+                                    android:onClick="@{()->form.setAstab(`96`)}"
+                                    android:text="@string/astab96" />
+
+                                <EditText
+                                    android:id="@+id/astatusb96x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="52dp"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:hint="@string/astab96"
+                                    android:tag="astab96"
+                                    android:text="@={form.astab96x}"
+                                    android:visibility="@{form.astab.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
+                            </RadioGroup>
 
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ista02"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <RadioButton
-                                android:id="@+id/ista0201"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.ista02.equals(`1`)}"
-                                android:onClick="@{()->form.setIsta02(`1`)}"
-                                android:text="@string/ista0201" />
-
-                            <RadioButton
-                                android:id="@+id/ista0202"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.ista02.equals(`2`)}"
-                                android:onClick="@{()->form.setIsta02(`2`)}"
-                                android:text="@string/ista0202" />
-
-                            <RadioButton
-                                android:id="@+id/ista0203"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.ista02.equals(`3`)}"
-                                android:onClick="@{()->form.setIsta02(`3`)}"
-                                android:text="@string/ista0203" />
-
-                            <RadioButton
-                                android:id="@+id/ista0204"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.ista02.equals(`4`)}"
-                                android:onClick="@{()->form.setIsta02(`4`)}"
-                                android:text="@string/ista0204" />
-
-                            <RadioButton
-                                android:id="@+id/ista0296"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.ista02.equals(`96`)}"
-                                android:onClick="@{()->form.setIsta02(`96`)}"
-                                android:text="@string/ista0296" />
-
-                            <EditText
-                                android:id="@+id/ista0296x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/ista0296"
-                                android:tag="ista0296"
-                                android:text="@={form.ista0296x}"
-                                android:visibility="@{form.ista02.equals(`96`) ? View.VISIBLE : View.GONE}" />
-
-                        </RadioGroup>
 
                     </LinearLayout>
 

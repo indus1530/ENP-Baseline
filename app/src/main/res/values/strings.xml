@@ -643,6 +643,17 @@
     <string name="a508998">Don’t know</string>
     <string name="a50899">Refused</string>
 
+    <string name="asta"> Result of Module A Questionnaire </string>
+    <string name="astaa"> Was module completed ? </string>
+    <string name="astaaa"> Yes </string>
+    <string name="astaab"> No </string>
+    <string name="astab"> Reason for not completing </string>
+    <string name="astaba"> Consent not provided </string>
+    <string name="astabb"> Household is not eligible </string>
+    <string name="astabc"> No eligible respondent available </string>
+    <string name="astabd"> Available eligible respondent not competent for interview </string>
+    <string name="astab96"> Others, (Specify) </string>
+
     <string name="modb"> Module B: SOCIAL SAFETY NET (SN) </string>
     <string name="b1"> B1: BISP / Ehsaas Kafalat program information: </string>
     <string name="sb1inst">Instructions: Module B is to be filled by any one BISP beneficiary available in the household at the time of interview. If there are more than one beneficiary, select the youngest beneficiary. </string>
@@ -873,10 +884,20 @@
     <string name="b222h">Time (Hours )</string>
     <string name="b222m">Time ( Minutes) </string>
     <string name="b222998">Don’t know </string>
-    <string name="b223">Do you face any difficulty in reaching the designated point?                                    </string>
+    <string name="b223">Do you face any difficulty in reaching the designated point ? </string>
     <string name="b22301">Yes</string>
     <string name="b22302">No</string>
     <string name="b224">If yes, please explain </string>
+
+    <string name="bsta"> Result of Module B Questionnaire </string>
+    <string name="bstaa"> Was Module completed ? </string>
+    <string name="bstaaa"> Yes </string>
+    <string name="bstaab"> No </string>
+    <string name="bstab"> Reason for not completing </string>
+    <string name="bstaba"> Consent was withdrawn </string>
+    <string name="bstabb"> No eligible respondent available for this module </string>
+    <string name="bstabc"> Available eligible respondent not competent for interview </string>
+    <string name="bstab96"> Others, (Specify) </string>
 
     <string name="modc"> Module C: Women of Reproductive Age 15 – 49 Years </string>
     <string name="c1"> C1: Reproductive History: </string>
@@ -1542,14 +1563,16 @@
     <string name="c61006">Dinner</string>
     <string name="c61007">Between Dinner and sleep</string>
     <string name="c61097">Not Consumed</string>
-    <!--<string name="istatus">Was module completed?</string>
-    <string name="istatus01">Yes</string>
-    <string name="istatus02">No</string>-->
-    <string name="reason">Reason for not completing</string>
-    <string name="reason01">Consent not provided </string>
-    <string name="reason02">No household member available</string>
-    <string name="reason03">Available eligible respondent not competent for interview</string>
-    <string name="reason96">Other (Specify)</string>
+
+    <string name="csta"> Result of Module C Questionnaire </string>
+    <string name="cstaa"> Was Module completed ? </string>
+    <string name="cstaaa"> Yes </string>
+    <string name="cstaab"> No </string>
+    <string name="cstab"> Reason for not completing </string>
+    <string name="cstaba"> Consent was withdrawn </string>
+    <string name="cstabb"> No eligible respondent available for this module </string>
+    <string name="cstabc"> Available eligible respondent not competent for interview </string>
+    <string name="cstab96"> Others, (Specify) </string>
 
     <string name="modd"> Module D: Child Under 0 – 59 Months </string>
     <string name="d1"> D1: Under 5 Child Information: </string>
@@ -1559,7 +1582,7 @@
     <string name="d101">Name of the Child</string>
     <string name="d102">Line number of the Child</string>
     <string name="d103">Line number of the respondent</string>
-    <string name="d104">Relationship of child with the respondent </string>
+    <string name="d104"> Relationship of child with the respondent </string>
     <string name="d10401">Mother</string>
     <string name="d10402">Caretaker</string>
     <string name="d105">Was (name’s) birth registered with NADRA and B-form was obtained?</string>
@@ -2003,34 +2026,16 @@
     <string name="d40411">Home remedy /herbal medicine</string>
     <string name="d40496">Others (Specify)</string>
     <string name="d404998">Not applicable</string>
-    <string name="modstatus">Result of Module D questionnaire</string>
-    <string name="modcom">Was module D completed?</string>
-    <string name="modcom01">Yes</string>
-    <string name="modcom02">No</string>
-    <string name="modreason">Reason for not completing</string>
-    <string name="modreason01">Consent was withdrawn</string>
-    <string name="modreason02">No eligible respondent available for this module</string>
-    <string name="modreason03">Available eligible respondent not competent for interview</string>
-    <string name="modreason96">Others (Specify)</string>
-    <string name="istatitlea">Result of Module A Questionnaire</string>
-    <string name="ista01">Was module completed?</string>
-    <string name="ista0101">Yes</string>
-    <string name="ista0102">No</string>
-    <string name="ista02">Reason for not completing</string>
-    <string name="ista0201">Consent not provided</string>
-    <string name="ista0202">Household is not eligible </string>
-    <string name="ista0203">No eligible respondent available</string>
-    <string name="ista0204">Available eligible respondent not competent for interview</string>
-    <string name="ista0296">Others, (Specify)</string>
-    <string name="bsta"> Result of Module B Questionnaire </string>
-    <string name="bstaa"> Was Module completed ? </string>
-    <string name="bstaaa"> Yes </string>
-    <string name="bstaab"> No </string>
-    <string name="bstab"> Reason for not completing </string>
-    <string name="bstaba"> Consent was withdrawn </string>
-    <string name="bstabb"> No eligible respondent available for this module </string>
-    <string name="bstabc"> Available eligible respondent not competent for interview </string>
-    <string name="bstab96"> Others, (Specify) </string>
+
+    <string name="dsta"> Result of Module D Questionnaire </string>
+    <string name="dstaa"> Was Module completed ? </string>
+    <string name="dstaaa"> Yes </string>
+    <string name="dstaab"> No </string>
+    <string name="dstab"> Reason for not completing </string>
+    <string name="dstaba"> Consent was withdrawn </string>
+    <string name="dstabb"> No eligible respondent available for this module </string>
+    <string name="dstabc"> Available eligible respondent not competent for interview </string>
+    <string name="dstab96"> Others, (Specify) </string>
 
 
     <string name="mode"> Module E: </string>
@@ -2299,6 +2304,16 @@
     <string name="e21007">Between Dinner and sleep</string>
     <string name="e21097">Not Consummed</string>
 
+    <string name="esta"> Result of Module E Questionnaire </string>
+    <string name="estaa"> Was Module completed ? </string>
+    <string name="estaaa"> Yes </string>
+    <string name="estaab"> No </string>
+    <string name="estab"> Reason for not completing </string>
+    <string name="estaba"> Consent was withdrawn </string>
+    <string name="estabb"> No eligible respondent available for this module </string>
+    <string name="estabc"> Available eligible respondent not competent for interview </string>
+    <string name="estab96"> Others, (Specify) </string>
+
     <string name="modf"> Module F: Anthropometry and Examination </string>
     <string name="f1"> F1: To be filled for children 0–59 months old available in the household: </string>
     <string name="f1titleb">Instructions: All women of reproductive age (15-49 years) and all children under 5 years old available in the household at the time of interview will be selected for anthropometric measurements.</string>
@@ -2359,16 +2374,17 @@
     <string name="f207">Measurement status</string>
     <string name="f20901">Recorded</string>
     <string name="f20902">Not recorded </string>
-    <string name="istftitle">Result of Module F Questionnaire</string>
-    <string name="istf01">Was module completed?</string>
-    <string name="stf01ins">“yes” if anthropometry has been attempted for all eligible respondents and status has been recorded “No” if anthropometry has been not attempted for any reason </string>
-    <string name="istf0101">Yes</string>
-    <string name="istf0102">No</string>
-    <string name="istf02">Reason for not completing</string>
-    <string name="istf0201">Consent was withdrawn </string>
-    <string name="istf0202">No eligible respondent available for this module</string>
-    <string name="istf0203">Available eligible respondent not competent for interview</string>
-    <string name="istf0296">Others, (Specify)</string>
+
+    <string name="fsta"> Result of Module F Questionnaire </string>
+    <string name="fstains">“yes” if anthropometry has been attempted for all eligible respondents and status has been recorded “No” if anthropometry has been not attempted for any reason </string>
+    <string name="fstaa"> Was Module completed ? </string>
+    <string name="fstaaa"> Yes </string>
+    <string name="fstaab"> No </string>
+    <string name="fstab"> Reason for not completing </string>
+    <string name="fstaba"> Consent was withdrawn </string>
+    <string name="fstabb"> No eligible respondent available for this module </string>
+    <string name="fstabc"> Available eligible respondent not competent for interview </string>
+    <string name="fstab96"> Others, (Specify) </string>
 
 
     <string name='Q_a101'>a101</string>
@@ -2919,6 +2935,11 @@
     <string name='Q_sb1inst2'>sb1inst2</string>
     <string name='Q_secb2ins'>secb2ins</string>
     <string name='Q_secdtitle'>secdtitle</string>
+    <string name='Q_asta'>asta</string>
     <string name='Q_bsta'>bsta</string>
+    <string name='Q_csta'>csta</string>
+    <string name='Q_dsta'>dsta</string>
+    <string name='Q_esta'>esta</string>
+    <string name='Q_fsta'>fsta</string>
 
 </resources>

@@ -52,6 +52,11 @@ public class WAnthro extends BaseObservable implements Observable {
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
 
+    //ModuleStatusVariables
+    private String fstaa = _EMPTY_;
+    private String fstab = _EMPTY_;
+    private String fstab96x = _EMPTY_;
+
     // FIELD VARIABLES
     private String f201name = _EMPTY_;
     private String f201 = _EMPTY_;
@@ -67,9 +72,6 @@ public class WAnthro extends BaseObservable implements Observable {
     private String f205 = _EMPTY_;
     private String f206 = _EMPTY_;
     private String f207 = _EMPTY_;
-    private String istf01 = _EMPTY_;
-    private String istf02 = _EMPTY_;
-    private String istf0296x = _EMPTY_;
 
 
     // Constructor
@@ -428,35 +430,35 @@ public class WAnthro extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getIstf01() {
-        return istf01;
+    public String getFstaa() {
+        return fstaa;
     }
 
-    public void setIstf01(String istf01) {
-        this.istf01 = istf01;
-        setIstf02(istf02.equals("2") ? this.istf02 : "");
-        notifyPropertyChanged(BR.istf01);
-    }
-
-    @Bindable
-    public String getIstf02() {
-        return istf02;
-    }
-
-    public void setIstf02(String istf02) {
-        this.istf02 = istf02;
-        setIstf0296x(istf02.equals("96") ? this.istf0296x : "");
-        notifyPropertyChanged(BR.istf02);
+    public void setFstaa(String fstaa) {
+        this.fstaa = fstaa;
+        setFstab(fstaa.equals("2") ? this.fstab : "");
+        notifyPropertyChanged(BR.fstaa);
     }
 
     @Bindable
-    public String getIstf0296x() {
-        return istf0296x;
+    public String getFstab() {
+        return fstab;
     }
 
-    public void setIstf0296x(String istf0296x) {
-        this.istf0296x = istf0296x;
-        notifyPropertyChanged(BR.istf0296x);
+    public void setFstab(String fstab) {
+        this.fstab = fstab;
+        setFstab96x(fstab.equals("96") ? this.fstab96x : "");
+        notifyPropertyChanged(BR.fstab);
+    }
+
+    @Bindable
+    public String getFstab96x() {
+        return fstab96x;
+    }
+
+    public void setFstab96x(String fstab96x) {
+        this.fstab96x = fstab96x;
+        notifyPropertyChanged(BR.fstab96x);
     }
 
 
@@ -504,9 +506,9 @@ public class WAnthro extends BaseObservable implements Observable {
             this.f205 = json.getString("f205");
             this.f206 = json.getString("f206");
             this.f207 = json.getString("f207");
-            this.istf01 = json.getString("istf01");
-            this.istf02 = json.getString("istf02");
-            this.istf0296x = json.getString("istf0296x");
+            this.fstaa = json.getString("fstaa");
+            this.fstab = json.getString("fstab");
+            this.fstab96x = json.getString("fstab96x");
         }
     }
 
@@ -555,9 +557,9 @@ public class WAnthro extends BaseObservable implements Observable {
                 .put("f205", f205)
                 .put("f206", f206)
                 .put("f207", f207)
-                .put("istf01", istf01)
-                .put("istf02", istf02)
-                .put("istf0296x", istf0296x);
+                .put("fstaa", fstaa)
+                .put("fstab", fstab)
+                .put("fstab96x", fstab96x);
         return json.toString();
     }
 

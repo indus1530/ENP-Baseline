@@ -47,6 +47,11 @@ public class Child extends BaseObservable implements Observable {
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
 
+    //ModuleStatusVariables
+    private String dstaa = _EMPTY_;
+    private String dstab = _EMPTY_;
+    private String dstab96x = _EMPTY_;
+
     // FIELD VARIABLES
     private String d101 = _EMPTY_;
     private String d102 = _EMPTY_;
@@ -3155,6 +3160,39 @@ public class Child extends BaseObservable implements Observable {
     }
 
 
+    @Bindable
+    public String getDstaa() {
+        return dstaa;
+    }
+
+    public void setDstaa(String dstaa) {
+        this.dstaa = dstaa;
+        setDstab(dstaa.equals("2") ? this.dstab : "");
+        notifyPropertyChanged(BR.dstaa);
+    }
+
+    @Bindable
+    public String getDstab() {
+        return dstab;
+    }
+
+    public void setDstab(String dstab) {
+        this.dstab = dstab;
+        setDstab96x(dstab.equals("96") ? this.dstab96x : "");
+        notifyPropertyChanged(BR.dstab);
+    }
+
+    @Bindable
+    public String getDstab96x() {
+        return dstab96x;
+    }
+
+    public void setDstab96x(String dstab96x) {
+        this.dstab96x = dstab96x;
+        notifyPropertyChanged(BR.dstab96x);
+    }
+
+
     public Child Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_UID));
@@ -3430,6 +3468,9 @@ public class Child extends BaseObservable implements Observable {
             this.d40496 = json.getString("d40496");
             this.d40496x = json.getString("d40496x");
             this.d404998 = json.getString("d404998");
+            this.dstaa = json.getString("dstaa");
+            this.dstab = json.getString("dstab");
+            this.dstab96x = json.getString("dstab96x");
         }
     }
 
@@ -3701,7 +3742,10 @@ public class Child extends BaseObservable implements Observable {
                 .put("d40411", d40411)
                 .put("d40496", d40496)
                 .put("d40496x", d40496x)
-                .put("d404998", d404998);
+                .put("d404998", d404998)
+                .put("dstaa", dstaa)
+                .put("dstab", dstab)
+                .put("dstab96x", dstab96x);
         return json.toString();
     }
 

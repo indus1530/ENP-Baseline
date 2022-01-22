@@ -667,9 +667,9 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- istf01  Radio   -->
+                <!-- fsta  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVistf01"
+                    android:id="@+id/fldGrpCVistb01"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -687,137 +687,119 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_istf01" />
+                                android:text="@string/Q_fsta" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/istftitle" />
+                                android:text="@string/fsta" />
 
                         </LinearLayout>
 
                         <TextView
                             style="@style/info"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/stf01ins" />
+                            android:layout_height="match_parent"
+                            android:text="@string/fstains" />
 
                         <RadioGroup
-                            android:id="@+id/istf01"
+                            android:id="@+id/fstaa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="3"
-                                android:text="@string/istf01" />
+                                android:layout_weight="2"
+                                android:text="@string/fstaa" />
 
                             <RadioButton
-                                android:id="@+id/istf0101"
-                                android:layout_width="0dp"
+                                android:id="@+id/fstaaa"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{anthw.istf01.equals(`1`)}"
-                                android:onClick="@{()->anthw.setIstf01(`1`) + istf02.clearCheck()}"
-                                android:text="@string/istf0101" />
+                                android:checked="@{anthw.fstaa.equals(`1`)}"
+                                android:onClick="@{()->anthw.setFstaa(`1`) + fstab.clearCheck()}"
+                                android:text="@string/fstaaa" />
 
                             <RadioButton
-                                android:id="@+id/istf0102"
-                                android:layout_width="0dp"
+                                android:id="@+id/fstaab"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{anthw.istf01.equals(`2`)}"
-                                android:onClick="@{()->anthw.setIstf01(`2`)}"
-                                android:text="@string/istf0102" />
+                                android:checked="@{anthw.fstaa.equals(`2`)}"
+                                android:onClick="@{()->anthw.setFstaa(`2`)}"
+                                android:text="@string/fstaab" />
 
                         </RadioGroup>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- istf02  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVistf02"
-                    style="@style/cardView"
-                    android:visibility="@{anthw.istf01.equals(`2`) ? View.VISIBLE : View.GONE}">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="@{anthw.fstaa.equals(`1`) ? View.GONE : View.VISIBLE}">
 
                             <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
+                                style="@style/textView"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_istf02" />
+                                android:layout_weight="1"
+                                android:gravity="top|center"
+                                android:text="@string/fstab" />
 
-                            <TextView
-                                android:layout_width="match_parent"
+                            <RadioGroup
+                                android:id="@+id/fstab"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:text="@string/istf02" />
+                                android:layout_weight="1">
+
+                                <RadioButton
+                                    android:id="@+id/fstaba"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{anthw.fstab.equals(`1`)}"
+                                    android:onClick="@{()->anthw.setFstab(`1`)}"
+                                    android:text="@string/fstaba" />
+
+                                <RadioButton
+                                    android:id="@+id/fstabb"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{anthw.fstab.equals(`2`)}"
+                                    android:onClick="@{()->anthw.setFstab(`2`)}"
+                                    android:text="@string/fstabb" />
+
+                                <RadioButton
+                                    android:id="@+id/fstabc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{anthw.fstab.equals(`3`)}"
+                                    android:onClick="@{()->anthw.setFstab(`3`)}"
+                                    android:text="@string/fstabc" />
+
+                                <RadioButton
+                                    android:id="@+id/fstab96"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{anthw.fstab.equals(`96`)}"
+                                    android:onClick="@{()->anthw.setFstab(`96`)}"
+                                    android:text="@string/fstab96" />
+
+                                <EditText
+                                    android:id="@+id/fstatusb96x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="52dp"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:hint="@string/fstab96"
+                                    android:tag="fstab96"
+                                    android:text="@={anthw.fstab96x}"
+                                    android:visibility="@{anthw.fstab.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
+                            </RadioGroup>
 
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/istf02"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <RadioButton
-                                android:id="@+id/istf0201"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{anthw.istf02.equals(`1`)}"
-                                android:onClick="@{()->anthw.setIstf02(`1`)}"
-                                android:text="@string/istf0201" />
-
-                            <RadioButton
-                                android:id="@+id/istf0202"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{anthw.istf02.equals(`2`)}"
-                                android:onClick="@{()->anthw.setIstf02(`2`)}"
-                                android:text="@string/istf0202" />
-
-                            <RadioButton
-                                android:id="@+id/istf0203"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{anthw.istf02.equals(`3`)}"
-                                android:onClick="@{()->anthw.setIstf02(`3`)}"
-                                android:text="@string/istf0203" />
-
-                            <RadioButton
-                                android:id="@+id/istf0296"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{anthw.istf02.equals(`96`)}"
-                                android:onClick="@{()->anthw.setIstf02(`96`)}"
-                                android:text="@string/istf0296" />
-
-                            <EditText
-                                android:id="@+id/istf0296x"
-                                android:layout_width="match_parent"
-                                android:layout_height="52dp"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/istf0296"
-                                android:tag="istf0296"
-                                android:text="@={anthw.istf0296x}"
-                                android:visibility="@{anthw.istf02.equals(`96`) ? View.VISIBLE : View.GONE}" />
-
-                        </RadioGroup>
 
                     </LinearLayout>
 

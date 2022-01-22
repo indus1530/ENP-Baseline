@@ -608,9 +608,9 @@
                 </LinearLayout>
 
 
-                <!-- modstatus  Title   -->
+                <!-- dsta  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVmodstatus"
+                    android:id="@+id/fldGrpCVdsta"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -618,145 +618,127 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/modstatus" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_dsta" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/dsta" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/dstaa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="@string/dstaa" />
+
+                            <RadioButton
+                                android:id="@+id/dstaaa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{child.dstaa.equals(`1`)}"
+                                android:onClick="@{()->child.setDstaa(`1`) + dstab.clearCheck()}"
+                                android:text="@string/dstaaa" />
+
+                            <RadioButton
+                                android:id="@+id/dstaab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{child.dstaa.equals(`2`)}"
+                                android:onClick="@{()->child.setDstaa(`2`)}"
+                                android:text="@string/dstaab" />
+
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="@{child.dstaa.equals(`1`) ? View.GONE : View.VISIBLE}">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="top|center"
+                                android:text="@string/dstab" />
+
+                            <RadioGroup
+                                android:id="@+id/dstab"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <RadioButton
+                                    android:id="@+id/dstaba"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{child.dstab.equals(`1`)}"
+                                    android:onClick="@{()->child.setDstab(`1`)}"
+                                    android:text="@string/dstaba" />
+
+                                <RadioButton
+                                    android:id="@+id/dstabb"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{child.dstab.equals(`2`)}"
+                                    android:onClick="@{()->child.setDstab(`2`)}"
+                                    android:text="@string/dstabb" />
+
+                                <RadioButton
+                                    android:id="@+id/dstabc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{child.dstab.equals(`3`)}"
+                                    android:onClick="@{()->child.setDstab(`3`)}"
+                                    android:text="@string/dstabc" />
+
+                                <RadioButton
+                                    android:id="@+id/dstab96"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{child.dstab.equals(`96`)}"
+                                    android:onClick="@{()->child.setDstab(`96`)}"
+                                    android:text="@string/dstab96" />
+
+                                <EditText
+                                    android:id="@+id/dstatusb96x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="52dp"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:hint="@string/dstab96"
+                                    android:tag="dstab96"
+                                    android:text="@={child.dstab96x}"
+                                    android:visibility="@{child.dstab.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
-
-                <!-- modcom  Radio   -->
-                <!-- <androidx.cardview.widget.CardView
-                     android:id="@+id/fldGrpCVmodcom"
-                     style="@style/cardView">
-
-                     <LinearLayout
-                         android:layout_width="match_parent"
-                         android:layout_height="wrap_content"
-                         android:orientation="vertical">
-
-                         <LinearLayout
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
-                             android:background="@drawable/bottom"
-                             android:orientation="horizontal">
-
-                             <TextView
-                                 style="@style/quesNum"
-                                 android:layout_width="wrap_content"
-                                 android:layout_height="match_parent"
-                                 android:text="@string/Q_modcom" />
-
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="match_parent"
-                                 android:text="@string/modcom" />
-
-                         </LinearLayout>
-
-                         <RadioGroup
-                             android:id="@+id/modcom"
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content">
-
-                             <RadioButton
-                                 android:id="@+id/modcom01"
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:checked="@{child.modcom.equals(`1`)}"
-                                 android:onClick="@{()->child.setModcom(`1`)}"
-                                 android:text="@string/modcom01" />
-
-                             <RadioButton
-                                 android:id="@+id/modcom02"
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:checked="@{child.modcom.equals(`2`)}"
-                                 android:onClick="@{()->child.setModcom(`2`)}"
-                                 android:text="@string/modcom02" />
-                         </RadioGroup>
-                     </LinearLayout>
-                 </androidx.cardview.widget.CardView>
-
-                 &lt;!&ndash; modreason  Radio   &ndash;&gt;
-                 <androidx.cardview.widget.CardView
-                     android:id="@+id/fldGrpCVmodreason"
-                     style="@style/cardView">
-
-                     <LinearLayout
-                         android:layout_width="match_parent"
-                         android:layout_height="wrap_content"
-                         android:orientation="vertical">
-
-                         <LinearLayout
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
-                             android:background="@drawable/bottom"
-                             android:orientation="horizontal">
-
-                             <TextView
-                                 style="@style/quesNum"
-                                 android:layout_width="wrap_content"
-                                 android:layout_height="match_parent"
-                                 android:text="@string/Q_modreason" />
-
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="match_parent"
-                                 android:text="@string/modreason" />
-
-                         </LinearLayout>
-
-                         <RadioGroup
-                             android:id="@+id/modreason"
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content">
-
-                             <RadioButton
-                                 android:id="@+id/modreason01"
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:checked="@{child.modreason.equals(`1`)}"
-                                 android:onClick="@{()->child.setModreason(`1`)}"
-                                 android:text="@string/modreason01" />
-
-                             <RadioButton
-                                 android:id="@+id/modreason02"
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:checked="@{child.modreason.equals(`2`)}"
-                                 android:onClick="@{()->child.setModreason(`2`)}"
-                                 android:text="@string/modreason02" />
-
-                             <RadioButton
-                                 android:id="@+id/modreason03"
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:checked="@{child.modreason.equals(`3`)}"
-                                 android:onClick="@{()->child.setModreason(`3`)}"
-                                 android:text="@string/modreason03" />
-
-                             <RadioButton
-                                 android:id="@+id/modreason96"
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:checked="@{child.modreason.equals(`96`)}"
-                                 android:onClick="@{()->child.setModreason(`96`)}"
-                                 android:text="@string/modreason96" />
-
-                             <EditText
-                                 android:id="@+id/modreason96x"
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                 android:hint="@string/modreason96"
-                                 android:tag="modreason96"
-                                 android:text="@={child.modreason96x}"
-                                 android:visibility="@{child.modreason.equals(`96`) ? View.VISIBLE : View.GONE}" />
-                         </RadioGroup>
-                     </LinearLayout>
-                 </androidx.cardview.widget.CardView>
- -->
 
 
                 <!--EndButton LinearLayout-->

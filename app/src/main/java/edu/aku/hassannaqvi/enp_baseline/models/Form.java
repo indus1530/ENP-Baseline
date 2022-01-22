@@ -58,9 +58,9 @@ public class Form extends BaseObservable implements Observable {
     private String a107 = _EMPTY_;
 
     //ModuleStatusVariables
-    public String ista01;
-    public String ista02;
-    public String ista0296x;
+    private String astaa = _EMPTY_;
+    private String astab = _EMPTY_;
+    private String astab96x = _EMPTY_;
 
     // FIELD VARIABLES
     private String a101 = _EMPTY_;
@@ -1916,35 +1916,35 @@ public class Form extends BaseObservable implements Observable {
 
 
     @Bindable
-    public String getIsta01() {
-        return ista01;
+    public String getAstaa() {
+        return astaa;
     }
 
-    public void setIsta01(String ista01) {
-        this.ista01 = ista01;
-        setIsta02(ista01.equals("1") ? "" : this.ista02);
-        notifyPropertyChanged(BR.ista01);
-    }
-
-    @Bindable
-    public String getIsta02() {
-        return ista02;
-    }
-
-    public void setIsta02(String ista02) {
-        this.ista02 = ista02;
-        setIsta0296x(ista02.equals("96") ? this.ista0296x : "");
-        notifyPropertyChanged(BR.ista02);
+    public void setAstaa(String astaa) {
+        this.astaa = astaa;
+        setAstab(astaa.equals("1") ? "" : this.astab);
+        notifyPropertyChanged(BR.astaa);
     }
 
     @Bindable
-    public String getIsta0296x() {
-        return ista0296x;
+    public String getAstab() {
+        return astab;
     }
 
-    public void setIsta0296x(String ista0296x) {
-        this.ista0296x = ista0296x;
-        notifyPropertyChanged(BR.ista0296x);
+    public void setAstab(String astab) {
+        this.astab = astab;
+        setAstab96x(astab.equals("96") ? this.astab96x : "");
+        notifyPropertyChanged(BR.astab);
+    }
+
+    @Bindable
+    public String getAstab96x() {
+        return astab96x;
+    }
+
+    public void setAstab96x(String astab96x) {
+        this.astab96x = astab96x;
+        notifyPropertyChanged(BR.astab96x);
     }
 
 
@@ -2152,9 +2152,9 @@ public class Form extends BaseObservable implements Observable {
             this.a506 = json.getString("a506");
             this.a507 = json.getString("a507");
             this.a508 = json.getString("a508");
-            this.ista01 = json.getString("ista01");
-            this.ista02 = json.getString("ista02");
-            this.ista0296x = json.getString("ista0296x");
+            this.astaa = json.getString("astaa");
+            this.astab = json.getString("astab");
+            this.astab96x = json.getString("astab96x");
         }
     }
 
@@ -2354,9 +2354,9 @@ public class Form extends BaseObservable implements Observable {
                 .put("a506", a506)
                 .put("a507", a507)
                 .put("a508", a508)
-                .put("ista01", ista01)
-                .put("ista02", ista02)
-                .put("ista0296x", ista0296x);
+                .put("astaa", astaa)
+                .put("astab", astab)
+                .put("astab96x", astab96x);
         return json.toString();
     }
 

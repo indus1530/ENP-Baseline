@@ -27,7 +27,6 @@ import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionC1Binding;
-import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 
 public class SectionC1Activity extends AppCompatActivity {
@@ -54,12 +53,11 @@ public class SectionC1Activity extends AppCompatActivity {
             Toast.makeText(this, "JSONException(MWRA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
-        if (MainApp.mwra == null) MainApp.mwra = new MWRA();
-        bi.setMwra(MainApp.mwra);
-        mwra.setC103(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getA201());
-        mwra.setC101(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getA202());
+        mwra.setC103(MainApp.familyMember.getA201());
+        mwra.setC101(MainApp.familyMember.getA202());
+        mwra.setC102("1");
         setSupportActionBar(bi.toolbar);
-        db = MainApp.appInfo.dbHelper;
+        bi.setMwra(MainApp.mwra);
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
 
@@ -78,7 +76,7 @@ public class SectionC1Activity extends AppCompatActivity {
             }
 
         }
-        bi.c104.setMaxvalue(Float.parseFloat(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getA206y()));
+        bi.c104.setMaxvalue(Float.parseFloat(MainApp.familyMember.getA206y()));
     }
 
 

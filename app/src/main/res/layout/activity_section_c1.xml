@@ -69,25 +69,6 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- cs1t3  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcs1t3"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cs1t3" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
 
 
                 <!-- c103  Input-Numeric   -->
@@ -202,6 +183,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:checked="@{mwra.c102.equals(`1`)}"
                                 android:onClick="@{()->mwra.setC102(`1`)}"
                                 android:text="@string/c10201" />
@@ -211,6 +193,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:checked="@{mwra.c102.equals(`2`)}"
                                 android:onClick="@{()->mwra.setC102(`2`) + c105.clearCheck() + c109.clearCheck() + c111.clearCheck() + c114.clearCheck() + c119.clearCheck() + c119a.clearCheck() + c119b.clearCheck() + c119c.clearCheck() + c119d.clearCheck() + c119e.clearCheck() + c119f.clearCheck() + c119g.clearCheck() + c119h.clearCheck() + c11998.clearCheck() + c120.clearCheck() + c121.clearCheck() + c124.clearCheck() + c125.clearCheck() + c126.clearCheck() + c127.clearCheck() + c129.clearCheck() + c130.clearCheck() + c131.clearCheck() + c132.clearCheck() + c133.clearCheck()}"
                                 android:text="@string/c10202" />

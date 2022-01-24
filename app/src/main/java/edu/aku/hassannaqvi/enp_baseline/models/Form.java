@@ -2,6 +2,13 @@ package edu.aku.hassannaqvi.enp_baseline.models;
 
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp._EMPTY_;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedDistrict;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedHHID;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedPSU;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedProvince;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedTehsil;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedUc;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedVillage;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -219,9 +226,20 @@ public class Form extends BaseObservable implements Observable {
         //   setUuid(MainApp.form.getUid());  // not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setPsuCode(MainApp.selectedPSU);
-        setHhid(MainApp.selectedHHID);
-        setEntryType(String.valueOf(MainApp.entryType));
+
+        setUserName(MainApp.user.getUserName());
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setDeviceId(MainApp.deviceid);
+        setAppver(MainApp.versionName + "." + MainApp.versionCode);
+
+        setProvinceCode(selectedProvince);
+        setDistrictCode(selectedDistrict);
+        setTehsilCode(selectedTehsil);
+        setUcCode(selectedUc);
+        setVillageCode(selectedVillage);
+        setPsuCode(selectedPSU);
+        setHhid(selectedHHID);
+
 
     }
 
@@ -257,6 +275,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setPsuCode(String psuCode) {
         this.psuCode = psuCode;
+        setA105b(psuCode);
         notifyPropertyChanged(BR.psuCode);
     }
 
@@ -267,6 +286,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setHhid(String hhid) {
         this.hhid = hhid;
+        setA106(hhid);
         notifyPropertyChanged(BR.hhid);
     }
 
@@ -384,6 +404,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setProvinceCode(String provinceCode) {
         this.provinceCode = provinceCode;
+        setA101(provinceCode);
     }
 
 
@@ -402,6 +423,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setDistrictCode(String districtCode) {
         this.districtCode = districtCode;
+        setA102(districtCode);
     }
 
 
@@ -420,6 +442,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setTehsilCode(String tehsilCode) {
         this.tehsilCode = tehsilCode;
+        setA103(tehsilCode);
     }
 
 
@@ -438,6 +461,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setUcCode(String ucCode) {
         this.ucCode = ucCode;
+        setA104(ucCode);
     }
 
 
@@ -456,6 +480,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setVillageCode(String villageCode) {
         this.villageCode = villageCode;
+        setA105a(villageCode);
     }
 
 

@@ -1,7 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.child;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.childOfSelectedMWRAList;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.familyMember;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -18,14 +18,11 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.util.ArrayList;
-
 import edu.aku.hassannaqvi.enp_baseline.R;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionD1Binding;
-import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 
 public class SectionD1Activity extends AppCompatActivity {
@@ -50,16 +47,25 @@ public class SectionD1Activity extends AppCompatActivity {
             Toast.makeText(this, "JSONException(Child): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
-//        if (MainApp.mwra == null) MainApp.mwra = new MWRA();
+        if (!MainApp.selectedMWRA.equals("97")) {
 
-        child.setD101(MainApp.mwra.getC101());
-        child.setD102(MainApp.mwra.getC103());
+            child.setD103(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getA201());
+            child.setD104("1");
+        } else {
+
+            child.setD103(MainApp.familyList.get(Integer.parseInt(MainApp.selectedCaregiver)).getA201());
+            child.setD104("2");
+        }
+
+
+        child.setD101(familyMember.getA202());
+        child.setD102(familyMember.getA201());
 
         bi.setChild(child);
         setSupportActionBar(bi.toolbar);
 
 
-        childOfSelectedMWRAList = new ArrayList<>();
+/*        childOfSelectedMWRAList = new ArrayList<>();
         for (FamilyMembers child : MainApp.familyList) {
             Log.d(TAG, "onCreate: childmsno " + child.getA21301() + " fmsno: " + (Integer.parseInt(MainApp.selectedMWRA) + 1));
 
@@ -71,7 +77,7 @@ public class SectionD1Activity extends AppCompatActivity {
             if (motherSno == selectedMwraSno && Integer.parseInt(child.getA206y()) < 5) {
                 childOfSelectedMWRAList.add(Integer.valueOf(child.getA201()));
             }
-        }
+        }*/
 
         //child.setCs1q02(String.valueOf(childOfSelectedMWRAList.size()));
 

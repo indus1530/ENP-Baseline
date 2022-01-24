@@ -819,9 +819,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
      * 4 = Adol Female
      */
     private void updateMemCategory() {
-        if (a204.equals("") || a206y.equals("") || a208.equals("") /*|| !hl10.equals("1")*/) return;
+        if (a204.equals("") || a206y.equals("") || a208.equals("") || !a214.equals("1")) return;
         String memGender = getA204();
         String memMaritalStatus = getA208();
+        boolean memBISP = !getA20705().equals("05");
         int memAge = Integer.parseInt(getA206y());
 
         // MWRA
@@ -840,21 +841,15 @@ public class FamilyMembers extends BaseObservable implements Observable {
             setMemCate("2");
         }
 
-        // Adolescent Male
-        if (memGender.equals("1")
-                && memAge >= 15 && memAge <= 19   // 15 to 49 year old
-                && (memMaritalStatus.equals("5") || memMaritalStatus.equals("97"))
+        // PW
+        if (getA210().equals("1")
         ) {
             setMemCate("3");
         }
-
-        // Adolescent Female
-
-        if (memGender.equals("2")
-                && memAge >= 15 && memAge <= 19   // 15 to 49 year old
-                && (memMaritalStatus.equals("5") || memMaritalStatus.equals("97"))
-        ) {
-            setMemCate("4");
+        // BISP Recipient
+        if (memBISP) {
+            setMemCate(getMemCate() + "R");
         }
+
     }
 }

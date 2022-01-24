@@ -30,7 +30,7 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/b2"
+            app:subtitle="@string/secb2ins"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/modb"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
@@ -48,28 +48,7 @@
                 android:orientation="vertical">
 
 
-                <!-- secb2ins  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVsecb2ins"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/labelsHead"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/secb2ins" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- b201  Radio   -->
+            <!-- b201  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVb201"
                     style="@style/cardView">

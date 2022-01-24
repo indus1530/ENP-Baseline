@@ -1883,7 +1883,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         whereClause = FamilyMembersTable.COLUMN_UUID + "=? AND "
                 + FamilyMembersTable.COLUMN_INDEXED + " like ? ";
 
-        String[] whereArgs = {uid, "'%" + index + "%'"};
+        String[] whereArgs = {uid, "%" + index + "%"};
 
         String groupBy = null;
         String having = null;
@@ -2296,7 +2296,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 limitRows
         );
 
-        Form form = null;
+        Form form = new Form();
         while (c.moveToNext()) {
             form = (new Form().Hydrate(c));
         }
@@ -2323,7 +2323,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String orderBy = MwraTable.COLUMN_ID + " ASC";
 
-        MWRA mwra = null;
+        MWRA mwra = new MWRA();
 
         c = db.query(
                 MwraTable.TABLE_NAME,  // The table to query
@@ -2538,7 +2538,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return lateAdol;
     }
 
-    public Recipient getRecipientByUID(String fmuid) throws JSONException {
+    public Recipient getRecipientByFMID(String fmuid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
@@ -2576,5 +2576,85 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return recipient;
+    }
+
+    public MWRA getMWRAByFMUID(String fmuid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = MwraTable.COLUMN_UUID + "=? AND " +
+                MwraTable.COLUMN_FMUID + "=?";
+
+        String[] whereArgs = {MainApp.form.getUid(), fmuid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = MwraTable.COLUMN_ID + " ASC";
+
+        MWRA mwra = new MWRA();  // Pregnancies can never be null.
+
+        c = db.query(
+                MwraTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                   // The sort order
+        );
+/*        if (c.getCount() >= ecdNo) {
+            c.moveToPosition(ecdNo);
+            ecdInfo = new ECDInfo().Hydrate(c);
+        }*/
+        while (c.moveToNext()) {
+            mwra = new MWRA().Hydrate(c);
+        }
+
+        db.close();
+
+        return mwra;
+    }
+
+    public Child getChildByFMUID(String fmuid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildTable.COLUMN_UUID + "=? AND " +
+                ChildTable.COLUMN_FMUID + "=?";
+
+        String[] whereArgs = {MainApp.form.getUid(), fmuid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildTable.COLUMN_ID + " ASC";
+
+        Child child = new Child();  // Pregnancies can never be null.
+
+        c = db.query(
+                ChildTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                   // The sort order
+        );
+/*        if (c.getCount() >= ecdNo) {
+            c.moveToPosition(ecdNo);
+            ecdInfo = new ECDInfo().Hydrate(c);
+        }*/
+        while (c.moveToNext()) {
+            child = new Child().Hydrate(c);
+        }
+
+        db.close();
+
+        return child;
     }
 }

@@ -69,8 +69,15 @@ public class SectionC6Activity extends AppCompatActivity {
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (updateDB()) {
-            finish();
+            try {
+                MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid(), "1");
+                MainApp.child = db.getChildByFMUID(MainApp.familyMember.getUid());
+            } catch (JSONException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "JSONException(familymember/mwra): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
             startActivity(new Intent(this, SectionD1Activity.class));
+            finish();
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

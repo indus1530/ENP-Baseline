@@ -115,29 +115,26 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         String idxStatus = "";
 
         int idxColor;
-        switch (members.getIndexed()) {
-            case "1":
-                idxStatus = " Mother  ";
-                idxColor = mContext.getResources().getColor(R.color.motherBg);
-                break;
-            case "2":
-                idxStatus = "  Child  ";
-                idxColor = mContext.getResources().getColor(R.color.childBg);
-                break;
-            case "3":
-                idxStatus = " Adol. M ";
-                idxColor = mContext.getResources().getColor(R.color.adolMaleBg);
-                break;
-            case "4":
-                idxStatus = " Adol. F ";
-                idxColor = mContext.getResources().getColor(R.color.adolFemaleBg);
-                break;
 
-            default:
-                idxStatus = "         ";
-                idxColor = mContext.getResources().getColor(R.color.white);
-                break;
+        idxStatus = "         ";
+        idxColor = mContext.getResources().getColor(R.color.white);
+        if (members.getIndexed().contains("1")) {
+            idxStatus = "      Child     ";
+            idxColor = mContext.getResources().getColor(R.color.childBg);
         }
+        if (members.getIndexed().contains("2")) {
+            idxStatus = "     Mother     ";
+            idxColor = mContext.getResources().getColor(R.color.motherBg);
+        }
+        if (members.getIndexed().contains("3")) {
+            idxStatus = "    Caregiver   ";
+            idxColor = mContext.getResources().getColor(R.color.adolMaleBg);
+        }
+        if (members.getIndexed().contains("R")) {
+            idxStatus = " BISP Recipient ";
+            idxColor = mContext.getResources().getColor(R.color.adolFemaleBg);
+        }
+
 
         fMaritalStatus.setText(marStatus);
         secStatus.setText(idxStatus);
@@ -157,7 +154,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
             indexedBar.setVisibility(members.getIndexed().equals("") ? View.GONE : View.VISIBLE);
         }
 
-        switch (members.getMemCate()) {
+        switch (members.getMemCate().substring(0, 1)) {
             case "1":
                 memCate.setText("Mother");
                 break;
@@ -169,13 +166,19 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
                 }
                 break;
             case "3":
-                memCate.setText("Adol. M");
+                memCate.setText("PW");
                 break;
-            case "4":
-                memCate.setText("Adol. F");
-                break;
+
             default:
                 memCate.setVisibility(View.GONE);
+        }
+
+        if (members.getMemCate().contains("R")) {
+            if (!memCate.getText().equals("")) {
+                memCate.setText(memCate.getText() + " | BISP");
+            } else {
+                memCate.setText("BISP");
+            }
         }
 
         //fMaritalStatus.setText("Children: " + familyMember.getH226m() + " boy(s), " + familyMember.getH226f() + " girl(s)");

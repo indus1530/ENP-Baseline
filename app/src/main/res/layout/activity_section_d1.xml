@@ -273,6 +273,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:checked="@{child.d104.equals(`1`)}"
                                 android:onClick="@{()->child.setD104(`1`)}"
                                 android:text="@string/d10401" />
@@ -281,6 +282,7 @@
                                 android:id="@+id/d10402"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:enabled="false"
                                 android:layout_weight="1"
                                 android:checked="@{child.d104.equals(`2`)}"
                                 android:onClick="@{()->child.setD104(`2`)}"

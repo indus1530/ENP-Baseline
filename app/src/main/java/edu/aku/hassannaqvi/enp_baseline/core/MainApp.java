@@ -126,6 +126,7 @@ public class MainApp extends Application {
     public static String selectedTehsil = "";
     public static String selectedUc = "";
     public static String selectedVillage = "";
+    public static String selectedCluster = "";
     public static String selectedPSU = "";
     public static String selectedHHID = "";
     public static boolean langRTL = false;

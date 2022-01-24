@@ -80,7 +80,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/info"
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/sb1inst2" />
@@ -149,13 +149,12 @@
                             android:layout_weight="1"
                             android:text="@string/b102" />
 
-                        <EditText
+                        <TextView
+                            style="@style/sub_labels"
                             android:id="@+id/b102"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/b102"
                             android:text="@={rcpt.b102}" />
 
                     </LinearLayout>
@@ -1611,6 +1610,7 @@
                 <!-- ins  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVins"
+                    android:visibility="gone"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1631,6 +1631,7 @@
                 <!-- b119ins  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVb119ins"
+                    android:visibility="gone"
                     style="@style/cardView">
 
                     <LinearLayout

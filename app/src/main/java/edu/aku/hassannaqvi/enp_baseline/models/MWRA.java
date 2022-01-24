@@ -477,7 +477,7 @@ public class MWRA extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
-        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getUid()); //// not applicable in Form table
+        setFmuid(MainApp.familyMember.getUid()); //// not applicable in Form table
         // setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid());  // not applicable in Form table
         setSno(selectedMWRA);
         setAppver(MainApp.appInfo.getAppVersion());
@@ -5661,7 +5661,7 @@ public class MWRA extends BaseObservable implements Observable {
             this.c20498 = json.getString("c20498");
             this.c205 = json.getString("c205");
             this.c20501x = json.getString("c20501x");
-            this.c20601 = json.getString("c206");
+            this.c20601 = json.getString("c20601");
             this.c20602 = json.getString("c20602");
             this.c20603 = json.getString("c20603");
             this.c20604 = json.getString("c20604");
@@ -5670,7 +5670,7 @@ public class MWRA extends BaseObservable implements Observable {
             this.c20607 = json.getString("c20607");
             this.c20608 = json.getString("c20608");
             this.c20697 = json.getString("c20697");
-            this.c20696 = json.getString("c206oth");
+            this.c20696 = json.getString("c20696");
             this.c20696x = json.getString("c20696x");
             this.c207 = json.getString("c207");
             this.c208 = json.getString("c208");
@@ -6106,7 +6106,7 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("c12896", c12896)
                 .put("c12896x", c12896x)
                 .put("c129", c129)
-                .put("c130s", c130)
+                .put("c130", c130)
                 .put("c130sx", c130sx)
                 .put("c130cx", c130cx)
                 .put("c131", c131)

@@ -49,6 +49,67 @@
                 android:orientation="vertical"
                 android:paddingTop="56dp">
 
+                <TextView
+                    android:id="@+id/hh_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="HH NO" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grayLight"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/totalMember"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:padding="8dp"
+                        android:text="TEXT"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/totalAdol"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/all_round_corners_stroke"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:padding="8dp"
+                        android:text="TEXT"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
+
+                    <TextView
+                        android:id="@+id/totalMwra"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/all_round_corners_stroke"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:padding="8dp"
+                        android:text="TEXT"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
+
+
+                    <TextView
+                        android:id="@+id/totalMale"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:padding="8dp"
+                        android:text="TEXT"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
+                </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
@@ -67,30 +128,7 @@
                         android:minHeight="56dp"
                         android:onClick="finalizeFamily"
                         android:text="Family Complete" />
-                    <!--  <TextView
-                          android:id="@+id/totalmember"
-                          android:layout_width="0dp"
-                          android:layout_height="wrap_content"
-                          android:layout_weight="1"
-                          android:drawableStart="@drawable/ic_members"
-                          android:drawablePadding="8dp"
-                          android:gravity="center_vertical"
-                          android:padding="8dp"
-                          android:text="TEXT"
-                          android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
 
-                      <TextView
-                          android:id="@+id/completedmember"
-                          android:layout_width="0dp"
-                          android:layout_height="wrap_content"
-                          android:layout_weight="1"
-                          android:drawableStart="@drawable/ic_members_done"
-                          android:drawablePadding="8dp"
-                          android:gravity="center_vertical"
-                          android:padding="8dp"
-                          android:text="TEXT"
-                          android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
-     -->
                 </LinearLayout>
 
                 <View
@@ -143,10 +181,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bottom"
+                                android:orientation="horizontal"
                                 android:visibility="gone"
-                                tools:visibility="visible"
 
-                                android:orientation="horizontal">
+                                tools:visibility="visible">
 
                                 <TextView
                                     style="@style/sub_labels"
@@ -156,6 +194,8 @@
 
 
                                 <TextView
+                                    style="@style/spinnerStyle"
+                                    android:text="Mother"
                                     android:id="@+id/motherName"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent" />
@@ -167,9 +207,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bottom"
+                                android:orientation="horizontal"
                                 android:visibility="gone"
-                                tools:visibility="visible"
-                                android:orientation="horizontal">
+                                tools:visibility="visible">
 
                                 <TextView
                                     style="@style/sub_labels"

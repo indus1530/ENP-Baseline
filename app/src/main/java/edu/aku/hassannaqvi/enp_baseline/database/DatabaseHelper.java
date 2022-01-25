@@ -25,37 +25,32 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.CAnthroTable;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.AnthroChildTable;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.AnthroWRATable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.ClustersTable;
-import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.ECDInfoTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.EntryLogTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.FormsTable;
-import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.LateAdolescentTable;
-import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.MotherKAPTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.MwraTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.PregnancyTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.RecipientTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.VersionTable;
-import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.WAnthroTable;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
-import edu.aku.hassannaqvi.enp_baseline.models.CAnthro;
+import edu.aku.hassannaqvi.enp_baseline.models.AnthroChild;
+import edu.aku.hassannaqvi.enp_baseline.models.AnthroWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.Child;
 import edu.aku.hassannaqvi.enp_baseline.models.Clusters;
-import edu.aku.hassannaqvi.enp_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.enp_baseline.models.EntryLog;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
-import edu.aku.hassannaqvi.enp_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
-import edu.aku.hassannaqvi.enp_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
 import edu.aku.hassannaqvi.enp_baseline.models.VersionApp;
-import edu.aku.hassannaqvi.enp_baseline.models.WAnthro;
 
 
 
@@ -86,15 +81,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_RECIPIENT);
         db.execSQL(CreateTable.SQL_CREATE_MWRA);
-        db.execSQL(CreateTable.SQL_CREATE_WANTHRO);
+        db.execSQL(CreateTable.SQL_CREATE_ANTHROWRA);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
-        db.execSQL(CreateTable.SQL_CREATE_CANTHRO);
+        db.execSQL(CreateTable.SQL_CREATE_ANTHROCHILD);
         db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
         db.execSQL(CreateTable.SQL_CREATE_PREGNANCY);
-        db.execSQL(CreateTable.SQL_CREATE_ADOLESCENT);
-        db.execSQL(CreateTable.SQL_CREATE_ECDINFO);
 
-        db.execSQL(CreateTable.SQL_CREATE_MOTHER_KAP);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
 
     }
@@ -208,31 +200,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addWAnthro(WAnthro anthw) throws JSONException {
+    public Long addWAnthro(AnthroWRA anthw) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
-        values.put(WAnthroTable.COLUMN_PROJECT_NAME, anthw.getProjectName());
-        values.put(WAnthroTable.COLUMN_UID, anthw.getUid());
-        values.put(WAnthroTable.COLUMN_UUID, anthw.getUuid());
-        values.put(WAnthroTable.COLUMN_FMUID, anthw.getFmuid());
-        //  values.put(WAnthroTable.COLUMN_MUID, anthw.getMuid());
-        values.put(WAnthroTable.COLUMN_SNO, anthw.getSno());
-        values.put(WAnthroTable.COLUMN_PSU_CODE, anthw.getpsuCode());
-        values.put(WAnthroTable.COLUMN_HHID, anthw.getHhid());
-        values.put(WAnthroTable.COLUMN_USERNAME, anthw.getUserName());
-        values.put(WAnthroTable.COLUMN_SYSDATE, anthw.getSysDate());
-        values.put(WAnthroTable.COLUMN_SF2, anthw.sF2toString());
-        values.put(WAnthroTable.COLUMN_ISTATUS, anthw.getiStatus());
-        values.put(WAnthroTable.COLUMN_DEVICETAGID, anthw.getDeviceTag());
-        values.put(WAnthroTable.COLUMN_DEVICEID, anthw.getDeviceId());
-        values.put(WAnthroTable.COLUMN_APPVERSION, anthw.getAppver());
-        values.put(WAnthroTable.COLUMN_SYNCED, anthw.getSynced());
-        values.put(WAnthroTable.COLUMN_SYNCED_DATE, anthw.getSyncDate());
+        values.put(TableContracts.AnthroWRATable.COLUMN_PROJECT_NAME, anthw.getProjectName());
+        values.put(TableContracts.AnthroWRATable.COLUMN_UID, anthw.getUid());
+        values.put(TableContracts.AnthroWRATable.COLUMN_UUID, anthw.getUuid());
+        values.put(TableContracts.AnthroWRATable.COLUMN_FMUID, anthw.getFmuid());
+        //  values.put(AnthroWRATable.COLUMN_MUID, anthw.getMuid());
+        values.put(TableContracts.AnthroWRATable.COLUMN_SNO, anthw.getSno());
+        values.put(TableContracts.AnthroWRATable.COLUMN_PSU_CODE, anthw.getpsuCode());
+        values.put(AnthroWRATable.COLUMN_HHID, anthw.getHhid());
+        values.put(TableContracts.AnthroWRATable.COLUMN_USERNAME, anthw.getUserName());
+        values.put(TableContracts.AnthroWRATable.COLUMN_SYSDATE, anthw.getSysDate());
+        values.put(TableContracts.AnthroWRATable.COLUMN_SF2, anthw.sF2toString());
+        values.put(TableContracts.AnthroWRATable.COLUMN_ISTATUS, anthw.getiStatus());
+        values.put(TableContracts.AnthroWRATable.COLUMN_DEVICETAGID, anthw.getDeviceTag());
+        values.put(TableContracts.AnthroWRATable.COLUMN_DEVICEID, anthw.getDeviceId());
+        values.put(TableContracts.AnthroWRATable.COLUMN_APPVERSION, anthw.getAppver());
+        values.put(TableContracts.AnthroWRATable.COLUMN_SYNCED, anthw.getSynced());
+        values.put(TableContracts.AnthroWRATable.COLUMN_SYNCED_DATE, anthw.getSyncDate());
 
         long newRowId;
         newRowId = db.insert(
-                WAnthroTable.TABLE_NAME,
-                WAnthroTable.COLUMN_NAME_NULLABLE,
+                TableContracts.AnthroWRATable.TABLE_NAME,
+                TableContracts.AnthroWRATable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -268,63 +260,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addCAnthro(CAnthro anthc) throws JSONException {
+    public Long addCAnthro(AnthroChild anthc) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
-        values.put(CAnthroTable.COLUMN_PROJECT_NAME, anthc.getProjectName());
-        values.put(CAnthroTable.COLUMN_UID, anthc.getUid());
-        values.put(CAnthroTable.COLUMN_UUID, anthc.getUuid());
-        values.put(CAnthroTable.COLUMN_FMUID, anthc.getFmuid());
-        values.put(CAnthroTable.COLUMN_MUID, anthc.getMuid());
-        values.put(CAnthroTable.COLUMN_SNO, anthc.getSno());
-        values.put(CAnthroTable.COLUMN_PSU_CODE, anthc.getpsuCode());
-        values.put(CAnthroTable.COLUMN_HHID, anthc.getHhid());
-        values.put(CAnthroTable.COLUMN_USERNAME, anthc.getUserName());
-        values.put(CAnthroTable.COLUMN_SYSDATE, anthc.getSysDate());
-        values.put(CAnthroTable.COLUMN_SF1, anthc.sF1toString());
-        values.put(CAnthroTable.COLUMN_ISTATUS, anthc.getiStatus());
-        values.put(CAnthroTable.COLUMN_DEVICETAGID, anthc.getDeviceTag());
-        values.put(CAnthroTable.COLUMN_DEVICEID, anthc.getDeviceId());
-        values.put(CAnthroTable.COLUMN_APPVERSION, anthc.getAppver());
-        values.put(CAnthroTable.COLUMN_SYNCED, anthc.getSynced());
-        values.put(CAnthroTable.COLUMN_SYNCED_DATE, anthc.getSyncDate());
+        values.put(AnthroChildTable.COLUMN_PROJECT_NAME, anthc.getProjectName());
+        values.put(AnthroChildTable.COLUMN_UID, anthc.getUid());
+        values.put(AnthroChildTable.COLUMN_UUID, anthc.getUuid());
+        values.put(AnthroChildTable.COLUMN_FMUID, anthc.getFmuid());
+        values.put(AnthroChildTable.COLUMN_SNO, anthc.getSno());
+        values.put(AnthroChildTable.COLUMN_PSU_CODE, anthc.getpsuCode());
+        values.put(AnthroChildTable.COLUMN_HHID, anthc.getHhid());
+        values.put(AnthroChildTable.COLUMN_USERNAME, anthc.getUserName());
+        values.put(AnthroChildTable.COLUMN_SYSDATE, anthc.getSysDate());
+        values.put(AnthroChildTable.COLUMN_SF1, anthc.sF1toString());
+        values.put(AnthroChildTable.COLUMN_ISTATUS, anthc.getiStatus());
+        values.put(AnthroChildTable.COLUMN_DEVICETAGID, anthc.getDeviceTag());
+        values.put(AnthroChildTable.COLUMN_DEVICEID, anthc.getDeviceId());
+        values.put(AnthroChildTable.COLUMN_APPVERSION, anthc.getAppver());
+        values.put(AnthroChildTable.COLUMN_SYNCED, anthc.getSynced());
+        values.put(AnthroChildTable.COLUMN_SYNCED_DATE, anthc.getSyncDate());
         long newRowId;
         newRowId = db.insert(
-                CAnthroTable.TABLE_NAME,
-                CAnthroTable.COLUMN_NAME_NULLABLE,
+                AnthroChildTable.TABLE_NAME,
+                AnthroChildTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
 
-    public Long addAdolescent(LateAdolescent adol) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(LateAdolescentTable.COLUMN_PROJECT_NAME, adol.getProjectName());
-        values.put(LateAdolescentTable.COLUMN_UID, adol.getUid());
-        values.put(LateAdolescentTable.COLUMN_UUID, adol.getUuid());
-        values.put(LateAdolescentTable.COLUMN_FMUID, adol.getFmuid());
-        values.put(LateAdolescentTable.COLUMN_SNO_ADOL, adol.getSnoAdol());
-        values.put(LateAdolescentTable.COLUMN_PSU_CODE, adol.getpsuCode());
-        values.put(LateAdolescentTable.COLUMN_HHID, adol.getHhid());
-        values.put(LateAdolescentTable.COLUMN_USERNAME, adol.getUserName());
-        values.put(LateAdolescentTable.COLUMN_SYSDATE, adol.getSysDate());
-        values.put(LateAdolescentTable.COLUMN_SE1, adol.sE1toString());
-/*        values.put(LateAdolescentTable.COLUMN_SE2, adol.sE2toString());
-        values.put(LateAdolescentTable.COLUMN_SE3, adol.sE3toString());
-        values.put(LateAdolescentTable.COLUMN_SE4, adol.sE4toString());*/
-        values.put(LateAdolescentTable.COLUMN_ISTATUS, adol.getiStatus());
-        values.put(LateAdolescentTable.COLUMN_DEVICETAGID, adol.getDeviceTag());
-        values.put(LateAdolescentTable.COLUMN_DEVICEID, adol.getDeviceId());
-        values.put(LateAdolescentTable.COLUMN_APPVERSION, adol.getAppver());
-        values.put(LateAdolescentTable.COLUMN_SYNCED, adol.getSynced());
-        values.put(LateAdolescentTable.COLUMN_SYNCED_DATE, adol.getSyncDate());
-        long newRowId;
-        newRowId = db.insertOrThrow(
-                LateAdolescentTable.TABLE_NAME,
-                LateAdolescentTable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
 
     public Long addPregnancy(Pregnancy preg) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
@@ -332,7 +294,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyTable.COLUMN_PROJECT_NAME, preg.getProjectName());
         values.put(PregnancyTable.COLUMN_UID, preg.getUid());
         values.put(PregnancyTable.COLUMN_UUID, preg.getUuid());
-        values.put(PregnancyTable.COLUMN_MUID, preg.getMuid());
         values.put(PregnancyTable.COLUMN_FMUID, preg.getFmuid());
         values.put(PregnancyTable.COLUMN_PSU_CODE, preg.getpsuCode());
         values.put(PregnancyTable.COLUMN_HHID, preg.getHhid());
@@ -340,7 +301,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyTable.COLUMN_USERNAME, preg.getUserName());
         values.put(PregnancyTable.COLUMN_SYSDATE, preg.getSysDate());
         values.put(PregnancyTable.COLUMN_SE1, preg.sE1toString());
-        values.put(PregnancyTable.COLUMN_SE2, preg.sE2toString());
+        //     values.put(PregnancyTable.COLUMN_SE2, preg.sE2toString());
         values.put(PregnancyTable.COLUMN_ISTATUS, preg.getiStatus());
         values.put(PregnancyTable.COLUMN_DEVICETAGID, preg.getDeviceTag());
         values.put(PregnancyTable.COLUMN_DEVICEID, preg.getDeviceId());
@@ -352,89 +313,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insertOrThrow(
                 PregnancyTable.TABLE_NAME,
                 PregnancyTable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
-
-    public Long addEcdInfo(ECDInfo ecd) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(ECDInfoTable.COLUMN_PROJECT_NAME, ecd.getProjectName());
-        values.put(ECDInfoTable.COLUMN_UID, ecd.getUid());
-        values.put(ECDInfoTable.COLUMN_UUID, ecd.getUuid());
-        values.put(ECDInfoTable.COLUMN_ECD_NO, ecd.getEcdNo());
-        values.put(ECDInfoTable.COLUMN_PSU_CODE, ecd.getpsuCode());
-        values.put(ECDInfoTable.COLUMN_HHID, ecd.getHhid());
-        values.put(ECDInfoTable.COLUMN_USERNAME, ecd.getUserName());
-        values.put(ECDInfoTable.COLUMN_SYSDATE, ecd.getSysDate());
-        values.put(ECDInfoTable.COLUMN_ECDINFO, ecd.ecdInfotoString());
-        values.put(ECDInfoTable.COLUMN_ISTATUS, ecd.getiStatus());
-        values.put(ECDInfoTable.COLUMN_DEVICETAGID, ecd.getDeviceTag());
-        values.put(ECDInfoTable.COLUMN_DEVICEID, ecd.getDeviceId());
-        values.put(ECDInfoTable.COLUMN_APPVERSION, ecd.getAppver());
-        values.put(ECDInfoTable.COLUMN_SYNCED, ecd.getSynced());
-        values.put(ECDInfoTable.COLUMN_SYNCED_DATE, ecd.getSyncDate());
-
-        long newRowId;
-        newRowId = db.insert(
-                ECDInfoTable.TABLE_NAME,
-                ECDInfoTable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
-
-    public Long addHHMembers(FamilyMembers members) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(FamilyMembersTable.COLUMN_PROJECT_NAME, members.getProjectName());
-        values.put(FamilyMembersTable.COLUMN_UID, members.getUid());
-        values.put(FamilyMembersTable.COLUMN_UUID, members.getUuid());
-        values.put(FamilyMembersTable.COLUMN_PSU_CODE, members.getpsuCode());
-        values.put(FamilyMembersTable.COLUMN_HHID, members.getHhid());
-        values.put(FamilyMembersTable.COLUMN_SNO, members.getSno());
-        values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
-        values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
-        values.put(FamilyMembersTable.COLUMN_SA2, members.sA2toString());
-        values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getiStatus());
-        values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
-        values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
-        values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());
-
-
-        long newRowId;
-        newRowId = db.insert(
-                FamilyMembersTable.TABLE_NAME,
-                FamilyMembersTable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
-
-    public Long addMotherKap(MotherKAP motherKAP) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(MotherKAPTable.COLUMN_PROJECT_NAME, motherKAP.getProjectName());
-        values.put(MotherKAPTable.COLUMN_UID, motherKAP.getUid());
-        values.put(MotherKAPTable.COLUMN_UUID, motherKAP.getUuid());
-        values.put(MotherKAPTable.COLUMN_FMUID, motherKAP.getFmuid());
-        values.put(MotherKAPTable.COLUMN_MUID, motherKAP.getMuid());
-        values.put(MotherKAPTable.COLUMN_PSU_CODE, motherKAP.getpsuCode());
-        values.put(MotherKAPTable.COLUMN_HHID, motherKAP.getHhid());
-        values.put(MotherKAPTable.COLUMN_SNO, motherKAP.getSno());
-        values.put(MotherKAPTable.COLUMN_USERNAME, motherKAP.getUserName());
-        values.put(MotherKAPTable.COLUMN_SYSDATE, motherKAP.getSysDate());
-        values.put(MotherKAPTable.COLUMN_SD1, motherKAP.sD1toString());
-        values.put(MotherKAPTable.COLUMN_SD2, motherKAP.sD2toString());
-        values.put(MotherKAPTable.COLUMN_SD3, motherKAP.sD3toString());
-        values.put(MotherKAPTable.COLUMN_ISTATUS, motherKAP.getiStatus());
-        values.put(MotherKAPTable.COLUMN_DEVICETAGID, motherKAP.getDeviceTag());
-        values.put(MotherKAPTable.COLUMN_DEVICEID, motherKAP.getDeviceId());
-        values.put(MotherKAPTable.COLUMN_APPVERSION, motherKAP.getAppver());
-        values.put(MotherKAPTable.COLUMN_SYNCED, motherKAP.getSynced());
-        values.put(MotherKAPTable.COLUMN_SYNCED_DATE, motherKAP.getSyncDate());
-        long newRowId;
-        newRowId = db.insert(
-                MotherKAPTable.TABLE_NAME,
-                MotherKAPTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -557,21 +435,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesECDColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-
-        ContentValues values = new ContentValues();
-        values.put(column, value);
-
-        String selection = ECDInfoTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.ecdInfo.getId())};
-
-        return db.update(ECDInfoTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
-
     public int updatesPregnancyColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
@@ -602,51 +465,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesAdolColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-
-        ContentValues values = new ContentValues();
-        values.put(column, value);
-
-        String selection = LateAdolescentTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.ladol.getId())};
-
-        return db.update(LateAdolescentTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
-
-    public int updatesMotherKAPColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-
-        ContentValues values = new ContentValues();
-        values.put(column, value);
-
-        String selection = MotherKAPTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.motherKAP.getId())};
-
-        return db.update(MotherKAPTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
-
-    public int updatesMemberColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-
-        ContentValues values = new ContentValues();
-        values.put(column, value);
-
-        String selection = FamilyMembersTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.familyMember.getId())};
-
-        return db.update(FamilyMembersTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
-
     public int updatesRecipientColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
@@ -668,10 +486,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = WAnthroTable._ID + " =? ";
+        String selection = TableContracts.AnthroWRATable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.anthw.getId())};
 
-        return db.update(WAnthroTable.TABLE_NAME,
+        return db.update(TableContracts.AnthroWRATable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -683,10 +501,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = CAnthroTable._ID + " =? ";
+        String selection = AnthroChildTable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.anthc.getId())};
 
-        return db.update(CAnthroTable.TABLE_NAME,
+        return db.update(AnthroChildTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -803,47 +621,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    // istatus examples: (1) or (1,9) or (1,3,5)
-    public Form getFormByAssessNo(String uid, String istatus) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
 
-        String whereClause;
-        whereClause = FormsTable.COLUMN_UID + "=? AND " +
-                FormsTable.COLUMN_ISTATUS + " in " + istatus;
 
-        String[] whereArgs = {uid};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = FormsTable.COLUMN_ID + " ASC";
-
-        Form allFC = null;
-        try {
-            c = db.query(
-                    FormsTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                allFC = new Form().Hydrate(c);
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return allFC;
-    }
 
     public ArrayList<Cursor> getDatabaseManagerData(String Query) {
         //get writable database
@@ -881,25 +660,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    /*public int updateTemp(String assessNo, String temp) {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_TSF305, temp);
-        values.put(FormsTable.COLUMN_SYSDATE, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()) + "-Updated");
-        values.put(FormsTable.COLUMN_ISTATUS, "1");
-        values.put(FormsTable.COLUMN_SYNCED, (byte[]) null);
-
-        String selection = FormsTable.COLUMN_ASSESMENT_NO + " =? AND " + FormsTable.COLUMN_ISTATUS + " =? ";
-        // String selection = FormsTable.COLUMN_ASSESMENT_NO + " =? ";
-        String[] selectionArgs = {assessNo, "9"};
-        // String[] selectionArgs = {assessNo};
-
-        return db.update(FormsTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }*/
 
 
     public int syncVersionApp(JSONObject VersionList) {
@@ -997,37 +757,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return insertCount;
     }
-
-    /*public int syncRandom(JSONArray list) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(RandomTable.TABLE_NAME, null, null);
-        int insertCount = 0;
-        try {
-            for (int i = 0; i < list.length(); i++) {
-
-                JSONObject json = list.getJSONObject(i);
-
-                RandomHH ran = new RandomHH();
-                ran.sync(json);
-                ContentValues values = new ContentValues();
-                values.put(RandomTable.COLUMN_ID, ran.getID());
-                values.put(RandomTable.COLUMN_SNO, ran.getEcdNo());
-                values.put(RandomTable.COLUMN_ENUM_BLOCK_CODE, ran.getpsuCode());
-                values.put(RandomTable.COLUMN_HH_NO, ran.getHhno());
-                values.put(RandomTable.COLUMN_HEAD_HH, ran.getHeadhh());
-                long rowID = db.insert(RandomTable.TABLE_NAME, null, values);
-                if (rowID != -1) insertCount++;
-            }
-
-        } catch (Exception e) {
-            Log.d(TAG, "syncRandom(e): " + e);
-            db.close();
-        } finally {
-            db.close();
-        }
-        return insertCount;
-    }*/
-
 
     //get UnSyncedTables
     public JSONArray getUnsyncedFormHH() throws JSONException {
@@ -1216,101 +945,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allChild;
     }
 
-    public JSONArray getUnsyncedmotherKAP() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-        String whereClause;
-        whereClause = MotherKAPTable.COLUMN_SYNCED + " = '' ";
 
-        String[] whereArgs = null;
-        String groupBy = null;
-        String having = null;
-        String orderBy = MotherKAPTable.COLUMN_ID + " ASC";
-
-        JSONArray all = new JSONArray();
-        c = db.query(
-                MotherKAPTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            Log.d(TAG, "getUnsyncedmotherKAP: " + c.getCount());
-            MotherKAP kap = new MotherKAP();
-            all.put(kap.Hydrate(c).toJSONObject());
-        }
-        Log.d(TAG, "getUnsyncedmotherKAP: " + all.toString().length());
-        Log.d(TAG, "getUnsyncedmotherKAP: " + all);
-        return all;
-    }
-
-    public JSONArray getUnsyncedEcdInfo() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-        String whereClause;
-        whereClause = ECDInfoTable.COLUMN_SYNCED + " = '' ";
-
-        String[] whereArgs = null;
-        String groupBy = null;
-        String having = null;
-        String orderBy = ECDInfoTable.COLUMN_ID + " ASC";
-
-        JSONArray all = new JSONArray();
-        c = db.query(
-                ECDInfoTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            Log.d(TAG, "getUnsyncedEcdInfo: " + c.getCount());
-            ECDInfo ecdInfo = new ECDInfo();
-            all.put(ecdInfo.Hydrate(c).toJSONObject());
-        }
-        Log.d(TAG, "getUnsyncedEcdInfo: " + all.toString().length());
-        Log.d(TAG, "getUnsyncedEcdInfo: " + all);
-        return all;
-    }
-
-    public JSONArray getUnsyncedLateAdolescent() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-        String whereClause;
-        whereClause = LateAdolescentTable.COLUMN_SYNCED + " = '' ";
-
-        String[] whereArgs = null;
-        String groupBy = null;
-        String having = null;
-        String orderBy = LateAdolescentTable.COLUMN_ID + " ASC";
-
-        JSONArray all = new JSONArray();
-        c = db.query(
-                LateAdolescentTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            Log.d(TAG, "getUnsyncedLateAdolescent: " + c.getCount());
-            LateAdolescent ldol = new LateAdolescent();
-            all.put(ldol.Hydrate(c).toJSONObject());
-        }
-        Log.d(TAG, "getUnsyncedLateAdolescent: " + all.toString().length());
-        Log.d(TAG, "getUnsyncedLateAdolescent: " + all);
-        return all;
-    }
 
     public JSONArray getUnsyncedEntryLog() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -1416,63 +1051,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = {id};
         int count = db.update(
                 ChildTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    public void updateSyncedmotherKAP(String id) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(MotherKAPTable.COLUMN_SYNCED, true);
-        values.put(MotherKAPTable.COLUMN_SYNCED_DATE, new Date().toString());
-        String where = MotherKAPTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-        int count = db.update(
-                MotherKAPTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    public void updateSyncedEcdInfo(String id) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(ECDInfoTable.COLUMN_SYNCED, true);
-        values.put(ECDInfoTable.COLUMN_SYNCED_DATE, new Date().toString());
-        String where = ECDInfoTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-        int count = db.update(
-                ECDInfoTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    public void updateSyncedLateAdolescent(String id) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(LateAdolescentTable.COLUMN_SYNCED, true);
-        values.put(LateAdolescentTable.COLUMN_SYNCED_DATE, new Date().toString());
-        String where = LateAdolescentTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-        int count = db.update(
-                LateAdolescentTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-
-    public void updateSyncedEntryLog(String id) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(LateAdolescentTable.COLUMN_SYNCED, true);
-        values.put(LateAdolescentTable.COLUMN_SYNCED_DATE, new Date().toString());
-        String where = LateAdolescentTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-        int count = db.update(
-                LateAdolescentTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -2343,18 +1921,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return mwra;
     }
 
-    public Pregnancy getPregByUUid(String pSNo) throws JSONException {
+    public Pregnancy getPregByFmUID(String fmuid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
 
         String whereClause;
-        whereClause = PregnancyTable.COLUMN_MUID + "=? AND " +
-                PregnancyTable.COLUMN_UUID + "=? AND " +
-                PregnancyTable.COLUMN_SNO + "=? "
+        whereClause = PregnancyTable.COLUMN_UUID + "=? AND " +
+                PregnancyTable.COLUMN_FMUID + "=? "
         ;
 
-        String[] whereArgs = {MainApp.mwra.getUid(), MainApp.form.getUid(), pSNo};
+        String[] whereArgs = {MainApp.form.getUid(), fmuid};
 
         String groupBy = null;
         String having = null;
@@ -2414,128 +1991,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return child;
-    }
-
-    public ECDInfo getECDataByUUid(int ecdNo) throws JSONException {
-
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = ECDInfoTable.COLUMN_UUID + "=? AND " +
-                ECDInfoTable.COLUMN_ECD_NO + " = ?";
-
-        String[] whereArgs = {MainApp.form.getUid(), String.valueOf(ecdNo)};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = ECDInfoTable.COLUMN_ID + " ASC";
-
-        ECDInfo ecdInfo = new ECDInfo();  // Pregnancies can never be null.
-
-        c = db.query(
-                ECDInfoTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                   // The sort order
-        );
-/*        if (c.getCount() >= ecdNo) {
-            c.moveToPosition(ecdNo);
-            ecdInfo = new ECDInfo().Hydrate(c);
-        }*/
-        while (c.moveToNext()) {
-            ecdInfo = new ECDInfo().Hydrate(c);
-        }
-
-        db.close();
-
-        return ecdInfo;
-    }
-
-    public MotherKAP getMotherKAPByUUid() throws JSONException {
-
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = MotherKAPTable.COLUMN_UUID + "=? ";
-
-        String[] whereArgs = {MainApp.form.getUid()};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = MotherKAPTable.COLUMN_ID + " ASC";
-
-        MotherKAP motherKap = new MotherKAP();  // Pregnancies can never be null.
-
-        c = db.query(
-                MotherKAPTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                   // The sort order
-        );
-/*        if (c.getCount() >= ecdNo) {
-            c.moveToPosition(ecdNo);
-            ecdInfo = new ECDInfo().Hydrate(c);
-        }*/
-        while (c.moveToNext()) {
-            motherKap = new MotherKAP().Hydrate(c);
-        }
-
-        db.close();
-
-        return motherKap;
-    }
-
-    public LateAdolescent getLateAdolByUUID(String fmuid) throws JSONException {
-
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = LateAdolescentTable.COLUMN_UUID + "=? AND " +
-                LateAdolescentTable.COLUMN_FMUID + "=?";
-
-        String[] whereArgs = {MainApp.form.getUid(), fmuid};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = LateAdolescentTable.COLUMN_ID + " ASC";
-
-        LateAdolescent lateAdol = new LateAdolescent();  // Pregnancies can never be null.
-
-        c = db.query(
-                LateAdolescentTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                   // The sort order
-        );
-/*        if (c.getCount() >= ecdNo) {
-            c.moveToPosition(ecdNo);
-            ecdInfo = new ECDInfo().Hydrate(c);
-        }*/
-        while (c.moveToNext()) {
-            lateAdol = new LateAdolescent().Hydrate(c);
-        }
-
-        db.close();
-
-        return lateAdol;
     }
 
     public Recipient getRecipientByFMID(String fmuid) throws JSONException {
@@ -2656,5 +2111,86 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return child;
+    }
+
+
+    public AnthroChild getAnthroChilByFmUID(String fmuid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = AnthroChildTable.COLUMN_UUID + "=? AND " +
+                AnthroChildTable.COLUMN_FMUID + "=?";
+
+        String[] whereArgs = {MainApp.form.getUid(), fmuid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = AnthroChildTable.COLUMN_ID + " ASC";
+
+        AnthroChild anthroc = new AnthroChild();  // Pregnancies can never be null.
+
+        c = db.query(
+                AnthroChildTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                   // The sort order
+        );
+/*        if (c.getCount() >= ecdNo) {
+            c.moveToPosition(ecdNo);
+            ecdInfo = new ECDInfo().Hydrate(c);
+        }*/
+        while (c.moveToNext()) {
+            anthroc = new AnthroChild().Hydrate(c);
+        }
+
+        db.close();
+
+        return anthroc;
+    }
+
+    public AnthroWRA getAnthroWRAByFmUID(String fmuid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = AnthroWRATable.COLUMN_UUID + "=? AND " +
+                AnthroWRATable.COLUMN_FMUID + "=?";
+
+        String[] whereArgs = {MainApp.form.getUid(), fmuid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = AnthroWRATable.COLUMN_ID + " ASC";
+
+        AnthroWRA anthrow = new AnthroWRA();  // Pregnancies can never be null.
+
+        c = db.query(
+                AnthroWRATable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                   // The sort order
+        );
+/*        if (c.getCount() >= ecdNo) {
+            c.moveToPosition(ecdNo);
+            ecdInfo = new ECDInfo().Hydrate(c);
+        }*/
+        while (c.moveToNext()) {
+            anthrow = new AnthroWRA().Hydrate(c);
+        }
+
+        db.close();
+
+        return anthrow;
     }
 }

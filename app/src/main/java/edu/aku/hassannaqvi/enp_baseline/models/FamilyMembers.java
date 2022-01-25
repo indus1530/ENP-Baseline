@@ -301,6 +301,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setA204(String a204) {
         this.a204 = a204;
         setA209(a204.equals("2") ? this.a209 : "");
+        updateMemCategory();
         notifyPropertyChanged(BR.a204);
     }
 
@@ -365,6 +366,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         setA21301(b1 ? "" : this.a21301);
         setA21302(b1 ? "" : this.a21302);
         setAgeMon();
+        updateMemCategory();
         notifyPropertyChanged(BR.a206y);
     }
 
@@ -427,6 +429,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setA20701(String a20701) {
         if (this.a20701.equals(a20701)) return;
         this.a20701 = a20701;
+        updateMemCategory();
         notifyPropertyChanged(BR.a20701);
     }
 
@@ -438,6 +441,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setA20702(String a20702) {
         if (this.a20702.equals(a20702)) return;
         this.a20702 = a20702;
+        updateMemCategory();
         notifyPropertyChanged(BR.a20702);
     }
 
@@ -449,6 +453,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setA20703(String a20703) {
         if (this.a20703.equals(a20703)) return;
         this.a20703 = a20703;
+        updateMemCategory();
         notifyPropertyChanged(BR.a20703);
     }
 
@@ -460,6 +465,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setA20704(String a20704) {
         if (this.a20704.equals(a20704)) return;
         this.a20704 = a20704;
+        updateMemCategory();
         notifyPropertyChanged(BR.a20704);
     }
 
@@ -476,6 +482,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         setA20703(a20705.equals("5") ? "" : this.a20703);
         setA20704(a20705.equals("5") ? "" : this.a20704);
         setA20796(a20705.equals("5") ? "" : this.a20796);
+        updateMemCategory();
         notifyPropertyChanged(BR.a20705);
     }
 
@@ -488,6 +495,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         if (this.a20796.equals(a20796)) return;
         this.a20796 = a20796;
         setA20796x(a20796.equals("96") ? this.a20796x : "");
+        updateMemCategory();
         notifyPropertyChanged(BR.a20796);
     }
 
@@ -509,6 +517,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     public void setA208(String a208) {
         this.a208 = a208;
         setA209(a208.equals("5") ? "" : this.a209);
+        updateMemCategory();
         notifyPropertyChanged(BR.a208);
     }
 
@@ -591,6 +600,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA214(String a214) {
         this.a214 = a214;
+        updateMemCategory();
         notifyPropertyChanged(BR.a214);
     }
 
@@ -822,7 +832,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         if (a204.equals("") || a206y.equals("") || a208.equals("") || !a214.equals("1")) return;
         String memGender = getA204();
         String memMaritalStatus = getA208();
-        boolean memBISP = !getA20705().equals("05");
+        boolean memBISP = !getA20705().equals("5");
         int memAge = Integer.parseInt(getA206y());
 
         // MWRA

@@ -13,14 +13,14 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.AndroidManager;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.enp_baseline.models.CAnthro;
+import edu.aku.hassannaqvi.enp_baseline.models.AnthroChild;
+import edu.aku.hassannaqvi.enp_baseline.models.AnthroWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.Child;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
 import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
-import edu.aku.hassannaqvi.enp_baseline.models.WAnthro;
 import edu.aku.hassannaqvi.enp_baseline.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.SyncActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportCluster;
@@ -190,11 +190,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionE2Activity.class));
                 break;
             case R.id.f1:
-                MainApp.anthc = new CAnthro();
+                MainApp.anthc = new AnthroChild();
                 startActivity(new Intent(this, SectionF1Activity.class));
                 break;
             case R.id.f2:
-                MainApp.anthw = new WAnthro();
+                MainApp.anthw = new AnthroWRA();
                 startActivity(new Intent(this, SectionF2Activity.class));
                 break;
 

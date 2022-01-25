@@ -1,9 +1,11 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.lists;
 
 
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.anthroChildList;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.anthroWRAList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.caregiverList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.childOfSelectedMWRAList;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.preg1st;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregFirstList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.recipientsList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedCaregiver;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedChild;
@@ -94,6 +96,65 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                             }
                         }
 
+                        /** Populate Under-5 Child
+                         *
+                         *      If age in months is less than 60
+                         * */
+                        if (MainApp.familyMember.getAgeMon() < 60) {
+
+                            childOfSelectedMWRAList.add(Integer.valueOf(MainApp.familyMember.getA201()));
+
+                        }
+
+                        /** Populate Recipient
+                         *
+                         *      If any BISP is marked
+                         *
+                         * */
+                        if (
+                                MainApp.familyMember.getA20701().equals("1")
+                                        || MainApp.familyMember.getA20702().equals("2")
+                                        || MainApp.familyMember.getA20703().equals("3")
+                                        || MainApp.familyMember.getA20704().equals("4")
+                                        || MainApp.familyMember.getA20796().equals("96")) {
+
+                            recipientsList.add(Integer.valueOf(MainApp.familyMember.getA201()));
+                        }
+
+                        /** Populate First Pregnant:
+                         *
+                         *   Is first time pregnant:    Y
+                         *
+                         */
+                        if (MainApp.familyMember.getA210().equals("1") && MainApp.familyMember.getA214().equals("1")) {
+
+                            pregFirstList.add(Integer.valueOf(MainApp.familyMember.getA201()));
+                        }
+                        /** Populate Caregiver List:
+                         *
+                         *   Any female 15
+                         *
+                         */
+                        if (Integer.parseInt(MainApp.familyMember.getA206y()) > 14
+                                && MainApp.familyMember.getA204().equals("2")) {
+                            caregiverList.add(Integer.valueOf(MainApp.familyMember.getA201()));
+                        }
+
+                        /** Populate Anthro List:
+                         *
+                         *   Any female 15 - 49 (both married and unmarried)
+                         *   Any Child Under 0 - 5
+                         *
+                         */
+                        if (MainApp.familyMember.getA214().equals("1")) {
+                            if ((Integer.parseInt(MainApp.familyMember.getA206y()) < 5)) {
+                                anthroChildList.add(Integer.valueOf(MainApp.familyMember.getA201()));
+                            }
+                            if (
+                                    Integer.parseInt(MainApp.familyMember.getA206y()) > 14 && Integer.parseInt(MainApp.familyMember.getA206y()) < 50 && MainApp.familyMember.getA204().equals("2")) {
+                                anthroWRAList.add(Integer.valueOf(MainApp.familyMember.getA201()));
+                            }
+                        }
 
                         MainApp.memberCount++;
                         familyMembersAdapter.notifyItemInserted(MainApp.familyList.size() - 1);
@@ -123,9 +184,11 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.mwraList = new ArrayList<Integer>();
         MainApp.caregiverList = new ArrayList<Integer>();
         childOfSelectedMWRAList = new ArrayList<Integer>();
-        preg1st = new ArrayList<Integer>();
+        pregFirstList = new ArrayList<Integer>();
         recipientsList = new ArrayList<Integer>();
-        MainApp.adolListAll = new ArrayList<>();
+        anthroChildList = new ArrayList<Integer>();
+        anthroWRAList = new ArrayList<Integer>();
+        recipientsList = new ArrayList<Integer>();
         MainApp.fatherList = new ArrayList<>();
         MainApp.motherList = new ArrayList<>();
         Log.d(TAG, "onCreate: familyList " + MainApp.familyList.size());
@@ -143,9 +206,84 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.selectedRecipient = "";
         MainApp.selectedPreg1st = "";
         bi.hhNo.setText("Family of: " + MainApp.form.getPsuCode() + "-" + MainApp.form.getHhid());
+        // Family Complete criteria: MWRA must exist
+        for (FamilyMembers fm : MainApp.familyList) {
+            if (!fm.getA208().equals("5") && !fm.getA208().equals("99")) {
 
+                switch (fm.getA204()) {
+                    case "1":
+                        MainApp.fatherList.add(fm);
+                        break;
+                    case "2":
+                        MainApp.motherList.add(fm);
+                        break;
+
+                }
+            }
+
+            /** Populate Under-5 Child
+             *
+             *      If age in months is less than 60
+             * */
+            if (fm.getAgeMon() < 60) {
+
+                childOfSelectedMWRAList.add(Integer.valueOf(fm.getA201()));
+
+            }
+
+            /** Populate Recipient
+             *
+             *      If any BISP is marked
+             *
+             * */
+            if (
+                    fm.getA20701().equals("1")
+                            || fm.getA20702().equals("2")
+                            || fm.getA20703().equals("3")
+                            || fm.getA20704().equals("4")
+                            || fm.getA20796().equals("96")) {
+
+                recipientsList.add(Integer.valueOf(fm.getA201()));
+            }
+
+            /** Populate First Pregnant:
+             *
+             *   Is first time pregnant:    Y
+             *
+             */
+            if (fm.getA210().equals("1") && fm.getA214().equals("1")) {
+
+                pregFirstList.add(Integer.valueOf(fm.getA201()));
+            }
+            /** Populate Caregiver List:
+             *
+             *   Any female 15
+             *
+             */
+            if (Integer.parseInt(fm.getA206y()) > 14
+                    && fm.getA204().equals("2")) {
+                caregiverList.add(Integer.valueOf(fm.getA201()));
+            }
+
+            /** Populate Anthro List:
+             *
+             *   Any female 15 - 49 (both married and unmarried)
+             *   Any Child Under 0 - 5
+             *
+             */
+            if (fm.getA214().equals("1")) {
+                if ((Integer.parseInt(fm.getA206y()) < 5)) {
+                    anthroChildList.add(Integer.valueOf(fm.getA201()));
+                }
+                if (
+                        Integer.parseInt(fm.getA206y()) > 14 && Integer.parseInt(fm.getA206y()) < 50 && fm.getA204().equals("2")) {
+                    anthroWRAList.add(Integer.valueOf(fm.getA201()));
+                }
+            }
+        }
         // Set Selected Members
         for (int i = 0; i < MainApp.familyList.size(); i++) {
+
 
             // Set Child
             if (MainApp.familyList.get(i).getIndexed().contains("1")) {
@@ -220,66 +358,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         super.onResume();
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
-        // Family Complete criteria: MWRA must exist
-        for (FamilyMembers fm : MainApp.familyList) {
-            if (!fm.getA208().equals("5") && !fm.getA208().equals("99")) {
 
-                switch (fm.getA204()) {
-                    case "1":
-                        MainApp.fatherList.add(fm);
-                        break;
-                    case "2":
-                        MainApp.motherList.add(fm);
-                        break;
-
-                }
-            }
-
-            /** Populate Under-5 Child
-             *
-             *      If age in months is less than 60
-             * */
-            if (fm.getAgeMon() < 60) {
-
-                childOfSelectedMWRAList.add(Integer.valueOf(fm.getA201()));
-
-            }
-
-            /** Populate Recipient
-             *
-             *      If any BISP is marked
-             *
-             * */
-            if (
-                    fm.getA20701().equals("1")
-                            || fm.getA20702().equals("2")
-                            || fm.getA20703().equals("3")
-                            || fm.getA20704().equals("4")
-                            || fm.getA20796().equals("96")) {
-
-                recipientsList.add(Integer.valueOf(fm.getA201()));
-            }
-
-            /** Populate First Pregnant:
-             *
-             *   Is first time pregnant:    Y
-             *
-             */
-            if (fm.getA210().equals("1")) {
-
-                preg1st.add(Integer.valueOf(fm.getA201()));
-            }
-            /** Populate Caregiver List:
-             *
-             *   Any female 15
-             *
-             */
-            if (Integer.parseInt(fm.getA206y()) > 14
-                    && fm.getA204().equals("2")) {
-                caregiverList.add(Integer.valueOf(fm.getA201()));
-            }
-
-        }
         if (childOfSelectedMWRAList.size() > 0 && recipientsList.size() > 0) {
             bi.familyComplete.setVisibility(View.VISIBLE);
 
@@ -319,7 +398,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         bi.totalMember.setText("Total: " + MainApp.familyList.size());
         bi.totalMwra.setText("Children: " + childOfSelectedMWRAList.size());
         bi.totalAdol.setText("BISP Rec.: " + MainApp.recipientsList.size());
-        bi.totalMale.setText("1st Preg.: " + MainApp.preg1st.size());
+        bi.totalMale.setText("1st Preg.: " + MainApp.pregFirstList.size());
     }
 
 
@@ -460,10 +539,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedRecipient));
         }
 
-        if (preg1st.size() > 0) {
+        if (pregFirstList.size() > 0) {
             // Select AdolFemale using KishGrid
-            String kishGridAdolFemale = MainApp.kishGrid(Integer.parseInt(hhno), preg1st.size());
-            sno = preg1st.get(Integer.parseInt(kishGridAdolFemale));
+            String kishGridAdolFemale = MainApp.kishGrid(Integer.parseInt(hhno), pregFirstList.size());
+            sno = pregFirstList.get(Integer.parseInt(kishGridAdolFemale));
 
             // Updating database to mark selected adolfemale
             MainApp.selectedPreg1st = String.valueOf(sno - 1);
@@ -790,7 +869,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
 /*// ADOLESCENT FEMALE
             // Updating database to mark selected adolFemale
-            if (preg1st.size() > 0) {
+            if (pregFirstList.size() > 0) {
                 MainApp.selectedPreg1st = String.valueOf(Integer.parseInt(preg1stSno.get(bi.preg1stList.getSelectedItemPosition())) - 1);
                 MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedPreg1st));
                 db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "4");

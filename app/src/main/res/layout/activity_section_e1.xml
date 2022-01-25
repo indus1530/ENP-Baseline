@@ -293,14 +293,15 @@
                             android:layout_weight="1"
                             android:text="@string/e101" />
 
-                        <EditText
+
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/e101"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/e101"
-                            android:text="@={preg.e101}" />
+                            android:minHeight="56dp"
+                            android:prompt="@string/a101"
+                            android:spinnerMode="dropdown" />
 
                     </LinearLayout>
 

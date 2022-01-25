@@ -8,7 +8,7 @@
 
         <variable
             name="anthw"
-            type="edu.aku.hassannaqvi.enp_baseline.models.WAnthro" />
+            type="edu.aku.hassannaqvi.enp_baseline.models.AnthroWRA" />
 
     </data>
 
@@ -71,13 +71,14 @@
                                 android:layout_height="match_parent"
                                 android:text="@string/f201name" />
 
-                            <EditText
+                            <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/f201name"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/f201name"
-                                android:text="@={anthw.f201name}" />
+                                android:layout_weight="1"
+                                android:minHeight="56dp"
+                                android:prompt="@string/a101"
+                                android:spinnerMode="dropdown" />
 
                         </LinearLayout>
 

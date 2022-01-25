@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregFirstList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregnancy;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
@@ -43,7 +44,6 @@ public class SectionE2Activity extends AppCompatActivity {
     }
 
 
-
     private boolean updateDB() {
         if (MainApp.superuser) return true;
 
@@ -68,11 +68,15 @@ public class SectionE2Activity extends AppCompatActivity {
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (updateDB()) {
+            pregFirstList.remove(MainApp.pregFirstListPos - 1);
+            if (pregFirstList.size() > 0) {
+                startActivity(new Intent(this, SectionE1Activity.class));
+            } else {
+                startActivity(new Intent(this, SectionF1Activity.class));
+            }
             finish();
-            startActivity(new Intent(this, SectionF1Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
-
 
 
     public void btnEnd(View view) {

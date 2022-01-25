@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.familyMember;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregFirstList;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregFirstListPos;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregnancy;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
@@ -10,6 +13,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,11 +24,15 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
+
 import edu.aku.hassannaqvi.enp_baseline.R;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionE1Binding;
+import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
+import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 
 public class SectionE1Activity extends AppCompatActivity {
@@ -31,17 +40,83 @@ public class SectionE1Activity extends AppCompatActivity {
     private static final String TAG = "SectionE1Activity";
     ActivitySectionE1Binding bi;
     private DatabaseHelper db;
+    private ArrayList<String> pwNames, pwSno;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e1);
+        pregnancy = new Pregnancy();
+
         bi.setPreg(pregnancy);
         db = MainApp.appInfo.dbHelper;
+
         setSupportActionBar(bi.toolbar);
         setupSkips();
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        populateSpinner();
+
+    }
+
+    private void populateSpinner() {
+
+        // Populate Provinces
+        //Collection<Villages> provinces = db.getProvinceByCountry(String.valueOf(MainApp.selectedCountry));
+        pwNames = new ArrayList<>();
+        pwSno = new ArrayList<>();
+        pwNames.add("...");
+        pwSno.add("...");
+
+        for (int p : pregFirstList) {
+
+            pwNames.add(MainApp.familyList.get(p - 1).getA202());
+            pwSno.add(MainApp.familyList.get(p - 1).getA201());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SectionE1Activity.this, R.layout.custom_spinner, pwNames);
+        bi.e101.setAdapter(adapter);
+        bi.e101.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.e102.setText(null);
+                pregFirstListPos = -1;
+                MainApp.selectedPW = "";
+                pregnancy = new Pregnancy();
+                familyMember = new FamilyMembers();
+
+                if (position == 0) return;
+
+
+                pregFirstListPos = position;
+                MainApp.selectedPW = pwSno.get(pregFirstListPos);
+                MainApp.selectedPW = pwSno.get(pregFirstListPos);
+                familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedPW) - 1);
+                try {
+                    pregnancy = db.getPregByFmUID(familyMember.getUid());
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SectionE1Activity.this, "JSONException (Pregnancy): " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+                pregnancy.setE101(pwNames.get(pregFirstListPos));
+                pregnancy.setE102(MainApp.selectedPW);
+                bi.setPreg(pregnancy);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
     }
 
     private void setupSkips() {
@@ -54,7 +129,7 @@ public class SectionE1Activity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (bi.e103.getText().toString().isEmpty()) return;
-                bi.e104.setMinvalue(Integer.parseInt(bi.e104.getText().toString()));
+                bi.e104.setMinvalue(Integer.parseInt(bi.e103.getText().toString()));
             }
 
             @Override

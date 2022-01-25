@@ -20,18 +20,15 @@ import java.io.File;
 import java.util.List;
 
 import edu.aku.hassannaqvi.enp_baseline.BuildConfig;
-import edu.aku.hassannaqvi.enp_baseline.models.CAnthro;
+import edu.aku.hassannaqvi.enp_baseline.models.AnthroChild;
+import edu.aku.hassannaqvi.enp_baseline.models.AnthroWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.Child;
-import edu.aku.hassannaqvi.enp_baseline.models.ECDInfo;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.models.Form;
-import edu.aku.hassannaqvi.enp_baseline.models.LateAdolescent;
 import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
-import edu.aku.hassannaqvi.enp_baseline.models.MotherKAP;
 import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
-import edu.aku.hassannaqvi.enp_baseline.models.WAnthro;
 
 
 public class MainApp extends Application {
@@ -59,14 +56,12 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
-    public static CAnthro anthc;
-    public static WAnthro anthw;
+    public static AnthroChild anthc;
+    public static AnthroWRA anthw;
     public static MWRA mwra;
     public static Pregnancy pregnancy;
     public static Child child;
-    public static ECDInfo ecdInfo;
-    public static MotherKAP motherKAP;
-    public static LateAdolescent ladol;
+
     public static FamilyMembers familyMember;
 
     public static Recipient recipient;
@@ -94,9 +89,10 @@ public class MainApp extends Application {
     public static List<FamilyMembers> familyList;
     public static List<Integer> mwraList;
     public static List<Integer> recipientsList;
-    public static List<Integer> preg1st;
+    public static List<Integer> pregFirstList;
     public static List<Integer> caregiverList;
-    public static List<Integer> adolListAll;
+    public static List<Integer> anthroChildList;
+    public static List<Integer> anthroWRAList;
     public static List<Integer> childOfSelectedMWRAList;
     public static List<FamilyMembers> fatherList;
     public static List<FamilyMembers> motherList;
@@ -133,6 +129,10 @@ public class MainApp extends Application {
     public static int ageOfIndexChild;
     public static int totalPreg = 0;
     public static String selectedChildName = "";
+    public static String selectedPW;
+    public static int pregFirstListPos;
+    public static int anthroChildListPos;
+    public static int anthroWRAListPos;
 
 
     public static void hideSystemUI(View decorView) {

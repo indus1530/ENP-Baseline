@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.enp_baseline.models;
 
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp._EMPTY_;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -18,12 +17,13 @@ import org.json.JSONObject;
 import java.time.LocalDate;
 
 import edu.aku.hassannaqvi.enp_baseline.BR;
-import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.WAnthroTable;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.AnthroWRATable;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 
-public class WAnthro extends BaseObservable implements Observable {
+public class AnthroWRA extends BaseObservable implements Observable {
 
-    private final String TAG = "WAnthro";
+    private final String TAG = "AnthroWRA";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     //Not saving in DB
     private final LocalDate localDate = null;
@@ -35,14 +35,12 @@ public class WAnthro extends BaseObservable implements Observable {
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
     private String fmuid = _EMPTY_;
-    // private String muid = _EMPTY_;
     private String cluster = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String psuCode = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String indexed = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
@@ -85,9 +83,7 @@ public class WAnthro extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
-        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getUid()); //// not applicable in Form table
-        // setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid());  // not applicable in Form table
-        setSno(selectedMWRA);
+        setFmuid(MainApp.familyMember.getUid()); //// not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.selectedPSU);
@@ -182,14 +178,6 @@ public class WAnthro extends BaseObservable implements Observable {
 
     public void setSysDate(String sysDate) {
         this.sysDate = sysDate;
-    }
-
-    public String getIndexed() {
-        return indexed;
-    }
-
-    public void setIndexed(String indexed) {
-        this.indexed = indexed;
     }
 
     public String getDeviceId() {
@@ -462,27 +450,25 @@ public class WAnthro extends BaseObservable implements Observable {
     }
 
 
-    public WAnthro Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_UUID));
-        // this.muid = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_MUID));
-        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_FMUID));
-        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_PROJECT_NAME));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_PSU_CODE));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_HHID));
-        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_INDEXED));
-        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_SNO));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_SYNCED_DATE));
+    public AnthroWRA Hydrate(Cursor cursor) throws JSONException {
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_UUID));
+        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.AnthroWRATable.COLUMN_FMUID));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_PROJECT_NAME));
+        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_PSU_CODE));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_HHID));
+        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_SNO));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.AnthroWRATable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.AnthroWRATable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_SYNCED_DATE));
 
-        sF2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(WAnthroTable.COLUMN_SF2)));
+        sF2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_SF2)));
 
         return this;
     }
@@ -516,26 +502,25 @@ public class WAnthro extends BaseObservable implements Observable {
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
 
-        json.put(WAnthroTable.COLUMN_ID, this.id);
-        json.put(WAnthroTable.COLUMN_UID, this.uid);
-        json.put(WAnthroTable.COLUMN_PROJECT_NAME, this.projectName);
+        json.put(TableContracts.AnthroWRATable.COLUMN_ID, this.id);
+        json.put(AnthroWRATable.COLUMN_UID, this.uid);
+        json.put(AnthroWRATable.COLUMN_PROJECT_NAME, this.projectName);
 
-        json.put(WAnthroTable.COLUMN_UUID, this.uid);
-        json.put(WAnthroTable.COLUMN_HHID, this.hhid);
-        // json.put(WAnthroTable.COLUMN_MUID, this.muid);
-        json.put(WAnthroTable.COLUMN_SNO, this.sno);
-        json.put(WAnthroTable.COLUMN_FMUID, this.fmuid);
-        json.put(WAnthroTable.COLUMN_INDEXED, this.indexed);
-        json.put(WAnthroTable.COLUMN_PSU_CODE, this.psuCode);
-        json.put(WAnthroTable.COLUMN_USERNAME, this.userName);
-        json.put(WAnthroTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(WAnthroTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(WAnthroTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(WAnthroTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(WAnthroTable.COLUMN_SYNCED, this.synced);
-        json.put(WAnthroTable.COLUMN_SYNCED_DATE, this.syncDate);
-        json.put(WAnthroTable.COLUMN_APPVERSION, this.appver);
-        json.put(WAnthroTable.COLUMN_SF2, new JSONObject(sF2toString()));
+        json.put(AnthroWRATable.COLUMN_UUID, this.uid);
+        json.put(AnthroWRATable.COLUMN_HHID, this.hhid);
+        // json.put(AnthroWRATable.COLUMN_MUID, this.muid);
+        json.put(TableContracts.AnthroWRATable.COLUMN_SNO, this.sno);
+        json.put(TableContracts.AnthroWRATable.COLUMN_FMUID, this.fmuid);
+        json.put(AnthroWRATable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(AnthroWRATable.COLUMN_USERNAME, this.userName);
+        json.put(AnthroWRATable.COLUMN_SYSDATE, this.sysDate);
+        json.put(AnthroWRATable.COLUMN_DEVICEID, this.deviceId);
+        json.put(AnthroWRATable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(AnthroWRATable.COLUMN_ISTATUS, this.iStatus);
+        json.put(AnthroWRATable.COLUMN_SYNCED, this.synced);
+        json.put(AnthroWRATable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(AnthroWRATable.COLUMN_APPVERSION, this.appver);
+        json.put(AnthroWRATable.COLUMN_SF2, new JSONObject(sF2toString()));
 
         return json;
     }

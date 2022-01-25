@@ -2,8 +2,6 @@ package edu.aku.hassannaqvi.enp_baseline.models;
 
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp._EMPTY_;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedChild;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -17,12 +15,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.enp_baseline.BR;
-import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.CAnthroTable;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.AnthroChildTable;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 
-public class CAnthro extends BaseObservable implements Observable {
+public class AnthroChild extends BaseObservable implements Observable {
 
-    private final String TAG = "CAnthro";
+    private final String TAG = "AnthroChild";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
@@ -31,10 +29,8 @@ public class CAnthro extends BaseObservable implements Observable {
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
     private String fmuid = _EMPTY_;
-    private String muid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String indexed = _EMPTY_;
     private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
@@ -79,9 +75,7 @@ public class CAnthro extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
-        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedChild)).getUid()); //// not applicable in Form table
-        setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getUid());  // not applicable in Form table
-        setSno(selectedChild + 1);
+        setFmuid(MainApp.familyMember.getUid()); //// not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.selectedPSU);
@@ -121,13 +115,6 @@ public class CAnthro extends BaseObservable implements Observable {
         this.fmuid = fmuid;
     }
 
-    public String getMuid() {
-        return muid;
-    }
-
-    public void setMuid(String muid) {
-        this.muid = muid;
-    }
 
     public String getUid() {
         return uid;
@@ -173,13 +160,6 @@ public class CAnthro extends BaseObservable implements Observable {
         this.sno = sno;
     }
 
-    public String getIndexed() {
-        return indexed;
-    }
-
-    public void setIndexed(String indexed) {
-        this.indexed = indexed;
-    }
 
     public String getDeviceId() {
         return deviceId;
@@ -477,27 +457,25 @@ public class CAnthro extends BaseObservable implements Observable {
     }
 
 
-    public CAnthro Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_UUID));
-        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_FMUID));
-        this.muid = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_MUID));
-        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_INDEXED));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_PSU_CODE));
-        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_HHID));
-        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_PROJECT_NAME));
-        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_SNO));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_SYNCED_DATE));
+    public AnthroChild Hydrate(Cursor cursor) throws JSONException {
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_UUID));
+        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_FMUID));
+        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_PSU_CODE));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_HHID));
+        this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_PROJECT_NAME));
+        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_SNO));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_SYNCED_DATE));
 
-        sF1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(CAnthroTable.COLUMN_SF1)));
+        sF1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_SF1)));
 
         return this;
     }
@@ -533,25 +511,23 @@ public class CAnthro extends BaseObservable implements Observable {
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
 
-        json.put(CAnthroTable.COLUMN_ID, this.id);
-        json.put(CAnthroTable.COLUMN_UID, this.uid);
-        json.put(CAnthroTable.COLUMN_PSU_CODE, this.psuCode);
-        json.put(CAnthroTable.COLUMN_HHID, this.hhid);
-        json.put(CAnthroTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(CAnthroTable.COLUMN_UUID, this.uuid);
-        json.put(CAnthroTable.COLUMN_FMUID, this.fmuid);
-        json.put(CAnthroTable.COLUMN_MUID, this.muid);
-        json.put(CAnthroTable.COLUMN_INDEXED, this.indexed);
-        json.put(CAnthroTable.COLUMN_SNO, this.sno);
-        json.put(CAnthroTable.COLUMN_USERNAME, this.userName);
-        json.put(CAnthroTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(CAnthroTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(CAnthroTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(CAnthroTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(CAnthroTable.COLUMN_SYNCED, this.synced);
-        json.put(CAnthroTable.COLUMN_SYNCED_DATE, this.syncDate);
-        json.put(CAnthroTable.COLUMN_APPVERSION, this.appver);
-        json.put(CAnthroTable.COLUMN_SF1, new JSONObject(sF1toString()));
+        json.put(AnthroChildTable.COLUMN_ID, this.id);
+        json.put(AnthroChildTable.COLUMN_UID, this.uid);
+        json.put(AnthroChildTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(AnthroChildTable.COLUMN_HHID, this.hhid);
+        json.put(AnthroChildTable.COLUMN_PROJECT_NAME, this.projectName);
+        json.put(AnthroChildTable.COLUMN_UUID, this.uuid);
+        json.put(AnthroChildTable.COLUMN_FMUID, this.fmuid);
+        json.put(AnthroChildTable.COLUMN_SNO, this.sno);
+        json.put(AnthroChildTable.COLUMN_USERNAME, this.userName);
+        json.put(AnthroChildTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(AnthroChildTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(AnthroChildTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(AnthroChildTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(AnthroChildTable.COLUMN_SYNCED, this.synced);
+        json.put(AnthroChildTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(AnthroChildTable.COLUMN_APPVERSION, this.appver);
+        json.put(AnthroChildTable.COLUMN_SF1, new JSONObject(sF1toString()));
 
         return json;
     }

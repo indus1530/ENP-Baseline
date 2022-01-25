@@ -108,30 +108,6 @@ public class TableContracts {
     }
 
 
-    public static abstract class MotherKAPTable implements BaseColumns {
-        public static final String TABLE_NAME = "motherKAP";
-        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String COLUMN_PROJECT_NAME = "projectName";
-        public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_UID = "_uid";
-        public static final String COLUMN_UUID = "_uuid";
-        public static final String COLUMN_FMUID = "_fmuid";
-        public static final String COLUMN_MUID = "_muid";
-        public static final String COLUMN_PSU_CODE = "psuCode";
-        public static final String COLUMN_HHID = "hhid";
-        public static final String COLUMN_SNO = "sno";
-        public static final String COLUMN_USERNAME = "username";
-        public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_SD1 = "sd1";
-        public static final String COLUMN_SD2 = "sd2";
-        public static final String COLUMN_SD3 = "sd3";
-        public static final String COLUMN_DEVICEID = "deviceid";
-        public static final String COLUMN_DEVICETAGID = "devicetagid";
-        public static final String COLUMN_SYNCED = "synced";
-        public static final String COLUMN_SYNCED_DATE = "synced_date";
-        public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_ISTATUS = "istatus";
-    }
 
     public static abstract class UsersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
@@ -215,12 +191,10 @@ public class TableContracts {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
-        public static final String COLUMN_MUID = "_muid";
         public static final String COLUMN_FMUID = "_fmuid";
         public static final String COLUMN_PSU_CODE = "psuCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_SNO = "sno";
-        public static final String COLUMN_M_SNO = "msno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_INDEXED = "indexed";
@@ -263,20 +237,18 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
-    public static abstract class CAnthroTable implements BaseColumns {
-        public static final String TABLE_NAME = "CAnthro";
+    public static abstract class AnthroChildTable implements BaseColumns {
+        public static final String TABLE_NAME = "AnthroChild";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_FMUID = "_fmuid";
-        public static final String COLUMN_MUID = "_muid";
         public static final String COLUMN_PSU_CODE = "psuCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_INDEXED = "indexed";
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_SF1 = "sF1";
 
@@ -288,74 +260,20 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
-    public static abstract class WAnthroTable implements BaseColumns {
-        public static final String TABLE_NAME = "WAnthro";
+    public static abstract class AnthroWRATable implements BaseColumns {
+        public static final String TABLE_NAME = "AnthroWRA";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_FMUID = "_fmuid";
-        public static final String COLUMN_MUID = "_muid";
         public static final String COLUMN_PSU_CODE = "psuCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_INDEXED = "indexed";
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_SF2 = "sF2";
-
-        public static final String COLUMN_DEVICEID = "deviceid";
-        public static final String COLUMN_DEVICETAGID = "devicetagid";
-        public static final String COLUMN_SYNCED = "synced";
-        public static final String COLUMN_SYNCED_DATE = "synced_date";
-        public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_ISTATUS = "istatus";
-    }
-
-    public static abstract class LateAdolescentTable implements BaseColumns {
-        public static final String TABLE_NAME = "LateAdolescent";
-        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String COLUMN_PROJECT_NAME = "projectName";
-        public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_UID = "_uid";
-        public static final String COLUMN_UUID = "_uuid";
-        public static final String COLUMN_FMUID = "_fmuid";
-        public static final String COLUMN_SNO_ADOL = "snoAdol";
-        public static final String COLUMN_PSU_CODE = "psuCode";
-        public static final String COLUMN_HHID = "hhid";
-        public static final String COLUMN_USERNAME = "username";
-        public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_INDEXED = "indexed";
-        public static final String COLUMN_SE1 = "se1";
-        public static final String COLUMN_SE2 = "se2";
-        public static final String COLUMN_SE3 = "se3";
-        public static final String COLUMN_SE4 = "se4";
-
-
-        public static final String COLUMN_DEVICEID = "deviceid";
-        public static final String COLUMN_DEVICETAGID = "devicetagid";
-        public static final String COLUMN_SYNCED = "synced";
-        public static final String COLUMN_SYNCED_DATE = "synced_date";
-        public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_ISTATUS = "istatus";
-    }
-
-
-    public static abstract class ECDInfoTable implements BaseColumns {
-        public static final String TABLE_NAME = "EcdInfo";
-        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String COLUMN_PROJECT_NAME = "projectName";
-        public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_UID = "_uid";
-        public static final String COLUMN_UUID = "_uuid";
-        public static final String COLUMN_ECD_NO = "ecdno";
-        public static final String COLUMN_PSU_CODE = "psuCode";
-        public static final String COLUMN_HHID = "hhid";
-        public static final String COLUMN_USERNAME = "username";
-        public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_INDEXED = "indexed";
-        public static final String COLUMN_ECDINFO = "ecdinfo";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";

@@ -198,11 +198,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ui.sections.AdolSelectionActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize" />
 
         <!-- <meta-data android:name="YEK_REVRES" android:value="V@ca#!0n$urvIv0r" /> -->
         <meta-data

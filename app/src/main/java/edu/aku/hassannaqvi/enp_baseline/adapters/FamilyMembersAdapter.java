@@ -48,6 +48,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         TextView fName = viewHolder.fName;
         TextView fAge = viewHolder.fAge;
         TextView memCate = viewHolder.memCate;
+        TextView recipient = viewHolder.recipient;
         TextView motherName = viewHolder.motherName;
         // LinearLayout subItem = viewHolder.subItem;
         ImageView fmRow = viewHolder.fmRow;
@@ -105,7 +106,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
                 marStatus = "Un-Married";
                 break;
             case "99":
-                marStatus = "Not Applicable";
+                marStatus = "n/a";
                 break;
             default:
                 marStatus = "Unknown";
@@ -153,34 +154,35 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
             cloaked.setVisibility(members.getIndexed().equals("") ? View.VISIBLE : View.GONE);
             indexedBar.setVisibility(members.getIndexed().equals("") ? View.GONE : View.VISIBLE);
         }
+        memCate.setText("        ");
+        if (!members.getMemCate().equals("")) {
+            switch (members.getMemCate().substring(0, 1)) {
+                case "1":
 
-        switch (members.getMemCate().substring(0, 1)) {
-            case "1":
-                memCate.setText("Mother");
-                break;
-            case "2":
-                if (motherPresent) {
+                    break;
+                case "2":
+
                     memCate.setText("Child");
+
+                    break;
+                case "3":
+                    memCate.setText("PW");
+                    break;
+
+                default:
+                    // memCate.setVisibility(View.GONE);
+            }
+
+            if (members.getMemCate().contains("R")) {
+                recipient.setVisibility(View.VISIBLE);
+
+          /*      if (!memCate.getText().equals("")) {
+                    memCate.setText(memCate.getText() + " | BISP");
                 } else {
-                    memCate.setVisibility(View.GONE);
-                }
-                break;
-            case "3":
-                memCate.setText("PW");
-                break;
-
-            default:
-                memCate.setVisibility(View.GONE);
-        }
-
-        if (members.getMemCate().contains("R")) {
-            if (!memCate.getText().equals("")) {
-                memCate.setText(memCate.getText() + " | BISP");
-            } else {
-                memCate.setText("BISP");
+                    memCate.setText("BISP");
+                }*/
             }
         }
-
         //fMaritalStatus.setText("Children: " + familyMember.getH226m() + " boy(s), " + familyMember.getH226f() + " girl(s)");
       /*  viewHolder.itemView.setOnClickListener(v -> {
             // Get the current state of the item
@@ -225,6 +227,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         private final TextView fMatitalStatus;
         private final TextView motherName;
         private final TextView secStatus;
+        private final TextView recipient;
         //private final TextView addSec;
         //private final LinearLayout subItem;
         private final ImageView fmRow;
@@ -241,6 +244,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
             fMatitalStatus = v.findViewById(R.id.chh06);
             motherName = v.findViewById(R.id.chh08);
             secStatus = v.findViewById(R.id.csecStatus);
+            recipient = v.findViewById(R.id.recipient);
             //  addSec = v.findViewById(R.id.cadd_section);
             //  subItem = v.findViewById(R.id.csubitem);
             fmRow = v.findViewById(R.id.cfmRow);

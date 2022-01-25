@@ -1,6 +1,10 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.anthc;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.anthroWRAList;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.anthroWRAListPos;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.anthw;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.familyMember;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -10,6 +14,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -21,11 +27,16 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
+
 import edu.aku.hassannaqvi.enp_baseline.R;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionF2Binding;
+import edu.aku.hassannaqvi.enp_baseline.models.AnthroChild;
+import edu.aku.hassannaqvi.enp_baseline.models.AnthroWRA;
+import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 
 public class SectionF2Activity extends AppCompatActivity {
@@ -33,17 +44,76 @@ public class SectionF2Activity extends AppCompatActivity {
     private static final String TAG = "SectionF2Activity";
     ActivitySectionF2Binding bi;
     private DatabaseHelper db;
+    private ArrayList<String> wraNames, wraSno;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f2);
+        anthw = new AnthroWRA();
         bi.setAnthw(anthw);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         setupSkips();
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
+
+        populateSpinner();
+
+    }
+
+
+    private void populateSpinner() {
+
+        // Populate Provinces
+        //Collection<Villages> provinces = db.getProvinceByCountry(String.valueOf(MainApp.selectedCountry));
+        wraNames = new ArrayList<>();
+        wraSno = new ArrayList<>();
+        wraNames.add("...");
+        wraSno.add("...");
+
+        for (int p : anthroWRAList) {
+
+            wraNames.add(MainApp.familyList.get(p - 1).getA202());
+            wraSno.add(MainApp.familyList.get(p - 1).getA201());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SectionF2Activity.this, R.layout.custom_spinner, wraNames);
+        bi.f201name.setAdapter(adapter);
+        bi.f201name.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.f201.setText(null);
+                anthroWRAListPos = -1;
+                MainApp.selectedChild = "";
+                anthc = new AnthroChild();
+                familyMember = new FamilyMembers();
+
+                if (position == 0) return;
+
+
+                anthroWRAListPos = position;
+                MainApp.selectedMWRA = wraSno.get(anthroWRAListPos);
+                familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA) - 1);
+                try {
+                    anthw = db.getAnthroWRAByFmUID(familyMember.getUid());
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SectionF2Activity.this, "JSONException (AnthroWRA): " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+                anthw.setF201name(wraNames.get(anthroWRAListPos));
+                anthw.setF201(MainApp.selectedMWRA);
+                bi.setAnthw(anthw);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
     }
 
     private void setupSkips() {
@@ -97,7 +167,7 @@ public class SectionF2Activity extends AppCompatActivity {
         anthw.setId(String.valueOf(rowId));
         if (rowId > 0) {
             anthw.setUid(anthw.getDeviceId() + anthw.getId());
-            db.updatesWAnthroColumn(TableContracts.WAnthroTable.COLUMN_UID, anthw.getUid());
+            db.updatesWAnthroColumn(TableContracts.AnthroWRATable.COLUMN_UID, anthw.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -112,7 +182,7 @@ public class SectionF2Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesWAnthroColumn(TableContracts.WAnthroTable.COLUMN_SF2, anthw.sF2toString());
+            updcount = db.updatesWAnthroColumn(TableContracts.AnthroWRATable.COLUMN_SF2, anthw.sF2toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -131,8 +201,13 @@ public class SectionF2Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
+            anthroWRAList.remove(anthroWRAListPos - 1);
+            if (anthroWRAList.size() > 0) {
+                startActivity(new Intent(this, SectionF2Activity.class));
+            } else {
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            }
             finish();
-            startActivity(new Intent(this, EndingActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

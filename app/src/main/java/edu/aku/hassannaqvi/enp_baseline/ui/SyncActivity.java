@@ -187,33 +187,7 @@ public class SyncActivity extends AppCompatActivity {
 
                 }
 
-                //MotherKAP
-                uploadTables.add(new SyncModel(TableContracts.MotherKAPTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedmotherKAP());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(SyncActivity.this, "JSONException(MotherKAPTable)" + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
 
-                //ECDinfo
-                uploadTables.add(new SyncModel(TableContracts.ECDInfoTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedEcdInfo());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(SyncActivity.this, "JSONException(ECDinfo)" + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-
-
-                //LateAdol
-                uploadTables.add(new SyncModel(TableContracts.LateAdolescentTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedLateAdolescent());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(SyncActivity.this, "JSONException(LateAdol)" + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
 
 
                 //Entry Log

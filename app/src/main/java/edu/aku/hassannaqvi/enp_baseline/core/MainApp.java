@@ -46,6 +46,7 @@ public class MainApp extends Application {
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
     public static final String _UPDATE_URL = MainApp._IP + "/enp_bl/app/hhsurvey";
     public static final String _EMPTY_ = "";
+    public static final String _USER_URL = "resetpassword.php";
     private static final String TAG = "MainApp";
     public static String IBAHC = "";
 

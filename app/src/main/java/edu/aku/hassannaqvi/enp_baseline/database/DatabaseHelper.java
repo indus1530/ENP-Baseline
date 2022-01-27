@@ -4,6 +4,7 @@ package edu.aku.hassannaqvi.enp_baseline.database;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.IBAHC;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.child;
+import static edu.aku.hassannaqvi.enp_baseline.core.UserAuth.checkPassword;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -20,6 +21,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -529,48 +532,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Functions that dealing with table data
-    public boolean doLogin(String username, String password) {
+    public boolean doLogin(String username, String password) throws InvalidKeySpecException, NoSuchAlgorithmException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
-        String[] columns = {
-                UsersTable.COLUMN_ID,
-                UsersTable.COLUMN_USERNAME,
-                UsersTable.COLUMN_PASSWORD,
-                UsersTable.COLUMN_FULLNAME,
-                UsersTable.COLUMN_DISTRICT_CODE,
-                UsersTable.COLUMN_DESIGNATION
-        };
-        String whereClause = UsersTable.COLUMN_USERNAME + "=? AND " + UsersTable.COLUMN_PASSWORD + "=?";
-        String[] whereArgs = {username, password};
+        String[] columns = null;
+        String whereClause = UsersTable.COLUMN_USERNAME + "=? ";
+        String[] whereArgs = {username};
         String groupBy = null;
         String having = null;
         String orderBy = UsersTable.COLUMN_ID + " ASC";
 
-        Users loggedInUser = null;
-        try {
-            c = db.query(
-                    UsersTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                loggedInUser = new Users().hydrate(c);
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
+        Users loggedInUser = new Users();
+        c = db.query(
+                UsersTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            loggedInUser = new Users().hydrate(c);
+
         }
-        MainApp.user = loggedInUser;
-        return c.getCount() > 0;
+
+        c.close();
+
+        db.close();
+
+        if (checkPassword(password, loggedInUser.getPassword())) {
+            MainApp.user = loggedInUser;
+            MainApp.selectedDistrict = loggedInUser.getDist_id();
+            return c.getCount() > 0;
+        } else {
+            return false;
+        }
     }
+
 
     public ArrayList<Form> getFormsByDate(String sysdate) {
 
@@ -704,7 +703,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
                 values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
                 values.put(UsersTable.COLUMN_FULLNAME, user.getFullname());
-                values.put(UsersTable.COLUMN_DISTRICT_CODE, user.getDistrictCode());
+                values.put(UsersTable.COLUMN_DISTRICT_CODE, user.getDist_id());
                 values.put(UsersTable.COLUMN_DESIGNATION, user.getDesignation());
                 long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
@@ -2192,5 +2191,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return anthrow;
+    }
+
+    public int updatePassword(String hashedPassword) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(UsersTable.COLUMN_PASSWORD, hashedPassword);
+        values.put(UsersTable.COLUMN_ISNEW_USER, "");
+
+        String selection = UsersTable.COLUMN_USERNAME + " =? ";
+        String[] selectionArgs = {MainApp.user.getUserName()};
+
+        return db.update(UsersTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
     }
 }

@@ -30,7 +30,11 @@
     <string name="btnEnd"> Cancel </string>
     <string name="signin"> SIGN IN </string>
     <string name="username"> Username </string>
-    <string name="password"> Password </string>
+    <string name="password" translatable="false">Password</string>
+    <string name="newPassword" translatable="false">New Password</string>
+    <string name="confirmPassword" translatable="false">Confirm Password</string>
+    <string name="btnResetPassword">Reset Password</string>
+
     <string name="country"> Language (Click to change) </string>
     <string name="pakistan"> Pakistan </string>
     <string name="tajikistan"> Tajikistan </string>

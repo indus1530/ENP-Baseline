@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.enp_baseline.ui;
 
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper.DATABASE_COPY;
 import static edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper.DATABASE_NAME;
 
@@ -31,6 +32,8 @@ import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
+import net.sqlcipher.database.SQLiteException;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -40,6 +43,7 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,10 +53,12 @@ import java.util.Objects;
 
 import edu.aku.hassannaqvi.enp_baseline.MainActivity;
 import edu.aku.hassannaqvi.enp_baseline.R;
+import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.AppInfo;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityLoginBinding;
+import edu.aku.hassannaqvi.enp_baseline.models.EntryLog;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
 
 public class LoginActivity extends AppCompatActivity {
@@ -70,7 +76,8 @@ public class LoginActivity extends AppCompatActivity {
     private int countryCode;
     private ArrayList<String> countryNameList;
     private ArrayList<String> countryCodeList;
-
+    String username = "";
+    String password = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -232,26 +239,75 @@ public class LoginActivity extends AppCompatActivity {
                 bi.as1q01.setError(getString(R.string.as1q01));
                 return;
             }*/
+            try {
 
-            if ((username.equals("dmu@aku") && password.equals("aku?dmu"))
-                    || (username.equals("test1234") && password.equals("test1234"))
-                    || db.doLogin(username, password)
-            ) {
-                MainApp.user.setUserName(username);
-                MainApp.admin = username.contains("@") || username.contains("test1234");
-                //MainApp.superuser = MainApp.user.getDesignation().equals("Supervisor");
+                if ((username.equals("dmu@aku") && password.equals("aku?dmu"))
+                        || (username.equals("test1234") && password.equals("test1234"))
+                        || db.doLogin(username, password)
+                ) {
 
-                Intent iLogin = new Intent(edu.aku.hassannaqvi.enp_baseline.ui.LoginActivity.this, MainActivity.class);
-                startActivity(iLogin);
-            } else {
-                bi.password.setError(getString(R.string.incorrect_username_or_password));
-                bi.password.requestFocus();
-                Toast.makeText(edu.aku.hassannaqvi.enp_baseline.ui.LoginActivity.this, username + " " + password, Toast.LENGTH_SHORT).show();
+                    MainApp.user.setUserName(username);
+                    MainApp.admin = username.contains("@") || username.contains("test1234");
+                    MainApp.superuser = MainApp.user.getDesignation().equals("Supervisor");
+                    Intent iLogin = null;
+                    if (MainApp.user.getEnabled().equals("1")) {
+                        if (!MainApp.user.getNewUser().equals("1")) { // TODO: getEnabled().equals("1")
+                            recordEntry("Successfull Login");
+                            iLogin = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(iLogin);
+                        } else if (MainApp.user.getNewUser().equals("1")) {
+                            recordEntry("First Login");
+                            iLogin = new Intent(LoginActivity.this, ChangePasswordActivity.class);
+                            startActivity(iLogin);
+                        }
+                    } else {
+                        recordEntry("Inactive User (Disabled)");
+                        Toast.makeText(this, "This user is inactive.", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    recordEntry("Failed Login: Incorrect username or password");
+                    bi.password.setError(getString(R.string.incorrect_username_or_password));
+                    bi.password.requestFocus();
+                    //  Toast.makeText(LoginActivity.this, username + " " + password, Toast.LENGTH_SHORT).show();
+                }
+            } catch (InvalidKeySpecException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "InvalidKeySpecException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "NoSuchAlgorithmException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
             }
-
 
         }
     }
+
+    private void recordEntry(String entryType) {
+
+        EntryLog entryLog = new EntryLog();
+        entryLog.setProjectName(PROJECT_NAME);
+        entryLog.setUserName(username);
+        entryLog.setEntryDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        entryLog.setAppver(MainApp.appInfo.getAppVersion());
+        entryLog.setEntryType(entryType);
+        entryLog.setDeviceId(MainApp.deviceid);
+        Long rowId = null;
+        try {
+            rowId = db.addEntryLog(entryLog);
+        } catch (SQLiteException e) {
+            Toast.makeText(this, "SQLiteException(EntryLog)" + entryLog, Toast.LENGTH_SHORT).show();
+        }
+        if (rowId != -1) {
+            entryLog.setId(String.valueOf(rowId));
+            entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
+            db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+
 
     public String computeHash(String input) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");

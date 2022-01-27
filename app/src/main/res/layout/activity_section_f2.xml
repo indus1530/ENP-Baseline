@@ -531,32 +531,32 @@
                                 android:id="@+id/f20501"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{anthw.f205.equals(``)}"
-                                android:onClick="@{()->anthw.setF205(``)}"
+                                android:checked="@{anthw.f205.equals(`1`)}"
+                                android:onClick="@{()->anthw.setF205(`1`)}"
                                 android:text="@string/f20501" />
 
                             <RadioButton
                                 android:id="@+id/f20502"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{anthw.f205.equals(``)}"
-                                android:onClick="@{()->anthw.setF205(``)}"
+                                android:checked="@{anthw.f205.equals(`2`)}"
+                                android:onClick="@{()->anthw.setF205(`2`)}"
                                 android:text="@string/f20502" />
 
                             <RadioButton
                                 android:id="@+id/f20503"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{anthw.f205.equals(``)}"
-                                android:onClick="@{()->anthw.setF205(``)}"
+                                android:checked="@{anthw.f205.equals(`3`)}"
+                                android:onClick="@{()->anthw.setF205(`3`)}"
                                 android:text="@string/f20503" />
 
                             <RadioButton
                                 android:id="@+id/f20504"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{anthw.f205.equals(``)}"
-                                android:onClick="@{()->anthw.setF205(``)}"
+                                android:checked="@{anthw.f205.equals(`4`)}"
+                                android:onClick="@{()->anthw.setF205(`4`)}"
                                 android:text="@string/f20504" />
 
                         </RadioGroup>

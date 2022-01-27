@@ -21,7 +21,7 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_as1.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_as2.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_b1.xml" value="0.53625" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_b2.xml" value="0.15406162464985995" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_b2.xml" value="0.52" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_c1.xml" value="0.5375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_c2.xml" value="0.53625" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_c3.xml" value="0.53625" />
@@ -74,7 +74,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

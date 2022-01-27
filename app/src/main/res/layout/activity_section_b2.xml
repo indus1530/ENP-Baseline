@@ -171,18 +171,18 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layoutDirection="ltr"
                             android:orientation="horizontal">
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/b202w" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/b202w"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{!rcpt.b202998.equals(`998`)}"
@@ -197,13 +197,14 @@
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/b202m" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/b202m"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{!rcpt.b202998.equals(`998`)}"
@@ -218,13 +219,14 @@
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/b202y" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/b202y"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{!rcpt.b202998.equals(`998`)}"
@@ -364,18 +366,18 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
                                     style="@style/textView"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/b204w" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/b204w"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:enabled="@{!rcpt.b204998.equals(`998`)}"
@@ -390,13 +392,14 @@
 
                                 <TextView
                                     style="@style/textView"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/b204m" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/b204m"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:enabled="@{!rcpt.b204998.equals(`998`)}"
@@ -594,14 +597,16 @@
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/b20601" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/b20601"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
@@ -924,7 +929,7 @@
 
                         <CheckBox
                             android:id="@+id/b209"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:checked="@{rcpt.b209.equals(`998`)}"
                             android:onClick="@{()->rcpt.setB209(rcpt.b209.equals(`998`)?``:`998`) + b209a.clearCheck() + b209b.clearCheck() + b209c.clearCheck()}"
@@ -1162,8 +1167,9 @@
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/b21101" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -1229,18 +1235,18 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layoutDirection="ltr"
                             android:orientation="horizontal">
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/b21201" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/b21201"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{!rcpt.b212998.equals(`998`)}"
@@ -1255,13 +1261,14 @@
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/b21202" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/b21202"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{!rcpt.b212998.equals(`998`)}"
@@ -1425,14 +1432,16 @@
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/b214" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/b214"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="####"
                                 android:inputType="number"
@@ -2120,8 +2129,9 @@
 
                                 <TextView
                                     style="@style/textView"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/b22101" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -2187,18 +2197,18 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
                                     style="@style/textView"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/b222h" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/b222h"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:enabled="@{!rcpt.b222998.equals(`998`)}"
@@ -2213,13 +2223,14 @@
 
                                 <TextView
                                     style="@style/textView"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/b222m" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/b222m"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:enabled="@{!rcpt.b222998.equals(`998`)}"

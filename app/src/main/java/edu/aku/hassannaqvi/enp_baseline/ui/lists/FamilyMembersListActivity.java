@@ -173,10 +173,10 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //setContentView(R.layout.activity_mwra);
+        setTheme(R.style.AppTheme);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_family_list);
         bi.setCallback(this);
+        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Next");
         db = MainApp.appInfo.dbHelper;

@@ -2016,6 +2016,7 @@ public class Form extends BaseObservable implements Observable {
             this.a103 = json.getString("a103");
             this.a104 = json.getString("a104");
             this.a105a = json.getString("a105a");
+            this.a107 = json.getString("a107");
             this.a108d = json.getString("a108d");
             this.a108m = json.getString("a108m");
             this.a108y = json.getString("a108y");
@@ -2226,6 +2227,7 @@ public class Form extends BaseObservable implements Observable {
                 .put("a103", a103)
                 .put("a104", a104)
                 .put("a105a", a105a)
+                .put("a107", a107)
                 .put("a108d", a108d)
                 .put("a108m", a108m)
                 .put("a108y", a108y)

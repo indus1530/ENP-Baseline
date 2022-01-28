@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.enp_baseline.models.Form;
 import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
+import edu.aku.hassannaqvi.enp_baseline.ui.ChangePasswordActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.SyncActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FormsReportCluster;
@@ -99,10 +100,9 @@ public class MainActivity extends AppCompatActivity {
                 MainApp.form = new Form();
                 startActivity(new Intent(this, IdentificationActivity.class));
                 break;
-        /*    case R.id.openAnthro:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionA2Activity.class));
-                break;*/
+            case R.id.changePassword:
+                startActivity(new Intent(this, ChangePasswordActivity.class));
+                break;
             case R.id.seca1:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA1Activity.class));
@@ -224,6 +224,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.formsReportDate:
                 intent = new Intent(MainActivity.this, FormsReportDate.class);
+                startActivity(intent);
+                break;
+            case R.id.changePassword:
+                intent = new Intent(MainActivity.this, ChangePasswordActivity.class);
                 startActivity(intent);
                 break;
             case R.id.formsReportCluster:

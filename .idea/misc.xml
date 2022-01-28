@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_adol_select.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_change_password.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_consent.xml" value="0.5375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_ending.xml" value="0.52375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_family_list.xml" value="0.545" />
@@ -33,7 +34,7 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_d3.xml" value="0.54125" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_d4.xml" value="0.4245843230403801" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_e1.xml" value="0.545" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_e2.xml" value="0.54" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_e2.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_f1.xml" value="0.536" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_section_f2.xml" value="0.54" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_sync.xml" value="0.55859375" />
@@ -74,7 +75,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

@@ -1024,7 +1024,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{rcpt.b11201.equals(`1`)}"
-                                android:enabled="@{!rcpt.b11298.equals(`998`)}"
+                                android:enabled="@{!rcpt.b11298.equals(`998`) &amp;&amp; !rcpt.b11206.equals(`6`)}"
                                 android:onClick="@{()->rcpt.setB11201(rcpt.b11201.equals(`1`)?``:`1`)}"
                                 android:text="@string/b11201" />
 
@@ -1033,7 +1033,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{rcpt.b11202.equals(`2`)}"
-                                android:enabled="@{!rcpt.b11298.equals(`998`)}"
+                                android:enabled="@{!rcpt.b11298.equals(`998`) &amp;&amp; !rcpt.b11206.equals(`6`)}"
                                 android:onClick="@{()->rcpt.setB11202(rcpt.b11202.equals(`2`)?``:`2`)}"
                                 android:text="@string/b11202" />
 
@@ -1042,7 +1042,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{rcpt.b11203.equals(`3`)}"
-                                android:enabled="@{!rcpt.b11298.equals(`998`)}"
+                                android:enabled="@{!rcpt.b11298.equals(`998`) &amp;&amp; !rcpt.b11206.equals(`6`)}"
                                 android:onClick="@{()->rcpt.setB11203(rcpt.b11203.equals(`3`)?``:`3`)}"
                                 android:text="@string/b11203" />
 
@@ -1051,7 +1051,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{rcpt.b11204.equals(`4`)}"
-                                android:enabled="@{!rcpt.b11298.equals(`998`)}"
+                                android:enabled="@{!rcpt.b11298.equals(`998`) &amp;&amp; !rcpt.b11206.equals(`6`)}"
                                 android:onClick="@{()->rcpt.setB11204(rcpt.b11204.equals(`4`)?``:`4`)}"
                                 android:text="@string/b11204" />
 
@@ -1060,7 +1060,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{rcpt.b11205.equals(`5`)}"
-                                android:enabled="@{!rcpt.b11298.equals(`998`)}"
+                                android:enabled="@{!rcpt.b11298.equals(`998`) &amp;&amp; !rcpt.b11206.equals(`6`)}"
                                 android:onClick="@{()->rcpt.setB11205(rcpt.b11205.equals(`5`)?``:`5`)}"
                                 android:text="@string/b11205" />
 
@@ -1078,7 +1078,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{rcpt.b11296.equals(`96`)}"
-                                android:enabled="@{!rcpt.b11298.equals(`998`)}"
+                                android:enabled="@{!rcpt.b11298.equals(`998`) &amp;&amp; !rcpt.b11206.equals(`6`)}"
                                 android:onClick="@{()->rcpt.setB11296(rcpt.b11296.equals(`96`)?``:`96`)}"
                                 android:text="@string/b11296" />
 
@@ -1097,6 +1097,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{rcpt.b11298.equals(`998`)}"
+                                android:enabled="@{!rcpt.b11206.equals(`6`)}"
                                 android:onClick="@{()->rcpt.setB11298(rcpt.b11298.equals(`998`)?``:`998`) + b113.clearCheck()}"
                                 android:text="@string/b11298" />
 

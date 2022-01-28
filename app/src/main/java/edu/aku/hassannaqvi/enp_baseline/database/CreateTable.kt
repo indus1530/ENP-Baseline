@@ -203,7 +203,7 @@ object CreateTable {
             + EntryLogTable.COLUMN_ISTATUS96x + " TEXT,"
             + EntryLogTable.COLUMN_ENTRY_TYPE + " TEXT,"
             + EntryLogTable.COLUMN_SYNCED + " TEXT,"
-            + EntryLogTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + EntryLogTable.COLUMN_SYNC_DATE + " TEXT,"
             + EntryLogTable.COLUMN_APPVERSION + " TEXT"
             + " );"
             )

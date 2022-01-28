@@ -846,6 +846,13 @@ public class Recipient extends BaseObservable implements Observable {
     public void setB11206(String b11206) {
         if (this.b11206.equals(b11206)) return;
         this.b11206 = b11206;
+        setB11201(b11206.equals("6") ? "" : this.b11201);
+        setB11202(b11206.equals("6") ? "" : this.b11202);
+        setB11203(b11206.equals("6") ? "" : this.b11203);
+        setB11204(b11206.equals("6") ? "" : this.b11204);
+        setB11205(b11206.equals("6") ? "" : this.b11205);
+        setB11298(b11206.equals("6") ? "" : this.b11298);
+        setB11296(b11206.equals("6") ? "" : this.b11296);
         setB113(b11206.equals("6") ? "" : this.b113);
         notifyPropertyChanged(BR.b11206);
     }

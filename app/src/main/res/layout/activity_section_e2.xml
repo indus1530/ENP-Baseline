@@ -224,76 +224,85 @@
                             android:layout_height="wrap_content"
                             android:text="@string/e202t" />
 
-                        <CheckBox
-                            android:id="@+id/e20201"
+                        <LinearLayout
+                            android:id="@+id/e202check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{preg.e20201.equals(`1`)}"
-                            android:enabled="@{!preg.e20297.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20201(preg.e20201.equals(`1`)?``:`1`)}"
-                            android:text="@string/e20201" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/e20202"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20202.equals(`2`)}"
-                            android:enabled="@{!preg.e20297.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20202(preg.e20202.equals(`2`)?``:`2`)}"
-                            android:text="@string/e20202" />
+                            <CheckBox
+                                android:id="@+id/e20201"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20201.equals(`1`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20201(preg.e20201.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20201" />
 
-                        <CheckBox
-                            android:id="@+id/e20203"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20203.equals(`3`)}"
-                            android:enabled="@{!preg.e20297.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20203(preg.e20203.equals(`3`)?``:`3`)}"
-                            android:text="@string/e20203" />
+                            <CheckBox
+                                android:id="@+id/e20202"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20202.equals(`2`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20202(preg.e20202.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20202" />
 
-                        <CheckBox
-                            android:id="@+id/e20204"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20204.equals(`4`)}"
-                            android:enabled="@{!preg.e20297.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20204(preg.e20204.equals(`4`)?``:`4`)}"
-                            android:text="@string/e20204" />
+                            <CheckBox
+                                android:id="@+id/e20203"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20203.equals(`3`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20203(preg.e20203.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20203" />
 
-                        <CheckBox
-                            android:id="@+id/e20205"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20205.equals(`5`)}"
-                            android:enabled="@{!preg.e20297.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20205(preg.e20205.equals(`5`)?``:`5`)}"
-                            android:text="@string/e20205" />
+                            <CheckBox
+                                android:id="@+id/e20204"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20204.equals(`4`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20204(preg.e20204.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20204" />
 
-                        <CheckBox
-                            android:id="@+id/e20206"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20206.equals(`6`)}"
-                            android:enabled="@{!preg.e20297.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20206(preg.e20206.equals(`6`)?``:`6`)}"
-                            android:text="@string/e20206" />
+                            <CheckBox
+                                android:id="@+id/e20205"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20205.equals(`5`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20205(preg.e20205.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20205" />
 
-                        <CheckBox
-                            android:id="@+id/e20207"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20207.equals(`7`)}"
-                            android:enabled="@{!preg.e20297.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20207(preg.e20207.equals(`7`)?``:`7`)}"
-                            android:text="@string/e20207" />
+                            <CheckBox
+                                android:id="@+id/e20206"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20206.equals(`6`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20206(preg.e20206.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20206" />
 
-                        <CheckBox
-                            android:id="@+id/e20297"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20297.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20297(preg.e20297.equals(`97`)?``:`97`)}"
-                            android:text="@string/e20297" />
+                            <CheckBox
+                                android:id="@+id/e20207"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20207.equals(`7`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20207(preg.e20207.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20207" />
+
+                            <CheckBox
+                                android:id="@+id/e20297"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20297(preg.e20297.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20297" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -335,76 +344,85 @@
                             android:layout_height="wrap_content"
                             android:text="@string/e203t" />
 
-                        <CheckBox
-                            android:id="@+id/e20301"
+                        <LinearLayout
+                            android:id="@+id/e203check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{preg.e20301.equals(`1`)}"
-                            android:enabled="@{!preg.e20397.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20301(preg.e20301.equals(`1`)?``:`1`)}"
-                            android:text="@string/e20301" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/e20302"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20302.equals(`2`)}"
-                            android:enabled="@{!preg.e20397.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20302(preg.e20302.equals(`2`)?``:`2`)}"
-                            android:text="@string/e20302" />
+                            <CheckBox
+                                android:id="@+id/e20301"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20301.equals(`1`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20301(preg.e20301.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20301" />
 
-                        <CheckBox
-                            android:id="@+id/e20303"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20303.equals(`3`)}"
-                            android:enabled="@{!preg.e20397.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20303(preg.e20303.equals(`3`)?``:`3`)}"
-                            android:text="@string/e20303" />
+                            <CheckBox
+                                android:id="@+id/e20302"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20302.equals(`2`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20302(preg.e20302.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20302" />
 
-                        <CheckBox
-                            android:id="@+id/e20304"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20304.equals(`4`)}"
-                            android:enabled="@{!preg.e20397.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20304(preg.e20304.equals(`4`)?``:`4`)}"
-                            android:text="@string/e20304" />
+                            <CheckBox
+                                android:id="@+id/e20303"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20303.equals(`3`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20303(preg.e20303.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20303" />
 
-                        <CheckBox
-                            android:id="@+id/e20305"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20305.equals(`5`)}"
-                            android:enabled="@{!preg.e20397.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20305(preg.e20305.equals(`5`)?``:`5`)}"
-                            android:text="@string/e20305" />
+                            <CheckBox
+                                android:id="@+id/e20304"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20304.equals(`4`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20304(preg.e20304.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20304" />
 
-                        <CheckBox
-                            android:id="@+id/e20306"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20306.equals(`6`)}"
-                            android:enabled="@{!preg.e20397.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20306(preg.e20306.equals(`6`)?``:`6`)}"
-                            android:text="@string/e20306" />
+                            <CheckBox
+                                android:id="@+id/e20305"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20305.equals(`5`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20305(preg.e20305.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20305" />
 
-                        <CheckBox
-                            android:id="@+id/e20307"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20307.equals(`7`)}"
-                            android:enabled="@{!preg.e20397.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20307(preg.e20307.equals(`7`)?``:`7`)}"
-                            android:text="@string/e20307" />
+                            <CheckBox
+                                android:id="@+id/e20306"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20306.equals(`6`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20306(preg.e20306.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20306" />
 
-                        <CheckBox
-                            android:id="@+id/e20397"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20397.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20397(preg.e20397.equals(`97`)?``:`97`)}"
-                            android:text="@string/e20397" />
+                            <CheckBox
+                                android:id="@+id/e20307"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20307.equals(`7`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20307(preg.e20307.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20307" />
+
+                            <CheckBox
+                                android:id="@+id/e20397"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20397(preg.e20397.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20397" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -446,76 +464,85 @@
                             android:layout_height="wrap_content"
                             android:text="@string/e204t" />
 
-                        <CheckBox
-                            android:id="@+id/e20401"
+                        <LinearLayout
+                            android:id="@+id/e204check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{preg.e20401.equals(`1`)}"
-                            android:enabled="@{!preg.e20497.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20401(preg.e20401.equals(`1`)?``:`1`)}"
-                            android:text="@string/e20401" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/e20402"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20402.equals(`2`)}"
-                            android:enabled="@{!preg.e20497.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20402(preg.e20402.equals(`2`)?``:`2`)}"
-                            android:text="@string/e20402" />
+                            <CheckBox
+                                android:id="@+id/e20401"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20401.equals(`1`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20401(preg.e20401.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20401" />
 
-                        <CheckBox
-                            android:id="@+id/e20403"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20403.equals(`3`)}"
-                            android:enabled="@{!preg.e20497.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20403(preg.e20403.equals(`3`)?``:`3`)}"
-                            android:text="@string/e20403" />
+                            <CheckBox
+                                android:id="@+id/e20402"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20402.equals(`2`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20402(preg.e20402.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20402" />
 
-                        <CheckBox
-                            android:id="@+id/e20404"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20404.equals(`4`)}"
-                            android:enabled="@{!preg.e20497.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20404(preg.e20404.equals(`4`)?``:`4`)}"
-                            android:text="@string/e20404" />
+                            <CheckBox
+                                android:id="@+id/e20403"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20403.equals(`3`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20403(preg.e20403.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20403" />
 
-                        <CheckBox
-                            android:id="@+id/e20405"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20405.equals(`5`)}"
-                            android:enabled="@{!preg.e20497.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20405(preg.e20405.equals(`5`)?``:`5`)}"
-                            android:text="@string/e20405" />
+                            <CheckBox
+                                android:id="@+id/e20404"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20404.equals(`4`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20404(preg.e20404.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20404" />
 
-                        <CheckBox
-                            android:id="@+id/e20406"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20406.equals(`6`)}"
-                            android:enabled="@{!preg.e20497.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20406(preg.e20406.equals(`6`)?``:`6`)}"
-                            android:text="@string/e20406" />
+                            <CheckBox
+                                android:id="@+id/e20405"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20405.equals(`5`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20405(preg.e20405.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20405" />
 
-                        <CheckBox
-                            android:id="@+id/e20407"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20407.equals(`7`)}"
-                            android:enabled="@{!preg.e20497.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20407(preg.e20407.equals(`7`)?``:`7`)}"
-                            android:text="@string/e20407" />
+                            <CheckBox
+                                android:id="@+id/e20406"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20406.equals(`6`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20406(preg.e20406.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20406" />
 
-                        <CheckBox
-                            android:id="@+id/e20497"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20497.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20497(preg.e20497.equals(`97`)?``:`97`)}"
-                            android:text="@string/e20497" />
+                            <CheckBox
+                                android:id="@+id/e20407"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20407.equals(`7`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20407(preg.e20407.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20407" />
+
+                            <CheckBox
+                                android:id="@+id/e20497"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20497(preg.e20497.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20497" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -557,76 +584,85 @@
                             android:layout_height="wrap_content"
                             android:text="@string/e205t" />
 
-                        <CheckBox
-                            android:id="@+id/e20501"
+                        <LinearLayout
+                            android:id="@+id/e205check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{preg.e20501.equals(`1`)}"
-                            android:enabled="@{!preg.e20597.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20501(preg.e20501.equals(`1`)?``:`1`)}"
-                            android:text="@string/e20501" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/e20502"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20502.equals(`2`)}"
-                            android:enabled="@{!preg.e20597.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20502(preg.e20502.equals(`2`)?``:`2`)}"
-                            android:text="@string/e20502" />
+                            <CheckBox
+                                android:id="@+id/e20501"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20501.equals(`1`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20501(preg.e20501.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20501" />
 
-                        <CheckBox
-                            android:id="@+id/e20503"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20503.equals(`3`)}"
-                            android:enabled="@{!preg.e20597.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20503(preg.e20503.equals(`3`)?``:`3`)}"
-                            android:text="@string/e20503" />
+                            <CheckBox
+                                android:id="@+id/e20502"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20502.equals(`2`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20502(preg.e20502.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20502" />
 
-                        <CheckBox
-                            android:id="@+id/e20504"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20504.equals(`4`)}"
-                            android:enabled="@{!preg.e20597.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20504(preg.e20504.equals(`4`)?``:`4`)}"
-                            android:text="@string/e20504" />
+                            <CheckBox
+                                android:id="@+id/e20503"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20503.equals(`3`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20503(preg.e20503.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20503" />
 
-                        <CheckBox
-                            android:id="@+id/e20505"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20505.equals(`5`)}"
-                            android:enabled="@{!preg.e20597.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20505(preg.e20505.equals(`5`)?``:`5`)}"
-                            android:text="@string/e20505" />
+                            <CheckBox
+                                android:id="@+id/e20504"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20504.equals(`4`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20504(preg.e20504.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20504" />
 
-                        <CheckBox
-                            android:id="@+id/e20506"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20506.equals(`6`)}"
-                            android:enabled="@{!preg.e20597.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20506(preg.e20506.equals(`6`)?``:`6`)}"
-                            android:text="@string/e20506" />
+                            <CheckBox
+                                android:id="@+id/e20505"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20505.equals(`5`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20505(preg.e20505.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20505" />
 
-                        <CheckBox
-                            android:id="@+id/e20507"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20507.equals(`7`)}"
-                            android:enabled="@{!preg.e20597.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20507(preg.e20507.equals(`7`)?``:`7`)}"
-                            android:text="@string/e20507" />
+                            <CheckBox
+                                android:id="@+id/e20506"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20506.equals(`6`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20506(preg.e20506.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20506" />
 
-                        <CheckBox
-                            android:id="@+id/e20597"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20597.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20597(preg.e20597.equals(`97`)?``:`97`)}"
-                            android:text="@string/e20597" />
+                            <CheckBox
+                                android:id="@+id/e20507"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20507.equals(`7`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20507(preg.e20507.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20507" />
+
+                            <CheckBox
+                                android:id="@+id/e20597"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20597(preg.e20597.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20597" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -788,76 +824,85 @@
                             android:layout_height="wrap_content"
                             android:text="@string/e207t" />
 
-                        <CheckBox
-                            android:id="@+id/e20701"
+                        <LinearLayout
+                            android:id="@+id/e207check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{preg.e20701.equals(`1`)}"
-                            android:enabled="@{!preg.e20797.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20701(preg.e20701.equals(`1`)?``:`1`)}"
-                            android:text="@string/e20701" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/e20702"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20702.equals(`2`)}"
-                            android:enabled="@{!preg.e20797.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20702(preg.e20702.equals(`2`)?``:`2`)}"
-                            android:text="@string/e20702" />
+                            <CheckBox
+                                android:id="@+id/e20701"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20701.equals(`1`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20701(preg.e20701.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20701" />
 
-                        <CheckBox
-                            android:id="@+id/e20703"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20703.equals(`3`)}"
-                            android:enabled="@{!preg.e20797.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20703(preg.e20703.equals(`3`)?``:`3`)}"
-                            android:text="@string/e20703" />
+                            <CheckBox
+                                android:id="@+id/e20702"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20702.equals(`2`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20702(preg.e20702.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20702" />
 
-                        <CheckBox
-                            android:id="@+id/e20704"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20704.equals(`4`)}"
-                            android:enabled="@{!preg.e20797.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20704(preg.e20704.equals(`4`)?``:`4`)}"
-                            android:text="@string/e20704" />
+                            <CheckBox
+                                android:id="@+id/e20703"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20703.equals(`3`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20703(preg.e20703.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20703" />
 
-                        <CheckBox
-                            android:id="@+id/e20705"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20705.equals(`5`)}"
-                            android:enabled="@{!preg.e20797.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20705(preg.e20705.equals(`5`)?``:`5`)}"
-                            android:text="@string/e20705" />
+                            <CheckBox
+                                android:id="@+id/e20704"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20704.equals(`4`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20704(preg.e20704.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20704" />
 
-                        <CheckBox
-                            android:id="@+id/e20706"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20706.equals(`6`)}"
-                            android:enabled="@{!preg.e20797.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20706(preg.e20706.equals(`6`)?``:`6`)}"
-                            android:text="@string/e20706" />
+                            <CheckBox
+                                android:id="@+id/e20705"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20705.equals(`5`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20705(preg.e20705.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20705" />
 
-                        <CheckBox
-                            android:id="@+id/e20707"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20707.equals(`7`)}"
-                            android:enabled="@{!preg.e20797.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20707(preg.e20707.equals(`7`)?``:`7`)}"
-                            android:text="@string/e20707" />
+                            <CheckBox
+                                android:id="@+id/e20706"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20706.equals(`6`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20706(preg.e20706.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20706" />
 
-                        <CheckBox
-                            android:id="@+id/e20797"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{preg.e20797.equals(`97`)}"
-                            android:onClick="@{()->preg.setE20797(preg.e20797.equals(`97`)?``:`97`)}"
-                            android:text="@string/e20797" />
+                            <CheckBox
+                                android:id="@+id/e20707"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20707.equals(`7`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20707(preg.e20707.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20707" />
+
+                            <CheckBox
+                                android:id="@+id/e20797"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20797(preg.e20797.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20797" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 

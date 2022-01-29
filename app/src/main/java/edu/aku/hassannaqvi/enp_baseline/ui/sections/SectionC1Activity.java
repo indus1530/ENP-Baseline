@@ -60,6 +60,7 @@ public class SectionC1Activity extends AppCompatActivity {
 
 
         bi.c104.setMaxvalue(Float.parseFloat(MainApp.familyMember.getA206y()));
+        //bi.c104.setMaxvalue(Float.parseFloat(MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).getA206y()));
     }
 
 

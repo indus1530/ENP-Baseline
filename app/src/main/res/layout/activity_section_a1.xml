@@ -111,6 +111,8 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+
                 <!-- a108 -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa108"
@@ -259,7 +261,7 @@
                             android:layout_height="52dp"
                             android:hint="@string/a109"
                             android:maxLength="20"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:inputType="text"
                             android:text="@={form.a109}" />
 

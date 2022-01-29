@@ -554,7 +554,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
         while (c.moveToNext()) {
             loggedInUser = new Users().hydrate(c);
-
         }
 
         c.close();

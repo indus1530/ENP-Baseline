@@ -1,11 +1,14 @@
 package edu.aku.hassannaqvi.enp_baseline.workers;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
 import androidx.work.Data;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
@@ -40,6 +43,7 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
 
+import edu.aku.hassannaqvi.enp_baseline.R;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.CipherSecure;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
@@ -48,16 +52,22 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 public class DataDownWorkerALL extends Worker {
 
     private final String TAG = "DataWorkerEN()";
+    private final String nTitle;
 
     private final int position;
     private final Context mContext;
     private final String uploadTable;
     private final String uploadWhere;
+    private int length;
+
     HttpsURLConnection urlConnection;
 
     public DataDownWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
+        nTitle = mContext.getResources().getString(R.string.app_name) + ": Data Download";
+
+
         uploadTable = workerParams.getInputData().getString("table");
         position = workerParams.getInputData().getInt("position", -2);
         //uploadColumns = workerParams.getInputData().getString("columns");
@@ -222,7 +232,7 @@ public class DataDownWorkerALL extends Worker {
 
                 if (urlConnection.getResponseCode() == HttpsURLConnection.HTTP_OK) {
 
-                    int length = urlConnection.getContentLength();
+                    length = urlConnection.getContentLength();
 
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 
@@ -320,4 +330,23 @@ public class DataDownWorkerALL extends Worker {
         return false;
     }
 
+    private void displayNotification(String title, String task) {
+        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("scrlog", nTitle, NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
+                .setContentTitle(title)
+                .setContentText(task)
+                .setSmallIcon(R.drawable.app_icon);
+
+        final int maxProgress = 100;
+        int curProgress = 0;
+        notification.setProgress(length, curProgress, false);
+
+        notificationManager.notify(1, notification.build());
+    }
 }

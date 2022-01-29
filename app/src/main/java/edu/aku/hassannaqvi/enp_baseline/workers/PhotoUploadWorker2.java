@@ -42,9 +42,10 @@ public class PhotoUploadWorker2 extends Worker {
     private final String TAG = "PhotoUploadWorker2()";
     private final Context mContext;
     private final int photoid;
-    private final String nTitle = "Naunehal: Photo Upload";
+    private String nTitle = "";
     public Boolean errMsg = false;
     HttpURLConnection urlConnection;
+    private int length;
     File fileZero;
     private Data data;
 
@@ -53,6 +54,8 @@ public class PhotoUploadWorker2 extends Worker {
     public PhotoUploadWorker2(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
+        nTitle = mContext.getResources().getString(R.string.app_name) + ": Photo Uploads";
+
       /*  sdDir = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES), PROJECT_NAME);*/
 
@@ -372,4 +375,23 @@ public class PhotoUploadWorker2 extends Worker {
         }
     }
 
+    private void displayNotification(String title, String task) {
+        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("scrlog", nTitle, NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
+                .setContentTitle(title)
+                .setContentText(task)
+                .setSmallIcon(R.drawable.app_icon);
+
+        final int maxProgress = 100;
+        int curProgress = 0;
+        notification.setProgress(length, curProgress, false);
+
+        notificationManager.notify(1, notification.build());
+    }
 }

@@ -1,7 +1,5 @@
 package edu.aku.hassannaqvi.enp_baseline.workers;
 
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.PROJECT_NAME;
-
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.ProgressDialog;
@@ -59,7 +57,7 @@ public class DataUpWorkerALL extends Worker {
     private final String uploadTable;
     private final JSONArray uploadData;
     private final URL serverURL = null;
-    private final String nTitle = PROJECT_NAME + ": Data Upload";
+    private final String nTitle;
     private final int position;
     private final String uploadWhere;
     HttpsURLConnection urlConnection;
@@ -71,6 +69,9 @@ public class DataUpWorkerALL extends Worker {
     public DataUpWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
+        nTitle = mContext.getResources().getString(R.string.app_name) + ": Data Upload";
+
+
         uploadTable = workerParams.getInputData().getString("table");
         position = workerParams.getInputData().getInt("position", -2);
         uploadData = MainApp.uploadData.get(position);
@@ -82,6 +83,7 @@ public class DataUpWorkerALL extends Worker {
         Log.d(TAG, "DataDownWorkerALL: position " + position);
         //uploadColumns = workerParams.getInputData().getString("columns");
         uploadWhere = workerParams.getInputData().getString("where");
+
 
     }
 
@@ -166,14 +168,14 @@ public class DataUpWorkerALL extends Worker {
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("scrlog", "BLF", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel("scrlog", nTitle, NotificationManager.IMPORTANCE_DEFAULT);
             notificationManager.createNotificationChannel(channel);
         }
 
         NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
                 .setContentTitle(title)
                 .setContentText(task)
-                .setSmallIcon(R.mipmap.ic_launcher);
+                .setSmallIcon(R.drawable.app_icon);
 
         final int maxProgress = 100;
         int curProgress = 0;
@@ -418,4 +420,5 @@ public class DataUpWorkerALL extends Worker {
 
 
     }
+
 }

@@ -47,7 +47,7 @@ import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityFamilyListBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA2Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionB1Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA3AActivity;
 
 
 public class FamilyMembersListActivity extends AppCompatActivity {
@@ -466,7 +466,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         }
         finish();
-        startActivity(new Intent(this, MainApp.selectedChild.equals("") || MainApp.selectedRecipient.equals("") ? EndingActivity.class : SectionB1Activity.class).putExtra("complete", true));
+        startActivity(new Intent(this, MainApp.selectedChild.equals("") || MainApp.selectedRecipient.equals("") ? EndingActivity.class : SectionA3AActivity.class).putExtra("complete", true));
 
         //MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
 

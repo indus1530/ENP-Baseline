@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.child;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregFirstList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -66,7 +67,7 @@ public class SectionD4Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionE1Activity.class));
+            startActivity(new Intent(this, pregFirstList.isEmpty() ? SectionF1Activity.class : SectionE1Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

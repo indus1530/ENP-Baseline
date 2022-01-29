@@ -71,7 +71,8 @@
                 <!-- sa2name  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsa2name"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{familymember.a201.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

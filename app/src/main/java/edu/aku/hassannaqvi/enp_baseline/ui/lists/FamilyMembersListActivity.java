@@ -860,10 +860,12 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             if (recipientsList.size() > 0) {
                 MainApp.selectedRecipient = String.valueOf(Integer.parseInt(recipientSno.get(bi.recipientList.getSelectedItemPosition())) - 1);
                 MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient));
-                db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "R");
+                String idxStatus = MainApp.familyMember.getIndexed();
+
+                db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, idxStatus + "R");
 
                 // Updating adapter and notify BISP Recipent selection
-                MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient)).setIndexed("R");
+                MainApp.familyList.get(Integer.parseInt(MainApp.selectedRecipient)).setIndexed(idxStatus + "R");
                 familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedRecipient));
             }
 

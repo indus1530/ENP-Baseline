@@ -96,8 +96,7 @@ public class SectionB1Activity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-            if (MainApp.familyMember.getA20705().equals("5")) {
-
+            if (MainApp.familyMember.getA20704().equals("4")) {
                 startActivity(new Intent(this, SectionB2Activity.class));
             } else {
 

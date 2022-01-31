@@ -114,6 +114,8 @@ public class SectionE1Activity extends AppCompatActivity {
                 pregnancy.setEh102(form.getA102());
                 pregnancy.setEh103(form.getA106());
                 pregnancy.setEh104(form.getA107());
+                bi.e103.setMaxvalue(Float.parseFloat(MainApp.familyMember.getA206y()));
+                bi.e104.setMaxvalue(Float.parseFloat(MainApp.familyMember.getA206y()));
 
             }
 

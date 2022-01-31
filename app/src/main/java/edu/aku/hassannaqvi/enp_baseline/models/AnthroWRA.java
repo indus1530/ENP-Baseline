@@ -73,7 +73,7 @@ public class AnthroWRA extends BaseObservable implements Observable {
 
 
     // Constructor
-    public void WAnthro() {
+    public void AnthroWRA() {
     }
 
 

@@ -106,7 +106,7 @@ public class SectionF1Activity extends AppCompatActivity {
                     Toast.makeText(SectionF1Activity.this, "JSONException (AnthroChild): " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
                 anthc.setF101name(childNames.get(anthroChildListPos));
-                anthc.setF101(MainApp.selectedPW);
+                anthc.setF101(MainApp.selectedChild);
                 bi.setAnthc(anthc);
             }
 

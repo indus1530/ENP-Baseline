@@ -91,19 +91,13 @@
                             android:layout_height="match_parent"
                             android:text="@string/eh101" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <TextView
                             android:id="@+id/eh101"
+                            style="@style/sub_labels"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={preg.eh101}"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
+                            android:text="@{preg.eh101}" />
 
                     </LinearLayout>
 
@@ -132,14 +126,13 @@
                             android:layout_height="match_parent"
                             android:text="@string/eh102" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/eh102"
+                            style="@style/sub_labels"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/eh102"
-                            android:text="@={preg.eh102}" />
+                            android:text="@{preg.eh102}" />
 
                     </LinearLayout>
 
@@ -168,19 +161,13 @@
                             android:layout_height="match_parent"
                             android:text="@string/eh103" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <TextView
                             android:id="@+id/eh103"
+                            style="@style/sub_labels"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={preg.eh103}"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
+                            android:text="@{preg.eh103}" />
 
                     </LinearLayout>
 
@@ -209,19 +196,13 @@
                             android:layout_height="match_parent"
                             android:text="@string/eh104" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <TextView
                             android:id="@+id/eh104"
+                            style="@style/sub_labels"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={preg.eh104}"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
+                            android:text="@{preg.eh104}" />
 
                     </LinearLayout>
 
@@ -331,19 +312,13 @@
                             android:layout_weight="1"
                             android:text="@string/e102" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <TextView
                             android:id="@+id/e102"
+                            style="@style/sub_labels"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={preg.e102}"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
+                            android:text="@{preg.e102}" />
 
                     </LinearLayout>
 

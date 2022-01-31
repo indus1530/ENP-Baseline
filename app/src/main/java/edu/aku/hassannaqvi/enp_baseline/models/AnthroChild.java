@@ -65,7 +65,7 @@ public class AnthroChild extends BaseObservable implements Observable {
     private String f109 = _EMPTY_;
 
 
-    public void CAnthro() {
+    public void AnthroChild() {
     }
 
 

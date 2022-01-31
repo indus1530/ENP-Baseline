@@ -2128,6 +2128,7 @@ public class Form extends BaseObservable implements Observable {
             this.a322fx = json.getString("a322fx");
             this.a322g = json.getString("a322g");
             this.a322gx = json.getString("a322gx");
+            this.a322998 = json.getString("a322998");
         }
     }
 
@@ -2333,7 +2334,8 @@ public class Form extends BaseObservable implements Observable {
                 .put("a322f", a322f)
                 .put("a322fx", a322fx)
                 .put("a322g", a322g)
-                .put("a322gx", a322gx);
+                .put("a322gx", a322gx)
+                .put("a322998", a322998);
         return json.toString();
     }
 

@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.familyMember;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.form;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregFirstList;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregFirstListPos;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.pregnancy;
@@ -109,6 +110,10 @@ public class SectionE1Activity extends AppCompatActivity {
                 pregnancy.setE101(pwNames.get(pregFirstListPos));
                 pregnancy.setE102(MainApp.selectedPW);
                 bi.setPreg(pregnancy);
+                pregnancy.setEh101(form.getA105b());
+                pregnancy.setEh102(form.getA102());
+                pregnancy.setEh103(form.getA106());
+                pregnancy.setEh104(form.getA107());
 
             }
 

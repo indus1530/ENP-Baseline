@@ -187,7 +187,25 @@ public class SyncActivity extends AppCompatActivity {
 
                 }
 
+                //AnthroChild
+                uploadTables.add(new SyncModel(TableContracts.AnthroChildTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedAnthroChild());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(AnthroChild)" + e.getMessage(), Toast.LENGTH_LONG).show();
 
+                }
+
+                //AnthroWRA
+                uploadTables.add(new SyncModel(TableContracts.AnthroWRATable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedAnthroWRA());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(AnthroWRA)" + e.getMessage(), Toast.LENGTH_LONG).show();
+
+                }
 
 
                 //Entry Log

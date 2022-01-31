@@ -946,6 +946,71 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allChild;
     }
 
+    public JSONArray getUnsyncedAnthroChild() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = AnthroChildTable.COLUMN_SYNCED + " = '' ";
+
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = AnthroChildTable.COLUMN_ID + " ASC";
+
+        JSONArray all = new JSONArray();
+        c = db.query(
+                AnthroChildTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedAnthroChild: " + c.getCount());
+            AnthroChild anc = new AnthroChild();
+            all.put(anc.Hydrate(c).toJSONObject());
+        }
+
+        Log.d(TAG, "getUnsyncedAnthroChild: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedAnthroChild: " + all);
+        return all;
+    }
+
+    public JSONArray getUnsyncedAnthroWRA() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = AnthroWRATable.COLUMN_SYNCED + " = '' ";
+
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = AnthroWRATable.COLUMN_ID + " ASC";
+
+        JSONArray all = new JSONArray();
+        c = db.query(
+                AnthroWRATable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedAnthroWRA: " + c.getCount());
+            AnthroWRA wra = new AnthroWRA();
+            all.put(wra.Hydrate(c).toJSONObject());
+        }
+
+        Log.d(TAG, "getUnsyncedAnthroWRA: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedAnthroWRA: " + all);
+        return all;
+    }
 
 
     public JSONArray getUnsyncedEntryLog() throws JSONException {
@@ -1052,6 +1117,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = {id};
         int count = db.update(
                 ChildTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedAnthroChild(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(AnthroChildTable.COLUMN_SYNCED, true);
+        values.put(AnthroChildTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = AnthroChildTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                AnthroChildTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedAnthroWRA(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(AnthroWRATable.COLUMN_SYNCED, true);
+        values.put(AnthroWRATable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = AnthroWRATable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                AnthroWRATable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);

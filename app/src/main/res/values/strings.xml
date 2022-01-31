@@ -1060,6 +1060,7 @@
     <string name="c133998"> Don’t Know </string>
 
     <string name="c2"> C2: Ante-Natal Care: </string>
+    <string name="c2na"> This Section is NOT Applicable </string>
     <string name="c201">Did you see anyone for antenatal care during your last completed pregnancy with (name)?</string>
     <string name="c20101">Yes</string>
     <string name="c20102">No</string>
@@ -1213,6 +1214,7 @@
     <string name="c221998"> Don’t know </string>
 
     <string name="c3"> C3: Delivery &amp; Post-Natal Care: </string>
+    <string name="c3na"> This Section is NOT Applicable </string>
     <string name="c301">Who conducted the delivery of (name)?</string>
     <string name="c301t1">Health professional</string>
     <string name="c30101">Obstetrician</string>

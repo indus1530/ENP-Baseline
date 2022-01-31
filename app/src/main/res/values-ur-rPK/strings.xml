@@ -961,6 +961,8 @@
     <string name="c133"> آپ نے دوران حمل کتنی مرتبہ ،تشنج کی بیماری سے بچاؤ کے ٹیکے لگوائے ہیں ؟ </string>
     <string name="c133a"> تعداد </string>
     <string name="c133998"> معلوم نہیں </string>
+
+    <string name="c2na"> سیکشن لاگو نہیں ہوتا </string>
     <string name="c201"> کیا آپ نے گزشتہ حمل کے دوران ( نام ) کی پیدائش سے قبل کسی سے اپنا طبی معائنہ کروایا تھا ؟ </string>
     <string name="c20101"> ہاں </string>
     <string name="c20102"> نہیں </string>
@@ -1112,6 +1114,8 @@
     <string name="c221">آپ نے دوران حمل کتنی مرتبہ ،تشنج کی بیماری سے بچاؤ کے ٹیکے لگوائے تھے؟ </string>
     <string name="c221a"> تعداد </string>
     <string name="c221998">معلوم نہیں</string>
+
+    <string name="c3na"> سیکشن لاگو نہیں ہوتا </string>
     <string name="c301">(نام) کی  پیدائش کس نے کروائی تھی  ؟</string>
     <string name="c301t1">ہیلتھ پروفیشنل</string>
     <string name="c30101">ماہر زچہ و بچہ</string>

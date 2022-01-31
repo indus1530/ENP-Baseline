@@ -6,6 +6,8 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.RadioGroup;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -146,6 +148,7 @@ public class MWRA extends BaseObservable implements Observable {
     private String c132 = _EMPTY_;
     private String c133 = _EMPTY_;
     private String c133ax = _EMPTY_;
+    private String c2na = _EMPTY_;
     private String c201 = _EMPTY_;
     private String c202 = _EMPTY_;
     private String c20201 = _EMPTY_;
@@ -225,6 +228,7 @@ public class MWRA extends BaseObservable implements Observable {
     private String c220 = _EMPTY_;
     private String c221 = _EMPTY_;
     private String c221ax = _EMPTY_;
+    private String c3na = _EMPTY_;
     private String c301 = _EMPTY_;
     private String c30196x = _EMPTY_;
     private String c302 = _EMPTY_;
@@ -1767,6 +1771,24 @@ public class MWRA extends BaseObservable implements Observable {
 
 
     @Bindable
+    public String getC2na() {
+        return c2na;
+    }
+
+    public void setC2na(String c2na) {
+        if (this.c2na.equals(c2na)) return;
+        this.c2na = c2na;
+        setC201(c2na.equals("997") ? "" : this.c201);
+        setC207(c2na.equals("997") ? "" : this.c207);
+        setC212(c2na.equals("997") ? "" : this.c212);
+        setC216(c2na.equals("997") ? "" : this.c216);
+        setC219(c2na.equals("997") ? "" : this.c219);
+        setC220(c2na.equals("997") ? "" : this.c220);
+        notifyPropertyChanged(BR.c2na);
+    }
+
+
+    @Bindable
     public String getC201() {
         return c201;
     }
@@ -1782,14 +1804,12 @@ public class MWRA extends BaseObservable implements Observable {
         setC20207(c201.equals("1") ? this.c20207 : "");
         setC20208(c201.equals("1") ? this.c20208 : "");
         setC20296(c201.equals("1") ? this.c20296 : "");
-
         setC20301(c201.equals("1") ? this.c20301 : "");
         setC20302(c201.equals("1") ? this.c20302 : "");
         setC20303(c201.equals("1") ? this.c20303 : "");
         setC20304(c201.equals("1") ? this.c20304 : "");
         setC20305(c201.equals("1") ? this.c20305 : "");
         setC20396(c201.equals("1") ? this.c20396 : "");
-
         setC204w(c201.equals("1") ? this.c204w : "");
         setC204m(c201.equals("1") ? this.c204m : "");
         setC20498(c201.equals("1") ? this.c20498 : "");
@@ -1804,8 +1824,6 @@ public class MWRA extends BaseObservable implements Observable {
         setC20608(c201.equals("1") ? this.c20608 : "");
         setC20697(c201.equals("1") ? this.c20697 : "");
         setC20696(c201.equals("1") ? this.c20696 : "");
-
-
         notifyPropertyChanged(BR.c201);
     }
 
@@ -2570,9 +2588,8 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setC216(String c216) {
         this.c216 = c216;
-        setC217(c216.equals("2") ? "" : this.c217);
-        setC218(c216.equals("2") ? "" : this.c218);
-
+        setC217(c216.equals("1") ? this.c217 : "");
+        setC218(c216.equals("1") ? this.c218 : "");
         notifyPropertyChanged(BR.c216);
     }
 
@@ -2657,7 +2674,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setC221(String c221) {
         this.c221 = c221;
-        setC221ax(c221.equals("1") ? this.getC221ax() : "");
+        setC221ax(c221.equals("1") ? this.c221ax : "");
         notifyPropertyChanged(BR.c221);
     }
 
@@ -2669,6 +2686,34 @@ public class MWRA extends BaseObservable implements Observable {
     public void setC221ax(String c221ax) {
         this.c221ax = c221ax;
         notifyPropertyChanged(BR.c221ax);
+    }
+
+
+    @Bindable
+    public String getC3na() {
+        return c3na;
+    }
+
+    public void setC3na(String c3na) {
+        if (this.c3na.equals(c3na)) return;
+        this.c3na = c3na;
+        setC301(c3na.equals("997") ? "" : this.c301);
+        setC302(c3na.equals("997") ? "" : this.c302);
+        setC303(c3na.equals("997") ? "" : this.c303);
+        setC304(c3na.equals("997") ? "" : this.c304);
+        setC305(c3na.equals("997") ? "" : this.c305);
+        setC306(c3na.equals("997") ? "" : this.c306);
+        setC307(c3na.equals("997") ? "" : this.c307);
+        setC308(c3na.equals("997") ? "" : this.c308);
+        setC309(c3na.equals("997") ? "" : this.c309);
+        setC310(c3na.equals("997") ? "" : this.c310);
+        setC311(c3na.equals("997") ? "" : this.c311);
+        setC312(c3na.equals("997") ? "" : this.c312);
+        setC315(c3na.equals("997") ? "" : this.c315);
+        setC320(c3na.equals("997") ? "" : this.c320);
+        setC325(c3na.equals("997") ? "" : this.c325);
+        setC329(c3na.equals("997") ? "" : this.c329);
+        notifyPropertyChanged(BR.c3na);
     }
 
     @Bindable
@@ -2836,7 +2881,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setC310(String c310) {
         this.c310 = c310;
-        setC310hx(c310.equals("998") ? "" : this.c310hx);
+        setC310hx(c310.equals("1") ? this.c310hx : "");
         notifyPropertyChanged(BR.c310);
     }
 
@@ -3421,7 +3466,6 @@ public class MWRA extends BaseObservable implements Observable {
         setC32404(c320.equals("1") ? this.c32404 : "");
         setC32405(c320.equals("1") ? this.c32405 : "");
         setC32496(c320.equals("1") ? this.c32496 : "");
-
         notifyPropertyChanged(BR.c320);
     }
 
@@ -3808,7 +3852,6 @@ public class MWRA extends BaseObservable implements Observable {
         setC33115(c329.equals("1") ? this.c33115 : "");
         setC33116(c329.equals("1") ? this.c33116 : "");
         setC33196(c329.equals("1") ? this.c33196 : "");
-
         notifyPropertyChanged(BR.c329);
     }
 
@@ -5634,6 +5677,7 @@ public class MWRA extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
+            this.c2na = json.getString("c2na");
             this.c201 = json.getString("c201");
             this.c202 = json.getString("c202");
             this.c20201 = json.getString("c20201");
@@ -5721,6 +5765,7 @@ public class MWRA extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
+            this.c3na = json.getString("c3na");
             this.c301 = json.getString("c301");
             this.c30196x = json.getString("c30196x");
             this.c302 = json.getString("c302");
@@ -6120,7 +6165,8 @@ public class MWRA extends BaseObservable implements Observable {
     public String sC2toString() throws JSONException {
         Log.d(TAG, "sC2toString: ");
         JSONObject json = new JSONObject();
-        json.put("c201", c201)
+        json.put("c2na", c2na)
+                .put("c201", c201)
                 .put("c202", c202)
                 .put("c20201", c20201)
                 .put("c20202", c20202)
@@ -6205,7 +6251,7 @@ public class MWRA extends BaseObservable implements Observable {
     public String sC3toString() throws JSONException {
         Log.d(TAG, "sC3toString: ");
         JSONObject json = new JSONObject();
-        json
+        json.put("c3na", c3na)
                 .put("c301", c301)
                 .put("c30196x", c30196x)
                 .put("c302", c302)
@@ -6469,5 +6515,12 @@ public class MWRA extends BaseObservable implements Observable {
         return json.toString();
     }
 
+    public void clearRadioCheck(ViewGroup vg) {
+        for (int i = 0; i < vg.getChildCount(); i++) {
+            if (vg.getChildAt(i) instanceof RadioGroup) {
+                ((RadioGroup) vg.getChildAt(i)).clearCheck();
+            }
+        }
+    }
 
 }

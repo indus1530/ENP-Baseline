@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name"> ای این پی - بیس لائن </string>
-    <string name="btnSync">Download Data</string>
     <string name="btnUpload">Upload Data</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="splashText"> </string>
-    <string name="splashText2">  </string>
     <string name="check_pending_forms">CHECK PENDING FORMS</string>
-    <string name="open_new_form">OPEN NEW FORM</string>
     <string name="records_summary">Records Summary</string>
     <string name="main_menu">Main Menu</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
@@ -75,8 +72,6 @@
     <string name="f2">ٹیبل اف2: تولیدی عمر (15-49 سال) کی خواتین کے لیے بھرا جاۓ جو گھر میں موجود ہوں: -</string>
 
 
-    <string name="istatitle"> ماڈیول اے: گھرانے اور اس کے افراد کی معلومات </string>
-    <string name="istatitle1"> سیکشن ایچ 1: گھرانے کی معلومات </string>
     <string name="sa1inst"> ہدایات: ڈیٹا کلیکٹر بھریں </string>
     <string name="a101"> صوبہ </string>
     <string name="a102"> ضلع </string>
@@ -807,10 +802,8 @@
     <string name="bstab96"> دیگر وضاحت کریں </string>
 
 
-    <string name="cs1t1"> ماڈیول سی : تولیدی عمر کی خواتین ( 15 – 49 سال ) </string>
     <string name="cs1t2"> ہدایات: ماڈیول C اور D کی جواب دہندہ گھر میں دستیاب 5 سال سے کم عمر سب سے چھوٹے بچے کی ماں یا دیکھ بھال کرنے والی ( 15 – 49 سال عمر ) کی خاتون  ہوگی۔ </string>
     <string name="cs1t3">دیکھ بھال کرنے والے /والی کی صورت میں، ماڈیول C کو چھوڑدیں، اور صرف ماڈیول D کے  جوابات  پوچھیں۔</string>
-    <string name="cs1t4">سیکشن سی 1: تولیدی  معلومات</string>
     <string name="c101">منتخب خاتون کا نام</string>
     <string name="c102">جواب دہندہ کا بچے کے ساتھ رشتہ</string>
     <string name="c10201">ماں</string>
@@ -1881,7 +1874,6 @@
     <string name="d33013"> ویکسین بانجھ پن کا باعث بنتی ہے</string>
     <string name="d330998"> معلوم نہیں</string>
     <string name="d33096"> دیگر وضاحت کریں</string>
-    <string name="d4title">سیکشن D4: امراض اور ان کے علاج کے حصول کی جانب رویہ</string>
     <string name="d4instr">ہدایات: پانچ سال سے کم عمر منتخب بچے کے لیے پوچھا جائے</string>
     <string name="d401">گزشتہ دو ہفتے کے دوران آپ کے بچے کو  ان  بیماریوں میں سے کوئی بیماری ہوئی؟ ]ایک سے زیادہ جوابات آسکتے ہیں[</string>
     <string name="d40101">تیز بخار</string>
@@ -1941,7 +1933,6 @@
     <string name="eh103"> گھرانہ نمبر</string>
     <string name="eh104">سوالنامہ نمبر</string>
     <string name="e1title1">ماڈیول ای: ماڈیول ای: پہلی بار حاملہ 15 - 49 سال کی تولیدی عمر کی خواتین کے لیے </string>
-    <string name="e1title2">سیکشن ای 1:تولیدی  معلومات</string>
     <string name="e1title3">ہدایات: یہ سیکشن 15-49 سال کی عمر کی ان خاتون سے پوچھا جائے گا جو پہلی بار حاملہ ہو- اگر ایک سے زیادہ خواتین پہلی بار حمل سے ہیں تو ان کیلئے ایک اور فارم پر کیجیئے۔</string>
     <string name="e101">منتخب خاتون کا نام</string>
     <string name="e102">منتخب خاتون کا لائن نمبر</string>
@@ -2212,9 +2203,7 @@
     <string name="estab96"> دیگر وضاحت کریں </string>
 
 
-    <string name="f1titlea">ماڈیول ایف : جسمانی پیمائش اور طبی معائنہ</string>
     <string name="f1titleb">گھر میں موجود پانچ سال سے کم عمر تمام بچے اور  تولیدی صحت کی حامل  15 سے 49 سال کی خواتین کے لیے،  جو گھر میں موجود ہوں</string>
-    <string name="f1titlec"> ٹیبل ایف 1:  بچوں ( 0 – 59 ماہ کی عمر ) کے لیے پُر کیا جائے گا  جو گھر میں موجود ہوں ۔ </string>
     <string name="f101name">بچے کا نام</string>
     <string name="f101">لائن نمبر</string>
     <string name="f102">عمر(مہینوں میں)</string>

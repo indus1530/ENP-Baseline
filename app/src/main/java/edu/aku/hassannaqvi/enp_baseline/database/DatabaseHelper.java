@@ -532,6 +532,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Functions that dealing with table data
+    //Functions that dealing with table data
     public boolean doLogin(String username, String password) throws InvalidKeySpecException, NoSuchAlgorithmException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -554,6 +555,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
         while (c.moveToNext()) {
             loggedInUser = new Users().hydrate(c);
+
         }
 
         c.close();
@@ -562,7 +564,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (checkPassword(password, loggedInUser.getPassword())) {
             MainApp.user = loggedInUser;
-            MainApp.selectedDistrict = loggedInUser.getDist_id();
+            //  MainApp.selectedDistrict = loggedInUser.getDist_id();
             return c.getCount() > 0;
         } else {
             return false;

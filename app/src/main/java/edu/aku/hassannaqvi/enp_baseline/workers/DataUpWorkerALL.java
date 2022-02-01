@@ -168,11 +168,11 @@ public class DataUpWorkerALL extends Worker {
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("scrlog", nTitle, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel(uploadTable, nTitle, NotificationManager.IMPORTANCE_DEFAULT);
             notificationManager.createNotificationChannel(channel);
         }
 
-        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), uploadTable)
                 .setContentTitle(title)
                 .setContentText(task)
                 .setSmallIcon(R.drawable.app_icon);

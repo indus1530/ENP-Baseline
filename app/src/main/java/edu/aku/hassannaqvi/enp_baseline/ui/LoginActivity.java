@@ -250,7 +250,11 @@ public class LoginActivity extends AppCompatActivity {
                     MainApp.admin = username.contains("@") || username.contains("test1234");
                     MainApp.superuser = MainApp.user.getDesignation().equals("Supervisor");
                     Intent iLogin = null;
-                    if (MainApp.user.getEnabled().equals("1")) {
+                    if (MainApp.admin) {
+                        recordEntry("Successfull Login (Admin)");
+                        iLogin = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(iLogin);
+                    } else if (MainApp.user.getEnabled().equals("1")) {
                         if (!MainApp.user.getNewUser().equals("1")) { // TODO: getEnabled().equals("1")
                             recordEntry("Successfull Login");
                             iLogin = new Intent(LoginActivity.this, MainActivity.class);

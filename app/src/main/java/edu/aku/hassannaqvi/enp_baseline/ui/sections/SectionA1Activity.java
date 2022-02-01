@@ -57,12 +57,29 @@ public class SectionA1Activity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (bi.a108y.getText().toString().isEmpty()) return;
-                bi.a108d.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2021 ? 10f : 1f);
                 bi.a108m.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2021 ? 12f : 1f);
-                bi.a108d.setMaxvalue(Integer.parseInt(bi.a108y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
-                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+                bi.a108d.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2021 ? 10f : 1f);
                 bi.a108m.setMaxvalue(Integer.parseInt(bi.a108y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
                         Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        bi.a108m.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.a108y.getText().toString().isEmpty() || bi.a108m.getText().toString().isEmpty())
+                    return;
+                bi.a108d.setMaxvalue(Integer.parseInt(bi.a108y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(bi.a108m.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
             }
 
             @Override

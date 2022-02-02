@@ -817,7 +817,7 @@
                             android:maxLength="2"
                             android:text="@={form.a118}"
                             app:maxValue="50"
-                            app:minValue="1"
+                            app:minValue="0"
                             app:type="range" />
 
                     </LinearLayout>

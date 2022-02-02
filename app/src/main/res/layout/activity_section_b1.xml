@@ -278,11 +278,11 @@
                                 android:layout_weight="1"
                                 android:enabled="@{!rcpt.b10498.equals(`998`)}"
                                 android:gravity="center"
-                                android:hint="#"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="1"
+                                android:maxLength="2"
                                 android:text="@={rcpt.b104y}"
-                                app:maxValue="9"
+                                app:maxValue="13"
                                 app:minValue="0"
                                 app:type="range" />
 

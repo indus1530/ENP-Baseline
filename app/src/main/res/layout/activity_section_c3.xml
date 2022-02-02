@@ -80,7 +80,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:checked="@{mwra.c3na.equals(`997`)}"
-                                android:onClick="@{()->mwra.setC3na(mwra.c3na.equals(`997`)?``:`997`) + mwra.clearRgs(llc3na)}"
+                                android:onClick="@{()->mwra.setC3na(mwra.c3na.equals(`997`)?``:`997`) + c301.clearCheck() + c302.clearCheck() + c303.clearCheck() + c305.clearCheck() + c306.clearCheck() + c307.clearCheck() + c308.clearCheck() + c309.clearCheck() + c310.clearCheck() + c311.clearCheck() + c312.clearCheck() + c314.clearCheck() + c315.clearCheck() + c317.clearCheck() + c320.clearCheck() + c322.clearCheck() + c325.clearCheck() + c326.clearCheck() + c327.clearCheck() + c328.clearCheck() + c329.clearCheck() + c330.clearCheck()}"
                                 android:tag="-1"
                                 android:text="@string/c3na" />
 

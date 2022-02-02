@@ -140,7 +140,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.c501.equals(`2`)}"
-                                android:onClick="@{()->mwra.setC501(`2`) + c5012.clearCheck() + c505.clearCheck()}"
+                                android:onClick="@{()->mwra.setC501(`2`) + c5012.clearCheck()}"
                                 android:text="@string/c50102" />
 
                         </RadioGroup>
@@ -305,7 +305,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.c502.equals(`2`)}"
-                                android:onClick="@{()->mwra.setC502(`2`) + c5022.clearCheck() + c505.clearCheck()}"
+                                android:onClick="@{()->mwra.setC502(`2`) + c5022.clearCheck()}"
                                 android:text="@string/c50202" />
 
                         </RadioGroup>
@@ -470,7 +470,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.c503.equals(`2`)}"
-                                android:onClick="@{()->mwra.setC503(`2`) + c5032.clearCheck() + c505.clearCheck()}"
+                                android:onClick="@{()->mwra.setC503(`2`) + c5032.clearCheck()}"
                                 android:text="@string/c50302" />
 
                         </RadioGroup>
@@ -635,7 +635,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.c504.equals(`2`)}"
-                                android:onClick="@{()->mwra.setC504(`2`) + c5042.clearCheck() + c505.clearCheck()}"
+                                android:onClick="@{()->mwra.setC504(`2`) + c5042.clearCheck()}"
                                 android:text="@string/c50402" />
 
                         </RadioGroup>

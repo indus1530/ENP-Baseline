@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,12 +38,30 @@ public class SectionC5Activity extends AppCompatActivity {
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c5);
         bi.setMwra(mwra);
+        setupSkips();
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 
 
+    private void setupSkips() {
+        clearRgs(bi.c501);
+        clearRgs(bi.c502);
+        clearRgs(bi.c503);
+        clearRgs(bi.c504);
+    }
+
+    private void clearRgs(RadioGroup rg) {
+        rg.setOnCheckedChangeListener((group, id) -> {
+            if (mwra.getC501().equals("2")
+                    && mwra.getC502().equals("2")
+                    && mwra.getC503().equals("2")
+                    && mwra.getC504().equals("2")) {
+                bi.c505.clearCheck();
+            }
+        });
+    }
 
 
     private boolean updateDB() {

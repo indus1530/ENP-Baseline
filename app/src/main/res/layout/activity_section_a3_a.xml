@@ -539,17 +539,17 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/a304"
-                                style="@style/textView"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="##"
+                                android:gravity="center"
+                                android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:text="@={form.a304}"
                                 app:defaultValue="998"
                                 app:maxValue="180"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>

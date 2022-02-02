@@ -158,6 +158,16 @@ public class SyncActivity extends AppCompatActivity {
 
                 }
 
+                //Recipient
+                uploadTables.add(new SyncModel(TableContracts.RecipientTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedRecipient());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(Recipient)" + e.getMessage(), Toast.LENGTH_LONG).show();
+
+                }
+
                 //MWRA
                 uploadTables.add(new SyncModel(TableContracts.MwraTable.TABLE_NAME));
                 try {

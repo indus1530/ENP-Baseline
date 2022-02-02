@@ -2124,50 +2124,44 @@
                                     <RadioGroup
                                         android:id="@+id/c124"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
+                                        android:layout_height="wrap_content">
 
                                         <RadioButton
                                             android:id="@+id/c12401"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:checked="@{mwra.c124.equals(`1`)}"
                                             android:onClick="@{()->mwra.setC124(`1`)}"
                                             android:text="@string/c12401" />
 
                                         <RadioButton
                                             android:id="@+id/c12402"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:checked="@{mwra.c124.equals(`2`)}"
                                             android:onClick="@{()->mwra.setC124(`2`)}"
                                             android:text="@string/c12402" />
 
                                         <RadioButton
                                             android:id="@+id/c12403"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:checked="@{mwra.c124.equals(`3`)}"
                                             android:onClick="@{()->mwra.setC124(`3`)}"
                                             android:text="@string/c12403" />
 
                                         <RadioButton
                                             android:id="@+id/c12404"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:checked="@{mwra.c124.equals(`4`)}"
                                             android:onClick="@{()->mwra.setC124(`4`)}"
                                             android:text="@string/c12404" />
 
                                         <RadioButton
                                             android:id="@+id/c124998"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:checked="@{mwra.c124.equals(`998`)}"
                                             android:onClick="@{()->mwra.setC124(`998`)}"
                                             android:text="@string/c124998" />
@@ -2358,50 +2352,44 @@
                                     <RadioGroup
                                         android:id="@+id/c127"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
+                                        android:layout_height="wrap_content">
 
                                         <RadioButton
                                             android:id="@+id/c12701"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:checked="@{mwra.c127.equals(`1`)}"
                                             android:onClick="@{()->mwra.setC127(`1`)}"
                                             android:text="@string/c12701" />
 
                                         <RadioButton
                                             android:id="@+id/c12702"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:checked="@{mwra.c127.equals(`2`)}"
                                             android:onClick="@{()->mwra.setC127(`2`)}"
                                             android:text="@string/c12702" />
 
                                         <RadioButton
                                             android:id="@+id/c12703"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:checked="@{mwra.c127.equals(`3`)}"
                                             android:onClick="@{()->mwra.setC127(`3`)}"
                                             android:text="@string/c12703" />
 
                                         <RadioButton
                                             android:id="@+id/c12704"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:checked="@{mwra.c127.equals(`4`)}"
                                             android:onClick="@{()->mwra.setC127(`4`)}"
                                             android:text="@string/c12704" />
 
                                         <RadioButton
                                             android:id="@+id/c127998"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:checked="@{mwra.c127.equals(`998`)}"
                                             android:onClick="@{()->mwra.setC127(`998`)}"
                                             android:text="@string/c127998" />

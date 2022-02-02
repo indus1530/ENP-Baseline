@@ -845,6 +845,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
+    public JSONArray getUnsyncedRecipient() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = RecipientTable.COLUMN_SYNCED + " = '' ";
+
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = RecipientTable.COLUMN_ID + " ASC";
+
+        JSONArray all = new JSONArray();
+        c = db.query(
+                RecipientTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedRecipient: " + c.getCount());
+            Recipient rcpt = new Recipient();
+            all.put(rcpt.Hydrate(c).toJSONObject());
+        }
+
+        c.close();
+
+        Log.d(TAG, "getUnsyncedRecipient: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedRecipient: " + all);
+        return all;
+    }
+
     public JSONArray getUnsyncedMWRA() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1077,6 +1112,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = {id};
         int count = db.update(
                 FamilyMembersTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedRecipient(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(RecipientTable.COLUMN_SYNCED, true);
+        values.put(RecipientTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = RecipientTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                RecipientTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);

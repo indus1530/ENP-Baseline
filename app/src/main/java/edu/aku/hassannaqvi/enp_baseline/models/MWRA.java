@@ -6,7 +6,7 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
-import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import androidx.databinding.BaseObservable;
@@ -6515,7 +6515,8 @@ public class MWRA extends BaseObservable implements Observable {
         return json.toString();
     }
 
-    public void clearRadioCheck(ViewGroup vg) {
+
+    public void clearRgs(LinearLayout vg) {
         for (int i = 0; i < vg.getChildCount(); i++) {
             if (vg.getChildAt(i) instanceof RadioGroup) {
                 ((RadioGroup) vg.getChildAt(i)).clearCheck();

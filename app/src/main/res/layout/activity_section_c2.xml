@@ -80,7 +80,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:checked="@{mwra.c2na.equals(`997`)}"
-                                android:onClick="@{()->mwra.setC2na(mwra.c2na.equals(`997`)?``:`997`) + mwra.clearRadioCheck(llc2na)}"
+                                android:onClick="@{()->mwra.setC2na(mwra.c2na.equals(`997`)?``:`997`) + mwra.clearRgs(llc2na)}"
                                 android:tag="-1"
                                 android:text="@string/c2na" />
 

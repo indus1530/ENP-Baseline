@@ -6,8 +6,6 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
-import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -6517,15 +6515,6 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("cstab", cstab)
                 .put("cstab96x", cstab96x);
         return json.toString();
-    }
-
-
-    public void clearRgs(LinearLayout vg) {
-        for (int i = 0; i < vg.getChildCount(); i++) {
-            if (vg.getChildAt(i) instanceof RadioGroup) {
-                ((RadioGroup) vg.getChildAt(i)).clearCheck();
-            }
-        }
     }
 
 }

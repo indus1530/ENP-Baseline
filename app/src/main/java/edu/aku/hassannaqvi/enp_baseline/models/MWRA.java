@@ -4367,6 +4367,7 @@ public class MWRA extends BaseObservable implements Observable {
         setC5011(c501.equals("2") ? "" : this.c5011);
         setC5012(c501.equals("2") ? "" : this.c5012);
         setC5013(c501.equals("2") ? "" : this.c5013);
+        setC505(c501.equals("1") || this.c502.equals("1") || this.c503.equals("1") || this.c504.equals("1") ? this.c505 : "");
         notifyPropertyChanged(BR.c501);
     }
 
@@ -4410,6 +4411,7 @@ public class MWRA extends BaseObservable implements Observable {
         setC5021(c502.equals("2") ? "" : this.c5021);
         setC5022(c502.equals("2") ? "" : this.c5022);
         setC5023(c502.equals("2") ? "" : this.c5023);
+        setC505(c502.equals("1") || this.c501.equals("1") || this.c503.equals("1") || this.c504.equals("1") ? this.c505 : "");
         notifyPropertyChanged(BR.c502);
     }
 
@@ -4453,6 +4455,7 @@ public class MWRA extends BaseObservable implements Observable {
         setC5031(c503.equals("2") ? "" : this.c5031);
         setC5032(c503.equals("2") ? "" : this.c5032);
         setC5033(c503.equals("2") ? "" : this.c5033);
+        setC505(c503.equals("1") || this.c501.equals("1") || this.c502.equals("1") || this.c504.equals("1") ? this.c505 : "");
         notifyPropertyChanged(BR.c503);
     }
 
@@ -4497,6 +4500,7 @@ public class MWRA extends BaseObservable implements Observable {
         setC5041(c504.equals("2") ? "" : this.c5041);
         setC5042(c504.equals("2") ? "" : this.c5042);
         setC5043(c504.equals("2") ? "" : this.c5043);
+        setC505(c504.equals("1") || this.c501.equals("1") || this.c502.equals("1") || this.c503.equals("1") ? this.c505 : "");
         notifyPropertyChanged(BR.c504);
     }
 

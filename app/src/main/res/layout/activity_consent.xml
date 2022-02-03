@@ -560,6 +560,7 @@
                                 android:id="@+id/as1q23a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:textDirection="ltr"
                                 android:gravity="center"
                                 android:hint="009XX000000000"
                                 android:inputType="number"

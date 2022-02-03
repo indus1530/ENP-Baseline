@@ -157,6 +157,7 @@
                             android:id="@+id/f102"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textDirection="ltr"
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
@@ -795,6 +796,7 @@
                             android:id="@+id/f108"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textDirection="ltr"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/f108"
                             android:text="@={anthc.f108}" />

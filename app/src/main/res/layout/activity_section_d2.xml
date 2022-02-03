@@ -2799,6 +2799,7 @@
                             android:id="@+id/d207s"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textDirection="ltr"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/d207s"
                             android:text="@={child.d207s}" />
@@ -3100,6 +3101,7 @@
                                         android:id="@+id/d21196x"
                                         android:layout_width="match_parent"
                                         android:layout_height="52dp"
+                                        android:textDirection="ltr"
                                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                         android:hint="@string/d21196"
                                         android:tag="d21196"

@@ -198,7 +198,8 @@
                             <EditText
                                 android:id="@+id/d40196x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
+                                android:textDirection="ltr"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/d40196"
                                 android:tag="d40196"
@@ -419,7 +420,8 @@
                                     <EditText
                                         android:id="@+id/d40396x"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="52dp"
+                                        android:textDirection="ltr"
                                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                         android:hint="@string/d40396"
                                         android:tag="d40396"
@@ -580,7 +582,8 @@
                                     <EditText
                                         android:id="@+id/d40496x"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="52dp"
+                                        android:textDirection="ltr"
                                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                         android:hint="@string/d40496"
                                         android:tag="d40496"
@@ -726,6 +729,7 @@
                                     android:id="@+id/dstatusb96x"
                                     android:layout_width="match_parent"
                                     android:layout_height="52dp"
+                                    android:textDirection="ltr"
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/dstab96"
                                     android:tag="dstab96"

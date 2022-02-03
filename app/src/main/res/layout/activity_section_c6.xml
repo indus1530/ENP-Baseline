@@ -1327,6 +1327,7 @@
                                     android:id="@+id/cstatusb96x"
                                     android:layout_width="match_parent"
                                     android:layout_height="52dp"
+                                    android:textDirection="ltr"
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cstab96"
                                     android:tag="cstab96"

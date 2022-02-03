@@ -658,6 +658,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:textDirection="ltr"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c50496"
                                 android:text="@={mwra.c50496x}" />
@@ -843,6 +844,7 @@
                             android:id="@+id/c50596x"
                             android:layout_width="match_parent"
                             android:layout_height="52dp"
+                            android:textDirection="ltr"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/c50596"
                             android:text="@={mwra.c50596x}"

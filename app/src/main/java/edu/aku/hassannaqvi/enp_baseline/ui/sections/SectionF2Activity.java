@@ -106,6 +106,7 @@ public class SectionF2Activity extends AppCompatActivity {
                 }
                 anthw.setF201name(wraNames.get(anthroWRAListPos));
                 anthw.setF201(MainApp.selectedMWRA);
+                anthw.setF202(familyMember.getA206y());
                 bi.setAnthw(anthw);
             }
 

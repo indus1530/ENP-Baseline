@@ -61,6 +61,9 @@ public class SectionA1Activity extends AppCompatActivity {
                 bi.a108d.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2021 ? 10f : 1f);
                 bi.a108m.setMaxvalue(Integer.parseInt(bi.a108y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
                         Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
+                bi.a108d.setMaxvalue(Integer.parseInt(bi.a108y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(bi.a108m.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
             }
 
             @Override

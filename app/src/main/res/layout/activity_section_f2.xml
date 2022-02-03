@@ -141,14 +141,14 @@
                                 android:layout_height="match_parent"
                                 android:text="@string/f202" />
 
-                            <TextView
+                            <!--<TextView
                                 android:id="@+id/f202"
                                 style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@={anthw.f202}" />
+                                android:text="@={anthw.f202}" />-->
 
-                            <!--<com.edittextpicker.aliazaz.EditTextPicker
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/f202"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -160,7 +160,7 @@
                                 android:text="@={anthw.f202}"
                                 app:maxValue="49"
                                 app:minValue="15"
-                                app:type="range" />-->
+                                app:type="range" />
 
                         </LinearLayout>
 

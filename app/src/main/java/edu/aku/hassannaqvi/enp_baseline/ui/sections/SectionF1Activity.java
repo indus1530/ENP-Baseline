@@ -107,7 +107,7 @@ public class SectionF1Activity extends AppCompatActivity {
                 }
                 anthc.setF101name(childNames.get(anthroChildListPos));
                 anthc.setF101(MainApp.selectedChild);
-                anthc.setF102(String.valueOf(familyMember.getAgeMon()));
+                //anthc.setF102(String.valueOf(familyMember.getAgeMon()));
                 bi.setAnthc(anthc);
             }
 

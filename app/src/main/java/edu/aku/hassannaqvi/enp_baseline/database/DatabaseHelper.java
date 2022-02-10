@@ -808,6 +808,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+    public JSONArray getUnsyncedEntryLog() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = EntryLogTable.COLUMN_SYNCED + " = '' ";
+
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = EntryLogTable.COLUMN_ID + " ASC";
+
+        JSONArray all = new JSONArray();
+        c = db.query(
+                EntryLogTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedEntryLog: " + c.getCount());
+            EntryLog entryLog = new EntryLog();
+            all.put(entryLog.Hydrate(c).toJSONObject());
+        }
+        Log.d(TAG, "getUnsyncedEntryLog: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedEntryLog: " + all);
+        return all;
+    }
+
     public JSONArray getUnsyncedFamilyMembers() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1046,39 +1078,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         Log.d(TAG, "getUnsyncedAnthroWRA: " + all.toString().length());
         Log.d(TAG, "getUnsyncedAnthroWRA: " + all);
-        return all;
-    }
-
-
-    public JSONArray getUnsyncedEntryLog() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-        String whereClause;
-        whereClause = EntryLogTable.COLUMN_SYNCED + " = '' ";
-
-        String[] whereArgs = null;
-        String groupBy = null;
-        String having = null;
-        String orderBy = EntryLogTable.COLUMN_ID + " ASC";
-
-        JSONArray all = new JSONArray();
-        c = db.query(
-                EntryLogTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            Log.d(TAG, "getUnsyncedEntryLog: " + c.getCount());
-            EntryLog entryLog = new EntryLog();
-            all.put(entryLog.Hydrate(c).toJSONObject());
-        }
-        Log.d(TAG, "getUnsyncedEntryLog: " + all.toString().length());
-        Log.d(TAG, "getUnsyncedEntryLog: " + all);
         return all;
     }
 

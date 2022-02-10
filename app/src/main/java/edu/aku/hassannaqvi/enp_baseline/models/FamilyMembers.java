@@ -84,6 +84,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String a21302 = _EMPTY_;
     private String a214 = _EMPTY_;
     private String a215 = _EMPTY_;
+    private final String a215x = _EMPTY_;
 
     private boolean expanded;
     private boolean mwra;
@@ -628,6 +629,17 @@ public class FamilyMembers extends BaseObservable implements Observable {
         //this.a215 = a215;
         notifyPropertyChanged(BR.a215);
     }
+
+    /*@Bindable
+    public String getA215x() {
+        String xString = new String(Base64.decode(new StringBuilder(a215x).reverse().toString(), Base64.NO_WRAP));
+        return this.a215 = xString.substring(0, xString.length() - 2);
+    }
+
+    public void setA215x() {
+        this.a215x = a215 + "" + (new Random().nextInt(9 - 0 + 1) + 0);
+        this.a215x = new StringBuilder(Base64.encodeToString((a215).getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP)).reverse().toString();
+    }*/
 
 
     @Bindable

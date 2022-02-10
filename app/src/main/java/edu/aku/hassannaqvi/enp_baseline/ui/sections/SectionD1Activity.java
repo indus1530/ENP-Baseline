@@ -139,7 +139,7 @@ public class SectionD1Activity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-            if (MainApp.familyMember.getAgeMon() >= 6 && MainApp.familyMember.getAgeMon() <= 23)
+            if (MainApp.familyMember.getAgeMon() <= 23)
                 startActivity(new Intent(this, SectionD2Activity.class));
             else startActivity(new Intent(this, SectionD3Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

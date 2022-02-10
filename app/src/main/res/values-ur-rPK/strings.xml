@@ -195,10 +195,12 @@
     <string name="a21302"> باپ کا لائن نمبر </string>
 
     <string name="Q_a214">a214</string>
-    <string name="a214">سروے کے وقت موجودگی</string>
-    <string name="a21401">موجود</string>
-    <string name="a21402">غیرموجود</string>
-    <string name="a301">گھرانے کے سربراہ کی مادری زبان کیا ہے ؟</string>
+    <string name="a214"> سروے کے وقت موجودگی </string>
+    <string name="a21401"> موجود </string>
+    <string name="a21402"> غیر موجود </string>
+    <string name="Q_a215"> a215 </string>
+    <string name="a215"> گھر کے سربراہ کا فون نمبر </string>
+    <string name="a301">گھرانے کے سربراہ کی مادری زبان کیا ہے ؟ </string>
     <string name="a30101">اردو</string>
     <string name="a30102">پنجابی</string>
     <string name="a30103">سند ھی</string>
@@ -1109,18 +1111,18 @@
     <string name="c221998">معلوم نہیں</string>
 
     <string name="c3na"> سیکشن لاگو نہیں ہوتا </string>
-    <string name="c301">(نام) کی  پیدائش کس نے کروائی تھی  ؟</string>
-    <string name="c301t1">ہیلتھ پروفیشنل</string>
-    <string name="c30101">ماہر زچہ و بچہ</string>
-    <string name="c30102">ڈاکٹر</string>
-    <string name="c30103">نرس</string>
-    <string name="c30104">مڈ وائف</string>
-    <string name="c30105">کمیونٹی مڈوايف</string>
-    <string name="c301t2">دیگر اشخاص</string>
-    <string name="c30106">روایتی دائی</string>
-    <string name="c30107">رشتہ دار/دوست/ پڑوسی</string>
-    <string name="c30108">لیڈی ہیلتھ ورکر</string>
-    <string name="c30196">دیگر وضاحت کریں</string>
+    <string name="c301"> ( نام ) کی پیدائش کس نے کروائی تھی ؟ </string>
+    <string name="c301t1"> ہیلتھ پروفیشنل </string>
+    <string name="c30101"> ماہر زچہ و بچہ </string>
+    <string name="c30102"> ڈاکٹر </string>
+    <string name="c30103"> نرس </string>
+    <string name="c30104"> لیڈی ہیلتھ وزٹر </string>
+    <string name="c30105"> کمیونٹی مڈوايف </string>
+    <string name="c301t2"> دیگر اشخاص </string>
+    <string name="c30106"> روایتی دائی </string>
+    <string name="c30107"> رشتہ دار / دوست / پڑوسی </string>
+    <string name="c30108"> لیڈی ہیلتھ ورکر </string>
+    <string name="c30196"> دیگر وضاحت کریں </string>
     <string name="c302">آپ کے بچے(نام) کی پیدائش کس جگہ ہوئی تھی؟ پیدائش  کی جگہ کو شناخت کرنے کے لیے سوالات پوچھیں </string>
     <string name="c302t1">گھر</string>
     <string name="c30201">جواب دہندہ کے گھر پر</string>

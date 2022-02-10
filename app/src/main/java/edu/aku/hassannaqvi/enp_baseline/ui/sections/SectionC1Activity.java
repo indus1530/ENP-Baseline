@@ -181,6 +181,10 @@ public class SectionC1Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
+        if (!mwra.getC106().isEmpty() && !mwra.getC108().isEmpty()) {
+            if (Integer.parseInt(mwra.getC108()) > Integer.parseInt(mwra.getC106()))
+                return Validator.emptyCustomTextBox(this, bi.c108, "Could Not be Greater than C106");
+        }
         if (!mwra.getC112wk().isEmpty() && !mwra.getC112mm().isEmpty()) {
             if (Integer.parseInt(mwra.getC112wk()) + Integer.parseInt(mwra.getC112mm()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.c112wk, "All Values Can't be zero");

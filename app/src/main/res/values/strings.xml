@@ -119,7 +119,7 @@
 
 
     <!--Error Messages-->
-    <string name="upd_db_form"> updateDB(Form):\t </string>
+    <string name="upd_db_form" translatable="false"> updateDB(Form):\t </string>
     <string name="upd_db_food_consumption" translatable="false"> updateDB(FoodConsumption):\t </string>
     <string name="upd_db_error" translatable="false"> Updating Database… ERROR! </string>
     <string name="db_excp_error" translatable="false"> Database Exception... ERROR! </string>
@@ -302,6 +302,8 @@
     <string name="a214">Availability at the time of survey</string>
     <string name="a21401">Available</string>
     <string name="a21402">Unavailable</string>
+    <string name="Q_a215"> a215 </string>
+    <string name="a215"> Contact No of Head of Household </string>
 
     <string name="a3"> A3: Socio-Economic status (SES): </string>
     <string name="a301">What is the mother tongue of the head of the household?</string>

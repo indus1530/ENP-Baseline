@@ -318,7 +318,7 @@
                                     android:text="@={mwra.c10501x}"
                                     android:visibility="@{mwra.c105.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="49"
-                                    app:minValue="12"
+                                    app:minValue="9"
                                     app:type="range" />
 
                                 <RadioButton

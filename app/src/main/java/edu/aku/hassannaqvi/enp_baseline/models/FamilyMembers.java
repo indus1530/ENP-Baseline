@@ -80,6 +80,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String a21301 = _EMPTY_;
     private String a21302 = _EMPTY_;
     private String a214 = _EMPTY_;
+    private String a215 = _EMPTY_;
 
     private boolean expanded;
     private boolean mwra;
@@ -259,6 +260,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setA201(String a201) {
         this.a201 = a201;
+        setA215(a201.equals("1") ? this.a215 : "");
         notifyPropertyChanged(BR.a201);
     }
 
@@ -604,6 +606,16 @@ public class FamilyMembers extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.a214);
     }
 
+    @Bindable
+    public String getA215() {
+        return a215;
+    }
+
+    public void setA215(String a215) {
+        this.a215 = a215;
+        notifyPropertyChanged(BR.a215);
+    }
+
 
     @Bindable
     public boolean isMwra() {
@@ -694,6 +706,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
             this.a21301 = json.getString("a21301");
             this.a21302 = json.getString("a21302");
             this.a214 = json.getString("a214");
+            this.a215 = json.getString("a215");
         }
     }
 
@@ -754,7 +767,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 .put("a21296x", a21296x)
                 .put("a21301", a21301)
                 .put("a21302", a21302)
-                .put("a214", a214);
+                .put("a214", a214)
+                .put("a215", a215);
         return json.toString();
     }
 

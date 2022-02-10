@@ -116,9 +116,11 @@ public class LoginActivity extends AppCompatActivity {
         MainApp.user = new Users();
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
         dbBackup();
+/*
+        MainApp.recipient = new Recipient();
 
-
-/*        String num1 = Base64.encodeToString((new StringBuilder("1234567890123").reverse()).toString().getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP);
+        bi.setRcpt(MainApp.recipient);
+        String num1 = Base64.encodeToString((new StringBuilder("1234567890123").reverse()).toString().getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP);
         String num2 = new StringBuilder(Base64.encodeToString("4567890123456XX".getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP)).reverse().toString();
         String num3 = Base64.encodeToString("7890123456789".getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP);
         String num4 = Base64.encodeToString("00923212304303".getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP);

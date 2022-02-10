@@ -407,13 +407,19 @@ public class Recipient extends BaseObservable implements Observable {
     @Bindable
     public String getB103() {
         //return b103;
-        String xString = new String(Base64.decode(new StringBuilder(b103).reverse().toString(), Base64.NO_WRAP));
-        return xString.substring(0, xString.length() - 2);
+        if (b103.length() > 2) {
+            String xString = new String(Base64.decode(new StringBuilder(b103).reverse().toString(), Base64.NO_WRAP));
+            Log.d(TAG, "getB103: " + xString);
+            return xString.substring(0, xString.length() - 2);
+        } else {
+            return b103;
+        }
     }
 
     public void setB103(String b103) {
         this.b103 = b103 + "" + (new Random().nextInt(99 - 10 + 1) + 10);
-        this.b103 = new StringBuilder(Base64.encodeToString((b103).getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP)).reverse().toString();
+        this.b103 = new StringBuilder(Base64.encodeToString(this.b103.getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP)).reverse().toString();
+        Log.d(TAG, "setB103: " + this.b103);
         //this.b103 = b103;
         notifyPropertyChanged(BR.b103);
     }
@@ -586,7 +592,6 @@ public class Recipient extends BaseObservable implements Observable {
         setB108(b10898.equals("998") ? "" : this.b108);
         notifyPropertyChanged(BR.b10898);
     }
-
 
 
     @Bindable

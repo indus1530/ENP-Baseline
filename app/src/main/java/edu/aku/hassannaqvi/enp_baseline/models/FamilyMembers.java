@@ -4,6 +4,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
+import android.util.Base64;
 import android.util.Log;
 
 import androidx.databinding.BaseObservable;
@@ -14,10 +15,12 @@ import androidx.databinding.PropertyChangeRegistry;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Random;
 
 import edu.aku.hassannaqvi.enp_baseline.BR;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.FamilyMembersTable;
@@ -608,11 +611,21 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     @Bindable
     public String getA215() {
-        return a215;
+        //return a215;
+        if (a215.length() > 2) {
+            String xString = new String(Base64.decode(new StringBuilder(a215).reverse().toString(), Base64.NO_WRAP));
+            Log.d(TAG, "getA215: " + xString);
+            return xString.substring(0, xString.length() - 2);
+        } else {
+            return a215;
+        }
     }
 
     public void setA215(String a215) {
-        this.a215 = a215;
+        this.a215 = a215 + "" + (new Random().nextInt(99 - 10 + 1) + 10);
+        this.a215 = new StringBuilder(Base64.encodeToString(this.a215.getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP)).reverse().toString();
+        Log.d(TAG, "setA215: " + this.a215);
+        //this.a215 = a215;
         notifyPropertyChanged(BR.a215);
     }
 

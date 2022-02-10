@@ -4,6 +4,7 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
+import android.util.Base64;
 import android.util.Log;
 
 import androidx.databinding.BaseObservable;
@@ -14,9 +15,11 @@ import androidx.databinding.PropertyChangeRegistry;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Random;
 
 import edu.aku.hassannaqvi.enp_baseline.BR;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts.RecipientTable;
@@ -403,11 +406,15 @@ public class Recipient extends BaseObservable implements Observable {
 
     @Bindable
     public String getB103() {
-        return b103;
+        //return b103;
+        String xString = new String(Base64.decode(new StringBuilder(b103).reverse().toString(), Base64.NO_WRAP));
+        return xString.substring(0, xString.length() - 2);
     }
 
     public void setB103(String b103) {
-        this.b103 = b103;
+        this.b103 = b103 + "" + (new Random().nextInt(99 - 10 + 1) + 10);
+        this.b103 = new StringBuilder(Base64.encodeToString((b103).getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP)).reverse().toString();
+        //this.b103 = b103;
         notifyPropertyChanged(BR.b103);
     }
 

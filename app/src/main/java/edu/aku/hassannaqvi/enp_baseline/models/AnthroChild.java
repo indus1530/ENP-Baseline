@@ -46,7 +46,8 @@ public class AnthroChild extends BaseObservable implements Observable {
     // FIELD VARIABLES
     private String f101name = _EMPTY_;
     private String f101 = _EMPTY_;
-    private String f102 = _EMPTY_;
+    private String f102m = _EMPTY_;
+    private String f102d = _EMPTY_;
     private String f103 = _EMPTY_;
     private String f10401 = _EMPTY_;
     private String f10402 = _EMPTY_;
@@ -251,13 +252,23 @@ public class AnthroChild extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getF102() {
-        return f102;
+    public String getF102m() {
+        return f102m;
     }
 
-    public void setF102(String f102) {
-        this.f102 = f102;
-        notifyPropertyChanged(BR.f102);
+    public void setF102m(String f102m) {
+        this.f102m = f102m;
+        notifyPropertyChanged(BR.f102m);
+    }
+
+    @Bindable
+    public String getF102d() {
+        return f102d;
+    }
+
+    public void setF102d(String f102d) {
+        this.f102d = f102d;
+        notifyPropertyChanged(BR.f102d);
     }
 
     @Bindable
@@ -487,7 +498,8 @@ public class AnthroChild extends BaseObservable implements Observable {
             json = new JSONObject(string);
             this.f101name = json.getString("f101name");
             this.f101 = json.getString("f101");
-            this.f102 = json.getString("f102");
+            this.f102m = json.getString("f102m");
+            this.f102d = json.getString("f102d");
             this.f103 = json.getString("f103");
             this.f10401 = json.getString("f10401");
             this.f10402 = json.getString("f10402");
@@ -537,7 +549,8 @@ public class AnthroChild extends BaseObservable implements Observable {
         JSONObject json = new JSONObject();
         json.put("f101name", f101name)
                 .put("f101", f101)
-                .put("f102", f102)
+                .put("f102m", f102m)
+                .put("f102d", f102d)
                 .put("f103", f103)
                 .put("f10401", f10401)
                 .put("f10402", f10402)

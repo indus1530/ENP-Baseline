@@ -153,24 +153,47 @@
                             android:layout_height="match_parent"
                             android:text="@string/f102" />
 
-                       <!-- <TextView
-                            android:id="@+id/f102"
-                            style="@style/sub_labels"
-                            android:layout_width="match_parent"
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:text="@={anthc.f102}" />-->
+                            android:layout_weight="1"
+                            android:text="@string/f102m" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/f102"
-                            android:layout_width="match_parent"
+                            android:id="@+id/f102m"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:textDirection="ltr"
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={anthc.f102}"
+                            android:text="@={anthc.f102m}"
                             app:maxValue="59"
+                            app:minValue="0"
+                            app:type="range" />
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f102d" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/f102d"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={anthc.f102d}"
+                            android:textDirection="ltr"
+                            app:maxValue="29"
                             app:minValue="0"
                             app:type="range" />
 

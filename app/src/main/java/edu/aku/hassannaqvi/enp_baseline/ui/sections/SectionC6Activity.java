@@ -91,4 +91,12 @@ public class SectionC6Activity extends AppCompatActivity {
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
+
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
+
+
 }

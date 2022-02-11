@@ -127,6 +127,7 @@ public class Recipient extends BaseObservable implements Observable {
     private String b205b = _EMPTY_;
     private String b205c = _EMPTY_;
     private String b20601 = _EMPTY_;
+    private String b20602 = _EMPTY_;
     private String b207a = _EMPTY_;
     private String b207b = _EMPTY_;
     private String b207c = _EMPTY_;
@@ -1143,6 +1144,7 @@ public class Recipient extends BaseObservable implements Observable {
         setB205b(b203.equals("3") ? "" : this.b205b);
         setB205c(b203.equals("3") ? "" : this.b205c);
         setB20601(b203.equals("1") ? "" : this.b20601);
+        setB20602(b203.equals("1") ? "" : this.b20602);
         setB209(b203.equals("1") ? "" : this.b209);
         setB209a(b203.equals("1") ? "" : this.b209a);
         setB209b(b203.equals("1") ? "" : this.b209b);
@@ -1232,6 +1234,16 @@ public class Recipient extends BaseObservable implements Observable {
     public void setB20601(String b20601) {
         this.b20601 = b20601;
         notifyPropertyChanged(BR.b20601);
+    }
+
+    @Bindable
+    public String getB20602() {
+        return b20602;
+    }
+
+    public void setB20602(String b20602) {
+        this.b20602 = b20602;
+        notifyPropertyChanged(BR.b20602);
     }
 
     @Bindable
@@ -2087,6 +2099,7 @@ public class Recipient extends BaseObservable implements Observable {
             this.b205b = json.getString("b205b");
             this.b205c = json.getString("b205c");
             this.b20601 = json.getString("b20601");
+            this.b20602 = json.getString("b20602");
             this.b207a = json.getString("b207a");
             this.b207b = json.getString("b207b");
             this.b207c = json.getString("b207c");
@@ -2267,6 +2280,7 @@ public class Recipient extends BaseObservable implements Observable {
                 .put("b205b", b205b)
                 .put("b205c", b205c)
                 .put("b20601", b20601)
+                .put("b20602", b20602)
                 .put("b207a", b207a)
                 .put("b207b", b207b)
                 .put("b207c", b207c)

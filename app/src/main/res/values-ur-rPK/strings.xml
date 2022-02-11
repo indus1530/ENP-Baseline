@@ -681,6 +681,7 @@
     <string name="b206ins"> اگر بی آئی ایس پی سے مستفید ہونے والی خاتون کا بچہ ہے تو لاگو / قابل اطلاق ہے </string>
     <string name="b206"> آپ کے اس  بچے کی عمر کتنی  ہے جس کا اندراج E N P میں ہے ؟ روسٹر سے بچے کی عمر کی تصدیق کریں- (زیادہ سے زیادہ 23 ماہ) </string>
     <string name="b20601">مہینے</string>
+    <string name="b20602"> دن </string>
     <string name="b207">آپ کے آخری ENP وزٹ پر، کیا آپ کو  مندرجہ زیل چیزوں  سے متعلق آگاہی سیشن دیے گئے تھے</string>
     <string name="b207a">حمل کے دوران غذائی ضروریات</string>
     <string name="b207a01">ہاں</string>
@@ -2208,7 +2209,9 @@
     <string name="f1titleb">گھر میں موجود پانچ سال سے کم عمر تمام بچے اور  تولیدی صحت کی حامل  15 سے 49 سال کی خواتین کے لیے،  جو گھر میں موجود ہوں</string>
     <string name="f101name">بچے کا نام</string>
     <string name="f101">لائن نمبر</string>
-    <string name="f102">عمر(مہینوں میں)</string>
+    <string name="f102"> عمر مہینوں اور دنوں میں </string>
+    <string name="f102m"> مہینے </string>
+    <string name="f102d"> دن </string>
     <string name="f103">جنس</string>
     <string name="f10301">لڑکا</string>
     <string name="f10302">لڑکی</string>

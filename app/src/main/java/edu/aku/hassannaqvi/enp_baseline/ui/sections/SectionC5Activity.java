@@ -94,7 +94,6 @@ public class SectionC5Activity extends AppCompatActivity {
     }
 
 
-
     public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
@@ -104,4 +103,12 @@ public class SectionC5Activity extends AppCompatActivity {
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
+
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
+
+
 }

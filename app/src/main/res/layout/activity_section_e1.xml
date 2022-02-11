@@ -411,7 +411,7 @@
                             android:maxLength="2"
                             android:text="@={preg.e104}"
                             app:maxValue="49"
-                            app:minValue="14"
+                            app:minValue="9"
                             app:type="range" />
 
                     </LinearLayout>

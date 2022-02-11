@@ -92,6 +92,7 @@ public class SectionC1Activity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (bi.c106.getText().toString().isEmpty()) return;
                 bi.c107.setMaxvalue(Float.parseFloat(bi.c106.getText().toString()));
+                bi.c108.setMaxvalue(Float.parseFloat(bi.c106.getText().toString()));
             }
 
             @Override
@@ -99,7 +100,7 @@ public class SectionC1Activity extends AppCompatActivity {
             }
         });
 
-        bi.c107.addTextChangedListener(new TextWatcher() {
+        /*bi.c107.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
@@ -113,7 +114,7 @@ public class SectionC1Activity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
             }
-        });
+        });*/
 
     }
 
@@ -181,10 +182,6 @@ public class SectionC1Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
-        if (!mwra.getC106().isEmpty() && !mwra.getC108().isEmpty()) {
-            if (Integer.parseInt(mwra.getC108()) > Integer.parseInt(mwra.getC106()))
-                return Validator.emptyCustomTextBox(this, bi.c108, "Could Not be Greater than C106");
-        }
         if (!mwra.getC112wk().isEmpty() && !mwra.getC112mm().isEmpty()) {
             if (Integer.parseInt(mwra.getC112wk()) + Integer.parseInt(mwra.getC112mm()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.c112wk, "All Values Can't be zero");
@@ -195,4 +192,12 @@ public class SectionC1Activity extends AppCompatActivity {
         }
         return true;
     }
+
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
+
+
 }

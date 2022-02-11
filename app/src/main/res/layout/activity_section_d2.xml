@@ -2849,7 +2849,7 @@
                             android:text="@={child.d208}"
                             app:defaultValue="99"
                             app:maxValue="7"
-                            app:minValue="1"
+                            app:minValue="0"
                             app:type="range" />
 
                     </LinearLayout>

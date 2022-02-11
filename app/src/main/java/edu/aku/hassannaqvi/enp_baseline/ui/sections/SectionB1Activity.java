@@ -150,4 +150,12 @@ public class SectionB1Activity extends AppCompatActivity {
         }
         return true;
     }
+
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
+
+
 }

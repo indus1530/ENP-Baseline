@@ -784,6 +784,7 @@
     <string name="b206ins">(Applicable if the beneficiary has a child)</string>
     <string name="b206"> What is the age of your child who is enrolled in ENP ? (Maximum 23 months) Verify child’s age from roster </string>
     <string name="b20601">Months</string>
+    <string name="b20602">Days</string>
     <string name="b207">On your last ENP visit, were you given awareness sessions on:</string>
     <string name="b207a">Maternal nutrition </string>
     <string name="b207a01">Yes</string>
@@ -2328,7 +2329,9 @@
     <string name="f1titleb">Instructions: All women of reproductive age (15-49 years) and all children under 5 years old available in the household at the time of interview will be selected for anthropometric measurements.</string>
     <string name="f101name">Name of Child</string>
     <string name="f101">Line Number</string>
-    <string name="f102">Age in Month(s)</string>
+    <string name="f102"> Age in Months &amp; Days </string>
+    <string name="f102m"> Months </string>
+    <string name="f102d"> Days </string>
     <string name="f103">Sex/ Gender</string>
     <string name="f10301">Male</string>
     <string name="f10302">Female</string>

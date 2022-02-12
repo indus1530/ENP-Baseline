@@ -562,10 +562,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.close();
 
-        if (checkPassword(password, loggedInUser.getPassword())) {
+        if (c.getCount() > 0 && checkPassword(password, loggedInUser.getPassword())) {
             MainApp.user = loggedInUser;
             //  MainApp.selectedDistrict = loggedInUser.getDist_id();
-            return c.getCount() > 0;
+            return true;
         } else {
             return false;
         }

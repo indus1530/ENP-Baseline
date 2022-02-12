@@ -83,6 +83,12 @@
                     android:layout_gravity="center"
                     android:paddingTop="24dp"
                     android:src="@drawable/app_icon" />
+<TextView
+    android:id="@+id/timeLeft"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:text="000"
+    android:textColor="#fff" />
 
                 <TextView
                     android:layout_width="match_parent"

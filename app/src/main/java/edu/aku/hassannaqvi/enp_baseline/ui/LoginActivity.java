@@ -12,12 +12,14 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -116,6 +118,34 @@ public class LoginActivity extends AppCompatActivity {
         MainApp.user = new Users();
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
         dbBackup();
+
+        CountDownTimer timer = new CountDownTimer(60 * 1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                //Some code
+                bi.timeLeft.setText((millisUntilFinished / 1000) + " secs left");
+            }
+
+            public void onFinish() {
+                //Logout
+                //   finish();
+            }
+        };
+        timer.start();
+
+        bi.loginForm.setOnTouchListener(new View.OnTouchListener() {
+                                            @Override
+                                            public boolean onTouch(View view, MotionEvent motionEvent) {
+                                                Toast.makeText(LoginActivity.this, "Touch", Toast.LENGTH_SHORT).show();
+
+                                                timer.cancel();
+                                                timer.start();
+                                                return false;
+                                            }
+                                        }
+
+
+        );
 /*
         MainApp.recipient = new Recipient();
 
@@ -139,6 +169,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: "+ new String(Base64.decode(num3, Base64.NO_WRAP)));
         Log.d(TAG, "onCreate: "+ new String(Base64.decode(num4, Base64.NO_WRAP)));
         Log.d(TAG, "onCreate: "+ new String(Base64.decode(num5, Base64.NO_WRAP)));*/
+
 
 
     }
@@ -269,7 +300,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (db.doLogin(username, password)) {
                     MainApp.user.setUserName(username);
-                    MainApp.admin = username.contains("@") || username.contains("test1234");
+                    //   MainApp.admin = username.contains("@") || username.contains("test1234");
                     MainApp.superuser = MainApp.user.getDesignation().equals("Supervisor");
                     Intent iLogin = null;
                     if (MainApp.admin) {

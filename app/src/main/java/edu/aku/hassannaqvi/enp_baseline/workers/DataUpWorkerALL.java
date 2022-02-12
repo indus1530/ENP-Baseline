@@ -64,6 +64,7 @@ public class DataUpWorkerALL extends Worker {
     private ProgressDialog pd;
     private int length;
     private Data data;
+    private long startTime;
 
 
     public DataUpWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {

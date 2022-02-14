@@ -17,6 +17,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -356,6 +357,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        MainApp.lockScreen(this);
+
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
 
@@ -900,6 +903,17 @@ public class FamilyMembersListActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        MainApp.timer.cancel();
+        MainApp.timer.start();
+        return super.dispatchTouchEvent(event);
     }
 
 

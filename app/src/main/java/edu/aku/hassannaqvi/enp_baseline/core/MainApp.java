@@ -248,11 +248,12 @@ public class MainApp extends Application {
 
     public static void lockScreen(Context c) {
 
-     //   Context mContext = c;
+        //   Context mContext = c;
         Activity activity = (Activity) c;
 
 
-        timer = new CountDownTimer(15 * 60 * 1000, 1000) {
+        //timer = new CountDownTimer(15 * 60 * 1000, 1000) {
+        timer = new CountDownTimer(30 * 1000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 //Some code
@@ -267,7 +268,7 @@ public class MainApp extends Application {
                 Intent intent = new Intent();
                 intent.setClass(c, LockActivity.class);
                 c.startActivity(intent);
-                timer = null;
+                timer.cancel();
                 //  startActivity(new Intent(((Activity) c).getLocalClassName(), LockActivity.class));
             }
         };

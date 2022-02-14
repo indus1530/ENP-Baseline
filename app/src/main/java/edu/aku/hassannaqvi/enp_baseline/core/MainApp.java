@@ -267,6 +267,7 @@ public class MainApp extends Application {
                 Intent intent = new Intent();
                 intent.setClass(c, LockActivity.class);
                 c.startActivity(intent);
+                timer = null;
                 //  startActivity(new Intent(((Activity) c).getLocalClassName(), LockActivity.class));
             }
         };

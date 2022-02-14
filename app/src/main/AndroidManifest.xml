@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="edu.aku.hassannaqvi.enp_baseline">
+    package="edu.aku.hassannaqvi.enp_baseline" >
 
     <uses-sdk
         android:targetSdkVersion="22"
@@ -28,7 +28,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="false"
-        tools:replace="android:allowBackup">
+        tools:replace="android:allowBackup" >
+        <activity
+            android:name=".ui.LockActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.sections.SectionA3BActivity"
             android:exported="true" />
@@ -152,7 +155,7 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.splashscreen"
-            android:windowSoftInputMode="adjustResize|stateHidden">
+            android:windowSoftInputMode="adjustResize|stateHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -202,9 +205,7 @@
             android:name=".ui.ChangePasswordActivity"
             android:exported="true"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize" />
-
-        <!-- <meta-data android:name="YEK_REVRES" android:value="V@ca#!0n$urvIv0r" /> -->
+            android:windowSoftInputMode="adjustResize" /> <!-- <meta-data android:name="YEK_REVRES" android:value="V@ca#!0n$urvIv0r" /> -->
         <meta-data
             android:name="YEK_REVRES"
             android:value="mYq3t6M@!rRiaGMU@lTIpL1)J@NcRfTjWnZr4u7x!A%D*G-KaPdSgVkXp2s5v8y/B?E(H+MbQe" />

@@ -8,6 +8,7 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -370,4 +371,22 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.fldGrpHH.setVisibility(View.GONE);
         }*//*
     }*/
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        MainApp.timer.cancel();
+        MainApp.timer.start();
+        return super.dispatchTouchEvent(event);
+    }
+
 }

@@ -1,14 +1,19 @@
 package edu.aku.hassannaqvi.enp_baseline.core;
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.scottyab.rootbeer.RootBeer;
 
@@ -20,6 +25,7 @@ import java.io.File;
 import java.util.List;
 
 import edu.aku.hassannaqvi.enp_baseline.BuildConfig;
+import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.AnthroChild;
 import edu.aku.hassannaqvi.enp_baseline.models.AnthroWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.Child;
@@ -29,6 +35,8 @@ import edu.aku.hassannaqvi.enp_baseline.models.MWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
+import edu.aku.hassannaqvi.enp_baseline.ui.LockActivity;
+import edu.aku.hassannaqvi.enp_baseline.ui.LoginActivity;
 
 
 public class MainApp extends Application {
@@ -134,6 +142,7 @@ public class MainApp extends Application {
     public static int pregFirstListPos;
     public static int anthroChildListPos;
     public static int anthroWRAListPos;
+    public static CountDownTimer timer;
 
 
     public static void hideSystemUI(View decorView) {
@@ -208,6 +217,7 @@ public class MainApp extends Application {
         return String.valueOf((grid[household][eligibles - 1]) - 1);
     }
 
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -236,6 +246,33 @@ public class MainApp extends Application {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
+
+    }
+
+    public static void lockScreen(Context c) {
+
+     //   Context mContext = c;
+        Activity activity = (Activity) c;
+
+
+        timer = new CountDownTimer(10 * 1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                //Some code
+             //   bi.timeLeft.setText((millisUntilFinished / 1000) + " secs left");
+            }
+
+            public void onFinish() {
+                //Logout
+                //
+                //   finish();
+                // lockScreen();
+                Intent intent = new Intent();
+                intent.setClass(c, LockActivity.class);
+                c.startActivity(intent);
+              //  startActivity(new Intent(((Activity) c).getLocalClassName(), LockActivity.class));
+            }
+        };
 
     }
 

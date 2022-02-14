@@ -5,9 +5,12 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -26,6 +29,8 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionA1Binding;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
+import edu.aku.hassannaqvi.enp_baseline.ui.LockActivity;
+import edu.aku.hassannaqvi.enp_baseline.ui.LoginActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FamilyMembersListActivity;
 
 public class SectionA1Activity extends AppCompatActivity {
@@ -46,6 +51,11 @@ public class SectionA1Activity extends AppCompatActivity {
             bi.btnContinue.setText("Review Next");
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
 
     private void setupSkips() {
 
@@ -172,4 +182,48 @@ public class SectionA1Activity extends AppCompatActivity {
     }
 
 
+
+    /*private void lockScreen() {
+
+        timer = new CountDownTimer(10 * 1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                //Some code
+                bi.timeLeft.setText((millisUntilFinished / 1000) + " secs left");
+            }
+
+            public void onFinish() {
+                //Logout
+                //
+                //   finish();
+                // lockScreen();
+                startActivity(new Intent(LoginActivity.this, LockActivity.class));
+            }
+        };
+
+        bi.loginForm.setOnTouchListener(new View.OnTouchListener() {
+                                            @Override
+                                            public boolean onTouch(View view, MotionEvent motionEvent) {
+                                                Toast.makeText(LoginActivity.this, "Touch", Toast.LENGTH_SHORT).show();
+
+                                                timer.cancel();
+                                                timer.start();
+                                                return false;
+                                            }
+                                        }
+
+
+        );
+    }*/
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        MainApp.timer.cancel();
+        MainApp.timer.start();
+        return super.dispatchTouchEvent(event);
+    }
 }

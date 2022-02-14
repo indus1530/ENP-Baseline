@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/ENP-Baseline/app/src/main/res/layout/activity_lock.xml" value="0.575" />
+        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/ENP-Baseline/app/src/main/res/layout/activity_login.xml" value="0.575" />
+        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/ENP-Baseline/app/src/main/res/layout/activity_main.xml" value="0.575" />
+        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/ENP-Baseline/app/src/main/res/layout/content_lock.xml" value="0.575" />
+        <entry key="..\:/Users/Hassan.naqvi/StudioProjects/ENP-Baseline/app/src/main/res/layout/fragment_lock.xml" value="0.49118046132971505" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_adol_select.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_change_password.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/ENP-Baseline/app/src/main/res/layout/activity_consent.xml" value="0.5375" />
@@ -75,7 +80,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

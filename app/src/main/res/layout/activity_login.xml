@@ -13,7 +13,8 @@
     </data>
 
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/mainFrame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/app_bg"
@@ -83,12 +84,7 @@
                     android:layout_gravity="center"
                     android:paddingTop="24dp"
                     android:src="@drawable/app_icon" />
-<TextView
-    android:id="@+id/timeLeft"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:text="000"
-    android:textColor="#fff" />
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -362,6 +358,11 @@
             </LinearLayout>
 
         </ScrollView>
-
-    </LinearLayout>
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/frameLayout"
+            android:background="#7f000000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
 </layout>

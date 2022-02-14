@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui;
 
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.user;
 import static edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper.DATABASE_COPY;
 import static edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper.DATABASE_NAME;
 
@@ -12,14 +13,12 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -81,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
     private ArrayList<String> countryCodeList;
     String username = "";
     String password = "";
+    //CountDownTimer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,37 +115,12 @@ public class LoginActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.getDbHelper();
         MainApp.appInfo = new AppInfo(this);
-        MainApp.user = new Users();
+        user = new Users();
+
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
         dbBackup();
+             //  MainApp.test(this, bi);
 
-        CountDownTimer timer = new CountDownTimer(60 * 1000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                //Some code
-                bi.timeLeft.setText((millisUntilFinished / 1000) + " secs left");
-            }
-
-            public void onFinish() {
-                //Logout
-                //   finish();
-            }
-        };
-        timer.start();
-
-        bi.loginForm.setOnTouchListener(new View.OnTouchListener() {
-                                            @Override
-                                            public boolean onTouch(View view, MotionEvent motionEvent) {
-                                                Toast.makeText(LoginActivity.this, "Touch", Toast.LENGTH_SHORT).show();
-
-                                                timer.cancel();
-                                                timer.start();
-                                                return false;
-                                            }
-                                        }
-
-
-        );
 /*
         MainApp.recipient = new Recipient();
 
@@ -173,6 +148,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
+
+
+
 
 
     @Override
@@ -509,6 +488,13 @@ public class LoginActivity extends AppCompatActivity {
 
         return true;
     }
+
+    public void attemptUnlock() {
+       bi.mainFrame.setClickable(true);
+       bi.frameLayout.setVisibility(View.GONE);
+       MainApp.timer.start();
+    }
+
 
 }
 

@@ -10,8 +10,6 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -51,12 +49,9 @@ public class SectionE1Activity extends AppCompatActivity {
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e1);
         pregnancy = new Pregnancy();
-
         bi.setPreg(pregnancy);
         db = MainApp.appInfo.dbHelper;
-
         setSupportActionBar(bi.toolbar);
-        setupSkips();
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 
@@ -117,7 +112,6 @@ public class SectionE1Activity extends AppCompatActivity {
                 pregnancy.setEh103(form.getA106());
                 pregnancy.setEh104(form.getA107());
                 bi.e103.setMaxvalue(Float.parseFloat(MainApp.familyMember.getA206y()));
-                bi.e104.setMaxvalue(Float.parseFloat(MainApp.familyMember.getA206y()));
 
             }
 
@@ -128,25 +122,7 @@ public class SectionE1Activity extends AppCompatActivity {
 
     }
 
-    private void setupSkips() {
 
-        bi.e103.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (bi.e103.getText().toString().isEmpty()) return;
-                bi.e104.setMinvalue(Integer.parseInt(bi.e103.getText().toString()));
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        });
-
-    }
 
     private boolean insertNewRecord() {
 

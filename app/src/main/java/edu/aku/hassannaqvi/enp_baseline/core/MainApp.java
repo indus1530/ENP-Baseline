@@ -1,4 +1,5 @@
 package edu.aku.hassannaqvi.enp_baseline.core;
+
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
@@ -11,9 +12,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.scottyab.rootbeer.RootBeer;
 
@@ -25,7 +24,6 @@ import java.io.File;
 import java.util.List;
 
 import edu.aku.hassannaqvi.enp_baseline.BuildConfig;
-import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.enp_baseline.models.AnthroChild;
 import edu.aku.hassannaqvi.enp_baseline.models.AnthroWRA;
 import edu.aku.hassannaqvi.enp_baseline.models.Child;
@@ -36,7 +34,6 @@ import edu.aku.hassannaqvi.enp_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.enp_baseline.models.Recipient;
 import edu.aku.hassannaqvi.enp_baseline.models.Users;
 import edu.aku.hassannaqvi.enp_baseline.ui.LockActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.LoginActivity;
 
 
 public class MainApp extends Application {
@@ -255,11 +252,11 @@ public class MainApp extends Application {
         Activity activity = (Activity) c;
 
 
-        timer = new CountDownTimer(10 * 1000, 1000) {
+        timer = new CountDownTimer(15 * 60 * 1000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 //Some code
-             //   bi.timeLeft.setText((millisUntilFinished / 1000) + " secs left");
+                //   bi.timeLeft.setText((millisUntilFinished / 1000) + " secs left");
             }
 
             public void onFinish() {
@@ -270,9 +267,10 @@ public class MainApp extends Application {
                 Intent intent = new Intent();
                 intent.setClass(c, LockActivity.class);
                 c.startActivity(intent);
-              //  startActivity(new Intent(((Activity) c).getLocalClassName(), LockActivity.class));
+                //  startActivity(new Intent(((Activity) c).getLocalClassName(), LockActivity.class));
             }
         };
+        timer.start();
 
     }
 

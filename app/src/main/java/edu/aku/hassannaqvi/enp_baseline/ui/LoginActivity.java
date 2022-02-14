@@ -51,6 +51,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.enp_baseline.MainActivity;
 import edu.aku.hassannaqvi.enp_baseline.R;
@@ -75,11 +76,11 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseHelper db;
     ArrayAdapter<String> provinceAdapter;
     int attemptCounter = 0;
+    String username = "";
+    String password = "";
     private int countryCode;
     private ArrayList<String> countryNameList;
     private ArrayList<String> countryCodeList;
-    String username = "";
-    String password = "";
     //CountDownTimer timer;
 
     @Override
@@ -119,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
 
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
         dbBackup();
-             //  MainApp.test(this, bi);
+        //  MainApp.test(this, bi);
 
 /*
         MainApp.recipient = new Recipient();
@@ -146,12 +147,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: "+ new String(Base64.decode(num5, Base64.NO_WRAP)));*/
 
 
-
     }
-
-
-
-
 
 
     @Override
@@ -243,12 +239,33 @@ public class LoginActivity extends AppCompatActivity {
         // Reset errors.
         bi.username.setError(null);
         bi.password.setError(null);
+        long timeNowInMillis = System.currentTimeMillis();
+
         Toast.makeText(this, String.valueOf(attemptCounter), Toast.LENGTH_SHORT).show();
-        if (attemptCounter == 7) {
-            Intent iLogin = new Intent(edu.aku.hassannaqvi.enp_baseline.ui.LoginActivity.this, MainActivity.class);
-            startActivity(iLogin);
+
+        if (MainApp.sharedPref.contains(bi.username.getText().toString())) {
+            long startTimeout = MainApp.sharedPref.getLong(bi.username.getText().toString(), timeNowInMillis);
+            long timeElapsed = TimeUnit.MILLISECONDS.toMinutes(startTimeout - timeNowInMillis);
+
+            if (timeElapsed > 15) {
+                MainApp.editor.remove(bi.username.getText().toString()).commit();
+            } else {
+                bi.username.setError("This user has been blocked.");
+                Toast.makeText(this, "This user has been blocked. Please try again after some time.", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+        }
+        if (attemptCounter > 5) {
+
+            if (!MainApp.sharedPref.contains(bi.username.getText().toString())) {
+                MainApp.editor.putLong(bi.username.getText().toString(), timeNowInMillis).commit();
+                Toast.makeText(this, "This user has been blocked.", Toast.LENGTH_LONG).show();
+                return;
+            }
 
         } else {
+
             // Store values at the time of the login attempt.
             String username = bi.username.getText().toString();
             String password = bi.password.getText().toString();
@@ -490,9 +507,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void attemptUnlock() {
-       bi.mainFrame.setClickable(true);
-       bi.frameLayout.setVisibility(View.GONE);
-       MainApp.timer.start();
+        bi.mainFrame.setClickable(true);
+        bi.frameLayout.setVisibility(View.GONE);
+        MainApp.timer.start();
     }
 
 

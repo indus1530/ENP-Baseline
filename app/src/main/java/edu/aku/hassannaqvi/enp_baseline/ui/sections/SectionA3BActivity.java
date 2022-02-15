@@ -112,5 +112,4 @@ public class SectionA3BActivity extends AppCompatActivity {
         MainApp.timer.start();
         return super.dispatchTouchEvent(event);
     }
-
 }

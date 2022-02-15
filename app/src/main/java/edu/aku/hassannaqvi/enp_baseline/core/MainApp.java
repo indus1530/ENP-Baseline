@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -140,6 +142,7 @@ public class MainApp extends Application {
     public static int anthroChildListPos;
     public static int anthroWRAListPos;
     public static CountDownTimer timer;
+    static ToneGenerator toneGen1;
 
 
     public static void hideSystemUI(View decorView) {
@@ -214,6 +217,39 @@ public class MainApp extends Application {
         return String.valueOf((grid[household][eligibles - 1]) - 1);
     }
 
+    public static void lockScreen(Context c) {
+
+        //   Context mContext = c;
+        Activity activity = (Activity) c;
+
+
+        timer = new CountDownTimer(15 * 60 * 1000, 1000) {
+            //timer = new CountDownTimer(30 * 1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                //Some code
+                //bi.timeLeft.setText((millisUntilFinished / 1000) + " secs left");
+                if ((millisUntilFinished / 1000) < 14) {
+                    toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
+                }
+
+            }
+
+            public void onFinish() {
+                //Logout
+                //
+                //   finish();
+                // lockScreen();
+                Intent intent = new Intent();
+                intent.setClass(c, LockActivity.class);
+                c.startActivity(intent);
+                timer.cancel();
+                //  startActivity(new Intent(((Activity) c).getLocalClassName(), LockActivity.class));
+            }
+        };
+        timer.start();
+
+    }
 
     @Override
     public void onCreate() {
@@ -243,37 +279,7 @@ public class MainApp extends Application {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-
-    }
-
-    public static void lockScreen(Context c) {
-
-        //   Context mContext = c;
-        Activity activity = (Activity) c;
-
-
-        timer = new CountDownTimer(15 * 60 * 1000, 1000) {
-//        timer = new CountDownTimer(30 * 1000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                //Some code
-                //   bi.timeLeft.setText((millisUntilFinished / 1000) + " secs left");
-            }
-
-            public void onFinish() {
-                //Logout
-                //
-                //   finish();
-                // lockScreen();
-                Intent intent = new Intent();
-                intent.setClass(c, LockActivity.class);
-                c.startActivity(intent);
-                timer.cancel();
-                //  startActivity(new Intent(((Activity) c).getLocalClassName(), LockActivity.class));
-            }
-        };
-        timer.start();
-
+        toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
     }
 
 }

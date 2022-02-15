@@ -90,8 +90,6 @@ public class SectionA3AActivity extends AppCompatActivity {
     public void onBackPressed() {
         Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }
-
-
     @Override
     protected void onResume() {
         super.onResume();

@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -28,6 +29,7 @@ import java.util.Date;
 import java.util.List;
 
 import edu.aku.hassannaqvi.enp_baseline.R;
+import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import id.zelory.compressor.Compressor;
 
 
@@ -414,5 +416,23 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
         intent.putExtra("FileName", "");
         setResult(0, intent);
         finish();//finishing activity
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        MainApp.timer.cancel();
+        MainApp.timer.start();
+        return super.dispatchTouchEvent(event);
     }
 }

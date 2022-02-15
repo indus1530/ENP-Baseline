@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.lists;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -60,5 +61,22 @@ public class FormsReportDate extends AppCompatActivity {
         formsAdapter.notifyDataSetChanged();
         bi.fcRecyclerView.setAdapter(formsAdapter);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        MainApp.timer.cancel();
+        MainApp.timer.start();
+        return super.dispatchTouchEvent(event);
     }
 }

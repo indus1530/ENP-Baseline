@@ -55,6 +55,7 @@ public class SectionE1Activity extends AppCompatActivity {
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -62,6 +63,7 @@ public class SectionE1Activity extends AppCompatActivity {
         MainApp.lockScreen(this);
 
     }
+
 
     private void populateSpinner() {
 

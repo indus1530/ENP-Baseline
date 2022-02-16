@@ -219,6 +219,10 @@ public class MainApp extends Application {
 
     public static void lockScreen(Context c) {
 
+        if (timer != null) {
+            timer.cancel();
+        }
+
         //   Context mContext = c;
         Activity activity = (Activity) c;
 

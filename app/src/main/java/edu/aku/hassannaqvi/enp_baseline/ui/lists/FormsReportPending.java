@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.enp_baseline.ui.lists;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,6 +54,24 @@ public class FormsReportPending extends AppCompatActivity {
 
     public void filterForms(View view) {
 
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        MainApp.timer.cancel();
+        MainApp.timer.start();
+        return super.dispatchTouchEvent(event);
     }
 
 /*    public void filterForms(View view) {

@@ -378,6 +378,12 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.lockScreen(this);
     }
 
+/*    @Override
+    protected void onPause() {
+        super.onPause();
+        MainApp.timer = null;
+    }*/
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         return super.onTouchEvent(event);

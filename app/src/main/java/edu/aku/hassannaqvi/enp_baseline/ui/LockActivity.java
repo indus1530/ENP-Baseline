@@ -29,7 +29,7 @@ public class LockActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_lock);
 
         bi.usernameLock.setText(MainApp.user.getFullname());
-        MainApp.timer = null;
+        MainApp.timer.cancel();
     }
 
     public void attemptUnlock(View view) {

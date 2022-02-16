@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -110,5 +111,22 @@ public class SectionC5Activity extends AppCompatActivity {
         Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        MainApp.timer.cancel();
+        MainApp.timer.start();
+        return super.dispatchTouchEvent(event);
+    }
 
 }

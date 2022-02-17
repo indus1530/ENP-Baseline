@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
     String DirectoryName;
     DatabaseHelper db;
     ArrayAdapter<String> provinceAdapter;
-    int attemptCounter = 0;
+    int attemptCounter;
     String username = "";
     String password = "";
     private int countryCode;
@@ -87,6 +87,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
+        attemptCounter = 0;
         initializingCountry();
         Dexter.withContext(this)
                 .withPermissions(
@@ -235,7 +236,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void attemptLogin(View view) {
-        attemptCounter++;
+
+        if (username.equals(bi.username.getText().toString())) {
+            attemptCounter++;
+        } else {
+            attemptCounter = 1;
+        }
+        username = bi.username.getText().toString();
+
+
         // Reset errors.
         bi.username.setError(null);
         bi.password.setError(null);
@@ -245,8 +254,8 @@ public class LoginActivity extends AppCompatActivity {
 
         if (MainApp.sharedPref.contains(bi.username.getText().toString())) {
             long startTimeout = MainApp.sharedPref.getLong(bi.username.getText().toString(), timeNowInMillis);
-            long timeElapsed = TimeUnit.MILLISECONDS.toMinutes(startTimeout - timeNowInMillis);
-
+            long timeElapsed = TimeUnit.MILLISECONDS.toMinutes(timeNowInMillis - startTimeout);
+            Log.d(TAG, "attemptLogin(timeleft): " + timeElapsed);
             if (timeElapsed > 15) {
                 MainApp.editor.remove(bi.username.getText().toString()).commit();
             } else {

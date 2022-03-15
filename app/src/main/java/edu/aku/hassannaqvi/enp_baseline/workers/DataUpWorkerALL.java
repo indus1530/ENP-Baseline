@@ -23,8 +23,9 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -36,6 +37,9 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.CertificateNotYetValidException;
 import java.security.cert.X509Certificate;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -57,22 +61,18 @@ public class DataUpWorkerALL extends Worker {
     private final String uploadTable;
     private final JSONArray uploadData;
     private final URL serverURL = null;
-    private final String nTitle;
+    private final String nTitle = MainApp.PROJECT_NAME + ": Data Upload";
     private final int position;
     private final String uploadWhere;
     HttpsURLConnection urlConnection;
     private ProgressDialog pd;
     private int length;
     private Data data;
-    private long startTime;
 
 
     public DataUpWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
-        nTitle = mContext.getResources().getString(R.string.app_name) + ": Data Upload";
-
-
         uploadTable = workerParams.getInputData().getString("table");
         position = workerParams.getInputData().getInt("position", -2);
         uploadData = MainApp.uploadData.get(position);
@@ -84,7 +84,6 @@ public class DataUpWorkerALL extends Worker {
         Log.d(TAG, "DataDownWorkerALL: position " + position);
         //uploadColumns = workerParams.getInputData().getString("columns");
         uploadWhere = workerParams.getInputData().getString("where");
-
 
     }
 
@@ -103,7 +102,7 @@ public class DataUpWorkerALL extends Worker {
 
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
             AssetManager assetManager = context.getAssets();
-            InputStream caInput = assetManager.open("star_aku_edu.crt");
+            InputStream caInput = assetManager.open("vcoe1_aku_edu.cer");
             Certificate ca;
             try {
                 ca = cf.generateCertificate(caInput);
@@ -169,11 +168,11 @@ public class DataUpWorkerALL extends Worker {
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(uploadTable, nTitle, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel("scrlog", "BLF", NotificationManager.IMPORTANCE_DEFAULT);
             notificationManager.createNotificationChannel(channel);
         }
 
-        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), uploadTable)
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
                 .setContentTitle(title)
                 .setContentText(task)
                 .setSmallIcon(R.drawable.app_icon);
@@ -232,7 +231,7 @@ public class DataUpWorkerALL extends Worker {
         try {
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
             AssetManager assetManager = mContext.getAssets();
-            caInput = assetManager.open("star_aku_edu.crt");
+            caInput = assetManager.open("vcoe1_aku_edu.cer");
 
 
             ca = cf.generateCertificate(caInput);
@@ -310,15 +309,16 @@ public class DataUpWorkerALL extends Worker {
 
                 String writeEnc = CipherSecure.encrypt(jsonParam.toString());
 
-                longInfo(writeEnc);
+                longInfo("Encrypted: " + writeEnc);
 
                 //     wr.writeBytes(jsonParam.toString());
+
                 wr.flush();
                 wr.close();
 
                 Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
 
-                if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                if (urlConnection.getResponseCode() == HttpsURLConnection.HTTP_OK) {
                     Log.d(TAG, "Connection Response: " + urlConnection.getResponseCode());
                     displayNotification(nTitle, "Connection Established");
 
@@ -335,7 +335,8 @@ public class DataUpWorkerALL extends Worker {
 
                     }
                     displayNotification(nTitle, "Received Data");
-                    Log.d(TAG, "doWork(EN): " + result.toString());
+                    longInfo("result-server: " + writeEnc);
+
                 } else {
 
                     Log.d(TAG, "Connection Response (Server Failure): " + urlConnection.getResponseCode());
@@ -358,16 +359,16 @@ public class DataUpWorkerALL extends Worker {
             Log.d(TAG, "doWork (Timeout): " + e.getMessage());
             displayNotification(nTitle, "Timeout Error: " + e.getMessage());
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage()))
+                    .putString("error", e.getMessage())
                     .putInt("position", this.position)
                     .build();
             return Result.failure(data);
 
-        } catch (IOException | JSONException e) {
+        } catch (IOException | JSONException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException | InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
             Log.d(TAG, "doWork (IO Error): " + e.getMessage());
             displayNotification(nTitle, "IO Error: " + e.getMessage());
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage()))
+                    .putString("error", e.getMessage())
                     .putInt("position", this.position)
                     .build();
 
@@ -376,7 +377,19 @@ public class DataUpWorkerALL extends Worker {
         } finally {
 //            urlConnection.disconnect();
         }
-        result = new StringBuilder(CipherSecure.decrypt(result.toString()));
+        try {
+            result = new StringBuilder(CipherSecure.decrypt(result.toString()));
+        } catch (NoSuchPaddingException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | InvalidAlgorithmParameterException | InvalidKeyException e) {
+            Log.d(TAG, "doWork (Encryption Error): " + e.getMessage());
+            displayNotification(nTitle, "Encryption Error: " + e.getMessage());
+            data = new Data.Builder()
+                    .putString("error", e.getMessage())
+                    .putInt("position", this.position)
+                    .build();
+
+            return Result.failure(data);
+
+        }
 
         //Do something with the JSON string
         if (result != null) {
@@ -421,5 +434,4 @@ public class DataUpWorkerALL extends Worker {
 
 
     }
-
 }

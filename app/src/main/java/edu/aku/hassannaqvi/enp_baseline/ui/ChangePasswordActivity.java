@@ -27,7 +27,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
 import edu.aku.hassannaqvi.enp_baseline.R;
-import edu.aku.hassannaqvi.enp_baseline.core.CipherSecure;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivityChangePasswordBinding;
@@ -76,7 +75,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         WorkManager workManager = WorkManager.getInstance(this);
 
         try {
-            String hashedPassword = generatePassword(bi.password2.getText().toString());
+            String hashedPassword = generatePassword(bi.password2.getText().toString(), null);
 
             Data data = new Data.Builder()
                     .putString("newPassword", hashedPassword)
@@ -186,9 +185,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
                         }
                     });
 
-
-            Log.d(TAG, "attemptReset: " + CipherSecure.encrypt(bi.password2.getText().toString()));
-
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
             Toast.makeText(this, "NoSuchAlgorithmException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -265,6 +261,4 @@ public class ChangePasswordActivity extends AppCompatActivity {
         }*/
         return isValid;
     }
-
-
 }

@@ -1,14 +1,12 @@
 package edu.aku.hassannaqvi.enp_baseline.workers;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.text.Html;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.NotificationCompat;
 import androidx.work.Data;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
@@ -24,6 +22,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -35,6 +35,9 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.CertificateNotYetValidException;
 import java.security.cert.X509Certificate;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -43,7 +46,6 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
 
-import edu.aku.hassannaqvi.enp_baseline.R;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.CipherSecure;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
@@ -51,27 +53,20 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 
 public class DataDownWorkerALL extends Worker {
 
-    private final String TAG = "DataWorkerEN()";
-    private final String nTitle;
+    private final String TAG = "DataDownWorkerALL";
 
     private final int position;
     private final Context mContext;
-    private final String uploadTable;
-    private final String uploadWhere;
-    private int length;
-
+    private final String uploadTable, uploadWhere, uploadColumns;
     HttpsURLConnection urlConnection;
 
     public DataDownWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
-        nTitle = mContext.getResources().getString(R.string.app_name) + ": Data Download";
-
-
         uploadTable = workerParams.getInputData().getString("table");
         position = workerParams.getInputData().getInt("position", -2);
-        //uploadColumns = workerParams.getInputData().getString("columns");
-        uploadWhere = workerParams.getInputData().getString("where");
+        uploadColumns = workerParams.getInputData().getString("select");
+        uploadWhere = workerParams.getInputData().getString("filter");
 
     }
 
@@ -91,7 +86,7 @@ public class DataDownWorkerALL extends Worker {
 
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
             AssetManager assetManager = context.getAssets();
-            InputStream caInput = assetManager.open("star_aku_edu.crt");
+            InputStream caInput = assetManager.open("vcoe1_aku_edu.cer");
             Certificate ca;
             try {
                 ca = cf.generateCertificate(caInput);
@@ -155,7 +150,7 @@ public class DataDownWorkerALL extends Worker {
         try {
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
             AssetManager assetManager = mContext.getAssets();
-            caInput = assetManager.open("star_aku_edu.crt");
+            caInput = assetManager.open("vcoe1_aku_edu.cer");
 
 
             ca = cf.generateCertificate(caInput);
@@ -174,12 +169,12 @@ public class DataDownWorkerALL extends Worker {
 
         try {
             url = new URL(MainApp._HOST_URL + MainApp._SERVER_GET_URL);
-            Log.d(TAG, "doWork: URL: " + url);
+            Log.d(TAG + " : " + uploadTable, "doWork: URL: " + url);
 
             HostnameVerifier allHostsValid = new HostnameVerifier() {
                 public boolean verify(String hostname, SSLSession session) {
                     //Logcat.d(hostname + " / " + apiHostname);
-                    Log.d(TAG, "verify: hostname " + hostname);
+                    Log.d(TAG + " : " + uploadTable, "verify: hostname " + hostname);
                     return true;
                 }
             };
@@ -209,8 +204,10 @@ public class DataDownWorkerALL extends Worker {
                 JSONArray jsonParam = new JSONArray();
 
                 jsonTable.put("table", uploadTable);
-                //jsonTable.put("select", uploadColumns);
+                jsonTable.put("select", uploadColumns);
                 jsonTable.put("filter", uploadWhere);
+
+                jsonTable.put("check", "");
 
                 if (uploadTable.equals(TableContracts.VersionTable.TABLE_NAME)) {
                     jsonTable.put("folder", "/");
@@ -223,16 +220,16 @@ public class DataDownWorkerALL extends Worker {
                 // .put(jsonSync);
 
 
-                Log.d(TAG, "doWork: jsonTable: " + jsonTable);
+                Log.d(TAG + " : " + uploadTable, "doWork: jsonTable: " + jsonTable);
                 wr.writeBytes(CipherSecure.encrypt(String.valueOf(jsonTable)));
-                Log.d(TAG, "doWork: Encrypted: " + CipherSecure.encrypt(String.valueOf(jsonTable)));
+                Log.d(TAG + " : " + uploadTable, "doWork: Encrypted: " + CipherSecure.encrypt(String.valueOf(jsonTable)));
                 wr.flush();
                 wr.close();
 
 
                 if (urlConnection.getResponseCode() == HttpsURLConnection.HTTP_OK) {
 
-                    length = urlConnection.getContentLength();
+                    int length = urlConnection.getContentLength();
 
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 
@@ -243,9 +240,17 @@ public class DataDownWorkerALL extends Worker {
                         result.append(line);
 
                     }
-                    Log.d(TAG, "doWork: result-server: " + result);
-                    result = new StringBuilder(CipherSecure.decrypt(result.toString()));
-                    Log.d(TAG, "doWork: result-decrypt: " + result);
+                    Log.d(TAG + " : " + uploadTable, "doWork: result-server: " + result);
+                    try {
+                        result = new StringBuilder(CipherSecure.decrypt(result.toString()));
+                    } catch (IllegalArgumentException e) {
+                        data = new Data.Builder()
+                                .putString("error", e.getMessage() + " | " + Html.fromHtml(String.valueOf(result)))
+                                .putInt("position", this.position)
+                                .build();
+                        return Result.failure(data);
+                    }
+                    Log.d(TAG + " : " + uploadTable, "doWork: result-decrypt: " + result);
 
                     if (result.toString().equals("[]")) {
                         data = new Data.Builder()
@@ -271,7 +276,7 @@ public class DataDownWorkerALL extends Worker {
             }
         } catch (java.net.SocketTimeoutException e) {
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage()))
+                    .putString("error", e.getMessage())
                     .putInt("position", this.position)
                     .build();
             return Result.failure(data);
@@ -279,14 +284,14 @@ public class DataDownWorkerALL extends Worker {
         } catch (SSLPeerUnverifiedException e) {
             Toast.makeText(mContext, "(SSLPeerUnverifiedException): %s" + e.getMessage(), Toast.LENGTH_SHORT).show();
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage()))
+                    .putString("error", e.getMessage())
                     .putInt("position", this.position)
                     .build();
 
             return Result.failure(data);
-        } catch (IOException | JSONException e) {
+        } catch (IOException | JSONException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException | InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage()))
+                    .putString("error", e.getMessage())
                     .putInt("position", this.position)
                     .build();
 
@@ -330,23 +335,4 @@ public class DataDownWorkerALL extends Worker {
         return false;
     }
 
-    private void displayNotification(String title, String task) {
-        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(uploadTable, nTitle, NotificationManager.IMPORTANCE_DEFAULT);
-            notificationManager.createNotificationChannel(channel);
-        }
-
-        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), uploadTable)
-                .setContentTitle(title)
-                .setContentText(task)
-                .setSmallIcon(R.drawable.app_icon);
-
-        final int maxProgress = 100;
-        int curProgress = 0;
-        notification.setProgress(length, curProgress, false);
-
-        notificationManager.notify(1, notification.build());
-    }
 }

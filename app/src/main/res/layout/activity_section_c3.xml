@@ -1074,12 +1074,12 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="52dp"
                                 android:gravity="center"
-                                android:hint="#"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="1"
+                                android:maxLength="2"
                                 android:text="@={mwra.c311dx}"
                                 android:visibility="@{mwra.c311.equals(`3`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="9"
+                                app:maxValue="60"
                                 app:minValue="1"
                                 app:type="range" />
 

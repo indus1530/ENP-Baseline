@@ -92,7 +92,7 @@ public class SectionC1Activity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (bi.c106.getText().toString().isEmpty()) return;
-                bi.c107.setMaxvalue(Float.parseFloat(bi.c106.getText().toString()));
+                bi.c107.setMaxvalue(Float.parseFloat(bi.c106.getText().toString()) + 1);
                 bi.c108.setMaxvalue(Float.parseFloat(bi.c106.getText().toString()));
             }
 

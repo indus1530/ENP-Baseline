@@ -376,7 +376,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={mwra.c106}"
-                                app:maxValue="15"
+                                app:maxValue="18"
                                 app:minValue="1"
                                 app:type="range" />
 

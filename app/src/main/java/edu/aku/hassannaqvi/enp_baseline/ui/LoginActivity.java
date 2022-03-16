@@ -205,7 +205,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             } else {
-                Toast.makeText(this, getString(R.string.folder_not_created), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.folder_not_created), Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -231,7 +231,7 @@ public class LoginActivity extends AppCompatActivity {
         if (networkInfo != null && networkInfo.isConnected()) {
             startActivity(new Intent(this, edu.aku.hassannaqvi.enp_baseline.ui.SyncActivity.class).putExtra("login", true));
         } else {
-            Toast.makeText(this, getString(R.string.network_conn_error), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.network_conn_error), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -284,14 +284,14 @@ public class LoginActivity extends AppCompatActivity {
 
             // Check for a valid password, if the user entered one.
             if (password.length() < 8) {
-                bi.password.setError(getString(R.string.invalid_password));
+                bi.password.setError(getResources().getString(R.string.invalid_password));
                 focusView = bi.password;
                 return;
             }
 
             // Check for a valid username address.
             if (TextUtils.isEmpty(username)) {
-                bi.username.setError(getString(R.string.username_required));
+                bi.username.setError(getResources().getString(R.string.username_required));
                 focusView = bi.username;
                 return;
             }
@@ -328,7 +328,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 } else {
                     recordEntry("Failed Login: Incorrect username or password");
-                    bi.password.setError(getString(R.string.incorrect_username_or_password));
+                    bi.password.setError(getResources().getString(R.string.incorrect_username_or_password));
                     bi.password.requestFocus();
                     //  Toast.makeText(LoginActivity.this, username + " " + password, Toast.LENGTH_SHORT).show();
                 }
@@ -339,6 +339,9 @@ public class LoginActivity extends AppCompatActivity {
                 e.printStackTrace();
                 Toast.makeText(this, "NoSuchAlgorithmException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "IllegalArgumentException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
         }

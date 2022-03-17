@@ -498,8 +498,8 @@ public class AnthroChild extends BaseObservable implements Observable {
             json = new JSONObject(string);
             this.f101name = json.getString("f101name");
             this.f101 = json.getString("f101");
-            this.f102m = json.getString("f102m");
-            this.f102d = json.getString("f102d");
+            this.f102m = json.has("f102m") ? json.getString("f102m") : "";
+            this.f102d = json.has("f102d") ? json.getString("f102d") : "";
             this.f103 = json.getString("f103");
             this.f10401 = json.getString("f10401");
             this.f10402 = json.getString("f10402");

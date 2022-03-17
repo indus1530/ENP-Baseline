@@ -2099,7 +2099,7 @@ public class Recipient extends BaseObservable implements Observable {
             this.b205b = json.getString("b205b");
             this.b205c = json.getString("b205c");
             this.b20601 = json.getString("b20601");
-            this.b20602 = json.getString("b20602");
+            this.b20602 = json.has("b20602") ? json.getString("b20602") : "";
             this.b207a = json.getString("b207a");
             this.b207b = json.getString("b207b");
             this.b207c = json.getString("b207c");

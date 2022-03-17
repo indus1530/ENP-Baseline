@@ -731,7 +731,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
             this.a21301 = json.getString("a21301");
             this.a21302 = json.getString("a21302");
             this.a214 = json.getString("a214");
-            this.a215 = json.getString("a215");
+            this.a215 = json.has("215") ? json.getString("a215") : "";
         }
     }
 

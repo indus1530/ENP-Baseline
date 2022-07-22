@@ -5976,23 +5976,23 @@ public class MWRA extends BaseObservable implements Observable {
             this.c5011 = json.getString("c5011");
             this.c5012 = json.getString("c5012");
             this.c5013 = json.getString("c5013");
-            this.c5014 = json.getString("c5014");
+            this.c5014 = json.has("c5014") ? json.getString("c5014") : "";
             this.c502 = json.getString("c502");
             this.c5021 = json.getString("c5021");
             this.c5022 = json.getString("c5022");
             this.c5023 = json.getString("c5023");
-            this.c5024 = json.getString("c5024");
+            this.c5024 = json.has("c5024") ? json.getString("c5024") : "";
             this.c503 = json.getString("c503");
             this.c5031 = json.getString("c5031");
             this.c5032 = json.getString("c5032");
             this.c5033 = json.getString("c5033");
-            this.c5034 = json.getString("c5034");
+            this.c5034 = json.has("c5034") ? json.getString("c5034") : "";
             this.c504 = json.getString("c504");
             this.c50496x = json.getString("c50496x");
             this.c5041 = json.getString("c5041");
             this.c5042 = json.getString("c5042");
             this.c5043 = json.getString("c5043");
-            this.c5044 = json.getString("c5044");
+            this.c5044 = json.has("c5044") ? json.getString("c5044") : "";
             this.c505 = json.getString("c505");
             this.c50596x = json.getString("c50596x");
         }
@@ -6462,19 +6462,23 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("c5011", c5011)
                 .put("c5012", c5012)
                 .put("c5013", c5013)
+                .put("c5014", c5014)
                 .put("c502", c502)
                 .put("c5021", c5021)
                 .put("c5022", c5022)
                 .put("c5023", c5023)
+                .put("c5024", c5024)
                 .put("c503", c503)
                 .put("c5031", c5031)
                 .put("c5032", c5032)
                 .put("c5033", c5033)
+                .put("c5034", c5034)
                 .put("c504", c504)
                 .put("c50496x", c50496x)
                 .put("c5041", c5041)
                 .put("c5042", c5042)
                 .put("c5043", c5043)
+                .put("c5044", c5044)
                 .put("c505", c505)
                 .put("c50596x", c50596x);
         return json.toString();

@@ -106,7 +106,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name=".ui.sections.SectionB2Activity"
+            android:name=".ui.sections.SectionB2BActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+        <activity
+            android:name=".ui.sections.SectionB2AActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />

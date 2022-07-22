@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.enp_baseline;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -36,7 +35,7 @@ import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA3BActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA4Activity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionA5Activity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionB1Activity;
-import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionB2Activity;
+import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionB2AActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC1Activity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC2Activity;
 import edu.aku.hassannaqvi.enp_baseline.ui.sections.SectionC3Activity;
@@ -138,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.secb2:
                 MainApp.recipient = new Recipient();
-                startActivity(new Intent(this, SectionB2Activity.class));
+                startActivity(new Intent(this, SectionB2AActivity.class));
                 break;
             case R.id.secc1:
                 MainApp.mwra = new MWRA();

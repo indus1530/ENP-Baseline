@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.enp_baseline.ui.sections;
 
 
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.recipient;
-import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.selectedMWRA;
 import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -23,22 +22,21 @@ import edu.aku.hassannaqvi.enp_baseline.R;
 import edu.aku.hassannaqvi.enp_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
-import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionB2Binding;
+import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionB2aBinding;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
 
 
+public class SectionB2AActivity extends AppCompatActivity {
 
-public class SectionB2Activity extends AppCompatActivity {
-
-    private static final String TAG = "SectionB2Activity";
-    ActivitySectionB2Binding bi;
+    private static final String TAG = "SectionB2AActivity";
+    ActivitySectionB2aBinding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b2);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b2a);
         bi.setRcpt(recipient);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
@@ -70,29 +68,7 @@ public class SectionB2Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-
-
-            try {
-                // populate mother/caregiver data if already exisits
-                MainApp.mwra = db.getMWRAByFMUID(MainApp.familyMember.getUid());
-                if (!selectedMWRA.equals("97")) {
-                    MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid(), "2");
-
-                    MainApp.mwra = db.getMWRAByFMUID(MainApp.familyMember.getUid());
-                    startActivity(new Intent(this, SectionC1Activity.class));
-                } else {
-                    MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid(), "1");
-
-                    MainApp.child = db.getChildByFMUID(MainApp.familyMember.getUid());
-                    startActivity(new Intent(this, SectionD1Activity.class));
-                }
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-                Toast.makeText(this, "JSONException(familymember/mwra): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-
-            }
-
+            startActivity(new Intent(this, SectionB2BActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
@@ -112,14 +88,6 @@ public class SectionB2Activity extends AppCompatActivity {
         if (!recipient.getB204w().isEmpty() && !recipient.getB204m().isEmpty()) {
             if (Integer.parseInt(recipient.getB204w()) + Integer.parseInt(recipient.getB204m()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.b204w, "All Values Can't be zero");
-        }
-        if (!recipient.getB21201().isEmpty() && !recipient.getB21202().isEmpty()) {
-            if (Integer.parseInt(recipient.getB21201()) + Integer.parseInt(recipient.getB21202()) == 0)
-                return Validator.emptyCustomTextBox(this, bi.b21101, "All Values Can't be zero");
-        }
-        if (!recipient.getB222h().isEmpty() && !recipient.getB222m().isEmpty()) {
-            if (Integer.parseInt(recipient.getB222h()) + Integer.parseInt(recipient.getB222m()) == 0)
-                return Validator.emptyCustomTextBox(this, bi.b222h, "All Values Can't be zero");
         }
         return true;
     }

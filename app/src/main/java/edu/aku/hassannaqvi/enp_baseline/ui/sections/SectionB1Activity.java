@@ -98,7 +98,7 @@ public class SectionB1Activity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             if (MainApp.familyMember.getA20704().equals("4")) {
-                startActivity(new Intent(this, SectionB2Activity.class));
+                startActivity(new Intent(this, SectionB2AActivity.class));
             } else {
 
                 // selected familymember (Child)

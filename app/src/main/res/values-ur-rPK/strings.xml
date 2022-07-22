@@ -1338,6 +1338,7 @@
     <string name="c501202"> این جی او </string>
     <string name="c501203"> پرائیوٹ / انفرادی </string>
     <string name="c5013"> پچھلے چار ہفتوں میں کتنے ساشے موصول ہوئے ہیں ؟ </string>
+    <string name="c5014"> پچھلے چار ہفتوں میں کتنے ساشے استعمال ہوئے ہیں ؟ </string>
     <string name="c502"> بچوں کے لیے RUTF (اضافی خوراک استعمال کرنے کے لیے تیار ) </string>
     <string name="c50201"> ہاں </string>
     <string name="c50202"> نہیں </string>
@@ -1346,7 +1347,8 @@
     <string name="c502201"> گورنمٹ </string>
     <string name="c502202"> این جی او </string>
     <string name="c502203"> پرائیوٹ / انفرادی </string>
-    <string name="c5023"> پچھلے چارہفتوں میں کتنے ساشے موصول ہوئے ہیں ؟ </string>
+    <string name="c5023"> پچھلے چار ہفتوں میں کتنے ساشے موصول ہوئے ہیں ؟ </string>
+    <string name="c5024"> پچھلے چار ہفتوں میں کتنے ساشے استعمال ہوئے ہیں ؟ </string>
     <string name="c503"> خواتین کے لیے سپر سیریل, گندم سویا </string>
     <string name="c50301"> ہاں </string>
     <string name="c50302"> نہیں </string>
@@ -1356,6 +1358,7 @@
     <string name="c503202"> این جی او </string>
     <string name="c503203"> پرائیوٹ / انفرادی </string>
     <string name="c5033"> پچھلے چار ہفتوں میں کتنے ساشے موصول ہوئے ہیں ؟ </string>
+    <string name="c5034"> پچھلے چار ہفتوں میں کتنے ساشے استعمال ہوئے ہیں ؟ </string>
     <string name="c504"> دیگر </string>
     <string name="c50401"> ہاں </string>
     <string name="c50402"> نہیں </string>
@@ -1366,6 +1369,7 @@
     <string name="c504202"> این جی او </string>
     <string name="c504203"> پرائیوٹ / انفرادی </string>
     <string name="c5043"> پچھلے چار ہفتوں میں کتنے ساشے موصول ہوئے ہیں ؟ </string>
+    <string name="c5044"> پچھلے چار ہفتوں میں کتنے ساشے استعمال ہوئے ہیں ؟ </string>
     <string name="c505"> آپ کو جو ساشے ( سپلیمنٹ ) ملتے ہیں اسے کہاں رکھتے ہیں ؟ </string>
     <string name="c50501"> کمرے کے درجہ حرارت پر </string>
     <string name="c50502"> ریفریجریٹر </string>

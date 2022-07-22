@@ -371,19 +371,23 @@ public class MWRA extends BaseObservable implements Observable {
     private String c5011 = _EMPTY_;
     private String c5012 = _EMPTY_;
     private String c5013 = _EMPTY_;
+    private String c5014 = _EMPTY_;
     private String c502 = _EMPTY_;
     private String c5021 = _EMPTY_;
     private String c5022 = _EMPTY_;
     private String c5023 = _EMPTY_;
+    private String c5024 = _EMPTY_;
     private String c503 = _EMPTY_;
     private String c5031 = _EMPTY_;
     private String c5032 = _EMPTY_;
     private String c5033 = _EMPTY_;
+    private String c5034 = _EMPTY_;
     private String c504 = _EMPTY_;
     private String c50496x = _EMPTY_;
     private String c5041 = _EMPTY_;
     private String c5042 = _EMPTY_;
     private String c5043 = _EMPTY_;
+    private String c5044 = _EMPTY_;
     private String c505 = _EMPTY_;
     private String c50596x = _EMPTY_;
     private String c60101 = _EMPTY_;
@@ -4365,6 +4369,7 @@ public class MWRA extends BaseObservable implements Observable {
         setC5011(c501.equals("2") ? "" : this.c5011);
         setC5012(c501.equals("2") ? "" : this.c5012);
         setC5013(c501.equals("2") ? "" : this.c5013);
+        setC5014(c501.equals("2") ? "" : this.c5014);
         setC505(c501.equals("1") || this.c502.equals("1") || this.c503.equals("1") || this.c504.equals("1") ? this.c505 : "");
         notifyPropertyChanged(BR.c501);
     }
@@ -4400,6 +4405,16 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getC5014() {
+        return c5014;
+    }
+
+    public void setC5014(String c5014) {
+        this.c5014 = c5014;
+        notifyPropertyChanged(BR.c5014);
+    }
+
+    @Bindable
     public String getC502() {
         return c502;
     }
@@ -4409,6 +4424,7 @@ public class MWRA extends BaseObservable implements Observable {
         setC5021(c502.equals("2") ? "" : this.c5021);
         setC5022(c502.equals("2") ? "" : this.c5022);
         setC5023(c502.equals("2") ? "" : this.c5023);
+        setC5024(c502.equals("2") ? "" : this.c5024);
         setC505(c502.equals("1") || this.c501.equals("1") || this.c503.equals("1") || this.c504.equals("1") ? this.c505 : "");
         notifyPropertyChanged(BR.c502);
     }
@@ -4444,6 +4460,16 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getC5024() {
+        return c5024;
+    }
+
+    public void setC5024(String c5024) {
+        this.c5024 = c5024;
+        notifyPropertyChanged(BR.c5024);
+    }
+
+    @Bindable
     public String getC503() {
         return c503;
     }
@@ -4453,6 +4479,7 @@ public class MWRA extends BaseObservable implements Observable {
         setC5031(c503.equals("2") ? "" : this.c5031);
         setC5032(c503.equals("2") ? "" : this.c5032);
         setC5033(c503.equals("2") ? "" : this.c5033);
+        setC5034(c503.equals("2") ? "" : this.c5034);
         setC505(c503.equals("1") || this.c501.equals("1") || this.c502.equals("1") || this.c504.equals("1") ? this.c505 : "");
         notifyPropertyChanged(BR.c503);
     }
@@ -4488,6 +4515,16 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getC5034() {
+        return c5034;
+    }
+
+    public void setC5034(String c5034) {
+        this.c5034 = c5034;
+        notifyPropertyChanged(BR.c5034);
+    }
+
+    @Bindable
     public String getC504() {
         return c504;
     }
@@ -4498,6 +4535,7 @@ public class MWRA extends BaseObservable implements Observable {
         setC5041(c504.equals("2") ? "" : this.c5041);
         setC5042(c504.equals("2") ? "" : this.c5042);
         setC5043(c504.equals("2") ? "" : this.c5043);
+        setC5044(c504.equals("2") ? "" : this.c5044);
         setC505(c504.equals("1") || this.c501.equals("1") || this.c502.equals("1") || this.c503.equals("1") ? this.c505 : "");
         notifyPropertyChanged(BR.c504);
     }
@@ -4540,6 +4578,16 @@ public class MWRA extends BaseObservable implements Observable {
     public void setC5043(String c5043) {
         this.c5043 = c5043;
         notifyPropertyChanged(BR.c5043);
+    }
+
+    @Bindable
+    public String getC5044() {
+        return c5044;
+    }
+
+    public void setC5044(String c5044) {
+        this.c5044 = c5044;
+        notifyPropertyChanged(BR.c5044);
     }
 
     @Bindable
@@ -5928,19 +5976,23 @@ public class MWRA extends BaseObservable implements Observable {
             this.c5011 = json.getString("c5011");
             this.c5012 = json.getString("c5012");
             this.c5013 = json.getString("c5013");
+            this.c5014 = json.getString("c5014");
             this.c502 = json.getString("c502");
             this.c5021 = json.getString("c5021");
             this.c5022 = json.getString("c5022");
             this.c5023 = json.getString("c5023");
+            this.c5024 = json.getString("c5024");
             this.c503 = json.getString("c503");
             this.c5031 = json.getString("c5031");
             this.c5032 = json.getString("c5032");
             this.c5033 = json.getString("c5033");
+            this.c5034 = json.getString("c5034");
             this.c504 = json.getString("c504");
             this.c50496x = json.getString("c50496x");
             this.c5041 = json.getString("c5041");
             this.c5042 = json.getString("c5042");
             this.c5043 = json.getString("c5043");
+            this.c5044 = json.getString("c5044");
             this.c505 = json.getString("c505");
             this.c50596x = json.getString("c50596x");
         }

@@ -1448,6 +1448,7 @@
     <string name="c501202">NGO</string>
     <string name="c501203">Private/Individual </string>
     <string name="c5013">How many sachets have been received in past 4 weeks?</string>
+    <string name="c5014">How many sachets have been consumed in past 4 weeks?</string>
     <string name="c502">RUTF (ready to use therapeutic food) for children</string>
     <string name="c50201">Yes</string>
     <string name="c50202">No</string>
@@ -1457,6 +1458,7 @@
     <string name="c502202">NGO</string>
     <string name="c502203">Private/Individual </string>
     <string name="c5023">How many sachets have been received in past 4 weeks?</string>
+    <string name="c5024">How many sachets have been consumed in past 4 weeks?</string>
     <string name="c503">Supplementary Nutritional Food - SNF (Mamta)</string>
     <string name="c50301">Yes</string>
     <string name="c50302">No</string>
@@ -1466,6 +1468,7 @@
     <string name="c503202">NGO</string>
     <string name="c503203">Private/Individual </string>
     <string name="c5033">How many sachets have been received in past 4 weeks?</string>
+    <string name="c5034">How many sachets have been consumed in past 4 weeks?</string>
     <string name="c504">Any Other</string>
     <string name="c50401">Yes</string>
     <string name="c50402">No</string>
@@ -1476,6 +1479,7 @@
     <string name="c504202">NGO</string>
     <string name="c504203">Private/Individual </string>
     <string name="c5043">How many sachets have been received in past 4 weeks?</string>
+    <string name="c5044">How many sachets have been consumed in past 4 weeks?</string>
     <string name="c505">Where are the received supplements stored?</string>
     <string name="c50501">Room Temperature </string>
     <string name="c50502">Refrigerator</string>
@@ -2953,14 +2957,14 @@
     <string name='Q_dsta'>dsta</string>
     <string name='Q_esta'>esta</string>
     <string name='Q_fsta'>fsta</string>
-    <string name="title_activity_lock">LockActivity</string>
+    <string name="title_activity_lock" translatable="false">LockActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
 
 </resources>

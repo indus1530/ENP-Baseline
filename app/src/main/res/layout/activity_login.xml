@@ -7,10 +7,12 @@
 
         <import type="android.view.View" />
 
-        <variable
+        <!--<variable
             name="rcpt"
-            type="edu.aku.hassannaqvi.enp_baseline.models.Recipient" />
+            type="edu.aku.hassannaqvi.enp_baseline.models.Recipient" />-->
+
     </data>
+
 
 
     <FrameLayout
@@ -26,15 +28,15 @@
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            style="@null"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/CustomToolbarTheme"
-            app:popupTheme="@style/CustomPopupTheme"
-            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:titleTextAppearance="@style/Toolbar.TitleText" />
+            android:layout_height="?attr/actionBarSize"
+            android:textAlignment="center"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:menu="@menu/language_menu"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:subtitleTextColor="@color/colorPrimaryLight"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorPrimary" />
 
 
         <!-- Login progress -->
@@ -365,4 +367,6 @@
             android:layout_height="match_parent"
             android:visibility="gone" />
     </FrameLayout>
+
+
 </layout>

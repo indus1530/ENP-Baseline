@@ -1564,7 +1564,7 @@
                             <EditText
                                 android:id="@+id/b208696x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/b208696"
                                 android:tag="b208696"
@@ -2057,7 +2057,7 @@
                             <EditText
                                 android:id="@+id/b2081396x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/b2081396"
                                 android:tag="b2081396"

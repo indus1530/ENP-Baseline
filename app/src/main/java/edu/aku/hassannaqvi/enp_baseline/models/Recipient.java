@@ -113,6 +113,10 @@ public class Recipient extends BaseObservable implements Observable {
     private String b120 = _EMPTY_;
     private String b201 = _EMPTY_;
     private String b20196x = _EMPTY_;
+    private String b201a = _EMPTY_;
+    private String b201b = _EMPTY_;
+    private String b201c = _EMPTY_;
+    private String b201c96x = _EMPTY_;
     private String b202 = _EMPTY_;
     private String b202998 = _EMPTY_;
     private String b202w = _EMPTY_;
@@ -133,6 +137,35 @@ public class Recipient extends BaseObservable implements Observable {
     private String b207c = _EMPTY_;
     private String b208a = _EMPTY_;
     private String b208b = _EMPTY_;
+
+    private String b2081 = _EMPTY_;
+    private String b2082 = _EMPTY_;
+    private String b208296x = _EMPTY_;
+    private String b2083 = _EMPTY_;
+    private String b2084 = _EMPTY_;
+    private String b2085 = _EMPTY_;
+    private String b2086a = _EMPTY_;
+    private String b2086b = _EMPTY_;
+    private String b2086c = _EMPTY_;
+    private String b2086d = _EMPTY_;
+    private String b2086e = _EMPTY_;
+    private String b208696 = _EMPTY_;
+    private String b208696x = _EMPTY_;
+    private String b2087 = _EMPTY_;
+    private String b2088 = _EMPTY_;
+    private String b2089 = _EMPTY_;
+    private String b208996x = _EMPTY_;
+    private String b20810 = _EMPTY_;
+    private String b20811 = _EMPTY_;
+    private String b20812 = _EMPTY_;
+    private String b20813a = _EMPTY_;
+    private String b20813b = _EMPTY_;
+    private String b20813c = _EMPTY_;
+    private String b20813d = _EMPTY_;
+    private String b20813e = _EMPTY_;
+    private String b2081396 = _EMPTY_;
+    private String b2081396x = _EMPTY_;
+
     private String b209 = _EMPTY_;
     private String b209a = _EMPTY_;
     private String b209b = _EMPTY_;
@@ -1077,6 +1110,49 @@ public class Recipient extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getB201a() {
+        return b201a;
+    }
+
+    public void setB201a(String b201a) {
+        this.b201a = b201a;
+        setB201b(b201a.equals("2") ? this.b201b : "");
+        setB201c(b201a.equals("1") ? this.b201c : "");
+        notifyPropertyChanged(BR.b201a);
+    }
+
+    @Bindable
+    public String getB201b() {
+        return b201b;
+    }
+
+    public void setB201b(String b201b) {
+        this.b201b = b201b;
+        notifyPropertyChanged(BR.b201b);
+    }
+
+    @Bindable
+    public String getB201c() {
+        return b201c;
+    }
+
+    public void setB201c(String b201c) {
+        this.b201c = b201c;
+        setB201c96x(b201c.equals("96") ? this.b201c96x : "");
+        notifyPropertyChanged(BR.b201c);
+    }
+
+    @Bindable
+    public String getB201c96x() {
+        return b201c96x;
+    }
+
+    public void setB201c96x(String b201c96x) {
+        this.b201c96x = b201c96x;
+        notifyPropertyChanged(BR.b201c96x);
+    }
+
+    @Bindable
     public String getB202() {
         return b202;
     }
@@ -1295,6 +1371,282 @@ public class Recipient extends BaseObservable implements Observable {
         this.b208b = b208b;
         notifyPropertyChanged(BR.b208b);
     }
+
+
+    @Bindable
+    public String getB2081() {
+        return b2081;
+    }
+
+    public void setB2081(String b2081) {
+        this.b2081 = b2081;
+        notifyPropertyChanged(BR.b2081);
+    }
+
+    @Bindable
+    public String getB2082() {
+        return b2082;
+    }
+
+    public void setB2082(String b2082) {
+        this.b2082 = b2082;
+        setB208296x(b2082.equals("96") ? this.b208296x : "");
+        notifyPropertyChanged(BR.b2082);
+    }
+
+    @Bindable
+    public String getB208296x() {
+        return b208296x;
+    }
+
+    public void setB208296x(String b208296x) {
+        this.b208296x = b208296x;
+        notifyPropertyChanged(BR.b208296x);
+    }
+
+    @Bindable
+    public String getB2083() {
+        return b2083;
+    }
+
+    public void setB2083(String b2083) {
+        this.b2083 = b2083;
+        notifyPropertyChanged(BR.b2083);
+    }
+
+    @Bindable
+    public String getB2084() {
+        return b2084;
+    }
+
+    public void setB2084(String b2084) {
+        this.b2084 = b2084;
+        notifyPropertyChanged(BR.b2084);
+    }
+
+    @Bindable
+    public String getB2085() {
+        return b2085;
+    }
+
+    public void setB2085(String b2085) {
+        this.b2085 = b2085;
+        notifyPropertyChanged(BR.b2085);
+    }
+
+    @Bindable
+    public String getB2086a() {
+        return b2086a;
+    }
+
+    public void setB2086a(String b2086a) {
+        this.b2086a = b2086a;
+        notifyPropertyChanged(BR.b2086a);
+    }
+
+    @Bindable
+    public String getB2086b() {
+        return b2086b;
+    }
+
+    public void setB2086b(String b2086b) {
+        this.b2086b = b2086b;
+        notifyPropertyChanged(BR.b2086b);
+    }
+
+    @Bindable
+    public String getB2086c() {
+        return b2086c;
+    }
+
+    public void setB2086c(String b2086c) {
+        this.b2086c = b2086c;
+        notifyPropertyChanged(BR.b2086c);
+    }
+
+    @Bindable
+    public String getB2086d() {
+        return b2086d;
+    }
+
+    public void setB2086d(String b2086d) {
+        this.b2086d = b2086d;
+        notifyPropertyChanged(BR.b2086d);
+    }
+
+    @Bindable
+    public String getB2086e() {
+        return b2086e;
+    }
+
+    public void setB2086e(String b2086e) {
+        this.b2086e = b2086e;
+        notifyPropertyChanged(BR.b2086e);
+    }
+
+    @Bindable
+    public String getB208696() {
+        return b208696;
+    }
+
+    public void setB208696(String b208696) {
+        this.b208696 = b208696;
+        setB208696x(b208696.equals("96") ? this.b208696x : "");
+        notifyPropertyChanged(BR.b208696);
+    }
+
+    @Bindable
+    public String getB208696x() {
+        return b208696x;
+    }
+
+    public void setB208696x(String b208696x) {
+        this.b208696x = b208696x;
+        notifyPropertyChanged(BR.b208696x);
+    }
+
+    @Bindable
+    public String getB2087() {
+        return b2087;
+    }
+
+    public void setB2087(String b2087) {
+        this.b2087 = b2087;
+        notifyPropertyChanged(BR.b2087);
+    }
+
+    @Bindable
+    public String getB2088() {
+        return b2088;
+    }
+
+    public void setB2088(String b2088) {
+        this.b2088 = b2088;
+        notifyPropertyChanged(BR.b2088);
+    }
+
+    @Bindable
+    public String getB2089() {
+        return b2089;
+    }
+
+    public void setB2089(String b2089) {
+        this.b2089 = b2089;
+        setB208996x(b2089.equals("96") ? this.b208996x : "");
+        notifyPropertyChanged(BR.b2089);
+    }
+
+    @Bindable
+    public String getB208996x() {
+        return b208996x;
+    }
+
+    public void setB208996x(String b208996x) {
+        this.b208996x = b208996x;
+        notifyPropertyChanged(BR.b208996x);
+    }
+
+    @Bindable
+    public String getB20810() {
+        return b20810;
+    }
+
+    public void setB20810(String b20810) {
+        this.b20810 = b20810;
+        notifyPropertyChanged(BR.b20810);
+    }
+
+    @Bindable
+    public String getB20811() {
+        return b20811;
+    }
+
+    public void setB20811(String b20811) {
+        this.b20811 = b20811;
+        notifyPropertyChanged(BR.b20811);
+    }
+
+    @Bindable
+    public String getB20812() {
+        return b20812;
+    }
+
+    public void setB20812(String b20812) {
+        this.b20812 = b20812;
+        notifyPropertyChanged(BR.b20812);
+    }
+
+    @Bindable
+    public String getB20813a() {
+        return b20813a;
+    }
+
+    public void setB20813a(String b20813a) {
+        this.b20813a = b20813a;
+        notifyPropertyChanged(BR.b20813a);
+    }
+
+    @Bindable
+    public String getB20813b() {
+        return b20813b;
+    }
+
+    public void setB20813b(String b20813b) {
+        this.b20813b = b20813b;
+        notifyPropertyChanged(BR.b20813b);
+    }
+
+    @Bindable
+    public String getB20813c() {
+        return b20813c;
+    }
+
+    public void setB20813c(String b20813c) {
+        this.b20813c = b20813c;
+        notifyPropertyChanged(BR.b20813c);
+    }
+
+    @Bindable
+    public String getB20813d() {
+        return b20813d;
+    }
+
+    public void setB20813d(String b20813d) {
+        this.b20813d = b20813d;
+        notifyPropertyChanged(BR.b20813d);
+    }
+
+    @Bindable
+    public String getB20813e() {
+        return b20813e;
+    }
+
+    public void setB20813e(String b20813e) {
+        this.b20813e = b20813e;
+        notifyPropertyChanged(BR.b20813e);
+    }
+
+    @Bindable
+    public String getB2081396() {
+        return b2081396;
+    }
+
+    public void setB2081396(String b2081396) {
+        this.b2081396 = b2081396;
+        setB2081396x(b2081396.equals("96") ? this.b2081396x : "");
+        notifyPropertyChanged(BR.b2081396);
+    }
+
+    @Bindable
+    public String getB2081396x() {
+        return b2081396x;
+    }
+
+    public void setB2081396x(String b2081396x) {
+        this.b2081396x = b2081396x;
+        notifyPropertyChanged(BR.b2081396x);
+    }
+
 
     @Bindable
     public String getB209() {
@@ -2085,6 +2437,10 @@ public class Recipient extends BaseObservable implements Observable {
             json = new JSONObject(string);
             this.b201 = json.getString("b201");
             this.b20196x = json.getString("b20196x");
+            this.b201a = json.getString("b201a");
+            this.b201b = json.getString("b201b");
+            this.b201c = json.getString("b201c");
+            this.b201c96x = json.getString("b201c96x");
             this.b202 = json.getString("b202");
             this.b202998 = json.getString("b202998");
             this.b202w = json.getString("b202w");
@@ -2105,6 +2461,33 @@ public class Recipient extends BaseObservable implements Observable {
             this.b207c = json.getString("b207c");
             this.b208a = json.getString("b208a");
             this.b208b = json.getString("b208b");
+            this.b2081 = json.has("b2081") ? json.getString("b2081") : "";
+            this.b2082 = json.has("b2082") ? json.getString("b2082") : "";
+            this.b208296x = json.has("b208296x") ? json.getString("b208296x") : "";
+            this.b2083 = json.has("b2083") ? json.getString("b2083") : "";
+            this.b2084 = json.has("b2084") ? json.getString("b2084") : "";
+            this.b2085 = json.has("b2085") ? json.getString("b2085") : "";
+            this.b2086a = json.has("b2086a") ? json.getString("b2086a") : "";
+            this.b2086b = json.has("b2086b") ? json.getString("b2086b") : "";
+            this.b2086c = json.has("b2086c") ? json.getString("b2086c") : "";
+            this.b2086d = json.has("b2086d") ? json.getString("b2086d") : "";
+            this.b2086e = json.has("b2086e") ? json.getString("b2086e") : "";
+            this.b208696 = json.has("b208696") ? json.getString("b208696") : "";
+            this.b208696x = json.has("b208696x") ? json.getString("b208696x") : "";
+            this.b2087 = json.has("b2087") ? json.getString("b2087") : "";
+            this.b2088 = json.has("b2088") ? json.getString("b2088") : "";
+            this.b2089 = json.has("b2089") ? json.getString("b2089") : "";
+            this.b208996x = json.has("b208996x") ? json.getString("b208996x") : "";
+            this.b20810 = json.has("b20810") ? json.getString("b20810") : "";
+            this.b20811 = json.has("b20811") ? json.getString("b20811") : "";
+            this.b20812 = json.has("b20812") ? json.getString("b20812") : "";
+            this.b20813a = json.has("b20813a") ? json.getString("b20813a") : "";
+            this.b20813b = json.has("b20813b") ? json.getString("b20813b") : "";
+            this.b20813c = json.has("b20813c") ? json.getString("b20813c") : "";
+            this.b20813d = json.has("b20813d") ? json.getString("b20813d") : "";
+            this.b20813e = json.has("b20813e") ? json.getString("b20813e") : "";
+            this.b2081396 = json.has("b2081396") ? json.getString("b2081396") : "";
+            this.b2081396x = json.has("b2081396x") ? json.getString("b2081396x") : "";
             this.b209 = json.getString("b209");
             this.b209a = json.getString("b209a");
             this.b209b = json.getString("b209b");
@@ -2266,6 +2649,10 @@ public class Recipient extends BaseObservable implements Observable {
         JSONObject json = new JSONObject();
         json.put("b201", b201)
                 .put("b20196x", b20196x)
+                .put("b201a", b201a)
+                .put("b201b", b201b)
+                .put("b201c", b201c)
+                .put("b201c96x", b201c96x)
                 .put("b202", b202)
                 .put("b202998", b202998)
                 .put("b202w", b202w)
@@ -2286,6 +2673,33 @@ public class Recipient extends BaseObservable implements Observable {
                 .put("b207c", b207c)
                 .put("b208a", b208a)
                 .put("b208b", b208b)
+                .put("b2081", b2081)
+                .put("b2082", b2082)
+                .put("b208296x", b208296x)
+                .put("b2083", b2083)
+                .put("b2084", b2084)
+                .put("b2085", b2085)
+                .put("b2086a", b2086a)
+                .put("b2086b", b2086b)
+                .put("b2086c", b2086c)
+                .put("b2086d", b2086d)
+                .put("b2086e", b2086e)
+                .put("b208696", b208696)
+                .put("b208696x", b208696x)
+                .put("b2087", b2087)
+                .put("b2088", b2088)
+                .put("b2089", b2089)
+                .put("b208996x", b208996x)
+                .put("b20810", b20810)
+                .put("b20811", b20811)
+                .put("b20812", b20812)
+                .put("b20813a", b20813a)
+                .put("b20813b", b20813b)
+                .put("b20813c", b20813c)
+                .put("b20813d", b20813d)
+                .put("b20813e", b20813e)
+                .put("b2081396", b2081396)
+                .put("b2081396x", b2081396x)
                 .put("b209", b209)
                 .put("b209a", b209a)
                 .put("b209b", b209b)

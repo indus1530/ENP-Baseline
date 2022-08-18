@@ -775,6 +775,9 @@
     <string name="b20813d">میں بھولتا رہتا ہوں</string>
     <string name="b20813e">گھر والے اجازت نہیں دیتے</string>
     <string name="b2081396">دیگر وضاحت کریں</string>
+    <string name="b20814">کیا آپ نے کسی اور کے ساتھ ) Wawamum اضافی خوراک(  کے ساشے شیئر کیے ہیں ؟</string>
+    <string name="b20814a">ہاں</string>
+    <string name="b20814b">نہیں</string>
 
     <string name="b209ins">(اگر بی آئی ایس پی سے مستفید ہونے والی خاتون کا بچہ ہے تو لاگو  /قابل اطلاق ہے)</string>
     <string name="b209">آپ کے ENP سینٹر کے آخری دورے پر کیا آپ کے بچے کی مندرجہ زیل  پیمائش کی گئیں تھیں:</string>
@@ -2508,6 +2511,7 @@
     <string name='Q_b20811'>b20811</string>
     <string name='Q_b20812'>b20812</string>
     <string name='Q_b20813'>b20813</string>
+    <string name='Q_b20814'>b20814</string>
     <string name='Q_b2081396'>b2081396</string>
     <string name='Q_b20813c'>b20813c</string>
     <string name='Q_b20813d'>b20813d</string>

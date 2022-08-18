@@ -165,6 +165,7 @@ public class Recipient extends BaseObservable implements Observable {
     private String b20813e = _EMPTY_;
     private String b2081396 = _EMPTY_;
     private String b2081396x = _EMPTY_;
+    private String b20814 = _EMPTY_;
 
     private String b209 = _EMPTY_;
     private String b209a = _EMPTY_;
@@ -1380,6 +1381,17 @@ public class Recipient extends BaseObservable implements Observable {
 
     public void setB2081(String b2081) {
         this.b2081 = b2081;
+        setB2082(b2081.equals("2") ? this.b2082 : "");
+        setB2083(b2081.equals("1") ? this.b2083 : "");
+        setB2084(b2081.equals("1") ? this.b2084 : "");
+        setB2085(b2081.equals("1") ? this.b2085 : "");
+        setB2086a(b2081.equals("1") ? this.b2086a : "");
+        setB2086b(b2081.equals("1") ? this.b2086b : "");
+        setB2086c(b2081.equals("1") ? this.b2086c : "");
+        setB2086d(b2081.equals("1") ? this.b2086d : "");
+        setB2086e(b2081.equals("1") ? this.b2086e : "");
+        setB208696(b2081.equals("1") ? this.b208696 : "");
+        setB2087(b2081.equals("1") ? this.b2087 : "");
         notifyPropertyChanged(BR.b2081);
     }
 
@@ -1411,6 +1423,14 @@ public class Recipient extends BaseObservable implements Observable {
 
     public void setB2083(String b2083) {
         this.b2083 = b2083;
+        setB2084(b2083.equals("1") ? this.b2084 : "");
+        setB2085(b2083.equals("1") ? this.b2085 : "");
+        setB2086a(b2083.equals("2") ? this.b2086a : "");
+        setB2086b(b2083.equals("2") ? this.b2086b : "");
+        setB2086c(b2083.equals("2") ? this.b2086c : "");
+        setB2086d(b2083.equals("2") ? this.b2086d : "");
+        setB2086e(b2083.equals("2") ? this.b2086e : "");
+        setB208696(b2083.equals("2") ? this.b208696 : "");
         notifyPropertyChanged(BR.b2083);
     }
 
@@ -1431,6 +1451,12 @@ public class Recipient extends BaseObservable implements Observable {
 
     public void setB2085(String b2085) {
         this.b2085 = b2085;
+        setB2086a(b2085.equals("2") ? this.b2086a : "");
+        setB2086b(b2085.equals("2") ? this.b2086b : "");
+        setB2086c(b2085.equals("2") ? this.b2086c : "");
+        setB2086d(b2085.equals("2") ? this.b2086d : "");
+        setB2086e(b2085.equals("2") ? this.b2086e : "");
+        setB208696(b2085.equals("2") ? this.b208696 : "");
         notifyPropertyChanged(BR.b2085);
     }
 
@@ -1522,6 +1548,17 @@ public class Recipient extends BaseObservable implements Observable {
 
     public void setB2088(String b2088) {
         this.b2088 = b2088;
+        setB2089(b2088.equals("2") ? this.b2089 : "");
+        setB20810(b2088.equals("1") ? this.b20810 : "");
+        setB20811(b2088.equals("1") ? this.b20811 : "");
+        setB20812(b2088.equals("1") ? this.b20812 : "");
+        setB20813a(b2088.equals("1") ? this.b20813a : "");
+        setB20813b(b2088.equals("1") ? this.b20813b : "");
+        setB20813c(b2088.equals("1") ? this.b20813c : "");
+        setB20813d(b2088.equals("1") ? this.b20813d : "");
+        setB20813e(b2088.equals("1") ? this.b20813e : "");
+        setB2081396(b2088.equals("1") ? this.b2081396 : "");
+        setB20814(b2088.equals("1") ? this.b20814 : "");
         notifyPropertyChanged(BR.b2088);
     }
 
@@ -1553,6 +1590,14 @@ public class Recipient extends BaseObservable implements Observable {
 
     public void setB20810(String b20810) {
         this.b20810 = b20810;
+        setB20811(b20810.equals("1") ? this.b20811 : "");
+        setB20812(b20810.equals("1") ? this.b20812 : "");
+        setB20813a(b20810.equals("2") ? this.b20813a : "");
+        setB20813b(b20810.equals("2") ? this.b20813b : "");
+        setB20813c(b20810.equals("2") ? this.b20813c : "");
+        setB20813d(b20810.equals("2") ? this.b20813d : "");
+        setB20813e(b20810.equals("2") ? this.b20813e : "");
+        setB2081396(b20810.equals("2") ? this.b2081396 : "");
         notifyPropertyChanged(BR.b20810);
     }
 
@@ -1573,6 +1618,12 @@ public class Recipient extends BaseObservable implements Observable {
 
     public void setB20812(String b20812) {
         this.b20812 = b20812;
+        setB20813a(b20812.equals("2") ? this.b20813a : "");
+        setB20813b(b20812.equals("2") ? this.b20813b : "");
+        setB20813c(b20812.equals("2") ? this.b20813c : "");
+        setB20813d(b20812.equals("2") ? this.b20813d : "");
+        setB20813e(b20812.equals("2") ? this.b20813e : "");
+        setB2081396(b20812.equals("2") ? this.b2081396 : "");
         notifyPropertyChanged(BR.b20812);
     }
 
@@ -1645,6 +1696,16 @@ public class Recipient extends BaseObservable implements Observable {
     public void setB2081396x(String b2081396x) {
         this.b2081396x = b2081396x;
         notifyPropertyChanged(BR.b2081396x);
+    }
+
+    @Bindable
+    public String getB20814() {
+        return b20814;
+    }
+
+    public void setB20814(String b20814) {
+        this.b20814 = b20814;
+        notifyPropertyChanged(BR.b20814);
     }
 
 
@@ -2437,9 +2498,9 @@ public class Recipient extends BaseObservable implements Observable {
             json = new JSONObject(string);
             this.b201 = json.getString("b201");
             this.b20196x = json.getString("b20196x");
-            this.b201a = json.getString("b201a");
-            this.b201b = json.getString("b201b");
-            this.b201c = json.getString("b201c");
+            this.b201a = json.has("b201a") ? json.getString("b201a") : "";
+            this.b201b = json.has("b201b") ? json.getString("b201b") : "";
+            this.b201c = json.has("b201c") ? json.getString("b201c") : "";
             this.b201c96x = json.getString("b201c96x");
             this.b202 = json.getString("b202");
             this.b202998 = json.getString("b202998");
@@ -2488,6 +2549,7 @@ public class Recipient extends BaseObservable implements Observable {
             this.b20813e = json.has("b20813e") ? json.getString("b20813e") : "";
             this.b2081396 = json.has("b2081396") ? json.getString("b2081396") : "";
             this.b2081396x = json.has("b2081396x") ? json.getString("b2081396x") : "";
+            this.b20814 = json.has("b20814") ? json.getString("b20814") : "";
             this.b209 = json.getString("b209");
             this.b209a = json.getString("b209a");
             this.b209b = json.getString("b209b");
@@ -2700,6 +2762,7 @@ public class Recipient extends BaseObservable implements Observable {
                 .put("b20813e", b20813e)
                 .put("b2081396", b2081396)
                 .put("b2081396x", b2081396x)
+                .put("b20814", b20814)
                 .put("b209", b209)
                 .put("b209a", b209a)
                 .put("b209b", b209b)

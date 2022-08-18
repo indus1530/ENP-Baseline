@@ -876,6 +876,9 @@
     <string name="b20813d">I keep forgetting</string>
     <string name="b20813e">Family not permitting</string>
     <string name="b2081396">Other (specify)</string>
+    <string name="b20814">Have you shared Wawamum sachets with anyone else ?</string>
+    <string name="b20814a">Yes</string>
+    <string name="b20814b">No</string>
 
     <string name="b209ins">(Applicable if the beneficiary has a child)</string>
     <string name="b209">On your last visit to ENP center was your child measured for:</string>
@@ -2626,6 +2629,7 @@
     <string name='Q_b20811'>b20811</string>
     <string name='Q_b20812'>b20812</string>
     <string name='Q_b20813'>b20813</string>
+    <string name='Q_b20814'>b20814</string>
     <string name='Q_b2081396'>b2081396</string>
     <string name='Q_b20813c'>b20813c</string>
     <string name='Q_b20813d'>b20813d</string>

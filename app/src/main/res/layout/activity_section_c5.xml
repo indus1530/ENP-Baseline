@@ -274,7 +274,7 @@
                                 android:maxLength="3"
                                 android:text="@={mwra.c5014}"
                                 app:maxValue="180"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -468,7 +468,7 @@
                                 android:maxLength="3"
                                 android:text="@={mwra.c5024}"
                                 app:maxValue="180"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -662,7 +662,7 @@
                                 android:maxLength="3"
                                 android:text="@={mwra.c5034}"
                                 app:maxValue="180"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -881,7 +881,7 @@
                                 android:maxLength="3"
                                 android:text="@={mwra.c5044}"
                                 app:maxValue="180"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>

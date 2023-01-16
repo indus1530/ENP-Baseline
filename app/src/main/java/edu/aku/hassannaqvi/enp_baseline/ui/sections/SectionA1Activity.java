@@ -5,11 +5,9 @@ import static edu.aku.hassannaqvi.enp_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -29,8 +27,6 @@ import edu.aku.hassannaqvi.enp_baseline.core.MainApp;
 import edu.aku.hassannaqvi.enp_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.enp_baseline.databinding.ActivitySectionA1Binding;
 import edu.aku.hassannaqvi.enp_baseline.ui.EndingActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.LockActivity;
-import edu.aku.hassannaqvi.enp_baseline.ui.LoginActivity;
 import edu.aku.hassannaqvi.enp_baseline.ui.lists.FamilyMembersListActivity;
 
 public class SectionA1Activity extends AppCompatActivity {
@@ -58,6 +54,8 @@ public class SectionA1Activity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+        bi.a108y.setMaxvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))));
+        bi.a108y.setMinvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))) - 2);
 
         bi.a108y.addTextChangedListener(new TextWatcher() {
             @Override

@@ -895,9 +895,11 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
     }
 
+
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.selectionLists);
     }
+
 
 
     @Override
@@ -905,10 +907,12 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }
 
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         return super.onTouchEvent(event);
     }
+
 
     public boolean dispatchTouchEvent(MotionEvent event) {
         MainApp.timer.cancel();
